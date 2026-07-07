@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "ChurnLens",
+  "name_for_model": "churnlens",
+  "description_for_human": "SaaS revenue quality scoring and due diligence tool.",
+  "description_for_model": "SaaS revenue quality scoring and due diligence tool.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://churnlens.site/openapi.json",
+    "has_user_authentication": false
+  },
+  "logo_url": "https://churnlens.site/icon.png",
+  "contact_email": "hello@churnlens.site",
+  "legal_info_url": "https://churnlens.site/terms"
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChurnLens</title>
+    <link>https://churnlens.site</link>
+    <description>SaaS revenue quality scoring and due diligence tool.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Jul 2026 14:57:21 GMT</lastBuildDate>
+    <atom:link href="https://churnlens.site/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homepage</title>
+      <link>https://churnlens.site/</link>
+      <guid isPermaLink="true">https://churnlens.site/</guid>
+      <description>SaaS revenue quality scoring</description>
+    </item>
+    <item>
+      <title>Pricing</title>
+      <link>https://churnlens.site/pricing</link>
+      <guid isPermaLink="true">https://churnlens.site/pricing</guid>
+      <description>ChurnLens pricing plans</description>
+    </item>
+    <item>
+      <title>SaaS Due Diligence Checklist</title>
+      <link>https://churnlens.site/saas-due-diligence-checklist</link>
+      <guid isPermaLink="true">https://churnlens.site/saas-due-diligence-checklist</guid>
+      <description>Free checklist</description>
+    </item>
+    <item>
+      <title>Churn Rate Benchmarks</title>
+      <link>https://churnlens.site/saas-churn-rate-benchmarks</link>
+      <guid isPermaLink="true">https://churnlens.site/saas-churn-rate-benchmarks</guid>
+      <description>Industry benchmarks</description>
+    </item>
+    <item>
+      <title>Revenue Quality Score</title>
+      <link>https://churnlens.site/saas-revenue-quality-score</link>
+      <guid isPermaLink="true">https://churnlens.site/saas-revenue-quality-score</guid>
+      <description>Score your SaaS</description>
+    </item>
+  </channel>
+</rss>
