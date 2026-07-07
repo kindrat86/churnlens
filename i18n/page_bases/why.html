@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>__TR_why_0__</title>
+    <meta name="description" content="__TR_why_1__" />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/why" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://churnlens.site/why" />
+    <meta property="og:title" content="__TR_why_2__" />
+    <meta property="og:description" content="__TR_why_3__" />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="__TR_why_4__" />
+    <meta name="twitter:description" content="__TR_why_5__" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Why I Built Churn Lens", "item": "https://churnlens.site/why"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why I Built Churn Lens — The $340K Lesson",
+      "description": "The founder's story: how a 'clean' SaaS acquisition with 2% reported churn turned into 9% real churn — and $340K of evaporated value.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/why"}
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      :root {
+        --cl-navy: #0f172a;
+        --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb;
+        --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .story-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 800px; margin: 0 auto;
+      }
+      .story-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .story-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .story-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .story-nav .nav-links a:hover { color: #fff; }
+
+      .story-wrap { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+      .story-eyebrow {
+        text-align: center; font-size: 0.8rem; font-weight: 600;
+        letter-spacing: 0.08em; text-transform: uppercase; color: var(--cl-blue-light);
+        margin-bottom: 1rem;
+      }
+      .story-wrap h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.75rem, 5vw, 2.75rem);
+        font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+        color: #fff; margin: 0 0 1.5rem; text-align: center;
+      }
+      .story-wrap h1 .hl { color: var(--cl-blue-light); }
+
+      .story-meta {
+        text-align: center; color: #64748b; font-size: 0.85rem;
+        margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e293b;
+      }
+
+      .story-wrap .lead {
+        font-size: 1.15rem; line-height: 1.7; color: #e2e8f0;
+        margin-bottom: 2rem;
+      }
+      .story-wrap p { font-size: 1rem; line-height: 1.75; color: #cbd5e1; margin-bottom: 1.5rem; }
+      .story-wrap h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.4rem; color: #fff; margin: 3rem 0 1rem; font-weight: 700;
+      }
+      .story-wrap h2 .step-num { color: var(--cl-blue-light); }
+
+      .pull-quote {
+        border-left: 3px solid var(--cl-blue);
+        padding: 1rem 1.5rem; margin: 2.5rem 0;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.25rem; line-height: 1.5; color: #f1f5f9; font-weight: 600;
+      }
+
+      .false-belief {
+        background: rgba(220,38,38,0.06); border: 1px solid rgba(220,38,38,0.2);
+        border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+      }
+      .false-belief .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fca5a5; margin-bottom: 0.5rem; }
+      .false-belief p { margin: 0; color: #e2e8f0; font-size: 0.95rem; }
+
+      .epiphany-box {
+        background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.25);
+        border-radius: 0.75rem; padding: 1.5rem; margin: 2rem 0;
+      }
+      .epiphany-box .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cl-blue-light); margin-bottom: 0.75rem; }
+      .epiphany-box p { margin: 0; color: #e2e8f0; font-size: 1.05rem; line-height: 1.65; }
+
+      .cause-banner {
+        text-align: center; margin: 3.5rem 0; padding: 2.5rem 1.5rem;
+        background: var(--cl-navy-2); border-radius: 1rem; border: 1px solid #334155;
+      }
+      .cause-banner h2 { margin-top: 0; }
+      .cause-banner p { color: #94a3b8; font-size: 1rem; }
+
+      .story-cta {
+        text-align: center; margin: 3rem 0; padding: 2.5rem 1.5rem;
+        background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(59,130,246,0.05));
+        border-radius: 1rem; border: 1px solid rgba(37,99,235,0.2);
+      }
+      .story-cta h2 { margin-top: 0; }
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 1rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;
+        transition: background 0.2s; margin-top: 0.5rem;
+      }
+      .btn-primary:hover { background: var(--cl-blue-light); }
+
+      .story-footer {
+        text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #475569;
+        border-top: 1px solid #1e293b;
+      }
+      .story-footer a { color: #64748b; text-decoration: none; }
+
+      .framework-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+      .framework-list li {
+        padding: 0.75rem 0; border-bottom: 1px solid #1e293b;
+        color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;
+        display: flex; gap: 0.75rem; align-items: flex-start;
+      }
+      .framework-list li:last-child { border-bottom: none; }
+      .framework-list .check { color: var(--cl-blue-light); font-weight: 700; flex-shrink: 0; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body id="main-content">
+    <nav class="story-nav">
+      <a href="/" class="logo">__TR_why_9__</a>
+      <div class="nav-links">
+        <a href="/">__TR_why_10__</a>
+        <a href="/pricing">__TR_why_11__</a>
+        <a href="/get-the-checklist" style="color: var(--cl-blue-light);">__TR_why_12__</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="__TR_why_6__" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="__TR_why_7__">
+  <a href="/">__TR_why_13__</a>
+  <a href="/pricing">__TR_why_14__</a>
+  <a href="/why">__TR_why_15__</a>
+  <a href="/manifesto">__TR_why_16__</a>
+  <a href="/partners">__TR_why_17__</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">__TR_why_18__</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="__TR_why_8__">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">__TR_why_19__</a>
+</div>
+
+    <div class="story-wrap">
+      <div class="story-eyebrow">__TR_why_20__</div>
+      <h1>I bought a SaaS with <span class="hl">__TR_why_22__</span><br>Six months later, it was <span class="hl">9%.</span></h1>
+      <div class="story-meta">__TR_why_24__</div>
+
+      <p class="lead">
+        I'm going to tell you the worst due-diligence story I know. It's mine.
+        If you're about to buy a SaaS business, read this before you wire a single dollar.
+      </p>
+
+      <h2><span class="step-num">__TR_why_25__</span> The Deal That Looked Perfect</h2>
+
+      <p>
+        Two years ago, I found a SaaS business listed at $1.1M. $42K MRR. Three years of growth.
+        The CIM showed a clean 2.3% monthly churn rate. The seller was transparent &mdash; or so I thought.
+        He handed over a ProfitBird summary, cohort charts, and a churn dashboard screenshot. Everything
+        looked healthy. My due diligence checklist had 40 boxes. I checked all 40. The deal closed.
+      </p>
+
+      <p>
+        I was a careful buyer. I'd read every SaaS acquisition guide. I knew the right questions to ask.
+        I asked them. I got good answers. I trusted the numbers because the numbers were presented by
+        someone who understood how to present numbers.
+      </p>
+
+      <div class="false-belief">
+        <div class="label">__TR_why_27__</div>
+        <p>__TR_why_28__</p>
+      </div>
+
+      <h2><span class="step-num">__TR_why_29__</span> Month Four — The Wall</h2>
+
+      <p>
+        Four months post-close, MRR started declining. Not crashing &mdash; bleeding. Slow, steady,
+        the kind of decline you don't notice until it's too late. I pulled the subscription data and
+        ran the churn calculation myself for the first time.
+      </p>
+
+      <div class="pull-quote">
+        The real monthly churn wasn't 2.3%. It was 9.4%. Over four times what the CIM reported. That gap &mdash; the difference between the number I trusted and the number that was real &mdash; was worth $340,000.
+      </div>
+
+      <p>
+        How did the seller get 2.3% when the real number was 9.4%? He hadn't lied. He'd used every
+        legitimate-looking methodology trick available: he excluded downgrades from churn (revenue
+        disappeared but the logo stayed). He reported the best cohort month as "representative." He
+        excluded involuntary cancellations (failed payments). He counted reactivations as continuous
+        subscriptions. Every single one of these choices is defensible in isolation. Combined, they
+        turned 9.4% into 2.3%.
+      </p>
+
+      <p>
+        I hadn't asked for the raw CSV. I'd asked for a churn <em>__TR_why_31__</em>. I got the number the
+        seller wanted me to have. And I paid for it.
+      </p>
+
+      <h2><span class="step-num">__TR_why_33__</span> The Epiphany</h2>
+
+      <p>
+        After that deal, I did something obsessive. I pulled the raw subscription CSV from every SaaS
+        acquisition opportunity I evaluated &mdash; not the summary, not the dashboard, the raw export
+        with customer ID, MRR, plan, status, dates. I built a spreadsheet to compute churn five different
+        ways: logo churn, revenue churn, net churn, gross churn, and cohort-adjusted churn. I cross-referenced
+        concentration risk. I flagged inactive paying accounts.
+      </p>
+
+      <div class="epiphany-box">
+        <div class="label">__TR_why_35__</div>
+        <p>
+          <strong>__TR_why_36__</strong>
+          The only number that matters is the one you compute yourself from the raw data.
+          If you're trusting a summary number someone else computed, you're not doing due diligence &mdash;
+          you're doing trust.
+        </p>
+      </div>
+
+      <p>
+        I ran this analysis on 14 more deals over the next year. In 11 of them, real churn was meaningfully
+        higher than reported. In 3, it was the same. Zero times was real churn lower. The gap averaged 4.2x.
+        Every deal where I caught the gap, I either renegotiated the price or walked. Every deal saved me
+        more than the cost of the analysis by a factor of 100.
+      </p>
+
+      <h2><span class="step-num">__TR_why_37__</span> Why I Built Churn Lens</h2>
+
+      <p>
+        The spreadsheet worked, but it took me 4 hours per deal. And I kept making the same analysis
+        manual mistakes. So I automated it. Then I showed it to two other acquirers I knew. They asked
+        to use it. Then their friends asked. That's when I realized this wasn't a spreadsheet &mdash;
+        it was the thing I wished I'd had before I wired $1.1M for a business worth $760K.
+      </p>
+
+      <p>
+        Churn Lens is that spreadsheet, systematized. Upload the seller's raw subscription CSV. Get
+        every churn metric computed five ways. See concentration risk, annual-plan churn exposure,
+        inactive accounts, and a composite Revenue Quality Score &mdash; in minutes, not hours.
+      </p>
+
+      <h2>__TR_why_39__</h2>
+
+      <div class="cause-banner">
+        <h2>__TR_why_40__</h2>
+        <p>
+          Right now, 80% of SaaS acquisitions overpay because buyers trust seller-computed churn.
+          The information asymmetry in SaaS M&amp;A favors the seller at every step &mdash; they know
+          the data, they compute the metrics, they present the summary. Churn Lens exists to flip that
+          asymmetry. When every buyer demands the raw CSV and runs their own analysis, the era of
+          hidden churn ends. That's the world we're building toward.
+        </p>
+      </div>
+
+      <h2>__TR_why_41__</h2>
+
+      <p>
+        If you're evaluating a SaaS acquisition right now, you probably hold at least one of these beliefs.
+        I held all three. They cost me $340K.
+      </p>
+
+      <ul class="framework-list">
+        <li>
+          <span class="check">&#9888;</span>
+          <span><strong>__TR_why_42__</strong> "The seller's churn methodology is industry-standard, so the number is reliable."<br><em style="color:#64748b;">__TR_why_44__</em> There is no standard. Every seller makes methodology choices that flatter their number. The only reliable number is the one you compute from raw data.
+        </span>
+        </li>
+        <li>
+          <span class="check">&#9888;</span>
+          <span><strong>__TR_why_46__</strong> "I'm not technical enough to analyze raw subscription data myself."<br><em style="color:#64748b;">__TR_why_48__</em> You don't need to be. You need the CSV and a tool that computes churn five ways. The analysis takes minutes, not a finance degree.
+        </span>
+        </li>
+        <li>
+          <span class="check">&#9888;</span>
+          <span><strong>__TR_why_50__</strong> "The seller wouldn't hide churn from me &mdash; they'd get caught in the earnout."<br><em style="color:#64748b;">__TR_why_52__</em> Most churn methodology choices are legal, defensible, and invisible. Earnouts don't protect you from legitimate-looking accounting that understates real churn by 4x.
+        </span>
+        </li>
+      </ul>
+
+      <div class="story-cta">
+        <h2>__TR_why_54__</h2>
+        <p>__TR_why_55__</p>
+        <a href="/get-the-checklist" class="btn-primary">__TR_why_56__</a>
+      </div>
+
+      <p style="text-align: center; color: #64748b; font-size: 0.85rem;">
+        Already have a target in due diligence?
+        <a href="/pricing" style="color: var(--cl-blue-light);">__TR_why_57__</a>
+      </p>
+    </div>
+
+    <footer class="story-footer">
+      <p>&copy; 2026 Churn Lens &middot; <a href="/">__TR_why_58__</a> &middot; <a href="/pricing">__TR_why_59__</a> &middot; <a href="/get-the-checklist">__TR_why_60__</a></p>
+    </footer>
+
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r)}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

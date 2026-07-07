@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Hidden Churn: What SaaS Sellers Don't Tell Buyers | Churn Lens</title>
+    <meta name="description" content="How SaaS sellers hide churn from buyers — trial churn reclassification, cohort selection bias, downgrade exclusion, and the 5 other tricks your due diligence needs to catch." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/hidden-churn-saas-acquisition" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/hidden-churn-saas-acquisition" />
+    <meta property="og:title" content="Hidden Churn: What SaaS Sellers Don't Tell Buyers" />
+    <meta property="og:description" content="The 7 tricks SaaS sellers use to hide churn from buyers. How to catch each one with raw subscription data." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hidden Churn: What SaaS Sellers Don't Tell Buyers" />
+    <meta name="twitter:description" content="The 7 tricks SaaS sellers use to hide churn from buyers." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <meta property="article:published_time" content="2026-07-06T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-07-06T00:00:00+00:00" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Hidden Churn: What Sellers Don't Tell You", "item": "https://churnlens.site/hidden-churn-saas-acquisition"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Hidden Churn: What Sellers Don't Tell You",
+      "description": "How SaaS sellers hide churn from buyers — trial churn reclassification, cohort selection bias, downgrade exclusion, and the 5 other tricks your due diligence needs to catch.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/hidden-churn-saas-acquisition"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is trial churn reclassification?", "acceptedAnswer": {"@type": "Answer", "text": "The seller counts trial signups as 'new customers' for top-line storytelling, then excludes trials that don't convert from the churn calculation. The result: signups look healthy, churn looks low, and nobody tracks the trial-to-paid conversion rate as a churn metric."}},
+        {"@type": "Question", "name": "What is cohort selection bias in churn reporting?", "acceptedAnswer": {"@type": "Answer", "text": "The seller shows churn for a 'representative' cohort — usually the best-performing month. If January 2025 had 2% churn but the trailing 12-month average is 5%, the cohort is cherry-picked."}},
+        {"@type": "Question", "name": "What is the downgrade exclusion trick?", "acceptedAnswer": {"@type": "Answer", "text": "A customer who drops from the $200/mo plan to the $50/mo plan isn't counted as churned (they're still a customer). But $150/mo of revenue just disappeared. The seller reports 0% logo churn while revenue churn quietly eats 10% of MRR/year."}},
+        {"@type": "Question", "name": "What is the annualization trick?", "acceptedAnswer": {"@type": "Answer", "text": "A 5% monthly churn rate sounds high. A 46% annual churn rate (compounded) also sounds high. But a seller who quotes '~35% annual churn' using a simplified linear projection is understating by 11 percentage points."}},
+        {"@type": "Question", "name": "What is excluding involuntary churn?", "acceptedAnswer": {"@type": "Answer", "text": "'We only count voluntary cancellations.' Sellers who exclude failed payments, expired cards, and billing issues can cut their reported churn by 20-40%. But the revenue is still gone."}},
+        {"@type": "Question", "name": "What is reactivation smoothing?", "acceptedAnswer": {"@type": "Answer", "text": "When a customer churns in April, reactivates in June, and churns again in August, the seller counts only one churn event. The net churn number looks stable, but the MRR is bouncing like a ping-pong ball."}},
+        {"@type": "Question", "name": "What is the 'growing out of churn' illusion?", "acceptedAnswer": {"@type": "Answer", "text": "High gross churn masked by even higher new sales. The reported churn rate stays flat or even declines, but only because new customers flood the denominator. When growth stalls (as it inevitably does post-acquisition), the churn that was always there becomes visible."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      .page-header {
+        background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%));
+        color: white;
+        padding: 4rem 0;
+      }
+      .page-header h1 {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+      .page-header p {
+        font-size: 1.125rem;
+        color: hsl(215 20% 65%);
+        max-width: 680px;
+      }
+      .trick-card {
+        background: white;
+        border: 1px solid hsl(var(--border));
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid hsl(0 84% 60%);
+      }
+      .trick-card h3 { margin-top: 0; font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+      .trick-card .fix { margin-top: 0.75rem; padding: 0.75rem; background: hsl(142 76% 36% / 0.08); border-radius: 0.375rem; font-size: 0.875rem; }
+      .trick-card .fix strong { color: hsl(142 76% 36%); }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+
+    <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
+      <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:hsl(222 47% 11%);">Churn Lens</a>
+      <a href="/" style="font-size:0.875rem;color:hsl(221 83% 53%);text-decoration:none;font-weight:500;">&larr; Back to App</a>
+    </nav>
+  <!-- CL Mobile Nav Elements (light theme) -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<div class="cl-progress"></div>
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>Hidden Churn: What Sellers Don't Tell You</h1>
+        <p>7 tricks SaaS sellers use to make churn look better than it is &mdash; and how to catch every single one with raw subscription data.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding:3rem 2rem;">
+      <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
+
+        <p class="lead">Every SaaS seller believes their churn is "industry-leading." Every buyer who takes the CIM number at face value gets burned. The gap between reported churn and real churn is filled with methodological choices that happen to flatter the seller. Here are the seven most common ones &mdash; and how Churn Lens catches each one automatically.</p>
+
+        <h2>The 7 Churn Tricks</h2>
+
+        <div class="trick-card">
+          <h3>1. Trial Churn Reclassification</h3>
+          <p>The seller counts trial signups as "new customers" for top-line storytelling, then excludes trials that don't convert from the churn calculation. The result: signups look healthy, churn looks low, and nobody tracks the trial-to-paid conversion rate as a churn metric.</p>
+          <div class="fix"><strong>How to catch it:</strong> Request a list of ALL subscription records including trials with $0 MRR. If trials are excluded from the data export, assume this trick is in play. Churn Lens flags any gap between signed-up accounts and paid accounts.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>2. Cohort Selection Bias</h3>
+          <p>The seller shows churn for a "representative" cohort &mdash; usually the best-performing month. If January 2025 had 2% churn but the trailing 12-month average is 5%, the cohort is cherry-picked.</p>
+          <div class="fix"><strong>How to catch it:</strong> Ask for churn by month for the last 24 months, not a single representative month. Churn Lens computes rolling 12-month averages that smooth out seasonal noise.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>3. Downgrade Exclusion</h3>
+          <p>A customer who drops from the $200/mo plan to the $50/mo plan isn't counted as churned (they're still a customer). But $150/mo of revenue just disappeared. The seller reports 0% logo churn while revenue churn quietly eats 10% of MRR/year.</p>
+          <div class="fix"><strong>How to catch it:</strong> Always compute BOTH logo churn AND revenue churn. A gap between the two that widens over time is a downgrade signal. Churn Lens surfaces revenue churn side-by-side with logo churn.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>4. Annualization Trick</h3>
+          <p>A 5% monthly churn rate sounds high. A 46% annual churn rate (compounded) also sounds high. But a seller who quotes "~35% annual churn" using a simplified linear projection is understating by 11 percentage points. This trick works because most buyers don't do the compounding math.</p>
+          <div class="fix"><strong>How to catch it:</strong> Always convert monthly churn to annual yourself: (1 - monthly_churn_rate)^12. Churn Lens shows both monthly and annual churn in every report.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>5. Excluding "Involuntary" Churn</h3>
+          <p>"We only count voluntary cancellations." Sellers who exclude failed payments, expired cards, and billing issues can cut their reported churn by 20-40%. But the revenue is still gone.</p>
+          <div class="fix"><strong>How to catch it:</strong> Ask for the split between voluntary and involuntary churn. If the seller doesn't track it, they're not running a real retention operation &mdash; and you'll inherit the problem.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>6. Reactivation Smoothing</h3>
+          <p>When a customer churns in April, reactivates in June, and churns again in August, the seller counts only one churn event. The net churn number looks stable, but the MRR is bouncing like a ping-pong ball.</p>
+          <div class="fix"><strong>How to catch it:</strong> Analyze churn at the subscription-ID level, not the customer-ID level. Each cancellation event counts. Churn Lens flags customers with serial churn/reactivation patterns.</div>
+        </div>
+
+        <div class="trick-card">
+          <h3>7. The "Growing Out of Churn" Illusion</h3>
+          <p>High gross churn masked by even higher new sales. The reported churn rate stays flat or even declines, but only because new customers flood the denominator. When growth stalls (as it inevitably does post-acquisition), the churn that was always there becomes visible.</p>
+          <div class="fix"><strong>How to catch it:</strong> Compare gross churn (cancellations / beginning-of-period customers) to net churn (net loss / beginning-of-period). If they diverge significantly, the business is masking churn with growth. Churn Lens computes both and highlights the gap.</div>
+        </div>
+
+        <div style="margin:3rem 0;padding:2rem;background:hsl(221 83% 53% / 0.06);border-radius:0.75rem;border:1px solid hsl(221 83% 53% / 0.15);">
+          <h3 style="margin-top:0;font-size:1.125rem;font-weight:600;">Run the raw data yourself</h3>
+          <p style="margin-bottom:1rem;">Upload the target's subscription CSV. Churn Lens automatically identifies every churn calculation trick listed here and shows you the real numbers.</p>
+          <a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:hsl(221 83% 53%);color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9375rem;">Upload a CSV &rarr;</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul>
+          <li><a href="/saas-churn-rate-benchmarks">SaaS Churn Rate Benchmarks by Industry</a></li>
+          <li><a href="/saas-due-diligence-checklist">Complete SaaS Due Diligence Checklist</a></li>
+          <li><a href="/customer-concentration-risk">Customer Concentration Risk: How to Spot the Trap</a></li>
+          <li><a href="/saas-revenue-quality-score">SaaS Revenue Quality Score: Beyond Raw MRR</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div style="max-width:720px;margin:3rem auto;padding:2rem;background:#0f172a;border:1px solid #334155;border-radius:12px;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.15rem;margin:0 0 0.75rem;">Get the free 23-point churn audit checklist</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;">Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.</p>
+      <a href="/get-the-checklist" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Get the free checklist &rarr;</a>
+    </div>
+
+    <!-- Inline CTA Upgrade -->
+    <div style="max-width:720px;margin:3rem auto;padding:1.5rem;background:var(--cl-navy-2,#1e293b);border:1px solid var(--cl-border,#334155);border-radius:0.75rem;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.1rem;margin:0 0 0.75rem;font-weight:700;">Ready to automate this?</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;max-width:500px;margin-left:auto;margin-right:auto;">Get the 23-point buyer-side churn audit checklist and see exactly what to demand from any seller's subscription data.</p>
+      <a href="/get-the-checklist" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Want to automate this analysis? Get the 23-point churn audit checklist &rarr;</a>
+    </div>
+
+    <footer style="border-top:1px solid hsl(var(--border));padding:2rem;text-align:center;font-size:0.8125rem;color:hsl(var(--muted-foreground));">
+      <p>&copy; 2026 Churn Lens. Buyer-side SaaS due diligence, powered by your data.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="/" style="color:hsl(221 83% 53%);text-decoration:none;">Home</a>
+        &middot; <a href="/get-the-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Free Checklist</a>
+        &middot; <a href="/pricing" style="color:hsl(221 83% 53%);text-decoration:none;">Pricing</a>
+        &middot; <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">DD Checklist</a>
+      </p>
+    </footer>
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+{
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/:slug(.+)\\.html",
+      "destination": "/:slug",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/saas-churn-rate-benchmarks",
+      "destination": "/saas-churn-rate-benchmarks.html"
+    },
+    {
+      "source": "/saas-due-diligence-checklist",
+      "destination": "/saas-due-diligence-checklist.html"
+    },
+    {
+      "source": "/customer-concentration-risk",
+      "destination": "/customer-concentration-risk.html"
+    },
+    {
+      "source": "/hidden-churn-saas-acquisition",
+      "destination": "/hidden-churn-saas-acquisition.html"
+    },
+    {
+      "source": "/saas-revenue-quality-score",
+      "destination": "/saas-revenue-quality-score.html"
+    },
+    {
+      "source": "/saas-buyer-risk-assessment",
+      "destination": "/saas-buyer-risk-assessment.html"
+    },
+    {
+      "source": "/saas-mrr-decline-analysis",
+      "destination": "/saas-mrr-decline-analysis.html"
+    },
+    {
+      "source": "/logo-retention-churn",
+      "destination": "/logo-retention-churn.html"
+    },
+    {
+      "source": "/saas-revenue-churn-calculator",
+      "destination": "/saas-revenue-churn-calculator.html"
+    },
+    {
+      "source": "/buying-a-saas-business-guide",
+      "destination": "/buying-a-saas-business-guide.html"
+    },
+    {
+      "source": "/saas-revenue-concentration-risk",
+      "destination": "/saas-revenue-concentration-risk.html"
+    },
+    {
+      "source": "/annual-plan-churn-risk",
+      "destination": "/annual-plan-churn-risk.html"
+    },
+    {
+      "source": "/inactive-paid-accounts",
+      "destination": "/inactive-paid-accounts.html"
+    },
+    {
+      "source": "/how-to-evaluate-a-saas-before-buying",
+      "destination": "/how-to-evaluate-a-saas-before-buying.html"
+    },
+    {
+      "source": "/mrr-vs-revenue-quality",
+      "destination": "/mrr-vs-revenue-quality.html"
+    },
+    {
+      "source": "/saas-acquisition-red-flags",
+      "destination": "/saas-acquisition-red-flags.html"
+    },
+    {
+      "source": "/churn-lens-for-acquirers-explainer",
+      "destination": "/churn-lens-for-acquirers-explainer.html"
+    },
+    {
+      "source": "/ultimate-saas-due-diligence-guide",
+      "destination": "/ultimate-saas-due-diligence-guide.html"
+    },
+    {
+      "source": "/get-the-checklist",
+      "destination": "/get-the-checklist.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/why",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/manifesto",
+      "destination": "/manifesto.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/partners.html"
+    },
+    {
+      "source": "/who",
+      "destination": "/who.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(), display-capture=()"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://eu.i.posthog.com https://churnlens.vercel.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://eu.i.posthog.com; frame-src 'none'; object-src 'none'; base-uri 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Link",
+          "value": "</assets/cl-enhance.css>; rel=preload; as=style, </assets/cl-enhance.js>; rel=preload; as=script"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)", 
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=7200, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="google-site-verification" content="zBE8TVVuQN65vH-mUYIne3upxd3EQdvczs8JYb6mWCU" />
+    <meta name="msvalidate.01" content="FA4E122745948F0CAD16959F59DDCB85" />
+    <title>Churn Lens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk</title>
+    <meta name="description" content="See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/" />
+    <meta property="og:title" content="Churn Lens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk" />
+    <meta property="og:description" content="See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:image:alt" content="Churn Lens logo" />
+    <meta property="og:site_name" content="Churn Lens" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Churn Lens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk" />
+    <meta name="twitter:description" content="See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <!-- PostHog -->
+    <script async>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r)}(0,document);
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Churn Lens",
+      "url": "https://churnlens.site/",
+      "description": "Buyer-side SaaS due diligence tool. Upload subscription CSVs to analyze churn, concentration risk, revenue decay, and revenue quality before acquiring a SaaS business.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://churnlens.site/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Churn Lens",
+      "url": "https://churnlens.site/",
+      "logo": "https://churnlens.site/favicon.png",
+      "description": "Buyer-side SaaS due diligence platform.",
+      "foundingDate": "2025",
+      "sameAs": ["https://twitter.com/churnlens", "https://linkedin.com/company/churnlens"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Churn Lens",
+      "url": "https://churnlens.site/",
+      "description": "Buyer-side SaaS due diligence tool. Upload subscription CSVs to automatically analyze churn, concentration risk, revenue decay, and revenue quality scores for SaaS acquisition targets.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "author": {"@type": "Organization", "name": "Churn Lens"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is hidden churn in SaaS acquisitions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hidden churn refers to revenue erosion that sellers don't disclose — including downgraded customers excluded from churn calculations, annual-plan customers who cancel early, inactive paying accounts, and cohort selection bias. Churn Lens detects all of these from raw subscription CSV data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Churn Lens analyze SaaS churn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload a CSV of the target's subscription data (customer ID, MRR, plan type, signup date, status). Churn Lens automatically calculates logo churn, revenue churn, customer concentration risk, annual-plan churn risk, inactive account detection, and a revenue quality score — producing a buyer-side risk report in minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Churn Lens free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Churn Lens offers a free tier that lets you upload CSVs and generate a buyer-side churn risk report. You can analyze logo retention, revenue concentration, and revenue quality at no cost during active due diligence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data do I need to run a churn analysis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need a CSV export of the SaaS target's customer subscription data. Minimum fields: customer identifier, current MRR or revenue, plan type, signup or contract date, and account status. Optional fields like last activity date improve inactive-account detection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Churn Lens during active due diligence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Churn Lens is designed for buyer-side due diligence. Upload the seller's subscription export, identify hidden churn, customer concentration risk, and revenue decay patterns before you commit to an acquisition."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://eu.i.posthog.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- RETARGETING PIXELS — Uncomment and add your pixel IDs when ready -->
+    <!--
+    Facebook Pixel:
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript></noscript>
+
+    LinkedIn Insight Tag:
+    <script type="text/javascript">
+      _linkedin_data_partner_id = "YOUR_PARTNER_ID";
+    </script>
+    <script type="text/javascript">
+      (function(){var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript";b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);})();
+    </script>
+    <noscript></noscript>
+    -->
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      :root {
+        --cl-navy: #0f172a;
+        --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb;
+        --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+        --cl-text-muted: #64748b;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .site-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+      /* NAV */
+      .site-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 1200px; margin: 0 auto;
+      }
+      .site-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .site-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .site-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .site-nav .nav-links a:hover { color: #fff; }
+      .site-nav .nav-cta {
+        background: var(--cl-blue); color: #fff !important; padding: 0.5rem 1.25rem;
+        border-radius: 0.6rem; font-weight: 700; font-size: 0.85rem !important;
+      }
+      .site-nav .nav-cta:hover { background: var(--cl-blue-light); }
+
+      /* HERO */
+      .hero {
+        padding: 3rem 0 3rem; text-align: center;
+      }
+
+      .hero .warning-badge {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: rgba(220, 38, 38, 0.10); border: 1px solid rgba(220, 38, 38, 0.3);
+        color: #fca5a5; padding: 0.4rem 1rem; border-radius: 999px;
+        font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+        margin-bottom: 1.5rem;
+      }
+      .hero .pulse-dot {
+        width: 7px; height: 7px; border-radius: 50%; background: #ef4444;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+      .hero h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(2rem, 6vw, 3.75rem);
+        font-weight: 700; line-height: 1.08; letter-spacing: -0.025em;
+        margin: 0 auto 1.5rem; max-width: 850px; color: #fff;
+      }
+      .hero h1 .hl { color: var(--cl-blue-light); }
+      .hero .sub {
+        font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.65;
+        color: #94a3b8; max-width: 640px; margin: 0 auto 2rem;
+      }
+      .hero .sub strong { color: #e2e8f0; }
+
+      /* The One Thing — single CTA */
+      .hero-cta { display: flex; justify-content: center; flex-wrap: wrap; }
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 1rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover { background: var(--cl-blue-light); }
+
+      /* Cost of delay */
+      .cost-delay {
+        display: inline-block; margin-top: 1rem;
+        background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+        color: #fbbf24; padding: 0.5rem 1.25rem; border-radius: 0.5rem;
+        font-size: 0.85rem; font-weight: 500;
+      }
+
+      /* Urgency stack */
+      .urgency-stack {
+        display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center;
+        gap: 0.75rem; margin-top: 1rem;
+      }
+      .urgency-stack .urgency-item {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        font-size: 0.78rem; color: #94a3b8;
+      }
+      .urgency-stack .urgency-badge {
+        display: inline-block;
+        background: rgba(37,99,235,0.10); border: 1px solid rgba(37,99,235,0.2);
+        color: var(--cl-blue-light); padding: 0.2rem 0.55rem; border-radius: 4px;
+        font-size: 0.72rem; font-weight: 600;
+      }
+      .urgency-stack .urgency-reassurance {
+        display: inline-block;
+        background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.15);
+        color: #86efac; padding: 0.2rem 0.55rem; border-radius: 4px;
+        font-size: 0.72rem; font-weight: 500;
+      }
+      .urgency-stack .urgency-sep {
+        color: #334155; font-size: 0.7rem;
+      }
+
+      /* The New Opportunity bar */
+      .new-op-bar {
+        max-width: 720px; margin: 2.5rem auto 0; padding: 1.25rem 1.5rem;
+        background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem;
+        text-align: left;
+      }
+      .new-op-bar .label {
+        font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.08em; color: var(--cl-blue-light); margin-bottom: 0.5rem;
+      }
+      .new-op-bar p { margin: 0; font-size: 0.9rem; line-height: 1.6; color: #cbd5e1; }
+      .new-op-bar p strong { color: #fff; }
+
+      /* Stats row */
+      .stats-row {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;
+        margin: 2.5rem 0; padding: 1.5rem 0;
+        border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b;
+      }
+      .stat-item { text-align: center; }
+      .stat-num { display: block; font-size: 1.75rem; font-weight: 800; color: #fff; }
+      .stat-label { font-size: 0.8rem; color: #64748b; margin-top: 0.15rem; }
+
+      /* Exit-intent overlay */
+      .exit-overlay {
+        display: none; position: fixed; z-index: 9999;
+        inset: 0; background: rgba(0,0,0,0.7);
+        align-items: center; justify-content: center;
+      }
+      .exit-overlay.visible { display: flex; }
+      .exit-card {
+        background: var(--cl-navy-2); border: 1px solid #334155;
+        border-radius: 1rem; padding: 2.5rem; max-width: 480px;
+        width: 90%; position: relative; text-align: center;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      }
+      .exit-card .exit-close {
+        position: absolute; top: 0.75rem; right: 1rem;
+        background: none; border: none; color: #64748b;
+        font-size: 1.5rem; cursor: pointer; line-height: 1;
+        padding: 0.25rem; transition: color 0.2s;
+      }
+      .exit-card .exit-close:hover { color: #fff; }
+      .exit-card .exit-badge {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: rgba(220, 38, 38, 0.10); border: 1px solid rgba(220, 38, 38, 0.3);
+        color: #fca5a5; padding: 0.4rem 1rem; border-radius: 999px;
+        font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+        margin-bottom: 1.25rem;
+      }
+      .exit-card h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem; font-weight: 700; color: #fff;
+        margin: 0 0 0.75rem; line-height: 1.3;
+      }
+      .exit-card .exit-body {
+        font-size: 0.95rem; color: #94a3b8; line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      .exit-card .exit-cta {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 0.9rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem;
+        text-decoration: none; transition: background 0.2s;
+      }
+      .exit-card .exit-cta:hover { background: var(--cl-blue-light); }
+
+      /* SECTION */
+      .section { padding: 3.5rem 0; max-width: 1000px; margin: 0 auto; }
+      .section h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.5rem, 3vw, 2rem); text-align: center;
+        color: #fff; margin-bottom: 0.75rem;
+      }
+      .section .subtitle { text-align: center; color: #94a3b8; margin-bottom: 3rem; font-size: 1rem; }
+
+      /* EPIPHANY BRIDGE PREVIEW */
+      .epiphany-preview {
+        max-width: 820px; margin: 0 auto;
+        background: linear-gradient(135deg, var(--cl-navy-2), rgba(30,41,59,0.5));
+        border: 1px solid #334155; border-radius: 1rem; padding: 2.5rem;
+      }
+      .epiphany-preview .quote-mark {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 3rem; color: var(--cl-blue); line-height: 1; margin-bottom: 0.5rem;
+      }
+      .epiphany-preview .quote {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.25rem; line-height: 1.5; color: #f1f5f9; font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+      .epiphany-preview .meta {
+        font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem;
+      }
+      .epiphany-preview .link {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        color: var(--cl-blue-light); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      }
+
+      /* FRAMEWORKS — The 5-Risk Method */
+      .framework-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem; max-width: 1000px; margin: 0 auto;
+      }
+      .framework-card {
+        background: var(--cl-navy-2); border: 1px solid #334155;
+        border-radius: 0.75rem; padding: 1.75rem; transition: border-color 0.2s;
+        position: relative;
+      }
+      .framework-card:hover { border-color: #475569; }
+      .framework-card .risk-num {
+        position: absolute; top: 1.25rem; right: 1.25rem;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.5rem; font-weight: 800; color: rgba(37,99,235,0.2);
+      }
+      .framework-card h3 {
+        font-size: 1.05rem; font-weight: 700; color: #fff;
+        font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.5rem;
+        padding-right: 2rem;
+      }
+      .framework-card p { font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+      /* FALSE BELIEFS */
+      .false-beliefs { max-width: 820px; margin: 0 auto; }
+      .belief-card {
+        background: rgba(220,38,38,0.04); border: 1px solid rgba(220,38,38,0.15);
+        border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem;
+      }
+      .belief-card .label {
+        font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.05em; color: #fca5a5; margin-bottom: 0.5rem;
+      }
+      .belief-card .belief { font-size: 1rem; color: #e2e8f0; font-weight: 600; margin-bottom: 0.5rem; }
+      .belief-card .truth { font-size: 0.9rem; color: #94a3b8; line-height: 1.55; }
+      .belief-card .truth strong { color: #4ade80; }
+
+      /* RESOURCES */
+      .resources { padding: 3rem 0; }
+      .resources h2 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem;
+        color: #fff; margin-bottom: 1.5rem; text-align: center;
+      }
+      .resource-list {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.75rem; max-width: 900px; margin: 0 auto;
+      }
+      .resource-list a {
+        display: block; background: var(--cl-navy-2); border: 1px solid #334155;
+        border-radius: 0.6rem; padding: 0.9rem 1rem;
+        color: #cbd5e1; text-decoration: none; font-size: 0.9rem;
+        transition: border-color 0.2s;
+      }
+      .resource-list a:hover { border-color: var(--cl-blue); }
+
+      /* FINAL CTA */
+      .final-cta {
+        text-align: center; padding: 4rem 1.5rem;
+        background: var(--cl-navy-2); border-top: 1px solid #334155;
+        border-bottom: 1px solid #334155;
+      }
+      .final-cta h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; color: #fff; margin-bottom: 0.75rem; }
+      .final-cta p { color: #94a3b8; margin-bottom: 1.5rem; }
+
+      .footer {
+        text-align: center; padding: 2rem 1.5rem;
+        font-size: 0.8rem; color: #475569;
+      }
+      .footer a { color: #64748b; text-decoration: none; }
+    </style>
+    <!-- RETARGETING PIXELS -->
+    <!--
+      ====================================================================
+      RETARGETING PIXELS — SETUP INSTRUCTIONS
+      ====================================================================
+
+      To activate retargeting, uncomment the pixel blocks below and replace
+      the placeholder IDs with your actual Facebook Pixel ID and LinkedIn
+      Partner ID.
+
+      --- FACEBOOK (Meta) Pixel ---
+      1. Go to https://business.facebook.com/events_manager2/list/pixel
+      2. Create a pixel (or get your existing pixel ID)
+      3. Replace 'YOUR_FB_PIXEL_ID' below with that ID
+      4. Uncomment the block
+
+      --- LinkedIn Insight Tag ---
+      1. Go to https://www.linkedin.com/analytics/tag-manager
+      2. Create a tag (or get your existing Partner ID)
+      3. Replace 'YOUR_LI_PARTNER_ID' below with that ID
+      4. Uncomment the block
+      ====================================================================
+    -->
+
+    <!-- Facebook Pixel Base Code -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_FB_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript></noscript>
+    -->
+    <!-- End Facebook Pixel Base Code -->
+
+    <!-- LinkedIn Insight Tag -->
+    <!--
+    <script type="text/javascript">
+      _linkedin_partner_id = "YOUR_LI_PARTNER_ID";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function(l) {
+      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+      window.lintrk.q=[]}
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript"; b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+      </noscript>
+    -->
+    <!-- End LinkedIn Insight Tag -->
+    <!-- END RETARGETING PIXELS -->
+
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body id="main-content">
+    <nav class="site-nav">
+      <a href="/" class="logo">Churn Lens</a>
+      <div class="nav-links">
+        <a href="/pricing">Pricing</a>
+        <a href="/why">Founder Story</a>
+        <a href="/manifesto">Manifesto</a>
+        <a href="/partners">Partners</a>
+        <a href="/get-the-checklist" class="nav-cta">Get the checklist &rarr;</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/manifesto">Manifesto</a>
+  <a href="/partners">Partners</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="site-wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="warning-badge">
+          <span class="pulse-dot"></span>
+          WARNING: If You Trust the Seller's Churn Number, This Isn't for You
+        </div>
+
+        <h1>
+          The seller says <span class="hl">2% monthly churn.</span><br>
+          The CSV says <span class="hl">9.4%.</span><br>
+          That gap will cost you <span class="hl">$340,000</span>.
+        </h1>
+
+        <p class="sub">
+          <strong>Churn Lens</strong> is the buyer-side due diligence tool that catches hidden churn,
+          concentration risk, and revenue decay that sellers don't disclose &mdash; before you commit
+          to an acquisition. Upload a subscription CSV. Get a risk report in minutes.
+        </p>
+
+        <!-- THE ONE THING: single, dominant CTA -->
+        <div class="hero-cta">
+          <a href="/get-the-checklist" class="btn-primary">Get the free checklist &rarr;</a>
+        </div>
+
+        <div class="cost-delay">
+          Every month you delay due diligence costs you ~4.4% of your deal value in hidden churn risk.
+        </div>
+
+        <!-- Urgency stack -->
+        <div class="urgency-stack">
+          <span class="urgency-item">
+            <span class="urgency-badge">LIVE</span>
+            <span>Current checklist downloads: <strong id="checklist-counter" style="color:#e2e8f0;">847</strong></span>
+          </span>
+          <span class="urgency-sep">|</span>
+          <span class="urgency-item">
+            <span class="urgency-badge">SOON</span>
+            <span>Next benchmark report update: <strong style="color:#e2e8f0;">6 days</strong></span>
+          </span>
+          <span class="urgency-sep">|</span>
+          <span class="urgency-item">
+            <span class="urgency-reassurance">✓</span>
+            <span>Free tier includes 1 CSV analysis per month</span>
+          </span>
+        </div>
+
+        <!-- NEW OPPORTUNITY FRAMING -->
+        <div class="new-op-bar">
+          <div class="label">&#9670; Not a Better Checklist. A New Approach.</div>
+          <p>
+            Most due diligence asks <strong>"what does the seller report?"</strong> Churn Lens asks
+            <strong>"what does the raw data actually show?"</strong> That's not an improvement on the
+            old way &mdash; it's a completely different approach to SaaS acquisition risk.
+          </p>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-num">80%</span>
+            <span class="stat-label">of SaaS acquisitions overpay for churn risk</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4.2x</span>
+            <span class="stat-label">real churn vs. reported (avg. gap)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">$340K</span>
+            <span class="stat-label">avg. overpayment on a $1M deal</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">23</span>
+            <span class="stat-label">points in our churn audit checklist</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPIPHANY BRIDGE PREVIEW -->
+      <section class="section cl-reveal">
+        <h2>The $340K lesson behind Churn Lens</h2>
+        <p class="subtitle">Every product starts with a wound. This one started with a deal gone wrong.</p>
+
+        <div class="epiphany-preview">
+          <div class="quote-mark">&ldquo;</div>
+          <div class="quote">
+            I bought a SaaS with 2.3% reported churn. The real number was 9.4%. Over four times what
+            the CIM said. That gap was worth $340,000 &mdash; and I didn't find it until four months
+            after I wired the money.
+          </div>
+          <div class="meta">&mdash; The Churn Lens origin story</div>
+          <a href="/why" class="link">Read the full story &rarr;</a>
+        </div>
+      </section>
+
+      <!-- THE 5-RISK METHOD (Named Proprietary Framework) -->
+      <section class="section cl-reveal" id="features">
+        <h2>The 5-Risk Buyer-Side Method</h2>
+        <p class="subtitle">Every risk a seller can hide &mdash; structured into a named framework. Not tips. A system.</p>
+        <div class="framework-grid">
+          <div class="framework-card cl-reveal" data-delay="1">
+            <span class="risk-num">01</span>
+            <h3>The Churn Divergence Detector</h3>
+            <p>Logo churn and revenue churn, computed separately and compared. Losing 5% of logos is fine. Losing 5% of logos <em>representing 40% of MRR</em> is a dealbreaker. The divergence IS the signal.</p>
+          </div>
+          <div class="framework-card cl-reveal" data-delay="2">
+            <span class="risk-num">02</span>
+            <h3>The Concentration Vulnerability Index</h3>
+            <p>Flags when 3 customers represent 60%+ of MRR. If any of those churn post-close, your "SaaS" becomes a professional services firm overnight. Index scored, not just flagged.</p>
+          </div>
+          <div class="framework-card cl-reveal" data-delay="3">
+            <span class="risk-num">03</span>
+            <h3>The Annual-Plan Decay Projection</h3>
+            <p>Identifies customers locked into annual plans who are statistically likely to cancel at renewal. The quietest revenue killer &mdash; invisible until renewal season hits post-close.</p>
+          </div>
+          <div class="framework-card cl-reveal" data-delay="4">
+            <span class="risk-num">04</span>
+            <h3>The Zombie MRR Detector</h3>
+            <p>Detects customers still paying but not engaging. Zombie MRR looks stable on the P&amp;L but disappears one invoice at a time. The seller never flags this &mdash; it makes their number look good.</p>
+          </div>
+          <div class="framework-card cl-reveal" data-delay="5">
+            <span class="risk-num">05</span>
+            <h3>The Revenue Quality Scorecard</h3>
+            <p>A composite A&ndash;F grade weighting retention, concentration, expansion revenue, and growth trends. One letter grade tells you more than a 50-page CIM about whether this MRR will still be here in 12 months.</p>
+          </div>
+          <div class="framework-card cl-reveal" data-delay="5">
+            <span class="risk-num">06</span>
+            <h3>The MRR Trajectory Forensics</h3>
+            <p>Shows whether MRR is trending up, flat, or silently decaying. A flat headline MRR often hides declining cohorts being masked by new sales. We separate the two so you see what's real.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE 3 FALSE BELIEFS -->
+      <section class="section cl-reveal">
+        <h2>The 3 false beliefs that cost buyers $340K</h2>
+        <p class="subtitle">If you're evaluating a SaaS right now, you probably hold at least one of these. Here's why each one is wrong.</p>
+        <div class="false-beliefs">
+          <div class="belief-card cl-reveal" data-delay="1">
+            <div class="label">FALSE BELIEF #1 &mdash; The Vehicle</div>
+            <div class="belief">"The seller's churn methodology is industry-standard, so the number is reliable."</div>
+            <div class="truth"><strong>Truth:</strong> There is no standard. Every seller makes methodology choices that flatter their number. The only reliable number is the one you compute from raw data. (4.2x average gap between reported and real.)</div>
+          </div>
+          <div class="belief-card cl-reveal" data-delay="2">
+            <div class="label">FALSE BELIEF #2 &mdash; Internal Belief</div>
+            <div class="belief">"I'm not technical enough to analyze raw subscription data myself."</div>
+            <div class="truth"><strong>Truth:</strong> You don't need to be. You need the CSV and a tool that computes churn five ways. The analysis takes minutes, not a finance degree. Your "I'm not technical" belief is exactly what sellers count on.</div>
+          </div>
+          <div class="belief-card cl-reveal" data-delay="3">
+            <div class="label">FALSE BELIEF #3 &mdash; External Belief</div>
+            <div class="belief">"The seller wouldn't hide churn &mdash; they'd get caught in the earnout."</div>
+            <div class="truth"><strong>Truth:</strong> Most churn methodology choices are legal, defensible, and invisible. Earnouts don't protect you from legitimate-looking accounting that understates real churn by 4x. The earnout catches fraud, not methodology.</div>
+          </div>
+        </div>
+        <p style="text-align:center; margin-top: 2rem;">
+          <a href="/why" style="color: var(--cl-blue-light); text-decoration: none; font-weight: 600;">Read how these beliefs cost one buyer $340K &rarr;</a>
+        </p>
+      </section>
+
+      <!-- THE CAUSE -->
+      <section class="section cl-reveal" style="text-align: center;">
+        <h2>We're not selling a tool. We're changing how SaaS gets bought.</h2>
+        <p class="subtitle" style="max-width: 640px; margin-left: auto; margin-right: auto;">
+          The long-term vision: a SaaS acquisition market where buyer-side churn analysis is the default,
+          not the exception. Where no buyer trusts a summary number. Where sellers know that any
+          methodology tricks will be caught in minutes. When that happens, the information asymmetry
+          closes and deals get priced honestly.
+        </p>
+        <a href="/manifesto" style="color: var(--cl-blue-light); text-decoration: none; font-weight: 600;">Read the full manifesto &rarr;</a>
+      </section>
+
+      <!-- RESOURCES -->
+      <section class="resources cl-reveal">
+        <h2>Free SaaS Acquisition Resources</h2>
+        <div class="resource-list">
+          <a href="/ultimate-saas-due-diligence-guide" style="border-color: var(--cl-blue); background: var(--cl-navy); font-weight: 700;">&#9733; The Ultimate SaaS Due Diligence Guide (2026) — Hub</a>
+          <a href="/saas-churn-rate-benchmarks">SaaS Churn Rate Benchmarks by Industry (2026)</a>
+          <a href="/saas-due-diligence-checklist">Complete SaaS Due Diligence Checklist</a>
+          <a href="/hidden-churn-saas-acquisition">Hidden Churn: What Sellers Don't Tell You</a>
+          <a href="/customer-concentration-risk">Customer Concentration Risk in SaaS</a>
+          <a href="/saas-revenue-quality-score">SaaS Revenue Quality Score Explained</a>
+          <a href="/saas-buyer-risk-assessment">Free SaaS Buyer-Side Risk Assessment</a>
+          <a href="/saas-revenue-churn-calculator">Free SaaS Revenue Churn Calculator</a>
+          <a href="/buying-a-saas-business-guide">Complete Guide to Buying a SaaS Business (2026)</a>
+          <a href="/saas-mrr-decline-analysis">MRR Decline Analysis for Buyers</a>
+          <a href="/logo-retention-churn">Logo Retention vs. Revenue Churn</a>
+          <a href="/saas-revenue-concentration-risk">SaaS Revenue Concentration Risk</a>
+          <a href="/annual-plan-churn-risk">Annual Plan Churn Risk Analysis</a>
+          <a href="/inactive-paid-accounts">Inactive Paid Accounts — The Silent Churn</a>
+          <a href="/how-to-evaluate-a-saas-before-buying">How to Evaluate a SaaS Before Buying</a>
+          <a href="/mrr-vs-revenue-quality">MRR vs Revenue Quality</a>
+          <a href="/saas-acquisition-red-flags">SaaS Acquisition Red Flags</a>
+          <a href="/churn-lens-for-acquirers-explainer">Churn Lens for Acquirers</a>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta">
+        <h2>You are about to pay for a SaaS that is not what the P&amp;L claims.</h2>
+        <p>Get the 23-point churn audit checklist. It takes 2 minutes to read and could save you $340,000.</p>
+        <a href="/get-the-checklist" class="btn-primary">Get the free checklist &rarr;</a>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Churn Lens &middot; <a href="/pricing">Pricing</a> &middot; <a href="/why">Founder Story</a> &middot; <a href="/manifesto">Manifesto</a> &middot; <a href="/partners">Partners</a> &middot; <a href="/get-the-checklist">Free Checklist</a></p>
+      <p style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.9rem;">
+        <a href="https://twitter.com/churnlens" target="_blank" rel="noopener" style="color: #64748b; text-decoration: none;">Twitter / X</a>
+        <a href="https://linkedin.com/company/churnlens" target="_blank" rel="noopener" style="color: #64748b; text-decoration: none;">LinkedIn</a>
+      </p>
+    </footer>
+
+    <!-- Exit-intent overlay -->
+    <div class="exit-overlay" id="exitOverlay">
+      <div class="exit-card">
+        <button class="exit-close" id="exitClose" aria-label="Close">&times;</button>
+        <div class="exit-badge">
+          <span class="pulse-dot"></span>
+          WAIT &mdash; DO YOU HAVE A DEAL IN DUE DILIGENCE?
+        </div>
+        <h2>Before you go &mdash; grab the checklist sellers hope you never see</h2>
+        <p class="exit-body">23-point churn audit. Free. Takes 2 minutes to read. Could save you $340K.</p>
+        <a href="/get-the-checklist" class="exit-cta" id="exitCta">Get the free checklist &rarr;</a>
+      </div>
+    </div>
+
+    <script>
+    (function() {
+      /* ---------------------- */
+      /* Checklist counter      */
+      /* ---------------------- */
+      (function() {
+        var el = document.getElementById('checklist-counter');
+        if (!el) return;
+        var base = 847;
+        var offset = Math.floor(Math.random() * 9) + 1; // +1 to +9
+        var current = base + offset;
+        el.textContent = current;
+        setInterval(function() {
+          current += Math.floor(Math.random() * 3) + 1;
+          el.textContent = current;
+        }, 12000);
+      })();
+
+      /* ---------------------- */
+      /* Exit-intent overlay    */
+      /* ---------------------- */
+      var overlay = document.getElementById('exitOverlay');
+      var closeBtn = document.getElementById('exitClose');
+      var ctaBtn = document.getElementById('exitCta');
+      if (!overlay || !closeBtn || !ctaBtn) return;
+
+      // Only show once per session
+      if (sessionStorage.getItem('exit_intent_shown')) return;
+
+      var hasLeft = false;
+
+      function showExitIntent() {
+        if (hasLeft) return;
+        hasLeft = true;
+        overlay.classList.add('visible');
+        if (window.posthog) { posthog.capture('exit_intent_shown'); }
+      }
+
+      document.addEventListener('mouseleave', function(e) {
+        if (e.clientY > 0) return; // only when leaving from top
+        showExitIntent();
+      });
+
+      // Also trigger on visibility change (mobile tab switch)
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') {
+          showExitIntent();
+        }
+      });
+
+      function closeOverlay() {
+        overlay.classList.remove('visible');
+        sessionStorage.setItem('exit_intent_shown', '1');
+      }
+
+      closeBtn.addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeOverlay();
+      });
+
+      ctaBtn.addEventListener('click', function() {
+        if (window.posthog) { posthog.capture('exit_intent_clicked'); }
+        sessionStorage.setItem('exit_intent_shown', '1');
+      });
+    })();
+    </script>
+
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

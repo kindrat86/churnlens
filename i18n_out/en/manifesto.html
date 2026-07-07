@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>The Buyer-Side Manifesto — Stop Trusting Seller Churn | Churn Lens</title>
+    <meta name="description" content="The SaaS acquisition market runs on seller-computed metrics. We're changing that. The manifesto for buyer-side due diligence: raw data, your methodology, no trust required." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/manifesto" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://churnlens.site/manifesto" />
+    <meta property="og:title" content="The Buyer-Side Manifesto — Stop Trusting Seller Churn" />
+    <meta property="og:description" content="The SaaS acquisition market runs on seller-computed metrics. We're changing that." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Buyer-Side Manifesto" />
+    <meta name="twitter:description" content="Stop trusting seller churn. Compute your own." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "The Buyer-Side Manifesto", "item": "https://churnlens.site/manifesto"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Buyer-Side Manifesto: Stop Trusting Seller Churn",
+      "description": "The SaaS acquisition market runs on seller-computed metrics. We're changing that.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/manifesto"}
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      :root {
+        --cl-navy: #0f172a;
+        --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb;
+        --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+      .m-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 800px; margin: 0 auto;
+      }
+      .m-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .m-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .m-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .m-nav .nav-links a:hover { color: #fff; }
+
+      .m-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+      .m-eyebrow {
+        text-align: center; font-size: 0.8rem; font-weight: 700;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--cl-blue-light);
+        margin-bottom: 1.25rem;
+      }
+
+      .m-wrap h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.85rem, 5.5vw, 3rem); font-weight: 700;
+        line-height: 1.12; letter-spacing: -0.025em;
+        color: #fff; margin: 0 0 1.5rem; text-align: center;
+      }
+      .m-wrap h1 .hl { color: var(--cl-blue-light); }
+
+      .m-sub {
+        text-align: center; color: #94a3b8; font-size: 1.1rem;
+        line-height: 1.6; max-width: 580px; margin: 0 auto 3.5rem;
+      }
+
+      .m-wrap h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem; color: #fff; margin: 3rem 0 1rem; font-weight: 700;
+      }
+
+      .m-wrap p { font-size: 1.05rem; line-height: 1.75; color: #cbd5e1; margin-bottom: 1.5rem; }
+      .m-wrap p strong { color: #f1f5f9; }
+
+      .principle {
+        background: var(--cl-navy-2); border: 1px solid #334155;
+        border-radius: 0.75rem; padding: 1.5rem; margin: 1.5rem 0;
+      }
+      .principle .num {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 28px; height: 28px; border-radius: 50%;
+        background: var(--cl-blue); color: #fff; font-weight: 800; font-size: 0.85rem;
+        margin-right: 0.75rem;
+      }
+      .principle h3 { display: inline; font-size: 1.1rem; color: #fff; font-weight: 700; }
+      .principle p { margin: 0.75rem 0 0; font-size: 0.95rem; color: #94a3b8; }
+
+      .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+      @media (max-width: 600px) { .vs-grid { grid-template-columns: 1fr; } }
+      .vs-col { background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem; padding: 1.25rem; }
+      .vs-col h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.75rem; font-weight: 700; }
+      .vs-col.old h4 { color: #fca5a5; }
+      .vs-col.new h4 { color: #4ade80; }
+      .vs-col p { font-size: 0.9rem; line-height: 1.55; color: #94a3b8; margin: 0; }
+
+      .rally {
+        text-align: center; margin: 3.5rem 0; padding: 2.5rem 1.5rem;
+        background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(59,130,246,0.05));
+        border-radius: 1rem; border: 1px solid rgba(37,99,235,0.2);
+      }
+      .rally p {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem; font-weight: 700; line-height: 1.4; color: #fff;
+        margin: 0 0 1.5rem;
+      }
+
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 1rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;
+      }
+      .btn-primary:hover { background: var(--cl-blue-light); }
+
+      .m-footer {
+        text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #475569;
+        border-top: 1px solid #1e293b;
+      }
+      .m-footer a { color: #64748b; text-decoration: none; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body id="main-content">
+    <nav class="m-nav">
+      <a href="/" class="logo">Churn Lens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/why">Founder Story</a>
+        <a href="/get-the-checklist" style="color: var(--cl-blue-light);">Get the Checklist &rarr;</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/manifesto">Manifesto</a>
+  <a href="/partners">Partners</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="m-wrap">
+      <div class="m-eyebrow">The Manifesto</div>
+      <h1>Every SaaS acquisition runs on <span class="hl">the seller's math.</span><br>It's time to run your own.</h1>
+      <p class="m-sub">
+        SaaS M&amp;A has an information asymmetry problem. The seller knows the data, computes the metrics,
+        and presents the summary. The buyer trusts. This manifesto is the line in the sand.
+      </p>
+
+      <h2>The Problem Nobody Talks About</h2>
+
+      <p>
+        When you buy a SaaS business, the seller hands you a CIM with a churn number. That number
+        is computed using methodology choices the seller made. Every choice &mdash; whether to include
+        downgrades, how to handle involuntary cancellations, which cohort to report &mdash; is legally
+        defensible. Every choice happens to make the number smaller.
+      </p>
+
+      <p>
+        <strong>80% of SaaS acquisitions overpay because of this gap.</strong> The average real churn
+        is 4.2x the reported number. On a $1M deal, that's $340K of evaporated value. The buyer never
+        sees it coming because the methodology choices are invisible in a summary metric.
+      </p>
+
+      <h2>The Old Opportunity vs. The New Opportunity</h2>
+
+      <div class="vs-grid">
+        <div class="vs-col old">
+          <h4>The Old Way</h4>
+          <p>Trust the seller's churn number. Use a 40-point DD checklist that covers legal, financial, and operational risk but not revenue durability methodology. Negotiate price based on the CIM. Discover the real churn 4 months post-close.</p>
+        </div>
+        <div class="vs-col new">
+          <h4>The Buyer-Side Way</h4>
+          <p>Demand the raw subscription CSV. Compute churn five ways yourself. Flag concentration risk, annual-plan exposure, and zombie MRR before you close. Negotiate from data the seller can't manipulate. Know what you're buying.</p>
+        </div>
+      </div>
+
+      <p>
+        This isn't an improvement on the old way. It's a <strong>completely different approach</strong>.
+        The old way asks "what does the seller report?" The new way asks "what does the raw data actually
+        show?" Those are fundamentally different questions with fundamentally different answers.
+      </p>
+
+      <h2>The Three Principles of Buyer-Side Due Diligence</h2>
+
+      <div class="principle">
+        <span class="num">1</span><h3>Raw Data Over Summaries</h3>
+        <p>A summary metric computed by the party selling you the business is not due diligence. It's marketing. The only churn number that matters is the one you compute from the raw subscription export &mdash; customer ID, MRR, plan, status, dates. No aggregations. No filters. The raw CSV.</p>
+      </div>
+
+      <div class="principle">
+        <span class="num">2</span><h3>Five Metrics Over One</h3>
+        <p>Logo churn alone is meaningless. Revenue churn alone is meaningless. You need both &mdash; plus net churn, gross churn, and cohort-adjusted churn &mdash; to see the full picture. When logo churn and revenue churn diverge, downgrades are hiding in the gap. One number can't show you that.</p>
+      </div>
+
+      <div class="principle">
+        <span class="num">3</span><h3>Detective Work Over Checklists</h3>
+        <p>A 40-point checklist that says "ask the seller for the churn rate" is not protection &mdash; it's theater. Real due diligence is forensic: you're looking for the methodology choices that flatter the number, not trusting the number itself. Churn Lens automates that forensic analysis so every buyer can do it in minutes.</p>
+      </div>
+
+      <div class="rally">
+        <p>"Demand the raw CSV. Compute your own churn.<br>Stop trusting seller math."</p>
+        <a href="/get-the-checklist" class="btn-primary">Join the buyer-side movement &rarr;</a>
+      </div>
+
+      <h2>What We're Building Toward</h2>
+
+      <p>
+        The long-term vision: a SaaS acquisition market where buyer-side churn analysis is the default,
+        not the exception. Where no buyer trusts a summary churn number. Where sellers know that any
+        methodology tricks will be caught in minutes by automated analysis. When that happens, the
+        information asymmetry closes. Deals get priced honestly. Buyers stop overpaying.
+      </p>
+
+      <p>
+        Churn Lens is the tool. The checklist is the entry point. The raw-data methodology is the principle.
+        And the movement is every acquirer who reads this and demands the CSV on their next deal.
+      </p>
+
+      <p style="text-align:center; margin-top: 3rem;">
+        <a href="/why" style="color: var(--cl-blue-light);">Read the $340K story that started this &rarr;</a>
+      </p>
+    </div>
+
+    <footer class="m-footer">
+      <p>&copy; 2026 Churn Lens &middot; <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/why">Founder Story</a> &middot; <a href="/get-the-checklist">Free Checklist</a></p>
+    </footer>
+
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r)}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

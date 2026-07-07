@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Pricing — SaaS Due Diligence | Churn Lens</title>
+    <meta name="description" content="Upload a subscription CSV and get a comprehensive buyer-side risk report. Free tier available. Premium plans for M&A advisors and serious acquirers.">
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/pricing" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/pricing" />
+    <meta property="og:title" content="Pricing — SaaS Due Diligence | Churn Lens" />
+    <meta property="og:description" content="Free analysis for indie acquirers. Premium for M&A advisors and serious dealmakers." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pricing | Churn Lens" />
+    <meta name="twitter:description" content="Free analysis for indie acquirers. Premium for M&A advisors." />
+
+    <link rel="preconnect" href="https://eu.i.posthog.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://churnlens.site/pricing"}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      :root {
+        --cl-navy: #0f172a;
+        --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb;
+        --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+        --cl-text: #e2e8f0;
+        --cl-text-muted: #94a3b8;
+        --cl-success: #22c55e;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: var(--cl-text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .pricing-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+      .pricing-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 1200px; margin: 0 auto;
+      }
+      .pricing-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .pricing-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .pricing-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .pricing-nav .nav-links a:hover { color: #fff; }
+
+      .pricing-header {
+        text-align: center; padding: 4rem 0 3rem;
+      }
+      .pricing-header h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem); font-weight: 700;
+        margin: 0 0 1rem; color: #fff;
+      }
+      .pricing-header p {
+        color: var(--cl-text-muted); font-size: 1.125rem; max-width: 600px; margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .tier-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem; padding: 0 0 4rem; align-items: start;
+      }
+
+      .tier-card {
+        background: var(--cl-navy-2); border: 1px solid var(--cl-border);
+        border-radius: 1rem; padding: 2rem;
+        display: flex; flex-direction: column;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .tier-card:hover { border-color: #475569; transform: translateY(-2px); }
+
+      .tier-card.featured {
+        border: 2px solid var(--cl-blue); position: relative;
+        box-shadow: 0 0 20px rgba(37,99,235,0.15);
+      }
+      .tier-card.featured .badge {
+        position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%);
+        background: var(--cl-blue); color: #fff; padding: 0.25rem 1rem;
+        border-radius: 999px; font-size: 0.75rem; font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .tier-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+      .tier-desc { color: var(--cl-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
+      .tier-price { margin-bottom: 1.5rem; }
+      .tier-price .amount { font-size: 2.5rem; font-weight: 800; color: #fff; }
+      .tier-price .period { color: var(--cl-text-muted); font-size: 0.9rem; }
+      .tier-price .hint { display: block; font-size: 0.8rem; color: #64748b; margin-top: 0.25rem; }
+
+      .tier-cta {
+        width: 100%; padding: 0.9rem 1.5rem; border-radius: 0.75rem; border: none;
+        font-size: 1rem; font-weight: 700; font-family: inherit; cursor: pointer;
+        text-align: center; text-decoration: none; display: block;
+        margin-bottom: 1.5rem; transition: background 0.2s;
+      }
+      .tier-cta.primary {
+        background: var(--cl-blue); color: #fff;
+      }
+      .tier-cta.primary:hover { background: var(--cl-blue-light); }
+      .tier-cta.secondary {
+        background: transparent; color: var(--cl-text); border: 1px solid #475569;
+      }
+      .tier-cta.secondary:hover { background: rgba(255,255,255,0.05); }
+
+      .tier-features { list-style: none; padding: 0; margin: 0; flex: 1; }
+      .tier-features li {
+        padding: 0.5rem 0; font-size: 0.9rem; color: #cbd5e1;
+        display: flex; gap: 0.5rem; align-items: flex-start;
+      }
+      .tier-features li .feat-icon { color: var(--cl-success); flex-shrink: 0; margin-top: 0.1rem; }
+      .tier-features li .feat-na { color: #475569; flex-shrink: 0; }
+
+      .tier-sub { font-size: 0.8rem; color: #64748b; margin-top: 0.25rem; }
+
+      /* One-time offer */
+      .one-time-offer {
+        max-width: 720px; margin: 0 auto 4rem;
+        background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(37,99,235,0.04));
+        border: 1px solid rgba(37,99,235,0.25);
+        border-radius: 1rem; padding: 2rem;
+        text-align: center;
+      }
+      .one-time-offer .oto-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--cl-blue), #1d4ed8);
+        color: #fff; padding: 0.3rem 1rem; border-radius: 999px;
+        font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.06em; margin-bottom: 1rem;
+      }
+      .one-time-offer h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.25rem; font-weight: 700; color: #fff;
+        margin: 0 0 0.75rem;
+      }
+      .one-time-offer p {
+        color: #94a3b8; font-size: 0.95rem; line-height: 1.6;
+        max-width: 580px; margin: 0 auto 1.5rem;
+      }
+      .one-time-offer .oto-cta {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 0.9rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem;
+        text-decoration: none; transition: background 0.2s, transform 0.1s;
+      }
+      .one-time-offer .oto-cta:hover { background: var(--cl-blue-light); transform: translateY(-1px); }
+      .one-time-offer .oto-note {
+        font-size: 0.78rem; color: #64748b; margin-top: 1rem;
+      }
+
+      .faq-section {
+        max-width: 720px; margin: 0 auto; padding: 3rem 0;
+      }
+      .faq-section h2 { font-family: 'Space Grotesk', sans-serif; text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.5rem; }
+      .faq-item { border-bottom: 1px solid #1e293b; padding: 1rem 0; }
+      .faq-q { font-weight: 600; color: #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+      .faq-q::after { content: '+'; color: var(--cl-text-muted); font-size: 1.2rem; }
+      .faq-q.open::after { content: '−'; }
+      .faq-a { display: none; padding-top: 0.75rem; color: var(--cl-text-muted); line-height: 1.6; font-size: 0.9rem; }
+      .faq-a.open { display: block; }
+
+      .pricing-footer {
+        text-align: center; padding: 2rem 0; border-top: 1px solid #1e293b;
+        font-size: 0.8rem; color: #475569;
+      }
+      .pricing-footer a { color: #64748b; text-decoration: none; }
+
+      @media (min-width: 900px) {
+        .tier-grid { grid-template-columns: 1fr 1fr 1fr; }
+      }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body id="main-content">
+    <nav class="pricing-nav">
+      <a href="/" class="logo">Churn Lens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/get-the-checklist">Free Checklist</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/manifesto">Manifesto</a>
+  <a href="/partners">Partners</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+    <div class="pricing-wrap">
+      <div class="pricing-header">
+        <h1>Choose your analysis tier</h1>
+        <p>Free for indie acquirers. Premium for M&A advisors running 5+ deals per year. Every tier includes logo churn, revenue churn, concentration risk, and revenue quality scoring.</p>
+      </div>
+
+      <div class="tier-grid">
+        <!-- Tier 1: Free (Squeeze / Lead Magnet) -->
+        <div class="tier-card cl-reveal" data-delay="1">
+          <div class="tier-name">Starter</div>
+          <div class="tier-desc">One-off due diligence. Just the numbers.</div>
+          <div class="tier-price">
+            <span class="amount">$0</span>
+            <span class="period"></span>
+            <span class="hint">No credit card required</span>
+          </div>
+          <a href="/get-the-checklist" class="tier-cta primary">Get the free checklist &rarr;</a>
+          <ul class="tier-features">
+            <li><span class="feat-icon">✓</span> Upload 1 CSV per month</li>
+            <li><span class="feat-icon">✓</span> Logo churn + revenue churn</li>
+            <li><span class="feat-icon">✓</span> Customer concentration risk flag</li>
+            <li><span class="feat-icon">✓</span> Revenue quality score</li>
+            <li><span class="feat-icon">✓</span> Annual-plan churn risk</li>
+            <li><span class="feat-icon">✓</span> Standard risk report (PDF)</li>
+            <li><span class="feat-na">—</span> Inactive paid accounts detection</li>
+            <li><span class="feat-na">—</span> Cohort trend analysis</li>
+            <li><span class="feat-na">—</span> Excel-format raw output</li>
+          </ul>
+        </div>
+
+        <!-- Tier 2: Featured — Pro ($49/mo) -->
+        <div class="tier-card featured cl-reveal" data-delay="2">
+          <div class="badge">MOST POPULAR</div>
+          <div class="tier-name">Pro</div>
+          <div class="tier-desc">For serious acquirers doing 1-3 deals. All the data.</div>
+          <div class="tier-price">
+            <span class="amount">$49</span>
+            <span class="period">/month</span>
+            <span class="hint">or $499/year (save 15%)</span>
+          </div>
+          <a href="mailto:sales@churnlens.site?subject=Churn%20Lens%20Pro%20plan" class="tier-cta primary">Start Pro &rarr;</a>
+          <ul class="tier-features">
+            <li><span class="feat-icon">✓</span> Upload 10 CSVs per month</li>
+            <li><span class="feat-icon">✓</span> Everything in Starter</li>
+            <li><span class="feat-icon">✓</span> Inactive paid accounts detection</li>
+            <li><span class="feat-icon">✓</span> Annual-plan decay projection</li>
+            <li><span class="feat-icon">✓</span> MRR decline trajectory analysis</li>
+            <li><span class="feat-icon">✓</span> Cohort trend analysis (6 periods)</li>
+            <li><span class="feat-icon">✓</span> Benchmark comparison (by industry)</li>
+            <li><span class="feat-icon">✓</span> Excel + PDF export</li>
+            <li><span class="feat-icon">✓</span> Priority email support</li>
+          </ul>
+        </div>
+
+        <!-- Tier 3: Premium ($199/mo) -->
+        <div class="tier-card cl-reveal" data-delay="3">
+          <div class="tier-name">Dealmaker</div>
+          <div class="tier-desc">For M&A advisors, search funds, and serious portfolio acquirers.</div>
+          <div class="tier-price">
+            <span class="amount">$199</span>
+            <span class="period">/month</span>
+            <span class="hint">or $1,999/year (save 16%)</span>
+          </div>
+          <a href="mailto:sales@churnlens.site?subject=Churn%20Lens%20Dealmaker%20plan" class="tier-cta secondary">Contact us &rarr;</a>
+          <ul class="tier-features">
+            <li><span class="feat-icon">✓</span> Unlimited CSV uploads</li>
+            <li><span class="feat-icon">✓</span> Everything in Pro</li>
+            <li><span class="feat-icon">✓</span> Cohort trend analysis (12+ periods)</li>
+            <li><span class="feat-icon">✓</span> Multi-target comparison dashboard</li>
+            <li><span class="feat-icon">✓</span> API access for automated pipeline</li>
+            <li><span class="feat-icon">✓</span> White-label report branding</li>
+            <li><span class="feat-icon">✓</span> Dedicated Slack support</li>
+            <li><span class="feat-icon">✓</span> Deal flow tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ONE-TIME OFFER -->
+      <div class="one-time-offer cl-reveal">
+        <div class="oto-badge">&#9733; ONE-TIME OFFER</div>
+        <h3>Need to run ONE analysis right now?</h3>
+        <p>Get the Pro report for <strong style="color:#fff;">$9</strong> (one-time, no subscription) &mdash; upload a single CSV, get the full report, keep the PDF forever.</p>
+        <a href="mailto:sales@churnlens.site?subject=One-time%20Pro%20Report%20%249" class="oto-cta">Run my first analysis for $9 &rarr;</a>
+        <div class="oto-note">Instant access. No recurring charges. You keep the report forever.</div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section cl-reveal">
+        <h2>Pricing FAQ</h2>
+        <div class="faq-item">
+          <div class="faq-q">What kind of CSV do I need?</div>
+          <div class="faq-a">A standard subscription export: columns for customer ID, MRR, plan type, signup date, and status. We accept any format and map fields automatically. See <a href="/saas-revenue-churn-calculator" style="color: var(--cl-blue-light);">our guide</a> for exactly what to ask the seller for.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I cancel anytime?</div>
+          <div class="faq-a">Yes. Monthly plans cancel instantly. No contracts, no exit fees. You keep access to any reports generated during your billing period.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is my data secure?</div>
+          <div class="faq-a">We never store your raw subscription data beyond the analysis. Reports are generated in-memory and you can delete any saved report at any time. Full SOC 2 audit pending Q4 2026.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I don't know how to read a churn report?</div>
+          <div class="faq-a">Every report comes with an executive summary in plain English: "This deal is a buy / this deal needs a discount / this deal is a pass." The benchmark comparison tells you how the target compares against industry peers. You don't need to be a churn expert to use Churn Lens.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What payment methods do you accept?</div>
+          <div class="faq-a">For Pro and Dealmaker plans, we can invoice via Stripe (credit card, ACH) or wire transfer for annual enterprise commitments.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pricing-footer">
+      <p>&copy; 2026 Churn Lens &middot; <a href="/">Home</a> &middot; <a href="/get-the-checklist">Free Checklist</a> &middot; <a href="/saas-churn-rate-benchmarks">Benchmarks</a></p>
+    </footer>
+
+    <script>
+    (function() {
+      document.querySelectorAll('.faq-q').forEach(function(q) {
+        q.addEventListener('click', function() {
+          var answer = this.nextElementSibling;
+          this.classList.toggle('open');
+          answer.classList.toggle('open');
+        });
+      });
+    })();
+    </script>
+
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r)}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection | Churn Lens</title>
+    <meta name="description" content="How to detect MRR decline and revenue decay in SaaS acquisition targets. Free tool analyzes trailing 12-month MRR trends, contraction rates, and churn-adjusted projections." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/saas-mrr-decline-analysis" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/saas-mrr-decline-analysis" />
+    <meta property="og:title" content="SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection" />
+    <meta property="og:description" content="Detect MRR decline and revenue decay early. Churn Lens computes trailing 12-month trends, contraction rates, and churn-adjusted revenue forecasts from raw subscription data." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS MRR Decline Analysis" />
+    <meta name="twitter:description" content="Detect MRR decline and revenue decay early." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <meta property="article:published_time" content="2026-07-06T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-07-06T00:00:00+00:00" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "SaaS MRR Decline Analysis", "item": "https://churnlens.site/saas-mrr-decline-analysis"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SaaS MRR Decline Analysis",
+      "description": "How to detect MRR decline and revenue decay in SaaS acquisition targets. Free tool analyzes trailing 12-month MRR trends, contraction rates, and churn-adjusted projections.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/saas-mrr-decline-analysis"}
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      .page-header {
+        background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%));
+        color: white;
+        padding: 4rem 0;
+      }
+      .page-header h1 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 2.75rem; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+      .page-header p { font-size: 1.125rem; color: hsl(215 20% 65%); max-width: 680px; }
+      .decay-signal { background: hsl(0 84% 60% / 0.06); border-left: 4px solid hsl(0 84% 60%); padding: 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+    <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
+      <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:hsl(222 47% 11%);">Churn Lens</a>
+      <a href="/" style="font-size:0.875rem;color:hsl(221 83% 53%);text-decoration:none;font-weight:500;">&larr; Back to App</a>
+    </nav>
+  <!-- CL Mobile Nav Elements (light theme) -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<div class="cl-progress"></div>
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>SaaS MRR Decline Analysis</h1>
+        <p>Revenue decay is the #1 hidden risk in SaaS acquisitions. Learn how to detect it, measure it, and price it into your offer — or walk away before you overpay.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding:3rem 2rem;">
+      <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
+        <p class="lead">MRR is the vital sign of any SaaS business. But a flat or even growing MRR can mask alarming underlying decay. Churn Lens analyzes trailing 12 months of subscription data to reveal the real revenue trajectory — with and without new sales.</p>
+
+        <h2>The Three Types of Revenue Decay</h2>
+
+        <h3>1. Absolute Decay (Flat or Declining MRR)</h3>
+        <p>MRR that's flat for 6+ months with no seasonal explanation is the most obvious decay signal. But even "growing" MRR can be decaying — see #3 below.</p>
+
+        <h3>2. Cohort-Based Decay (Worsening Retention)</h3>
+        <p>Newer customer cohorts that churn faster than older cohorts indicate product-market fit erosion, onboarding degradation, or competitive pressure. This is a leading indicator &mdash; it shows up 6&ndash;12 months before MRR starts dropping.</p>
+
+        <h3>3. Growth-Masked Decay (The Silent Killer)</h3>
+        <p>The most dangerous form of decay. Gross churn runs at 5% monthly, but new sales at 7% monthly makes MRR look like it's growing 2%. The business is actually a leaky bucket that runs on a treadmill: stop adding new customers and the revenue collapses. Churn Lens computes the "organic MRR" &mdash; the MRR you'd have without any new sales &mdash; to expose this.</p>
+
+        <div class="decay-signal">
+          <strong>Real case from Churn Lens:</strong> A $2.1M ARR target showed 3% month-over-month MRR growth. Churn Lens computed organic MRR: the company was losing 4.2% of revenue every month to churn and contraction. Without $73K/month in new sales, the business would lose half its revenue in 14 months. The buyer re-priced the deal with a 2.1× multiple instead of 4.5×.
+        </div>
+
+        <h2>Decay Metrics Churn Lens Computes</h2>
+        <ul>
+          <li><strong>Trailing 12-month MRR trend</strong> — month-by-month MRR with linear regression slope, presented in a visual chart</li>
+          <li><strong>Organic MRR projection</strong> — what MRR would be in 12 months without new sales, computed from current churn and contraction rates</li>
+          <li><strong>Contraction rate</strong> — revenue lost to downgrades and plan reductions, expressed as a percentage of starting MRR</li>
+          <li><strong>Cohort retention curves</strong> — retention rate by acquisition cohort (quarterly), with trend line</li>
+          <li><strong>Churn-adjusted multiple</strong> — the real acquisition multiple when you discount for expected revenue decay post-close</li>
+        </ul>
+
+        <h2>When to Walk Away</h2>
+        <p>These decay signals should trigger a hard pause:</p>
+        <ul>
+          <li><strong>Organic MRR declines &gt;20% year-over-year</strong> — the business is structurally shrinking and new sales can't keep pace</li>
+          <li><strong>Cohort retention is worsening for 4+ consecutive quarters</strong> — this is a structural product/market problem, not a seasonal blip</li>
+          <li><strong>Contraction rate exceeds expansion rate</strong> — more revenue is lost to downgrades than gained from upsells</li>
+          <li><strong>Growth-masked decay &gt;60% of gross churn</strong> — the business is a treadmill, not an asset</li>
+        </ul>
+
+        <div style="margin:3rem 0;padding:2rem;background:hsl(221 83% 53% / 0.06);border-radius:0.75rem;border:1px solid hsl(221 83% 53% / 0.15);">
+          <h3 style="margin-top:0;font-size:1.125rem;font-weight:600;">Analyze revenue decay on your next deal</h3>
+          <p style="margin-bottom:1rem;">Upload the target's subscription CSV and Churn Lens will compute the organic MRR, decay projection, and churn-adjusted valuation multiple automatically.</p>
+          <a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:hsl(221 83% 53%);color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9375rem;">Analyze a CSV &rarr;</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul>
+          <li><a href="/saas-churn-rate-benchmarks">SaaS Churn Rate Benchmarks by Industry</a></li>
+          <li><a href="/saas-due-diligence-checklist">Complete SaaS Due Diligence Checklist</a></li>
+          <li><a href="/hidden-churn-saas-acquisition">Hidden Churn: What Sellers Don't Tell You</a></li>
+          <li><a href="/saas-revenue-quality-score">SaaS Revenue Quality Score: Beyond Raw MRR</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div style="max-width:720px;margin:3rem auto;padding:2rem;background:#0f172a;border:1px solid #334155;border-radius:12px;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.15rem;margin:0 0 0.75rem;">Get the free 23-point churn audit checklist</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;">Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.</p>
+      <a href="/get-the-checklist" class="btn btn-primary" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Get the free checklist &rarr;</a>
+    </div>
+
+
+<footer style="border-top:1px solid hsl(var(--border));padding:2rem;text-align:center;font-size:0.8125rem;color:hsl(var(--muted-foreground));">
+      <p>&copy; 2026 Churn Lens. Buyer-side SaaS due diligence, powered by your data.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="/" style="color:hsl(221 83% 53%);text-decoration:none;">Home</a> &middot;
+        <a href="/saas-churn-rate-benchmarks" style="color:hsl(221 83% 53%);text-decoration:none;">Churn Benchmarks</a> &middot;
+        <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">DD Checklist</a> &middot;
+        <a href="/get-the-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Free Checklist</a> &middot;
+        <a href="/pricing" style="color:hsl(221 83% 53%);text-decoration:none;">Pricing</a>
+      </p>
+    </footer>
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

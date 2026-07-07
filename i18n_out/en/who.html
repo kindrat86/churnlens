@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Who is Churn Lens For? The SaaS Acquirer's Dream Customer Profile | Churn Lens</title>
+    <meta name="description" content="Churn Lens is built for one specific person: the indie SaaS acquirer evaluating a $500K-$5M deal who knows they can't trust the seller's churn number.">
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/who" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/who" />
+    <meta property="og:title" content="Who is Churn Lens For?" />
+    <meta property="og:description" content="One specific buyer persona drives every decision at Churn Lens. Here's who." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Dream Customer", "item": "https://churnlens.site/who"}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      :root {
+        --cl-navy: #0f172a; --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb; --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+      .w-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+      .w-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto;
+      }
+      .w-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .w-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .w-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .w-nav .nav-links a:hover { color: #fff; }
+
+      .w-hero { text-align: center; padding: 4rem 0 3rem; }
+      .w-hero h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700;
+        margin: 0 auto 1rem; max-width: 750px; color: #fff; line-height: 1.15;
+      }
+      .w-hero h1 .hl { color: var(--cl-blue-light); }
+      .w-hero .sub { color: #94a3b8; font-size: 1.05rem; max-width: 580px; margin: 0 auto; line-height: 1.6; }
+
+      .persona-card {
+        background: var(--cl-navy-2); border: 1px solid var(--cl-border); border-radius: 1rem;
+        padding: 2rem; margin: 2rem 0;
+      }
+      .persona-card h2 { font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 1.3rem; margin-bottom: 0.25rem; }
+      .persona-card .tagline { color: var(--cl-blue-light); font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
+
+      .trait-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1rem; }
+      .trait { padding: 1rem; background: rgba(15,23,42,0.5); border-radius: 0.6rem; border: 1px solid rgba(51,65,85,0.3); }
+      .trait .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 700; }
+      .trait .value { color: #e2e8f0; font-size: 0.95rem; margin-top: 0.25rem; }
+
+      .fears-list, .desires-list { margin: 1.5rem 0; }
+      .fears-list li, .desires-list li { padding: 0.5rem 0; color: #cbd5e1; line-height: 1.5; }
+      .fears-list li::marker { color: #ef4444; }
+      .desires-list li::marker { color: #22c55e; }
+
+      .avatars { margin: 3rem 0; }
+      .avatars h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 1.5rem; }
+      .avatars h2 .hl { color: var(--cl-blue-light); }
+      .avatar-card {
+        background: var(--cl-navy-2); border: 1px solid var(--cl-border); border-radius: 0.75rem;
+        padding: 1.5rem; margin-bottom: 1rem;
+      }
+      .avatar-card .name { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+      .avatar-card .role { color: var(--cl-blue-light); font-size: 0.85rem; font-weight: 600; }
+      .avatar-card .quote { color: #94a3b8; font-style: italic; margin: 0.75rem 0; padding-left: 1rem; border-left: 2px solid var(--cl-border); }
+      .avatar-card .match { font-size: 0.85rem; color: #64748b; }
+
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 1rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover { background: var(--cl-blue-light); }
+
+      .w-footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #475569; border-top: 1px solid #1e293b; }
+      .w-footer a { color: #64748b; text-decoration: none; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body id="main-content">
+    <nav class="w-nav">
+      <a href="/" class="logo">Churn Lens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/why">Founder Story</a>
+        <a href="/partners">Partners</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/manifesto">Manifesto</a>
+  <a href="/partners">Partners</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="w-wrap">
+      <section class="w-hero">
+        <h1>Churn Lens is built for <span class="hl">one person.</span></h1>
+        <p class="sub">Not "SaaS buyers." Not "M&A professionals." One specific person with a name, a role, a fear, and a next deal on their mind. Here's who.</p>
+      </section>
+
+      <div class="persona-card">
+        <h2>Alex, 38</h2>
+        <div class="tagline">Indie SaaS Acquirer &bull; $500K&ndash;$5M deal range</div>
+        <p style="color:#94a3b8; line-height:1.6; margin-bottom:1.5rem;">
+          Alex has bought two SaaS businesses before. The first one worked out. The second one had "2.3% reported churn" that turned out to be 9.4% — a $340K mistake they caught too late. Now they know: <strong style="color:#e2e8f0;">the seller's churn number isn't the truth, it's a negotiation starting point.</strong>
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+          <div>
+            <h3 style="color:#fca5a5; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.75rem;">5 Fears</h3>
+            <ul class="fears-list" style="list-style-type:disc; padding-left:1.25rem;">
+              <li><strong style="color:#e2e8f0;">Overpaying by 6 figures</strong> because they trusted a seller-computed metric</li>
+              <li><strong style="color:#e2e8f0;">Buying a dying SaaS</strong> where flat MRR masks declining cohorts</li>
+              <li><strong style="color:#e2e8f0;">Discovering churn after close</strong> when there's no recourse</li>
+              <li><strong style="color:#e2e8f0;">Missing concentration risk</strong> — 3 customers = 60% of MRR</li>
+              <li><strong style="color:#e2e8f0;">Looking foolish</strong> to investors or partners for missing what was in the data</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="color:#4ade80; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.75rem;">5 Desires</h3>
+            <ul class="desires-list" style="list-style-type:disc; padding-left:1.25rem;">
+              <li><strong style="color:#e2e8f0;">Confidence in the number</strong> — raw-data analysis, not seller summaries</li>
+              <li><strong style="color:#e2e8f0;">A repeatable process</strong> for evaluating any SaaS deal in hours</li>
+              <li><strong style="color:#e2e8f0;">Negotiation leverage</strong> — real churn data to push the price down</li>
+              <li><strong style="color:#e2e8f0;">Revenue quality signal</strong> — is this MRR durable or fragile?</li>
+              <li><strong style="color:#e2e8f0;">Speed</strong> — analysis in minutes, not a week of spreadsheet work</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <section class="avatars">
+        <h2>Three faces of the <span class="hl">same buyer</span></h2>
+
+        <div class="avatar-card">
+          <div class="name">Marc — The Solo Acquirer</div>
+          <div class="role">Full-time professional, evaluating his first SaaS acquisition</div>
+          <div class="quote">"I have the cash and the conviction, but I don't have a finance team. I need a tool that does the deep-dive analysis for me."</div>
+          <div class="match">Churn Lens fit: High. Alex's story (the $340K gap) is exactly what Marc needs to hear to justify buying a tool before his first deal.</div>
+        </div>
+
+        <div class="avatar-card">
+          <div class="name">Priya — The Micro PE Operator</div>
+          <div class="role">Run a small holding company, evaluates 3-5 SaaS deals per year</div>
+          <div class="quote">"I've been burned by seller math before. Now I want a standardized tool every deal runs through — no exceptions."</div>
+          <div class="match">Churn Lens fit: Very high. Recurring usage, dealflow pipeline. Needs the paid tiers for volume analysis.</div>
+        </div>
+
+        <div class="avatar-card">
+          <div class="name">David — The M&A Advisor</div>
+          <div class="role">Advises clients on SaaS acquisitions, needs buyer-side analysis in his toolkit</div>
+          <div class="quote">"My clients ask me to verify the seller's churn claim. I need a professional-grade tool I can put my name behind."</div>
+          <div class="match">Churn Lens fit: High. White-label potential. Needs the professional plan for multiple concurrent analyses.</div>
+        </div>
+      </section>
+
+      <section style="text-align:center; padding: 2rem 0 3rem;">
+        <p style="color:#94a3b8; margin-bottom:1.5rem;">You fit one of these avatars? Then Churn Lens was built for you.</p>
+        <a href="/get-the-checklist" class="btn-primary">Start with the free checklist &rarr;</a>
+      </section>
+    </div>
+
+    <footer class="w-footer">
+      <p>&copy; 2026 Churn Lens &middot; <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/partners">Partner Program</a></p>
+    </footer>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

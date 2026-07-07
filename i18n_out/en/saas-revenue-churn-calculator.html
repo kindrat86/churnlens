@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>SaaS Revenue Churn Calculator — Free Online Tool | Churn Lens</title>
+    <meta name="description" content="Free SaaS revenue churn calculator. Compute monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR from your subscription data." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/saas-revenue-churn-calculator" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/saas-revenue-churn-calculator" />
+    <meta property="og:title" content="SaaS Revenue Churn Calculator — Free Online Tool" />
+    <meta property="og:description" content="Compute monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR. Free, no signup." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS Revenue Churn Calculator" />
+    <meta name="twitter:description" content="Free SaaS churn rate calculator." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <meta property="article:published_time" content="2026-07-06T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-07-06T00:00:00+00:00" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "SaaS Revenue Churn Calculator", "item": "https://churnlens.site/saas-revenue-churn-calculator"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SaaS Revenue Churn Calculator",
+      "description": "Free SaaS revenue churn calculator. Compute monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR from your subscription data.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/saas-revenue-churn-calculator"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How do you calculate monthly logo churn rate?", "acceptedAnswer": {"@type": "Answer", "text": "Monthly Logo Churn Rate = Canceled customers / Starting customers. It measures the percentage of customers who cancel in a given month."}},
+        {"@type": "Question", "name": "How do you calculate monthly revenue churn rate?", "acceptedAnswer": {"@type": "Answer", "text": "Monthly Revenue Churn Rate = MRR Lost / Starting MRR. It includes revenue from canceled subscriptions plus downgrades divided by starting MRR."}},
+        {"@type": "Question", "name": "How do you calculate annual churn rate?", "acceptedAnswer": {"@type": "Answer", "text": "Annual Churn Rate = 1 - (1 - monthly churn rate)^12. This compounds the monthly churn rate over 12 months."}},
+        {"@type": "Question", "name": "How do you calculate Net Revenue Retention (NRR)?", "acceptedAnswer": {"@type": "Answer", "text": "NRR = (Starting MRR + Expansion - Churn - Contraction) / Starting MRR. An NRR above 100% means the existing customer base is growing organically."}},
+        {"@type": "Question", "name": "How do you calculate Gross Revenue Retention (GRR)?", "acceptedAnswer": {"@type": "Answer", "text": "GRR = (Starting MRR - Churn - Contraction) / Starting MRR. It measures revenue retained excluding expansion revenue. GRR is always less than or equal to NRR."}},
+        {"@type": "Question", "name": "How do you calculate churn-adjusted MRR?", "acceptedAnswer": {"@type": "Answer", "text": "Churn-Adjusted MRR = MRR * (1 - monthly churn rate)^12. It shows what MRR would look like in 12 months without any new sales — a critical buyer-side metric."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      .page-header { background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%)); color: white; padding: 4rem 0; }
+      .page-header h1 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 2.75rem; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+      .page-header p { font-size: 1.125rem; color: hsl(215 20% 65%); max-width: 680px; }
+      .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+      .calc-card { background: white; border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.5rem; text-align: center; }
+      .calc-card .formula { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+      .calc-card .result { font-size: 2rem; font-weight: 700; color: hsl(221 83% 53%); }
+      .calc-card .desc { font-size: 0.8125rem; color: hsl(var(--muted-foreground)); }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+    <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
+      <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:hsl(222 47% 11%);">Churn Lens</a>
+      <a href="/" style="font-size:0.875rem;color:hsl(221 83% 53%);text-decoration:none;font-weight:500;">&larr; Back to App</a>
+    </nav>
+  <!-- CL Mobile Nav Elements (light theme) -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<div class="cl-progress"></div>
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>SaaS Revenue Churn Calculator</h1>
+        <p>The formulas every buyer should know &mdash; monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR. Plus the fastest way to compute them: upload a CSV to Churn Lens.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding:3rem 2rem;">
+      <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
+        <p class="lead">Every SaaS buyer should know how to calculate churn from raw data. These are the formulas we use at Churn Lens &mdash; and why each one matters in a deal evaluation.</p>
+
+        <h2>Core Churn Formulas</h2>
+
+        <div class="calc-grid">
+          <div class="calc-card">
+            <div class="formula">Monthly Logo Churn Rate</div>
+            <div class="result">Canceled / Starting Customers</div>
+            <div class="desc">Customers who canceled this month / customers at start of month</div>
+          </div>
+          <div class="calc-card">
+            <div class="formula">Monthly Revenue Churn Rate</div>
+            <div class="result">MRR Lost / Starting MRR</div>
+            <div class="desc">Revenue from canceled + downgraded / starting MRR</div>
+          </div>
+          <div class="calc-card">
+            <div class="formula">Annual Churn Rate</div>
+            <div class="result">1 - (1 - monthly)&sup1;&sup2;</div>
+            <div class="desc">Compound monthly churn over 12 months</div>
+          </div>
+          <div class="calc-card">
+            <div class="formula">Net Revenue Retention (NRR)</div>
+            <div class="result">(Start + Expansion - Churn) / Start</div>
+            <div class="desc">Growth from existing customers. &gt;100% = organic growth</div>
+          </div>
+          <div class="calc-card">
+            <div class="formula">Gross Revenue Retention (GRR)</div>
+            <div class="result">(Start - Churn - Contraction) / Start</div>
+            <div class="desc">Revenue retained excluding expansion. Always ≤ NRR</div>
+          </div>
+          <div class="calc-card">
+            <div class="formula">Churn-Adjusted MRR</div>
+            <div class="result">MRR &times; (1 - churn)&sup1;&sup2;</div>
+            <div class="desc">What MRR looks like in 12 months without new sales</div>
+          </div>
+        </div>
+
+        <h2>Example Calculation</h2>
+        <p>Here's a real-world walkthrough using the formulas above.</p>
+        <p><strong>Jan 2026 snapshot:</strong></p>
+        <ul>
+          <li>Starting customers: 200</li>
+          <li>Starting MRR: $50,000</li>
+          <li>Customers canceled: 8</li>
+          <li>MRR from canceled: $2,800</li>
+          <li>MRR lost to downgrades: $1,200</li>
+          <li>MRR gained from upgrades: $1,500</li>
+        </ul>
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li><strong>Monthly logo churn:</strong> 8/200 = 4%</li>
+          <li><strong>Monthly revenue churn:</strong> ($2,800 + $1,200) / $50,000 = 8%</li>
+          <li><strong>NRR:</strong> ($50,000 + $1,500 - $2,800 - $1,200) / $50,000 = 95%</li>
+          <li><strong>Annualized logo churn:</strong> 1 - (1 - 0.04)&sup1;&sup2; = 39%</li>
+          <li><strong>Churn-adjusted MRR (12mo):</strong> $50,000 &times; (1 - 0.04)&sup1;&sup2; = $30,544</li>
+        </ul>
+
+        <div class="decay-signal" style="background:hsl(0 84% 60% / 0.06);border-left:4px solid hsl(0 84% 60%);padding:1.25rem;border-radius:0.5rem;margin:1.5rem 0;">
+          <strong>Key insight:</strong> The seller would probably quote "4% monthly churn" and "95% NRR." Both are true. But the revenue churn is 8% &mdash; double the logo churn &mdash; because the customers who left were higher-value than average. This is a concentration-quality problem that Churn Lens flags automatically.
+        </div>
+
+        <h2>Why DIY Calculation Is Error-Prone</h2>
+        <p>Manual churn calculation is prone to six classes of errors that systematically favor the seller:</p>
+        <ul>
+          <li>Counting customers vs. subscriptions incorrectly (multi-plan customers)</li>
+          <li>Mis-handling partial-month subscriptions</li>
+          <li>Excluding trial-to-paid failures</li>
+          <li>Not normalizing for seasonality</li>
+          <li>Double-counting reactivations as new customers</li>
+          <li>Mistaking gross for net churn</li>
+        </ul>
+        <p>Churn Lens handles all six automatically from a raw CSV. No formulas to maintain, no spreadsheets to break.</p>
+
+        <div style="margin:3rem 0;padding:2rem;background:hsl(221 83% 53% / 0.06);border-radius:0.75rem;border:1px solid hsl(221 83% 53% / 0.15);">
+          <h3 style="margin-top:0;font-size:1.125rem;font-weight:600;">Let Churn Lens do the math</h3>
+          <p style="margin-bottom:1rem;">Upload a subscription CSV and get all churn metrics computed automatically: logo churn, revenue churn, NRR, annualized rates, and the churn-adjusted MRR projection.</p>
+          <a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:hsl(221 83% 53%);color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9375rem;">Upload & Calculate &rarr;</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul>
+          <li><a href="/saas-churn-rate-benchmarks">SaaS Churn Rate Benchmarks by Industry</a></li>
+          <li><a href="/saas-due-diligence-checklist">Complete SaaS Due Diligence Checklist</a></li>
+          <li><a href="/logo-retention-churn">Logo Retention vs. Revenue Churn: What Buyers Miss</a></li>
+          <li><a href="/saas-buyer-risk-assessment">Buyer-Side Risk Assessment Tool</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div style="max-width:720px;margin:3rem auto;padding:2rem;background:#0f172a;border:1px solid #334155;border-radius:12px;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.15rem;margin:0 0 0.75rem;">Get the free 23-point churn audit checklist</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;">Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.</p>
+      <a href="/get-the-checklist" class="btn btn-primary" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Get the free checklist &rarr;</a>
+    </div>
+
+    <!-- Inline CTA Upgrade -->
+    <div style="max-width:720px;margin:3rem auto;padding:1.5rem;background:var(--cl-navy-2,#1e293b);border:1px solid var(--cl-border,#334155);border-radius:0.75rem;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.1rem;margin:0 0 0.75rem;font-weight:700;">Ready to automate this?</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;max-width:500px;margin-left:auto;margin-right:auto;">Get the 23-point buyer-side churn audit checklist and see exactly what to demand from any seller's subscription data.</p>
+      <a href="/get-the-checklist" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Want to automate this analysis? Get the 23-point churn audit checklist &rarr;</a>
+    </div>
+
+<footer style="border-top:1px solid hsl(var(--border));padding:2rem;text-align:center;font-size:0.8125rem;color:hsl(var(--muted-foreground));">
+      <p>&copy; 2026 Churn Lens. Buyer-side SaaS due diligence, powered by your data.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="/" style="color:hsl(221 83% 53%);text-decoration:none;">Home</a> &middot;
+        <a href="/saas-churn-rate-benchmarks" style="color:hsl(221 83% 53%);text-decoration:none;">Churn Benchmarks</a> &middot;
+        <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">DD Checklist</a> &middot;
+        <a href="/get-the-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Free Checklist</a> &middot;
+        <a href="/pricing" style="color:hsl(221 83% 53%);text-decoration:none;">Pricing</a>
+      </p>
+    </footer>
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

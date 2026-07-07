@@ -1,0 +1,20 @@
+{
+  "plain_0": "SaaS M&amp;A has an information asymmetry problem. The seller knows the data, computes the metrics,",
+  "plain_1": "and presents the summary. The buyer trusts. This manifesto is the line in the sand.",
+  "plain_2": "When you buy a SaaS business, the seller hands you a CIM with a churn number. That number",
+  "plain_3": "is computed using methodology choices the seller made. Every choice &mdash; whether to include",
+  "plain_4": "downgrades, how to handle involuntary cancellations, which cohort to report &mdash; is legally",
+  "plain_5": "defensible. Every choice happens to make the number smaller.",
+  "text_6": "80% of SaaS acquisitions overpay because of this gap. The average real churn",
+  "plain_7": "is 4.2x the reported number. On a $1M deal, that's $340K of evaporated value. The buyer never",
+  "plain_8": "sees it coming because the methodology choices are invisible in a summary metric.",
+  "text_9": "This isn't an improvement on the old way. It's a completely different approach.",
+  "plain_10": "The old way asks \"what does the seller report?\" The new way asks \"what does the raw data actually",
+  "plain_11": "show?\" Those are fundamentally different questions with fundamentally different answers.",
+  "plain_12": "The long-term vision: a SaaS acquisition market where buyer-side churn analysis is the default,",
+  "plain_13": "not the exception. Where no buyer trusts a summary churn number. Where sellers know that any",
+  "plain_14": "methodology tricks will be caught in minutes by automated analysis. When that happens, the",
+  "plain_15": "information asymmetry closes. Deals get priced honestly. Buyers stop overpaying.",
+  "plain_16": "Churn Lens is the tool. The checklist is the entry point. The raw-data methodology is the principle.",
+  "plain_17": "And the movement is every acquirer who reads this and demands the CSV on their next deal."
+}

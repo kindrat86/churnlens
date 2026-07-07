@@ -1,0 +1,623 @@
+/* ============================================================
+   Churn Lens — UI/UX Enhancement System
+   Progressive enhancement layer for all pages.
+   Loaded after page-specific <style> blocks.
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --cl-blue: #2563eb;
+  --cl-blue-light: #3b82f6;
+  --cl-blue-glow: rgba(37, 99, 235, 0.25);
+  --cl-navy: #0f172a;
+  --cl-navy-2: #1e293b;
+  --cl-border: #334155;
+  --cl-success: #22c55e;
+  --cl-danger: #ef4444;
+  --cl-radius: 0.75rem;
+  --cl-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --cl-transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --cl-shadow-glow: 0 0 30px rgba(37, 99, 235, 0.2);
+  --cl-nav-h: 60px;
+  --cl-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --cl-safe-top: env(safe-area-inset-top, 0px);
+}
+
+/* ---------- Safe areas ---------- */
+body {
+  padding-top: var(--cl-safe-top);
+}
+
+/* ---------- Smooth scroll ---------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--cl-nav-h) + 1rem);
+}
+
+/* ---------- Focus-visible (accessibility) ---------- */
+*:focus-visible {
+  outline: 2px solid var(--cl-blue-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+a:focus-visible, button:focus-visible, input:focus-visible,
+[role="button"]:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--cl-blue-light);
+  outline-offset: 2px;
+}
+
+/* ---------- Touch targets (WCAG 2.5.5 — 44px minimum) ---------- */
+@media (max-width: 768px) {
+  .site-nav .nav-links a,
+  .pricing-nav .nav-links a,
+  .sq-nav .nav-links a,
+  .cl-nav-desktop a,
+  .btn-primary,
+  .tier-cta,
+  .sq-btn,
+  .nav-cta,
+  .cl-mobile-cta-btn,
+  .faq-q {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ---------- Skip to content ---------- */
+.cl-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--cl-blue);
+  color: #fff !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top var(--cl-transition);
+}
+.cl-skip-link:focus {
+  top: 0;
+}
+
+/* ============================================================
+   MOBILE NAVIGATION — Hamburger + Slide-in Drawer
+   ============================================================ */
+.cl-nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cl-border);
+  border-radius: 0.5rem;
+  background: var(--cl-navy-2);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.cl-nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  transition: all var(--cl-transition);
+  position: relative;
+}
+.cl-nav-toggle span::before,
+.cl-nav-toggle span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  transition: all var(--cl-transition);
+}
+.cl-nav-toggle span::before { top: -6px; }
+.cl-nav-toggle span::after { top: 6px; }
+.cl-nav-toggle.open span { background: transparent; }
+.cl-nav-toggle.open span::before { top: 0; transform: rotate(45deg); }
+.cl-nav-toggle.open span::after { top: 0; transform: rotate(-45deg); }
+
+.cl-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background: var(--cl-navy-2);
+  border-left: 1px solid var(--cl-border);
+  z-index: 9000;
+  transform: translateX(100%);
+  transition: transform var(--cl-transition-slow);
+  padding: calc(var(--cl-nav-h) + 1rem) 1.5rem 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.cl-nav-drawer.open { transform: translateX(0); }
+.cl-nav-drawer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.875rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: background var(--cl-transition), color var(--cl-transition);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+}
+.cl-nav-drawer a:hover,
+.cl-nav-drawer a:active {
+  color: #fff;
+  background: rgba(37, 99, 235, 0.1);
+}
+.cl-nav-drawer a.cl-drawer-cta {
+  background: var(--cl-blue);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  border-radius: var(--cl-radius);
+  margin-top: 0.75rem;
+  border-bottom: none;
+  min-height: 52px;
+  font-size: 1rem;
+}
+.cl-nav-drawer a.cl-drawer-cta:hover {
+  background: var(--cl-blue-light);
+}
+
+.cl-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 8500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--cl-transition);
+}
+.cl-nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+body.cl-drawer-open {
+  overflow: hidden;
+}
+
+@media (max-width: 860px) {
+  .cl-nav-toggle { display: flex; }
+  .site-nav .nav-links:not(.cl-nav-drawer),
+  .pricing-nav .nav-links:not(.cl-nav-drawer),
+  .sq-nav .nav-links:not(.cl-nav-drawer) {
+    display: none;
+  }
+  .site-nav, .pricing-nav, .sq-nav {
+    padding: 0.75rem 1rem;
+    min-height: var(--cl-nav-h);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+  }
+}
+
+@media (min-width: 861px) {
+  .cl-nav-toggle { display: none; }
+  .cl-nav-drawer { display: none; }
+  .cl-nav-overlay { display: none; }
+}
+
+/* ============================================================
+   STICKY MOBILE CTA BAR
+   ============================================================ */
+.cl-mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--cl-border);
+  padding: 0.625rem 1rem calc(0.625rem + var(--cl-safe-bottom));
+  z-index: 8000;
+  transform: translateY(100%);
+  transition: transform var(--cl-transition-slow);
+}
+.cl-mobile-cta.visible {
+  transform: translateY(0);
+}
+.cl-mobile-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--cl-blue);
+  color: #fff;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--cl-radius);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  min-height: 52px;
+  transition: background var(--cl-transition);
+}
+.cl-mobile-cta a:active {
+  background: var(--cl-blue-light);
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .cl-mobile-cta { display: block; }
+  body { padding-bottom: calc(70px + var(--cl-safe-bottom)) !important; }
+  .footer, .pricing-footer, .sq-footer {
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.cl-back-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cl-navy-2);
+  border: 1px solid var(--cl-border);
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 7000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all var(--cl-transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.cl-back-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.cl-back-top:hover {
+  background: var(--cl-blue);
+  border-color: var(--cl-blue);
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .cl-back-top {
+    bottom: calc(80px + var(--cl-safe-bottom));
+  }
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+.cl-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cl-reveal.cl-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cl-reveal[data-delay="1"] { transition-delay: 0.08s; }
+.cl-reveal[data-delay="2"] { transition-delay: 0.16s; }
+.cl-reveal[data-delay="3"] { transition-delay: 0.24s; }
+.cl-reveal[data-delay="4"] { transition-delay: 0.32s; }
+.cl-reveal[data-delay="5"] { transition-delay: 0.40s; }
+
+/* ============================================================
+   CARD HOVER — Depth + Glow
+   ============================================================ */
+.framework-card,
+.tier-card,
+.resource-list a,
+.offer-stack {
+  transition: border-color var(--cl-transition),
+              transform var(--cl-transition),
+              box-shadow var(--cl-transition);
+}
+.framework-card:hover,
+.tier-card:hover {
+  border-color: var(--cl-blue) !important;
+  transform: translateY(-3px);
+  box-shadow: var(--cl-shadow-glow);
+}
+
+/* ============================================================
+   BUTTON POLISH — Active state + ripple feel
+   ============================================================ */
+.btn-primary,
+.tier-cta.primary,
+.sq-btn,
+.sq-oto-cta,
+.oto-cta,
+.exit-cta,
+.nav-cta {
+  position: relative;
+  transition: background var(--cl-transition),
+              transform 0.1s var(--cl-transition),
+              box-shadow var(--cl-transition);
+}
+.btn-primary:hover,
+.tier-cta.primary:hover,
+.sq-btn:hover,
+.sq-oto-cta:hover,
+.oto-cta:hover,
+.exit-cta:hover {
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+}
+.btn-primary:active,
+.tier-cta:active,
+.sq-btn:active,
+.sq-oto-cta:active,
+.oto-cta:active,
+.exit-cta:active,
+.nav-cta:active {
+  transform: scale(0.97);
+}
+
+/* ============================================================
+   URGENCY STACK — Mobile fix
+   ============================================================ */
+@media (max-width: 640px) {
+  .urgency-stack {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .urgency-stack .urgency-sep { display: none; }
+  .urgency-stack .urgency-item {
+    font-size: 0.72rem;
+  }
+}
+
+/* ============================================================
+   STATS ROW — Mobile
+   ============================================================ */
+@media (max-width: 640px) {
+  .stats-row {
+    gap: 1.25rem;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .stat-num { font-size: 1.5rem; }
+}
+
+/* ============================================================
+   FORM STATES — Loading, error, success
+   ============================================================ */
+.sq-btn.loading {
+  pointer-events: none;
+  opacity: 0.75;
+  position: relative;
+}
+.sq-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: cl-spin 0.6s linear infinite;
+  margin-left: 0.5rem;
+}
+@keyframes cl-spin {
+  to { transform: rotate(360deg); }
+}
+
+.cl-form-error {
+  display: none;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.cl-form-error.show {
+  display: block;
+  animation: cl-shake 0.4s ease;
+}
+@keyframes cl-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ============================================================
+   PROGRESS BAR — Reading progress
+   ============================================================ */
+.cl-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--cl-blue);
+  z-index: 9500;
+  width: 0%;
+  transition: width 0.1s;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ============================================================
+   HERO POLISH — Glow gradient background
+   ============================================================ */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  max-width: 120vw;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+.hero { position: relative; }
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cl-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .pulse-dot { animation: none !important; }
+}
+
+/* ============================================================
+   TYPOGRAPHY ENHANCEMENT
+   ============================================================ */
+.hero h1, .sq-headline {
+  text-wrap: balance;
+}
+.section .subtitle, .hero .sub, .sq-sub {
+  text-wrap: pretty;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(37, 99, 235, 0.3);
+  color: #fff;
+}
+
+/* ---------- Scrollbar (desktop) ---------- */
+@media (min-width: 861px) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--cl-navy); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--cl-border);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #475569; }
+}
+
+/* ============================================================
+   CONTENT PAGES (light theme) — Nav consistency
+   ============================================================ */
+.cl-content-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: var(--cl-nav-h);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+.cl-content-nav .logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #0f172a;
+  text-decoration: none;
+}
+.cl-content-nav .cl-nav-desktop {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.cl-content-nav .cl-nav-desktop a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--cl-transition);
+}
+.cl-content-nav .cl-nav-desktop a:hover { color: #0f172a; }
+.cl-content-nav .cl-nav-desktop .nav-cta {
+  background: var(--cl-blue);
+  color: #fff !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 0.85rem !important;
+}
+
+@media (max-width: 860px) {
+  .cl-content-nav .cl-nav-desktop { display: none; }
+  .cl-content-nav .cl-nav-toggle {
+    border-color: #e2e8f0;
+    background: #fff;
+  }
+  .cl-content-nav .cl-nav-toggle span,
+  .cl-content-nav .cl-nav-toggle span::before,
+  .cl-content-nav .cl-nav-toggle span::after {
+    background: #475569;
+  }
+}
+
+/* Content page drawer — dark to match brand */
+.cl-content-nav ~ .cl-nav-drawer {
+  background: #fff;
+  border-left: 1px solid #e2e8f0;
+}
+.cl-content-nav ~ .cl-nav-drawer a {
+  color: #334155;
+  border-bottom-color: #f1f5f9;
+}
+.cl-content-nav ~ .cl-nav-drawer a:hover {
+  color: var(--cl-blue);
+  background: rgba(37, 99, 235, 0.05);
+}
+.cl-content-nav ~ .cl-nav-drawer a.cl-drawer-cta {
+  background: var(--cl-blue);
+  color: #fff;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .cl-mobile-cta, .cl-back-top, .cl-nav-toggle,
+  .cl-nav-drawer, .cl-nav-overlay, .cl-progress,
+  .exit-overlay { display: none !important; }
+}

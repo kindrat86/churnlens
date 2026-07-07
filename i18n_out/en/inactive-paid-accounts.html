@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Inactive Paid Accounts in SaaS: Ghost Revenue Detection | Churn Lens</title>
+    <meta name="description" content="Customers paying but not using your product are zombie MRR. Learn how to detect inactive paid accounts via last-login and usage data before they churn." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/en/inactive-paid-accounts" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/inactive-paid-accounts" />
+    <meta property="og:title" content="Inactive Paid Accounts in SaaS: Ghost Revenue Detection" />
+    <meta property="og:description" content="Detect zombie MRR: customers paying but not using the product. How to use last-login and usage data to find ghost revenue before you buy." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Inactive Paid Accounts in SaaS: Ghost Revenue Detection" />
+    <meta name="twitter:description" content="Detect zombie MRR: customers paying but not using the product. Find ghost revenue before you buy." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <meta property="article:published_time" content="2026-07-06T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-07-06T00:00:00+00:00" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Inactive Paid Accounts in SaaS", "item": "https://churnlens.site/inactive-paid-accounts"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Inactive Paid Accounts in SaaS: Ghost Revenue Detection",
+      "description": "Customers paying but not using your product are zombie MRR. Learn how to detect inactive paid accounts via last-login and usage data before they churn.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/inactive-paid-accounts"}
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      .page-header {
+        background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%));
+        color: white;
+        padding: 4rem 0;
+      }
+      .page-header h1 {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+      .page-header p {
+        font-size: 1.125rem;
+        color: hsl(215 20% 65%);
+        max-width: 680px;
+      }
+      .metric-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+      }
+      .metric-table th {
+        background: hsl(217 33% 17%);
+        color: white;
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .metric-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid hsl(var(--border));
+        font-size: 0.9375rem;
+      }
+      .metric-table tr:nth-child(even) td {
+        background: hsl(var(--muted) / 0.3);
+      }
+      .metric-table .good { color: hsl(var(--risk-low)); font-weight: 600; }
+      .metric-table .ok { color: hsl(var(--risk-medium)); font-weight: 600; }
+      .metric-table .bad { color: hsl(var(--risk-high)); font-weight: 600; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+
+    <!-- Nav -->
+    <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
+      <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:hsl(222 47% 11%);">Churn Lens</a>
+      <a href="/" style="font-size:0.875rem;color:hsl(221 83% 53%);text-decoration:none;font-weight:500;">&larr; Back to App</a>
+    </nav>
+  <!-- CL Mobile Nav Elements (light theme) -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<div class="cl-progress"></div>
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <!-- Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1>Inactive Paid Accounts in SaaS</h1>
+        <p>Ghost revenue detection: how to find zombie MRR — customers who are paying but not using the product — using last-login and usage data, before that revenue evaporates post-close.</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container" style="padding:3rem 2rem;">
+      <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
+
+        <p class="lead">MRR is only real if customers are actually using the product. A surprising number of SaaS businesses carry "zombie MRR" — active subscriptions where the customer has effectively abandoned the tool but hasn't cancelled yet. This revenue looks stable on the P&amp;L but is one invoice away from disappearing.</p>
+
+        <h2>What Is Zombie MRR?</h2>
+        <p>Zombie MRR is recurring revenue from accounts that are paying but no longer engaging with the product. These customers haven't churned in the billing sense — the card still gets charged every month — but they've churned in every meaningful sense: no logins, no usage, no support tickets, no expansion. They're paying out of inertia, forgetfulness, or because cancellation is friction-heavy.</p>
+        <p>For buyers, zombie MRR is dangerous because it inflates both the headline MRR number and the implied retention rate. A business reporting $80K MRR with 15% zombie MRR is really a $68K MRR business with a retention problem masked by slow cancellation behavior. When those zombies finally cancel — and they will — the churn rate spikes and the buyer is left holding the decay.</p>
+
+        <table class="metric-table">
+          <thead>
+            <tr><th>Last-Login Age</th><th>Zombie Probability</th><th>12-Month Churn Risk</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0–30 days</td><td>~2%</td><td>Normal churn</td><td class="good">Healthy</td></tr>
+            <tr><td>31–60 days</td><td>~8%</td><td>1.5× baseline</td><td class="ok">Monitor</td></tr>
+            <tr><td>61–90 days</td><td>~25%</td><td>3× baseline</td><td class="ok">Flag for outreach</td></tr>
+            <tr><td>91–180 days</td><td>~55%</td><td>6× baseline</td><td class="bad">Zombie — high churn risk</td></tr>
+            <tr><td>180+ days</td><td>~80%</td><td>Effectively churned</td><td class="bad">Ghost revenue</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How to Detect Inactive Paid Accounts</h2>
+        <p>The two most reliable signals are <strong>last-login date</strong> and <strong>core feature usage</strong>. During diligence, request both from the seller's product analytics (Mixpanel, Amplitude, or database logs). If the seller can't provide last-login data, that's itself a red flag — either they don't track it (operational gap) or they don't want you to see it.</p>
+        <p>Build a simple account-health score from these inputs:</p>
+        <ol>
+          <li><strong>Last login date</strong> — the single best predictor. Accounts with no login in 60+ days are at elevated risk; 90+ days is a zombie.</li>
+          <li><strong>Login frequency trend</strong> — an account logging in weekly that drops to monthly is degrading, even if they haven't fully stopped.</li>
+          <li><strong>Core action completion</strong> — for most SaaS, there's one or two actions that define real usage (sending invoices, running reports, syncing data). Accounts not completing core actions are zombies regardless of login frequency.</li>
+          <li><strong>Seat utilization</strong> — if a 20-seat account has 2 active users, the account is heading for a downgrade or cancellation.</li>
+        </ol>
+
+        <h2>Quantifying Zombie MRR Exposure</h2>
+        <p>Once you've identified inactive accounts, calculate the exposure:</p>
+        <ul>
+          <li><strong>Zombie MRR</strong> = sum of MRR from accounts with 90+ days of inactivity.</li>
+          <li><strong>Zombie MRR share</strong> = Zombie MRR ÷ total MRR. Above 10% is concerning; above 20% is a material deal risk.</li>
+          <li><strong>Adjusted MRR</strong> = total MRR − Zombie MRR. This is the revenue base you should underwrite the deal against.</li>
+        </ul>
+        <p>A target reporting $100K MRR with $18K of zombie MRR has an adjusted MRR of $82K. If you're paying a 5× ARR multiple, that's a $1.08M valuation gap — real money that you're paying for revenue that won't be there in 12 months.</p>
+
+        <div style="margin:3rem 0;padding:2rem;background:hsl(221 83% 53% / 0.06);border-radius:0.75rem;border:1px solid hsl(221 83% 53% / 0.15);">
+          <h3 style="margin-top:0;font-size:1.125rem;font-weight:600;">Want to detect zombie MRR on a target?</h3>
+          <p style="margin-bottom:1rem;">Upload the customer CSV with last-login data and Churn Lens flags inactive accounts, calculates zombie MRR exposure, and adjusts the valuation inputs automatically.</p>
+          <a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:hsl(221 83% 53%);color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9375rem;">Run a Churn Report &rarr;</a>
+        </div>
+
+        <h2>Why Zombies Don't Cancel Immediately</h2>
+        <p>If a customer has stopped using the product, why are they still paying? Several structural factors delay cancellation:</p>
+        <ul>
+          <li><strong>Annual contracts</strong> — covered in our analysis of <a href="/annual-plan-churn-risk">annual plan churn risk</a>. Customers locked into annual plans show up as retained even when they've mentally churned. The cancellation happens in a lump at renewal.</li>
+          <li><strong>Cancellation friction</strong> — products that require emailing support, signing a form, or a phone call to cancel retain zombies longer. This is retention by annoyance, not by value.</li>
+          <li><strong>Forgotten subscriptions</strong> — especially common in low-ACCC B2B tools and team-purchased SaaS where the buyer isn't the user. The card keeps getting charged until someone audits expenses.</li>
+          <li><strong>"We might use it again"</strong> — some customers keep paying because they intend to return. Most don't.</li>
+        </ul>
+        <p>Each of these factors means the zombie MRR has a half-life. It's not permanent revenue. A business whose retention depends on cancellation friction rather than product value is structurally weaker than the numbers suggest — a core theme in our <a href="/saas-revenue-quality-score">SaaS revenue quality score</a> framework.</p>
+
+        <h2>The Post-Close Zombie Churn Spike</h2>
+        <p>Zombie MRR almost always churns faster after an acquisition. New ownership often changes billing systems, sends renewal notices that prompt customers to re-evaluate, or tightens cancellation flows. We frequently see 30–50% of zombie MRR churn within 6 months of a deal closing — a spike that the buyer blames on "integration issues" but is really just the delayed reckoning.</p>
+        <p>Model this into your underwriting. If the target has $15K of zombie MRR, assume 50% of it churns in year one post-close and haircut the revenue projections accordingly.</p>
+
+        <h2>Questions to Ask the Seller</h2>
+        <ul>
+          <li>Can you provide last-login dates for all active accounts?</li>
+          <li>What percentage of MRR comes from accounts with no login in the past 90 days?</li>
+          <li>How do customers cancel — self-serve or via support? What's the cancellation funnel?</li>
+          <li>Has there been any recent change to the cancellation flow or billing system?</li>
+        </ul>
+        <p>These questions surface operational gaps and reveal how much of the "retention" is genuine product value versus cancellation friction. Combine the answers with our <a href="/saas-due-diligence-checklist">complete SaaS due diligence checklist</a> for full coverage.</p>
+
+        <h2>Related Resources</h2>
+        <ul>
+          <li><a href="/annual-plan-churn-risk">Annual Plan Churn Risk in SaaS</a></li>
+          <li><a href="/saas-revenue-quality-score">SaaS Revenue Quality Score: Beyond Raw MRR</a></li>
+          <li><a href="/mrr-vs-revenue-quality">MRR vs Revenue Quality: Why Headline MRR Misleads Buyers</a></li>
+          <li><a href="/hidden-churn-saas-acquisition">Hidden Churn: What Sellers Don't Tell You</a></li>
+          <li><a href="/saas-due-diligence-checklist">SaaS Due Diligence Checklist</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <!-- CTA Banner -->
+    <div style="max-width:720px;margin:3rem auto;padding:2rem;background:#0f172a;border:1px solid #334155;border-radius:12px;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.15rem;margin:0 0 0.75rem;">Get the free 23-point churn audit checklist</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;">Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.</p>
+      <a href="/get-the-checklist" class="btn btn-primary" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Get the free checklist &rarr;</a>
+    </div>
+
+
+<footer style="border-top:1px solid hsl(var(--border));padding:2rem;text-align:center;font-size:0.8125rem;color:hsl(var(--muted-foreground));">
+      <p>&copy; 2026 Churn Lens. Buyer-side SaaS due diligence, powered by your data.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="/" style="color:hsl(221 83% 53%);text-decoration:none;">Home</a>
+        &middot; <a href="/get-the-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Free Checklist</a>
+        &middot; <a href="/pricing" style="color:hsl(221 83% 53%);text-decoration:none;">Pricing</a>
+        &middot; <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">DD Checklist</a>
+        &middot; <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Due Diligence Checklist</a>
+      </p>
+    </footer>
+
+    <!-- PostHog -->
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>

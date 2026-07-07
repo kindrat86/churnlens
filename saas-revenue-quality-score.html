@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>SaaS Revenue Quality Score — Beyond Raw MRR | Churn Lens</title>
+    <meta name="description" content="The Revenue Quality Score (RQS): a composite metric that scores SaaS revenue on retention stability, concentration, expansion, payment hygiene, and contract durability." />
+    <meta name="author" content="Churn Lens" />
+    <link rel="canonical" href="https://churnlens.site/saas-revenue-quality-score" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://churnlens.site/saas-revenue-quality-score" />
+    <meta property="og:title" content="SaaS Revenue Quality Score — Beyond Raw MRR" />
+    <meta property="og:description" content="The Revenue Quality Score (RQS) composites retention stability, concentration risk, expansion efficiency, payment hygiene, and contract durability into a single buyer-side metric." />
+    <meta property="og:image" content="https://churnlens.site/favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS Revenue Quality Score — Beyond Raw MRR" />
+    <meta name="twitter:description" content="The Revenue Quality Score (RQS) composites retention stability, concentration risk, and more." />
+    <meta name="twitter:image" content="https://churnlens.site/favicon.png" />
+
+    <meta property="article:published_time" content="2026-07-06T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-07-06T00:00:00+00:00" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "SaaS Revenue Quality Score", "item": "https://churnlens.site/saas-revenue-quality-score"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SaaS Revenue Quality Score",
+      "description": "The Revenue Quality Score (RQS): a composite metric that scores SaaS revenue on retention stability, concentration, expansion, payment hygiene, and contract durability.",
+      "author": {"@type": "Organization", "name": "Churn Lens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "Churn Lens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/saas-revenue-quality-score"}
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
+    <style>
+      .page-header {
+        background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%));
+        color: white;
+        padding: 4rem 0;
+      }
+      .page-header h1 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 2.75rem; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+      .page-header p { font-size: 1.125rem; color: hsl(215 20% 65%); max-width: 680px; }
+      .rqs-score { text-align: center; padding: 2rem; background: hsl(221 83% 53% / 0.06); border-radius: 0.75rem; margin: 2rem 0; }
+      .rqs-score .number { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; }
+      .rqs-score .label { font-size: 0.875rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem; }
+      .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+      .pillar-card { background: white; border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; }
+      .pillar-card h3 { font-size: 0.9375rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; }
+      .pillar-card .score { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+</head>
+  <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+    <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
+      <a href="/" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:hsl(222 47% 11%);">Churn Lens</a>
+      <a href="/" style="font-size:0.875rem;color:hsl(221 83% 53%);text-decoration:none;font-weight:500;">&larr; Back to App</a>
+    </nav>
+  <!-- CL Mobile Nav Elements (light theme) -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<div class="cl-progress"></div>
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>SaaS Revenue Quality Score</h1>
+        <p>A composite buyer-side metric that scores SaaS subscription revenue on five dimensions: retention stability, concentration risk, expansion efficiency, payment hygiene, and contract durability.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding:3rem 2rem;">
+      <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
+        <p class="lead">MRR is a snapshot. Revenue Quality is the X-ray. Two SaaS companies with $100K MRR can have wildly different risk profiles — one is a compounding asset, the other is a ticking time bomb. The Revenue Quality Score (RQS) tells you which one you're buying.</p>
+
+        <p>Churn Lens computes an RQS for every CSV upload. The score ranges from 0 (failing) to 100 (institutional-grade recurring revenue). Here's how it works.</p>
+
+        <div class="rqs-score">
+          <div class="number" style="color:hsl(142 76% 36%);">85–100</div>
+          <div class="label">Institutional Grade — Low-risk recurring revenue</div>
+          <div class="number" style="color:hsl(142 76% 36%);margin-top:1rem;">65–84</div>
+          <div class="label">Healthy — Manageable risk with clear mitigants</div>
+          <div class="number" style="color:hsl(38 92% 50%);margin-top:1rem;">40–64</div>
+          <div class="label">Moderate — Requires structural fix post-acquisition</div>
+          <div class="number" style="color:hsl(0 84% 60%);margin-top:1rem;">0–39</div>
+          <div class="label">High Risk — Marginal SaaS economics; discount heavily or walk</div>
+        </div>
+
+        <h2>The Five Pillars of Revenue Quality</h2>
+
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <h3>Retention Stability</h3>
+            <div class="score" style="color:hsl(142 76% 36%);">30 pts</div>
+            <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:0;">Weight: 30% of RQS. Based on NRR, logo churn volatility, and cohort decay slope.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Concentration Risk</h3>
+            <div class="score" style="color:hsl(38 92% 50%);">25 pts</div>
+            <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:0;">Weight: 25% of RQS. Based on Revenue HHI, top-5 share, plan tier spread.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Expansion Efficiency</h3>
+            <div class="score" style="color:hsl(142 76% 36%);">20 pts</div>
+            <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:0;">Weight: 20% of RQS. Contraction-adjusted expansion rate, upgrade velocity.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Payment Hygiene</h3>
+            <div class="score" style="color:hsl(38 92% 50%);">15 pts</div>
+            <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:0;">Weight: 15% of RQS. Involuntary churn rate, failed payment frequency, dunning success rate.</p>
+          </div>
+          <div class="pillar-card">
+            <h3>Contract Durability</h3>
+            <div class="score" style="color:hsl(221 83% 53%);">10 pts</div>
+            <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:0;">Weight: 10% of RQS. Annual vs. monthly billing mix, contract length, auto-renewal rate.</p>
+          </div>
+        </div>
+
+        <h2>Why RQS Matters More Than Raw MRR</h2>
+        <p>Consider two SaaS acquisition targets:</p>
+        <ul>
+          <li><strong>Company A:</strong> $100K MRR, 3% monthly churn, NRR 95%, HHI 800, 30% annual billing, involuntary churn 0.5%. <strong>RQS: ~82</strong></li>
+          <li><strong>Company B:</strong> $100K MRR, 5% monthly churn, NRR 82%, HHI 3,200, 10% annual billing, involuntary churn 8%. <strong>RQS: ~38</strong></li>
+        </ul>
+        <p>Same MRR, wildly different assets. Company A will grow. Company B will shrink, and its concentration risk means the shrinkage accelerates when a top customer churns. If you're paying a multiple on MRR, you're overpaying for Company B unless you've adjusted for the quality gap.</p>
+
+        <p>Churn Lens computes RQS automatically from your CSV upload &mdash; including each sub-score and the rationale behind the composite number. No manual formula work needed.</p>
+
+        <div style="margin:3rem 0;padding:2rem;background:hsl(221 83% 53% / 0.06);border-radius:0.75rem;border:1px solid hsl(221 83% 53% / 0.15);">
+          <h3 style="margin-top:0;font-size:1.125rem;font-weight:600;">Compute the RQS for your deal</h3>
+          <p style="margin-bottom:1rem;">Upload the target's subscription CSV and get the Revenue Quality Score, all five sub-scores, and the risk-adjusted MRR projection.</p>
+          <a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:hsl(221 83% 53%);color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9375rem;">Score a Target &rarr;</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul>
+          <li><a href="/saas-churn-rate-benchmarks">SaaS Churn Rate Benchmarks by Industry</a></li>
+          <li><a href="/saas-due-diligence-checklist">Complete SaaS Due Diligence Checklist</a></li>
+          <li><a href="/hidden-churn-saas-acquisition">Hidden Churn: What Sellers Don't Tell You</a></li>
+          <li><a href="/customer-concentration-risk">Customer Concentration Risk: How to Spot the Trap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div style="max-width:720px;margin:3rem auto;padding:2rem;background:#0f172a;border:1px solid #334155;border-radius:12px;text-align:center;">
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.15rem;margin:0 0 0.75rem;">Get the free 23-point churn audit checklist</h3>
+      <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;margin:0 0 1.25rem;">Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.</p>
+      <a href="/get-the-checklist" class="btn btn-primary" style="display:inline-block;background:#2563eb;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">Get the free checklist &rarr;</a>
+    </div>
+
+
+<footer style="border-top:1px solid hsl(var(--border));padding:2rem;text-align:center;font-size:0.8125rem;color:hsl(var(--muted-foreground));">
+      <p>&copy; 2026 Churn Lens. Buyer-side SaaS due diligence, powered by your data.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="/" style="color:hsl(221 83% 53%);text-decoration:none;">Home</a> &middot;
+        <a href="/saas-churn-rate-benchmarks" style="color:hsl(221 83% 53%);text-decoration:none;">Churn Benchmarks</a> &middot;
+        <a href="/saas-due-diligence-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">DD Checklist</a> &middot;
+        <a href="/get-the-checklist" style="color:hsl(221 83% 53%);text-decoration:none;">Free Checklist</a> &middot;
+        <a href="/pricing" style="color:hsl(221 83% 53%);text-decoration:none;">Pricing</a>
+      </p>
+    </footer>
+    <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+</body>
+</html>
