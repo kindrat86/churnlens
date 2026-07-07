@@ -1,0 +1,49 @@
+{
+  "name": "churnlens",
+  "displayName": "ChurnLens",
+  "description": "ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surfa",
+  "version": "1.0.0",
+  "vendor": {
+    "name": "ChurnLens",
+    "url": "https://churnlens.site"
+  },
+  "license": "MIT",
+  "homepage": "https://churnlens.site",
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "saas due diligence",
+    "saas acquisition",
+    "churn analysis",
+    "revenue quality",
+    "mrr analysis",
+    "saas churn rate",
+    "saas red flags"
+  ],
+  "protocol": {
+    "version": "2025-06-18",
+    "transport": [
+      "streamable-http"
+    ]
+  },
+  "tools": [
+    {
+      "name": "get_revenue_quality_score",
+      "description": "Score a SaaS company's revenue quality (0-100) from MRR data, logo retention, and concentration metrics.",
+      "readOnly": true,
+      "idempotent": true
+    },
+    {
+      "name": "get_churn_benchmarks",
+      "description": "Compare a SaaS company's churn rate against industry benchmarks by ARR band and vertical.",
+      "readOnly": true,
+      "idempotent": true
+    }
+  ],
+  "privacy": {
+    "piiCollected": false,
+    "dataStored": false,
+    "thirdPartyData": false
+  }
+}
