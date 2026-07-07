@@ -505,6 +505,19 @@
     <!-- END RETARGETING PIXELS -->
 
     <link rel="stylesheet" href="/assets/cl-enhance.css" />
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ChurnLens",
+  "url": "https://churnlens.site",
+  "description": "Analyze revenue concentration, logo retention, annual plan churn risk, and MRR decline patterns to surface hidden churn before a SaaS acquisition.",
+  "logo": "https://churnlens.site/og-image.png"
+}
+</script>
+
 </head>
   <body id="main-content">
     <nav class="site-nav">
@@ -512,8 +525,8 @@
       <div class="nav-links">
         <a href="/pricing">Pricing</a>
         <a href="/why">Founder Story</a>
-        <a href="/manifesto">Manifesto</a>
-        <a href="/partners">Partners</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
         <a href="/get-the-checklist" class="nav-cta">Get the checklist &rarr;</a>
       </div>
     </nav>
@@ -523,6 +536,8 @@
   <a href="/">Home</a>
   <a href="/pricing">Pricing</a>
   <a href="/why">Founder Story</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
   <a href="/manifesto">Manifesto</a>
   <a href="/partners">Partners</a>
   <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
@@ -741,7 +756,7 @@
     </div>
 
     <footer class="footer">
-      <p>&copy; 2026 Churn Lens &middot; <a href="/pricing">Pricing</a> &middot; <a href="/why">Founder Story</a> &middot; <a href="/manifesto">Manifesto</a> &middot; <a href="/partners">Partners</a> &middot; <a href="/get-the-checklist">Free Checklist</a></p>
+      <p>&copy; 2026 Churn Lens &middot; <a href="/pricing">Pricing</a> &middot; <a href="/about">About</a> &middot; <a href="/contact">Contact</a> &middot; <a href="/why">Founder Story</a> &middot; <a href="/manifesto">Manifesto</a> &middot; <a href="/partners">Partners</a> &middot; <a href="/get-the-checklist">Free Checklist</a></p>
       <p style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.9rem;">
         <a href="https://twitter.com/churnlens" target="_blank" rel="noopener" style="color: #64748b; text-decoration: none;">Twitter / X</a>
         <a href="https://linkedin.com/company/churnlens" target="_blank" rel="noopener" style="color: #64748b; text-decoration: none;">LinkedIn</a>
@@ -830,5 +845,53 @@
     </script>
 
     <script type="module" src="/assets/cl-enhance.js" defer></script>
+
+<!-- pSEO Footer Navigation -->
+<style>
+.pseo-footer { max-width: 1200px; margin: 0 auto; padding: 40px 20px; border-top: 1px solid #e5e7eb; margin-top: 60px; }
+.pseo-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+.pseo-footer-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; }
+.pseo-footer-section ul { list-style: none; padding: 0; margin: 0; }
+.pseo-footer-section li { margin-bottom: 6px; }
+.pseo-footer-section a { color: #374151; text-decoration: none; font-size: 14px; }
+.pseo-footer-section a:hover { color: #4f46e5; text-decoration: underline; }
+@media (max-width: 768px) { .pseo-footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+</style>
+<nav class="pseo-footer" aria-label="Resources">
+  <div class="pseo-footer-grid">
+    <div class="pseo-footer-section">
+      <h3>Alternatives</h3>
+      <ul>
+              <li><a href="/alternatives-to/baremetrics">Baremetrics</a></li>
+      <li><a href="/alternatives-to/profitwell">ProfitWell</a></li>
+      <li><a href="/alternatives-to/chartmogol">ChartMogol</a></li>
+      <li><a href="/alternatives-to/stripe-sigma">Stripe Sigma</a></li>
+      <li><a href="/alternatives-to/gainsight">GainSight</a></li>
+        <li><a href="/alternatives-to">View all →</a></li>
+      </ul>
+    </div>
+    <div class="pseo-footer-section">
+      <h3>Use Cases</h3>
+      <ul>
+              <li><a href="/for/micro-saas">Micro SaaS</a></li>
+      <li><a href="/for/b2b-saas">B2B SaaS</a></li>
+      <li><a href="/for/fintech">Fintech</a></li>
+      <li><a href="/for/devtools">DevTools</a></li>
+        <li><a href="/for">View all →</a></li>
+      </ul>
+    </div>
+    <div class="pseo-footer-section">
+      <h3>Glossary</h3>
+      <ul>
+              <li><a href="/glossary/churn-rate">Churn Rate</a></li>
+      <li><a href="/glossary/nrr">NRR</a></li>
+      <li><a href="/glossary/grr">GRR</a></li>
+      <li><a href="/glossary/ltv">LTV</a></li>
+        <li><a href="/glossary">View all →</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 </body>
 </html>

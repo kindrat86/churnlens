@@ -47,5 +47,19 @@
       "examples": []
     }
   ],
-  "attribution": "ChurnLens, https://churnlens.site"
+  "attribution": "ChurnLens, https://churnlens.site",
+  "content": [
+    {
+      "title": "ChurnLens \u2014 SaaS Due Diligence",
+      "url": "https://churnlens.site/",
+      "description": "Upload SaaS contracts, reveal hidden churn risk before acquisition.",
+      "type": "homepage"
+    },
+    {
+      "title": "ChurnLens Pricing",
+      "url": "https://churnlens.site/pricing",
+      "description": "Per-deal and subscription pricing for SaaS due diligence.",
+      "type": "pricing"
+    }
+  ]
 }
