@@ -3,7 +3,7 @@
   "outputDirectory": ".",
   "redirects": [
     {
-      "source": "/:slug(.+)\\.html",
+      "source": "/:slug((?!googlea30bb998b91eb6ac).+)\\.html",
       "destination": "/:slug",
       "permanent": true
     }
