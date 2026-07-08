@@ -97,8 +97,15 @@
       .metric-table .bad { color: hsl(var(--risk-high)); font-weight: 600; }
     </style>
     <link rel="stylesheet" href="/assets/cl-enhance.css" />
+<!-- eeat-static-injected -->
+<meta name="author" content="ChurnLens" />
+<meta property="article:published_time" content="2026-01-15T00:00:00Z" />
+<meta property="article:modified_time" content="2026-07-08T00:00:00Z" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"datePublished":"2026-01-15","dateModified":"2026-07-08"}</script>
 </head>
   <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
+<p class="author-byline eeat" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-08">Updated 2026-07-08</time> · Published 2026-01-15</p>
+
 
     <!-- Nav -->
     <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
@@ -132,7 +139,12 @@
     <div class="container" style="padding:3rem 2rem;">
       <div class="prose-editorial" style="max-width:800px;margin:0 auto;">
 
-        <p class="lead">A SaaS business with 3% monthly logo churn looks healthy on paper — until you realize a single customer accounts for 35% of MRR. Revenue concentration is the most common way churn risk hides during acquisition diligence. The headline number is fine; the underlying fragility is lethal.</p>
+        <p class="lead">Revenue concentration is the most dangerous hidden risk in SaaS acquisitions. A business with 3% monthly logo churn looks healthy — until you realize a single customer accounts for 35% of MRR. Calculate the Revenue HHI: below 1,000 is diversified, above 2,500 means you're one cancelled contract away from losing a third of the business. Churn Lens computes HHI, top-5 share, and concentration-adjusted retention automatically from any subscription CSV.</p>
+
+        <div style="background:hsl(221 83% 53% / 0.08);border:1px solid hsl(221 83% 53% / 0.2);border-radius:0.75rem;padding:1.25rem 1.5rem;margin-bottom:2rem;">
+          <strong style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;color:hsl(221 83% 53%);">TL;DR</strong>
+          <p style="margin:0.5rem 0 0;font-size:0.9375rem;line-height:1.6;color:hsl(var(--muted-foreground));">Revenue concentration measures how dependent a SaaS is on a few customers. Use the Revenue HHI: below 1,000 is diversified, 1,000-2,500 is moderate, above 2,500 is dangerous. Always check top-5 MRR share — above 40% requires earn-out structuring. Concentration also hides in plan tiers and verticals, not just customer count.</p>
+        </div>
 
         <h2>What Revenue Concentration Actually Means</h2>
         <p>Revenue concentration measures how much of your recurring revenue depends on a small number of customers. A business where the top 10 accounts make up 20% of MRR is diversified. A business where the top 10 accounts make up 70% of MRR is one negotiation away from a crisis.</p>
@@ -229,6 +241,25 @@
     <!-- PostHog -->
     <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r))}(0,document);</script>
     <script type="module" src="/assets/cl-enhance.js" defer></script>
+
+<!-- aeo-faq-injected -->
+<section class="aeo-faq" aria-label="Frequently asked questions">
+<h2>Frequently Asked Questions</h2>
+<h3>What is hidden churn in a SaaS acquisition?</h3>
+<p>Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.</p>
+<h3>How does ChurnLens score revenue quality?</h3>
+<p>ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.</p>
+<h3>Why do SaaS acquirers need due diligence on churn?</h3>
+<p>Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.</p>
+<h3>What red flags should I check before buying a SaaS business?</h3>
+<p>Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.</p>
+<table class="aeo-facts"><caption>Key facts</caption><tbody>
+<tr><th scope="row">Risk dimensions scored</th><td>5</td></tr>
+<tr><th scope="row">Revenue-quality score range</th><td>0-100</td></tr>
+<tr><th scope="row">Built for</th><td>Acquirers, PE, founders</td></tr>
+</tbody></table>
+<p class="aeo-updated"><time datetime="2026-07-08">Last reviewed 2026-07-08</time></p>
+</section>
 
 <!-- Brunson Trust Bar — Dotcom Secrets Chapter 7 -->
 <section style="background:linear-gradient(135deg,#f0f9ff,#e8f5e9);border-radius:16px;padding:32px 24px;margin:40px 0;border:2px solid #0066cc30;text-align:center">
