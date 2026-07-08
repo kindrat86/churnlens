@@ -201,82 +201,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/public/free/churn-calculator</loc>
+    <loc>https://churnlens.site/pricing/baremetrics-pricing-vs-churnlens</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/public/free/ltv-calculator</loc>
+    <loc>https://churnlens.site/pricing/chartmogul-pricing-vs-churnlens</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/public/free/mrr-health-check</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/integrations/chartmogul</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/integrations/profitwell</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/integrations/stripe</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/learn/annual-plan-churn</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/learn/net-revenue-retention</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/learn/revenue-concentration-risk</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/learn/what-is-a-good-churn-rate</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/pricing-questions/how-much-does-it-cost</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/pricing-questions/is-it-worth-it</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/use-cases/founder-valuation</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/use-cases/investor-reporting</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/use-cases/pe-due-diligence</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/public/use-cases/saas-acquisition</loc>
+    <loc>https://churnlens.site/pricing/profitwell-pricing-vs-churnlens</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
