@@ -3,6 +3,11 @@
   "outputDirectory": ".",
   "redirects": [
     {
+      "source": "/public/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:slug((?!googlea30bb998b91eb6ac).+)\\.html",
       "destination": "/:slug",
       "permanent": true
