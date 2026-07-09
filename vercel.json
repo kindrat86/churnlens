@@ -185,6 +185,18 @@
     {
       "source": "/agents.md",
       "destination": "/agents.md"
+    },
+    {
+      "source": "/sectors/:slug",
+      "destination": "/sectors/:slug.html"
+    },
+    {
+      "source": "/faq/:slug",
+      "destination": "/faq/:slug.html"
+    },
+    {
+      "source": "/benchmarks/:slug",
+      "destination": "/benchmarks/:slug.html"
     }
   ],
   "headers": [
