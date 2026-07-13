@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Net Revenue Retention (NRR) Calculator | ChurnLens</title>
+<meta name="description" content="Calculate your SaaS Net Revenue Retention from starting MRR, expansion, contraction, and churned revenue. Includes benchmark comparison and waterfall breakdown. Free.">
+<meta property="og:title" content="Net Revenue Retention Calculator — Free">
+<meta property="og:description" content="Calculate NRR instantly with benchmark comparison and waterfall breakdown. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://churnlens.site/free/nrr-calculator/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Net Revenue Retention Calculator",
+  "description": "Free NRR calculator with benchmark comparison and waterfall-style breakdown.",
+  "url": "https://churnlens.site/free/nrr-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#0066cc;--card:#1a1a1a;--border:#333;--red:#e74c3c;--green:#2ecc71;--yellow:#f1c40f;--muted:#999}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:960px;margin:0 auto}
+h1{font-size:2rem;margin-bottom:8px;letter-spacing:-.5px}
+.subtitle{color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px}
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+@media(max-width:600px){.input-grid{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+input,textarea{width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:8px;font-size:1rem;outline:none;transition:border-color .2s}
+input:focus,textarea:focus{border-color:var(--accent)}
+.hero-result{text-align:center;padding:36px 20px;border-radius:12px;margin-bottom:24px;border:2px solid}
+.hero-result.good{background:linear-gradient(135deg,#0a1a0a,#102a10);border-color:var(--green)}
+.hero-result.avg{background:linear-gradient(135deg,#1a1a0a,#2a2a10);border-color:var(--yellow)}
+.hero-result.poor{background:linear-gradient(135deg,#1a0a0a,#2a1010);border-color:var(--red)}
+.hero-result .label{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.hero-result .value{font-size:3.2rem;font-weight:800;margin:8px 0}
+.hero-result.good .value{color:var(--green)}
+.hero-result.avg .value{color:var(--yellow)}
+.hero-result.poor .value{color:var(--red)}
+.hero-result .sub{font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.hero-result.good .sub{color:var(--green)}
+.hero-result.avg .sub{color:var(--yellow)}
+.hero-result.poor .sub{color:var(--red)}
+.section-title{font-size:1rem;font-weight:600;margin:24px 0 14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.benchmarks{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+@media(max-width:600px){.benchmarks{grid-template-columns:1fr 1fr}}
+.bench-card{background:#111;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;transition:border-color .3s}
+.bench-card.current{border-width:2px}
+.bench-card .bench-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.bench-card .bench-val{font-size:1.4rem;font-weight:700}
+.bench-card.world .bench-val{color:var(--green)}
+.bench-card.world .bench-label{color:var(--green)}
+.bench-card.good .bench-val{color:#5dade2}
+.bench-card.good .bench-label{color:#5dade2}
+.bench-card.avg .bench-val{color:var(--yellow)}
+.bench-card.avg .bench-label{color:var(--yellow)}
+.bench-card.poor .bench-val{color:var(--red)}
+.bench-card.poor .bench-label{color:var(--red)}
+.waterfall{display:flex;align-items:flex-end;gap:0;height:260px;margin-top:16px;overflow-x:auto}
+.wf-col{display:flex;flex-direction:column;align-items:center;min-width:90px;justify-content:flex-end;height:100%}
+.wf-bar-wrap{display:flex;flex-direction:column;align-items:center;width:100%;height:200px;justify-content:flex-end;position:relative}
+.wf-bar{width:50px;border-radius:4px 4px 0 0;transition:height .5s ease;min-height:2px;position:relative}
+.wf-bar.start{background:var(--accent)}
+.wf-bar.expansion{background:var(--green)}
+.wf-bar.contraction{background:var(--yellow)}
+.wf-bar.churned{background:var(--red)}
+.wf-bar.end{background:var(--accent)}
+.wf-val{font-size:.8rem;font-weight:700;margin-top:6px;white-space:nowrap}
+.wf-label{font-size:.78rem;color:var(--muted);margin-top:4px;text-align:center}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;text-decoration:none}
+.btn:hover{background:#0052a3}
+.btn-secondary{background:#222;border:1px solid var(--border)}
+.btn-secondary:hover{background:#2a2a2a}
+.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.placeholder{text-align:center;color:var(--muted);padding:40px 20px;font-size:1.1rem}
+.related{margin-top:40px}
+.related h3{font-size:1.1rem;margin-bottom:14px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+.related-links a{display:block;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);text-decoration:none;transition:border-color .2s;font-size:.95rem}
+.related-links a:hover{border-color:var(--accent)}
+.cta{text-align:center;margin:40px 0;padding:32px;background:linear-gradient(135deg,#0a0f1a,#0d1520);border:1px solid var(--accent);border-radius:12px}
+.cta h2{font-size:1.4rem;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--accent);text-decoration:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:100}
+.toast.show{opacity:1}
+.formula{background:#111;border:1px solid var(--border);border-radius:8px;padding:14px;font-size:.85rem;color:var(--muted);margin-top:8px}
+.formula code{color:var(--accent);font-family:'SF Mono',Consolas,monospace}
+</style>
+</head>
+<body>
+
+<h1>Net Revenue Retention Calculator</h1>
+<p class="subtitle">Calculate your NRR from MRR components, compare against benchmarks, and see the waterfall. Free, instant, no signup.</p>
+
+<div class="tool-card">
+  <div class="input-grid">
+    <div>
+      <label for="startingMrr">Starting MRR ($)</label>
+      <input type="number" id="startingMrr" placeholder="100000" min="0">
+    </div>
+    <div>
+      <label for="expansionMrr">Expansion MRR ($)</label>
+      <input type="number" id="expansionMrr" placeholder="15000" min="0">
+    </div>
+    <div>
+      <label for="contractionMrr">Contraction MRR ($)</label>
+      <input type="number" id="contractionMrr" placeholder="5000" min="0">
+    </div>
+    <div>
+      <label for="churnedMrr">Churned MRR ($)</label>
+      <input type="number" id="churnedMrr" placeholder="8000" min="0">
+    </div>
+  </div>
+
+  <div class="formula">
+    <strong>Formula:</strong> <code>NRR = (Starting + Expansion − Contraction − Churned) / Starting × 100</code>
+  </div>
+
+  <div id="hero" style="display:none">
+    <div class="hero-result" id="heroBox">
+      <div class="label">Your Net Revenue Retention</div>
+      <div class="value" id="nrrValue">0%</div>
+      <div class="sub" id="nrrVerdict"></div>
+    </div>
+
+    <div class="section-title">Benchmark Comparison</div>
+    <div class="benchmarks">
+      <div class="bench-card world" id="benchWorld">
+        <div class="bench-label">World-Class</div>
+        <div class="bench-val">130%+</div>
+      </div>
+      <div class="bench-card good" id="benchGood">
+        <div class="bench-label">Good</div>
+        <div class="bench-val">110-130%</div>
+      </div>
+      <div class="bench-card avg" id="benchAvg">
+        <div class="bench-label">Average</div>
+        <div class="bench-val">90-110%</div>
+      </div>
+      <div class="bench-card poor" id="benchPoor">
+        <div class="bench-label">Poor</div>
+        <div class="bench-val">&lt;90%</div>
+      </div>
+    </div>
+
+    <div class="section-title">Waterfall Breakdown</div>
+    <div class="waterfall" id="waterfall"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+      <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+    </div>
+  </div>
+
+  <div id="placeholder" class="placeholder">Enter your MRR components above to calculate NRR.</div>
+</div>
+
+<div class="cta">
+  <h2>Doing SaaS due diligence?</h2>
+  <p>Get the full buyer-side checklist that PE analysts use to assess retention quality before a deal.</p>
+  <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+</div>
+
+<div class="related">
+  <h3>Related Free Tools</h3>
+  <div class="related-links">
+    <a href="/free/churn-calculator/">SaaS Churn Cost Calculator →</a>
+    <a href="/free/revenue-concentration-analyzer/">Revenue Concentration Risk Analyzer →</a>
+    <a href="/free/zombie-mrr-detector/">Zombie MRR Detector →</a>
+    <a href="/free/saas-health-score/">SaaS Revenue Health Score →</a>
+    <a href="/free/ltv-calculator/">LTV Calculator →</a>
+    <a href="/free/mrr-health-check/">MRR Health Check →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
+</footer>
+
+<div class="toast" id="toast">Results copied to clipboard!</div>
+
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+
+function calculate(){
+  const starting=parseFloat(document.getElementById('startingMrr').value)||0
+  const expansion=parseFloat(document.getElementById('expansionMrr').value)||0
+  const contraction=parseFloat(document.getElementById('contractionMrr').value)||0
+  const churned=parseFloat(document.getElementById('churnedMrr').value)||0
+
+  if(starting<=0){
+    document.getElementById('placeholder').style.display='block'
+    document.getElementById('hero').style.display='none'
+    return
+  }
+
+  document.getElementById('placeholder').style.display='none'
+  document.getElementById('hero').style.display='block'
+
+  const nrr=((starting+expansion-contraction-churned)/starting)*100
+  const ending=starting+expansion-contraction-churned
+
+  // Hero verdict
+  const box=document.getElementById('heroBox')
+  const verdict=document.getElementById('nrrVerdict')
+  box.classList.remove('good','avg','poor')
+
+  if(nrr>=110){
+    box.classList.add('good')
+    verdict.textContent=nrr>=130?'World-Class — Top 1% of SaaS':'Healthy — Growing from existing base'
+  } else if(nrr>=90){
+    box.classList.add('avg')
+    verdict.textContent='Average — Room to improve expansion revenue'
+  } else {
+    box.classList.add('poor')
+    verdict.textContent='Poor — Losing more than you gain from existing customers'
+  }
+
+  document.getElementById('nrrValue').textContent=nrr.toFixed(1)+'%'
+
+  // Highlight current benchmark
+  document.querySelectorAll('.bench-card').forEach(c=>c.classList.remove('current'))
+  if(nrr>=130)document.getElementById('benchWorld').classList.add('current')
+  else if(nrr>=110)document.getElementById('benchGood').classList.add('current')
+  else if(nrr>=90)document.getElementById('benchAvg').classList.add('current')
+  else document.getElementById('benchPoor').classList.add('current')
+
+  // Waterfall
+  renderWaterfall(starting,expansion,contraction,churned,ending)
+}
+
+function renderWaterfall(starting,expansion,contraction,churned,ending){
+  const container=document.getElementById('waterfall')
+  container.innerHTML=''
+  const max=Math.max(starting,ending,starting+expansion,1)
+
+  const steps=[
+    {label:'Starting',val:starting,type:'start',base:0},
+    {label:'Expansion',val:expansion,type:'expansion',base:starting},
+    {label:'Contraction',val:contraction,type:'contraction',base:starting+expansion-contraction},
+    {label:'Churned',val:churned,type:'churned',base:ending},
+    {label:'Ending',val:ending,type:'end',base:0}
+  ]
+
+  steps.forEach(step=>{
+    const col=document.createElement('div')
+    col.className='wf-col'
+
+    const wrap=document.createElement('div')
+    wrap.className='wf-bar-wrap'
+
+    const bar=document.createElement('div')
+    bar.className='wf-bar '+step.type
+
+    if(step.type==='start'||step.type==='end'){
+      bar.style.height=Math.max((step.val/max)*100,2)+'%'
+    } else {
+      // floating bar: height proportional to val, positioned at base
+      const h=(Math.abs(step.val)/max)*100
+      const baseH=(step.base/max)*100
+      bar.style.height=Math.max(h,step.val>0?4:0)+'%'
+      bar.style.position='absolute'
+      bar.style.bottom=baseH+'%'
+    }
+
+    const valLabel=document.createElement('div')
+    valLabel.className='wf-val'
+    if(step.type==='expansion')valLabel.textContent='+'+fmt(step.val)
+    else if(step.type==='contraction'||step.type==='churned')valLabel.textContent='−'+fmt(step.val)
+    else valLabel.textContent=fmt(step.val)
+
+    const lbl=document.createElement('div')
+    lbl.className='wf-label'
+    lbl.textContent=step.label
+
+    wrap.appendChild(bar)
+    col.appendChild(wrap)
+    col.appendChild(valLabel)
+    col.appendChild(lbl)
+    container.appendChild(col)
+  })
+}
+
+function copyResults(){
+  const starting=parseFloat(document.getElementById('startingMrr').value)||0
+  const expansion=parseFloat(document.getElementById('expansionMrr').value)||0
+  const contraction=parseFloat(document.getElementById('contractionMrr').value)||0
+  const churned=parseFloat(document.getElementById('churnedMrr').value)||0
+  if(starting<=0)return
+  const nrr=((starting+expansion-contraction-churned)/starting)*100
+  const ending=starting+expansion-contraction-churned
+  let verdict=nrr>=130?'World-Class':nrr>=110?'Good':nrr>=90?'Average':'Poor'
+
+  const text=`Net Revenue Retention (ChurnLens)
+═══════════════════════════════════
+Starting MRR:     ${fmt(starting)}/mo
++ Expansion:      ${fmt(expansion)}/mo
+- Contraction:    ${fmt(contraction)}/mo
+- Churned:        ${fmt(churned)}/mo
+──────────────────────────────────
+Ending MRR:       ${fmt(ending)}/mo
+NRR:              ${nrr.toFixed(1)}% (${verdict})
+
+Benchmark: World-Class 130%+ | Good 110-130% | Avg 90-110% | Poor <90%
+
+Analyzed free at ChurnLens — https://churnlens.site/free/nrr-calculator/`
+
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast')
+    t.classList.add('show')
+    setTimeout(()=>t.classList.remove('show'),2500)
+  })
+}
+
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input',calculate))
+calculate()
+</script>
+
+</body>
+</html>

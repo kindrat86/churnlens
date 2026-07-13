@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Embeddable SaaS Churn Calculator Widget | ChurnLens</title>
+<meta name="description" content="Get a free, embeddable SaaS churn calculator widget for your blog, startup, or SaaS dashboard. One line of code. No signup required.">
+<link rel="canonical" href="https://churnlens.site/free/embed-widget">
+<meta property="og:title" content="Free Embeddable SaaS Churn Calculator Widget">
+<meta property="og:description" content="One line of code. Real-time churn cost calculation. No signup, no watermark.">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"ChurnLens Churn Calculator Widget","url":"https://churnlens.site/free/embed-widget","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:#e0e0e0;max-width:800px;margin:0 auto;padding:20px;background:#0a0a0a}
+h1{color:#fff;font-size:2rem}
+h2{color:#fff;margin-top:32px}
+.code-block{background:#111;border:1px solid #333;border-radius:8px;padding:16px;margin:16px 0;overflow-x:auto;position:relative}
+.code-block code{color:#00ff88;font-family:"SF Mono",Monaco,monospace;font-size:0.9rem;white-space:pre-wrap;word-break:break-all}
+.copy-btn{position:absolute;top:8px;right:8px;background:#0066cc;color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:0.8rem}
+.preview-box{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:20px;margin:20px 0}
+.cta{background:#0066cc;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;display:inline-block;margin:16px 0;font-weight:bold}
+.feature-list{list-style:none;padding:0}
+.feature-list li{padding:8px 0;border-bottom:1px solid #222}
+.feature-list li:before{content:"✓ ";color:#00ff88;font-weight:bold}
+nav a{color:#0066cc;text-decoration:none;margin-right:16px}
+</style>
+</head>
+<body>
+<nav style="margin-bottom:24px">
+<a href="/">ChurnLens</a>
+<a href="/free/churn-calculator">Full Calculator</a>
+<a href="/pricing">Pricing</a>
+</nav>
+
+<h1>Free Embeddable Churn Calculator Widget</h1>
+<p style="font-size:1.1rem;color:#aaa">Add a real-time SaaS churn cost calculator to your blog, startup site, or dashboard. One line of code. No signup. No watermark.</p>
+
+<h2>Why embed this?</h2>
+<ul class="feature-list">
+<li>Increases time-on-page by 3-5 minutes (interactive content)</li>
+<li>Generates backlinks when other SaaS blogs reference your tool</li>
+<li>Zero maintenance — we host it, you just embed</li>
+<li>Mobile-responsive, dark/light theme auto-detection</li>
+<li>No tracking, no cookies, no third-party scripts</li>
+</ul>
+
+<h2>Live Preview</h2>
+<div class="preview-box">
+<iframe src="/free/churn-calculator?embed=1" style="width:100%;height:500px;border:none;border-radius:8px" title="Churn Calculator Preview"></iframe>
+</div>
+
+<h2>Embed Code — One Line</h2>
+<p>Copy this and paste it anywhere in your HTML:</p>
+<div class="code-block">
+<button class="copy-btn" onclick="copyCode()">Copy</button>
+<code id="embedCode">&lt;iframe src="https://churnlens.site/free/churn-calculator?embed=1" width="100%" height="500" frameborder="0" style="border-radius:8px" title="SaaS Churn Calculator by ChurnLens"&gt;&lt;/iframe&gt;</code>
+</div>
+
+<h2>WordPress Shortcode</h2>
+<div class="code-block">
+<button class="copy-btn" onclick="copyWP()">Copy</button>
+<code id="wpCode">[iframe src="https://churnlens.site/free/churn-calculator?embed=1" width="100%" height="500"]</code>
+</div>
+
+<h2>Link Attribution (optional but appreciated)</h2>
+<p>If you embed the widget, a link back to ChurnLens helps us reach more SaaS buyers:</p>
+<div class="code-block">
+<code>&lt;a href="https://churnlens.site"&gt;Powered by ChurnLens — SaaS Due Diligence&lt;/a&gt;</code>
+</div>
+
+<h2>Other Free Tools</h2>
+<p>Each of these is also embeddable:</p>
+<ul>
+<li><a href="/free/revenue-concentration-analyzer" style="color:#0066cc">Revenue Concentration Risk Analyzer</a></li>
+<li><a href="/free/zombie-mrr-detector" style="color:#0066cc">Zombie MRR Detector</a></li>
+<li><a href="/free/nrr-calculator" style="color:#0066cc">Net Revenue Retention Calculator</a></li>
+<li><a href="/free/saas-health-score" style="color:#0066cc">SaaS Revenue Health Score</a></li>
+</ul>
+
+<a href="/get-the-checklist" class="cta">Get the full due diligence checklist &rarr;</a>
+
+<hr style="margin:40px 0;border-color:#222">
+<p style="color:#666;font-size:0.85rem">Powered by <a href="/" style="color:#0066cc">ChurnLens</a> — Buyer-Side SaaS Due Diligence</p>
+
+<script>
+function copyCode(){const code=document.getElementById("embedCode").textContent;navigator.clipboard.writeText(code)}
+function copyWP(){const code=document.getElementById("wpCode").textContent;navigator.clipboard.writeText(code)}
+</script>
+</body>
+</html>

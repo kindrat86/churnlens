@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Revenue Concentration Risk Analyzer | ChurnLens</title>
+<meta name="description" content="Analyze SaaS revenue concentration risk. Enter customer MRR values to get HHI, top-5 concentration, whale flags, and color-coded risk levels. Free.">
+<meta property="og:title" content="Revenue Concentration Risk Analyzer — Free">
+<meta property="og:description" content="Enter your top customer MRR values and instantly see HHI, concentration %, whale flags, and risk level. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://churnlens.site/free/revenue-concentration-analyzer/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Revenue Concentration Risk Analyzer",
+  "description": "Free tool to calculate HHI, top-5 concentration, and whale customer risk for SaaS revenue.",
+  "url": "https://churnlens.site/free/revenue-concentration-analyzer/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#0066cc;--card:#1a1a1a;--border:#333;--red:#e74c3c;--green:#2ecc71;--yellow:#f1c40f;--muted:#999}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:960px;margin:0 auto}
+h1{font-size:2rem;margin-bottom:8px;letter-spacing:-.5px}
+.subtitle{color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px}
+.input-section{margin-bottom:24px}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+textarea,input{width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:8px;font-size:1rem;outline:none;transition:border-color .2s;font-family:inherit}
+textarea{min-height:180px;resize:vertical;line-height:1.8}
+textarea:focus,input:focus{border-color:var(--accent)}
+.hint{font-size:.8rem;color:var(--muted);margin-top:6px}
+.risk-banner{text-align:center;padding:32px 20px;border-radius:12px;margin-bottom:24px;border:2px solid}
+.risk-banner.green{background:rgba(46,204,113,.08);border-color:var(--green)}
+.risk-banner.yellow{background:rgba(241,196,15,.08);border-color:var(--yellow)}
+.risk-banner.red{background:rgba(231,76,60,.08);border-color:var(--red)}
+.risk-banner .label{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;opacity:.8}
+.risk-banner .level{font-size:2.2rem;font-weight:800;margin:6px 0;text-transform:uppercase}
+.risk-banner.green .level{color:var(--green)}
+.risk-banner.yellow .level{color:var(--yellow)}
+.risk-banner.red .level{color:var(--red)}
+.risk-banner .detail{font-size:1rem;opacity:.8}
+.results-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+@media(max-width:600px){.results-grid{grid-template-columns:1fr}}
+.stat{background:#111;border:1px solid var(--border);border-radius:8px;padding:18px}
+.stat .stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat .stat-value{font-size:1.6rem;font-weight:700}
+.stat .stat-detail{font-size:.85rem;color:var(--muted);margin-top:4px}
+.whale-warning{background:rgba(231,76,60,.1);border:1px solid var(--red);border-radius:8px;padding:16px;margin-bottom:20px;display:none}
+.whale-warning.show{display:block}
+.whale-warning h3{color:var(--red);font-size:1rem;margin-bottom:6px}
+.whale-warning p{font-size:.9rem}
+.chart-container{margin-top:20px}
+.chart-title{font-size:.95rem;font-weight:600;margin-bottom:14px;color:var(--muted)}
+.conc-chart{display:flex;align-items:flex-end;gap:8px;height:240px;border-bottom:1px solid var(--border);padding-bottom:4px;overflow-x:auto}
+.conc-bar-group{flex:1;min-width:50px;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.conc-bar{width:100%;border-radius:4px 4px 0 0;transition:height .4s ease, background .3s;min-height:2px}
+.conc-bar-label{font-size:.75rem;color:var(--muted);text-align:center;white-space:nowrap}
+.conc-bar-val{font-size:.75rem;font-weight:600}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;text-decoration:none}
+.btn:hover{background:#0052a3}
+.btn-secondary{background:#222;border:1px solid var(--border)}
+.btn-secondary:hover{background:#2a2a2a}
+.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.placeholder{text-align:center;color:var(--muted);padding:40px 20px;font-size:1.1rem}
+.related{margin-top:40px}
+.related h3{font-size:1.1rem;margin-bottom:14px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+.related-links a{display:block;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);text-decoration:none;transition:border-color .2s;font-size:.95rem}
+.related-links a:hover{border-color:var(--accent)}
+.cta{text-align:center;margin:40px 0;padding:32px;background:linear-gradient(135deg,#0a0f1a,#0d1520);border:1px solid var(--accent);border-radius:12px}
+.cta h2{font-size:1.4rem;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--accent);text-decoration:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:100}
+.toast.show{opacity:1}
+.sample-btn{background:none;border:1px dashed var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;font-size:.85rem;cursor:pointer;margin-top:8px}
+.sample-btn:hover{border-color:var(--accent);color:var(--text)}
+</style>
+</head>
+<body>
+
+<h1>Revenue Concentration Risk Analyzer</h1>
+<p class="subtitle">Enter your top customer MRR values to instantly see HHI, concentration risk, and whale flags — free, no signup.</p>
+
+<div class="tool-card">
+  <div class="input-section">
+    <label for="customers">Customer MRR Values (one per line, up to 10)</label>
+    <textarea id="customers" placeholder="15000&#10;8000&#10;6000&#10;4000&#10;3000&#10;2000&#10;1000&#10;500"></textarea>
+    <button class="sample-btn" onclick="loadSample()">Load sample data</button>
+    <div class="hint">Enter your top customers' monthly recurring revenue, largest first. One value per line.</div>
+  </div>
+
+  <div id="hero" style="display:none">
+    <div class="risk-banner" id="riskBanner">
+      <div class="label">Revenue Concentration Risk</div>
+      <div class="level" id="riskLevel">—</div>
+      <div class="detail" id="riskDetail"></div>
+    </div>
+
+    <div class="results-grid">
+      <div class="stat">
+        <div class="stat-label">HHI (Concentration Index)</div>
+        <div class="stat-value" id="hhiVal">0</div>
+        <div class="stat-detail" id="hhiDetail">Scale: 0 (perfect spread) to 1.0 (monocustomer)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Top-5 Concentration</div>
+        <div class="stat-value" id="top5Val">0%</div>
+        <div class="stat-detail" id="top5Detail"></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total MRR Analyzed</div>
+        <div class="stat-value" id="totalMrr">$0</div>
+        <div class="stat-detail" id="custCount"></div>
+      </div>
+    </div>
+
+    <div class="whale-warning" id="whaleWarning">
+      <h3>🐋 Whale Customer Detected</h3>
+      <p id="whaleText"></p>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Revenue Share by Customer</div>
+      <div class="conc-chart" id="chart"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+      <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+    </div>
+  </div>
+
+  <div id="placeholder" class="placeholder">Enter customer MRR values above to analyze concentration risk.</div>
+</div>
+
+<div class="cta">
+  <h2>Doing SaaS due diligence?</h2>
+  <p>Get the full buyer-side checklist that PE analysts use to spot concentration risk before a deal.</p>
+  <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+</div>
+
+<div class="related">
+  <h3>Related Free Tools</h3>
+  <div class="related-links">
+    <a href="/free/churn-calculator/">SaaS Churn Cost Calculator →</a>
+    <a href="/free/nrr-calculator/">Net Revenue Retention Calculator →</a>
+    <a href="/free/zombie-mrr-detector/">Zombie MRR Detector →</a>
+    <a href="/free/saas-health-score/">SaaS Revenue Health Score →</a>
+    <a href="/free/ltv-calculator/">LTV Calculator →</a>
+    <a href="/free/mrr-health-check/">MRR Health Check →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
+</footer>
+
+<div class="toast" id="toast">Results copied to clipboard!</div>
+
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+
+function loadSample(){
+  document.getElementById('customers').value='25000\n12000\n8000\n5000\n3000\n2000\n1500\n1000\n500\n500'
+  analyze()
+}
+
+function analyze(){
+  const raw=document.getElementById('customers').value
+  const lines=raw.split('\n').map(l=>l.trim()).filter(l=>l.length>0)
+  const values=lines.map(l=>parseFloat(l)).filter(v=>!isNaN(v)&&v>0).slice(0,10)
+
+  if(values.length===0){
+    document.getElementById('placeholder').style.display='block'
+    document.getElementById('hero').style.display='none'
+    return
+  }
+
+  document.getElementById('placeholder').style.display='none'
+  document.getElementById('hero').style.display='block'
+
+  const total=values.reduce((a,b)=>a+b,0)
+  const shares=values.map(v=>v/total)
+
+  // HHI = sum of squared market shares
+  const hhi=shares.reduce((sum,s)=>sum+s*s,0)
+
+  // Top-5 concentration
+  const top5=values.slice(0,5).reduce((a,b)=>a+b,0)/total
+
+  // Whale: any customer >25%
+  const whales=values.map((v,i)=>({v,share:v/total,idx:i})).filter(w=>w.share>0.25)
+
+  // Risk level
+  const banner=document.getElementById('riskBanner')
+  const level=document.getElementById('riskLevel')
+  const detail=document.getElementById('riskDetail')
+  banner.classList.remove('green','yellow','red')
+  if(hhi<0.15){
+    banner.classList.add('green');level.textContent='Low Risk';detail.textContent='Revenue is well-diversified across customers.'
+  } else if(hhi<=0.25){
+    banner.classList.add('yellow');level.textContent='Moderate Risk';detail.textContent='Some concentration exists. Monitor top accounts.'
+  } else {
+    banner.classList.add('red');level.textContent='High Risk';detail.textContent='Revenue is heavily concentrated. A single churn event could be devastating.'
+  }
+
+  document.getElementById('hhiVal').textContent=hhi.toFixed(3)
+  document.getElementById('top5Val').textContent=(top5*100).toFixed(1)+'%'
+  document.getElementById('top5Detail').textContent=values.length>=5?'Top 5 of '+values.length+' customers':'Only '+values.length+' customers entered'
+  document.getElementById('totalMrr').textContent=fmt(total)
+  document.getElementById('custCount').textContent=values.length+' customer'+(values.length!==1?'s':'')+' analyzed'
+
+  // Whale warning
+  const whaleEl=document.getElementById('whaleWarning')
+  if(whales.length>0){
+    whaleEl.classList.add('show')
+    const w=whales[0]
+    document.getElementById('whaleText').textContent='Customer #'+(w.idx+1)+' represents '+(w.share*100).toFixed(1)+'% of MRR ('+fmt(w.v)+'/mo). If they churn, you lose '+(w.share*100).toFixed(0)+'% of revenue overnight. This is a major red flag for acquirers.'
+  } else {
+    whaleEl.classList.remove('show')
+  }
+
+  renderChart(values, shares)
+}
+
+function renderChart(values, shares){
+  const container=document.getElementById('chart')
+  container.innerHTML=''
+  const maxShare=Math.max(...shares)
+
+  values.forEach((v,i)=>{
+    const group=document.createElement('div')
+    group.className='conc-bar-group'
+
+    const valLabel=document.createElement('div')
+    valLabel.className='conc-bar-val'
+    valLabel.textContent=(shares[i]*100).toFixed(1)+'%'
+
+    const bar=document.createElement('div')
+    bar.className='conc-bar'
+    const h=(shares[i]/maxShare)*100
+    bar.style.height=Math.max(h,2)+'%'
+    if(shares[i]>0.25) bar.style.background='var(--red)'
+    else if(shares[i]>0.15) bar.style.background='var(--yellow)'
+    else bar.style.background='var(--accent)'
+
+    const label=document.createElement('div')
+    label.className='conc-bar-label'
+    label.textContent='#'+(i+1)+'\n'+fmt(v)
+
+    group.appendChild(valLabel)
+    group.appendChild(bar)
+    group.appendChild(label)
+    container.appendChild(group)
+  })
+}
+
+function copyResults(){
+  const raw=document.getElementById('customers').value
+  const lines=raw.split('\n').map(l=>l.trim()).filter(l=>l.length>0)
+  const values=lines.map(l=>parseFloat(l)).filter(v=>!isNaN(v)&&v>0).slice(0,10)
+  if(values.length===0)return
+  const total=values.reduce((a,b)=>a+b,0)
+  const shares=values.map(v=>v/total)
+  const hhi=shares.reduce((sum,s)=>sum+s*s,0)
+  const top5=values.slice(0,5).reduce((a,b)=>a+b,0)/total
+  const whales=values.filter(v=>v/total>0.25)
+  const riskLevel=hhi<0.15?'LOW (Green)':hhi<=0.25?'MODERATE (Yellow)':'HIGH (Red)'
+  const whaleNote=whales.length>0?'\n⚠️  WHALE: '+whales.length+' customer(s) >25% of MRR':''
+
+  const text=`Revenue Concentration Analysis (ChurnLens)
+═══════════════════════════════════
+Customers Analyzed:  ${values.length}
+Total MRR:           $${Math.round(total).toLocaleString()}
+HHI:                 ${hhi.toFixed(3)} (0=spread, 1=monocustomer)
+Top-5 Concentration: ${(top5*100).toFixed(1)}%
+Risk Level:          ${riskLevel}${whaleNote}
+
+Analyzed free at ChurnLens — https://churnlens.site/free/revenue-concentration-analyzer/`
+
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast')
+    t.classList.add('show')
+    setTimeout(()=>t.classList.remove('show'),2500)
+  })
+}
+
+document.getElementById('customers').addEventListener('input',analyze)
+analyze()
+</script>
+
+</body>
+</html>

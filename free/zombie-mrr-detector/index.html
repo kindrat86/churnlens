@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Zombie MRR Detector | ChurnLens</title>
+<meta name="description" content="Detect zombie subscriptions: accounts still paying but inactive for 90+ days. Paste your data and see total zombie MRR at risk. Free SaaS due diligence tool.">
+<meta property="og:title" content="Zombie MRR Detector — Free">
+<meta property="og:description" content="Paste your subscription data and instantly find zombie accounts draining value. Free, instant, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://churnlens.site/free/zombie-mrr-detector/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zombie MRR Detector",
+  "description": "Free tool to detect zombie SaaS subscriptions: accounts paying but inactive for 90+ days.",
+  "url": "https://churnlens.site/free/zombie-mrr-detector/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#0066cc;--card:#1a1a1a;--border:#333;--red:#e74c3c;--green:#2ecc71;--yellow:#f1c40f;--muted:#999}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:960px;margin:0 auto}
+h1{font-size:2rem;margin-bottom:8px;letter-spacing:-.5px}
+.subtitle{color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+textarea,input{width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:8px;font-size:1rem;outline:none;transition:border-color .2s;font-family:inherit}
+textarea{min-height:180px;resize:vertical;line-height:1.8}
+textarea:focus,input:focus{border-color:var(--accent)}
+.hint{font-size:.8rem;color:var(--muted);margin-top:6px}
+.hero-result{text-align:center;padding:36px 20px;background:linear-gradient(135deg,#1a0a0a,#2a1010);border:2px solid var(--red);border-radius:12px;margin-bottom:24px}
+.hero-result.zero{background:linear-gradient(135deg,#0a1a0a,#102a10);border-color:var(--green)}
+.hero-result .label{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.hero-result .value{font-size:3rem;font-weight:800;color:var(--red);margin:8px 0}
+.hero-result.zero .value{color:var(--green)}
+.hero-result .sub{color:var(--muted);font-size:1rem}
+.results-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+@media(max-width:600px){.results-grid{grid-template-columns:1fr}}
+.stat{background:#111;border:1px solid var(--border);border-radius:8px;padding:18px}
+.stat .stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat .stat-value{font-size:1.6rem;font-weight:700}
+.stat .stat-detail{font-size:.85rem;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.9rem}
+table th{text-align:left;padding:10px 12px;background:#111;border-bottom:2px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+table td{padding:10px 12px;border-bottom:1px solid #222}
+table tr.zombie{background:rgba(231,76,60,.06)}
+table tr.zombie td:first-child{border-left:3px solid var(--red)}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.badge.zombie{background:rgba(231,76,60,.2);color:var(--red)}
+.badge.healthy{background:rgba(46,204,113,.15);color:var(--green)}
+.table-container{overflow-x:auto;margin-top:20px}
+.table-title{font-size:.95rem;font-weight:600;margin-bottom:4px;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;text-decoration:none}
+.btn:hover{background:#0052a3}
+.btn-secondary{background:#222;border:1px solid var(--border)}
+.btn-secondary:hover{background:#2a2a2a}
+.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.placeholder{text-align:center;color:var(--muted);padding:40px 20px;font-size:1.1rem}
+.related{margin-top:40px}
+.related h3{font-size:1.1rem;margin-bottom:14px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+.related-links a{display:block;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);text-decoration:none;transition:border-color .2s;font-size:.95rem}
+.related-links a:hover{border-color:var(--accent)}
+.cta{text-align:center;margin:40px 0;padding:32px;background:linear-gradient(135deg,#0a0f1a,#0d1520);border:1px solid var(--accent);border-radius:12px}
+.cta h2{font-size:1.4rem;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--accent);text-decoration:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:100}
+.toast.show{opacity:1}
+.sample-btn{background:none;border:1px dashed var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;font-size:.85rem;cursor:pointer;margin-top:8px}
+.sample-btn:hover{border-color:var(--accent);color:var(--text)}
+.threshold-control{display:flex;align-items:center;gap:12px;margin-top:12px}
+.threshold-control label{margin:0;font-size:.85rem}
+.threshold-control input{width:80px}
+</style>
+</head>
+<body>
+
+<h1>Zombie MRR Detector</h1>
+<p class="subtitle">Find subscription accounts that are still paying but haven't logged in for 90+ days. This MRR is at risk of churning. Free, instant.</p>
+
+<div class="tool-card">
+  <label for="data">Paste Subscription Data</label>
+  <textarea id="data" placeholder="customer,mrr,last_login_days_ago&#10;Acme Corp,5000,12&#10;Globex,3200,145&#10;Initech,800,97&#10;Hooli,12000,3&#10;Umbrella,2500,201"></textarea>
+  <button class="sample-btn" onclick="loadSample()">Load sample data</button>
+  <div class="hint">Format: customer, mrr, last_login_days_ago — one per line. First line may be a header.</div>
+  <div class="threshold-control">
+    <label for="threshold">Zombie threshold (days inactive):</label>
+    <input type="number" id="threshold" value="90" min="1">
+  </div>
+
+  <div id="hero" style="display:none">
+    <div class="hero-result" id="heroBox">
+      <div class="label">This MRR is at risk</div>
+      <div class="value" id="heroValue">$0/mo</div>
+      <div class="sub" id="heroSub"></div>
+    </div>
+
+    <div class="results-grid">
+      <div class="stat">
+        <div class="stat-label">Zombie Accounts</div>
+        <div class="stat-value" id="zombieCount">0</div>
+        <div class="stat-detail" id="zombieCountDetail"></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Zombie MRR</div>
+        <div class="stat-value" id="zombieMrr">$0</div>
+        <div class="stat-detail" id="zombieMrrDetail"></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total MRR (all accounts)</div>
+        <div class="stat-value" id="totalMrr">$0</div>
+        <div class="stat-detail" id="totalAccounts"></div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <div class="table-title">Account Analysis</div>
+      <table id="resultsTable">
+        <thead>
+          <tr><th>Customer</th><th>MRR</th><th>Last Login</th><th>Status</th></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+      <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+    </div>
+  </div>
+
+  <div id="placeholder" class="placeholder">Paste your subscription data above to detect zombie accounts.</div>
+</div>
+
+<div class="cta">
+  <h2>Doing SaaS due diligence?</h2>
+  <p>Get the full buyer-side checklist that PE analysts use to spot zombie MRR and hidden churn risk before a deal.</p>
+  <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+</div>
+
+<div class="related">
+  <h3>Related Free Tools</h3>
+  <div class="related-links">
+    <a href="/free/churn-calculator/">SaaS Churn Cost Calculator →</a>
+    <a href="/free/revenue-concentration-analyzer/">Revenue Concentration Risk Analyzer →</a>
+    <a href="/free/nrr-calculator/">Net Revenue Retention Calculator →</a>
+    <a href="/free/saas-health-score/">SaaS Revenue Health Score →</a>
+    <a href="/free/ltv-calculator/">LTV Calculator →</a>
+    <a href="/free/mrr-health-check/">MRR Health Check →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
+</footer>
+
+<div class="toast" id="toast">Results copied to clipboard!</div>
+
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+
+function loadSample(){
+  document.getElementById('data').value='customer,mrr,last_login_days_ago\nAcme Corp,5000,12\nGlobex Inc,3200,145\nInitech,800,97\nHooli,12000,3\nUmbrella Corp,2500,201\nStark Industries,4500,45\nWayne Enterprises,1800,132\nSoylent,600,15\nCyberdyne,9000,67\nAperture Science,2200,178'
+  detect()
+}
+
+function detect(){
+  const raw=document.getElementById('data').value
+  const threshold=parseInt(document.getElementById('threshold').value)||90
+  const lines=raw.split('\n').map(l=>l.trim()).filter(l=>l.length>0)
+
+  // Parse lines: skip header if first line contains non-numeric in col2
+  const records=[]
+  let startIdx=0
+  if(lines.length>0){
+    const firstParts=lines[0].split(/[,;\t]/)
+    if(isNaN(parseFloat(firstParts[1])))startIdx=1 // header
+  }
+
+  for(let i=startIdx;i<lines.length;i++){
+    const parts=lines[i].split(/[,;\t]/).map(p=>p.trim())
+    if(parts.length<3)continue
+    const customer=parts[0]
+    const mrr=parseFloat(parts[1])
+    const days=parseInt(parts[2])
+    if(!customer||isNaN(mrr)||isNaN(days))continue
+    if(mrr<=0)continue
+    records.push({customer,mrr,days,isZombie:days>=threshold})
+  }
+
+  if(records.length===0){
+    document.getElementById('placeholder').style.display='block'
+    document.getElementById('hero').style.display='none'
+    return
+  }
+
+  document.getElementById('placeholder').style.display='none'
+  document.getElementById('hero').style.display='block'
+
+  const zombies=records.filter(r=>r.isZombie)
+  const totalMrr=records.reduce((s,r)=>s+r.mrr,0)
+  const zombieMrr=zombies.reduce((s,r)=>s+r.mrr,0)
+  const zombiePct=totalMrr>0?(zombieMrr/totalMrr*100):0
+
+  // Hero
+  const heroBox=document.getElementById('heroBox')
+  const heroVal=document.getElementById('heroValue')
+  const heroSub=document.getElementById('heroSub')
+  if(zombieMrr>0){
+    heroBox.classList.remove('zero')
+    heroVal.textContent=fmt(zombieMrr)+'/mo'
+    heroSub.textContent=zombies.length+' zombie account'+(zombies.length!==1?'s':'')+' = '+zombiePct.toFixed(1)+'% of your MRR is dormant and at risk.'
+  } else {
+    heroBox.classList.add('zero')
+    heroVal.textContent='$0/mo'
+    heroSub.textContent='No zombie accounts detected. All customers are active.'
+  }
+
+  // Stats
+  document.getElementById('zombieCount').textContent=zombies.length
+  document.getElementById('zombieCountDetail').textContent='Out of '+records.length+' total accounts'
+  document.getElementById('zombieMrr').textContent=fmt(zombieMrr)+'/mo'
+  document.getElementById('zombieMrrDetail').textContent=zombiePct.toFixed(1)+'% of total MRR'
+  document.getElementById('totalMrr').textContent=fmt(totalMrr)+'/mo'
+  document.getElementById('totalAccounts').textContent=records.length+' accounts analyzed'
+
+  // Table — sort zombies first, then by days desc
+  records.sort((a,b)=>{
+    if(a.isZombie!==b.isZombie)return a.isZombie?-1:1
+    return b.days-a.days
+  })
+
+  const tbody=document.getElementById('tableBody')
+  tbody.innerHTML=''
+  records.forEach(r=>{
+    const tr=document.createElement('tr')
+    if(r.isZombie)tr.className='zombie'
+    tr.innerHTML='<td>'+r.customer+'</td><td>'+fmt(r.mrr)+'/mo</td><td>'+r.days+' days ago</td><td><span class="badge '+(r.isZombie?'zombie':'healthy')+'">'+(r.isZombie?'🧟 Zombie':'✓ Active')+'</span></td>'
+    tbody.appendChild(tr)
+  })
+}
+
+function copyResults(){
+  const raw=document.getElementById('data').value
+  const threshold=parseInt(document.getElementById('threshold').value)||90
+  const lines=raw.split('\n').map(l=>l.trim()).filter(l=>l.length>0)
+  const records=[]
+  let startIdx=0
+  if(lines.length>0){
+    const fp=lines[0].split(/[,;\t]/)
+    if(isNaN(parseFloat(fp[1])))startIdx=1
+  }
+  for(let i=startIdx;i<lines.length;i++){
+    const parts=lines[i].split(/[,;\t]/).map(p=>p.trim())
+    if(parts.length<3)continue
+    const mrr=parseFloat(parts[1]),days=parseInt(parts[2])
+    if(isNaN(mrr)||isNaN(days)||mrr<=0)continue
+    records.push({customer:parts[0],mrr,days,isZombie:days>=threshold})
+  }
+  if(records.length===0)return
+  const zombies=records.filter(r=>r.isZombie)
+  const totalMrr=records.reduce((s,r)=>s+r.mrr,0)
+  const zombieMrr=zombies.reduce((s,r)=>s+r.mrr,0)
+  const zombiePct=totalMrr>0?(zombieMrr/totalMrr*100):0
+  let zList=zombies.map(z=>'  • '+z.customer+': '+fmt(z.mrr)+'/mo ('+z.days+'d inactive)').join('\n')
+  if(!zList)zList='  (none)'
+
+  const text=`Zombie MRR Detection (ChurnLens)
+═══════════════════════════════════
+Total Accounts:   ${records.length}
+Zombie Accounts:  ${zombies.length} (inactive ${threshold}+ days)
+Total MRR:        ${fmt(totalMrr)}/mo
+Zombie MRR:       ${fmt(zombieMrr)}/mo (${zombiePct.toFixed(1)}% of total)
+
+⚠️  ZOMBIE ACCOUNTS:
+${zList}
+
+Analyzed free at ChurnLens — https://churnlens.site/free/zombie-mrr-detector/`
+
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast')
+    t.classList.add('show')
+    setTimeout(()=>t.classList.remove('show'),2500)
+  })
+}
+
+document.getElementById('data').addEventListener('input',detect)
+document.getElementById('threshold').addEventListener('input',detect)
+detect()
+</script>
+
+</body>
+</html>

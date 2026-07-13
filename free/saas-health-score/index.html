@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free SaaS Revenue Health Score Calculator | ChurnLens</title>
+<meta name="description" content="Calculate your SaaS revenue health score across 5 dimensions: retention, growth, concentration, efficiency, and durability. Free diagnostic with recommendations.">
+<meta property="og:title" content="SaaS Revenue Health Score Calculator — Free">
+<meta property="og:description" content="Get a 0-100 SaaS health score across 5 dimensions with actionable recommendations. Free, instant, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://churnlens.site/free/saas-health-score/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SaaS Revenue Health Score Calculator",
+  "description": "Free tool to calculate a composite 0-100 SaaS revenue health score across 5 dimensions with recommendations.",
+  "url": "https://churnlens.site/free/saas-health-score/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#0066cc;--card:#1a1a1a;--border:#333;--red:#e74c3c;--green:#2ecc71;--yellow:#f1c40f;--muted:#999}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:960px;margin:0 auto}
+h1{font-size:2rem;margin-bottom:8px;letter-spacing:-.5px}
+.subtitle{color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px}
+.input-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:8px}
+@media(max-width:600px){.input-grid{grid-template-columns:1fr}}
+label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+input{width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:8px;font-size:1rem;outline:none;transition:border-color .2s}
+input:focus{border-color:var(--accent)}
+.score-hero{text-align:center;padding:40px 20px;border-radius:12px;margin-bottom:24px;border:2px solid;position:relative;overflow:hidden}
+.score-hero.excellent{background:linear-gradient(135deg,#0a1a0a,#0d2818);border-color:var(--green)}
+.score-hero.good{background:linear-gradient(135deg,#0a1a1a,#0d2828);border-color:#5dade2}
+.score-hero.fair{background:linear-gradient(135deg,#1a1a0a,#282810);border-color:var(--yellow)}
+.score-hero.poor{background:linear-gradient(135deg,#1a0a0a,#281010);border-color:var(--red)}
+.score-ring{position:relative;width:160px;height:160px;margin:0 auto 12px}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .bg{fill:none;stroke:#222;stroke-width:10}
+.score-ring .fg{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
+.score-ring .score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;font-weight:800}
+.score-hero.excellent .score-num{color:var(--green)}
+.score-hero.good .score-num{color:#5dade2}
+.score-hero.fair .score-num{color:var(--yellow)}
+.score-hero.poor .score-num{color:var(--red)}
+.score-grade{font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.score-hero.excellent .score-grade{color:var(--green)}
+.score-hero.good .score-grade{color:#5dade2}
+.score-hero.fair .score-grade{color:var(--yellow)}
+.score-hero.poor .score-grade{color:var(--red)}
+.score-hero .score-desc{color:var(--muted);font-size:.95rem;margin-top:6px}
+.dimensions{margin-bottom:24px}
+.dim-bar{margin-bottom:16px}
+.dim-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.dim-name{font-weight:600;font-size:.95rem}
+.dim-score{font-weight:700;font-size:1.1rem}
+.dim-track{height:10px;background:#111;border-radius:5px;overflow:hidden}
+.dim-fill{height:100%;border-radius:5px;transition:width .6s ease}
+.dim-fill.green{background:var(--green)}
+.dim-fill.blue{background:#5dade2}
+.dim-fill.yellow{background:var(--yellow)}
+.dim-fill.red{background:var(--red)}
+.dim-detail{font-size:.82rem;color:var(--muted);margin-top:4px}
+.radar-container{text-align:center;margin:24px 0}
+.radar-container svg{max-width:320px;width:100%;height:auto}
+.recommendations{background:#111;border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:20px}
+.recommendations h3{font-size:1rem;margin-bottom:12px;color:var(--accent)}
+.rec-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #222;font-size:.9rem}
+.rec-item:last-child{border-bottom:none}
+.rec-priority{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.rec-priority.high{background:rgba(231,76,60,.2);color:var(--red)}
+.rec-priority.med{background:rgba(241,196,15,.2);color:var(--yellow)}
+.rec-priority.low{background:rgba(46,204,113,.15);color:var(--green)}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;text-decoration:none}
+.btn:hover{background:#0052a3}
+.btn-secondary{background:#222;border:1px solid var(--border)}
+.btn-secondary:hover{background:#2a2a2a}
+.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.placeholder{text-align:center;color:var(--muted);padding:40px 20px;font-size:1.1rem}
+.related{margin-top:40px}
+.related h3{font-size:1.1rem;margin-bottom:14px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+.related-links a{display:block;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);text-decoration:none;transition:border-color .2s;font-size:.95rem}
+.related-links a:hover{border-color:var(--accent)}
+.cta{text-align:center;margin:40px 0;padding:32px;background:linear-gradient(135deg,#0a0f1a,#0d1520);border:1px solid var(--accent);border-radius:12px}
+.cta h2{font-size:1.4rem;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--accent);text-decoration:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:100}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<h1>SaaS Revenue Health Score</h1>
+<p class="subtitle">Get a composite 0-100 health score across 5 dimensions with specific, actionable recommendations. Free, instant, no signup.</p>
+
+<div class="tool-card">
+  <div class="input-grid">
+    <div>
+      <label for="churn">Monthly Churn Rate (%)</label>
+      <input type="number" id="churn" placeholder="2.5" step="0.1" min="0">
+    </div>
+    <div>
+      <label for="nrr">Net Revenue Retention (%)</label>
+      <input type="number" id="nrr" placeholder="108" min="0">
+    </div>
+    <div>
+      <label for="annual">Annual Plan %</label>
+      <input type="number" id="annual" placeholder="30" step="1" min="0" max="100">
+    </div>
+    <div>
+      <label for="concentration">Top Customer Concentration (%)</label>
+      <input type="number" id="concentration" placeholder="15" step="1" min="0" max="100">
+    </div>
+    <div>
+      <label for="cac">Average CAC ($)</label>
+      <input type="number" id="cac" placeholder="500" min="0">
+    </div>
+    <div>
+      <label for="ltv">Average LTV ($)</label>
+      <input type="number" id="ltv" placeholder="5000" min="0">
+    </div>
+  </div>
+
+  <div id="hero" style="display:none">
+    <div class="score-hero" id="scoreHero">
+      <div class="score-ring">
+        <svg width="160" height="160" viewBox="0 0 160 160">
+          <circle class="bg" cx="80" cy="80" r="70"/>
+          <circle class="fg" id="scoreRing" cx="80" cy="80" r="70" stroke-dasharray="439.8" stroke-dashoffset="439.8"/>
+        </svg>
+        <div class="score-num" id="scoreNum">0</div>
+      </div>
+      <div class="score-grade" id="scoreGrade"></div>
+      <div class="score-desc" id="scoreDesc"></div>
+    </div>
+
+    <div class="dimensions" id="dimensions"></div>
+
+    <div class="radar-container">
+      <svg id="radar" viewBox="0 0 300 300"></svg>
+    </div>
+
+    <div class="recommendations" id="recommendations">
+      <h3>🎯 Recommendations (Prioritized by Impact)</h3>
+      <div id="recList"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+      <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+    </div>
+  </div>
+
+  <div id="placeholder" class="placeholder">Enter your SaaS metrics above to calculate your health score.</div>
+</div>
+
+<div class="cta">
+  <h2>Doing SaaS due diligence?</h2>
+  <p>Get the full buyer-side checklist that PE analysts use to assess revenue health before a deal.</p>
+  <a href="/get-the-checklist" class="btn">Get the full buyer-side due diligence checklist →</a>
+</div>
+
+<div class="related">
+  <h3>Related Free Tools</h3>
+  <div class="related-links">
+    <a href="/free/churn-calculator/">SaaS Churn Cost Calculator →</a>
+    <a href="/free/revenue-concentration-analyzer/">Revenue Concentration Risk Analyzer →</a>
+    <a href="/free/zombie-mrr-detector/">Zombie MRR Detector →</a>
+    <a href="/free/nrr-calculator/">Net Revenue Retention Calculator →</a>
+    <a href="/free/ltv-calculator/">LTV Calculator →</a>
+    <a href="/free/mrr-health-check/">MRR Health Check →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
+</footer>
+
+<div class="toast" id="toast">Results copied to clipboard!</div>
+
+<script>
+function calculate(){
+  const churn=parseFloat(document.getElementById('churn').value)
+  const nrr=parseFloat(document.getElementById('nrr').value)
+  const annual=parseFloat(document.getElementById('annual').value)
+  const concentration=parseFloat(document.getElementById('concentration').value)
+  const cac=parseFloat(document.getElementById('cac').value)
+  const ltv=parseFloat(document.getElementById('ltv').value)
+
+  if([churn,nrr,annual,concentration,cac,ltv].some(v=>isNaN(v))){
+    document.getElementById('placeholder').style.display='block'
+    document.getElementById('hero').style.display='none'
+    return
+  }
+  if(churn<=0||nrr<=0||cac<=0||ltv<=0){
+    document.getElementById('placeholder').style.display='block'
+    document.getElementById('hero').style.display='none'
+    return
+  }
+
+  document.getElementById('placeholder').style.display='none'
+  document.getElementById('hero').style.display='block'
+
+  // --- 1. RETENTION SCORE (from churn rate) ---
+  // 0% churn = 100, 10% churn = 0, linear
+  const c=Math.max(0,Math.min(churn,10))
+  const retentionScore=Math.round(100-c*10)
+  let retentionDetail
+  if(churn<=2)retentionDetail='Excellent — below the 2% healthy benchmark'
+  else if(churn<=4)retentionDetail='Good — within typical B2B SaaS range'
+  else if(churn<=7)retentionDetail='Fair — above average, needs attention'
+  else retentionDetail='Poor — critically high churn'
+
+  // --- 2. GROWTH SCORE (from NRR) ---
+  // 130%+ = 100, 90% = 40, <80% = 0
+  let growthScore
+  if(nrr>=130)growthScore=100
+  else if(nrr>=90)growthScore=Math.round(40+(nrr-90)*1.5) // 90→40, 130→100
+  else growthScore=Math.round(Math.max(0,nrr*0.5)) // scales down below 90
+  growthScore=Math.max(0,Math.min(100,growthScore))
+  let growthDetail
+  if(nrr>=130)growthDetail='World-class — existing customers are a growth engine'
+  else if(nrr>=110)growthDetail='Strong — expanding faster than churn'
+  else if(nrr>=100)growthDetail='Stable — treading water on existing base'
+  else if(nrr>=90)growthDetail='Shrinking — losing ground on installed base'
+  else growthDetail='Critical — net revenue declining from existing customers'
+
+  // --- 3. CONCENTRATION SCORE (from top customer %) ---
+  // 0% = 100, 50%+ = 0
+  const concClamped=Math.max(0,Math.min(concentration,50))
+  const concScore=Math.round(100-concClamped*2)
+  let concDetail
+  if(concentration<=10)concDetail='Well-diversified revenue base'
+  else if(concentration<=20)concDetail='Moderate concentration — manageable'
+  else if(concentration<=30)concDetail='High concentration — risky for acquirers'
+  else concDetail='Dangerous — whale customer dominates revenue'
+
+  // --- 4. EFFICIENCY SCORE (from LTV:CAC ratio) ---
+  const ratio=ltv/cac
+  let effScore
+  // 5:1+ = 100, 3:1 = 80, 1:1 = 30, <1:1 = 0
+  if(ratio>=5)effScore=100
+  else if(ratio>=3)effScore=Math.round(80+(ratio-3)*10)
+  else if(ratio>=1)effScore=Math.round(30+(ratio-1)*25)
+  else effScore=Math.round(ratio*30)
+  effScore=Math.max(0,Math.min(100,effScore))
+  let effDetail
+  if(ratio>=5)effDetail='Excellent — '+ratio.toFixed(1)+':1 LTV:CAC ratio'
+  else if(ratio>=3)effDetail='Healthy — '+ratio.toFixed(1)+':1 ratio (benchmark is 3:1+)'
+  else if(ratio>=1)effDetail='Weak — '+ratio.toFixed(1)+':1 ratio, below 3:1 target'
+  else effDetail='Burning money — CAC exceeds LTV ('+ratio.toFixed(1)+':1)'
+
+  // --- 5. DURABILITY SCORE (from annual plan %) ---
+  // 100% annual = 100, 0% annual = 40
+  const annualClamped=Math.max(0,Math.min(annual,100))
+  const durScore=Math.round(40+annualClamped*0.6)
+  let durDetail
+  if(annual>=70)durDetail='Strong lock-in — high annual plan adoption'
+  else if(annual>=40)durDetail='Decent — mix of annual and monthly'
+  else if(annual>=20)durDetail='Weak — mostly monthly, high churn exposure'
+  else durDetail='Vulnerable — almost entirely monthly subscriptions'
+
+  // --- COMPOSITE SCORE ---
+  const dims=[
+    {name:'Retention',score:retentionScore,detail:retentionDetail,key:'retention'},
+    {name:'Growth',score:growthScore,detail:growthDetail,key:'growth'},
+    {name:'Concentration',score:concScore,detail:concDetail,key:'concentration'},
+    {name:'Efficiency',score:effScore,detail:effDetail,key:'efficiency'},
+    {name:'Durability',score:durScore,detail:durDetail,key:'durability'}
+  ]
+
+  const composite=Math.round(dims.reduce((s,d)=>s+d.score,0)/dims.length)
+
+  // Hero display
+  const hero=document.getElementById('scoreHero')
+  hero.classList.remove('excellent','good','fair','poor')
+  const ring=document.getElementById('scoreRing')
+  const grade=document.getElementById('scoreGrade')
+  const desc=document.getElementById('scoreDesc')
+
+  let gradeText,descText,color
+  if(composite>=80){hero.classList.add('excellent');gradeText='A — Excellent';color='var(--green)';descText='This is a healthy SaaS business with strong revenue quality.'}
+  else if(composite>=65){hero.classList.add('good');gradeText='B — Good';color='#5dade2';descText='Solid foundation with some areas to improve before acquisition.'}
+  else if(composite>=45){hero.classList.add('fair');gradeText='C — Fair';color='var(--yellow)';descText='Significant revenue quality issues that buyers will flag in diligence.'}
+  else {hero.classList.add('poor');gradeText='D — Poor';color='var(--red)';descText='Major red flags. Revenue quality needs fundamental repair.'}
+
+  document.getElementById('scoreNum').textContent=composite
+  grade.textContent=gradeText
+  desc.textContent=descText
+  ring.style.stroke=color
+  const circumference=2*Math.PI*70
+  ring.style.strokeDasharray=circumference
+  ring.style.strokeDashoffset=circumference-(composite/100)*circumference
+
+  // Dimensions bars
+  const dimContainer=document.getElementById('dimensions')
+  dimContainer.innerHTML=''
+  dims.forEach(d=>{
+    const cls=d.score>=70?'green':d.score>=50?'blue':d.score>=30?'yellow':'red'
+    const div=document.createElement('div')
+    div.className='dim-bar'
+    div.innerHTML=`<div class="dim-header"><span class="dim-name">${d.name}</span><span class="dim-score">${d.score}/100</span></div><div class="dim-track"><div class="dim-fill ${cls}" style="width:0%"></div></div><div class="dim-detail">${d.detail}</div>`
+    dimContainer.appendChild(div)
+    setTimeout(()=>{div.querySelector('.dim-fill').style.width=d.score+'%'},50)
+  })
+
+  // Radar chart
+  drawRadar(dims)
+
+  // Recommendations
+  const recs=generateRecs(dims,churn,nrr,annual,concentration,ratio)
+  const recList=document.getElementById('recList')
+  recList.innerHTML=''
+  recs.forEach(r=>{
+    const div=document.createElement('div')
+    div.className='rec-item'
+    div.innerHTML=`<div class="rec-priority ${r.priority==='High'?'high':r.priority==='Medium'?'med':'low'}">${r.priority[0]}</div><div><strong>${r.title}</strong><br>${r.text}</div>`
+    recList.appendChild(div)
+  })
+}
+
+function drawRadar(dims){
+  const svg=document.getElementById('radar')
+  svg.innerHTML=''
+  const cx=150,cy=150,maxR=110
+  const n=dims.length
+  const angles=dims.map((_,i)=>-Math.PI/2+i*2*Math.PI/n)
+
+  // Grid rings
+  for(let r=1;r<=4;r++){
+    const rad=maxR*r/4
+    let pts=angles.map(a=>`${cx+rad*Math.cos(a)},${cy+rad*Math.sin(a)}`).join(' ')
+    const poly=document.createElementNS('http://www.w3.org/2000/svg','polygon')
+    poly.setAttribute('points',pts)
+    poly.setAttribute('fill','none')
+    poly.setAttribute('stroke','#222')
+    poly.setAttribute('stroke-width','1')
+    svg.appendChild(poly)
+  }
+
+  // Axes
+  angles.forEach((a,i)=>{
+    const line=document.createElementNS('http://www.w3.org/2000/svg','line')
+    line.setAttribute('x1',cx)
+    line.setAttribute('y1',cy)
+    line.setAttribute('x2',cx+maxR*Math.cos(a))
+    line.setAttribute('y2',cy+maxR*Math.sin(a))
+    line.setAttribute('stroke','#222')
+    svg.appendChild(line)
+    // Labels
+    const lx=cx+(maxR+20)*Math.cos(a)
+    const ly=cy+(maxR+20)*Math.sin(a)
+    const text=document.createElementNS('http://www.w3.org/2000/svg','text')
+    text.setAttribute('x',lx)
+    text.setAttribute('y',ly)
+    text.setAttribute('text-anchor','middle')
+    text.setAttribute('dominant-baseline','middle')
+    text.setAttribute('fill','#999')
+    text.setAttribute('font-size','11')
+    text.setAttribute('font-weight','600')
+    text.textContent=dims[i].name
+    svg.appendChild(text)
+  })
+
+  // Data polygon
+  const dataPts=dims.map((d,i)=>{
+    const r=maxR*(d.score/100)
+    return `${cx+r*Math.cos(angles[i])},${cy+r*Math.sin(angles[i])}`
+  }).join(' ')
+  const poly=document.createElementNS('http://www.w3.org/2000/svg','polygon')
+  poly.setAttribute('points',dataPts)
+  poly.setAttribute('fill','rgba(0,102,204,0.2)')
+  poly.setAttribute('stroke','#0066cc')
+  poly.setAttribute('stroke-width','2')
+  svg.appendChild(poly)
+
+  // Data points
+  dims.forEach((d,i)=>{
+    const r=maxR*(d.score/100)
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle')
+    dot.setAttribute('cx',cx+r*Math.cos(angles[i]))
+    dot.setAttribute('cy',cy+r*Math.sin(angles[i]))
+    dot.setAttribute('r','4')
+    dot.setAttribute('fill','#0066cc')
+    svg.appendChild(dot)
+  })
+}
+
+function generateRecs(dims,churn,nrr,annual,concentration,ratio){
+  const recs=[]
+  const sorted=[...dims].sort((a,b)=>a.score-b.score)
+
+  sorted.forEach(d=>{
+    if(d.score>=70)return // good, skip
+    let priority=d.score<40?'High':d.score<60?'Medium':'Low'
+    let title='',text=''
+
+    switch(d.key){
+      case 'retention':
+        title='Reduce monthly churn rate'
+        text=`Your ${churn}% monthly churn is ${churn>4?'critical':'above target'}. Target 2% or below. Focus on onboarding quality, proactive customer success, and exit interviews to find root causes.`
+        break
+      case 'growth':
+        title='Improve Net Revenue Retention'
+        text=`NRR of ${nrr}% means ${nrr>=100?'slow':'negative'} growth from existing customers. Build expansion playbooks: upsell tiers, seat-based pricing, and usage-based add-ons. World-class is 130%+.`
+        break
+      case 'concentration':
+        title='Diversify revenue base'
+        text=`Top customer at ${concentration}% of MRR is a deal risk for buyers. Invest in SMB/mid-market acquisition to spread risk. No single customer should exceed 15%.`
+        break
+      case 'efficiency':
+        title='Improve LTV:CAC efficiency'
+        text=`Your ${ratio.toFixed(1)}:1 ratio is ${ratio<3?'below':'at'} the 3:1 benchmark. ${ratio<1?'You are losing money on every customer. ':''}Reduce CAC through organic channels, or increase LTV through higher pricing and longer retention.`
+        break
+      case 'durability':
+        title='Shift to annual billing'
+        text=`Only ${annual}% of customers are on annual plans. Annual contracts reduce churn risk and improve cash flow. Offer 10-15% discount for annual prepay to incentivize the switch.`
+        break
+    }
+    recs.push({priority,title,text})
+  })
+
+  if(recs.length===0){
+    recs.push({priority:'Low',title:'Maintain your strong position',text:'All dimensions are healthy. Keep monitoring metrics quarterly and benchmark against peers.'})
+  }
+
+  return recs
+}
+
+function copyResults(){
+  const churn=parseFloat(document.getElementById('churn').value)
+  const nrr=parseFloat(document.getElementById('nrr').value)
+  const annual=parseFloat(document.getElementById('annual').value)
+  const concentration=parseFloat(document.getElementById('concentration').value)
+  const cac=parseFloat(document.getElementById('cac').value)
+  const ltv=parseFloat(document.getElementById('ltv').value)
+  if([churn,nrr,annual,concentration,cac,ltv].some(v=>isNaN(v)))return
+
+  const ratio=ltv/cac
+  const retentionScore=Math.round(100-Math.max(0,Math.min(churn,10))*10)
+  let growthScore=nrr>=130?100:nrr>=90?Math.round(40+(nrr-90)*1.5):Math.round(Math.max(0,nrr*0.5))
+  growthScore=Math.max(0,Math.min(100,growthScore))
+  const concScore=Math.round(100-Math.max(0,Math.min(concentration,50))*2)
+  let effScore=ratio>=5?100:ratio>=3?Math.round(80+(ratio-3)*10):ratio>=1?Math.round(30+(ratio-1)*25):Math.round(ratio*30)
+  effScore=Math.max(0,Math.min(100,effScore))
+  const durScore=Math.round(40+Math.max(0,Math.min(annual,100))*0.6)
+  const composite=Math.round((retentionScore+growthScore+concScore+effScore+durScore)/5)
+  let grade=composite>=80?'A (Excellent)':composite>=65?'B (Good)':composite>=45?'C (Fair)':'D (Poor)'
+
+  const text=`SaaS Revenue Health Score (ChurnLens)
+═══════════════════════════════════
+COMPOSITE SCORE: ${composite}/100 — ${grade}
+
+Dimension Breakdown:
+  Retention:     ${retentionScore}/100  (churn: ${churn}%/mo)
+  Growth:        ${growthScore}/100  (NRR: ${nrr}%)
+  Concentration: ${concScore}/100  (top customer: ${concentration}%)
+  Efficiency:    ${effScore}/100  (LTV:CAC ${ratio.toFixed(1)}:1)
+  Durability:    ${durScore}/100  (annual plans: ${annual}%)
+
+Analyzed free at ChurnLens — https://churnlens.site/free/saas-health-score/`
+
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast')
+    t.classList.add('show')
+    setTimeout(()=>t.classList.remove('show'),2500)
+  })
+}
+
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input',calculate))
+calculate()
+</script>
+
+</body>
+</html>
