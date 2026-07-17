@@ -197,6 +197,18 @@
     {
       "source": "/benchmarks/:slug",
       "destination": "/benchmarks/:slug.html"
+    },
+    {
+      "source": "/templates/:slug",
+      "destination": "/templates/:slug.html"
+    },
+    {
+      "source": "/case-studies/:slug",
+      "destination": "/case-studies/:slug.html"
+    },
+    {
+      "source": "/compare/:slug",
+      "destination": "/compare/:slug.html"
     }
   ],
   "headers": [
