@@ -91,9 +91,41 @@
 }
 </script>
 <!-- Traffic-Readiness JSON-LD org+website schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is a good MRR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "There is no universal good MRR figure \u2014 buyers care about quality and trajectory, not size. A durable $20K MRR with 95% gross retention and low concentration is a better asset than $100K MRR losing 8% monthly. Judge MRR by retention, concentration, expansion mix, and growth trend together."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between MRR and revenue?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "MRR counts only recurring subscription fees, normalized to a monthly value. Total revenue also includes one-time payments, setup fees, services, and usage overages. Acquirers value recurring revenue at higher multiples precisely because it repeats, so sellers sometimes blur the two \u2014 always separate them in the raw billing data."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between NRR and MRR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "MRR is a level: the recurring revenue a business books this month. NRR is a rate of change: how much revenue a fixed group of existing customers retains and expands over a year. MRR tells you what you are buying today; NRR tells you what it will become without new sales."
+   }
+  }
+ ]
+}
+</script>
 </head>
   <body style="background-color:hsl(220 20% 97%);color:hsl(222 47% 11%);font-family:Inter,system-ui,sans-serif;">
-<p class="author-byline eeat" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-08">Updated 2026-07-08</time> · Published 2026-01-15</p>
+<p class="author-byline eeat" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-17">Updated 2026-07-17</time> · Published 2026-01-15</p>
 
 
     <nav style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;">
@@ -189,6 +221,14 @@
         <p>After adjusting for all quality factors, you arrive at <strong>durable MRR</strong> — the revenue you can reasonably expect to persist for 12+ months post-acquisition:</p>
         <p style="background:hsl(221 83% 53% / 0.06);padding:1rem 1.5rem;border-radius:0.5rem;font-family:monospace;">Durable MRR = Total MRR − Zombie MRR − Concentration Risk Buffer − Annual Cliff Exposure</p>
         <p>This is the number that should drive your acquisition valuation. It's typically 70-90% of headline MRR for healthy SaaS, and can be as low as 50-60% for problematic targets. For the full scoring methodology, see our <a href="/saas-revenue-quality-score">Revenue Quality Score</a> guide.</p>
+
+<h2>MRR questions buyers ask</h2>
+<h3>What is a good MRR?</h3>
+<p>There is no universal good MRR figure — buyers care about quality and trajectory, not size. A durable $20K MRR with 95% gross retention and low concentration is a better asset than $100K MRR losing 8% monthly. Judge MRR by retention, concentration, expansion mix, and growth trend together.</p>
+<h3>What is the difference between MRR and revenue?</h3>
+<p>MRR counts only recurring subscription fees, normalized to a monthly value. Total revenue also includes one-time payments, setup fees, services, and usage overages. Acquirers value recurring revenue at higher multiples precisely because it repeats, so sellers sometimes blur the two — always separate them in the raw billing data.</p>
+<h3>What is the difference between NRR and MRR?</h3>
+<p>MRR is a level: the recurring revenue a business books this month. NRR is a rate of change: how much revenue a fixed group of existing customers retains and expands over a year. MRR tells you what you are buying today; NRR tells you what it will become without new sales.</p>
 
         <h2>Related Resources</h2>
         <ul>
