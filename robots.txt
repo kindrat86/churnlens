@@ -5,6 +5,8 @@ Disallow: /api/cron/
 Disallow: /dashboard/
 Disallow: /account/
 Disallow: /login/
+Disallow: /i18n_out/
+Disallow: /i18n/
 
 User-Agent: GPTBot
 Allow: /
