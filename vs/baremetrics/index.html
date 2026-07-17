@@ -26,7 +26,31 @@
     "about": {"@type": "Thing", "name": "BareMetrics"}
 }
 </script>
-<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script></head>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script><script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Can I use ChurnLens and BareMetrics together?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes \u2014 they solve different problems at different times. Acquirers typically run ChurnLens on the target's exported subscription CSV during due diligence, before the deal closes. After the acquisition, the operator keeps using the analytics stack the business already has. ChurnLens reads a one-off CSV export, so it requires no integration with BareMetrics or any other tooling."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does a ChurnLens analysis cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Starter tier is free and covers one CSV analysis per month with logo churn, revenue churn, concentration risk, and a revenue quality score. A single full Pro report costs $9 one-time. Ongoing acquirers use Pro at $49 per month; M&A advisors running many deals use Dealmaker at $199 per month."
+   }
+  }
+ ]
+}
+</script>
+</head>
 <body style="font-family:-apple-system,system-ui,sans-serif;max-width:760px;margin:60px auto;padding:0 20px;line-height:1.7;color:#1a1a1a;background:#fff">
     <header style="margin-bottom:40px">
         <a href="https://churnlens.site" style="text-decoration:none;color:#555;font-size:.9em">← Back to ChurnLens</a>
@@ -35,8 +59,31 @@
     <main>
         <h1 style="font-size:2em;font-weight:800;margin-bottom:.5em;line-height:1.2">ChurnLens vs BareMetrics</h1>
         <p style="font-size:1.1em;color:#555;margin-bottom:2em">An honest comparison. BareMetrics is a revenue analytics dashboard without M&A-focused churn due diligence.</p>
-        <h2>Why choose ChurnLens over BareMetrics?</h2><p>a revenue analytics dashboard without M&A-focused churn due diligence.</p><p>ChurnLens is built for a different use case. SaaS revenue quality due diligence. See hidden churn before acquisition.</p><p><a href="https://churnlens.site" style="color:#0066cc">Try ChurnLens →</a></p>
-    </main>
+        <h2>Why choose ChurnLens over BareMetrics?</h2><p>BareMetrics is a revenue analytics dashboard, built for operators tracking their own business. ChurnLens is built for the other side of the table: buyer-side due diligence on a SaaS you are thinking of acquiring, using nothing but the seller's raw subscription CSV.</p><p>ChurnLens is built for a different use case. SaaS revenue quality due diligence. See hidden churn before acquisition.</p><p><a href="https://churnlens.site" style="color:#0066cc">Try ChurnLens →</a></p>
+    
+<p class="author-byline eeat" style="font-size:.85em;color:#888;"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-17">Updated 2026-07-17</time></p>
+<h2>What ChurnLens computes from a target's subscription CSV</h2>
+<ul>
+  <li><a href="/glossary/logo-churn">Logo churn</a> and <a href="/glossary/churn-rate">revenue churn</a>, computed separately and compared — the divergence between them is the signal</li>
+  <li>Concentration Vulnerability Index — flags targets where a handful of customers carry an outsized share of MRR</li>
+  <li>Annual-Plan Decay Projection — identifies annual-plan customers statistically likely to cancel at renewal</li>
+  <li>Zombie MRR Detector — finds accounts that keep paying but stopped engaging</li>
+  <li>Revenue Quality Scorecard — a composite A&ndash;F grade weighting retention, concentration, expansion, and growth trend</li>
+  <li>MRR Trajectory Forensics — separates genuinely growing MRR from new sales masking declining cohorts</li>
+</ul>
+<h2>Which tool fits your job?</h2><p>If you run a SaaS and want monitoring your own revenue metrics day to day, an operator-side tool like BareMetrics is the natural choice. ChurnLens has one job: interrogating someone else's subscription data before an acquisition, when all you have is a CSV export and a CIM you cannot fully trust.</p><p>Operators monitor revenue they already know. Acquirers have to stress-test revenue they don't. That is why ChurnLens reports lead with risk — hidden churn, concentration, renewal cliffs — rather than growth dashboards.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I use ChurnLens and BareMetrics together?</h3>
+<p>Yes — they solve different problems at different times. Acquirers typically run ChurnLens on the target's exported subscription CSV during due diligence, before the deal closes. After the acquisition, the operator keeps using the analytics stack the business already has. ChurnLens reads a one-off CSV export, so it requires no integration with BareMetrics or any other tooling.</p>
+<h3>How much does a ChurnLens analysis cost?</h3>
+<p>The Starter tier is free and covers one CSV analysis per month with logo churn, revenue churn, concentration risk, and a revenue quality score. A single full Pro report costs $9 one-time. Ongoing acquirers use Pro at $49 per month; M&A advisors running many deals use Dealmaker at $199 per month.</p>
+<p>Related resources: the <a href="/get-the-checklist">23-point churn audit checklist</a>,
+<a href="/saas-churn-rate-benchmarks">SaaS churn benchmarks by industry</a>, the free
+<a href="/free/churn-calculator">churn calculator</a>, and the
+<a href="/glossary">metrics glossary</a>. Pricing details are on the
+<a href="/pricing">pricing page</a>.</p>
+
+</main>
 
     <section style="margin-top:40px;padding-top:20px;border-top:1px solid #e0e0e0">
         <h3 style="font-size:1.1em;font-weight:700;margin-bottom:12px">Related pages</h3>

@@ -19,7 +19,31 @@
     <meta name="twitter:description" content="Compare ChurnLens with Maxio/SaaSOptics for SaaS revenue analytics and pre-acquisition due diligence. Buyer-side vs operator-side churn analysis.">
     
     <link rel="stylesheet" href="/assets/cl-enhance.css">
-<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script></head>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script><script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Can I use ChurnLens and Maxio together?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes \u2014 they solve different problems at different times. Acquirers typically run ChurnLens on the target's exported subscription CSV during due diligence, before the deal closes. After the acquisition, the operator keeps using the analytics stack the business already has. ChurnLens reads a one-off CSV export, so it requires no integration with Maxio or any other tooling."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does a ChurnLens analysis cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Starter tier is free and covers one CSV analysis per month with logo churn, revenue churn, concentration risk, and a revenue quality score. A single full Pro report costs $9 one-time. Ongoing acquirers use Pro at $49 per month; M&A advisors running many deals use Dealmaker at $199 per month."
+   }
+  }
+ ]
+}
+</script>
+</head>
 <body class="dark">
     <nav>
         <a href="/" class="logo">ChurnLens</a>
@@ -41,7 +65,30 @@
             <h1>ChurnLens vs Maxio (SaaSOptics)</h1>
             <p>Maxio (formerly SaaSOptics) is a financial operations platform for SaaS CFOs — subscription management, revenue recognition, and investor reporting. ChurnLens is purpose-built for the other side of the table: buyer-side due diligence. Maxio tells you what your revenue is; ChurnLens tells you what it's really worth to a buyer.</p><h2>Key differences</h2><ul><li>Maxio: financial ops for SaaS operators and CFOs</li><li>ChurnLens: churn forensics for SaaS acquirers</li><li>Maxio tracks ASC 606 revenue; ChurnLens scores revenue quality</li><li>ChurnLens flags zombie MRR, concentration risk, and renewal cliffs</li></ul>
         
-        <section class="related-pages">
+        
+<p class="author-byline eeat" style="font-size:.85em;color:#888;"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-17">Updated 2026-07-17</time></p>
+<h2>What ChurnLens computes from a target's subscription CSV</h2>
+<ul>
+  <li><a href="/glossary/logo-churn">Logo churn</a> and <a href="/glossary/churn-rate">revenue churn</a>, computed separately and compared — the divergence between them is the signal</li>
+  <li>Concentration Vulnerability Index — flags targets where a handful of customers carry an outsized share of MRR</li>
+  <li>Annual-Plan Decay Projection — identifies annual-plan customers statistically likely to cancel at renewal</li>
+  <li>Zombie MRR Detector — finds accounts that keep paying but stopped engaging</li>
+  <li>Revenue Quality Scorecard — a composite A&ndash;F grade weighting retention, concentration, expansion, and growth trend</li>
+  <li>MRR Trajectory Forensics — separates genuinely growing MRR from new sales masking declining cohorts</li>
+</ul>
+<h2>Which tool fits your job?</h2><p>If you operate a SaaS and need subscription management, revenue recognition, and investor reporting, an operator-side financial platform like Maxio is the natural choice. ChurnLens has one job: interrogating someone else's subscription data before an acquisition, when all you have is a CSV export and a CIM you cannot fully trust.</p><p>Operators monitor revenue they already know. Acquirers have to stress-test revenue they don't. That is why ChurnLens reports lead with risk — hidden churn, concentration, renewal cliffs — rather than financial-ops workflows.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I use ChurnLens and Maxio together?</h3>
+<p>Yes — they solve different problems at different times. Acquirers typically run ChurnLens on the target's exported subscription CSV during due diligence, before the deal closes. After the acquisition, the operator keeps using the analytics stack the business already has. ChurnLens reads a one-off CSV export, so it requires no integration with Maxio or any other tooling.</p>
+<h3>How much does a ChurnLens analysis cost?</h3>
+<p>The Starter tier is free and covers one CSV analysis per month with logo churn, revenue churn, concentration risk, and a revenue quality score. A single full Pro report costs $9 one-time. Ongoing acquirers use Pro at $49 per month; M&A advisors running many deals use Dealmaker at $199 per month.</p>
+<p>Related resources: the <a href="/get-the-checklist">23-point churn audit checklist</a>,
+<a href="/saas-churn-rate-benchmarks">SaaS churn benchmarks by industry</a>, the free
+<a href="/free/churn-calculator">churn calculator</a>, and the
+<a href="/glossary">metrics glossary</a>. Pricing details are on the
+<a href="/pricing">pricing page</a>.</p>
+
+<section class="related-pages">
             <h2>Related pages</h2>
             <ul>
             <li><a href="/vs/profitwell">profitwell.html</a></li>
