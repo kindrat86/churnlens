@@ -1,0 +1,10 @@
+# Internal automation / tooling — never serve publicly
+.git
+.env*
+*.py
+i18n/
+i18n_out/
+geo-battery.md
+pseo-churnlens-site.txt
+striking-distance.html
+scripts/

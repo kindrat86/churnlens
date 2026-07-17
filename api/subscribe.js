@@ -28,21 +28,78 @@ const CHECKLIST_HTML = `<!doctype html>
 </div>
 </body></html>`;
 
+// --- Abuse protection -------------------------------------------------------
+const RL_LIMIT = 5;               // max requests per IP per window
+const RL_WINDOW_SECONDS = 3600;   // 1 hour
+
+// Best-effort per-instance fallback when KV is not configured.
+const memHits = new Map(); // ip -> { count, reset }
+
+function memRateLimited(ip) {
+  const now = Date.now();
+  const entry = memHits.get(ip);
+  if (!entry || now > entry.reset) {
+    if (memHits.size > 5000) memHits.clear();
+    memHits.set(ip, { count: 1, reset: now + RL_WINDOW_SECONDS * 1000 });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RL_LIMIT;
+}
+
+async function kvRateLimited(ip) {
+  const url = process.env.KV_REST_API_URL;
+  const token = process.env.KV_REST_API_TOKEN;
+  const key = `rl:subscribe:${ip}`;
+  const resp = await fetch(`${url}/incr/${encodeURIComponent(key)}`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!resp.ok) throw new Error(`KV incr failed: ${resp.status}`);
+  const { result: count } = await resp.json();
+  if (count === 1) {
+    await fetch(`${url}/expire/${encodeURIComponent(key)}/${RL_WINDOW_SECONDS}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    }).catch(() => {});
+  }
+  return count > RL_LIMIT;
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
   }
 
-  const email = (req.body?.email || '').toString().trim().toLowerCase();
-  const source = (req.body?.source || 'unknown').toString();
+  const ip = (req.headers['x-forwarded-for'] || '').toString().split(',')[0].trim() || 'unknown';
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  // Per-IP rate limit: durable via KV when configured, per-instance fallback otherwise.
+  try {
+    const limited = (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN)
+      ? await kvRateLimited(ip)
+      : memRateLimited(ip);
+    if (limited) {
+      return res.status(429).json({ ok: false, error: 'Too many requests, try again later' });
+    }
+  } catch (e) {
+    console.error('Rate-limit check failed (failing open):', e.message);
+  }
+
+  // Honeypot — hidden field humans never fill; answer like a success, send nothing.
+  const honeypot = ((req.body?.website || req.body?.company || '')).toString().trim();
+  if (honeypot) {
+    return res.status(200).json({ ok: true, message: 'Subscribed successfully', email_sent: true });
+  }
+
+  const email = (req.body?.email || '').toString().trim().toLowerCase();
+  const source = (req.body?.source || 'unknown').toString().slice(0, 64);
+
+  if (!email || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ ok: false, error: 'Valid email required' });
   }
 
+  // Log a masked address only — full address goes to KV/Resend, not the logs.
   console.log(JSON.stringify({
     event: 'email_capture',
-    email,
+    email: email.replace(/^(..).*(@.*)$/, '$1***$2'),
     source,
     timestamp: new Date().toISOString()
   }));

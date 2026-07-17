@@ -8,6 +8,41 @@
       "permanent": true
     },
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap-pseo.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/chartmogol",
+      "destination": "/alternatives-to/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/vs/chartmogol",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre LOI-checklist",
+      "destination": "/checklists/pre-loi-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre%20LOI-checklist",
+      "destination": "/checklists/pre-loi-checklist",
+      "permanent": true
+    },
+    {
       "source": "/:slug((?!googlea30bb998b91eb6ac).+)\\.html",
       "destination": "/:slug",
       "permanent": true
@@ -251,10 +286,15 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
-        },
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
         {
-          "key": "Link",
-          "value": "</assets/cl-enhance.css>; rel=preload; as=style, </assets/cl-enhance.js>; rel=preload; as=script"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=7200, must-revalidate"
         }
       ]
     },
@@ -264,15 +304,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=7200, must-revalidate"
         }
       ]
     },

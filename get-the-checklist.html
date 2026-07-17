@@ -10,6 +10,9 @@
     <meta name="description" content="The 23-point buyer-side churn audit checklist sellers hope you never ask for. Get it free plus a sample Churn Lens risk report on a real (anonymized) $48K MRR SaaS.">
     <meta name="author" content="Churn Lens" />
     <link rel="canonical" href="https://churnlens.site/get-the-checklist" />
+    <link rel="alternate" hreflang="en" href="https://churnlens.site/get-the-checklist" />
+    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/get-the-checklist" />
+    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/get-the-checklist" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://churnlens.site/get-the-checklist" />
@@ -21,8 +24,6 @@
     <meta name="twitter:description" content="The 23-point buyer-side churn audit checklist sellers hope you never ask for. Free." />
 
     <link rel="preconnect" href="https://eu.i.posthog.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,7 +45,6 @@
     }
     </script>
 
-    <link rel="stylesheet" href="/assets/index-C3Qmcv5w.css" />
 
     <!-- RETARGETING PIXELS -->
     <!--
@@ -467,6 +467,7 @@
 
           <!-- Form -->
           <form class="sq-form" id="optin-form">
+            <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
             <div class="sq-form-inner">
               <input type="email" name="email" id="email-input" placeholder="your@email.com" required autocomplete="email" />
               <button type="submit" class="sq-btn" id="submit-btn">Get the checklist &rarr;</button>
@@ -622,7 +623,7 @@
           await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, source: 'squeeze-page' })
+            body: JSON.stringify({ email: email, source: 'squeeze-page', website: document.getElementById('website-field').value })
           });
         } catch(err) {
           // non-fatal — still show OTO
