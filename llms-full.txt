@@ -952,6 +952,251 @@ See hidden churn, concentration risk, and revenue decay before you buy a SaaS.
 
 ---
 
+## Baremetrics Review for Acquirers
+
+Source: https://churnlens.site/reviews/baremetrics-review-for-acquirers
+
+Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026] 
+- 
+# Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]
+An honest review of Baremetrics from the perspective of a SaaS acquirer evaluating a target. What it surfaces, what it hides, and where you still need ChurnLens.
+Baremetrics is one of the most popular subscription analytics dashboards on the market, used by 900+ SaaS companies. It is excellent for operators. But if you are an acquirer reading a seller's Baremetrics dashboard, you need to know what the tool shows you — and what it systematically hides.
+## What Baremetrics does well
+Live MRR tracking — beautiful, real-time MRR, ARR, and LTV dashboards straight from Stripe
+- Cancellation insights — why customers leave, with segmentation and cohort views
+- Recover (dunning) — automated failed-payment recovery that reduces involuntary churn
+- Forecasting — projected MRR and churn based on historical trends
+- Integrations — Stripe, Braintree, Recurly, Chargebee, Paddle, Shopify, and more
+## What Baremetrics misses (and why it matters for acquirers)
+Signal Baremetrics Why acquirers should care 
+Revenue concentration ❌ Not surfaced 60% MRR on 3 accounts = massive valuation risk 
+Logo-retention vs. dollar retention ⚠️ Shows churn, not decomposition Net retention can look great while logos hemorrhage 
+Annual-plan cliff risk ❌ Not shown 30%+ MRR can vanish when annual plans lapse simultaneously 
+Inactive paid accounts ([zombie MRR](/zombie-mrr-detector)) ❌ Not shown Paying but not using = churn waiting to happen 
+Benchmarked quality score ❌ Not shown No way to tell if this churn is good or bad for the stage 
+Deal-memo ready output ❌ You get charts, not a structured risk assessment 
+## Our honest assessment
+Baremetrics is not a bad tool — it is an excellent tool for the wrong reader. If you are the founder running a subscription business, it is one of the best options available. But if you are an acquirer relying on the seller's Baremetrics dashboard to make a buy decision, you are flying blind on the three risks that sink most SaaS deals: concentration, logo-retention quality, and annual-plan cliffs.
+Read between the lines: A seller's Baremetrics dashboard shows a story. ChurnLens checks whether the story holds. The two together give you both the narrative and the diligence. Alone, either is incomplete. 
+### Verdict
+Use Baremetrics if you run a subscription business. If you are buying one, ask the seller for their Baremetrics readout for context — then run ChurnLens over the same data for the real due diligence view.
+## Frequently asked questions
+### Can Baremetrics detect revenue concentration?
+No. Baremetrics reports overall MRR and churn but does not decompose revenue across accounts or flag [concentration risk](/concentration-vulnerability-index). You would need to export raw data and analyze it separately — exactly what ChurnLens automates.
+### Is Baremetrics worth the price for acquirers?
+Not as a standalone due-diligence tool, no. If the seller already has it, read their dashboards for context. But do not rely on it for the revenue-quality signals that determine whether a deal is priced correctly.
+### Can Baremetrics and ChurnLens work together?
+Yes — they are complementary. The seller runs Baremetrics for day-to-day operations. You as the buyer run ChurnLens over the same underlying data during diligence. Each answers a different question.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
+## ChartMogul Review for Acquirers
+
+Source: https://churnlens.site/reviews/chartmogul-review-for-acquirers
+
+ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026] 
+- 
+# ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]
+A detailed review of ChartMogul from the buyer's perspective. What its subscription analytics tell a seller — and what acquirers still miss.
+ChartMogul is a subscription analytics platform used by thousands of SaaS businesses to track MRR, churn, LTV, and retention. It is one of the most mature operator dashboards on the market. But for an acquirer evaluating a target, ChartMogul's view is designed for the people running the business — not the people buying it.
+## What ChartMogul does well
+MRR and ARR tracking — comprehensive subscription metrics with cohort analysis
+- Customer segmentation — filter by plan, geography, channel, and more
+- LTV/CAC analysis — unit-economics breakdown per customer cohort
+- Forecasting — forward-looking MRR projections
+- Integrations — Stripe, Braintree, Recurly, GoCardless, and others
+## Where ChartMogul falls short for acquirers
+Signal ChartMogul Why it matters 
+Revenue concentration index ❌ Not built in Manual export required to detect top-heavy risk 
+Logo vs. dollar retention breakdown ⚠️ Partial Shows churn rates but not the expansion-vs.-exit decomposition 
+Annual-plan cliff view ❌ Not surfaced Cannot see renewal [concentration risk](/concentration-vulnerability-index) 
+Acquirer-oriented scoring ❌ No deal-memo ready [revenue quality score](/revenue-quality-scorecard) 
+Benchmarked score per target ❌ No comparable risk classification 
+## Our honest assessment
+ChartMogul is one of the best operator analytics tools available. If you run a subscription business, it is a strong choice. But for an acquirer, the information gap is the same as with Baremetrics and ProfitWell: the dashboard answers "how is the business doing?" not "is the business durable enough to buy?" These are related but fundamentally different questions.
+Warning for acquirers: ChartMogul's MRR forecast is based on historical trends. It does not incorporate concentration risk, annual-plan cliff exposure, or inactive-account decay — the three factors that cause post-acquisition MRR to diverge most from forecasts. 
+### Verdict
+ChartMogul is excellent for its intended user (the SaaS operator). For acquirers, use the seller's ChartMogul dashboard for operational context and trend insight. Then use ChurnLens to run the same data through a buyer-side lens — scoring concentration, decomposition, cliffs, and [zombie MRR](/zombie-mrr-detector) for your deal memo.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
+## ChurnZero Review for Acquirers
+
+Source: https://churnlens.site/reviews/churnzero-review-for-acquirers
+
+ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026] 
+- 
+# ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]
+An honest review of ChurnZero from the buyer's perspective — what its automation and playbooks tell you about a target, and where you still need a separate diligence tool.
+ChurnZero is a leading customer success platform focused on proactive churn prevention. It excels at identifying at-risk accounts and automating retention playbooks. For an acquirer, a target running ChurnZero signals operational maturity — but the platform's view is designed for the CS team's workflow, not for buy-side due diligence.
+## What ChurnZero does well
+Real-time health scores — product usage, survey, and support-ticket composites
+- Automated playbooks — trigger retention sequences when risk signals fire
+- In-app engagement tracking — see exactly how accounts use the product
+- Integration with CRM — Salesforce, HubSpot, and other sales tools
+- Churn prediction — which accounts are most likely to cancel in the next 30 or 60 days
+## What ChurnZero does not provide acquirers
+Signal ChurnZero Why it matters 
+Revenue [concentration risk](/concentration-vulnerability-index) ❌ Not surfaced Health score for each account, but no portfolio-level concentration view 
+Logo retention vs. dollar retention decomposition ⚠️ Partial Tracks individual accounts but does not decompose the aggregate retention drivers 
+Annual-plan cliff view ❌ No forward-looking renewal concentration analysis 
+Zombie / inactive paid account detection ⚠️ Usage-based health Shows low-usage accounts but does not frame as acquisition risk 
+Independent buy-side score ❌ Tool is seller-configured; scores reflect seller's priorities 
+## Our honest assessment
+ChurnZero is a powerful tool for CS teams actively managing retention. If the target has it, that is a net positive — it means they have visibility into account health. But the health scores reflect the seller's own criteria, not an independent acquisition-risk framework. An acquirer needs to ask: "does this revenue hold together under independent scrutiny, not just under the seller's health model?"
+### Verdict
+ChurnZero is a strong CS platform for operators managing retention. For acquirers, use a seller's ChurnZero data for operational context on account health. Use ChurnLens for the independent revenue-quality scoring and risk decomposition needed for a structured deal assessment.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
+## Gainsight Review for Acquirers
+
+Source: https://churnlens.site/reviews/gainsight-review-for-acquirers
+
+Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026] 
+- 
+# Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]
+An acquirer-focused review of Gainsight. What its customer health scores and churn prediction mean for a buyer — and what they leave unsaid.
+Gainsight is the leading enterprise customer success platform, used by companies like Adobe, Box, and Yammer to manage retention, health scoring, and expansion. If your acquisition target runs Gainsight, that is generally a positive signal: they invest in retention. But Gainsight's view of the customer is designed for the CS team, not for the acquirer's deal memo.
+## What Gainsight does well
+Customer health scoring — composite health scores from product usage, support tickets, and NPS
+- Churn prediction models — ML-driven predictions of which accounts are at risk
+- Playbook automation — trigger retention workflows based on risk signals
+- Executive dashboards — health, retention, and expansion metrics for leadership
+- Enterprise scale — handles thousands of accounts with complex hierarchies
+## What Gainsight does not tell an acquirer
+Signal Gainsight Acquirer impact 
+[Revenue quality score](/revenue-quality-scorecard) ❌ Health scores are operational, not financial 
+Revenue [concentration risk](/concentration-vulnerability-index) ⚠️ Implicit in account data No automated concentration scoring or benchmarking 
+Annual-plan cliff projection ❌ No forward renewal-concentration view 
+Independent buyer's assessment ❌ Tool is owned and configured by the seller 
+Peer-benchmarked risk level ❌ No comparable SaaS risk classification 
+## Our honest assessment
+If a target runs Gainsight, that tells you they have a mature CS operation — a positive signal. But the health scores and churn predictions are built on the seller's own data and definitions. An acquirer needs an independent assessment: same data, different lens. Gainsight answers "is our CS team doing its job?" ChurnLens answers "is the revenue durable enough to buy?"
+Due diligence tip: Ask the seller to export their Gainsight health scores for the top 20 accounts by MRR. Then compare those against ChurnLens's independent revenue-quality score. Discrepancies between the two are the most interesting signal in the data. 
+### Verdict
+Gainsight is an excellent CS platform, but it is not a due diligence tool. Use a seller's Gainsight instance to understand their retention operations. Rely on ChurnLens for the independent revenue-quality assessment you need for your deal memo.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
+## ProfitWell Review for Acquirers
+
+Source: https://churnlens.site/reviews/profitwell-review-for-acquirers
+
+ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026] 
+- 
+# ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]
+A buyer-focused review of ProfitWell (now part of Paddle) — what its free metrics dashboard gives you and what it does not tell you about an acquisition target.
+ProfitWell (acquired by Paddle) built its reputation on a free, beautifully designed subscription-metrics dashboard that thousands of SaaS companies use. For an acquirer looking at a seller's ProfitWell readout, it offers a clean window into MRR, churn, and retention — but it leaves the questions that matter most for due diligence entirely unanswered.
+## What ProfitWell does well
+Free MRR dashboard — on par with paid tools for core subscription metrics
+- Benchmarks reports — industry-level churn and retention benchmarks (aggregate only)
+- Retention reports — clear cohort-based retention views
+- Pricing insights — price-optimization suggestions based on subscriber data
+## What ProfitWell does not give acquirers
+Signal ProfitWell Acquirer impact 
+Target-specific [revenue quality score](/revenue-quality-scorecard) ❌ No single-number answer to "should I buy this?" 
+Revenue concentration per target ❌ Cannot flag top-heavy revenue risk 
+Annual-plan cliff projection ❌ Cannot see impending renewal collapse 
+Zombie / inactive paid account detection ❌ Misses a primary churn predictor 
+Deal-memo structured output ❌ You get charts, not a diligence package 
+## Our honest assessment
+ProfitWell is a generous free tool that serves the SaaS community well — founders get a high-quality dashboard without paying for it. But the acquirer's job is different. The metrics ProfitWell reports are descriptive (what happened), not diagnostic (is this revenue durable enough to buy?). For the latter, you need a tool built around the buyer's questions, not the operator's.
+Key insight: ProfitWell's benchmarks are useful for context — knowing the average churn rate for a $5M ARR SaaS is helpful. But the benchmarks cover market aggregates, not the specific target you are evaluating. ChurnLens benchmarks the actual target against its peers. 
+### Verdict
+ProfitWell is a great tool for operators at zero cost. For acquirers, read the seller's ProfitWell dashboard for context, then run ChurnLens for the diligence-grade answers. The benchmarks report is useful for calibration; the per-target analysis is not available in ProfitWell at all.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
+## Stripe Sigma Review for Acquirers
+
+Source: https://churnlens.site/reviews/stripe-sigma-review-for-acquirers
+
+Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026] 
+- 
+# Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]
+A review of Stripe Sigma from the perspective of a SaaS acquirer — what its payment data gives you and what it cannot tell you about revenue durability.
+Stripe Sigma is Stripe's data-querying tool that lets you run custom SQL on your Stripe transaction data. For an acquirer who can get a seller to share Sigma-level access, it offers a raw, unfiltered view of payment activity. But raw payment data is not the same as a revenue-quality assessment — and confusing the two is one of the most common diligence mistakes.
+## What Stripe Sigma does well
+Raw transaction data — every charge, refund, subscription event, and invoice in SQL-queryable form
+- Custom queries — build any report you can imagine from the Stripe data schema
+- Revenue charting — MRR, churn, and subscription trends from the source
+- Data export — pull any query result into CSV for further analysis
+## What Stripe Sigma does not give acquirers
+Signal Stripe Sigma Acquirer impact 
+Revenue concentration analysis ❌ Requires custom SQL Sigma gives you the data, but you build the analysis from scratch 
+Logo-retention decomposition ❌ Requires custom query You define what "retained" means and build the query yourself 
+Annual-plan cliff projection ❌ Requires custom SQL No prepackaged view of renewal-[concentration risk](/concentration-vulnerability-index) 
+Benchmarked risk classification ❌ No comparison against peer businesses 
+Deal-memo ready output ❌ You get raw data tables, not a structured risk report 
+## Our honest assessment
+Stripe Sigma is a powerful raw-data tool — if you know exactly what queries to run and how to interpret the results. The gap is that most acquirers do not know which queries map to deal-killing risks (concentration, cliff, [zombie MRR](/zombie-mrr-detector)) without a framework. Sigma gives you the ingredients; ChurnLens gives you the recipe and the finished dish.
+Best practice: Ask the seller for Stripe Sigma read-only access to validate the raw data. Then run ChurnLens over the same data to get the structured revenue-quality assessment. Sigma for data integrity verification; ChurnLens for risk analysis and deal-memo output. 
+### Verdict
+Stripe Sigma is excellent for data verification and custom analysis if you have the SQL skills. For deal-ready revenue quality scoring with benchmarking, concentration analysis, and structured output, ChurnLens provides what Sigma leaves as an exercise for the analyst.
+### Related resources
+- [ChurnLens vs Baremetrics](/vs/baremetrics)
+- [ChurnLens vs ProfitWell](/vs/profitwell)
+- [ChurnLens vs ChartMogul](/vs/chartmogul)
+- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
+- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
+- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+## Try ChurnLens
+SaaS revenue quality & churn risk due diligence for acquirers.
+[Get started →](https://churnlens.site/)
+
+---
+
 
 *End of ChurnLens llms-full.txt. Generated 2026-07-18.*
 *Site: https://churnlens.site | llms.txt: https://churnlens.site/llms.txt | sitemap: https://churnlens.site/sitemap.xml*

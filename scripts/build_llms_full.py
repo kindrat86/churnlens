@@ -39,6 +39,12 @@ PAGES = [
     ("SaaS Acquisition Red Flags", "saas-acquisition-red-flags.html"),
     ("SaaS Benchmarks for Acquirers", "benchmarks/index.html"),
     ("FAQ", "faq/index.html"),
+    ("Baremetrics Review for Acquirers", "reviews/baremetrics-review-for-acquirers.html"),
+    ("ChartMogul Review for Acquirers", "reviews/chartmogul-review-for-acquirers.html"),
+    ("ChurnZero Review for Acquirers", "reviews/churnzero-review-for-acquirers.html"),
+    ("Gainsight Review for Acquirers", "reviews/gainsight-review-for-acquirers.html"),
+    ("ProfitWell Review for Acquirers", "reviews/profitwell-review-for-acquirers.html"),
+    ("Stripe Sigma Review for Acquirers", "reviews/stripe-sigma-review-for-acquirers.html"),
 ]
 
 
