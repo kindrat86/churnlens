@@ -1,49 +1,37 @@
 {
+  "schemaVersion": "0.1",
   "name": "churnlens",
   "displayName": "ChurnLens",
-  "description": "ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surfa",
-  "version": "1.0.0",
-  "vendor": {
+  "description": "SaaS revenue quality scoring and due diligence tool.",
+  "homepageUrl": "https://churnlens.site/mcp",
+  "contactEmail": "support@churnlens.site",
+  "publisher": {
     "name": "ChurnLens",
     "url": "https://churnlens.site"
   },
-  "license": "MIT",
-  "homepage": "https://churnlens.site",
-  "categories": [
-    "productivity"
+  "endpoints": {
+    "streamableHttp": "https://churnlens.site/api/mcp"
+  },
+  "transports": [
+    "streamable-http"
   ],
-  "tags": [
-    "saas due diligence",
-    "saas acquisition",
-    "churn analysis",
-    "revenue quality",
-    "mrr analysis",
-    "saas churn rate",
-    "saas red flags"
-  ],
-  "protocol": {
-    "version": "2025-06-18",
-    "transport": [
-      "streamable-http"
-    ]
+  "capabilities": {
+    "tools": true,
+    "prompts": false,
+    "resources": false
   },
   "tools": [
     {
-      "name": "get_revenue_quality_score",
-      "description": "Score a SaaS company's revenue quality (0-100) from MRR data, logo retention, and concentration metrics.",
-      "readOnly": true,
-      "idempotent": true
+      "name": "calculate_churn_rate",
+      "summary": "Calculate churn rate, GRR, and NRR from MRR data."
     },
     {
-      "name": "get_churn_benchmarks",
-      "description": "Compare a SaaS company's churn rate against industry benchmarks by ARR band and vertical.",
-      "readOnly": true,
-      "idempotent": true
+      "name": "get_saas_benchmark",
+      "summary": "Get SaaS benchmark data for churn rates and NRR."
+    },
+    {
+      "name": "analyze_revenue_concentration",
+      "summary": "Assess revenue concentration risk using HHI."
     }
-  ],
-  "privacy": {
-    "piiCollected": false,
-    "dataStored": false,
-    "thirdPartyData": false
-  }
+  ]
 }
