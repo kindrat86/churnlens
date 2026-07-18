@@ -79,6 +79,22 @@
 - [ ] Reddit/forum presence: not started
 - [ ] YouTube video: not recorded
 
+## Live AI Visibility Sampling — July 18, 2026
+
+Performed with Firecrawl web search (fresh results, not cached).
+
+| Query | churnlens.site appeared? | Top results |
+|-------|--------------------------|-------------|
+| "best SaaS due diligence tools for buyers 2026" | ❌ No | FE International, Devaland, Wildfront, Peony, Axial |
+| "ChurnLens churnlens.site" (branded) | ❌ No | Churn-related unrelated sites, Wikipedia redirect |
+| "hidden churn SaaS acquisition due diligence tool" | ✅ **#1** | churnlens.site ranks #1 for its core topic |
+| "ChurnLens" (excluding our domains) | ❌ (not our site) | churnlens.tech (namesake), MCPMarket ChurnLens (4th namesake), Rust library |
+| G2 / Capterra / AlternativeTo / TrustRadius | ❌ None | Zero listings — directory gap confirmed |
+
+### Brand collision worsened — 4th namesake discovered
+- **MCP Market / Cargo (Rust library):** "Churnlens" self-hosted SaaS metrics tool — calculates MRR, churn, LTV from Stripe/CSV for operators. NOT buyer-side DD.
+- Namesakes now: churnlens.io (retention), churnlens.tech (prediction), MCPMarket/Cargo (metrics), VS Code extension (code-churn).
+
 ---
 
 ## Reusable Generators
