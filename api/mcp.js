@@ -1,4 +1,4 @@
-// MCP Server for ChurnLens — SaaS revenue quality scoring and due diligence tool.
+// MCP Server for Churn Lens — SaaS revenue quality scoring and due diligence tool.
 // Implements Model Context Protocol JSON-RPC over HTTP (Streamable HTTP transport)
 // Deployed as a Vercel serverless function. No auth required (read-only tools).
 // Install in Claude Desktop: npx mcp-remote https://churnlens.site/api/mcp
@@ -96,7 +96,7 @@ function handleToolCall(name, args) {
     ``,
     `Parameters: ${argSummary || "(none)"}`,
     ``,
-    `This tool is part of the ChurnLens MCP server. For full interactive results, visit:`,
+    `This tool is part of the Churn Lens MCP server. For full interactive results, visit:`,
     ctaLink,
     ``,
     `Need help? Contact: ${CONTACT}`

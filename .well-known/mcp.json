@@ -1,12 +1,12 @@
 {
   "schemaVersion": "0.1",
   "name": "churnlens",
-  "displayName": "ChurnLens",
+  "displayName": "Churn Lens",
   "description": "SaaS revenue quality scoring and due diligence tool.",
   "homepageUrl": "https://churnlens.site/mcp",
   "contactEmail": "support@churnlens.site",
   "publisher": {
-    "name": "ChurnLens",
+    "name": "Churn Lens",
     "url": "https://churnlens.site"
   },
   "endpoints": {

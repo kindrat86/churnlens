@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "ChurnLens",
+    "title": "Churn Lens",
     "description": "SaaS revenue quality scoring and due diligence tool.",
     "version": "1.0.0",
     "contact": {

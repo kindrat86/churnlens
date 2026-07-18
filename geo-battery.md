@@ -1,4 +1,4 @@
-# GEO/AEO Query Battery — ChurnLens
+# GEO/AEO Query Battery — Churn Lens
 
 ## Informational (10 queries)
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "name_for_human": "ChurnLens",
+  "name_for_human": "Churn Lens",
   "name_for_model": "churnlens",
   "description_for_human": "SaaS revenue quality scoring and due diligence tool.",
   "description_for_model": "SaaS revenue quality scoring and due diligence tool.",

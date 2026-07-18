@@ -1,13 +1,13 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "ChurnLens",
+  "title": "Churn Lens",
   "description": "SaaS Revenue Quality & Churn Risk Due Diligence — analyzes revenue concentration, logo retention, annual plan churn risk, and MRR decline patterns to surface hidden churn before a SaaS acquisition.",
   "home_page_url": "https://churnlens.site/",
   "feed_url": "https://churnlens.site/feed.json",
   "language": "en",
   "authors": [
     {
-      "name": "ChurnLens",
+      "name": "Churn Lens",
       "url": "https://churnlens.site/about"
     }
   ],
@@ -30,7 +30,7 @@
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -39,24 +39,24 @@
     {
       "id": "https://churnlens.site/about",
       "url": "https://churnlens.site/about",
-      "title": "About ChurnLens",
-      "content_text": "About ChurnLens: SaaS Revenue Quality & Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.",
+      "title": "About Churn Lens",
+      "content_text": "About Churn Lens: SaaS Revenue Quality & Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/faq",
       "url": "https://churnlens.site/faq",
-      "title": "FAQ — ChurnLens",
-      "content_text": "Frequently asked questions about ChurnLens.",
+      "title": "FAQ — Churn Lens",
+      "content_text": "Frequently asked questions about Churn Lens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
@@ -68,7 +68,7 @@
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -77,48 +77,48 @@
     {
       "id": "https://churnlens.site/alternatives-to",
       "url": "https://churnlens.site/alternatives-to",
-      "title": "Alternatives To — ChurnLens",
-      "content_text": "Find the best alternatives compared to ChurnLens.",
+      "title": "Alternatives To — Churn Lens",
+      "content_text": "Find the best alternatives compared to Churn Lens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/vs",
       "url": "https://churnlens.site/vs",
-      "title": "Vs — ChurnLens",
-      "content_text": "Detailed comparisons: ChurnLens vs other tools.",
+      "title": "Vs — Churn Lens",
+      "content_text": "Detailed comparisons: Churn Lens vs other tools.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/best",
       "url": "https://churnlens.site/best",
-      "title": "Best Of — ChurnLens",
+      "title": "Best Of — Churn Lens",
       "content_text": "The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/glossary",
       "url": "https://churnlens.site/glossary",
-      "title": "Glossary — ChurnLens",
-      "content_text": "Key terms and definitions related to ChurnLens.",
+      "title": "Glossary — Churn Lens",
+      "content_text": "Key terms and definitions related to Churn Lens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
@@ -130,7 +130,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -144,7 +144,7 @@
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -158,7 +158,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -167,12 +167,12 @@
     {
       "id": "https://churnlens.site/terms",
       "url": "https://churnlens.site/terms",
-      "title": "Terms of Service — ChurnLens",
-      "content_text": "Terms of Service for ChurnLens.",
+      "title": "Terms of Service — Churn Lens",
+      "content_text": "Terms of Service for Churn Lens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ]
     },
@@ -184,7 +184,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -198,7 +198,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -212,7 +212,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -226,7 +226,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -240,7 +240,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -254,7 +254,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -268,7 +268,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -282,7 +282,7 @@
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "ChurnLens"
+          "name": "Churn Lens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",

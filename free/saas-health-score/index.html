@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free SaaS Revenue Health Score Calculator | ChurnLens</title>
+<title>Free SaaS Revenue Health Score Calculator | Churn Lens</title>
 <meta name="description" content="Calculate your SaaS revenue health score across 5 dimensions: retention, growth, concentration, efficiency, and durability. Free diagnostic with recommendations.">
 <meta property="og:title" content="SaaS Revenue Health Score Calculator — Free">
 <meta property="og:description" content="Get a 0-100 SaaS health score across 5 dimensions with actionable recommendations. Free, instant, no signup.">
@@ -183,8 +183,8 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <footer>
-  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
-  Powered by <a href="https://churnlens.site">ChurnLens</a>
+  <a href="https://churnlens.site"><strong>Churn Lens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">Churn Lens</a>
 </footer>
 
 <div class="toast" id="toast">Results copied to clipboard!</div>
@@ -458,7 +458,7 @@ function copyResults(){
   const composite=Math.round((retentionScore+growthScore+concScore+effScore+durScore)/5)
   let grade=composite>=80?'A (Excellent)':composite>=65?'B (Good)':composite>=45?'C (Fair)':'D (Poor)'
 
-  const text=`SaaS Revenue Health Score (ChurnLens)
+  const text=`SaaS Revenue Health Score (Churn Lens)
 ═══════════════════════════════════
 COMPOSITE SCORE: ${composite}/100 — ${grade}
 
@@ -469,7 +469,7 @@ Dimension Breakdown:
   Efficiency:    ${effScore}/100  (LTV:CAC ${ratio.toFixed(1)}:1)
   Durability:    ${durScore}/100  (annual plans: ${annual}%)
 
-Analyzed free at ChurnLens — https://churnlens.site/free/saas-health-score/`
+Analyzed free at Churn Lens — https://churnlens.site/free/saas-health-score/`
 
   navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast')

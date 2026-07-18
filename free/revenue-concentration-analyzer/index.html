@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Revenue Concentration Risk Analyzer | ChurnLens</title>
+<title>Free Revenue Concentration Risk Analyzer | Churn Lens</title>
 <meta name="description" content="Analyze SaaS revenue concentration risk. Enter customer MRR values to get HHI, top-5 concentration, whale flags, and color-coded risk levels. Free.">
 <meta property="og:title" content="Revenue Concentration Risk Analyzer — Free">
 <meta property="og:description" content="Enter your top customer MRR values and instantly see HHI, concentration %, whale flags, and risk level. Free, no signup.">
@@ -162,8 +162,8 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <footer>
-  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
-  Powered by <a href="https://churnlens.site">ChurnLens</a>
+  <a href="https://churnlens.site"><strong>Churn Lens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">Churn Lens</a>
 </footer>
 
 <div class="toast" id="toast">Results copied to clipboard!</div>
@@ -279,7 +279,7 @@ function copyResults(){
   const riskLevel=hhi<0.15?'LOW (Green)':hhi<=0.25?'MODERATE (Yellow)':'HIGH (Red)'
   const whaleNote=whales.length>0?'\n⚠️  WHALE: '+whales.length+' customer(s) >25% of MRR':''
 
-  const text=`Revenue Concentration Analysis (ChurnLens)
+  const text=`Revenue Concentration Analysis (Churn Lens)
 ═══════════════════════════════════
 Customers Analyzed:  ${values.length}
 Total MRR:           $${Math.round(total).toLocaleString()}
@@ -287,7 +287,7 @@ HHI:                 ${hhi.toFixed(3)} (0=spread, 1=monocustomer)
 Top-5 Concentration: ${(top5*100).toFixed(1)}%
 Risk Level:          ${riskLevel}${whaleNote}
 
-Analyzed free at ChurnLens — https://churnlens.site/free/revenue-concentration-analyzer/`
+Analyzed free at Churn Lens — https://churnlens.site/free/revenue-concentration-analyzer/`
 
   navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast')
