@@ -3,14 +3,6 @@
   "outputDirectory": ".",
   "redirects": [
     {
-      "source": "/dream100",
-      "destination": "/dream100.html"
-    },
-    {
-      "source": "/affiliates",
-      "destination": "/affiliates.html"
-    },
-    {
       "source": "/public/:path*",
       "destination": "/:path*",
       "permanent": true
@@ -180,6 +172,14 @@
     {
       "source": "/network",
       "destination": "/network.html"
+    },
+    {
+      "source": "/dream100",
+      "destination": "/dream100.html"
+    },
+    {
+      "source": "/affiliates",
+      "destination": "/affiliates.html"
     },
     {
       "source": "/network-widget",
