@@ -156,16 +156,6 @@
       "source": "/gdpr",
       "destination": "/faq",
       "permanent": true
-    },
-    {
-      "source": "/privacy",
-      "destination": "/faq",
-      "permanent": true
-    },
-    {
-      "source": "/terms",
-      "destination": "/faq",
-      "permanent": true
     }
   ],
   "rewrites": [
