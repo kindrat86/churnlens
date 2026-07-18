@@ -931,5 +931,60 @@
   <p style="color:#cc3300;font-weight:600;margin-top:12px">⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase</p>
 </section>
 
+<!-- PostHog Attribution Survey — AEO measurement: ties AI visibility to revenue -->
+<div id="attribution-survey" style="display:none;position:fixed;bottom:20px;right:20px;background:white;border-radius:12px;padding:24px;max-width:340px;box-shadow:0 8px 30px rgba(0,0,0,0.15);z-index:9999;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.5">
+  <div id="attribution-question">
+    <p style="font-weight:600;margin:0 0 12px;color:#1a1a1a">👋 How did you hear about ChurnLens?</p>
+    <div style="display:flex;flex-direction:column;gap:8px" id="attribution-options">
+      <button onclick="answerAttribution('AI assistant (ChatGPT, Claude, Perplexity)')" style="text-align:left;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;background:white;cursor:pointer;font-size:14px">🤖 AI assistant (ChatGPT, Claude, Perplexity)</button>
+      <button onclick="answerAttribution('Google search')" style="text-align:left;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;background:white;cursor:pointer;font-size:14px">🔍 Google search</button>
+      <button onclick="answerAttribution('Social media or community')" style="text-align:left;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;background:white;cursor:pointer;font-size:14px">💬 Social media or community</button>
+      <button onclick="answerAttribution('Referral or friend')" style="text-align:left;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;background:white;cursor:pointer;font-size:14px">👤 Referral or friend</button>
+      <button onclick="answerAttribution('Other')" style="text-align:left;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;background:white;cursor:pointer;font-size:14px">📝 Other</button>
+    </div>
+    <button onclick="closeSurvey()" style="margin-top:12px;background:none;border:none;color:#9ca3af;cursor:pointer;font-size:12px">✕ Close</button>
+  </div>
+  <div id="attribution-thanks" style="display:none;text-align:center;padding:12px 0">
+    <p style="font-weight:600;color:#0066cc;margin:0">Thanks! 🎉</p>
+    <p style="color:#6b7280;font-size:13px;margin:4px 0 0">Your answer helps us improve.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var shown = false;
+  var survey = document.getElementById('attribution-survey');
+  var triedKey = 'cl_attribution_seen_' + window.location.hostname;
+  if (window.sessionStorage && window.sessionStorage.getItem(triedKey)) return;
+  
+  // Show after 8 seconds or on scroll past 30%
+  function showIfReady() {
+    if (shown) return;
+    var scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    if (scrolled > 0.3) { showSurvey(); return; }
+    setTimeout(function(){ if (!shown) { var s2 = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight); if (s2 > 0.25) showSurvey(); } }, 12000);
+  }
+  function showSurvey() {
+    shown = true;
+    survey.style.display = 'block';
+    if (window.sessionStorage) window.sessionStorage.setItem(triedKey, '1');
+  }
+  setTimeout(showIfReady, 8000);
+  window.addEventListener('scroll', showIfReady, {passive: true});
+})();
+function answerAttribution(source) {
+  if (window.posthog) {
+    window.posthog.capture('attribution_survey', {answer: source, page: location.pathname});
+  }
+  document.getElementById('attribution-question').style.display = 'none';
+  document.getElementById('attribution-thanks').style.display = 'block';
+  setTimeout(function(){ document.getElementById('attribution-survey').style.display = 'none'; }, 2000);
+}
+function closeSurvey() {
+  document.getElementById('attribution-survey').style.display = 'none';
+  if (window.sessionStorage) window.sessionStorage.setItem('cl_attribution_seen_' + window.location.hostname, '1');
+}
+</script>
+<!-- /attribution survey -->
+
 </body>
 </html>
