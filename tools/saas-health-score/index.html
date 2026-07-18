@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Health Score Calculator — Free Interactive Tool</title>
+<meta name="description" content="Calculate your SaaS business health score across 7 dimensions: churn, MRR growth, LTV/CAC, net revenue retention, burn rate, customer concentration, and rule of 40.">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; max-width: 800px; margin: 0 auto; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #6366f1, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #94a3b8; margin-bottom: 2rem; }
+.calculator { background: #1e293b; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+.field { margin-bottom: 1.5rem; }
+.field label { display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 0.5rem; color: #cbd5e1; }
+.field label span { color: #6366f1; font-weight: 600; }
+.field input[type=range] { width: 100%; accent-color: #6366f1; }
+.score-display { text-align: center; padding: 2rem; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 12px; margin: 2rem 0; }
+.score-number { font-size: 4rem; font-weight: 800; }
+.score-label { font-size: 0.875rem; color: #94a3b8; margin-top: 0.5rem; }
+.meter { height: 8px; border-radius: 4px; background: #334155; margin-top: 1rem; overflow: hidden; }
+.meter-fill { height: 100%; border-radius: 4px; transition: width 0.3s, background 0.3s; }
+.breakdown { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.breakdown-item { background: #0f172a; padding: 1rem; border-radius: 8px; }
+.breakdown-item h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+.breakdown-score { font-size: 1.5rem; font-weight: 700; }
+.recommendation { background: #1e293b; border-left: 3px solid #6366f1; padding: 1rem; border-radius: 0 12px 12px 0; margin-top: 1rem; }
+.embed-section { background: #1e293b; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+.embed-section h3 { color: #6366f1; margin-bottom: 0.75rem; }
+.embed-code { background: #0f172a; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.8125rem; overflow-x: auto; white-space: pre-wrap; color: #e2e8f0; }
+.copy-btn { background: #6366f1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.875rem; margin-top: 0.75rem; }
+.copy-btn:hover { background: #4f46e5; }
+.footer-link { text-align: center; margin-top: 2rem; font-size: 0.75rem; color: #475569; }
+.footer-link a { color: #6366f1; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>📊 SaaS Health Score Calculator</h1>
+<p class="subtitle">Measure your SaaS business health across 7 critical dimensions. Move the sliders to match your metrics.</p>
+
+<div class="calculator">
+  <div class="field">
+    <label>Monthly Churn Rate <span id="churn-val">3.0%</span></label>
+    <input type="range" id="churn" min="0" max="10" step="0.1" value="3" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>MRR Growth Rate (monthly) <span id="growth-val">8%</span></label>
+    <input type="range" id="growth" min="-10" max="30" step="1" value="8" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>LTV / CAC Ratio <span id="ltvcac-val">3.0x</span></label>
+    <input type="range" id="ltvcac" min="0" max="10" step="0.1" value="3" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>Net Revenue Retention <span id="nrr-val">100%</span></label>
+    <input type="range" id="nrr" min="50" max="150" step="1" value="100" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>Monthly Burn Multiple <span id="burn-val">1.5x</span></label>
+    <input type="range" id="burn" min="0" max="5" step="0.1" value="1.5" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>Largest Customer % of MRR <span id="conc-val">15%</span></label>
+    <input type="range" id="conc" min="0" max="100" step="1" value="15" oninput="updateScore()">
+  </div>
+  <div class="field">
+    <label>Rule of 40 (Growth% + Profit%) <span id="r40-val">25%</span></label>
+    <input type="range" id="r40" min="-50" max="100" step="1" value="25" oninput="updateScore()">
+  </div>
+
+  <div class="score-display">
+    <div class="score-number" id="total-score" style="background:linear-gradient(135deg,#6366f1,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">72</div>
+    <div class="score-label">SaaS Health Score</div>
+    <div class="meter"><div class="meter-fill" id="meter-fill" style="width:72%"></div></div>
+    <div id="verdict" style="margin-top:1rem;font-size:1.125rem;font-weight:600;">Healthy — Above Average</div>
+  </div>
+
+  <div class="breakdown" id="breakdown"></div>
+  <div class="recommendation" id="recommendation"></div>
+</div>
+
+<div class="embed-section">
+  <h3>🔗 Embed This Calculator</h3>
+  <p style="color:#94a3b8;margin-bottom:1rem;">Add this free SaaS Health Score Calculator to your website or blog. One line of HTML — no dependencies, no tracking, fully self-contained.</p>
+  <div class="embed-code" id="embed-code">&lt;iframe src="https://HOST_DOMAIN/tools/saas-health-score/" width="100%" height="900" frameborder="0" style="border-radius:12px;"&gt;&lt;/iframe&gt;</div>
+  <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Code',2000)">Copy Code</button>
+</div>
+
+<div class="footer-link">Powered by <a href="https://churnlens.site">ChurnLens</a> · <a href="https://unlocksaas.com">UnlockSaaS</a> · <a href="https://sipiteno.com">SipiTeno</a></div>
+
+<script>
+function updateScore() {
+  const churn = parseFloat(document.getElementById('churn').value);
+  const growth = parseInt(document.getElementById('growth').value);
+  const ltvcac = parseFloat(document.getElementById('ltvcac').value);
+  const nrr = parseInt(document.getElementById('nrr').value);
+  const burn = parseFloat(document.getElementById('burn').value);
+  const conc = parseInt(document.getElementById('conc').value);
+  const r40 = parseInt(document.getElementById('r40').value);
+
+  document.getElementById('churn-val').textContent = churn.toFixed(1) + '%';
+  document.getElementById('growth-val').textContent = growth + '%';
+  document.getElementById('ltvcac-val').textContent = ltvcac.toFixed(1) + 'x';
+  document.getElementById('nrr-val').textContent = nrr + '%';
+  document.getElementById('burn-val').textContent = burn.toFixed(1) + 'x';
+  document.getElementById('conc-val').textContent = conc + '%';
+  document.getElementById('r40-val').textContent = r40 + '%';
+
+  const scores = {
+    churn: Math.max(0, Math.min(100, 100 - (churn * 15))),
+    growth: Math.max(0, Math.min(100, growth < 0 ? 10 : growth < 5 ? 40 : growth < 10 ? 70 : growth < 20 ? 85 : 100)),
+    ltvcac: Math.max(0, Math.min(100, ltvcac < 1 ? 20 : ltvcac < 3 ? 50 + (ltvcac-1)*25 : ltvcac < 5 ? 75 + (ltvcac-3)*10 : 100)),
+    nrr: Math.max(0, Math.min(100, nrr < 80 ? 20 : nrr < 100 ? 60 : nrr < 120 ? 80 + (nrr-100)*0.5 : 100)),
+    burn: Math.max(0, Math.min(100, burn > 3 ? 10 : burn > 2 ? 40 : burn > 1 ? 70 : burn > 0.5 ? 90 : 100)),
+    conc: Math.max(0, Math.min(100, 100 - conc)),
+    r40: Math.max(0, Math.min(100, r40 < 0 ? 20 : r40 < 20 ? 50 : r40 < 40 ? 75 + (r40-20)*1.25 : 100)),
+  };
+
+  const weights = { churn: 20, growth: 15, ltvcac: 15, nrr: 15, burn: 10, conc: 10, r40: 15 };
+  let total = 0;
+  for (const [k, w] of Object.entries(weights)) total += scores[k] * w / 100;
+
+  const breakdownHTML = Object.entries(scores).map(([k, v]) => {
+    const labels = { churn: 'Churn Risk', growth: 'Growth', ltvcac: 'Unit Economics', nrr: 'Retention', burn: 'Capital Efficiency', conc: 'Diversification', r40: 'Rule of 40' };
+    const colors = v >= 80 ? '#10b981' : v >= 60 ? '#6366f1' : v >= 40 ? '#f59e0b' : '#ef4444';
+    return `<div class="breakdown-item"><h4>${labels[k]}</h4><div class="breakdown-score" style="color:${colors}">${Math.round(v)}</div></div>`;
+  }).join('');
+
+  document.getElementById('total-score').textContent = Math.round(total);
+  document.getElementById('meter-fill').style.width = total + '%';
+  document.getElementById('meter-fill').style.background = total >= 80 ? '#10b981' : total >= 60 ? '#6366f1' : total >= 40 ? '#f59e0b' : '#ef4444';
+  document.getElementById('verdict').textContent = total >= 85 ? '🏆 Excellent — Top Quartile SaaS' : total >= 70 ? '✅ Healthy — Above Average' : total >= 50 ? '⚠️ Needs Attention — Below Average' : '🔴 Critical — Immediate Action Needed';
+  document.getElementById('breakdown').innerHTML = breakdownHTML;
+
+  const recs = [];
+  if (scores.churn < 60) recs.push('High churn is your #1 risk. Implement a churn prediction model and proactive save workflow.');
+  if (scores.growth < 50) recs.push('Growth is below SaaS median. Audit your acquisition channels and expand your top-of-funnel.');
+  if (scores.ltvcac < 50) recs.push('Unit economics need work. Raise prices, reduce CAC, or improve retention to get LTV/CAC above 3x.');
+  if (scores.burn < 50) recs.push('Burn multiple is too high. Reduce discretionary spend or focus on capital-efficient growth channels.');
+  if (scores.conc < 50) recs.push('Customer concentration risk. Diversify your revenue base — no single customer should be >20% of MRR.');
+  document.getElementById('recommendation').innerHTML = recs.length ? '<strong>🎯 Top Priority:</strong> ' + recs[0] : '<strong>✅ Looking great!</strong> All dimensions are in healthy ranges. Focus on scaling.';
+}
+
+updateScore();
+</script>
+</body>
+</html>
