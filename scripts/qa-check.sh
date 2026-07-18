@@ -4,6 +4,11 @@
 set -u
 cd "$(dirname "$0")/.." || exit 1
 
+# Positioning guardrail: abort the deploy if privacy-browser drift appears.
+# ChurnLens is a SaaS churn/due-diligence tool, not a privacy tool.
+# (see growth-engine GUARDRAILS.md §2)
+node scripts/guard-positioning.mjs || exit 1
+
 python3 - <<'PYEOF'
 import os, re, sys, json
 import xml.etree.ElementTree as ET
