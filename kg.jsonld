@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "kg": "http://g.co/kg"
+  },
+  "@id": "kg:/m/churnlens_site",
+  "@type": ["Organization", "SoftwareApplication"],
+  "name": "ChurnLens",
+  "alternateName": "ChurnLens (churnlens.site)",
+  "url": "https://churnlens.site",
+  "description": "Buyer-side SaaS due-diligence tool. Analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.",
+  "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "foundingDate": "2026",
+  "logo": "https://churnlens.site/og.png",
+  "image": "https://churnlens.site/og.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@churnlens.site",
+    "contactType": "customer support"
+  },
+  "sameAs": [
+    "https://github.com/kindrat86"
+  ],
+  "subjectOf": [
+    {
+      "@type": "DefinedTermSet",
+      "name": "ChurnLens 5-Risk Buyer-Side Method",
+      "url": "https://churnlens.site/5-risk-buyer-side-method"
+    }
+  ],
+  "knowsAbout": [
+    "SaaS due diligence",
+    "buyer-side due diligence",
+    "revenue quality analysis",
+    "customer churn analysis",
+    "revenue concentration risk",
+    "MRR analysis",
+    "SaaS acquisitions",
+    "quality of earnings"
+  ]
+}

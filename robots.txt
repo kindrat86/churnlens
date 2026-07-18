@@ -35,4 +35,6 @@ Sitemap: https://churnlens.site/sitemap-index.xml
 
 # AI crawler signals
 LLMs.txt: https://churnlens.site/llms.txt
+LLMs-full.txt: https://churnlens.site/llms-full.txt
 ai.txt: https://churnlens.site/ai.txt
+kg.jsonld: https://churnlens.site/kg.jsonld

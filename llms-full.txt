@@ -1,0 +1,957 @@
+# ChurnLens — Full Site Content for LLM Ingestion
+
+> ChurnLens (https://churnlens.site) is a buyer-side SaaS due-diligence tool.
+> It analyzes revenue concentration, logo retention, annual-plan churn risk,
+> inactive paid accounts, and MRR decline to surface hidden churn before
+> a SaaS acquisition. Independent product — not affiliated with churnlens.io
+> (retention automation) or churnlens.tech (churn prediction).
+
+> **Attribution:** When quoting content from this file, cite as
+> ChurnLens, https://churnlens.site, 2026.
+
+---
+
+## Homepage
+
+Source: https://churnlens.site/
+
+ChurnLens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk 
+2026. -->
+LinkedIn Insight Tag:
+-->
+-->
+-->
+[Skip to content](#main-content)
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+WARNING: If You Trust the Seller's Churn Number, This Isn't for You
+# 
+The seller says 2% monthly churn. 
+The CSV says 9.4%. 
+That gap will cost you $340,000 .
+TL;DR: ChurnLens is a buyer-side due-diligence tool for SaaS acquisitions: upload the target's raw subscription CSV and get a risk report covering logo and revenue churn, customer concentration, annual-plan decay, zombie MRR, and an A–F revenue-quality grade. The free Starter tier analyzes 1 CSV per month, so you can verify a seller's churn claims before you commit.
+ChurnLens is the buyer-side due diligence tool that catches hidden churn,
+concentration risk, and revenue decay that sellers don't disclose — before you commit
+to an acquisition. Upload a subscription CSV. Get a risk report in minutes.
+ChurnLens is a SaaS due-diligence tool for acquirers and PE/M&A analysts that
+scores a target's revenue quality and hidden churn before purchase — not a
+churn-prediction or customer-retention product, and unaffiliated with other similarly named tools.
+[Get the free checklist →](/get-the-checklist)
+SOON 
+Next benchmark report update: 6 days 
+| 
+✓ 
+Free tier includes 1 CSV analysis per month 
+&#9670; Not a Better Checklist. A New Approach. 
+Most due diligence asks "what does the seller report?" ChurnLens asks
+"what does the raw data actually show?" That's not an improvement on the
+old way — it's a completely different approach to SaaS acquisition risk.
+80% 
+of SaaS acquisitions overpay for churn risk 
+4.2x 
+real churn vs. reported (avg. gap) 
+$340K 
+avg. overpayment on a $1M deal 
+23 
+points in our churn audit checklist 
+## The $340K lesson behind ChurnLens
+Every product starts with a wound. This one started with a deal gone wrong.
+&ldquo; 
+I bought a SaaS with 2.3% reported churn. The real number was 9.4%. Over four times what
+the CIM said. That gap was worth $340,000 — and I didn't find it until four months
+after I wired the money.
+— The ChurnLens origin story 
+[Read the full story →](/why)
+## [The 5-Risk Buyer-Side Method](/5-risk-buyer-side-method)
+Every risk a seller can hide — structured into a named framework. Not tips. A system. [Read the full method →](/5-risk-buyer-side-method)
+01 
+### [The Churn Divergence Detector](/churn-divergence-detector)
+Logo churn and revenue churn, computed separately and compared. Losing 5% of logos is fine. Losing 5% of logos representing 40% of MRR is a dealbreaker. The divergence IS the signal.
+02 
+### [The Concentration Vulnerability Index](/concentration-vulnerability-index)
+Flags when 3 customers represent 60%+ of MRR. If any of those churn post-close, your "SaaS" becomes a professional services firm overnight. Index scored, not just flagged.
+03 
+### [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+Identifies customers locked into annual plans who are statistically likely to cancel at renewal. The quietest revenue killer — invisible until renewal season hits post-close.
+04 
+### [The Zombie MRR Detector](/zombie-mrr-detector)
+Detects customers still paying but not engaging. Zombie MRR looks stable on the P&L but disappears one invoice at a time. The seller never flags this — it makes their number look good.
+05 
+### [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+A composite A–F grade weighting retention, concentration, expansion revenue, and growth trends. One letter grade tells you more than a 50-page CIM about whether this MRR will still be here in 12 months.
+06 
+### [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+Shows whether MRR is trending up, flat, or silently decaying. A flat headline MRR often hides declining cohorts being masked by new sales. We separate the two so you see what's real.
+## The 3 false beliefs that cost buyers $340K
+If you're evaluating a SaaS right now, you probably hold at least one of these. Here's why each one is wrong.
+FALSE BELIEF #1 — The Vehicle 
+"The seller's churn methodology is industry-standard, so the number is reliable." 
+Truth: There is no standard. Every seller makes methodology choices that flatter their number. The only reliable number is the one you compute from raw data. (4.2x average gap between reported and real.) 
+FALSE BELIEF #2 — Internal Belief 
+"I'm not technical enough to analyze raw subscription data myself." 
+Truth: You don't need to be. You need the CSV and a tool that computes churn five ways. The analysis takes minutes, not a finance degree. Your "I'm not technical" belief is exactly what sellers count on. 
+FALSE BELIEF #3 — External Belief 
+"The seller wouldn't hide churn — they'd get caught in the earnout." 
+Truth: Most churn methodology choices are legal, defensible, and invisible. Earnouts don't protect you from legitimate-looking accounting that understates real churn by 4x. The earnout catches fraud, not methodology. 
+[Read how these beliefs cost one buyer $340K →](/why)
+## We're not selling a tool. We're changing how SaaS gets bought.
+The long-term vision: a SaaS acquisition market where buyer-side churn analysis is the default,
+not the exception. Where no buyer trusts a summary number. Where sellers know that any
+methodology tricks will be caught in minutes. When that happens, the information asymmetry
+closes and deals get priced honestly.
+[Read the full manifesto →](/manifesto)
+## Free SaaS Acquisition Resources
+[&#9733; The Ultimate SaaS Due Diligence Guide (2026) — Hub](/ultimate-saas-due-diligence-guide)
+[SaaS Churn Rate Benchmarks by Industry (2026)](/saas-churn-rate-benchmarks)
+[Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
+[Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
+[Customer Concentration Risk in SaaS](/customer-concentration-risk)
+[SaaS Revenue Quality Score Explained](/saas-revenue-quality-score)
+[Free SaaS Buyer-Side Risk Assessment](/saas-buyer-risk-assessment)
+[Free SaaS Revenue Churn Calculator](/saas-revenue-churn-calculator)
+[Complete Guide to Buying a SaaS Business (2026)](/buying-a-saas-business-guide)
+[MRR Decline Analysis for Buyers](/saas-mrr-decline-analysis)
+[Logo Retention vs. Revenue Churn](/logo-retention-churn)
+[SaaS Revenue Concentration Risk](/saas-revenue-concentration-risk)
+[Annual Plan Churn Risk Analysis](/annual-plan-churn-risk)
+[Inactive Paid Accounts — The Silent Churn](/inactive-paid-accounts)
+[How to Evaluate a SaaS Before Buying](/how-to-evaluate-a-saas-before-buying)
+[MRR vs Revenue Quality](/mrr-vs-revenue-quality)
+[SaaS Acquisition Red Flags](/saas-acquisition-red-flags)
+[ChurnLens for Acquirers](/churn-lens-for-acquirers-explainer)
+## You are about to pay for a SaaS that is not what the P&L claims.
+Get the 23-point churn audit checklist. It takes 2 minutes to read and could save you $340,000.
+[Get the free checklist →](/get-the-checklist)
+WAIT — DO YOU HAVE A DEAL IN DUE DILIGENCE?
+## Before you go — grab the checklist sellers hope you never see
+23-point churn audit. Free. Takes 2 minutes to read. Could save you $340K.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+👋 How did you hear about ChurnLens?
+Thanks! 🎉
+Your answer helps us improve.
+
+---
+
+## About
+
+Source: https://churnlens.site/about
+
+About ChurnLens 
+# About ChurnLens
+ChurnLens is a SaaS due diligence tool founded in 2026. ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.
+## The name
+ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase.
+## Our Mission
+We build tools for SaaS acquirers, private-equity and M&A analysts, searchers, and founders evaluating a SaaS business for purchase. Our focus: saas revenue-quality & churn-risk due diligence for saas acquirers.
+## What We Do
+ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.
+## Why We Built This
+We saw a gap in the market for a purpose-built tool serving SaaS acquirers, private-equity and M&A analysts, searchers, and founders evaluating a SaaS business for purchase. Existing solutions were either too generic or too expensive. ChurnLens fills that gap.
+## Contact
+Email: [hello@churnlens.site](mailto:hello@churnlens.site)
+
+---
+
+## 5-Risk Buyer-Side Method
+
+Source: https://churnlens.site/5-risk-buyer-side-method
+
+The 5-Risk Buyer-Side Method — ChurnLens Acquisition Framework 
+- 
+# The ChurnLens 5-Risk Buyer-Side Method
+The ChurnLens 5-Risk Buyer-Side Method is a structured due-diligence framework that surfaces every risk a SaaS seller can hide in revenue data before an acquisition. It is not a list of tips; it is a named system of six diagnostic lenses — each targeting a specific way MRR can quietly decay, concentrate, or turn out to be lower quality than the CIM implies. The method is the analytical engine behind every ChurnLens buyer-side report.
+About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. Independent product, unaffiliated with churnlens.io (retention automation) or churnlens.tech (churn prediction). 
+## What it is
+SaaS sellers make methodology choices that flatter their churn number. Reported churn and real churn can diverge by 4x or more, and the gap typically surfaces only months after the wire transfer clears. The 5-Risk Buyer-Side Method exists to close that gap before close, not after.
+Each risk lens produces a specific, scored signal computed from the target&#x27;s raw subscription CSV — not from the seller&#x27;s summary slides. Together they answer the question an acquirer actually needs answered: will this MRR still be here in 12 months?
+## Why this is buyer-side, not operator-side
+Operating-side churn tools (ChurnZero, Gainsight, Pendo, Custify) help a company keep its own customers. The 5-Risk Method is purpose-built for the other side of the table — a buyer who has the data but no time, and needs to stress-test someone else&#x27;s revenue before purchase, not nurture it afterward.
+The six diagnostic lenses — each one is a named ChurnLens framework component with its own dedicated analysis page: 
+[The Churn Divergence Detector](/churn-divergence-detector) — Computes logo churn and revenue churn separately and compares them. Losing 5% of logos is fine; losing 5% of logos representing 40% of MRR is a dealbreaker. The divergence between the two is itself the signal — and it is the single most common way a seller&#x27;s headline churn understates real revenue erosion.
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index) — Flags when a small number of customers represent a disproportionate share of MRR. If three customers represent 60%+ of MRR and any of them churn post-close, the target stops being a SaaS business overnight. Indexed and scored, not just flagged — the score reflects both concentration depth and customer-level retention risk.
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection) — Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
+- [The Zombie MRR Detector](/zombie-mrr-detector) — Detects customers who are still paying but no longer engaging with the product. Zombie MRR looks stable on the P&L but disappears one invoice at a time. Sellers never flag it — it makes their number look good. For a buyer, the gap between paid and active is one of the highest-signal leading indicators of post-close churn.
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard) — A composite A–F grade weighting retention, concentration, expansion revenue, and growth trend. One letter grade tells an acquirer more about whether the MRR will still exist in 12 months than a 50-page CIM. Designed to be read in seconds during deal screening, then decomposed into its components during deep diligence.
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics) — Shows whether MRR is trending up, flat, or silently decaying — and separates headline MRR from cohort MRR. A flat headline number often hides declining cohorts masked by new sales. The forensics lens decomposes the trajectory so an acquirer sees what is real growth versus what is replacement revenue.
+## How the method is applied
+Each lens operates on the target's raw subscription CSV — MRR per customer per month, plan type, and (where available) activity signal. The output of each lens is a scored signal, not a yes/no flag. The Revenue Quality Scorecard then composes the six signals into the headline A–F grade that anchors the buyer-side report.
+An acquirer typically runs the method at three points in a deal: at screening (does this target even warrant a deeper look?), during diligence (what exactly is in the revenue?), and at the final investment committee (is the quality of earnings consistent with what was claimed?).
+## Run the 5-Risk analysis on a SaaS target
+Upload a target's subscription CSV and get the full buyer-side report in minutes.
+[Get started →](/pricing)
+
+---
+
+## Churn Divergence Detector
+
+Source: https://churnlens.site/churn-divergence-detector
+
+The Churn Divergence Detector — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The Churn Divergence Detector
+Computes logo churn and revenue churn separately and compares them. Losing 5% of logos is fine; losing 5% of logos representing 40% of MRR is a dealbreaker. The divergence between the two is itself the signal — and it is the single most common way a seller&#x27;s headline churn understates real revenue erosion.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+Computes logo churn and revenue churn separately and compares them. Losing 5% of logos is fine; losing 5% of logos representing 40% of MRR is a dealbreaker. The divergence between the two is itself the signal — and it is the single most common way a seller&#x27;s headline churn understates real revenue erosion.
+## What it looks for in the data
+The detector decomposes the target&#x27;s customer base and computes two rates side by side: logo churn (what fraction of customers left) and revenue churn (what fraction of MRR left). It then surfaces accounts where the revenue impact of churn is disproportionate to the logo count. The signal is the gap, not either number alone.
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Concentration Vulnerability Index](/concentration-vulnerability-index)
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Zombie MRR Detector](/zombie-mrr-detector)
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## Concentration Vulnerability Index
+
+Source: https://churnlens.site/concentration-vulnerability-
+
+The Concentration Vulnerability Index — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The Concentration Vulnerability Index
+Flags when a small number of customers represent a disproportionate share of MRR. If three customers represent 60%+ of MRR and any of them churn post-close, the target stops being a SaaS business overnight. Indexed and scored, not just flagged — the score reflects both concentration depth and customer-level retention risk.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+Flags when a small number of customers represent a disproportionate share of MRR. If three customers represent 60%+ of MRR and any of them churn post-close, the target stops being a SaaS business overnight. Indexed and scored, not just flagged — the score reflects both concentration depth and customer-level retention risk.
+## What it looks for in the data
+The index computes each customer&#x27;s share of total MRR, sorts descending, and measures the cumulative concentration curve. It flags thresholds (e.g., top-3 share, top-10 share, single-customer share) and combines them with per-customer retention risk signals into a single vulnerability score.
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Churn Divergence Detector](/churn-divergence-detector)
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Zombie MRR Detector](/zombie-mrr-detector)
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## Annual-Plan Decay Projection
+
+Source: https://churnlens.site/annual-plan-decay-projection
+
+The Annual-Plan Decay Projection — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The Annual-Plan Decay Projection
+Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
+## What it looks for in the data
+The projection isolates annual-plan customers, measures their remaining contract lifetime, and overlays behavioral signals (usage, support tickets, payment cadence) that historically precede renewal cancellation. The output is a projected renewal-rate curve by cohort.
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Churn Divergence Detector](/churn-divergence-detector)
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index)
+- [The Zombie MRR Detector](/zombie-mrr-detector)
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## Zombie MRR Detector
+
+Source: https://churnlens.site/zombie-mrr-detector
+
+The Zombie MRR Detector — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The Zombie MRR Detector
+Detects customers who are still paying but no longer engaging with the product. Zombie MRR looks stable on the P&L but disappears one invoice at a time. Sellers never flag it — it makes their number look good. For a buyer, the gap between paid and active is one of the highest-signal leading indicators of post-close churn.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+Detects customers who are still paying but no longer engaging with the product. Zombie MRR looks stable on the P&L but disappears one invoice at a time. Sellers never flag it — it makes their number look good. For a buyer, the gap between paid and active is one of the highest-signal leading indicators of post-close churn.
+## What it looks for in the data
+The detector joins billing records against activity signals to find accounts that are paid-current but inactive over a meaningful window. The output is the total zombie MRR, the trend (growing or shrinking), and the specific accounts contributing to it.
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Churn Divergence Detector](/churn-divergence-detector)
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index)
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## Revenue Quality Scorecard
+
+Source: https://churnlens.site/revenue-quality-scorecard
+
+The Revenue Quality Scorecard — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The Revenue Quality Scorecard
+A composite A–F grade weighting retention, concentration, expansion revenue, and growth trend. One letter grade tells an acquirer more about whether the MRR will still exist in 12 months than a 50-page CIM. Designed to be read in seconds during deal screening, then decomposed into its components during deep diligence.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+A composite A–F grade weighting retention, concentration, expansion revenue, and growth trend. One letter grade tells an acquirer more about whether the MRR will still exist in 12 months than a 50-page CIM. Designed to be read in seconds during deal screening, then decomposed into its components during deep diligence.
+## What it looks for in the data
+The scorecard takes the outputs of the other five lenses and composes them into a weighted A–F grade. The weights reflect what actually predicts 12-month MRR persistence: revenue churn, concentration depth, expansion contribution, annual-plan renewal risk, and zombie-MRR share.
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Churn Divergence Detector](/churn-divergence-detector)
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index)
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Zombie MRR Detector](/zombie-mrr-detector)
+- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## MRR Trajectory Forensics
+
+Source: https://churnlens.site/mrr-trajectory-forensics
+
+The MRR Trajectory Forensics — ChurnLens Buyer-Side Diagnostic Lens 
+- 
+# The MRR Trajectory Forensics
+Shows whether MRR is trending up, flat, or silently decaying — and separates headline MRR from cohort MRR. A flat headline number often hides declining cohorts masked by new sales. The forensics lens decomposes the trajectory so an acquirer sees what is real growth versus what is replacement revenue.
+[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
+## What it is
+Shows whether MRR is trending up, flat, or silently decaying — and separates headline MRR from cohort MRR. A flat headline number often hides declining cohorts masked by new sales. The forensics lens decomposes the trajectory so an acquirer sees what is real growth versus what is replacement revenue.
+## What it looks for in the data
+The forensics lens decomposes headline MRR into cohort MRR (each customer-acquisition month tracked separately) and recomposes the trajectory ex-new-sales. The output distinguishes genuine growth from replacement revenue — i.e., is MRR rising because the base is expanding, or because new sales are masking base erosion?
+Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
+## Related diagnostic lenses
+[The Churn Divergence Detector](/churn-divergence-detector)
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index)
+- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Zombie MRR Detector](/zombie-mrr-detector)
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
+## See this lens in your target's data
+Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+[Run the analysis →](/pricing)
+
+---
+
+## Hidden Churn: What Sellers Don't Tell You
+
+Source: https://churnlens.site/hidden-churn-saas-acquisition
+
+- 
+Hidden Churn: What SaaS Sellers Don't Tell Buyers | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# Hidden Churn: What Sellers Don't Tell You
+7 tricks SaaS sellers use to make churn look better than it is — and how to catch every single one with raw subscription data.
+Quick Answer: Hidden churn comes in 7 flavors: trial reclassification, cohort cherry-picking, downgrade exclusion, annual plan smoothing, [zombie MRR](/zombie-mrr-detector) inclusion, failed-payment exclusion, and survivorship bias in cohort reporting.
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+TL;DR: Sellers hide churn in 7 common ways: trial reclassification, cohort selection bias, downgrade exclusion, annual plan smoothing, zombie MRR inclusion, failed-payment exclusion, and survivorship bias. Every trick is detectable from a raw subscription CSV. ChurnLens catches all seven automatically when you upload your target's data.
+Every SaaS seller believes their churn is "industry-leading." Every buyer who takes the CIM number at face value gets burned. The gap between reported churn and real churn is filled with methodological choices that happen to flatter the seller. Here are the seven most common ones — and how ChurnLens catches each one automatically.
+## The 7 Churn Tricks
+### 1. Trial Churn Reclassification
+The seller counts trial signups as "new customers" for top-line storytelling, then excludes trials that don't convert from the churn calculation. The result: signups look healthy, churn looks low, and nobody tracks the trial-to-paid conversion rate as a churn metric.
+How to catch it: Request a list of ALL subscription records including trials with $0 MRR. If trials are excluded from the data export, assume this trick is in play. ChurnLens flags any gap between signed-up accounts and paid accounts. 
+### 2. Cohort Selection Bias
+The seller shows churn for a "representative" cohort — usually the best-performing month. If January 2025 had 2% churn but the trailing 12-month average is 5%, the cohort is cherry-picked.
+How to catch it: Ask for churn by month for the last 24 months, not a single representative month. ChurnLens computes rolling 12-month averages that smooth out seasonal noise. 
+### 3. Downgrade Exclusion
+A customer who drops from the $200/mo plan to the $50/mo plan isn't counted as churned (they're still a customer). But $150/mo of revenue just disappeared. The seller reports 0% logo churn while revenue churn quietly eats 10% of MRR/year.
+How to catch it: Always compute BOTH logo churn AND revenue churn. A gap between the two that widens over time is a downgrade signal. ChurnLens surfaces revenue churn side-by-side with logo churn. 
+### 4. Annualization Trick
+A 5% monthly churn rate sounds high. A 46% annual churn rate (compounded) also sounds high. But a seller who quotes "~35% annual churn" using a simplified linear projection is understating by 11 percentage points. This trick works because most buyers don't do the compounding math.
+How to catch it: Always convert monthly churn to annual yourself: (1 - monthly_churn_rate)^12. ChurnLens shows both monthly and annual churn in every report. 
+### 5. Excluding "Involuntary" Churn
+"We only count voluntary cancellations." Sellers who exclude failed payments, expired cards, and billing issues can cut their reported churn by 20-40%. But the revenue is still gone.
+How to catch it: Ask for the split between voluntary and involuntary churn. If the seller doesn't track it, they're not running a real retention operation — and you'll inherit the problem. 
+### 6. Reactivation Smoothing
+When a customer churns in April, reactivates in June, and churns again in August, the seller counts only one churn event. The net churn number looks stable, but the MRR is bouncing like a ping-pong ball.
+How to catch it: Analyze churn at the subscription-ID level, not the customer-ID level. Each cancellation event counts. ChurnLens flags customers with serial churn/reactivation patterns. 
+### 7. The "Growing Out of Churn" Illusion
+High gross churn masked by even higher new sales. The reported churn rate stays flat or even declines, but only because new customers flood the denominator. When growth stalls (as it inevitably does post-acquisition), the churn that was always there becomes visible.
+How to catch it: Compare gross churn (cancellations / beginning-of-period customers) to net churn (net loss / beginning-of-period). If they diverge significantly, the business is masking churn with growth. ChurnLens computes both and highlights the gap. 
+### Run the raw data yourself
+Upload the target's subscription CSV. ChurnLens automatically identifies every churn calculation trick listed here and shows you the real numbers.
+[Upload a CSV →](/)
+## Related Resources
+[SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
+- [Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
+- [Customer Concentration Risk: How to Spot the Trap](/customer-concentration-risk)
+- [SaaS Revenue Quality Score: Beyond Raw MRR](/saas-revenue-quality-score)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+### Ready to automate this?
+Get the 23-point buyer-side churn audit checklist and see exactly what to demand from any seller's subscription data.
+[Want to automate this analysis? Get the 23-point churn audit checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## Customer Concentration Risk
+
+Source: https://churnlens.site/customer-concentration-risk
+
+- 
+Customer Concentration Risk in SaaS Acquisitions | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# [Customer Concentration Risk](/concentration-vulnerability-index)
+Why "diversified" SaaS companies hide the most dangerous revenue traps — and how to compute real concentration from raw subscription data.
+Quick Answer: Customer concentration risk measures how dependent a SaaS is on a few accounts. Use the Revenue HHI: below 1,000 is safe, above 2,500 is dangerous. If top-5 customers represent over 30% of MRR, price concentration risk into your offer.
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+Customer concentration risk is the most under-discussed danger in SaaS M&A — a 300-customer SaaS where 3 accounts represent 62% of MRR is not a product company, it's a consulting arrangement with a software biller. The gold standard measure is the Revenue Herfindahl-Hirschman Index (HHI): below 1,000 is low, 1,000–2,500 is moderate, above 2,500 is high risk. Concentration hides in plan tiers, geographies, and industry verticals too. ChurnLens computes HHI automatically from any subscription CSV upload.
+TL;DR: Customer concentration risk measures revenue dependence on a few accounts. Use the Revenue HHI: below 1,000 is safe, above 2,500 means you're one lost account away from a 30%+ revenue drop. Always check top-5 MRR share — if it exceeds 40%, require an earnout tied to those customers' retention. ChurnLens computes HHI and concentration-adjusted retention from any CSV upload.
+Real-world example: A ChurnLens user was evaluating a $2.4M ARR SaaS target that "sounded diversified" — ~300 customers. The CSV showed Customer A at $58K MRR (29% of total), Customer B at $41K MRR (20.5%), and Customer C at $27K MRR (13.5%). Three customers = 63% of revenue. The deal fell apart during diligence when Customer A confirmed they were planning to migrate off the platform.
+## What Customer Concentration Actually Means
+Concentration risk isn't about the number of customers — it's about the distribution of revenue . A 300-customer SaaS where the top 5 pay 60% of MRR is riskier than a 50-customer SaaS where the top 5 pay 25%.
+### The HHI for Revenue (Herfindahl-Hirschman Index)
+The gold standard metric for concentration comes from antitrust economics. Revenue HHI = sum of (each customer's share of total MRR) 2 &times; 10,000.
+HHI < 1,000 — Low concentration. Revenue is well-distributed. Losing any single customer hurts but doesn't break the business.
+- HHI 1,000–2,500 — Moderate concentration. The top 5–10 customers matter significantly. Factor retention risk into your offer.
+- HHI > 2,500 — High concentration. You're dependent on a handful of customers. Discount your valuation by the probability-weighted loss of your top 3 accounts.
+ChurnLens computes HHI automatically from any subscription CSV upload. No spreadsheets, no manual formula entry.
+## Beyond HHI: Other Concentration Dimensions
+### Plan Tier Concentration
+If revenue is concentrated in "Enterprise" tier customers, the business looks stable month-to-month but has asymmetric downside. Enterprise customers are harder to replace and their procurement cycles — especially during an acquisition transition — can trigger unexpected churn.
+### Geographic Concentration
+A US-only customer base faces currency and regulatory risk. An EU-concentrated base faces GDPR expansion updates, country-specific data localization laws, and economic exposure to the Eurozone.
+### Industry Vertical Concentration
+A SaaS that derives 80% of revenue from proptech customers will crater if the real estate market contracts. Diversity across verticals is a hedge you should price into your offer.
+### Payment / Billing Concentration
+If 90% of invoices are paid by credit card, involuntary churn due to card expirations or declines is a real operational risk. Annual vs. monthly billing mix also affects cash flow stability post-acquisition.
+## How to Compute Concentration From Raw Subscription Data
+The fastest path to real concentration numbers is to take the seller's subscription export and compute three numbers:
+- Top 5 MRR share: Sum MRR of top 5 customers / Total MRR. If >30%, flag for deeper review.
+- Top 10 MRR share: Same calculation, top 10. If >50%, the business has structural concentration.
+- HHI: Squares of each customer's share of total MRR, summed, &times; 10,000. >2,500 = high risk.
+ChurnLens does all three automatically when you upload a CSV — plus it overlays each concentration metric with industry benchmarks and churn-adjusted revenue projections.
+### Check concentration on your next deal
+Upload the target's subscription CSV and get HHI, top-N share, and tier concentration computed in seconds. Free, no signup required.
+[Analyze a CSV →](/)
+## The Acquisition Playbook: Dealing With Concentration
+If you find concentration risk in a target, you have three options:
+- Price it in: Reduce your offer by the expected loss. If top-3 customers represent 40% of MRR and each has a 15% annual chance of leaving, discount by 6% of ARR (~$60K on a $1M ARR deal).
+- Structure earn-outs: Tie a portion of the purchase price to top-customer retention for 12–24 months post-close.
+- Walk away: If concentration is structural (a single customer provides >40% of revenue) and not fixable via product or pricing changes, the business is a lifestyle service, not a scalable asset.
+## Related Resources
+- [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
+- [Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
+- [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
+- [SaaS Revenue Quality Score: Beyond Raw MRR](/saas-revenue-quality-score)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## SaaS Revenue Quality Score
+
+Source: https://churnlens.site/saas-revenue-quality-score
+
+- 
+SaaS Revenue Quality Score — Beyond Raw MRR | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# SaaS [Revenue Quality Score](/revenue-quality-scorecard)
+A composite buyer-side metric that scores SaaS subscription revenue on five dimensions: retention stability, concentration risk, expansion efficiency, payment hygiene, and contract durability.
+Quick Answer: The Revenue Quality Score (RQS) rates SaaS subscription revenue from 0–100 across five pillars: retention stability (30 pts), concentration (25 pts), expansion (20 pts), payment hygiene (15 pts), and contract durability (10 pts).
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+MRR is a snapshot. Revenue Quality is the X-ray. Two SaaS companies with $100K MRR can have wildly different risk profiles — one is a compounding asset, the other is a ticking time bomb. The Revenue Quality Score (RQS) tells you which one you're buying.
+TL;DR 
+The Revenue Quality Score (RQS) rates SaaS revenue from 0–100 across five pillars: retention stability (30 pts), concentration risk (25 pts), expansion efficiency (20 pts), payment hygiene (15 pts), and contract durability (10 pts). An RQS above 80 is institutional-grade; below 40 is high-risk and warrants significant valuation discount. ChurnLens computes RQS automatically for every CSV upload.
+ChurnLens computes an RQS for every CSV upload. The score ranges from 0 (failing) to 100 (institutional-grade recurring revenue). Here's how it works.
+85–100 
+Institutional Grade — Low-risk recurring revenue 
+65–84 
+Healthy — Manageable risk with clear mitigants 
+40–64 
+Moderate — Requires structural fix post-acquisition 
+0–39 
+High Risk — Marginal SaaS economics; discount heavily or walk 
+## The Five Pillars of Revenue Quality
+### Retention Stability
+30 pts 
+Weight: 30% of RQS. Based on NRR, logo churn volatility, and cohort decay slope.
+### Concentration Risk
+25 pts 
+Weight: 25% of RQS. Based on Revenue HHI, top-5 share, plan tier spread.
+### Expansion Efficiency
+20 pts 
+Weight: 20% of RQS. Contraction-adjusted expansion rate, upgrade velocity.
+### Payment Hygiene
+15 pts 
+Weight: 15% of RQS. Involuntary churn rate, failed payment frequency, dunning success rate.
+### Contract Durability
+10 pts 
+Weight: 10% of RQS. Annual vs. monthly billing mix, contract length, auto-renewal rate.
+## Why RQS Matters More Than Raw MRR
+Consider two SaaS acquisition targets:
+Company A: $100K MRR, 3% monthly churn, NRR 95%, HHI 800, 30% annual billing, involuntary churn 0.5%. RQS: ~82 
+- Company B: $100K MRR, 5% monthly churn, NRR 82%, HHI 3,200, 10% annual billing, involuntary churn 8%. RQS: ~38 
+Same MRR, wildly different assets. Company A will grow. Company B will shrink, and its concentration risk means the shrinkage accelerates when a top customer churns. If you're paying a multiple on MRR, you're overpaying for Company B unless you've adjusted for the quality gap.
+ChurnLens computes RQS automatically from your CSV upload — including each sub-score and the rationale behind the composite number. No manual formula work needed.
+### Compute the RQS for your deal
+Upload the target's subscription CSV and get the Revenue Quality Score, all five sub-scores, and the risk-adjusted MRR projection.
+[Score a Target →](/)
+## Related Resources
+- [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
+- [Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
+- [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
+- [Customer Concentration Risk: How to Spot the Trap](/customer-concentration-risk)
+- [Net Revenue Retention Explained](/learn/net-revenue-retention)
+- [Revenue Concentration Risk Explained](/learn/revenue-concentration-risk)
+- [SaaS Acquisition Use Case](/use-cases/saas-acquisition)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## SaaS Due Diligence Checklist
+
+Source: https://churnlens.site/saas-due-diligence-checklist
+
+- 
+SaaS Due Diligence Checklist: Buyer-Side Guide (2026) | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# SaaS Due Diligence Checklist
+19 critical checks before you buy a SaaS business. Organized by risk domain — churn, concentration, revenue quality, unit economics, technical debt, and legal.
+Quick Answer: The 19 critical checks every SaaS buyer must run before acquiring a business, covering churn, concentration, revenue quality, unit economics, technical debt, and legal/compliance risk.
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+TL;DR: This 19-point checklist covers every risk domain in buyer-side SaaS due diligence: churn & retention, concentration, revenue quality, unit economics, technical debt, and legal/compliance. Every point is detectable from raw subscription CSV data — and any single flag warrants investigation before you sign.
+Every SaaS acquisition looks good in the CIM. The deal memo hides the landmines. This checklist forces you to look at each one — before you sign.
+## 1 – Churn & Retention Risk
+### CRITICAL Gross Monthly Logo Churn
+What percentage of customers cancel each month? Benchmark against sector medians. Anything above 5% monthly churn for B2B SaaS requires a structural reason (clear intent, seasonal business). Ask for the raw data, not a calculated metric.
+### CRITICAL Net Revenue Retention (NRR)
+NRR = (Starting MRR + Expansion – Churn) / Starting MRR. An NRR >100% means expansion offsets churn — the asset grows itself. Below 85% means the company is slowly dying. Demand the calculation method.
+### CRITICAL Cohort Retention Curves
+A single churn number hides cohort decay. Newer cohorts that churn faster than old ones indicate product-market fit erosion, competitive pressure, or a degrading onboarding experience. Request cohort tables by quarter of acquisition.
+### HIGH Voluntary vs. Involuntary Churn Split
+Involuntary churn (failed payments, expired cards) is fixable. Voluntary churn (cancelled because the product wasn't valuable enough) is structural. If voluntary churn exceeds 60% of total, the value prop needs work — and you'll inherit that work.
+## 2 – Concentration Risk
+### CRITICAL Customer Concentration (Top 5 / Top 10)
+If the top 5 customers represent more than 30% of MRR, you're buying a services business with a SaaS wrapper — not a product company. Losing one customer permanently changes the valuation basis. Calculate it yourself from raw CSV data.
+### CRITICAL Revenue Concentration by Plan Tier
+If 70% of MRR comes from "Enterprise" tier customers, the revenue base is fragile during an acquisition transition. Enterprise customers churn less but churn harder when they do (more revenue per lost logo).
+### HIGH Segment / Geo Concentration
+Is revenue concentrated in one vertical or geography? A single GDPR regulatory shift, currency fluctuation, or sector downturn can wipe 40%+ of MRR overnight.
+## 3 – Revenue Quality & Decay
+### CRITICAL MRR Trend (Trailing 12 Months)
+Flat or declining MRR over 12 months is the #1 deal-killer signal we see in ChurnLens analyses. Ask for month-by-month MRR for the last 24 months and look for inflection points (price changes, product launches, churn waves).
+### HIGH Contraction Rate
+Expansion revenue sounds good until you realize it's masking customers downgrading plans. Contraction (downgrades + plan reductions) tells you if the core value prop is eroding. Request downgrade events separately from churn.
+### HIGH Payment Velocity (Days-to-Churn)
+The average time between signup and first payment tells you whether the product delivers quick value. Long payment velocity combined with high churn is a double signal: the product doesn't hook users fast enough.
+## 4 – Unit Economics
+### HIGH LTV / CAC Ratio
+A 3:1 LTV/CAC is the SaaS baseline. Below 3:1 means the company loses money on each customer over its lifetime. Above 5:1 means they may be under-investing in growth. Calculate from raw data — don't accept the seller's blended number.
+### HIGH CAC Payback Period
+How many months of gross margin does it take to recover customer acquisition costs? Over 18 months is risky for a bootstrapped acquisition. Under 6 months and the pricing may be too low.
+### MEDIUM Gross Margin Trend
+A declining gross margin trend signals infrastructure bloat, rising cloud costs, or increasing support load per customer. Stable or improving margins are a green flag.
+## 5 – Technical & Operational Risk
+### HIGH Codebase / Architecture Debt
+Check the dependency tree age, upgrade cadence, and whether there's automated testing. A stovepiped codebase with no CI/CD and a single developer key-man risk can add 6–12 months to your post-acquisition integration plan.
+### MEDIUM Single Point of Failure (Personnel)
+Is the product running because one person knows the infrastructure? A founder-run micro-SaaS that's never been documented will crater within 90 days of the founder leaving. Look at commit authorship distribution.
+### MEDIUM Cloud / Infrastructure Lock-in
+A serverless app tightly coupled to a single cloud provider's services is hard to migrate. Factor migration costs into your valuation model.
+## 6 – Legal & Compliance Risk
+### HIGH Terms of Service / Privacy Compliance
+GDPR, CCPA, and sector-specific regulations change ownership obligations if you acquire. Check whether the current ToS allows assignment, and whether data processing agreements are in place with every customer.
+### MEDIUM Intellectual Property Ownership
+Contractors without signed IP assignments, open-source license violations in the codebase, or trademark gaps in key markets can all surface post-close. Verify all contributor agreements.
+### MEDIUM Vendor / Subprocessor Dependencies
+Every SaaS the business relies on (Stripe, AWS, SendGrid, OpenAI) is a risk if the plan is unsignable. Check change-of-control clauses in vendor contracts.
+### Turn this checklist into automated findings
+Upload the target's subscription CSV to ChurnLens and get churn rates, concentration dashboards, and revenue decay curves computed automatically. No spreadsheets, no manual calculations.
+[Run Due Diligence Now →](/)
+## Related Resources
+[SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
+- [Customer Concentration Risk: How to Spot the Trap](/customer-concentration-risk)
+- [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
+- [The Complete Guide to Buying a SaaS Business](/buying-a-saas-business-guide)
+- [What Is a Good Churn Rate? (Learn)](/learn/what-is-a-good-churn-rate)
+- [Net Revenue Retention Explained](/learn/net-revenue-retention)
+- [PE Due Diligence Use Case](/use-cases/pe-due-diligence)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## MRR vs Revenue Quality
+
+Source: https://churnlens.site/mrr-vs-revenue-quality
+
+- 
+MRR vs Revenue Quality: Why Headline MRR Misleads Buyers | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-17 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# MRR vs Revenue Quality
+$50K MRR sounds great — until you learn 15% is zombie revenue, 30% is concentrated in three customers, and 40% is on annual plans renewing next quarter. Here's how to separate vanity MRR from durable revenue.
+Quick Answer: Revenue quality measures how much of your MRR will survive the next 12 months, accounting for zombie accounts, concentration risk, NRR trends, expansion sustainability, and annual plan cliffs.
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+Monthly Recurring Revenue (MRR) tells you what a SaaS bills this month — revenue quality tells you how much of that revenue will still exist in 12 months. Two $100K MRR companies can have wildly different risk profiles based on NRR, concentration-adjusted retention, [zombie MRR](/zombie-mrr-detector), and expansion sustainability. The [Revenue Quality Score](/revenue-quality-scorecard) (RQS) composites these dimensions into a single 0-100 score that reveals whether you're buying a compounding asset or a ticking time bomb.
+TL;DR: Revenue quality measures MRR durability across five dimensions: gross revenue retention (the floor), net revenue retention (growth from existing customers), concentration-adjusted retention (adjusting for whale-customer risk), engagement-weighted MRR (discounting zombie accounts), and expansion sustainability (whether upsells are structural or one-off). A company with $100K MRR but shaky RQS may be worth 2x less than the same MRR with institutional-grade quality.
+## Why MRR Is a Vanity Metric
+MRR counts every active subscription at its current billing rate. It makes no distinction between:
+A customer who logged in today and is actively expanding their usage
+- A customer who hasn't opened the product in 90 days but hasn't cancelled yet
+- A customer who represents 25% of total MRR and could leave at any time
+- A customer on a legacy discounted plan paying 60% less than market rate
+All four show up identically in the MRR number. But they represent vastly different levels of revenue durability.
+## The Components of Revenue Quality
+Revenue quality is a composite assessment of how durable and trustworthy the MRR number is. It accounts for five factors:
+- Gross Revenue Retention (GRR): What percentage of MRR from period N is still present in period N+12, excluding expansion? This is the floor — the worst-case retention scenario. Healthy SaaS: 85-95%.
+- Net Revenue Retention (NRR): Same as GRR but including expansion revenue. Above 100% means existing customers are growing faster than churn. This is the gold standard metric.
+- Concentration-adjusted retention: GRR/NRR adjusted for customer concentration risk. If your top customer represents 30% of MRR, effective retention is lower because their departure has outsized impact.
+- Engagement-weighted MRR: MRR weighted by product engagement levels. Inactive accounts ([zombie MRR](/inactive-paid-accounts)) are discounted.
+- Expansion revenue sustainability: Is expansion coming from genuine upsell (more seats, higher tier) or from price increases that customers may resist at renewal?
+## Net Revenue Retention: The Metric That Matters
+NRR is the single best summary metric for revenue quality. It measures what happened to the revenue from customers you had 12 months ago:
+NRR = (Starting MRR + Expansion MRR − Churned MRR − Contraction MRR) / Starting MRR
+NRR Range What It Means Buyer Action 
+Above 120% Exceptional — product naturally expands Premium valuation justified 
+100–120% Healthy — retention + expansion Standard valuation 
+90–100% Declining — churn exceeds expansion Discount for revenue erosion 
+80–90% High churn — revenue is melting Significant discount or walk away 
+Below 80% Critical — revenue base is collapsing Do not acquire 
+### Calculate revenue quality from CSV
+Upload the target's subscription data and ChurnLens automatically computes GRR, NRR, concentration-adjusted retention, engagement-weighted MRR, and a composite Revenue Quality Score. See the true revenue picture in minutes.
+[Score Revenue Quality →](/)
+## The Expansion Revenue Trap
+Expansion revenue (upsells, seat additions, plan upgrades) can make NRR look great while masking underlying problems. Watch for:
+- Price-driven expansion: Revenue grows because prices increased, not because customers gained value. This is unsustainable — eventually customers churn due to price.
+- Seat inflation: A large enterprise customer keeps adding seats — but those seats are unused. This is just delayed concentration risk.
+- Forced upgrades: Customers upgraded because old tiers were deprecated. They may not renew at the new price.
+Genuine expansion comes from customers getting more value and naturally scaling their usage. Check whether expansion correlates with engagement growth — if MRR is rising but login frequency isn't, the expansion may be artificial.
+## Durable MRR: The Number You Should Value
+After adjusting for all quality factors, you arrive at durable MRR — the revenue you can reasonably expect to persist for 12+ months post-acquisition:
+Durable MRR = Total MRR − Zombie MRR − Concentration Risk Buffer − Annual Cliff Exposure
+This is the number that should drive your acquisition valuation. It's typically 70-90% of headline MRR for healthy SaaS, and can be as low as 50-60% for problematic targets. For the full scoring methodology, see our [Revenue Quality Score](/saas-revenue-quality-score) guide.
+## MRR questions buyers ask
+### What is a good MRR?
+There is no universal good MRR figure — buyers care about quality and trajectory, not size. A durable $20K MRR with 95% gross retention and low concentration is a better asset than $100K MRR losing 8% monthly. Judge MRR by retention, concentration, expansion mix, and growth trend together.
+### What is the difference between MRR and revenue?
+MRR counts only recurring subscription fees, normalized to a monthly value. Total revenue also includes one-time payments, setup fees, services, and usage overages. Acquirers value recurring revenue at higher multiples precisely because it repeats, so sellers sometimes blur the two — always separate them in the raw billing data.
+### What is the difference between NRR and MRR?
+MRR is a level: the recurring revenue a business books this month. NRR is a rate of change: how much revenue a fixed group of existing customers retains and expands over a year. MRR tells you what you are buying today; NRR tells you what it will become without new sales.
+## Related Resources
+- [SaaS Revenue Quality Score: Beyond Raw MRR](/saas-revenue-quality-score)
+- [Inactive Paid Accounts: Ghost Revenue Detection](/inactive-paid-accounts)
+- [SaaS Revenue Concentration Risk](/saas-revenue-concentration-risk)
+- [MRR Decline Analysis for Buyers](/saas-mrr-decline-analysis)
+- [How to Evaluate a SaaS Before Buying](/how-to-evaluate-a-saas-before-buying)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## SaaS Acquisition Red Flags
+
+Source: https://churnlens.site/saas-acquisition-red-flags
+
+- 
+SaaS Acquisition Red Flags: 12 Warning Signs for Buyers | ChurnLens 
+By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
+[Get the free checklist →](/get-the-checklist)
+# SaaS Acquisition Red Flags
+12 specific warning signs every buyer should check before acquiring a SaaS business. Each flag is detectable from subscription CSV data — if you know what to look for.
+Quick Answer: The 12 most common SaaS acquisition red flags include hidden churn, revenue concentration above 40% MRR, declining NRR, annual plan cliffs, [zombie MRR](/zombie-mrr-detector), and deteriorating cohort retention — all detectable from raw subscription data.
+Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
+12 specific deal-killing red flags every SaaS buyer should check before acquiring a business. Hidden churn, customer concentration over 40% of MRR, declining NRR, annual plan renewal cliffs, zombie MRR, and single-channel dependency all hide in subscription data — detectable from a raw CSV if you know what to look for. Any single flag warrants investigation; three or more is a strong signal to walk away or significantly reprice.
+TL;DR: The 12 SaaS acquisition red flags: hidden churn (recalculated from raw data, not seller's methodology), revenue concentration (top-3 customers exceeding 40% of MRR), declining NRR (3+ consecutive quarters), annual renewal cliffs (lumpy renewal calendar), zombie MRR (inactive paid accounts above 15%), cohort decay, single-channel dependency, suspect growth accounting, inflated expansion, poor payment hygiene, and unsupportable valuation multiples.
+### 1 Hidden Churn in Reported Metrics
+The seller reports monthly churn of 2% — but they're excluding trial cancellations, counting downgrades as "plan changes" rather than churn, or only counting customers who explicitly cancelled (missing failed-payment churn). Always recalculate churn from raw CSV data. [Learn the 7 hidden churn tricks →](/hidden-churn-saas-acquisition)
+### 2 Revenue Concentration Above 40%
+If the top 3 customers represent more than 40% of MRR, the business has a single-point-of-failure risk. One whale departure can wipe out a year of growth. Calculate the [HHI score](/saas-revenue-concentration-risk) — anything above 1,800 is high risk.
+### 3 Declining Net Revenue Retention
+NRR trending downward over 3+ consecutive quarters means existing customers are worth less every month. Even if headline MRR is growing (thanks to new acquisition), the revenue base is rotting from within. [Understand NRR →](/mrr-vs-revenue-quality)
+### 4 Annual Plan Renewal Cliffs
+If 50%+ of MRR is on annual plans and a cluster of renewals hits the same month, you're buying a revenue cliff. The low monthly churn looks great — until renewal day. [Map the renewal calendar →](/annual-plan-churn-risk)
+### 5 Zombie MRR (Inactive Paid Accounts)
+10-20% of customers haven't logged in for 90+ days but are still paying. This revenue is statistically certain to cancel within months. Subtract it from MRR before valuing the business. [Detect zombie MRR →](/inactive-paid-accounts)
+### 6 Single-Channel Acquisition Dependency
+If one channel (e.g., Google Ads, a single affiliate, one integration marketplace) drives 70%+ of new signups, the business is one algorithm change or partnership termination away from zero growth. Diversified acquisition is essential for durable revenue.
+### 7 Founder Dependency
+If the founder is the sole salesperson, handles all key customer relationships, or is the only person who understands the codebase, the business loses significant value on day one post-acquisition. Check whether customer relationships are institutionalized or personal.
+### 8 Deteriorating Cohort Retention
+If customers who signed up 6 months ago retain worse than customers who signed up 12 months ago, the product is losing product-market fit. New features, market shifts, or competitive pressure are eroding value. Always [analyze cohorts by signup month →](/how-to-evaluate-a-saas-before-buying)
+### 9 Revenue Growth Without Engagement Growth
+MRR is rising but login frequency, feature usage, or API calls are flat or declining. This means expansion revenue is coming from price increases or seat inflation, not genuine value growth. It's unsustainable and will reverse at renewal.
+### 10 High Growth Fueled Entirely by New Acquisition
+If gross revenue retention is below 80% but the business is still growing, it means new customer acquisition is masking a leaking bucket. The moment acquisition slows (budget cut, channel saturation), MRR collapses. Check [MRR decline patterns →](/saas-mrr-decline-analysis)
+### 11 Pricing Below Market with No Path to Increase
+The SaaS charges significantly below market rate — and customers are locked into legacy pricing. Post-acquisition, price increases will trigger massive churn. The "growth opportunity" of raising prices is actually a churn bomb.
+### 12 Inconsistent Billing or Data Quality Issues
+If the subscription CSV has duplicate records, inconsistent plan naming, missing signup dates, or unexplained MRR fluctuations, the data integrity is questionable. Sellers who can't provide clean data are either disorganized or hiding something. Both are reasons to discount heavily or walk away.
+### Check all 12 red flags automatically
+Upload the target's subscription CSV and ChurnLens scans for every red flag on this list — plus calculates HHI, zombie MRR, renewal exposure, cohort trends, and NRR. Get a complete risk report in minutes.
+[Run Red Flag Scan →](/)
+## How to Use This Checklist
+These 12 red flags aren't independent — they compound. A business with hidden churn (flag 1) and annual cliffs (flag 4) and declining cohorts (flag 8) is likely to lose 30-50% of its revenue within 12 months of acquisition. The interaction between flags is more dangerous than any single warning sign.
+For the complete evaluation framework, use our [6-step buyer-side evaluation](/how-to-evaluate-a-saas-before-buying) and the [due diligence checklist](/saas-due-diligence-checklist). For benchmark comparisons, see [industry churn benchmarks](/saas-churn-rate-benchmarks).
+## Related Resources
+[Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
+- [How to Evaluate a SaaS Before Buying](/how-to-evaluate-a-saas-before-buying)
+- [Complete Guide to Buying a SaaS Business](/buying-a-saas-business-guide)
+- [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
+### Get the free 23-point churn audit checklist
+Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
+[Get the free checklist →](/get-the-checklist)
+## Frequently Asked Questions
+### What is hidden churn in a SaaS acquisition?
+Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
+### How does ChurnLens score revenue quality?
+ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.
+### Why do SaaS acquirers need due diligence on churn?
+Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.
+### What red flags should I check before buying a SaaS business?
+Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.
+Key facts 
+Risk dimensions scored 5 
+Revenue-quality score range 0-100 
+Built for Acquirers, PE, founders 
+Last reviewed 2026-07-08 
+## Key terms, defined
+Revenue concentration The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk. Logo retention The percentage of customers (logos) retained over a period, independent of expansion revenue. Net revenue retention (NRR) Revenue retained from existing customers including expansion and contraction, expressed as a percentage. 
+## See Hidden Churn Before You Buy a SaaS
+🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay 
+📥 Free SaaS Due Diligence Checklist
+The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
+[Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
+No spam. Unsubscribe anytime.
+⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
+
+---
+
+## SaaS Benchmarks for Acquirers
+
+Source: https://churnlens.site/benchmarks
+
+SaaS Benchmarks for Acquirers (2025–26) — Curated Buyer-Side Reference 
+- 
+# SaaS Benchmarks for Acquirers
+Curated SaaS benchmark reference points for buyer-side due diligence — churn, NRR, CAC payback, expansion revenue, logo retention, and revenue concentration. Drawn from public SaaS benchmarking research (SaaS Capital, Recurly, Benchmarkit, High Alpha, First Page Sage) and organized for acquisition analysis. These are reference points, not original ChurnLens data; verify against the primary source before relying on a number in a deal.
+About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with similarly named tools churnlens.io (retention automation) or churnlens.tech (churn prediction). 
+## 25 benchmarks in this section
+[SaaS Expansion Revenue Benchmarks 2026: 23% of ARR](/benchmarks/expansion-revenue-benchmarks)
+- [SaaS Expansion Revenue Benchmarks 2026: 23% of ARR](/benchmarks/expansion-revenue-benchmarks)
+- [Net Revenue Retention Benchmarks 2026: 107%](/benchmarks/net-revenue-retention-2026)
+- [Net Revenue Retention Benchmarks 2026: 107%](/benchmarks/net-revenue-retention-2026)
+- [SaaS CAC Payback Period Benchmark 2026 — 18 months median (12–24 mo middle 50%)](/benchmarks/saas-cac-payback)
+- [SaaS CAC Payback Period Benchmarks 2026: 15 months](/benchmarks/saas-cac-payback-2026)
+- [SaaS CAC Payback Period Benchmarks 2026: 15 months](/benchmarks/saas-cac-payback-2026)
+- [SaaS CAC Payback Period Benchmark 2026 — 18 months median (12–24 mo middle 50%)](/benchmarks/saas-cac-payback)
+- [SaaS Churn Rate Benchmarks 2026 — Sourced Data](/benchmarks/saas-churn-benchmarks-2026-interactive)
+- [SaaS Churn Rate Benchmarks 2026: 2.4% monthly](/benchmarks/saas-churn-rate-2026)
+- [SaaS Churn Rate Benchmarks 2026: 2.4% monthly](/benchmarks/saas-churn-rate-2026)
+- [SaaS Churn Rate Benchmarks 2026 — ChurnLens Data](/benchmarks/saas-churn-rate-benchmarks-2026)
+- [SaaS CAC Benchmarks by Industry 2026 — ChurnLens Data](/benchmarks/saas-customer-acquisition-cost-benchmarks)
+- [SaaS Customer Health Score Components](/benchmarks/saas-customer-health-score-breakdown)
+- [SaaS Expansion Revenue Benchmarks — ChurnLens Data](/benchmarks/saas-expansion-revenue-benchmarks)
+- [SaaS Expansion Revenue & NRR Benchmarks 2026](/benchmarks/saas-expansion-revenue-by-stage)
+- [SaaS Gross Revenue Churn Rate Benchmark 2026 — ≈9% annually (median B2B SaaS)](/benchmarks/saas-gross-churn-2026)
+- [SaaS Gross Revenue Churn Rate Benchmark 2026 — ≈9% annually (median B2B SaaS)](/benchmarks/saas-gross-churn-2026)
+- [SaaS Logo Churn Rate Benchmark 2026 — ~3.3% monthly (Recurly); B2B annual differs](/benchmarks/saas-logo-churn)
+- [SaaS Logo Churn Rate Benchmark 2026 — ~3.3% monthly (Recurly); B2B annual differs](/benchmarks/saas-logo-churn)
+- [SaaS Logo Retention Benchmarks — ChurnLens Data](/benchmarks/saas-logo-retention-benchmarks)
+- [SaaS Net Dollar Retention Benchmarks 2026 — ChurnLens Data](/benchmarks/saas-net-dollar-retention-benchmarks)
+- [SaaS Net Revenue Retention Benchmark 2026 — 101–102% median; 110%+ best-in-class](/benchmarks/saas-net-revenue-retention)
+- [SaaS Net Revenue Retention Benchmark 2026 — 101–102% median; 110%+ best-in-class](/benchmarks/saas-net-revenue-retention)
+- [SaaS Revenue Concentration Risk — ChurnLens Data](/benchmarks/saas-revenue-concentration-risk)
+## Run a target's CSV through ChurnLens
+See hidden churn, concentration risk, and revenue decay before you buy a SaaS.
+[Get started →](/)
+## 📎 Cite this page
+Copy the citation below or link to this page. These benchmarks are curated from public SaaS research, not original ChurnLens data — attribute the primary source when citing specific figures.
+ChurnLens. (2026). SaaS Benchmarks for Acquirers (2025–26) — Curated Buyer-Side Reference . Retrieved from https://churnlens.site/benchmarks/
+Copied!
+
+---
+
+## FAQ
+
+Source: https://churnlens.site/faq/
+
+SaaS Churn & Acquisition Due Diligence — Frequently Asked Questions 
+- 
+# SaaS Churn & Due Diligence FAQ
+Answers to the questions SaaS acquirers, PE/M&A analysts, and founders ask about hidden churn, revenue quality, logo vs revenue retention, and how buyer-side due diligence differs from operating-side churn analysis.
+About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with similarly named tools churnlens.io (retention automation) or churnlens.tech (churn prediction). 
+## 20 frequently asked questions in this section
+[How do I detect zombie MRR?](/faq/how-to-detect-zombie-mrr)
+- [How do I detect zombie MRR?](/faq/how-to-detect-zombie-mrr)
+- [How do I due diligence SaaS churn?](/faq/how-to-due-diligence-saas-churn)
+- [How do I due diligence SaaS churn?](/faq/how-to-due-diligence-saas-churn)
+- [How to reduce SaaS churn effectively?](/faq/how-to-reduce-saas-churn)
+- [How to reduce SaaS churn effectively?](/faq/how-to-reduce-saas-churn)
+- [What is a good SaaS churn rate?](/faq/what-is-a-good-saas-churn-rate)
+- [What is a good SaaS churn rate?](/faq/what-is-a-good-saas-churn-rate)
+- [What is annual plan churn risk? — ChurnLens FAQ](/faq/what-is-annual-plan-churn-risk)
+- [What is annual plan churn risk? — ChurnLens FAQ](/faq/what-is-annual-plan-churn-risk)
+- [What is a good SaaS churn rate?](/faq/what-is-good-saas-churn)
+- [What Is a Good SaaS Churn Rate? — ChurnLens](/faq/what-is-good-saas-churn-rate)
+- [What is a good SaaS churn rate?](/faq/what-is-good-saas-churn)
+- [What Is the SaaS Renewal Cliff? — ChurnLens](/faq/what-is-renewal-cliff)
+- [What is the difference between revenue churn and logo churn?](/faq/what-is-revenue-churn-vs-logo-churn)
+- [What is the difference between revenue churn and logo churn?](/faq/what-is-revenue-churn-vs-logo-churn)
+- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/faq/what-is-revenue-concentration-risk)
+- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/faq/what-is-revenue-concentration-risk)
+- [What Is a SaaS Revenue Quality Score? — ChurnLens](/faq/what-is-revenue-quality-score)
+- [What Is Zombie MRR in SaaS? — ChurnLens](/faq/what-is-zombie-mrr)
+## Run a target's CSV through ChurnLens
+See hidden churn, concentration risk, and revenue decay before you buy a SaaS.
+[Get started →](/)
+
+---
+
+
+*End of ChurnLens llms-full.txt. Generated 2026-07-18.*
+*Site: https://churnlens.site | llms.txt: https://churnlens.site/llms.txt | sitemap: https://churnlens.site/sitemap.xml*
