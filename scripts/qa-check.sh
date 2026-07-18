@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.." || exit 1
 # Positioning guardrail: abort the deploy if privacy-browser drift appears.
 # ChurnLens is a SaaS churn/due-diligence tool, not a privacy tool.
 # (see growth-engine GUARDRAILS.md §2)
+python3 "$HOME/.growth-engine/inject-disambiguation.py" churnlens || true
 node scripts/guard-positioning.mjs || exit 1
 
 python3 - <<'PYEOF'
