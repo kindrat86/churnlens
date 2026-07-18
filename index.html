@@ -45,10 +45,12 @@
           "name": "ChurnLens",
           "alternateName": "ChurnLens",
           "url": "https://churnlens.site/",
-          "logo": {"@type": "ImageObject", "url": "https://churnlens.site/favicon.png"},
+          "logo": {"@type": "ImageObject", "url": "https://churnlens.site/og.png", "width": 1200, "height": 630},
+          "image": "https://churnlens.site/og.png",
           "description": "Buyer-side SaaS due diligence. Upload a target's subscription CSVs and get a risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
           "disambiguatingDescription": "ChurnLens at churnlens.site is a buyer-side due-diligence tool used by acquirers and PE/M&A analysts to analyze a SaaS target's revenue and churn quality before purchase. It is an independent product, unaffiliated with other similarly named tools such as churnlens.io (retention automation) or churnlens.tech (churn prediction).",
           "foundingDate": "2026",
+          "sameAs": [],
           "knowsAbout": ["SaaS due diligence", "buyer-side due diligence", "revenue quality analysis", "customer churn analysis", "revenue concentration risk", "MRR analysis", "SaaS acquisitions", "quality of earnings"],
           "contactPoint": {"@type": "ContactPoint", "email": "hello@churnlens.site", "contactType": "customer support"}
         },
@@ -81,7 +83,7 @@
       ]
     }
     </script>
-    <!-- Entity TODO (owner): (1) add a founder Person node + an Organization "founder": {"@id": ".../#founder"} ref once you decide whether to name a real person; (2) add a "sameAs" array on #organization pointing ONLY to real owned profiles — LinkedIn company page + live G2/Capterra/AlternativeTo/Product Hunt listings. Do NOT add sameAs URLs that 404. (3) Replace favicon.png logo with a dedicated square >=512px logo.png / og-image.png (og-image.png is currently missing). -->
+    <!-- Entity TODO (owner): (1) add a founder Person node + an Organization "founder": {"@id": ".../#founder"} ref once you decide whether to name a real person; (2) populate "sameAs": [] with REAL owned profiles — LinkedIn company page + live G2/Capterra/AlternativeTo/Product Hunt listings once directory submissions go live. Do NOT add sameAs URLs that 404. (3) og.png is now the schema logo (1200×630 verified deployed). Favicon remains /favicon.png. -->
     <!-- Removed: personal github.com/kindrat86 + likely-404 linkedin.com/company/churnlens from sameAs; foundingDate corrected 2025 -> 2026. -->
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://churnlens.site/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"}]}</script>
     <!-- SoftwareApplication consolidated into #software in the @graph above. -->
@@ -521,91 +523,7 @@
 <meta property="article:modified_time" content="2026-07-08T00:00:00Z" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@id": "https://churnlens.site/#organization"}, "publisher": {"@id": "https://churnlens.site/#organization"}, "datePublished": "2026-01-15", "dateModified": "2026-07-08", "headline": "The seller says 2% monthly churn.\n          The CSV says 9.4%.\n          That gap will cost you $340,000.", "description": "See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes.", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/"}}</script>
 <!-- Traffic-Readiness org+website schema consolidated into the head @graph (#organization/#website/SiteNavigationElement); removed to avoid duplicate @id nodes and the stray github.com/kindrat86 sameAs. -->
-  <!-- entity-seo-mesh-churnlens.site -->
-  <script type="application/ld+json" data-entity-mesh="churnlens.site">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": [
-        "Organization",
-        "Brand"
-      ],
-      "@id": "https://churnlens.site/#organization",
-      "name": "ChurnLens",
-      "url": "https://churnlens.site",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://churnlens.site/og.png",
-        "width": 1200,
-        "height": 630
-      },
-      "image": "https://churnlens.site/og.png",
-      "description": "Customer churn analytics and SaaS retention intelligence platform.",
-      "sameAs": [
-        "https://github.com/kindrat86",
-        "https://linkedin.com/company/churnlens",
-        "https://gitdealflow.com",
-        "https://sipiteno.com",
-        "https://signals.gitdealflow.com",
-        "https://invisibleexit.com",
-        "https://unlocksaas.com",
-        "https://voicelogpro.com",
-        "https://carshake.online",
-        "https://sanctionsai.dev",
-        "https://sipi.bot"
-      ],
-      "knowsAbout": [
-        "Customer churn analysis",
-        "SaaS retention metrics",
-        "Revenue churn",
-        "Net Revenue Retention",
-        "Customer lifetime value",
-        "Churn prediction",
-        "Subscription analytics",
-        "SaaS benchmarks"
-      ]
-    },
-    {
-      "@type": "SpeakableSpecification",
-      "@id": "https://churnlens.site/#speakable",
-      "cssSelector": [
-        "h1",
-        ".hero-title",
-        ".tagline",
-        "main p:first-of-type",
-        "meta[name='description']"
-      ],
-      "xPath": [
-        "/html/head/title",
-        "/html/head/meta[@name='description']"
-      ]
-    },
-    {
-      "@type": "Brand",
-      "@id": "https://churnlens.site/#brand",
-      "name": "ChurnLens",
-      "url": "https://churnlens.site",
-      "logo": "https://churnlens.site/og.png",
-      "description": "Customer churn analytics and SaaS retention intelligence platform.",
-      "sameAs": [
-        "https://github.com/kindrat86",
-        "https://linkedin.com/company/churnlens",
-        "https://gitdealflow.com",
-        "https://sipiteno.com",
-        "https://signals.gitdealflow.com",
-        "https://invisibleexit.com",
-        "https://unlocksaas.com",
-        "https://voicelogpro.com",
-        "https://carshake.online",
-        "https://sanctionsai.dev",
-        "https://sipi.bot"
-      ]
-    }
-  ]
-}
-  </script>
-  <!-- /entity-seo-mesh -->
+  <!-- /entity-seo-mesh (consolidated into head @graph -- stale duplicate removed) -->
 </head>
   <body id="main-content">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:outline-none">Skip to content</a>
