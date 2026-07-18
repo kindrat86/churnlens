@@ -396,6 +396,10 @@
     {
       "source": "/compare/:slug",
       "destination": "/compare/:slug.html"
+    },
+    {
+      "source": "/revenue-quality-calculator",
+      "destination": "/revenue-quality-calculator.html"
     }
   ],
   "headers": [
