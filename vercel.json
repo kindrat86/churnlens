@@ -266,6 +266,34 @@
       "destination": "/get-the-checklist.html"
     },
     {
+      "source": "/5-risk-buyer-side-method",
+      "destination": "/5-risk-buyer-side-method.html"
+    },
+    {
+      "source": "/churn-divergence-detector",
+      "destination": "/churn-divergence-detector.html"
+    },
+    {
+      "source": "/concentration-vulnerability-index",
+      "destination": "/concentration-vulnerability-index.html"
+    },
+    {
+      "source": "/annual-plan-decay-projection",
+      "destination": "/annual-plan-decay-projection.html"
+    },
+    {
+      "source": "/zombie-mrr-detector",
+      "destination": "/zombie-mrr-detector.html"
+    },
+    {
+      "source": "/revenue-quality-scorecard",
+      "destination": "/revenue-quality-scorecard.html"
+    },
+    {
+      "source": "/mrr-trajectory-forensics",
+      "destination": "/mrr-trajectory-forensics.html"
+    },
+    {
       "source": "/pricing",
       "destination": "/pricing.html"
     },
