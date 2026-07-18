@@ -8,6 +8,11 @@ Disallow: /login/
 Disallow: /i18n_out/
 Disallow: /i18n/
 
+max-image-preview:large
+max-video-preview:-1
+max-snippet:-1
+max-image-render:Standard
+
 User-Agent: GPTBot
 Allow: /
 
@@ -56,3 +61,6 @@ LLMs.txt: https://churnlens.site/llms.txt
 LLMs-full.txt: https://churnlens.site/llms-full.txt
 ai.txt: https://churnlens.site/ai.txt
 kg.jsonld: https://churnlens.site/kg.jsonld
+
+# Image sitemap for Google Images indexing
+Sitemap: https://churnlens.site/image-sitemap.xml

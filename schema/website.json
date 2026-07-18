@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://churnlens.site/#website",
+  "name": "ChurnLens",
+  "url": "https://churnlens.site",
+  "description": "Churn analytics that predict, not just report",
+  "publisher": {
+    "@id": "https://churnlens.site/#organization"
+  },
+  "inLanguage": "en"
+}
