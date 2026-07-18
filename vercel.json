@@ -1,28 +1,6 @@
 {
   "buildCommand": null,
   "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/network",
-      "destination": "/network.html"
-    },
-    {
-      "source": "/network-widget",
-      "destination": "/network-widget.html"
-    },
-    {
-      "source": "/network-feed",
-      "destination": "/network-feed.json"
-    },
-    {
-      "source": "/embed",
-      "destination": "/embed.html"
-    },
-    {
-      "source": "/embed/tools/:slug",
-      "destination": "/embed/tools/:slug.html"
-    }
-  ],
   "redirects": [
     {
       "source": "/public/:path*",
@@ -191,6 +169,38 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/network",
+      "destination": "/network.html"
+    },
+    {
+      "source": "/network-widget",
+      "destination": "/network-widget.html"
+    },
+    {
+      "source": "/network-feed",
+      "destination": "/network-feed.json"
+    },
+    {
+      "source": "/embed",
+      "destination": "/embed.html"
+    },
+    {
+      "source": "/embed/tools",
+      "destination": "/embed/tools/portfolio-network.html"
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools/index.html"
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/tools/:path*"
+    },
+    {
+      "source": "/embed/tools/:path*",
+      "destination": "/embed/tools/:path*"
+    },
     {
       "source": "/integrations/:slug",
       "destination": "/integrations/:slug/index.html"
