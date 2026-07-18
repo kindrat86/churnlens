@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zombie MRR detector | ChurnLens free tool</title>
-<meta name="description" content="Free zombie MRR detector. Paste CSV of customer activity (logins, API calls, seat count) and see which accounts are at risk of churning at renewal.">
+<title>Zombie MRR Detector — Free Tool | ChurnLens</title>
+<meta name="description" content="Free interactive zombie MRR detector. Input total MRR, inactive-but-paying account MRR, and customer counts to see what percentage of revenue is at risk of churning at renewal. No signup required.">
 <link rel="canonical" href="https://churnlens.site/calculators/zombie-mrr-detector">
-    <link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/zombie-mrr-detector" />
-    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/zombie-mrr-detector" />
-    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/zombie-mrr-detector" />
-<meta property="og:title" content="Zombie MRR detector | ChurnLens free tool">
-<meta property="og:description" content="Free zombie MRR detector. Paste CSV of customer activity (logins, API calls, seat count) and see which accounts are at risk of churning at renewal.">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/zombie-mrr-detector">
+<link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/zombie-mrr-detector">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/zombie-mrr-detector">
+<meta property="og:title" content="Zombie MRR Detector — Free Tool | ChurnLens">
+<meta property="og:description" content="Free interactive zombie MRR detector. Input total MRR, inactive-but-paying account MRR, and customer counts to see what percentage of revenue is at risk of churning at renewal.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://churnlens.site/calculators/zombie-mrr-detector">
 <meta property="og:image" content="https://churnlens.site/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Zombie MRR detector | ChurnLens free tool","description":"Free zombie MRR detector. Paste CSV of customer activity (logins, API calls, seat count) and see which accounts are at risk of churning at renewal.","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://churnlens.site/calculators/zombie-mrr-detector"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"ChurnLens","item":"https://churnlens.site/calculators/zombie-mrr-detector"}]}</script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ChurnLens Zombie MRR Detector","url":"https://churnlens.site/calculators/zombie-mrr-detector","description":"Free interactive zombie MRR detector. Input total MRR, inactive-but-paying account MRR, and customer counts to surface the percentage of revenue at risk of churning at renewal. Benchmarks: below 5% healthy, above 15% concerning (Recurly 2025).","applicationCategory":"BusinessApplication","operatingSystem":"Web","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@id":"https://churnlens.site/#organization"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://churnlens.site/calculators"},{"@type":"ListItem","position":3,"name":"Zombie MRR Detector","item":"https://churnlens.site/calculators/zombie-mrr-detector"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is zombie MRR?","acceptedAnswer":{"@type":"Answer","text":"Zombie MRR is revenue from paying customers who have stopped actively using the product — no logins, zero API calls, no seat usage, but the credit card is still being charged. These accounts are at high risk of churning at the next renewal date. Recurly research (2025) suggests zombie MRR above 5% of total revenue is a warning sign; above 15% indicates significant deferred churn risk that may not yet show in reported churn rates."}},{"@type":"Question","name":"How do I detect zombie MRR in a SaaS acquisition target?","acceptedAnswer":{"@type":"Answer","text":"To detect zombie MRR, request a CSV export of customer activity — login frequency, API call volume, seat utilization, and support ticket activity — cross-referenced against billing data. Accounts paying but showing zero or near-zero activity for 60+ days are zombies. The full ChurnLens <a href='/zombie-mrr-detector'>Zombie MRR Detector</a> automates this analysis from raw subscription CSVs and cross-references against the <a href='/annual-plan-decay-projection'>Annual-Plan Decay Projection</a> to forecast how much of that zombie revenue will actually churn at renewal."}},{"@type":"Question","name":"What zombie MRR percentage is considered dangerous?","acceptedAnswer":{"@type":"Answer","text":"Below 5% of total MRR is generally healthy — some level of passive usage is normal, especially for annual-plan customers. Between 5–15% is elevated and warrants investigation: why are these accounts inactive, and when do their contracts renew? Above 15% is concerning — a significant portion of reported revenue may evaporate at renewal. Use <a href='/annual-plan-decay-projection'>Annual-Plan Decay Projection</a> to model the timing and magnitude of likely churn from zombie accounts."}}]}</script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:#0a0a0a;max-width:760px;margin:0 auto;padding:2rem 1.25rem}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0}
@@ -26,70 +26,144 @@ h2{font-size:1.45rem;margin-top:2rem;border-bottom:2px solid #e5e7eb;padding-bot
 h3{font-size:1.15rem;margin-top:1.5rem}
 a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
 .lede{font-size:1.1rem;color:#374151;margin-bottom:1.5rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
-th,td{border:1px solid #e5e7eb;padding:.6rem .75rem;text-align:left}
-th{background:#f9fafb;font-weight:600}
-.callout{background:#f0f7ff;border-left:4px solid #0066cc;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
-.callout.warn{background:#fef3c7;border-left-color:#d97706}
-.callout.good{background:#ecfdf5;border-left-color:#059669}
-.verdict{background:#0a0a0a;color:#fff;padding:1.25rem 1.5rem;border-radius:.5rem;margin:1.5rem 0}
-.verdict h3{margin-top:0;color:#fff}
-.cta{background:#0066cc;color:#fff;padding:1rem 1.5rem;border-radius:.5rem;text-align:center;margin:2rem 0}
+.calculator{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;margin:1.5rem 0}
+.calculator label{display:block;font-weight:600;margin:0.75rem 0 0.25rem;font-size:0.9rem;color:#374151}
+.calculator input{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;box-sizing:border-box}
+.calculator input:focus{outline:none;border-color:#0066cc;box-shadow:0 0 0 3px rgba(0,102,204,0.15)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.calc-btn{display:block;width:100%;margin-top:1rem;padding:12px;background:#0066cc;color:white;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer}
+.calc-btn:hover{background:#004499}
+.results{display:none;background:white;border:2px solid #0066cc;border-radius:12px;padding:1.5rem;margin-top:1rem}
+.result-big{font-size:2rem;font-weight:800;color:#0066cc}
+.result-label{color:#6b7280;font-size:0.85rem;margin-bottom:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.result-item{background:#f0f7ff;border-radius:8px;padding:0.75rem 1rem}
+.benchmark-compare{background:#fef3c7;border-left:4px solid #d97706;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
+.cta{background:#0066cc;color:#fff;padding:1.5rem;border-radius:.75rem;text-align:center;margin:2rem 0}
 .cta a{color:#fff;font-weight:600;font-size:1.1rem}
-.related-links{background:#f9fafb;padding:1rem 1.25rem;border-radius:.5rem;margin-top:2.5rem}
-.related-links ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem}
+.embed-block{background:#f9fafb;border:1px solid #e5e7eb;border-radius:.5rem;padding:1rem;margin:1.5rem 0}
+.embed-block textarea{width:100%;height:60px;font-family:monospace;font-size:0.8rem;border:1px solid #d1d5db;border-radius:6px;padding:0.5rem;resize:vertical}
+.disambig{background:#f0f7ff;border-left:4px solid #0066cc;padding:.75rem 1rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0;font-size:.9rem;color:#1e40af}
 footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e7eb;color:#6b7280;font-size:.9rem}
-ul.check{list-style:none;padding-left:0}ul.check li::before{content:"✓  ";color:#059669;font-weight:700}
-ul.cross{list-style:none;padding-left:0}ul.cross li::before{content:"✗  ";color:#dc2626;font-weight:700}
 </style>
+<script>
+function calculateZombie() {
+    var totalMrr = parseFloat(document.getElementById('total-mrr').value) || 0;
+    var inactiveMrr = parseFloat(document.getElementById('inactive-mrr').value) || 0;
+    var inactiveCount = parseInt(document.getElementById('inactive-count').value) || 0;
+    var totalCount = parseInt(document.getElementById('total-count').value) || 0;
+
+    if (totalMrr <= 0) { alert('Please enter a valid Total MRR (must be greater than $0).'); return; }
+    if (inactiveMrr > totalMrr) { alert('Inactive MRR cannot exceed Total MRR.'); return; }
+    if (totalCount <= 0) { alert('Please enter a valid Total Customer Count.'); return; }
+    if (inactiveCount > totalCount) { alert('Inactive customer count cannot exceed total customer count.'); return; }
+
+    var zombiePct = (inactiveMrr / totalMrr) * 100;
+    var inactiveLogoPct = (inactiveCount / totalCount) * 100;
+    var activeMrr = totalMrr - inactiveMrr;
+
+    // Average MRR per inactive account
+    var avgInactiveMrr = inactiveCount > 0 ? inactiveMrr / inactiveCount : 0;
+
+    document.getElementById('res-zombie-pct').textContent = zombiePct.toFixed(1) + '%';
+    document.getElementById('res-inactive-mrr').textContent = '$' + inactiveMrr.toLocaleString(undefined, {maximumFractionDigits:0});
+    document.getElementById('res-active-mrr').textContent = '$' + activeMrr.toLocaleString(undefined, {maximumFractionDigits:0});
+    document.getElementById('res-inactive-logos').textContent = inactiveCount + ' accounts (' + inactiveLogoPct.toFixed(1) + '% of customers)';
+
+    // Benchmark comparison: below 5% healthy, above 15% concerning (Recurly 2025)
+    var compareMsg = '';
+    if (zombiePct >= 15) {
+        compareMsg = 'Your zombie MRR of <strong>' + zombiePct.toFixed(1) + '%</strong> is in the concerning range (above 15%). A significant portion of reported revenue may evaporate at the next renewal cycle. Model the timing using <a href="/annual-plan-decay-projection">Annual-Plan Decay Projection</a> to understand when these zombie accounts will come up for renewal.';
+    } else if (zombiePct >= 5) {
+        compareMsg = 'Your zombie MRR of <strong>' + zombiePct.toFixed(1) + '%</strong> is elevated — above the 5% healthy threshold (Recurly 2025). This warrants investigation: why are ' + inactiveCount + ' accounts paying but inactive? Cross-reference with <a href="/zombie-mrr-detector">Zombie MRR Detector</a> for deeper activity analysis.';
+    } else {
+        compareMsg = 'Your zombie MRR of <strong>' + zombiePct.toFixed(1) + '%</strong> is within the healthy range (below 5%). Some passive usage is normal, especially for annual-plan customers. Still, monitor inactive accounts quarterly — a rising zombie percentage is an early-warning signal captured by the <a href="/annual-plan-decay-projection">Annual-Plan Decay Projection</a>.';
+    }
+    document.getElementById('benchmark-msg').innerHTML = compareMsg;
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+</script>
 <!-- isenberg-round15 -->
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.","disambiguatingDescription":"ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 </head>
 <body>
 <article>
+
 <header>
-<p class="lede">ChurnLens free tool</p>
-<h1>Zombie MRR detector</h1>
-<p class="lede">Free zombie MRR detector. Paste CSV of customer activity (logins, API calls, seat count) and see which accounts are at risk of churning at renewal.</p>
+<p class="lede" style="margin-bottom:0.25rem">ChurnLens free tool</p>
+<h1>Zombie MRR Detector</h1>
+<p class="lede">Detect how much of your revenue comes from inactive-but-paying accounts — the hidden churn risk lurking before renewal. Free, no signup.</p>
 </header>
 
-<h2>What this calculator does</h2>
-<p>Free zombie MRR detector. Paste CSV of customer activity (logins, API calls, seat count) and see which accounts are at risk of churning at renewal. This free calculator is part of the ChurnLens tools suite. No signup, no email required.</p>
+<div class="disambig"><strong>About ChurnLens:</strong> ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&amp;A analysts, and founders selling. Independent of churnlens.io (retention automation) and churnlens.tech (churn prediction).</div>
 
-<h2>How to use</h2>
+<div class="calculator">
+<h2 style="margin-top:0;border:none;font-size:1.2rem">Enter your numbers</h2>
+<div class="calc-row">
+<div><label for="total-mrr">Total MRR ($)</label><input type="number" id="total-mrr" placeholder="e.g. 100000" min="0" step="1000"></div>
+<div><label for="inactive-mrr">Inactive-but-Paying Account MRR ($)</label><input type="number" id="inactive-mrr" placeholder="e.g. 8000" min="0" step="1000"></div>
+</div>
+<div class="calc-row">
+<div><label for="inactive-count">Number of Inactive Accounts</label><input type="number" id="inactive-count" placeholder="e.g. 15" min="0" step="1"></div>
+<div><label for="total-count">Total Customer Count</label><input type="number" id="total-count" placeholder="e.g. 200" min="0" step="1"></div>
+</div>
+<button class="calc-btn" onclick="calculateZombie()">Detect Zombie MRR →</button>
+</div>
+
+<div id="results" class="results">
+<h3 style="margin:0 0 0.5rem;color:#0066cc">Your Results</h3>
+<div class="result-grid">
+<div class="result-item">
+<div class="result-label">Zombie MRR Percentage</div>
+<div class="result-big" id="res-zombie-pct">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Zombie MRR ($)</div>
+<div class="result-big" id="res-inactive-mrr" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Healthy Active MRR ($)</div>
+<div class="result-big" id="res-active-mrr" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Inactive Accounts</div>
+<div class="result-big" id="res-inactive-logos" style="font-size:1.3rem">—</div>
+</div>
+</div>
+<div class="benchmark-compare" id="benchmark-msg"></div>
+</div>
+
+<h2>How to use this detector</h2>
 <ol>
-<li>Enter your inputs below</li>
-<li>Click Calculate</li>
-<li>Compare your result to the benchmark</li>
-<li>Export or share the result</li>
+<li><strong>Enter Total MRR</strong> — the total monthly recurring revenue across all customers.</li>
+<li><strong>Enter Inactive-but-Paying MRR</strong> — the MRR from accounts that haven't logged in, made API calls, or used seats in 60+ days but are still being charged.</li>
+<li><strong>Enter Inactive Account Count</strong> — how many individual accounts are inactive.</li>
+<li><strong>Enter Total Customer Count</strong> — the total number of paying customers.</li>
+<li><strong>Click Detect</strong> — see your zombie MRR percentage and how it compares to SaaS health benchmarks.</li>
 </ol>
 
-<h2>Why this matters</h2>
-<p>churn due diligence tool users need to quantify risk before acting. A calculator turns intuition into a number, and a number drives action.</p>
+<h2>Why zombie MRR matters in SaaS due diligence</h2>
+<p>Zombie MRR is the silent killer of SaaS valuations. A target company may report 2% monthly churn, but if 18% of their revenue is from customers who haven't used the product in months, that churn number is a ticking time bomb. When those annual contracts come up for renewal, the real churn rate emerges — sometimes 3–5× higher than reported.</p>
+<p>Sellers rarely volunteer zombie MRR data. It's the buyer's job to request customer activity logs (login frequency, API call volume, seat utilization) and cross-reference them against billing. The full ChurnLens <a href="/zombie-mrr-detector">Zombie MRR Detector</a> automates this from raw CSVs and projects the revenue impact using <a href="/annual-plan-decay-projection">Annual-Plan Decay Projection</a>.</p>
 
-<h2>Benchmarks</h2>
-<p>ChurnLens benchmarks are sourced from anonymized customer data and public research. See the methodology page for details.</p>
+<h2>Zombie MRR benchmarks: how much is too much?</h2>
+<p><strong>Below 5% of total MRR:</strong> Healthy range. Some passive usage is normal, especially for annual-plan enterprise customers who may use the product intensively for a few months and coast the rest of the year (Recurly 2025).</p>
+<p><strong>5–15% of total MRR:</strong> Elevated. Investigate why these accounts are inactive. Are they seasonal users? Paused projects? Or genuine zombies that will churn at renewal? Cross-reference contract end dates.</p>
+<p><strong>Above 15% of total MRR:</strong> Concerning. A material portion of reported revenue is at high risk of churning at the next renewal window. Buyers should model this as likely lost revenue and adjust valuation accordingly.</p>
 
-<h2>Frequently asked questions</h2>
-<h3>Is this calculator free?</h3>
-<p>Yes. ChurnLens publishes this calculator as a free tool, no signup required.</p>
-<h3>How accurate is it?</h3>
-<p>The calculator uses industry-standard formulas. For churn due diligence tool-specific analysis, the full ChurnLens product provides deeper insight.</p>
+<div class="embed-block">
+<h3 style="margin-top:0;font-size:1rem">📎 Embed this detector</h3>
+<p style="font-size:0.85rem;color:#6b7280">Add this zombie MRR detector to your blog, newsletter, or due-diligence checklist. Free to embed.</p>
+<textarea readonly onclick="this.select()">&lt;iframe src="https://churnlens.site/calculators/zombie-mrr-detector" width="100%" height="700" frameborder="0" style="border:1px solid #e5e7eb;border-radius:8px" title="ChurnLens Zombie MRR Detector"&gt;&lt;/iframe&gt;</textarea>
+</div>
 
-<div class="cta"><a href="https://churnlens.site/">Try the full ChurnLens &rarr;</a></div>
+<div class="cta"><a href="/">Run a full due-diligence analysis on a SaaS target →</a></div>
 
-<section class="related-links"><h3>Related pages</h3><ul><li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/calculators/nrr-calculator">Net revenue retention calculator</a></li><li><a href="/calculators/revenue-concentration-calculator">Revenue concentration calculator</a></li></ul></section>
-
-<!-- mesh-round19 -->
-<section class="mesh-links" style="background:#f9fafb;padding:1.25rem;border-radius:.5rem;margin-top:2rem">
-<h3 style="margin-top:0">Related resources</h3>
-<ul style="list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;font-size:.95rem">
-<li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/calculators/nrr-calculator">Net revenue retention calculator</a></li><li><a href="/calculators/revenue-concentration-calculator">Revenue concentration calculator</a></li><li><a href="/industries/martech">Churn Due Diligence Tool for Marketing Technology Industry [2026]</a></li><li><a href="/vs/retina-ai">ChurnLens vs Retina.ai: Which Is Better in 2026?</a></li><li><a href="/redflags/annual-plan-cliff">Annual plan renewal cliff red flag</a></li>
-</ul>
-</section>
 </article>
 <footer>
-<p><strong>ChurnLens</strong> &middot; <a href="https://churnlens.site/">Home</a> &middot; <a href="https://churnlens.site/about">About</a></p>
+<p><strong>ChurnLens</strong> · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/benchmarks">Benchmarks</a> · <a href="/5-risk-buyer-side-method">5-Risk Method</a></p>
 </footer>
 </body>
 </html>

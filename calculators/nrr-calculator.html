@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Net revenue retention calculator | ChurnLens free tool</title>
-<meta name="description" content="Free NRR calculator. Input starting MRR, expansion, contraction, churn, and reactivation to compute NRR. Benchmarks against SMB/mid-market/enterprise tiers">
+<title>Net Revenue Retention (NRR) Calculator — Free Tool | ChurnLens</title>
+<meta name="description" content="Free interactive NRR calculator. Input starting MRR, expansion MRR, contraction MRR, and churned MRR to compute net revenue retention. Benchmark against SaaS median of ~106%. No signup required.">
 <link rel="canonical" href="https://churnlens.site/calculators/nrr-calculator">
-    <link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/nrr-calculator" />
-    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/nrr-calculator" />
-    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/nrr-calculator" />
-<meta property="og:title" content="Net revenue retention calculator | ChurnLens free tool">
-<meta property="og:description" content="Free NRR calculator. Input starting MRR, expansion, contraction, churn, and reactivation to compute NRR. Benchmarks against SMB/mid-market/enterprise tiers">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/nrr-calculator">
+<link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/nrr-calculator">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/nrr-calculator">
+<meta property="og:title" content="Net Revenue Retention (NRR) Calculator — Free Tool | ChurnLens">
+<meta property="og:description" content="Free interactive NRR calculator. Input starting MRR, expansion MRR, contraction MRR, and churned MRR to compute net revenue retention. Benchmark against SaaS median.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://churnlens.site/calculators/nrr-calculator">
 <meta property="og:image" content="https://churnlens.site/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Net revenue retention calculator | ChurnLens free tool","description":"Free NRR calculator. Input starting MRR, expansion, contraction, churn, and reactivation to compute NRR. Benchmarks against SMB/mid-market/enterprise tiers","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://churnlens.site/calculators/nrr-calculator"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"ChurnLens","item":"https://churnlens.site/calculators/nrr-calculator"}]}</script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ChurnLens NRR Calculator","url":"https://churnlens.site/calculators/nrr-calculator","description":"Free interactive net revenue retention calculator. Input starting MRR, expansion, contraction, and churned MRR to compute NRR. Benchmarks against SaaS median of ~106% (Benchmarkit 2025).","applicationCategory":"BusinessApplication","operatingSystem":"Web","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@id":"https://churnlens.site/#organization"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://churnlens.site/calculators"},{"@type":"ListItem","position":3,"name":"NRR Calculator","item":"https://churnlens.site/calculators/nrr-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is net revenue retention (NRR)?","acceptedAnswer":{"@type":"Answer","text":"Net revenue retention (NRR) measures how much revenue you retain from existing customers over a period, accounting for expansion (upgrades, cross-sells), contraction (downgrades), and churn (cancellations). A NRR above 100% means expansion revenue outweighs contraction and churn — a hallmark of product-market fit. The median public SaaS NRR is approximately 106% according to Benchmarkit 2025 data."}},{"@type":"Question","name":"How is NRR calculated?","acceptedAnswer":{"@type":"Answer","text":"NRR = (Starting MRR + Expansion MRR - Contraction MRR - Churned MRR) / Starting MRR × 100. This captures the full revenue picture from the existing customer base, factoring in both gains (expansion) and losses (contraction + churn)."}},{"@type":"Question","name":"What is a good NRR for a SaaS business?","acceptedAnswer":{"@type":"Answer","text":"The median SaaS NRR is ~106% (Benchmarkit 2025). Below 100% means you're losing more revenue than you're expanding — a red flag for investors and acquirers. Best-in-class SaaS companies (top quartile) often report NRR above 120%. For buyer-side due diligence, surface-level NRR can mask problems — use ChurnLens to decompose it into expansion, contraction, and churned components from raw subscription CSVs."}}]}</script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:#0a0a0a;max-width:760px;margin:0 auto;padding:2rem 1.25rem}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0}
@@ -26,70 +26,138 @@ h2{font-size:1.45rem;margin-top:2rem;border-bottom:2px solid #e5e7eb;padding-bot
 h3{font-size:1.15rem;margin-top:1.5rem}
 a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
 .lede{font-size:1.1rem;color:#374151;margin-bottom:1.5rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
-th,td{border:1px solid #e5e7eb;padding:.6rem .75rem;text-align:left}
-th{background:#f9fafb;font-weight:600}
-.callout{background:#f0f7ff;border-left:4px solid #0066cc;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
-.callout.warn{background:#fef3c7;border-left-color:#d97706}
-.callout.good{background:#ecfdf5;border-left-color:#059669}
-.verdict{background:#0a0a0a;color:#fff;padding:1.25rem 1.5rem;border-radius:.5rem;margin:1.5rem 0}
-.verdict h3{margin-top:0;color:#fff}
-.cta{background:#0066cc;color:#fff;padding:1rem 1.5rem;border-radius:.5rem;text-align:center;margin:2rem 0}
+.calculator{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;margin:1.5rem 0}
+.calculator label{display:block;font-weight:600;margin:0.75rem 0 0.25rem;font-size:0.9rem;color:#374151}
+.calculator input{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;box-sizing:border-box}
+.calculator input:focus{outline:none;border-color:#0066cc;box-shadow:0 0 0 3px rgba(0,102,204,0.15)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.calc-btn{display:block;width:100%;margin-top:1rem;padding:12px;background:#0066cc;color:white;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer}
+.calc-btn:hover{background:#004499}
+.results{display:none;background:white;border:2px solid #0066cc;border-radius:12px;padding:1.5rem;margin-top:1rem}
+.result-big{font-size:2rem;font-weight:800;color:#0066cc}
+.result-label{color:#6b7280;font-size:0.85rem;margin-bottom:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.result-item{background:#f0f7ff;border-radius:8px;padding:0.75rem 1rem}
+.benchmark-compare{background:#fef3c7;border-left:4px solid #d97706;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
+.cta{background:#0066cc;color:#fff;padding:1.5rem;border-radius:.75rem;text-align:center;margin:2rem 0}
 .cta a{color:#fff;font-weight:600;font-size:1.1rem}
-.related-links{background:#f9fafb;padding:1rem 1.25rem;border-radius:.5rem;margin-top:2.5rem}
-.related-links ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem}
+.embed-block{background:#f9fafb;border:1px solid #e5e7eb;border-radius:.5rem;padding:1rem;margin:1.5rem 0}
+.embed-block textarea{width:100%;height:60px;font-family:monospace;font-size:0.8rem;border:1px solid #d1d5db;border-radius:6px;padding:0.5rem;resize:vertical}
+.disambig{background:#f0f7ff;border-left:4px solid #0066cc;padding:.75rem 1rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0;font-size:.9rem;color:#1e40af}
 footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e7eb;color:#6b7280;font-size:.9rem}
-ul.check{list-style:none;padding-left:0}ul.check li::before{content:"✓  ";color:#059669;font-weight:700}
-ul.cross{list-style:none;padding-left:0}ul.cross li::before{content:"✗  ";color:#dc2626;font-weight:700}
 </style>
+<script>
+function calculateNRR() {
+    var startMrr = parseFloat(document.getElementById('start-mrr').value) || 0;
+    var expansionMrr = parseFloat(document.getElementById('expansion-mrr').value) || 0;
+    var contractionMrr = parseFloat(document.getElementById('contraction-mrr').value) || 0;
+    var churnedMrr = parseFloat(document.getElementById('churned-mrr').value) || 0;
+
+    if (startMrr <= 0) { alert('Please enter a valid Starting MRR (must be greater than $0).'); return; }
+
+    var endingMrr = startMrr + expansionMrr - contractionMrr - churnedMrr;
+    var nrr = (endingMrr / startMrr) * 100;
+
+    document.getElementById('res-nrr').textContent = nrr.toFixed(1) + '%';
+    document.getElementById('res-ending-mrr').textContent = '$' + endingMrr.toLocaleString(undefined, {maximumFractionDigits:0});
+    document.getElementById('res-expansion-impact').textContent = '$' + expansionMrr.toLocaleString(undefined, {maximumFractionDigits:0});
+    document.getElementById('res-churn-impact').textContent = '$' + (contractionMrr + churnedMrr).toLocaleString(undefined, {maximumFractionDigits:0});
+
+    // Benchmark comparison: median NRR ~106% (Benchmarkit 2025)
+    var benchmarkNrr = 106;
+    var compareMsg = '';
+    if (nrr >= 120) {
+        compareMsg = 'Your NRR of <strong>' + nrr.toFixed(1) + '%</strong> is best-in-class — above the top-quartile threshold of 120%. This indicates strong product-market fit and effective expansion motions. Still, verify the underlying data: sellers can inflate NRR by excluding contraction or reclassifying churned accounts.';
+    } else if (nrr >= benchmarkNrr) {
+        compareMsg = 'Your NRR of <strong>' + nrr.toFixed(1) + '%</strong> meets or exceeds the SaaS median of ~106% (Benchmarkit 2025). Expansion revenue is outpacing contraction and churn — a healthy sign for investors. For due diligence, decompose further with <a href="/revenue-quality-scorecard">Revenue Quality Scorecard</a>.';
+    } else if (nrr >= 100) {
+        compareMsg = 'Your NRR of <strong>' + nrr.toFixed(1) + '%</strong> is below the SaaS median of ~106% (Benchmarkit 2025) but above 100%, meaning the business is still growing revenue from its existing base. Investigate contraction and churn patterns with <a href="/mrr-trajectory-forensics">MRR Trajectory Forensics</a> to find the leak.';
+    } else {
+        compareMsg = 'Your NRR of <strong>' + nrr.toFixed(1) + '%</strong> is below 100% — the business is losing more revenue from existing customers than it gains from expansion. This is a significant due-diligence red flag. Use <a href="/mrr-trajectory-forensics">MRR Trajectory Forensics</a> to understand whether the decline is accelerating.';
+    }
+    document.getElementById('benchmark-msg').innerHTML = compareMsg;
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+</script>
 <!-- isenberg-round15 -->
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.","disambiguatingDescription":"ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 </head>
 <body>
 <article>
+
 <header>
-<p class="lede">ChurnLens free tool</p>
-<h1>Net revenue retention calculator</h1>
-<p class="lede">Free NRR calculator. Input starting MRR, expansion, contraction, churn, and reactivation to compute NRR. Benchmarks against SMB/mid-market/enterprise tiers.</p>
+<p class="lede" style="margin-bottom:0.25rem">ChurnLens free tool</p>
+<h1>Net Revenue Retention (NRR) Calculator</h1>
+<p class="lede">Calculate your NRR from starting MRR, expansion, contraction, and churn. Benchmark against the SaaS median of ~106%. Free, no signup.</p>
 </header>
 
-<h2>What this calculator does</h2>
-<p>Free NRR calculator. Input starting MRR, expansion, contraction, churn, and reactivation to compute NRR. Benchmarks against SMB/mid-market/enterprise tiers. This free calculator is part of the ChurnLens tools suite. No signup, no email required.</p>
+<div class="disambig"><strong>About ChurnLens:</strong> ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&amp;A analysts, and founders selling. Independent of churnlens.io (retention automation) and churnlens.tech (churn prediction).</div>
 
-<h2>How to use</h2>
+<div class="calculator">
+<h2 style="margin-top:0;border:none;font-size:1.2rem">Enter your numbers</h2>
+<div class="calc-row">
+<div><label for="start-mrr">Starting MRR ($)</label><input type="number" id="start-mrr" placeholder="e.g. 100000" min="0" step="1000"></div>
+<div><label for="expansion-mrr">Expansion MRR ($)</label><input type="number" id="expansion-mrr" placeholder="e.g. 15000" min="0" step="1000"></div>
+</div>
+<div class="calc-row">
+<div><label for="contraction-mrr">Contraction MRR ($)</label><input type="number" id="contraction-mrr" placeholder="e.g. 5000" min="0" step="1000"></div>
+<div><label for="churned-mrr">Churned MRR ($)</label><input type="number" id="churned-mrr" placeholder="e.g. 4000" min="0" step="1000"></div>
+</div>
+<button class="calc-btn" onclick="calculateNRR()">Calculate NRR →</button>
+</div>
+
+<div id="results" class="results">
+<h3 style="margin:0 0 0.5rem;color:#0066cc">Your Results</h3>
+<div class="result-grid">
+<div class="result-item">
+<div class="result-label">Net Revenue Retention</div>
+<div class="result-big" id="res-nrr">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Ending MRR</div>
+<div class="result-big" id="res-ending-mrr" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Expansion Impact ($)</div>
+<div class="result-big" id="res-expansion-impact" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Churn + Contraction Loss ($)</div>
+<div class="result-big" id="res-churn-impact" style="font-size:1.3rem">—</div>
+</div>
+</div>
+<div class="benchmark-compare" id="benchmark-msg"></div>
+</div>
+
+<h2>How to use this calculator</h2>
 <ol>
-<li>Enter your inputs below</li>
-<li>Click Calculate</li>
-<li>Compare your result to the benchmark</li>
-<li>Export or share the result</li>
+<li><strong>Enter Starting MRR</strong> — the monthly recurring revenue at the beginning of the period you're analyzing.</li>
+<li><strong>Enter Expansion MRR</strong> — revenue gained from existing customers through upgrades, cross-sells, and add-ons (not new customer acquisition).</li>
+<li><strong>Enter Contraction MRR</strong> — revenue lost from customers who downgraded but did not cancel.</li>
+<li><strong>Enter Churned MRR</strong> — revenue lost from customers who canceled entirely.</li>
+<li><strong>Click Calculate</strong> — see your NRR percentage and how it compares to SaaS benchmarks.</li>
 </ol>
 
-<h2>Why this matters</h2>
-<p>churn due diligence tool users need to quantify risk before acting. A calculator turns intuition into a number, and a number drives action.</p>
+<h2>Why NRR matters in SaaS due diligence</h2>
+<p>Net Revenue Retention is one of the most scrutinized metrics in a SaaS acquisition. While a seller may report a headline NRR of 110%+, the raw subscription CSV often tells a different story. Sellers can inflate NRR by classifying churned accounts as "paused," treating one-time add-ons as recurring expansion, or excluding contraction from specific customer segments. The gap between reported and actual NRR can be 5–15 percentage points — directly negotiation-relevant.</p>
+<p>For deeper buyer-side analysis, ChurnLens decomposes NRR into its components and cross-references them against the <a href="/revenue-quality-scorecard">Revenue Quality Scorecard</a> and <a href="/mrr-trajectory-forensics">MRR Trajectory Forensics</a> to identify whether revenue retention is improving or deteriorating over time.</p>
 
-<h2>Benchmarks</h2>
-<p>ChurnLens benchmarks are sourced from anonymized customer data and public research. See the methodology page for details.</p>
+<h2>NRR benchmarks: what's a "good" number?</h2>
+<p>The median SaaS NRR is approximately <strong>106%</strong> (Benchmarkit 2025). The top quartile exceeds 120%. Below 100% means the business is shrinking on a same-customer basis — a major red flag in any acquisition. However, the raw NRR number masks important dynamics: a business with 130% NRR but 90% logo retention may have a dangerous concentration problem where a few expanding accounts prop up the metric. See full NRR benchmarks at <a href="/benchmarks/saas-net-revenue-retention">SaaS Net Revenue Retention Benchmarks 2026</a>.</p>
 
-<h2>Frequently asked questions</h2>
-<h3>Is this calculator free?</h3>
-<p>Yes. ChurnLens publishes this calculator as a free tool, no signup required.</p>
-<h3>How accurate is it?</h3>
-<p>The calculator uses industry-standard formulas. For churn due diligence tool-specific analysis, the full ChurnLens product provides deeper insight.</p>
+<div class="embed-block">
+<h3 style="margin-top:0;font-size:1rem">📎 Embed this calculator</h3>
+<p style="font-size:0.85rem;color:#6b7280">Add this NRR calculator to your blog, newsletter, or due-diligence checklist. Free to embed.</p>
+<textarea readonly onclick="this.select()">&lt;iframe src="https://churnlens.site/calculators/nrr-calculator" width="100%" height="700" frameborder="0" style="border:1px solid #e5e7eb;border-radius:8px" title="ChurnLens NRR Calculator"&gt;&lt;/iframe&gt;</textarea>
+</div>
 
-<div class="cta"><a href="https://churnlens.site/">Try the full ChurnLens &rarr;</a></div>
+<div class="cta"><a href="/">Run a full due-diligence analysis on a SaaS target →</a></div>
 
-<section class="related-links"><h3>Related pages</h3><ul><li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/calculators/revenue-concentration-calculator">Revenue concentration calculator</a></li><li><a href="/calculators/zombie-mrr-detector">Zombie MRR detector</a></li></ul></section>
-
-<!-- mesh-round19 -->
-<section class="mesh-links" style="background:#f9fafb;padding:1.25rem;border-radius:.5rem;margin-top:2rem">
-<h3 style="margin-top:0">Related resources</h3>
-<ul style="list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;font-size:.95rem">
-<li><a href="/calculators/zombie-mrr-detector">Zombie MRR detector</a></li><li><a href="/calculators/revenue-concentration-calculator">Revenue concentration calculator</a></li><li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/for/search-fund-operators">ChurnLens for Churn screening for search fund operators: SaaS revenue quality &a</a></li><li><a href="/for/founders-exiting">ChurnLens for Founders Exiting — ChurnLens</a></li><li><a href="/faq/what-is-good-saas-churn">What is a good SaaS churn rate?</a></li>
-</ul>
-</section>
 </article>
 <footer>
-<p><strong>ChurnLens</strong> &middot; <a href="https://churnlens.site/">Home</a> &middot; <a href="https://churnlens.site/about">About</a></p>
+<p><strong>ChurnLens</strong> · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/benchmarks">Benchmarks</a> · <a href="/5-risk-buyer-side-method">5-Risk Method</a></p>
 </footer>
 </body>
 </html>
