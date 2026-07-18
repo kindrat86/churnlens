@@ -46,6 +46,126 @@
       "source": "/:slug((?!googlea30bb998b91eb6ac).+)\\.html",
       "destination": "/:slug",
       "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/signup",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/sign-up",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/register",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/app",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/free-trial",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/start",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/request-demo",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/learn",
+      "permanent": true
+    },
+    {
+      "source": "/docs",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/api-docs",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/learn",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/press",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/security",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/gdpr",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/faq",
+      "permanent": true
     }
   ],
   "rewrites": [
