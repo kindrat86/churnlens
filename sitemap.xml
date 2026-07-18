@@ -139,9 +139,6 @@
   <url><loc>https://churnlens.site/for/b2b-saas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/for/board-members</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/for/board-members/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://churnlens.site/for/devtools</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://churnlens.site/for/edtech</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://churnlens.site/for/fintech</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/for/founders-exiting</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/for/fractional-cfos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/for/fractional-cfos/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -394,4 +391,24 @@
   <url><loc>https://churnlens.site/widgets/network-footer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/widgets/related-tools</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://churnlens.site/zombie-mrr-detector</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://churnlens.site/for/saas</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/fintech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/ecommerce</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/healthcare</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/edtech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/devtools</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/martech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/hr-tech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/cybersecurity</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/ai-ml</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/proptech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/logistics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/media</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/gaming</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/climate-tech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/agtech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/legal-tech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/insurtech</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/real-estate</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://churnlens.site/for/hospitality</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
