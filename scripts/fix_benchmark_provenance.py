@@ -3,7 +3,7 @@
 Fix fabricated provenance + corrupted JSON-LD in /benchmarks pSEO pages.
 
 Two problems introduced by the pSEO generator (now caught pre-deploy):
-1. JSON-LD @context is corrupted: "@context":"https://***@type":"Article"...
+1. JSON-LD @context can be corrupted: "@context":"https://***@type":"Article"... (invalid JSON)
    (invalid JSON - every crawler fails to parse the block, losing all schema).
 2. Pages claim fabricated proprietary data: "aggregated data from over 500 SaaS
    companies", "based on teams using churn due diligence tool workflows".
