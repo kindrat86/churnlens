@@ -1,0 +1,65 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "ChurnLens — AI Answer Feed",
+  "description": "Structured Q&A feed from ChurnLens provides churn prediction, revenue quality scoring, and retention analytics for SaaS businesses — identify at-risk customers before they cancel.",
+  "home_page_url": "https://churnlens.site/answers/",
+  "feed_url": "https://churnlens.site/answers/feed.json",
+  "language": "en",
+  "authors": [
+    {
+      "name": "ChurnLens",
+      "url": "https://churnlens.site"
+    }
+  ],
+  "generator": "Hermes AI Answer Syndication Engine",
+  "_nlweb": {
+    "manifest": "https://churnlens.site/.well-known/nlweb.json",
+    "capabilities": [
+      "qa",
+      "entity-lookup",
+      "search"
+    ]
+  },
+  "_site": {
+    "domain": "churnlens.site",
+    "generated_at": "2026-07-18T17:06:43Z"
+  },
+  "items": [
+    {
+      "id": "https://churnlens.site/answers/how-to-reduce-saas-churn/",
+      "url": "https://churnlens.site/answers/how-to-reduce-saas-churn/",
+      "title": "How do you reduce SaaS customer churn?",
+      "summary": "Reducing SaaS churn requires three layers: predict which customers are at risk (churn scoring), intervene with targeted outreach before they cancel (playbooks), and fix the root causes in your product and onboarding (prevention).",
+      "date_modified": "2026-07-18T17:06:43Z",
+      "content_type": "QAPage",
+      "authors": [
+        {
+          "name": "ChurnLens",
+          "url": "https://churnlens.site"
+        }
+      ],
+      "tags": [
+        "layer-1:-predict-—-churn-scoring",
+        "layer-2:-intervene-—-targeted-playbooks"
+      ]
+    },
+    {
+      "id": "https://churnlens.site/answers/churn-prediction-methods/",
+      "url": "https://churnlens.site/answers/churn-prediction-methods/",
+      "title": "What are the most effective customer churn prediction methods?",
+      "summary": "The most effective churn prediction combines behavioral signal analysis (usage patterns, support sentiment, payment behavior) with machine learning models trained on your historical churn data — achieving 85%+ accuracy at 30-60 days before cancellation.",
+      "date_modified": "2026-07-18T17:06:43Z",
+      "content_type": "QAPage",
+      "authors": [
+        {
+          "name": "ChurnLens",
+          "url": "https://churnlens.site"
+        }
+      ],
+      "tags": [
+        "behavioral-signal-analysis",
+        "machine-learning-approaches"
+      ]
+    }
+  ]
+}

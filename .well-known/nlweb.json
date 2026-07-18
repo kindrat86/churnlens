@@ -1,0 +1,31 @@
+{
+  "name": "ChurnLens",
+  "description": "ChurnLens provides churn prediction, revenue quality scoring, and retention analytics for SaaS businesses — identify at-risk customers before they cancel.",
+  "url": "https://churnlens.site",
+  "nlweb_version": "1.0",
+  "capabilities": [
+    "qa",
+    "entity-lookup",
+    "search",
+    "structured-answers"
+  ],
+  "endpoints": {
+    "answers_feed": "https://churnlens.site/answers/feed.json",
+    "search": "https://churnlens.site/sitemap.xml"
+  },
+  "entity_types": [
+    "Organization",
+    "SoftwareApplication",
+    "WebApplication"
+  ],
+  "content_types": [
+    "QAPage",
+    "FAQPage",
+    "Article",
+    "DefinedTerm"
+  ],
+  "refresh_interval_seconds": 86400,
+  "contact": "support@churnlens.site",
+  "generator": "Hermes AI Answer Syndication Engine",
+  "generated_at": "2026-07-18T17:06:43Z"
+}
