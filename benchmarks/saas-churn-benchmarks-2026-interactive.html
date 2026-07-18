@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SaaS Churn Rate Benchmarks 2026 — Interactive Data | ChurnLens</title>
-<meta name="description" content="The most comprehensive SaaS churn benchmark dataset. Compare your churn rate against 500+ SaaS companies across 14 verticals, 4 company sizes, and 3 contract types. Updated for 2026.">
+<title>SaaS Churn Rate Benchmarks 2026 — Sourced Data | ChurnLens</title>
+<meta name="description" content="SaaS churn and retention benchmarks for 2026, compiled from published third-party research (SaaS Capital, Recurly, Benchmarkit). Annual gross churn by ACV, monthly subscriber churn by segment, and NRR — each attributed to its primary source.">
 <link rel="canonical" href="https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive">
     <link rel="alternate" hreflang="en" href="https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive" />
     <link rel="alternate" hreflang="en-US" href="https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive" />
     <link rel="alternate" hreflang="x-default" href="https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive" />
-<meta property="og:title" content="SaaS Churn Rate Benchmarks 2026 — Interactive Data">
-<meta property="og:description" content="Compare your churn against 500+ SaaS companies across 14 verticals. The definitive 2026 benchmark dataset.">
+<meta property="og:title" content="SaaS Churn Rate Benchmarks 2026 — Sourced Data">
+<meta property="og:description" content="SaaS churn and retention benchmarks compiled from published research (SaaS Capital, Recurly, Benchmarkit) — each figure attributed to its source.">
 <meta property="og:type" content="article">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dataset",
+  "@type": "WebPage",
   "name": "SaaS Churn Rate Benchmarks 2026",
-  "description": "Comprehensive SaaS churn benchmarks across 14 verticals, 4 company sizes, and 3 contract types. Based on aggregated data from 500+ SaaS businesses.",
+  "description": "SaaS churn and retention benchmarks for 2026 compiled from published third-party research (SaaS Capital, Recurly, Benchmarkit). ChurnLens aggregates published benchmarks rather than proprietary data.",
   "url": "https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive",
-  "creator": {"@type": "Organization", "name": "ChurnLens"},
+  "publisher": {"@type": "Organization", "name": "ChurnLens"},
   "datePublished": "2026-01-01",
-  "dateModified": "2026-07-09",
+  "dateModified": "2026-07-18",
   "keywords": ["SaaS", "churn rate", "benchmarks", "2026", "revenue retention"]
 }
 </script>
@@ -31,8 +31,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What is the average SaaS churn rate in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The median monthly logo churn rate across all SaaS companies in 2026 is 3.2%. B2B enterprise SaaS averages 0.8-1.5%, mid-market 1.5-3%, SMB 3-5%, and B2C SaaS 5-8%."}},
-    {"@type": "Question", "name": "What is a good revenue retention rate for SaaS?", "acceptedAnswer": {"@type": "Answer", "text": "World-class Net Revenue Retention (NRR) is 130%+. Good NRR is 110-130%. Average is 100%. Below 90% NRR indicates a retention problem that will compound over time."}},
+    {"@type": "Question", "name": "What is the average SaaS churn rate in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the metric. Recurly reports an average monthly subscriber (logo) churn of about 3.3% across its base (3.8% for software and business services, 6.5% for consumer) — but that base skews to self-serve/consumer subscriptions. For B2B SaaS, the more relevant figure is annual revenue churn: SaaS Capital's 2023 retention benchmarks put median gross revenue retention at ~91%, i.e. roughly 9% annual gross revenue churn, lighter at high ACV (~7%) and heavier at low ACV (~10%)."}},
+    {"@type": "Question", "name": "What is a good revenue retention rate for SaaS?", "acceptedAnswer": {"@type": "Answer", "text": "Median net revenue retention for private B2B SaaS is about 101–102% (Benchmarkit 2025; SaaS Capital). It rises with contract value, and top-quartile enterprise vendors (ACV over $100K) report 118–120% (SaaS Capital). Median gross revenue retention is ~88–91%."}},
     {"@type": "Question", "name": "How is SaaS churn rate calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Monthly logo churn = (customers lost in month / customers at start of month) × 100. Revenue churn = (MRR lost / starting MRR) × 100. Always calculate both — logo and revenue churn tell different stories."}}
   ]
 }
@@ -47,19 +47,16 @@ table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.95rem}
 th{background:#1a1a1a;color:#0066cc;padding:12px;text-align:left;border-bottom:2px solid #333}
 td{padding:10px 12px;border-bottom:1px solid #222}
 tr:hover td{background:#111}
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.8rem;font-weight:bold}
-.green{background:#0d2818;color:#00ff88}
-.yellow{background:#2d2800;color:#ffcc00}
-.red{background:#2d0000;color:#ff4444}
+.src{font-size:0.82rem;color:#888;margin-top:-8px}
+.src a{color:#888}
 .cta{background:#0066cc;color:#fff;padding:16px 24px;border-radius:8px;text-decoration:none;display:inline-block;margin:20px 0;font-weight:bold}
-.filter-btn{background:#1a1a1a;color:#0066cc;border:1px solid #333;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;margin:4px}
-.filter-btn.active{background:#0066cc;color:#fff}
 nav{margin:20px 0;padding:12px 0;border-bottom:1px solid #222}
 nav a{margin-right:16px;text-decoration:none;color:#0066cc}
 .intro{font-size:1.1rem;color:#aaa;margin-bottom:24px}
 .stat-card{background:#1a1a1a;border-radius:8px;padding:20px;margin:12px 0;display:inline-block;width:200px;vertical-align:top}
 .stat-value{font-size:2rem;font-weight:bold;color:#0066cc}
 .stat-label{font-size:0.9rem;color:#888}
+.note{background:#141414;border-left:3px solid #0066cc;padding:12px 16px;color:#bbb;font-size:0.95rem;margin:20px 0}
 @media(max-width:640px){.stat-card{width:100%}table{font-size:0.85rem}th,td{padding:6px 8px}}
 </style>
 <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script></head>
@@ -69,95 +66,60 @@ nav a{margin-right:16px;text-decoration:none;color:#0066cc}
 <a href="/pricing">Pricing</a>
 <a href="/free/churn-calculator">Churn Calculator</a>
 <a href="/free/revenue-concentration-analyzer">Concentration Analyzer</a>
-<a href="/saas-churn-rate-benchmarks">Original Benchmarks</a>
+<a href="/benchmarks/saas-churn-rate-benchmarks-2026">Churn Benchmarks</a>
 </nav>
 
-<h1>SaaS Churn Rate Benchmarks 2026 — Interactive Dataset</h1>
-<p class="intro">The most comprehensive open SaaS churn benchmark. 500+ companies, 14 verticals, 4 sizes, 3 contract types. Cite as: <em>ChurnLens (churnlens.site), 2026.</em></p>
-
-<div>
-<button class="filter-btn active" onclick="filterData('all')">All Verticals</button>
-<button class="filter-btn" onclick="filterData('b2b')">B2B Enterprise</button>
-<button class="filter-btn" onclick="filterData('smb')">SMB SaaS</button>
-<button class="filter-btn" onclick="filterData('b2c')">B2C SaaS</button>
-<button class="filter-btn" onclick="filterData('devtools')">DevTools</button>
-<button class="filter-btn" onclick="filterData('fintech')">FinTech</button>
-</div>
+<h1>SaaS Churn Rate Benchmarks 2026</h1>
+<p class="intro">Churn and retention benchmarks compiled from published third-party research. ChurnLens aggregates public benchmarks for buyer-side due diligence — it does not publish a proprietary dataset. Verify each figure against its cited source before relying on it in a transaction.</p>
 
 <div style="margin:24px 0">
-<div class="stat-card"><div class="stat-value">3.2%</div><div class="stat-label">Median Monthly Logo Churn</div></div>
-<div class="stat-card"><div class="stat-value">5.1%</div><div class="stat-label">Median Revenue Churn (Annualized)</div></div>
-<div class="stat-card"><div class="stat-value">107%</div><div class="stat-label">Median NRR</div></div>
-<div class="stat-card"><div class="stat-value">1.8%</div><div class="stat-label">Best Quartile Monthly Churn</div></div>
+<div class="stat-card"><div class="stat-value">~9%</div><div class="stat-label">Median annual gross revenue churn (SaaS Capital)</div></div>
+<div class="stat-card"><div class="stat-value">101%</div><div class="stat-label">Median net revenue retention (Benchmarkit 2025)</div></div>
+<div class="stat-card"><div class="stat-value">118–120%</div><div class="stat-label">Top-quartile NRR, ACV &gt; $100K (SaaS Capital)</div></div>
+<div class="stat-card"><div class="stat-value">3.27%</div><div class="stat-label">Avg monthly subscriber churn (Recurly)</div></div>
 </div>
 
-<h2>Full Benchmark Table</h2>
-<table id="benchmarkTable">
-<thead>
-<tr><th>Vertical</th><th>Segment</th><th>Monthly Logo Churn</th><th>Revenue Churn (Ann.)</th><th>NRR</th><th>Annual Plan %</th><th>Risk Level</th></tr>
-</thead>
-<tbody id="tableBody"></tbody>
+<h2>Annual churn &amp; retention by contract value</h2>
+<p>For B2B SaaS, annual revenue retention is the metric acquirers care about. It improves steadily with deal size — bigger contracts churn less and expand more.</p>
+<table>
+<thead><tr><th>Annual contract value (ACV)</th><th>Median gross revenue retention</th><th>≈ Annual gross revenue churn</th><th>Median net revenue retention</th></tr></thead>
+<tbody>
+<tr><td>Under $12K</td><td>90%</td><td>~10%</td><td>100%</td></tr>
+<tr><td>$12K–$25K</td><td>90%</td><td>~10%</td><td>102%</td></tr>
+<tr><td>$25K–$50K</td><td>92%</td><td>~8%</td><td>103%</td></tr>
+<tr><td>$50K–$100K</td><td>93%</td><td>~7%</td><td>105%</td></tr>
+<tr><td>$100K–$250K</td><td>93%</td><td>~7%</td><td>107%</td></tr>
+<tr><td>Over $250K</td><td>93%</td><td>~7%</td><td>110%</td></tr>
+</tbody>
 </table>
+<p class="src">Source: SaaS Capital, <a href="https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf">2023 B2B SaaS Retention Benchmarks</a> (~1,500 private B2B SaaS companies). Overall median NRR corroborated at 101% by Benchmarkit's 2025 report (FY2024); top-quartile enterprise (ACV &gt; $100K) reaches 118–120%.</p>
 
-<h2>How to Use These Benchmarks</h2>
-<p>1. <strong>Find your vertical</strong> — filter by segment above.</p>
-<p>2. <strong>Compare both metrics</strong> — logo churn and revenue churn tell different stories. A company with 1% logo churn but 5% revenue churn has a concentration problem.</p>
-<p>3. <strong>Check your NRR</strong> — if your Net Revenue Retention is below 100%, expansion revenue isn't offsetting churn. This is a red flag for acquirers.</p>
-<p>4. <strong>Annual plan percentage</strong> — companies with >70% annual plans have artificially low monthly churn. The renewal cliff is coming.</p>
+<h2>Monthly subscriber churn by segment</h2>
+<p>Recurly publishes average <em>monthly</em> subscriber (logo) churn. Its base skews toward self-serve and consumer subscriptions, so these run far higher than annual enterprise-B2B logo churn — read them as monthly, not annual, and not as a B2B benchmark.</p>
+<table>
+<thead><tr><th>Segment</th><th>Average monthly subscriber churn</th></tr></thead>
+<tbody>
+<tr><td>Overall (all industries)</td><td>3.27%</td></tr>
+<tr><td>Software &amp; business/professional services</td><td>3.8%</td></tr>
+<tr><td>Consumer / B2C (media, retail, education)</td><td>6.5%</td></tr>
+</tbody>
+</table>
+<p class="src">Source: Recurly, <a href="https://recurly.com/research/churn-rate-benchmarks/">Churn Rate Benchmarks by Industry</a>. Monthly, subscription-billing base — not directly comparable to annual B2B logo churn.</p>
 
-<h2>Methodology</h2>
-<p>Dataset aggregated from public SaaS company filings (10-K, S-1), M&A marketplace listings (Acquire.com, MicroAcquire, Firstbase), ChurnLens user-contributed anonymous data, and industry surveys. Companies with <50K ARR excluded. Self-reported churn validated against raw subscription data where available. Last updated: July 2026.</p>
+<div class="note"><strong>Reading these together:</strong> logo churn and revenue churn tell different stories. A company with low logo churn but high revenue churn has a concentration problem; net revenue retention below 100% means expansion isn't offsetting churn — a red flag for acquirers. Longer contract terms and higher ACV both correlate with better retention.</div>
 
-<h2>Citation</h2>
-<p>If you use this data in research, analysis, or content, please cite:</p>
-<p><code>ChurnLens. "SaaS Churn Rate Benchmarks 2026." churnlens.site/benchmarks, 2026.</code></p>
+<h2>Sources</h2>
+<p>These figures are curated from public SaaS benchmarking research and organized for buyer-side due diligence. ChurnLens aggregates published benchmarks rather than proprietary data:</p>
+<ul>
+<li><a href="https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf" style="color:#0066cc">SaaS Capital — 2023 B2B SaaS Retention Benchmarks</a> (retention/churn by ACV)</li>
+<li><a href="https://www.benchmarkit.ai/2025benchmarks" style="color:#0066cc">Benchmarkit / Pavilion — 2025 SaaS Performance Metrics Benchmarks</a> (NRR/GRR, FY2024)</li>
+<li><a href="https://recurly.com/research/churn-rate-benchmarks/" style="color:#0066cc">Recurly — Churn Rate Benchmarks by Industry</a> (monthly subscriber churn)</li>
+</ul>
+<p>Verify each figure against its primary source; benchmark reports are updated periodically and definitions vary.</p>
 
-<a href="/get-the-checklist" class="cta">Get the 23-point due diligence checklist &rarr;</a>
+<a href="/get-the-checklist" class="cta">Get the SaaS due diligence checklist &rarr;</a>
 
 <hr style="margin:40px 0;border-color:#222">
-<p style="color:#666;font-size:0.85rem">Powered by <a href="/" style="color:#0066cc">ChurnLens</a> — Buyer-Side SaaS Due Diligence. Data is approximate and for informational purposes only. Always validate with raw subscription data before making acquisition decisions.</p>
-
-<script>
-const data = [
-  {vertical:"B2B Enterprise SaaS",segment:"b2b",logoChurn:0.9,revChurn:4.2,nrr:115,annualPct:75,risk:"Low"},
-  {vertical:"Mid-Market B2B SaaS",segment:"b2b",logoChurn:2.1,revChurn:6.8,nrr:108,annualPct:55,risk:"Low"},
-  {vertical:"SMB B2B SaaS",segment:"smb",logoChurn:3.8,revChurn:11.5,nrr:98,annualPct:35,risk:"Medium"},
-  {vertical:"B2C SaaS (Consumer)",segment:"b2c",logoChurn:6.5,revChurn:18.2,nrr:85,annualPct:15,risk:"High"},
-  {vertical:"DevTools / Developer SaaS",segment:"devtools",logoChurn:2.8,revChurn:7.5,nrr:112,annualPct:60,risk:"Low"},
-  {vertical:"FinTech SaaS",segment:"fintech",logoChurn:1.5,revChurn:5.0,nrr:118,annualPct:70,risk:"Low"},
-  {vertical:"HealthTech SaaS",segment:"b2b",logoChurn:1.2,revChurn:3.8,nrr:120,annualPct:80,risk:"Low"},
-  {vertical:"MarTech SaaS",segment:"smb",logoChurn:4.2,revChurn:12.0,nrr:95,annualPct:30,risk:"Medium"},
-  {vertical:"EduTech SaaS",segment:"b2c",logoChurn:5.5,revChurn:14.5,nrr:90,annualPct:40,risk:"Medium"},
-  {vertical:"HR Tech SaaS",segment:"b2b",logoChurn:2.5,revChurn:6.5,nrr:110,annualPct:65,risk:"Low"},
-  {vertical:"Cybersecurity SaaS",segment:"b2b",logoChurn:1.0,revChurn:3.2,nrr:125,annualPct:85,risk:"Low"},
-  {vertical:"E-commerce SaaS",segment:"smb",logoChurn:4.5,revChurn:13.0,nrr:92,annualPct:25,risk:"Medium"},
-  {vertical:"AI/ML Platform SaaS",segment:"devtools",logoChurn:3.5,revChurn:9.0,nrr:105,annualPct:45,risk:"Medium"},
-  {vertical:"Vertical SaaS (Legal)",segment:"b2b",logoChurn:1.8,revChurn:4.5,nrr:117,annualPct:72,risk:"Low"},
-];
-
-function riskClass(risk){return risk==="Low"?"green":risk==="Medium"?"yellow":"red"}
-
-function renderTable(filter){
-  const tb=document.getElementById("tableBody");
-  const filtered=filter==="all"?data:data.filter(d=>d.segment===filter);
-  tb.innerHTML=filtered.map(d=>`<tr>
-    <td>${d.vertical}</td>
-    <td><span class="badge ${riskClass(d.risk)}">${d.risk}</span></td>
-    <td>${d.logoChurn.toFixed(1)}%</td>
-    <td>${d.revChurn.toFixed(1)}%</td>
-    <td>${d.nrr}%</td>
-    <td>${d.annualPct}%</td>
-    <td><span class="badge ${riskClass(d.risk)}">${d.risk}</span></td>
-  </tr>`).join("");
-}
-
-function filterData(segment){
-  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
-  renderTable(segment);
-}
-
-renderTable("all");
-</script>
+<p style="color:#666;font-size:0.85rem">Powered by <a href="/" style="color:#0066cc">ChurnLens</a> — Buyer-Side SaaS Due Diligence. Figures are third-party benchmarks for informational purposes; always validate against a target's raw subscription data before making acquisition decisions.</p>
 </body>
 </html>
