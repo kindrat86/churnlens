@@ -1,13 +1,13 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "Churn Lens",
+  "title": "ChurnLens",
   "description": "SaaS Revenue Quality & Churn Risk Due Diligence — analyzes revenue concentration, logo retention, annual plan churn risk, and MRR decline patterns to surface hidden churn before a SaaS acquisition.",
   "home_page_url": "https://churnlens.site/",
   "feed_url": "https://churnlens.site/feed.json",
   "language": "en",
   "authors": [
     {
-      "name": "Churn Lens",
+      "name": "ChurnLens",
       "url": "https://churnlens.site/about"
     }
   ],
@@ -25,12 +25,12 @@
     {
       "id": "https://churnlens.site",
       "url": "https://churnlens.site",
-      "title": "Churn Lens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk",
+      "title": "ChurnLens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk",
       "content_text": "See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -39,36 +39,36 @@
     {
       "id": "https://churnlens.site/about",
       "url": "https://churnlens.site/about",
-      "title": "About Churn Lens",
-      "content_text": "About Churn Lens: SaaS Revenue Quality & Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.",
+      "title": "About ChurnLens",
+      "content_text": "About ChurnLens: SaaS Revenue Quality & Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/faq",
       "url": "https://churnlens.site/faq",
-      "title": "FAQ — Churn Lens",
-      "content_text": "Frequently asked questions about Churn Lens.",
+      "title": "FAQ — ChurnLens",
+      "content_text": "Frequently asked questions about ChurnLens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/pricing",
       "url": "https://churnlens.site/pricing",
-      "title": "Pricing — SaaS Due Diligence | Churn Lens",
+      "title": "Pricing — SaaS Due Diligence | ChurnLens",
       "content_text": "Upload a subscription CSV and get a comprehensive buyer-side risk report. Free tier available. Premium plans for M&A advisors and serious acquirers.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -77,60 +77,60 @@
     {
       "id": "https://churnlens.site/alternatives-to",
       "url": "https://churnlens.site/alternatives-to",
-      "title": "Alternatives To — Churn Lens",
-      "content_text": "Find the best alternatives compared to Churn Lens.",
+      "title": "Alternatives To — ChurnLens",
+      "content_text": "Find the best alternatives compared to ChurnLens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/vs",
       "url": "https://churnlens.site/vs",
-      "title": "Vs — Churn Lens",
-      "content_text": "Detailed comparisons: Churn Lens vs other tools.",
+      "title": "Vs — ChurnLens",
+      "content_text": "Detailed comparisons: ChurnLens vs other tools.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/best",
       "url": "https://churnlens.site/best",
-      "title": "Best Of — Churn Lens",
+      "title": "Best Of — ChurnLens",
       "content_text": "The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/glossary",
       "url": "https://churnlens.site/glossary",
-      "title": "Glossary — Churn Lens",
-      "content_text": "Key terms and definitions related to Churn Lens.",
+      "title": "Glossary — ChurnLens",
+      "content_text": "Key terms and definitions related to ChurnLens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/why",
       "url": "https://churnlens.site/why",
-      "title": "Why I Built Churn Lens — The $340K Lesson | Churn Lens",
+      "title": "Why I Built ChurnLens — The $340K Lesson | ChurnLens",
       "content_text": "The founder",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -139,12 +139,12 @@
     {
       "id": "https://churnlens.site/who",
       "url": "https://churnlens.site/who",
-      "title": "Who is Churn Lens For? The SaaS Acquirer's Dream Customer Profile | Churn Lens",
-      "content_text": "Churn Lens is built for one specific person: the indie SaaS acquirer evaluating a $500K-$5M deal who knows they can",
+      "title": "Who is ChurnLens For? The SaaS Acquirer's Dream Customer Profile | ChurnLens",
+      "content_text": "ChurnLens is built for one specific person: the indie SaaS acquirer evaluating a $500K-$5M deal who knows they can",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -153,12 +153,12 @@
     {
       "id": "https://churnlens.site/ultimate-saas-due-diligence-guide",
       "url": "https://churnlens.site/ultimate-saas-due-diligence-guide",
-      "title": "The Ultimate SaaS Due Diligence Guide (2026) — Churn Lens",
+      "title": "The Ultimate SaaS Due Diligence Guide (2026) — ChurnLens",
       "content_text": "The complete buyer-side SaaS due diligence guide. Master churn analysis, concentration risk, revenue quality, and deal-specific evaluation. 17+ resources organized into one comprehensive hub.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -167,24 +167,24 @@
     {
       "id": "https://churnlens.site/terms",
       "url": "https://churnlens.site/terms",
-      "title": "Terms of Service — Churn Lens",
-      "content_text": "Terms of Service for Churn Lens.",
+      "title": "Terms of Service — ChurnLens",
+      "content_text": "Terms of Service for ChurnLens.",
       "date_published": "2026-01-15T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ]
     },
     {
       "id": "https://churnlens.site/saas-revenue-quality-score",
       "url": "https://churnlens.site/saas-revenue-quality-score",
-      "title": "SaaS Revenue Quality Score — Beyond Raw MRR | Churn Lens",
+      "title": "SaaS Revenue Quality Score — Beyond Raw MRR | ChurnLens",
       "content_text": "The Revenue Quality Score (RQS): a composite metric that scores SaaS revenue on retention stability, concentration, expansion, payment hygiene, and contract durability.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -193,12 +193,12 @@
     {
       "id": "https://churnlens.site/saas-revenue-concentration-risk",
       "url": "https://churnlens.site/saas-revenue-concentration-risk",
-      "title": "SaaS Revenue Concentration Risk: When Top Customers Hide Churn | Churn Lens",
+      "title": "SaaS Revenue Concentration Risk: When Top Customers Hide Churn | ChurnLens",
       "content_text": "How revenue concentration masks churn risk in SaaS acquisitions. Learn HHI calculation, the whale customer problem, and how to detect concentration before you buy.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -207,12 +207,12 @@
     {
       "id": "https://churnlens.site/saas-revenue-churn-calculator",
       "url": "https://churnlens.site/saas-revenue-churn-calculator",
-      "title": "SaaS Revenue Churn Calculator — Free Online Tool | Churn Lens",
+      "title": "SaaS Revenue Churn Calculator — Free Online Tool | ChurnLens",
       "content_text": "Free SaaS revenue churn calculator. Compute monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR from your subscription data.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -221,12 +221,12 @@
     {
       "id": "https://churnlens.site/saas-mrr-decline-analysis",
       "url": "https://churnlens.site/saas-mrr-decline-analysis",
-      "title": "SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection | Churn Lens",
+      "title": "SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection | ChurnLens",
       "content_text": "How to detect MRR decline and revenue decay in SaaS acquisition targets. Free tool analyzes trailing 12-month MRR trends, contraction rates, and churn-adjusted projections.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -235,12 +235,12 @@
     {
       "id": "https://churnlens.site/saas-due-diligence-checklist",
       "url": "https://churnlens.site/saas-due-diligence-checklist",
-      "title": "SaaS Due Diligence Checklist: Buyer-Side Guide (2026) | Churn Lens",
+      "title": "SaaS Due Diligence Checklist: Buyer-Side Guide (2026) | ChurnLens",
       "content_text": "Complete buyer-side SaaS due diligence checklist. Cover churn, concentration risk, revenue quality, unit economics, and technical debt before you buy.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -249,12 +249,12 @@
     {
       "id": "https://churnlens.site/saas-churn-rate-benchmarks",
       "url": "https://churnlens.site/saas-churn-rate-benchmarks",
-      "title": "SaaS Churn Rate Benchmarks by Industry (2026) | Churn Lens",
+      "title": "SaaS Churn Rate Benchmarks by Industry (2026) | ChurnLens",
       "content_text": "Comprehensive SaaS churn rate benchmarks by industry, business model, and company stage. See how your target acquisition stacks up against industry medians.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -263,12 +263,12 @@
     {
       "id": "https://churnlens.site/saas-buyer-risk-assessment",
       "url": "https://churnlens.site/saas-buyer-risk-assessment",
-      "title": "SaaS Buyer-Side Risk Assessment — Free Tool | Churn Lens",
+      "title": "SaaS Buyer-Side Risk Assessment — Free Tool | ChurnLens",
       "content_text": "Free buyer-side risk assessment for SaaS acquisitions. Upload a subscription CSV and get churn risk, concentration risk, revenue decay, and quality scores in minutes.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",
@@ -277,12 +277,12 @@
     {
       "id": "https://churnlens.site/saas-acquisition-red-flags",
       "url": "https://churnlens.site/saas-acquisition-red-flags",
-      "title": "SaaS Acquisition Red Flags: 12 Warning Signs for Buyers | Churn Lens",
+      "title": "SaaS Acquisition Red Flags: 12 Warning Signs for Buyers | ChurnLens",
       "content_text": "12 specific red flags that signal a SaaS acquisition is overvalued or risky: hidden churn, concentration risk, declining NRR, annual cliffs, zombie accounts, and more.",
       "date_published": "2026-07-06T00:00:00Z",
       "authors": [
         {
-          "name": "Churn Lens"
+          "name": "ChurnLens"
         }
       ],
       "image": "https://churnlens.site/favicon.png",

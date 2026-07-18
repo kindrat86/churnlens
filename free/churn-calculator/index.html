@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free SaaS Churn Cost Calculator | Churn Lens</title>
+<title>Free SaaS Churn Cost Calculator | ChurnLens</title>
 <meta name="description" content="Calculate how much revenue churn is costing your SaaS business. Free tool: annual revenue lost, 12-month MRR projection, LTV impact, and churn decay chart.">
 <meta property="og:title" content="SaaS Churn Cost Calculator — Free">
 <meta property="og:description" content="See exactly how much revenue churn is draining from your SaaS. Free, instant, no signup.">
@@ -170,8 +170,8 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <footer>
-  <a href="https://churnlens.site"><strong>Churn Lens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
-  Powered by <a href="https://churnlens.site">Churn Lens</a>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
 </footer>
 
 <div class="toast" id="toast">Results copied to clipboard!</div>
@@ -298,7 +298,7 @@ function copyResults(){
   for(let i=0;i<12;i++){cumulativeLost+=currentMRR*monthlyChurnRate;currentMRR-=currentMRR*monthlyChurnRate}
   const lifetimeMonths=1/monthlyChurnRate
   
-  const text = `SaaS Churn Cost Analysis (Churn Lens)
+  const text = `SaaS Churn Cost Analysis (ChurnLens)
 ═══════════════════════════════════
 Monthly MRR:         $${mrr.toLocaleString()}
 Monthly Churn:       ${churn}%
@@ -308,7 +308,7 @@ Annual Revenue Lost: $${Math.round(cumulativeLost).toLocaleString()}
 MRR After 12 Months: $${Math.round(currentMRR).toLocaleString()} (down from $${mrr.toLocaleString()})
 Avg Customer Lifetime: ${lifetimeMonths.toFixed(1)} months
 
-Analyzed free at Churn Lens — https://churnlens.site/free/churn-calculator/`
+Analyzed free at ChurnLens — https://churnlens.site/free/churn-calculator/`
   
   navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast')

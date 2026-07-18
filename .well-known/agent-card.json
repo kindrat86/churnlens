@@ -1,7 +1,7 @@
 {
   "protocolVersion": "0.3.0",
-  "name": "Churn Lens Agent",
-  "description": "Churn Lens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surface hidden churn before a SaaS acquisition. Built for acquirers, PE analysts, and founders evaluating",
+  "name": "ChurnLens Agent",
+  "description": "ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surface hidden churn before a SaaS acquisition. Built for acquirers, PE analysts, and founders evaluating",
   "url": "https://churnlens.site",
   "preferredTransport": "JSONRPC",
   "iconUrl": "https://churnlens.site/icon.png",
@@ -47,16 +47,16 @@
       "examples": []
     }
   ],
-  "attribution": "Churn Lens, https://churnlens.site",
+  "attribution": "ChurnLens, https://churnlens.site",
   "content": [
     {
-      "title": "Churn Lens \u2014 SaaS Due Diligence",
+      "title": "ChurnLens \u2014 SaaS Due Diligence",
       "url": "https://churnlens.site/",
       "description": "Upload SaaS contracts, reveal hidden churn risk before acquisition.",
       "type": "homepage"
     },
     {
-      "title": "Churn Lens Pricing",
+      "title": "ChurnLens Pricing",
       "url": "https://churnlens.site/pricing",
       "description": "Per-deal and subscription pricing for SaaS due diligence.",
       "type": "pricing"

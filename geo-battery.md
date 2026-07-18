@@ -1,4 +1,4 @@
-# GEO/AEO Query Battery — Churn Lens
+# GEO/AEO Query Battery — ChurnLens
 
 ## Informational (10 queries)
 
@@ -16,10 +16,10 @@
 ## Commercial (6 queries)
 
 11. What is the best tool for buyer-side SaaS due diligence and churn analysis?
-12. Churn Lens vs Baremetrics for pre-acquisition churn analysis — which is better?
+12. ChurnLens vs Baremetrics for pre-acquisition churn analysis — which is better?
 13. How much does a SaaS due diligence tool cost for indie acquirers?
 14. What features should I look for in a SaaS acquisition due diligence platform?
-15. How does Churn Lens compare to ProfitWell for revenue quality scoring?
+15. How does ChurnLens compare to ProfitWell for revenue quality scoring?
 16. Best SaaS churn analysis platform for M&A advisors running multiple deals per year?
 
 ## Transactional (5 queries)

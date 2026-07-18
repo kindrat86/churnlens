@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Net Revenue Retention (NRR) Calculator | Churn Lens</title>
+<title>Free Net Revenue Retention (NRR) Calculator | ChurnLens</title>
 <meta name="description" content="Calculate your SaaS Net Revenue Retention from starting MRR, expansion, contraction, and churned revenue. Includes benchmark comparison and waterfall breakdown. Free.">
 <meta property="og:title" content="Net Revenue Retention Calculator — Free">
 <meta property="og:description" content="Calculate NRR instantly with benchmark comparison and waterfall breakdown. Free, no signup.">
@@ -184,8 +184,8 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <footer>
-  <a href="https://churnlens.site"><strong>Churn Lens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
-  Powered by <a href="https://churnlens.site">Churn Lens</a>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
 </footer>
 
 <div class="toast" id="toast">Results copied to clipboard!</div>
@@ -302,7 +302,7 @@ function copyResults(){
   const ending=starting+expansion-contraction-churned
   let verdict=nrr>=130?'World-Class':nrr>=110?'Good':nrr>=90?'Average':'Poor'
 
-  const text=`Net Revenue Retention (Churn Lens)
+  const text=`Net Revenue Retention (ChurnLens)
 ═══════════════════════════════════
 Starting MRR:     ${fmt(starting)}/mo
 + Expansion:      ${fmt(expansion)}/mo
@@ -314,7 +314,7 @@ NRR:              ${nrr.toFixed(1)}% (${verdict})
 
 Benchmark: World-Class 130%+ | Good 110-130% | Avg 90-110% | Poor <90%
 
-Analyzed free at Churn Lens — https://churnlens.site/free/nrr-calculator/`
+Analyzed free at ChurnLens — https://churnlens.site/free/nrr-calculator/`
 
   navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast')

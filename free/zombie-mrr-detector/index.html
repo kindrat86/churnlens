@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Zombie MRR Detector | Churn Lens</title>
+<title>Free Zombie MRR Detector | ChurnLens</title>
 <meta name="description" content="Detect zombie subscriptions: accounts still paying but inactive for 90+ days. Paste your data and see total zombie MRR at risk. Free SaaS due diligence tool.">
 <meta property="og:title" content="Zombie MRR Detector — Free">
 <meta property="og:description" content="Paste your subscription data and instantly find zombie accounts draining value. Free, instant, no signup.">
@@ -161,8 +161,8 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <footer>
-  <a href="https://churnlens.site"><strong>Churn Lens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
-  Powered by <a href="https://churnlens.site">Churn Lens</a>
+  <a href="https://churnlens.site"><strong>ChurnLens</strong></a> — SaaS Revenue Quality & Churn Risk Due Diligence<br>
+  Powered by <a href="https://churnlens.site">ChurnLens</a>
 </footer>
 
 <div class="toast" id="toast">Results copied to clipboard!</div>
@@ -276,7 +276,7 @@ function copyResults(){
   let zList=zombies.map(z=>'  • '+z.customer+': '+fmt(z.mrr)+'/mo ('+z.days+'d inactive)').join('\n')
   if(!zList)zList='  (none)'
 
-  const text=`Zombie MRR Detection (Churn Lens)
+  const text=`Zombie MRR Detection (ChurnLens)
 ═══════════════════════════════════
 Total Accounts:   ${records.length}
 Zombie Accounts:  ${zombies.length} (inactive ${threshold}+ days)
@@ -286,7 +286,7 @@ Zombie MRR:       ${fmt(zombieMrr)}/mo (${zombiePct.toFixed(1)}% of total)
 ⚠️  ZOMBIE ACCOUNTS:
 ${zList}
 
-Analyzed free at Churn Lens — https://churnlens.site/free/zombie-mrr-detector/`
+Analyzed free at ChurnLens — https://churnlens.site/free/zombie-mrr-detector/`
 
   navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast')

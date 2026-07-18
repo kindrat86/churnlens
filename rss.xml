@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Churn Lens</title>
+    <title>ChurnLens</title>
     <link>https://churnlens.site</link>
     <description>SaaS Revenue Quality &amp; Churn Risk Due Diligence — analyzes revenue concentration, logo retention, annual plan churn risk, and MRR decline patterns to surface hidden churn before a SaaS acquisition.</description>
     <language>en</language>
@@ -15,175 +15,175 @@
     <atom:link href="https://pubsubhubbub.superfeedr.com/" rel="hub"/>
     <atom:link href="https://websubhub.com/" rel="hub"/>
     <item>
-      <title>Churn Lens — Buyer-Side SaaS Due Diligence | Hidden Churn &amp; Revenue Risk</title>
+      <title>ChurnLens — Buyer-Side SaaS Due Diligence | Hidden Churn &amp; Revenue Risk</title>
       <link>https://churnlens.site</link>
       <guid isPermaLink="true">https://churnlens.site</guid>
       <description>See hidden churn, concentration risk, and revenue decay before you buy a SaaS. Upload CSVs, get a buyer-side risk report in minutes.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>About Churn Lens</title>
+      <title>About ChurnLens</title>
       <link>https://churnlens.site/about</link>
       <guid isPermaLink="true">https://churnlens.site/about</guid>
-      <description>About Churn Lens: SaaS Revenue Quality &amp; Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>About ChurnLens: SaaS Revenue Quality &amp; Churn Risk Due Diligence. Built for SaaS acquirers, PE analysts, founders evaluating SaaS businesses for purchase.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>FAQ — Churn Lens</title>
+      <title>FAQ — ChurnLens</title>
       <link>https://churnlens.site/faq</link>
       <guid isPermaLink="true">https://churnlens.site/faq</guid>
-      <description>Frequently asked questions about Churn Lens.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>Frequently asked questions about ChurnLens.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Pricing — SaaS Due Diligence | Churn Lens</title>
+      <title>Pricing — SaaS Due Diligence | ChurnLens</title>
       <link>https://churnlens.site/pricing</link>
       <guid isPermaLink="true">https://churnlens.site/pricing</guid>
       <description>Upload a subscription CSV and get a comprehensive buyer-side risk report. Free tier available. Premium plans for M&amp;A advisors and serious acquirers.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>Alternatives To — Churn Lens</title>
+      <title>Alternatives To — ChurnLens</title>
       <link>https://churnlens.site/alternatives-to</link>
       <guid isPermaLink="true">https://churnlens.site/alternatives-to</guid>
-      <description>Find the best alternatives compared to Churn Lens.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>Find the best alternatives compared to ChurnLens.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Vs — Churn Lens</title>
+      <title>Vs — ChurnLens</title>
       <link>https://churnlens.site/vs</link>
       <guid isPermaLink="true">https://churnlens.site/vs</guid>
-      <description>Detailed comparisons: Churn Lens vs other tools.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>Detailed comparisons: ChurnLens vs other tools.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Best Of — Churn Lens</title>
+      <title>Best Of — ChurnLens</title>
       <link>https://churnlens.site/best</link>
       <guid isPermaLink="true">https://churnlens.site/best</guid>
       <description>The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Glossary — Churn Lens</title>
+      <title>Glossary — ChurnLens</title>
       <link>https://churnlens.site/glossary</link>
       <guid isPermaLink="true">https://churnlens.site/glossary</guid>
-      <description>Key terms and definitions related to Churn Lens.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>Key terms and definitions related to ChurnLens.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>Why I Built Churn Lens — The $340K Lesson | Churn Lens</title>
+      <title>Why I Built ChurnLens — The $340K Lesson | ChurnLens</title>
       <link>https://churnlens.site/why</link>
       <guid isPermaLink="true">https://churnlens.site/why</guid>
       <description>The founder</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>Who is Churn Lens For? The SaaS Acquirer&#x27;s Dream Customer Profile | Churn Lens</title>
+      <title>Who is ChurnLens For? The SaaS Acquirer&#x27;s Dream Customer Profile | ChurnLens</title>
       <link>https://churnlens.site/who</link>
       <guid isPermaLink="true">https://churnlens.site/who</guid>
-      <description>Churn Lens is built for one specific person: the indie SaaS acquirer evaluating a $500K-$5M deal who knows they can</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>ChurnLens is built for one specific person: the indie SaaS acquirer evaluating a $500K-$5M deal who knows they can</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>The Ultimate SaaS Due Diligence Guide (2026) — Churn Lens</title>
+      <title>The Ultimate SaaS Due Diligence Guide (2026) — ChurnLens</title>
       <link>https://churnlens.site/ultimate-saas-due-diligence-guide</link>
       <guid isPermaLink="true">https://churnlens.site/ultimate-saas-due-diligence-guide</guid>
       <description>The complete buyer-side SaaS due diligence guide. Master churn analysis, concentration risk, revenue quality, and deal-specific evaluation. 17+ resources organized into one comprehensive hub.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>Terms of Service — Churn Lens</title>
+      <title>Terms of Service — ChurnLens</title>
       <link>https://churnlens.site/terms</link>
       <guid isPermaLink="true">https://churnlens.site/terms</guid>
-      <description>Terms of Service for Churn Lens.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <description>Terms of Service for ChurnLens.</description>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Wed, 14 Jan 2026 22:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>SaaS Revenue Quality Score — Beyond Raw MRR | Churn Lens</title>
+      <title>SaaS Revenue Quality Score — Beyond Raw MRR | ChurnLens</title>
       <link>https://churnlens.site/saas-revenue-quality-score</link>
       <guid isPermaLink="true">https://churnlens.site/saas-revenue-quality-score</guid>
       <description>The Revenue Quality Score (RQS): a composite metric that scores SaaS revenue on retention stability, concentration, expansion, payment hygiene, and contract durability.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Revenue Concentration Risk: When Top Customers Hide Churn | Churn Lens</title>
+      <title>SaaS Revenue Concentration Risk: When Top Customers Hide Churn | ChurnLens</title>
       <link>https://churnlens.site/saas-revenue-concentration-risk</link>
       <guid isPermaLink="true">https://churnlens.site/saas-revenue-concentration-risk</guid>
       <description>How revenue concentration masks churn risk in SaaS acquisitions. Learn HHI calculation, the whale customer problem, and how to detect concentration before you buy.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Revenue Churn Calculator — Free Online Tool | Churn Lens</title>
+      <title>SaaS Revenue Churn Calculator — Free Online Tool | ChurnLens</title>
       <link>https://churnlens.site/saas-revenue-churn-calculator</link>
       <guid isPermaLink="true">https://churnlens.site/saas-revenue-churn-calculator</guid>
       <description>Free SaaS revenue churn calculator. Compute monthly churn, annual churn, NRR, logo retention, and churn-adjusted MRR from your subscription data.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection | Churn Lens</title>
+      <title>SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection | ChurnLens</title>
       <link>https://churnlens.site/saas-mrr-decline-analysis</link>
       <guid isPermaLink="true">https://churnlens.site/saas-mrr-decline-analysis</guid>
       <description>How to detect MRR decline and revenue decay in SaaS acquisition targets. Free tool analyzes trailing 12-month MRR trends, contraction rates, and churn-adjusted projections.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Due Diligence Checklist: Buyer-Side Guide (2026) | Churn Lens</title>
+      <title>SaaS Due Diligence Checklist: Buyer-Side Guide (2026) | ChurnLens</title>
       <link>https://churnlens.site/saas-due-diligence-checklist</link>
       <guid isPermaLink="true">https://churnlens.site/saas-due-diligence-checklist</guid>
       <description>Complete buyer-side SaaS due diligence checklist. Cover churn, concentration risk, revenue quality, unit economics, and technical debt before you buy.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Churn Rate Benchmarks by Industry (2026) | Churn Lens</title>
+      <title>SaaS Churn Rate Benchmarks by Industry (2026) | ChurnLens</title>
       <link>https://churnlens.site/saas-churn-rate-benchmarks</link>
       <guid isPermaLink="true">https://churnlens.site/saas-churn-rate-benchmarks</guid>
       <description>Comprehensive SaaS churn rate benchmarks by industry, business model, and company stage. See how your target acquisition stacks up against industry medians.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Buyer-Side Risk Assessment — Free Tool | Churn Lens</title>
+      <title>SaaS Buyer-Side Risk Assessment — Free Tool | ChurnLens</title>
       <link>https://churnlens.site/saas-buyer-risk-assessment</link>
       <guid isPermaLink="true">https://churnlens.site/saas-buyer-risk-assessment</guid>
       <description>Free buyer-side risk assessment for SaaS acquisitions. Upload a subscription CSV and get churn risk, concentration risk, revenue decay, and quality scores in minutes.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>
     <item>
-      <title>SaaS Acquisition Red Flags: 12 Warning Signs for Buyers | Churn Lens</title>
+      <title>SaaS Acquisition Red Flags: 12 Warning Signs for Buyers | ChurnLens</title>
       <link>https://churnlens.site/saas-acquisition-red-flags</link>
       <guid isPermaLink="true">https://churnlens.site/saas-acquisition-red-flags</guid>
       <description>12 specific red flags that signal a SaaS acquisition is overvalued or risky: hidden churn, concentration risk, declining NRR, annual cliffs, zombie accounts, and more.</description>
-      <dc:creator>Churn Lens</dc:creator>
+      <dc:creator>ChurnLens</dc:creator>
       <pubDate>Sun, 05 Jul 2026 21:00:00 GMT</pubDate>
       <media:content url="https://churnlens.site/favicon.png" medium="image"/>
     </item>

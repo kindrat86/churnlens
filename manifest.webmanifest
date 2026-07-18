@@ -1,6 +1,6 @@
 {
-  "name": "Churn Lens",
-  "short_name": "Churn Lens",
+  "name": "ChurnLens",
+  "short_name": "ChurnLens",
   "description": "SaaS revenue quality scoring and due diligence tool.",
   "start_url": "/",
   "display": "standalone",
