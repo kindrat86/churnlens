@@ -32,3 +32,7 @@ Allow: /
 Sitemap: https://churnlens.site/sitemap.xml
 
 Sitemap: https://churnlens.site/sitemap-index.xml
+
+# AI crawler signals
+LLMs.txt: https://churnlens.site/llms.txt
+ai.txt: https://churnlens.site/ai.txt
