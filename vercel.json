@@ -266,6 +266,10 @@
       "destination": "/get-the-checklist.html"
     },
     {
+      "source": "/striking-distance",
+      "destination": "/striking-distance.html"
+    },
+    {
       "source": "/5-risk-buyer-side-method",
       "destination": "/5-risk-buyer-side-method.html"
     },
