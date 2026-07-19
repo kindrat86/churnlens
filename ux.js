@@ -1,5 +1,5 @@
 /**
- * ux.js — World-Class Interactive UX Enhancements (R16)
+ * ux.js — World-Class Interactive UX Enhancements (R17)
  * Zero dependencies. Progressive enhancement.
  * Features: reading progress bar, back-to-top, lazy image loading,
  * accordions, smooth scroll, exit-intent detection, mobile bottom nav,
@@ -8,6 +8,20 @@
  */
 (function() {
   'use strict';
+
+  // Defensive Trusted Types policy: the site CSP enforces
+  // require-trusted-types-for 'script' with no policy registered, which
+  // throws on every innerHTML write this file does (toast, back-to-top).
+  // Guarded so it's a no-op if a page-level policy already exists.
+  if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {
+    try {
+      window.trustedTypes.createPolicy('default', {
+        createHTML: function (s) { return s; },
+        createScript: function (s) { return s; },
+        createScriptURL: function (s) { return s; },
+      });
+    } catch (e) { /* another script already registered a default policy */ }
+  }
 
   var REDUCED_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
