@@ -296,6 +296,10 @@
       "destination": "/get-the-checklist.html"
     },
     {
+      "source": "/masterclass",
+      "destination": "/masterclass.html"
+    },
+    {
       "source": "/striking-distance",
       "destination": "/striking-distance.html"
     },
@@ -437,7 +441,15 @@
     },
     {
       "source": "/guides/:slug",
-      "destination": "/guides/:slug/index.html"
+      "destination": "/guides/:slug.html"
+    },
+    {
+      "source": "/checklists/:slug",
+      "destination": "/checklists/:slug.html"
+    },
+    {
+      "source": "/industries/:slug",
+      "destination": "/industries/:slug.html"
     },
     {
       "source": "/scenarios/:slug",
