@@ -1,73 +1,85 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
-<title>ChurnLens Alternatives — SaaS Churn & Revenue-Quality Tools Compared | ChurnLens</title>
-<meta name="description" content="ChurnLens alternatives to hub: 2 buyer-side SaaS due-diligence resources covering churn reconstruction, revenue quality, and acquisition risk verification.">
-<link rel="canonical" href="https://churnlens.site/alternatives-to">
-<meta name="robots" content="index,follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChurnLens Alternatives — SaaS Churn & Revenue-Quality Tools Compared | ChurnLens">
-<meta property="og:description" content="ChurnLens alternatives to hub: 2 buyer-side SaaS due-diligence resources covering churn reconstruction, revenue quality, and acquisition risk verification.">
-<meta property="og:image" content="https://churnlens.site/og.png">
-<meta property="og:url" content="https://churnlens.site/alternatives-to">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ChurnLens", "item": "https://churnlens.site/"}, {"@type": "ListItem", "position": 2, "name": "Alternatives-To", "item": "https://churnlens.site/alternatives-to"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use ChurnLens alongside ChartMogul or Baremetrics?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and most acquirers do. ChartMogul and Baremetrics are excellent for ongoing MRR dashboards once you own the business. ChurnLens is the pre-close layer: it runs against the seller's data-room export to verify whether the churn numbers those dashboards would show are actually accurate. The two tools answer different questions at different stages of the deal lifecycle."}}, {"@type": "Question", "name": "Why doesn't ChurnLens require a live billing integration?", "acceptedAnswer": {"@type": "Answer", "text": "Because a buyer usually cannot get one. During exclusivity you rarely receive full Stripe or billing-system access, and even when you do, a live integration gives the seller a reason to delay. ChurnLens works from a CSV or Excel export of the revenue ledger — monthly MRR by customer, plan type, contract start, contract end — which is a standard data-room request. This is also why ChurnLens can run in minutes rather than the weeks a billing integration takes."}}, {"@type": "Question", "name": "What does ChurnLens find that an operator churn tool misses?", "acceptedAnswer": {"@type": "Answer", "text": "The four highest-impact patterns are: (1) zombie MRR — paid accounts with no product usage, statistically likely to churn at next renewal; (2) annual-plan concentration — revenue concentrated in annual contracts that roll off on the same date, creating a renewal cliff the seller's monthly churn number hides; (3) revenue concentration in the top-5 logos, where a single non-renewal can move the headline number by double digits; and (4) the gap between reported net revenue retention and the trajectory implied by cohort decay. Operator tools report the first number; ChurnLens reconciles it against the underlying ledger."}}]}</script>
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#1a1a2e;max-width:820px;margin:0 auto;padding:20px}
-h1{font-size:2rem;margin:16px 0 8px;line-height:1.3}
-h2{font-size:1.4rem;margin:32px 0 12px}
-p{margin-bottom:16px;color:#333}
-.lead{font-size:1.1rem;color:#555;margin-bottom:24px}
-nav{padding:12px 0;border-bottom:2px solid #f0f0f0;margin-bottom:24px}
-nav a{margin-right:16px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
-footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#888;font-size:.85rem}
-details summary{list-style:none}
-details summary::-webkit-details-marker{display:none}
-details[open]{background:#fff}
-</style>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alternatives — ChurnLens vs Other Tools | ChurnLens</title>
 <link rel="stylesheet" href="/ux.css">
+<meta name="description" content="Explore ChurnLens alternatives to popular SaaS analytics and churn tools.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://churnlens.site/alternatives-to">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/alternatives-to">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/alternatives-to">
+<meta property="og:title" content="Alternatives — ChurnLens vs Other Tools | ChurnLens">
+<meta property="og:description" content="Explore ChurnLens alternatives to popular SaaS analytics and churn tools.">
+<meta property="og:url" content="https://churnlens.site/alternatives-to">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:#1a1a1a;max-width:760px;margin:0 auto;padding:20px}
+h1{font-size:2rem;margin-bottom:8px}
+h2{font-size:1.4rem;margin-top:32px;margin-bottom:12px}
+p{margin-bottom:16px}
+ul{margin-bottom:16px;padding-left:20px}
+li{margin-bottom:6px}
+details{border:1px solid #e0e0e0;border-radius:8px;padding:12px;margin-bottom:8px}
+summary{cursor:pointer;font-size:1.05rem}
+details[open] summary{margin-bottom:8px}
+nav{margin:20px 0;padding:12px 0;border-bottom:1px solid #eee}
+nav a{margin-right:16px;text-decoration:none;color:#0066cc}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;font-size:0.85rem}
+.tldr{background:#f0f7ff;border-left:4px solid #0066cc;padding:12px 16px;margin:16px 0;border-radius:4px}
+.cta{background:linear-gradient(135deg,#f0f9ff,#e8f5e9);border-radius:12px;padding:24px;margin:32px 0;text-align:center;border:2px solid #0066cc30}
+.cta a{display:inline-block;background:#0066cc;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+td,th{padding:10px;border:1px solid #ddd;text-align:left}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://churnlens.site/#org",
+      "name": "ChurnLens",
+      "url": "https://churnlens.site",
+      "description": "SaaS Revenue Quality & Churn Risk Due Diligence. Analyze concentration, retention, and churn before acquisition.",
+      "sameAs": ["https://github.com/kindrat86"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://churnlens.site/#website",
+      "url": "https://churnlens.site",
+      "name": "ChurnLens",
+      "publisher": {"@id": "https://churnlens.site/#org"}
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": ["Home", "FAQ", "About"],
+      "url": ["https://churnlens.site/", "https://churnlens.site/faq", "https://churnlens.site/about"]
+    }
+  ]
+}
+</script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform)."}</script>
 <script src="/ux.js" defer></script>
-</head><body>
-<nav><a href="https://churnlens.site/" style="font-weight:700;color:#1a1a2e">ChurnLens</a> <a href="https://churnlens.site/best">Best</a> <a href="https://churnlens.site/how-to">How To</a> <a href="https://churnlens.site/learn">Learn</a> <a href="https://churnlens.site/alternatives-to">Alternatives</a> <a href="https://churnlens.site/use-cases">Use Cases</a></nav>
-
-<h1>ChurnLens Alternatives — SaaS Churn & Revenue-Quality Tools Compared</h1>
-<p class="lead">ChurnLens is a buyer-side SaaS due-diligence tool: it ingests a target company's revenue ledger and surfaces the hidden churn, revenue concentration, and revenue-quality problems that sellers rarely volunteer. This page compares ChurnLens head-to-head against the analytics and subscription-metrics tools a SaaS acquirer is most likely to encounter during diligence. Most of these tools were built for operators running their own subscription business — not for buyers stress-testing someone else's revenue before a purchase. The differences matter: a tool that excels at showing a CFO this month's MRR dashboard is not the same as a tool that flags 38% of reported MRR sitting in annual plans that renew into known churn events.</p>
-
-<h2>Why a 'churn tool' is not the same as a due-diligence tool</h2>
-<p>Operator-facing churn tools (ChartMogul, Baremetrics, ProfitWell, Maxio) answer the question 'how is my business doing this month?'. They assume clean, first-party data and a live billing integration. A buyer doing diligence has neither: you have a partial CSV export, a 30-day exclusivity window, and a seller whose churn number is, in our experience, understated by an average of 4.2×. ChurnLens is built for that asymmetry. It does not need a live integration, it works from whatever revenue ledger the data room provides, and it specifically isolates the decay signals — inactive paid accounts, declining seat counts, annual plans rolling off, support-ticket volume dropping before logo churn hits — that precede a headline-churn spike by two to four quarters. If you are acquiring a SaaS business, the operator tool tells you what the seller wants you to hear; ChurnLens tells you what the revenue is actually worth.</p>
-
-<h2>Alternatives-To — browse the 2 resources</h2>
-<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:22px;margin-bottom:14px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/alternatives-to/chartmogul" style="color:#667eea;text-decoration:none;font-size:1.1rem">ChurnLens vs ChartMogul</a></h3><p style="margin:6px 0 0;color:#555;font-size:.92rem">Best for buyers who already use ChartMogul for post-close MRR tracking and need a pre-close verification layer.</p></div>
-<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:22px;margin-bottom:14px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/alternatives-to/baremetrics" style="color:#667eea;text-decoration:none;font-size:1.1rem">ChurnLens vs Baremetrics</a></h3><p style="margin:6px 0 0;color:#555;font-size:.92rem">Best for buyers evaluating a Stripe-native SaaS where the seller has offered a Baremetrics dashboard as 'proof' of churn numbers.</p></div>
-
-<h2>Frequently asked questions</h2>
-<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">Can I use ChurnLens alongside ChartMogul or Baremetrics?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">Yes, and most acquirers do. ChartMogul and Baremetrics are excellent for ongoing MRR dashboards once you own the business. ChurnLens is the pre-close layer: it runs against the seller's data-room export to verify whether the churn numbers those dashboards would show are actually accurate. The two tools answer different questions at different stages of the deal lifecycle.</p></details>
-<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">Why doesn't ChurnLens require a live billing integration?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">Because a buyer usually cannot get one. During exclusivity you rarely receive full Stripe or billing-system access, and even when you do, a live integration gives the seller a reason to delay. ChurnLens works from a CSV or Excel export of the revenue ledger — monthly MRR by customer, plan type, contract start, contract end — which is a standard data-room request. This is also why ChurnLens can run in minutes rather than the weeks a billing integration takes.</p></details>
-<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">What does ChurnLens find that an operator churn tool misses?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">The four highest-impact patterns are: (1) zombie MRR — paid accounts with no product usage, statistically likely to churn at next renewal; (2) annual-plan concentration — revenue concentrated in annual contracts that roll off on the same date, creating a renewal cliff the seller's monthly churn number hides; (3) revenue concentration in the top-5 logos, where a single non-renewal can move the headline number by double digits; and (4) the gap between reported net revenue retention and the trajectory implied by cohort decay. Operator tools report the first number; ChurnLens reconciles it against the underlying ledger.</p></details>
-
-<div style="margin-top:48px;padding:16px;background:#f8f9fa;border-radius:8px;font-size:.85rem;color:#666">
-<p style="margin:0"><strong>ChurnLens</strong> — buyer-side SaaS revenue-quality and churn-risk due diligence. <a href="https://churnlens.site/" style="color:#667eea">Learn more →</a></p>
-</div>
-<footer>© 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/sitemap.xml">Sitemap</a></footer>
-
-
-<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
-<section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
-  <div style="max-width:900px;margin:0 auto">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">80%</span><br><span style="font-size:.82rem;color:#94a3b8">Overpay for Churn</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">4.2×</span><br><span style="font-size:.82rem;color:#94a3b8">Real vs Reported</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$340K</span><br><span style="font-size:.82rem;color:#94a3b8">Avg Overpayment</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
-    </div>
-    <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.</p>
-    <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
-    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
-  </div>
-</section>
-<!-- /BRUNSON TRUST BAR -->
-
-</body></html>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type": "ListItem", "position": 1, "name": "ChurnLens", "item": "https://churnlens.site"},{"@type": "ListItem", "position": 2, "name": "Alternatives", "item": "https://churnlens.site/alternatives-to"}]}</script>
+</head>
+<body>
+<nav><a href="https://churnlens.site/">ChurnLens</a><a href="https://churnlens.site/about">About</a><a href="https://churnlens.site/blog">Blog</a><a href="https://churnlens.site/faq">FAQ</a></nav>
+<h1>Alternatives</h1><ul>
+<li><a href="https://churnlens.site/alternatives-to/baremetrics">Baremetrics Alternative</a> — SaaS analytics dashboard</li>
+<li><a href="https://churnlens.site/alternatives-to/chartmogul">ChartMogul Alternative</a> — subscription analytics</li>
+<li><a href="https://churnlens.site/alternatives-to/profitwell">ProfitWell Alternative</a> — free SaaS metrics</li>
+<li><a href="https://churnlens.site/alternatives-to/churnzero">ChurnZero Alternative</a> — churn reduction platform</li>
+</ul><div class="cta">
+<h2>Ready to stress-test a SaaS acquisition?</h2>
+<p>Analyze revenue concentration, logo retention, and hidden churn before you buy. Free SaaS due-diligence tool.</p>
+<a href="https://churnlens.site/">Try ChurnLens Free →</a>
+</div><footer>
+<p><strong>ChurnLens</strong> — SaaS Revenue Quality & Churn Risk Due Diligence</p>
+<p>© 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/privacy">Privacy</a> · <a href="https://churnlens.site/terms">Terms</a></p>
+</footer>
+</body>
+</html>
