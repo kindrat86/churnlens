@@ -1,0 +1,24 @@
+# GitGuardian configuration for churnlens
+# https://docs.gitguardian.com/ggshield-docs/configuration
+version: 2
+
+exit_zero: false
+verbose: false
+instance: https://dashboard.gitguardian.com
+max_commits_for_hook: 50
+allow_self_signed: false
+
+secret:
+  # PostHog Project API Keys (phc_) are client-side tokens embedded in every
+  # HTML page by design — they can only capture new events, never read data.
+  # https://posthog.com/questions/is-it-ok-to-expose-the-posthog-project-api-key-to-the-public
+  #
+  # Disable the detector repo-wide so rotations don't re-trigger alerts.
+  ignored_detectors:
+    - PostHog Project API Key
+
+  # Backup: also ignore the specific key by value, in case the detector
+  # name string above differs slightly from the dashboard's label.
+  ignored_matches:
+    - name: PostHog Project API Key (client-side, public by design)
+      match: phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX
