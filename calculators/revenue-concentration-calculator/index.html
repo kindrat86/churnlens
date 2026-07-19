@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Revenue concentration calculator | ChurnLens free tool</title>
-<meta name="description" content="Free revenue concentration calculator. Input top-customer MRR percentages to compute HHI and a concentration risk score. Flags above 20% and 35% thresholds">
+<title>Revenue Concentration Calculator — Free Tool | ChurnLens</title>
+<meta name="description" content="Free interactive revenue concentration calculator. Input top-3 customer MRR and total MRR to compute concentration percentage and Revenue HHI. Flags risky concentration above 30%. No signup required.">
 <link rel="canonical" href="https://churnlens.site/calculators/revenue-concentration-calculator">
-    <link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/revenue-concentration-calculator" />
-    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/revenue-concentration-calculator" />
-    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/revenue-concentration-calculator" />
-<meta property="og:title" content="Revenue concentration calculator | ChurnLens free tool">
-<meta property="og:description" content="Free revenue concentration calculator. Input top-customer MRR percentages to compute HHI and a concentration risk score. Flags above 20% and 35% thresholds">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/calculators/revenue-concentration-calculator">
+<link rel="alternate" hreflang="en-US" href="https://churnlens.site/calculators/revenue-concentration-calculator">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/calculators/revenue-concentration-calculator">
+<meta property="og:title" content="Revenue Concentration Calculator — Free Tool | ChurnLens">
+<meta property="og:description" content="Free interactive revenue concentration calculator. Input top-3 customer MRR and total MRR to compute concentration percentage and Revenue HHI. Flags risky concentration above 30%.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://churnlens.site/calculators/revenue-concentration-calculator">
 <meta property="og:image" content="https://churnlens.site/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Revenue concentration calculator | ChurnLens free tool","description":"Free revenue concentration calculator. Input top-customer MRR percentages to compute HHI and a concentration risk score. Flags above 20% and 35% thresholds","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://churnlens.site/calculators/revenue-concentration-calculator"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"ChurnLens","item":"https://churnlens.site/calculators/revenue-concentration-calculator"}]}</script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ChurnLens Revenue Concentration Calculator","url":"https://churnlens.site/calculators/revenue-concentration-calculator","description":"Free interactive revenue concentration calculator. Input top-3 customer MRR and total MRR to compute concentration percentage and Revenue HHI. Flags risky concentration above 30% (SaaS Capital 2025 benchmark).","applicationCategory":"BusinessApplication","operatingSystem":"Web","author":{"@type":"Organization","name":"ChurnLens","url":"https://churnlens.site"},"publisher":{"@id":"https://churnlens.site/#organization"},"datePublished":"2026-07-18","dateModified":"2026-07-18"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://churnlens.site/calculators"},{"@type":"ListItem","position":3,"name":"Revenue Concentration Calculator","item":"https://churnlens.site/calculators/revenue-concentration-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is revenue concentration in SaaS?","acceptedAnswer":{"@type":"Answer","text":"Revenue concentration measures how much of a SaaS business's total revenue comes from its largest customers. High concentration means the business depends heavily on a small number of accounts — if any one of them churns, revenue takes a disproportionate hit. SaaS Capital research (2025) identifies concentration above 30% as elevated risk and above 50% as critically risky for acquirers."}},{"@type":"Question","name":"How is the Revenue HHI (Herfindahl-Hirschman Index) calculated?","acceptedAnswer":{"@type":"Answer","text":"The Herfindahl-Hirschman Index (HHI) is calculated by squaring each customer's revenue share and summing the squares. For example, if three customers each contribute 10% of revenue, HHI = 10² + 10² + 10² = 300. An HHI below 1,000 is considered safe; above 2,500 indicates high concentration risk. This calculator computes HHI from your top-3 customer MRR inputs as a proxy — the full ChurnLens product computes it from the complete customer roster."}},{"@type":"Question","name":"What are safe revenue concentration levels for a SaaS acquisition?","acceptedAnswer":{"@type":"Answer","text":"Below 30% top-3 concentration is considered safe (SaaS Capital 2025). Between 30–50% is elevated and warrants deeper review. Above 50% means a single lost customer could destroy a quarter of revenue — many acquirers will discount the valuation or walk away entirely at these levels. Use the full <a href='/concentration-vulnerability-index'>Concentration Vulnerability Index</a> in ChurnLens for a rigorous buyer-side scoring framework."}}]}</script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:#0a0a0a;max-width:760px;margin:0 auto;padding:2rem 1.25rem}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0}
@@ -26,72 +26,142 @@ h2{font-size:1.45rem;margin-top:2rem;border-bottom:2px solid #e5e7eb;padding-bot
 h3{font-size:1.15rem;margin-top:1.5rem}
 a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
 .lede{font-size:1.1rem;color:#374151;margin-bottom:1.5rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
-th,td{border:1px solid #e5e7eb;padding:.6rem .75rem;text-align:left}
-th{background:#f9fafb;font-weight:600}
-.callout{background:#f0f7ff;border-left:4px solid #0066cc;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
-.callout.warn{background:#fef3c7;border-left-color:#d97706}
-.callout.good{background:#ecfdf5;border-left-color:#059669}
-.verdict{background:#0a0a0a;color:#fff;padding:1.25rem 1.5rem;border-radius:.5rem;margin:1.5rem 0}
-.verdict h3{margin-top:0;color:#fff}
-.cta{background:#0066cc;color:#fff;padding:1rem 1.5rem;border-radius:.5rem;text-align:center;margin:2rem 0}
+.calculator{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;margin:1.5rem 0}
+.calculator label{display:block;font-weight:600;margin:0.75rem 0 0.25rem;font-size:0.9rem;color:#374151}
+.calculator input{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;box-sizing:border-box}
+.calculator input:focus{outline:none;border-color:#0066cc;box-shadow:0 0 0 3px rgba(0,102,204,0.15)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.calc-btn{display:block;width:100%;margin-top:1rem;padding:12px;background:#0066cc;color:white;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer}
+.calc-btn:hover{background:#004499}
+.results{display:none;background:white;border:2px solid #0066cc;border-radius:12px;padding:1.5rem;margin-top:1rem}
+.result-big{font-size:2rem;font-weight:800;color:#0066cc}
+.result-label{color:#6b7280;font-size:0.85rem;margin-bottom:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.result-item{background:#f0f7ff;border-radius:8px;padding:0.75rem 1rem}
+.benchmark-compare{background:#fef3c7;border-left:4px solid #d97706;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0}
+.cta{background:#0066cc;color:#fff;padding:1.5rem;border-radius:.75rem;text-align:center;margin:2rem 0}
 .cta a{color:#fff;font-weight:600;font-size:1.1rem}
-.related-links{background:#f9fafb;padding:1rem 1.25rem;border-radius:.5rem;margin-top:2.5rem}
-.related-links ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem}
+.embed-block{background:#f9fafb;border:1px solid #e5e7eb;border-radius:.5rem;padding:1rem;margin:1.5rem 0}
+.embed-block textarea{width:100%;height:60px;font-family:monospace;font-size:0.8rem;border:1px solid #d1d5db;border-radius:6px;padding:0.5rem;resize:vertical}
+.disambig{background:#f0f7ff;border-left:4px solid #0066cc;padding:.75rem 1rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0;font-size:.9rem;color:#1e40af}
 footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e7eb;color:#6b7280;font-size:.9rem}
-ul.check{list-style:none;padding-left:0}ul.check li::before{content:"✓  ";color:#059669;font-weight:700}
-ul.cross{list-style:none;padding-left:0}ul.cross li::before{content:"✗  ";color:#dc2626;font-weight:700}
 </style>
+<script>
+function calculateConcentration() {
+    var top3Mrr = parseFloat(document.getElementById('top3-mrr').value) || 0;
+    var totalMrr = parseFloat(document.getElementById('total-mrr').value) || 0;
+
+    if (totalMrr <= 0) { alert('Please enter a valid Total MRR (must be greater than $0).'); return; }
+    if (top3Mrr > totalMrr) { alert('Top-3 customer MRR cannot exceed Total MRR.'); return; }
+
+    var concentrationPct = (top3Mrr / totalMrr) * 100;
+
+    // Revenue HHI proxy: assume equal distribution among top 3, giving a lower bound.
+    // HHI = sum of squared percentage shares. With top-3 share = C and assuming equal split:
+    // each of top 3 has share C/3, so HHI contribution from top 3 = 3 * (C/3)^2 = C^2 / 3
+    // This is framed as "Revenue HHI proxy (lower bound)" since actual HHI with unequal distribution would be higher.
+    var hhiProxy = Math.round((concentrationPct * concentrationPct) / 3);
+    var hhiMax = Math.round(concentrationPct * concentrationPct); // if one customer dominates
+
+    // Other customers: remaining share distributed evenly (upper bound estimate)
+    // For a lower bound, assume remaining 100-C% is spread across many tiny accounts, HHI contribution ≈ 0
+    // For a fuller estimate: 100-C accounts each with (100-C)/97 share is negligible
+
+    document.getElementById('res-concentration').textContent = concentrationPct.toFixed(1) + '%';
+    document.getElementById('res-hhi').textContent = '~' + hhiProxy.toLocaleString();
+    document.getElementById('res-top3-mrr').textContent = '$' + top3Mrr.toLocaleString(undefined, {maximumFractionDigits:0});
+    document.getElementById('res-remaining').textContent = '$' + (totalMrr - top3Mrr).toLocaleString(undefined, {maximumFractionDigits:0});
+
+    // Benchmark comparison: below 30% safe, above 50% risky (SaaS Capital 2025)
+    var compareMsg = '';
+    if (concentrationPct >= 50) {
+        compareMsg = 'Your top-3 concentration of <strong>' + concentrationPct.toFixed(1) + '%</strong> is critically high. At this level, losing a single top-3 customer could erase a large fraction of revenue overnight — many acquirers either heavily discount the valuation or walk away. Run the full <a href="/concentration-vulnerability-index">Concentration Vulnerability Index</a> for a detailed risk breakdown.';
+    } else if (concentrationPct >= 30) {
+        compareMsg = 'Your top-3 concentration of <strong>' + concentrationPct.toFixed(1) + '%</strong> is elevated — above the 30% safety threshold identified by SaaS Capital (2025). This warrants deeper due diligence. Use <a href="/concentration-vulnerability-index">Concentration Vulnerability Index</a> to assess whether the concentration is improving or worsening over time.';
+    } else {
+        compareMsg = 'Your top-3 concentration of <strong>' + concentrationPct.toFixed(1) + '%</strong> is within the safe zone (below 30%). Revenue is distributed across a healthy customer base. Still, verify that no single customer exceeds 10% — a granular look at the <a href="/concentration-vulnerability-index">Concentration Vulnerability Index</a> can surface hidden single-customer risks.';
+    }
+    document.getElementById('benchmark-msg').innerHTML = compareMsg;
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+</script>
 <!-- isenberg-round15 -->
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.","disambiguatingDescription":"ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 <link rel="stylesheet" href="/ux.css">
     <script src="/ux.js" defer></script>
   </head>
 <body>
 <article>
+
 <header>
-<p class="lede">ChurnLens free tool</p>
-<h1>Revenue concentration calculator</h1>
-<p class="lede">Free revenue concentration calculator. Input top-customer MRR percentages to compute HHI and a concentration risk score. Flags above 20% and 35% thresholds.</p>
+<p class="lede" style="margin-bottom:0.25rem">ChurnLens free tool</p>
+<h1>Revenue Concentration Calculator</h1>
+<p class="lede">Calculate your top-3 customer concentration and Revenue HHI. Benchmark against SaaS industry thresholds. Free, no signup.</p>
 </header>
 
-<h2>What this calculator does</h2>
-<p>Free revenue concentration calculator. Input top-customer MRR percentages to compute HHI and a concentration risk score. Flags above 20% and 35% thresholds. This free calculator is part of the ChurnLens tools suite. No signup, no email required.</p>
+<div class="disambig"><strong>About ChurnLens:</strong> ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&amp;A analysts, and founders selling. Independent of churnlens.io (retention automation) and churnlens.tech (churn prediction).</div>
 
-<h2>How to use</h2>
+<div class="calculator">
+<h2 style="margin-top:0;border:none;font-size:1.2rem">Enter your numbers</h2>
+<div class="calc-row">
+<div><label for="top3-mrr">Top-3 Customer MRR ($)</label><input type="number" id="top3-mrr" placeholder="e.g. 30000" min="0" step="1000"></div>
+<div><label for="total-mrr">Total MRR ($)</label><input type="number" id="total-mrr" placeholder="e.g. 100000" min="0" step="1000"></div>
+</div>
+<button class="calc-btn" onclick="calculateConcentration()">Calculate Concentration →</button>
+</div>
+
+<div id="results" class="results">
+<h3 style="margin:0 0 0.5rem;color:#0066cc">Your Results</h3>
+<div class="result-grid">
+<div class="result-item">
+<div class="result-label">Top-3 Concentration</div>
+<div class="result-big" id="res-concentration">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Revenue HHI (proxy)</div>
+<div class="result-big" id="res-hhi" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Top-3 MRR</div>
+<div class="result-big" id="res-top3-mrr" style="font-size:1.5rem">—</div>
+</div>
+<div class="result-item">
+<div class="result-label">Revenue From All Other Customers</div>
+<div class="result-big" id="res-remaining" style="font-size:1.3rem">—</div>
+</div>
+</div>
+<div class="benchmark-compare" id="benchmark-msg"></div>
+</div>
+
+<h2>How to use this calculator</h2>
 <ol>
-<li>Enter your inputs below</li>
-<li>Click Calculate</li>
-<li>Compare your result to the benchmark</li>
-<li>Export or share the result</li>
+<li><strong>Enter Top-3 Customer MRR</strong> — the combined monthly recurring revenue from your three largest customers.</li>
+<li><strong>Enter Total MRR</strong> — the total monthly recurring revenue across all customers.</li>
+<li><strong>Click Calculate</strong> — see your concentration percentage, Revenue HHI proxy, and how your risk level compares to SaaS benchmarks.</li>
 </ol>
 
-<h2>Why this matters</h2>
-<p>churn due diligence tool users need to quantify risk before acting. A calculator turns intuition into a number, and a number drives action.</p>
+<h2>Why revenue concentration matters in SaaS acquisitions</h2>
+<p>Revenue concentration is one of the fastest deal-killers in SaaS M&A. A business generating $5M ARR sounds healthy — but if 60% of that comes from three customers, the business is a single support-ticket-gone-wrong away from losing a third of its revenue. SaaS Capital research (2025) identifies concentration above 30% as elevated risk; above 50%, many acquirers discount the valuation by 30–50% or walk away entirely.</p>
+<p>The <a href="/concentration-vulnerability-index">Concentration Vulnerability Index</a> in ChurnLens goes deeper than this calculator: it tracks concentration trends over time, identifies whether the top-3 share is rising or falling, and cross-references against logo retention to surface the real story behind the numbers.</p>
 
-<h2>Benchmarks</h2>
-<p>ChurnLens benchmarks are sourced from anonymized customer data and public research. See the methodology page for details.</p>
+<h2>Concentration benchmarks: what's safe?</h2>
+<p><strong>Below 30% top-3 concentration:</strong> Safe zone. Revenue is distributed across a healthy, diversified customer base (SaaS Capital 2025).</p>
+<p><strong>30–50% top-3 concentration:</strong> Elevated risk. Warrants deeper review — check whether the dependency is growing or shrinking quarter-over-quarter.</p>
+<p><strong>Above 50% top-3 concentration:</strong> Critical risk. The business is dangerously dependent on a handful of accounts. Many experienced acquirers will either discount the valuation or pass entirely.</p>
 
-<h2>Frequently asked questions</h2>
-<h3>Is this calculator free?</h3>
-<p>Yes. ChurnLens publishes this calculator as a free tool, no signup required.</p>
-<h3>How accurate is it?</h3>
-<p>The calculator uses industry-standard formulas. For churn due diligence tool-specific analysis, the full ChurnLens product provides deeper insight.</p>
+<div class="embed-block">
+<h3 style="margin-top:0;font-size:1rem">📎 Embed this calculator</h3>
+<p style="font-size:0.85rem;color:#6b7280">Add this concentration calculator to your blog, newsletter, or due-diligence checklist. Free to embed.</p>
+<textarea readonly onclick="this.select()">&lt;iframe src="https://churnlens.site/calculators/revenue-concentration-calculator" width="100%" height="700" frameborder="0" style="border:1px solid #e5e7eb;border-radius:8px" title="ChurnLens Revenue Concentration Calculator"&gt;&lt;/iframe&gt;</textarea>
+</div>
 
-<div class="cta"><a href="https://churnlens.site/">Try the full ChurnLens &rarr;</a></div>
+<div class="cta"><a href="/">Run a full due-diligence analysis on a SaaS target →</a></div>
 
-<section class="related-links"><h3>Related pages</h3><ul><li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/calculators/nrr-calculator">Net revenue retention calculator</a></li><li><a href="/calculators/zombie-mrr-detector">Zombie MRR detector</a></li></ul></section>
-
-
-<!-- mesh-round19 -->
-<section class="mesh-links" style="background:#f9fafb;padding:1.25rem;border-radius:.5rem;margin-top:2rem">
-<h3 style="margin-top:0">Related resources</h3>
-<ul style="list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;font-size:.95rem">
-<li><a href="/calculators/zombie-mrr-detector">Zombie MRR detector</a></li><li><a href="/calculators/churn-cost-calculator">SaaS churn cost calculator</a></li><li><a href="/calculators/nrr-calculator">Net revenue retention calculator</a></li><li><a href="/vs/paddle">ChurnLens vs Paddle — ChurnLens</a></li><li><a href="/benchmarks/saas-net-revenue-retention">SaaS Net Revenue Retention Benchmark 2026 — 101–102% median; 110%+ best-in-class</a></li><li><a href="/vs/stripe-sigma">ChurnLens vs Stripe Sigma: Which Is Better in 2026?</a></li>
-</ul>
-</section></article>
+</article>
 <footer>
-<p><strong>ChurnLens</strong> &middot; <a href="https://churnlens.site/">Home</a> &middot; <a href="https://churnlens.site/about">About</a></p>
+<p><strong>ChurnLens</strong> · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/benchmarks">Benchmarks</a> · <a href="/5-risk-buyer-side-method">5-Risk Method</a></p>
 </footer>
 
 <!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->

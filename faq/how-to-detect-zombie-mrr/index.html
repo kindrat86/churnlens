@@ -44,6 +44,7 @@ ul.cross{list-style:none;padding-left:0}ul.cross li::before{content:"✗  ";colo
 </style>
 <!-- isenberg-round15 -->
 <!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I detect zombie MRR?","acceptedAnswer":{"@type":"Answer","text":"Zombie MRR is recurring revenue from customers who have stopped actively using your product. Signs include declining login frequency, falling API calls, reduced seat count, and support tickets going quiet. ChurnLens's zombie detector surfaces these by analyzing usage patterns in the target's billing and product data."}},{"@type":"Question","name":"How does ChurnLens help with this?","acceptedAnswer":{"@type":"Answer","text":"ChurnLens provides built-in tools to analyze this as part of its buyer-side SaaS due diligence workflow \u2014 upload a CSV and get a risk report in minutes."}},{"@type":"Question","name":"Is there a cost to use ChurnLens?","acceptedAnswer":{"@type":"Answer","text":"A free tier is available. Paid plans scale with usage and report volume."}}]}</script>
 <link rel="stylesheet" href="/ux.css">
     <script src="/ux.js" defer></script>
   </head>
@@ -73,14 +74,18 @@ ul.cross{list-style:none;padding-left:0}ul.cross li::before{content:"✗  ";colo
 
 <section class="related-links"><h3>Related pages</h3><ul><li><a href="/faq/what-is-good-saas-churn">What is a good SaaS churn rate?</a></li><li><a href="/faq/how-to-due-diligence-saas-churn">How do I due diligence SaaS churn?</a></li></ul></section>
 
-
 <!-- mesh-round19 -->
 <section class="mesh-links" style="background:#f9fafb;padding:1.25rem;border-radius:.5rem;margin-top:2rem">
 <h3 style="margin-top:0">Related resources</h3>
 <ul style="list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;font-size:.95rem">
 <li><a href="/faq/what-is-good-saas-churn-rate">What Is a Good SaaS Churn Rate? — ChurnLens</a></li><li><a href="/faq/how-to-due-diligence-saas-churn">How do I due diligence SaaS churn?</a></li><li><a href="/faq/what-is-revenue-concentration-risk">What is revenue concentration risk in SaaS? — ChurnLens FAQ</a></li><li><a href="/for/investment-bankers">ChurnLens for Quality of earnings support for bankers: SaaS revenue quality &amp</a></li><li><a href="/benchmarks/saas-cac-payback">SaaS CAC Payback Period Benchmark 2026 — 18 months median (12–24 mo middle 50%)</a></li><li><a href="/for/agencies">ChurnLens for Agencies — Built for Your Industry</a></li>
 </ul>
-</section></article>
+</section>
+</article>
+<h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Deeper context: How do I detect zombie MRR</h2>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">This question — 'How do I detect zombie MRR?' — is one of the most common questions a SaaS acquirer asks during diligence, and the answer a seller provides is almost always simpler than the underlying reality. The short answer is a useful starting point, but a buyer making a seven-or-eight-figure decision needs to understand why the answer is what it is, what assumptions are baked into it, and how it changes under different definitions.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">The deeper truth is that any single-number answer to this question hides more than it reveals. The right answer depends on the target's customer segment (SMB vs mid-market vs enterprise), pricing model (monthly vs annual, seat-based vs usage-based), cohort vintage (are newer customers retaining better or worse than older ones?), and the definitional choices the seller made when computing the number they put in the data room. A benchmark range is a sanity check — the reconstruction from the revenue ledger is the actual diligence.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">When you encounter this question in a live deal, the workflow is: (1) get the benchmark range to establish what 'good' looks like, (2) request the revenue ledger and recompute the metric under a standardized definition, (3) segment by cohort and customer type to find the variance behind the blended number, and (4) compare the reconstructed figure to the seller's reported figure. The gap — and in our experience there is almost always a gap — is the diligence finding.</p>
 <footer>
 <p><strong>ChurnLens</strong> &middot; <a href="https://churnlens.site/">Home</a> &middot; <a href="https://churnlens.site/about">About</a></p>
 </footer>
