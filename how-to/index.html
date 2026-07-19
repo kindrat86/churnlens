@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
-<title>How To | ChurnLens</title>
-<meta name="description" content="Browse all how to from ChurnLens. 3 articles covering saas churn analytics and revenue retention intelligence.">
+<title>How-To Guides — SaaS Churn & Revenue Diligence, Step by Step | ChurnLens</title>
+<meta name="description" content="ChurnLens how to hub: 3 buyer-side SaaS due-diligence resources covering churn reconstruction, revenue quality, and acquisition risk verification.">
 <link rel="canonical" href="https://churnlens.site/how-to">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How-To Guides — SaaS Churn & Revenue Diligence, Step by Step | ChurnLens">
+<meta property="og:description" content="ChurnLens how to hub: 3 buyer-side SaaS due-diligence resources covering churn reconstruction, revenue quality, and acquisition risk verification.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:url" content="https://churnlens.site/how-to">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ChurnLens", "item": "https://churnlens.site/"}, {"@type": "ListItem", "position": 2, "name": "How-To", "item": "https://churnlens.site/how-to"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should SaaS churn diligence take?", "acceptedAnswer": {"@type": "Answer", "text": "With the revenue ledger in hand, the core reconstruction — gross logo churn, gross revenue churn, NRR, cohort retention, zombie MRR flagging, and renewal-cliff detection — should take under two hours end-to-end with ChurnLens, or one to two days in a spreadsheet if you are doing it manually. The bottleneck is never the math; it is getting a clean enough export from the seller. Request the monthly MRR-by-customer ledger with plan type and contract dates as the first data-room ask, not the last."}}, {"@type": "Question", "name": "What's the single highest-value diligence check?", "acceptedAnswer": {"@type": "Answer", "text": "Reconciling reported net revenue retention against the cohort-implied NRR. Reported NRR is the number the seller gives you; cohort-implied NRR is what you compute by tracking each acquisition cohort's revenue over time. When reported NRR is 112% but cohort-implied NRR is 96%, you have found the gap between the story and the ledger — and that gap is the most common source of SaaS acquisition overpayment we see."}}, {"@type": "Question", "name": "Can I reduce churn in a SaaS I've already bought?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but only after you have measured it honestly. Post-acquisition churn reduction starts with the same reconstruction: you cannot fix zombie MRR you have not identified, and you cannot intervene on a renewal cliff you have not mapped. The reduce-saas-churn guide below covers the intervention playbook — annual-plan restructuring, usage-based re-engagement, and concentration de-risking — but every intervention assumes you have already done the diagnostic work ChurnLens automates."}}]}</script>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;color:#1a1a2e;max-width:820px;margin:0 auto;padding:20px}
-h1{font-size:2rem;margin:16px 0}
-nav a{margin-right:16px;color:#667eea;text-decoration:none}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#1a1a2e;max-width:820px;margin:0 auto;padding:20px}
+h1{font-size:2rem;margin:16px 0 8px;line-height:1.3}
+h2{font-size:1.4rem;margin:32px 0 12px}
+p{margin-bottom:16px;color:#333}
+.lead{font-size:1.1rem;color:#555;margin-bottom:24px}
+nav{padding:12px 0;border-bottom:2px solid #f0f0f0;margin-bottom:24px}
+nav a{margin-right:16px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid #eee;color:#888;font-size:.85rem}
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open]{background:#fff}
 </style>
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 <link rel="stylesheet" href="/ux.css">
-    <script src="/ux.js" defer></script>
-  </head><body>
-<nav><a href="https://churnlens.site/">ChurnLens</a></nav>
-<h1>How To</h1>
-<p style="font-size:1.1rem;color:#555;margin-bottom:24px">Browse all how to from ChurnLens. 3 articles covering saas churn analytics and revenue retention intelligence.</p>
-<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px;margin-bottom:12px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/reduce-saas-churn" style="color:#667eea;text-decoration:none">How to Reduce SaaS Churn: A Data-Driven Framework</a></h3><p style="margin:0;color:#666;font-size:.95rem">Step-by-step approach to identifying and reducing churn in a SaaS business.</p></div>
-<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px;margin-bottom:12px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/evaluate-saas-before-buying" style="color:#667eea;text-decoration:none">How to Evaluate a SaaS Business Before Acquisition</a></h3><p style="margin:0;color:#666;font-size:.95rem">Complete due diligence framework for SaaS acquisition targets.</p></div>
-<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px;margin-bottom:12px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/calculate-net-revenue-retention" style="color:#667eea;text-decoration:none">How to Calculate Net Revenue Retention (NRR)</a></h3><p style="margin:0;color:#666;font-size:.95rem">Step-by-step guide to calculating and interpreting NRR for SaaS businesses.</p></div>
-<footer>© 2026 ChurnLens.</footer>
+<script src="/ux.js" defer></script>
+</head><body>
+<nav><a href="https://churnlens.site/" style="font-weight:700;color:#1a1a2e">ChurnLens</a> <a href="https://churnlens.site/best">Best</a> <a href="https://churnlens.site/how-to">How To</a> <a href="https://churnlens.site/learn">Learn</a> <a href="https://churnlens.site/alternatives-to">Alternatives</a> <a href="https://churnlens.site/use-cases">Use Cases</a></nav>
+
+<h1>How-To Guides — SaaS Churn & Revenue Diligence, Step by Step</h1>
+<p class="lead">These are step-by-step how-to guides for the actual mechanics of SaaS revenue diligence: how to calculate the metrics that matter, how to evaluate a SaaS business before you commit to buying it, and how to reduce churn in a business you already own. Each guide is written for a reader who has the revenue ledger open in one window and a deadline in the other — so the focus is on the exact inputs, the exact formula, and the exact interpretation, not on theory.</p>
+
+<h2>Why mechanics beat frameworks in SaaS diligence</h2>
+<p>SaaS due diligence dies in the gap between a framework and a spreadsheet. 'Check the net revenue retention' is a framework; 'reconstruct NRR from monthly MRR by customer, exclude true-ups, separate expansion from price increase, and compare the result to the number on the seller's pitch deck' is a mechanic. The frameworks are freely available everywhere; the mechanics are not, because they live in the tribal knowledge of people who have done fifty deals. The guides below try to close that gap — each one walks through the calculation at the level of detail you would need to reproduce it on a real revenue ledger tonight.</p>
+
+<h2>How-To — browse the 3 resources</h2>
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:22px;margin-bottom:14px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/reduce-saas-churn" style="color:#667eea;text-decoration:none;font-size:1.1rem">How to Reduce SaaS Churn: A Data-Driven Framework</a></h3><p style="margin:6px 0 0;color:#555;font-size:.92rem">The intervention playbook: annual-plan restructuring, usage re-engagement, and concentration de-risking.</p></div>
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:22px;margin-bottom:14px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/evaluate-saas-before-buying" style="color:#667eea;text-decoration:none;font-size:1.1rem">How to Evaluate a SaaS Business Before Acquisition</a></h3><p style="margin:6px 0 0;color:#555;font-size:.92rem">The full pre-LOI evaluation checklist, from revenue reconstruction to concentration stress-testing.</p></div>
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:22px;margin-bottom:14px;transition:box-shadow .2s"><h3 style="margin:0 0 6px"><a href="https://churnlens.site/how-to/calculate-net-revenue-retention" style="color:#667eea;text-decoration:none;font-size:1.1rem">How to Calculate Net Revenue Retention (NRR)</a></h3><p style="margin:6px 0 0;color:#555;font-size:.92rem">NRR computed from first principles: exact inputs, formula, and how sellers massage it.</p></div>
+
+<h2>Frequently asked questions</h2>
+<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">How long should SaaS churn diligence take?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">With the revenue ledger in hand, the core reconstruction — gross logo churn, gross revenue churn, NRR, cohort retention, zombie MRR flagging, and renewal-cliff detection — should take under two hours end-to-end with ChurnLens, or one to two days in a spreadsheet if you are doing it manually. The bottleneck is never the math; it is getting a clean enough export from the seller. Request the monthly MRR-by-customer ledger with plan type and contract dates as the first data-room ask, not the last.</p></details>
+<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">What's the single highest-value diligence check?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">Reconciling reported net revenue retention against the cohort-implied NRR. Reported NRR is the number the seller gives you; cohort-implied NRR is what you compute by tracking each acquisition cohort's revenue over time. When reported NRR is 112% but cohort-implied NRR is 96%, you have found the gap between the story and the ledger — and that gap is the most common source of SaaS acquisition overpayment we see.</p></details>
+<details style="border:1px solid #e0e0e0;border-radius:8px;padding:14px 18px;margin-bottom:10px;background:#fafafa"><summary style="cursor:pointer;font-size:1.02rem;font-weight:600">Can I reduce churn in a SaaS I've already bought?</summary><p style="margin:10px 0 0;color:#333;line-height:1.65">Yes, but only after you have measured it honestly. Post-acquisition churn reduction starts with the same reconstruction: you cannot fix zombie MRR you have not identified, and you cannot intervene on a renewal cliff you have not mapped. The reduce-saas-churn guide below covers the intervention playbook — annual-plan restructuring, usage-based re-engagement, and concentration de-risking — but every intervention assumes you have already done the diagnostic work ChurnLens automates.</p></details>
+
+<div style="margin-top:48px;padding:16px;background:#f8f9fa;border-radius:8px;font-size:.85rem;color:#666">
+<p style="margin:0"><strong>ChurnLens</strong> — buyer-side SaaS revenue-quality and churn-risk due diligence. <a href="https://churnlens.site/" style="color:#667eea">Learn more →</a></p>
+</div>
+<footer>© 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/sitemap.xml">Sitemap</a></footer>
+
 
 <!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
 <section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
