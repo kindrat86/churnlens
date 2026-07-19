@@ -304,6 +304,10 @@
       "destination": "/striking-distance.html"
     },
     {
+      "source": "/oto",
+      "destination": "/oto.html"
+    },
+    {
       "source": "/5-risk-buyer-side-method",
       "destination": "/5-risk-buyer-side-method.html"
     },

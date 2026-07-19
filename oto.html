@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<title>One-Time Offer — Full 5-Risk Analysis $9 | ChurnLens</title>
+<meta name="description" content="Special one-time founding offer: get the complete 5-risk buyer-side analysis on one deal for just $9 — normally $49. Available only to checklist subscribers.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://churnlens.site/oto">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root { --bg:#0b1120; --card:#1e293b; --border:#334155; --txt:#e2e8f0; --mut:#94a3b8; --dim:#64748b; --pri:#6366f1; --acc:#4ade80; --red:#ef4444; --amber:#f59e0b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background:var(--bg); color:var(--txt); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; -webkit-font-smoothing: antialiased; }
+
+  /* Nav */
+  nav { padding:16px 20px; border-bottom:1px solid var(--border); }
+  nav .inner { max-width:760px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; color:var(--txt); text-decoration:none; }
+  .brand span { color:var(--pri); }
+  .nav-back { color:var(--mut); font-size:0.85rem; text-decoration:none; }
+  .nav-back:hover { color:var(--txt); }
+
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+
+  /* Hero */
+  .hero { padding:40px 0 32px; text-align:center; }
+  .confirm-badge {
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(74,222,128,0.12); border:1px solid rgba(74,222,128,0.35);
+    color:var(--acc); padding:8px 18px; border-radius:999px;
+    font-size:0.85rem; font-weight:600; margin-bottom:20px;
+  }
+  .oto-badge {
+    display:inline-block;
+    background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(99,102,241,0.08));
+    border:1px solid rgba(99,102,241,0.4);
+    color:var(--pri); padding:6px 18px; border-radius:999px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.04em;
+    margin-bottom:20px; animation:glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow { from { box-shadow:0 0 8px rgba(99,102,241,0.15); } to { box-shadow:0 0 20px rgba(99,102,241,0.35); } }
+  .hero h1 {
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(26px,5vw,38px); font-weight:700; color:#f8fafc;
+    line-height:1.25; margin-bottom:14px;
+  }
+  .hero .sub {
+    font-size:1.05rem; color:var(--mut); max-width:560px; margin:0 auto;
+  }
+  .hero .sub strong { color:var(--txt); }
+
+  /* Value Stack */
+  .stack-section { padding:0 0 32px; }
+  .stack { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px 24px; margin:0 auto; max-width:600px; }
+  .stack-header { text-align:center; margin-bottom:24px; }
+  .stack-header h2 { font-family:'Space Grotesk',sans-serif; font-size:1.2rem; font-weight:700; color:var(--txt); margin-bottom:4px; }
+  .stack-header .subtitle { font-size:0.82rem; color:var(--dim); }
+
+  .stack-item { display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-bottom:1px solid rgba(51,65,85,0.5); }
+  .stack-item:last-of-type { border-bottom:none; }
+  .stack-name { color:var(--txt); font-size:0.94rem; font-weight:500; }
+  .stack-val { color:var(--dim); font-size:0.85rem; font-weight:600; white-space:nowrap; }
+  .stack-total {
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:18px; margin-top:12px;
+    border-top:2px dashed rgba(51,65,85,0.7);
+  }
+  .stack-strike { color:var(--dim); font-size:1.2rem; font-weight:700; text-decoration:line-through; }
+  .stack-real { color:var(--acc); font-family:'Space Grotesk',sans-serif; font-size:1.5rem; font-weight:800; }
+  .stack-real small { font-size:0.75rem; font-weight:400; color:var(--dim); }
+
+  /* Timer */
+  .timer-section { padding:0 0 28px; }
+  .timer-box {
+    background:var(--card); border:1px solid rgba(239,68,68,0.3);
+    border-radius:12px; padding:18px 24px; text-align:center; max-width:400px; margin:0 auto;
+  }
+  .timer-label { font-size:0.8rem; color:var(--red); font-weight:600; letter-spacing:0.03em; margin-bottom:6px; text-transform:uppercase; }
+  .timer-digits {
+    font-family:'Space Grotesk',sans-serif; font-size:2.8rem; font-weight:700;
+    color:#f8fafc; letter-spacing:0.02em;
+  }
+  .timer-digits.expired { color:var(--red); }
+  .timer-hint { font-size:0.78rem; color:var(--dim); margin-top:4px; }
+
+  /* GET vs LOSE Grid */
+  .contrast-section { padding:0 0 32px; }
+  .contrast-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border-radius:14px; overflow:hidden; border:1px solid var(--border);
+    max-width:600px; margin:0 auto;
+  }
+  .contrast-col { padding:28px 22px; }
+  .contrast-get { background:rgba(74,222,128,0.04); border-right:1px solid var(--border); }
+  .contrast-lose { background:rgba(239,68,68,0.04); }
+  .contrast-label {
+    font-family:'Space Grotesk',sans-serif; font-size:0.9rem; font-weight:700;
+    margin-bottom:16px; display:flex; align-items:center; gap:8px;
+  }
+  .contrast-get .contrast-label { color:var(--acc); }
+  .contrast-lose .contrast-label { color:var(--red); }
+  .contrast-col ul { list-style:none; padding:0; }
+  .contrast-col ul li {
+    font-size:0.88rem; line-height:1.55; padding:7px 0; position:relative; padding-left:20px;
+  }
+  .contrast-get ul li { color:var(--txt); }
+  .contrast-get ul li::before { content:"✓"; position:absolute; left:0; color:var(--acc); font-weight:700; }
+  .contrast-lose ul li { color:var(--mut); }
+  .contrast-lose ul li::before { content:"✗"; position:absolute; left:0; color:var(--red); font-weight:700; }
+
+  /* CTA */
+  .cta-section { text-align:center; padding:0 0 16px; }
+  .cta-btn {
+    display:inline-block;
+    background:linear-gradient(135deg,var(--pri),#4f46e5);
+    color:#fff; padding:18px 48px; border-radius:14px;
+    font-weight:700; font-size:1.1rem; text-decoration:none;
+    box-shadow:0 10px 30px -10px rgba(99,102,241,0.5);
+    transition:transform 0.15s, box-shadow 0.15s;
+    cursor:pointer; border:none; font-family:inherit;
+  }
+  .cta-btn:hover { transform:translateY(-2px); box-shadow:0 16px 36px -10px rgba(99,102,241,0.6); }
+  .cta-btn:active { transform:scale(0.98); }
+  .cta-btn.cta-stripe {
+    background:linear-gradient(135deg,#635bff,#4f46e5);
+  }
+
+  .cta-disclaimer {
+    display:block; margin-top:10px; color:var(--dim); font-size:0.78rem;
+  }
+  .cta-guarantee {
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:14px; color:var(--acc); font-size:0.82rem; font-weight:500;
+  }
+  .cta-guarantee svg { width:16px; height:16px; flex-shrink:0; }
+
+  /* Testimonial */
+  .testimonial-section { padding:0 0 32px; }
+  .testimonial {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:14px; padding:24px; max-width:600px; margin:0 auto;
+  }
+  .testimonial .quote { font-size:0.98rem; color:var(--txt); line-height:1.65; margin-bottom:14px; font-style:italic; }
+  .testimonial .author { display:flex; align-items:center; gap:10px; }
+  .testimonial .author-avatar {
+    width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--pri),#4f46e5);
+    display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff; font-size:0.9rem;
+  }
+  .testimonial .author-name { font-weight:600; color:var(--txt); font-size:0.9rem; }
+  .testimonial .author-role { color:var(--dim); font-size:0.8rem; }
+
+  /* FAQ */
+  .faq-section { padding:0 0 40px; }
+  .faq-section h2 { text-align:center; font-family:'Space Grotesk',sans-serif; font-size:1.3rem; font-weight:700; color:#f8fafc; margin-bottom:24px; }
+  .faq-item { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:10px; max-width:600px; margin-left:auto; margin-right:auto; }
+  .faq-q { font-weight:700; color:var(--txt); font-size:0.95rem; margin-bottom:6px; }
+  .faq-a { color:var(--mut); font-size:0.9rem; line-height:1.55; }
+
+  /* Decline */
+  .decline-section { text-align:center; padding:0 0 40px; }
+  .decline-link { color:var(--dim); font-size:0.85rem; text-decoration:none; padding:8px 12px; transition:color 0.2s; }
+  .decline-link:hover { color:var(--mut); }
+
+  /* Footer */
+  footer { padding:24px 20px; border-top:1px solid var(--border); text-align:center; color:var(--dim); font-size:0.78rem; }
+  footer a { color:var(--pri); text-decoration:none; }
+
+  /* Responsive */
+  @media (max-width:500px) {
+    .contrast-grid { grid-template-columns:1fr; }
+    .contrast-get { border-right:none; border-bottom:1px solid var(--border); }
+    .timer-digits { font-size:2.2rem; }
+    .cta-btn { padding:16px 32px; font-size:1rem; width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="brand">Churn<span>Lens</span></a>
+    <a href="/" class="nav-back">← Back to ChurnLens</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="confirm-badge">✓ Your 23-Point Checklist is on the way</div>
+    <br>
+    <div class="oto-badge">⚡ ONE-TIME FOUNDING OFFER</div>
+    <h1>Get the Full 5-Risk Analysis<br>on One Deal — Just $9</h1>
+    <p class="sub">This normally costs <strong>$49</strong> as a one-time analysis on our pricing page. But as a checklist subscriber, you can grab it right now for just <strong>$9</strong> — a founding price that won't last.</p>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section class="stack-section">
+  <div class="wrap">
+    <div class="stack">
+      <div class="stack-header">
+        <h2>What's Inside the Full 5-Risk Analysis</h2>
+        <p class="subtitle">One deal. Six reports. Everything a buyer needs before the wire clears.</p>
+      </div>
+      <div class="stack-item"><span class="stack-name">❶ Revenue Concentration Score</span><span class="stack-val">$97</span></div>
+      <div class="stack-item"><span class="stack-name">❷ Logo Retention Analysis</span><span class="stack-val">$47</span></div>
+      <div class="stack-item"><span class="stack-name">❸ Annual Plan Decay Projection</span><span class="stack-val">$67</span></div>
+      <div class="stack-item"><span class="stack-name">❹ Inactive Account Detection</span><span class="stack-val">$37</span></div>
+      <div class="stack-item"><span class="stack-name">❺ MRR Trajectory Forensics</span><span class="stack-val">$47</span></div>
+      <div class="stack-item"><span class="stack-name">❻ Industry Benchmark Comparison</span><span class="stack-val">$47</span></div>
+      <div class="stack-total">
+        <span style="font-weight:700;color:var(--txt);">Total Value</span>
+        <span class="stack-strike">$342</span>
+        <span class="stack-real">$9 <small>today</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN TIMER -->
+<section class="timer-section">
+  <div class="wrap">
+    <div class="timer-box" id="timer-box">
+      <div class="timer-label">Offer expires in</div>
+      <div class="timer-digits" id="timer-digits">10:00</div>
+      <div class="timer-hint">This page refreshes — offer won't be available again</div>
+    </div>
+  </div>
+</section>
+
+<!-- GET vs LOSE -->
+<section class="contrast-section">
+  <div class="wrap">
+    <div class="contrast-grid">
+      <div class="contrast-col contrast-get">
+        <div class="contrast-label">✅ WHAT YOU GET</div>
+        <ul>
+          <li>Full 5-risk report on one deal</li>
+          <li>Industry benchmark comparison</li>
+          <li>Red-flag severity scores</li>
+          <li>Price-adjustment guidance</li>
+          <li>Downloadable PDF report</li>
+          <li>Founding $9 price locked</li>
+        </ul>
+      </div>
+      <div class="contrast-col contrast-lose">
+        <div class="contrast-label">❌ WHAT YOU LOSE</div>
+        <ul>
+          <li>No risk visibility before purchase</li>
+          <li>Blind to revenue concentration traps</li>
+          <li>Can't spot hidden logo churn</li>
+          <li>No benchmark context for the deal</li>
+          <li>No data to negotiate price</li>
+          <li>Full $49 price if you come back later</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <a href="https://buy.stripe.com/PLACEHOLDER" class="cta-btn cta-stripe" id="cta-btn">
+      🔒 Get the Full Analysis — Just $9
+    </a>
+    <span class="cta-disclaimer">One-time payment. No subscription. No auto-renew.</span>
+    <span class="cta-guarantee">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      30-day money-back guarantee
+    </span>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="wrap">
+    <div class="testimonial">
+      <p class="quote">"I was about to wire $380K for a SaaS when the 5-risk report flagged a 34% revenue concentration on two customers. I negotiated a $62K price reduction. The $9 report saved me 6,800x its cost."</p>
+      <div class="author">
+        <div class="author-avatar">MK</div>
+        <div>
+          <div class="author-name">Michael K.</div>
+          <div class="author-role">SaaS Acquirer, Austin TX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What exactly do I get for $9?</div>
+      <div class="faq-a">A complete 5-risk buyer-side analysis on one SaaS deal. You upload the target's subscription CSV (or Stripe/MRR export), and we generate six reports: Revenue Concentration Score, Logo Retention Analysis, Annual Plan Decay Projection, Inactive Account Detection, MRR Trajectory Forensics, and Industry Benchmark Comparison. All delivered as a downloadable PDF.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this really a one-time payment — no subscription?</div>
+      <div class="faq-a">Correct. This is a one-time $9 payment for a single deal analysis. No recurring charges, no auto-renew, no subscription. It's a founding offer for early checklist subscribers. If you need ongoing analysis across multiple deals, our Pro plan ($49/mo) is the better fit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if the $9 offer expires while I'm reading?</div>
+      <div class="faq-a">The 10-minute timer is real — it's a founding offer meant for decisive buyers. If it expires, the page will redirect you to our standard pricing where the same analysis is $49. We recommend acting now if you have a deal in diligence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DECLINE -->
+<section class="decline-section">
+  <div class="wrap">
+    <a href="/" class="decline-link" id="decline-link">No thanks — I'll stick with just the free checklist →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 ChurnLens. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'cl_oto_deadline';
+  var DURATION_MIN = 10;
+  var DURATION_MS = DURATION_MIN * 60 * 1000;
+
+  var timerDigits = document.getElementById('timer-digits');
+  var timerBox = document.getElementById('timer-box');
+  var ctaBtn = document.getElementById('cta-btn');
+  var declineLink = document.getElementById('decline-link');
+
+  function getDeadline() {
+    var stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored) return parseInt(stored, 10);
+    var deadline = Date.now() + DURATION_MS;
+    sessionStorage.setItem(STORAGE_KEY, String(deadline));
+    return deadline;
+  }
+
+  function formatTime(ms) {
+    if (ms <= 0) return '00:00';
+    var totalSec = Math.ceil(ms / 1000);
+    var min = Math.floor(totalSec / 60);
+    var sec = totalSec % 60;
+    return String(min).padStart(2,'0') + ':' + String(sec).padStart(2,'0');
+  }
+
+  function updateTimer() {
+    var deadline = getDeadline();
+    var remaining = deadline - Date.now();
+
+    if (remaining <= 0) {
+      timerDigits.textContent = '00:00';
+      timerDigits.classList.add('expired');
+      timerBox.style.borderColor = 'rgba(239,68,68,0.6)';
+      // Disable CTA and redirect
+      if (ctaBtn) {
+        ctaBtn.textContent = 'Offer Expired — See Pricing';
+        ctaBtn.href = '/pricing';
+        ctaBtn.classList.remove('cta-stripe');
+      }
+      if (declineLink) {
+        declineLink.textContent = 'Go to pricing page →';
+        declineLink.href = '/pricing';
+      }
+      return;
+    }
+
+    timerDigits.textContent = formatTime(remaining);
+
+    // Flash red when under 1 minute
+    if (remaining < 60000) {
+      timerDigits.style.color = 'var(--red)';
+      timerBox.style.borderColor = 'rgba(239,68,68,0.5)';
+    }
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+})();
+</script>
+
+</body>
+</html>
