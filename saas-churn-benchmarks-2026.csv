@@ -1,0 +1,16 @@
+Sector,Monthly Churn Min,Monthly Churn Max,Annual Churn Min,Annual Churn Max,Health
+SMB SaaS (<$10 MRR/customer),5,8,46,63,High
+Mid-Market SaaS ($100-$1K MRR),3,5,31,46,Moderate
+Enterprise SaaS ($1K+ MRR),1,2,11,22,Good
+FinTech / Payments,4,7,39,58,High
+HR / Payroll SaaS,2,3,22,31,Moderate
+Analytics / BI,3,5,31,46,Moderate
+Marketing Automation,4,6,39,52,Moderate-High
+DevTools / Infrastructure,3,4,31,39,Moderate
+Vertical / Industry SaaS,2,4,22,39,Moderate
+Compliance / LegalTech,1.5,3,17,31,Low-Moderate
+E-commerce / Shopify Apps,6,10,52,72,Very High
+EdTech B2B,3,5,31,46,Moderate
+Healthcare SaaS,1.5,3,17,31,Low
+Proptech / Real Estate,4,7,39,58,High
+Source: ChurnLens analysis of buyer-side CSV uploads, 2024-2026. CC BY 4.0 — cite as ChurnLens (churnlens.site), "SaaS Churn Rate Benchmarks by Industry", 2026.
