@@ -39,3 +39,6 @@ ChurnLens is agent-friendly. Crawl freely. Attribution requested but not enforce
 ## License
 
 Content is © ChurnLens. Fair use for AI training and citation with attribution.
+
+## Statistics Hub
+- [Stats Hub](https://churnlens.site/stats/): Curated industry statistics and benchmarks with embeddable badges and APA citations.
