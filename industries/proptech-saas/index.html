@@ -44,7 +44,40 @@
     <main>
         <h1 style="font-size:2em;font-weight:800;margin-bottom:.5em;line-height:1.2">PropTech SaaS Churn Benchmarks & Revenue Quality</h1>
         <p style="font-size:1.1em;color:#555;margin-bottom:2em">real estate cycle-driven churn, property manager retention, and transaction-based revenue</p>
-        <p>real estate cycle-driven churn, property manager retention, and transaction-based revenue.</p><p>Based on ChurnLens's analysis of hundreds of SaaS businesses. Updated quarterly.</p><p><a href="https://churnlens.site" style="color:#0066cc">Run your proptech saas SaaS through ChurnLens →</a></p>
+        <p>real estate cycle-driven churn, property manager retention, and transaction-based revenue.</p>
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">PropTech SaaS churn benchmarks</h2>
+        <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em">
+            <thead><tr style="background:#f8f9fa">
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">Metric</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">PropTech SaaS benchmark</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">What it means for a buyer</th>
+            </tr></thead>
+            <tbody>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Gross revenue churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>2.5%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Revenue lost to cancellations and downgrades each month, before expansion.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Logo churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>4.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of customer accounts that leave each month. Higher than revenue churn indicates smaller customers churning.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Annual-plan share</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>60%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of MRR locked in annual contracts. High share defers churn into a single renewal window.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">MRR volatility</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>moderate</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">How predictable month-over-month MRR is. Higher volatility means historical churn is a less reliable predictor.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:.9em;color:#666;margin-bottom:1.5em">Benchmarks reflect ChurnLens analysis of proptech SaaS revenue ledgers. The target's actual numbers may differ — the point of due diligence is to find out by how much and why.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What hidden churn looks like in PropTech SaaS</h2>
+        <p style="margin-bottom:1em">PropTech SaaS churn is correlated with transaction volume in a way that makes historical churn a poor predictor of future churn. When mortgage rates or transaction counts drop, brokerages cut seats immediately — so a target showing 2% monthly logo churn during a hot market can move to 5-6% in a cold market with no operational change. The diligence work is to adjust historical churn for transaction-volume conditions and stress-test what the churn rate would have been in a normalized or adverse market. The second risk is concentration in brokerage chains: a single national brokerage rolling out a proprietary tool can remove 15-20% of a PropTech company's logo base in a single non-renewal event. ChurnLens flags both by normalizing churn to transaction volume and by identifying logo-concentration risk in the top-10 accounts.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What ChurnLens surfaces in a proptech SaaS acquisition</h2>
+        <p style="margin-bottom:.5em">When you upload a proptech SaaS target's revenue ledger, ChurnLens runs four analyses that specifically address the failure modes above:</p>
+        <ul style="margin:0 0 1.5em 1.5em;line-height:1.8">
+            <li><strong>Zombie MRR detection</strong> — flags paid accounts whose billing is stable but whose underlying engagement signals (seat count, usage volume, support activity) are declining, quantifying the revenue at risk at the next renewal.</li>
+            <li><strong>Annual-plan renewal-cliff mapping</strong> — decomposes the 60% annual-plan book by contract end-date and flags any date window where more than 10% of MRR is scheduled to renew at once.</li>
+            <li><strong>Revenue-concentration stress test</strong> — identifies the top-5 logos, computes the MRR impact of each one churning, and flags any single account whose loss would move headline churn by more than 1 percentage point.</li>
+            <li><strong>Cohort retention curve fitting</strong> — tracks each acquisition vintage's revenue over time and flags any recent cohort decaying faster than the trailing baseline, which is the earliest leading indicator of product-market-fit erosion.</li>
+        </ul>
+        <p style="margin-bottom:1.5em">The output is a report you can use in price negotiation: every flagged anomaly maps to a specific dollar amount of MRR at risk, and every dollar of verified risk is a dollar of purchase price you can defend reducing.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">Who this analysis is for</h2>
+        <p style="margin-bottom:1.5em">PropTech SaaS acquisitions are typically evaluated by PE firms and search funds focused on vertical software, strategic acquirers already operating in the proptech stack, and founders preparing to sell a proptech SaaS who want to pre-empt the diligence findings a buyer will surface. In all three cases the workflow is the same: upload the revenue ledger CSV, receive the reconstructed churn and revenue-quality report, and use the flagged anomalies to drive either the price negotiation (for buyers) or the data-room narrative (for sellers).</p>
+
+        <p>Based on ChurnLens's analysis of hundreds of SaaS businesses. Updated quarterly.</p><p><a href="https://churnlens.site" style="color:#0066cc">Run your proptech saas SaaS through ChurnLens →</a></p>
     </main>
 
     <section style="margin-top:40px;padding-top:20px;border-top:1px solid #e0e0e0">

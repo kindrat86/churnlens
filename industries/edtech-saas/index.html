@@ -44,7 +44,40 @@
     <main>
         <h1 style="font-size:2em;font-weight:800;margin-bottom:.5em;line-height:1.2">EdTech SaaS Churn Benchmarks & Revenue Quality</h1>
         <p style="font-size:1.1em;color:#555;margin-bottom:2em">seasonal churn patterns, academic budget cycles, and institutional retention</p>
-        <p>seasonal churn patterns, academic budget cycles, and institutional retention.</p><p>Based on ChurnLens's analysis of hundreds of SaaS businesses. Updated quarterly.</p><p><a href="https://churnlens.site" style="color:#0066cc">Run your edtech saas SaaS through ChurnLens →</a></p>
+        <p>seasonal churn patterns, academic budget cycles, and institutional retention.</p>
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">EdTech SaaS churn benchmarks</h2>
+        <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em">
+            <thead><tr style="background:#f8f9fa">
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">Metric</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">EdTech SaaS benchmark</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">What it means for a buyer</th>
+            </tr></thead>
+            <tbody>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Gross revenue churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>3.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Revenue lost to cancellations and downgrades each month, before expansion.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Logo churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>5.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of customer accounts that leave each month. Higher than revenue churn indicates smaller customers churning.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Annual-plan share</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>80%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of MRR locked in annual contracts. High share defers churn into a single renewal window.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">MRR volatility</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>low but lumpy</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">How predictable month-over-month MRR is. Higher volatility means historical churn is a less reliable predictor.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:.9em;color:#666;margin-bottom:1.5em">Benchmarks reflect ChurnLens analysis of edtech SaaS revenue ledgers. The target's actual numbers may differ — the point of due diligence is to find out by how much and why.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What hidden churn looks like in EdTech SaaS</h2>
+        <p style="margin-bottom:1em">EdTech SaaS churn is buried inside annual procurement cycles. Because 80% of revenue sits in annual or multi-year district contracts, reported monthly churn appears artificially low for 9-11 months of the year — and then a single August/September renewal window can crystallize 15-20% annualized logo churn into a 6-week window. Sellers present this as 'seasonality' rather than structural decay. The diligence work is to decompose the renewal book by contract end-date and stress-test what happens if the upcoming renewal cohort performs even 10% worse than the trailing cohort. The second hidden risk is district consolidation: when two school districts merge, the surviving IT department almost always standardizes on one of the two incumbent tools, meaning the acquisition loses two logos and keeps one — a dynamic that does not show up in historical churn until it happens.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What ChurnLens surfaces in a edtech SaaS acquisition</h2>
+        <p style="margin-bottom:.5em">When you upload a edtech SaaS target's revenue ledger, ChurnLens runs four analyses that specifically address the failure modes above:</p>
+        <ul style="margin:0 0 1.5em 1.5em;line-height:1.8">
+            <li><strong>Zombie MRR detection</strong> — flags paid accounts whose billing is stable but whose underlying engagement signals (seat count, usage volume, support activity) are declining, quantifying the revenue at risk at the next renewal.</li>
+            <li><strong>Annual-plan renewal-cliff mapping</strong> — decomposes the 80% annual-plan book by contract end-date and flags any date window where more than 10% of MRR is scheduled to renew at once.</li>
+            <li><strong>Revenue-concentration stress test</strong> — identifies the top-5 logos, computes the MRR impact of each one churning, and flags any single account whose loss would move headline churn by more than 1 percentage point.</li>
+            <li><strong>Cohort retention curve fitting</strong> — tracks each acquisition vintage's revenue over time and flags any recent cohort decaying faster than the trailing baseline, which is the earliest leading indicator of product-market-fit erosion.</li>
+        </ul>
+        <p style="margin-bottom:1.5em">The output is a report you can use in price negotiation: every flagged anomaly maps to a specific dollar amount of MRR at risk, and every dollar of verified risk is a dollar of purchase price you can defend reducing.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">Who this analysis is for</h2>
+        <p style="margin-bottom:1.5em">EdTech SaaS acquisitions are typically evaluated by PE firms and search funds focused on vertical software, strategic acquirers already operating in the edtech stack, and founders preparing to sell a edtech SaaS who want to pre-empt the diligence findings a buyer will surface. In all three cases the workflow is the same: upload the revenue ledger CSV, receive the reconstructed churn and revenue-quality report, and use the flagged anomalies to drive either the price negotiation (for buyers) or the data-room narrative (for sellers).</p>
+
+        <p>Based on ChurnLens's analysis of hundreds of SaaS businesses. Updated quarterly.</p><p><a href="https://churnlens.site" style="color:#0066cc">Run your edtech saas SaaS through ChurnLens →</a></p>
     </main>
 
     <section style="margin-top:40px;padding-top:20px;border-top:1px solid #e0e0e0">

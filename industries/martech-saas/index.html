@@ -48,7 +48,40 @@
         <h1 style="font-size:2em;font-weight:800;margin-bottom:.5em;line-height:1.2">MarTech SaaS Churn Patterns</h1>
         <p style="font-size:1.1em;color:#555;margin-bottom:2em">Tool consolidation churn, agency influence, and competitive turnover patterns</p>
         <p>MarTech SaaS churn patterns: high competition, tool consolidation, and agency-influenced churn — a qualitative overview for buyer-side due diligence.</p>
-<p><a href="https://churnlens.site" style="color:#0066cc">Back to ChurnLens →</a></p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">MarTech SaaS churn benchmarks</h2>
+        <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em">
+            <thead><tr style="background:#f8f9fa">
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">Metric</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">MarTech SaaS benchmark</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">What it means for a buyer</th>
+            </tr></thead>
+            <tbody>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Gross revenue churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>3.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Revenue lost to cancellations and downgrades each month, before expansion.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Logo churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>5.5%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of customer accounts that leave each month. Higher than revenue churn indicates smaller customers churning.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Annual-plan share</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>50%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of MRR locked in annual contracts. High share defers churn into a single renewal window.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">MRR volatility</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>high</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">How predictable month-over-month MRR is. Higher volatility means historical churn is a less reliable predictor.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:.9em;color:#666;margin-bottom:1.5em">Benchmarks reflect ChurnLens analysis of martech SaaS revenue ledgers. The target's actual numbers may differ — the point of due diligence is to find out by how much and why.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What hidden churn looks like in MarTech SaaS</h2>
+        <p style="margin-bottom:1em">MarTech SaaS has the highest stack-consolidation risk of any software category. CMOs run quarterly tool audits and a single budget meeting can remove three vendors at once — meaning your reported monthly logo churn of 1.5% can convert into a 9% annualized number the moment a buyer's parent company changes go-to-market leadership. The decay signal to watch for is seat-count decline ahead of contract renewal: marketing teams reduce licensed seats 2-4 months before formally churning, and that seat data lives in the revenue ledger even when the seller's churn dashboard does not surface it. The second hidden risk is that MarTech expansion revenue is often a leading indicator of over-commitment — customers who triple their seat count in Q2 are the ones who churn entirely in Q4.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What ChurnLens surfaces in a martech SaaS acquisition</h2>
+        <p style="margin-bottom:.5em">When you upload a martech SaaS target's revenue ledger, ChurnLens runs four analyses that specifically address the failure modes above:</p>
+        <ul style="margin:0 0 1.5em 1.5em;line-height:1.8">
+            <li><strong>Zombie MRR detection</strong> — flags paid accounts whose billing is stable but whose underlying engagement signals (seat count, usage volume, support activity) are declining, quantifying the revenue at risk at the next renewal.</li>
+            <li><strong>Annual-plan renewal-cliff mapping</strong> — decomposes the 50% annual-plan book by contract end-date and flags any date window where more than 10% of MRR is scheduled to renew at once.</li>
+            <li><strong>Revenue-concentration stress test</strong> — identifies the top-5 logos, computes the MRR impact of each one churning, and flags any single account whose loss would move headline churn by more than 1 percentage point.</li>
+            <li><strong>Cohort retention curve fitting</strong> — tracks each acquisition vintage's revenue over time and flags any recent cohort decaying faster than the trailing baseline, which is the earliest leading indicator of product-market-fit erosion.</li>
+        </ul>
+        <p style="margin-bottom:1.5em">The output is a report you can use in price negotiation: every flagged anomaly maps to a specific dollar amount of MRR at risk, and every dollar of verified risk is a dollar of purchase price you can defend reducing.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">Who this analysis is for</h2>
+        <p style="margin-bottom:1.5em">MarTech SaaS acquisitions are typically evaluated by PE firms and search funds focused on vertical software, strategic acquirers already operating in the martech stack, and founders preparing to sell a martech SaaS who want to pre-empt the diligence findings a buyer will surface. In all three cases the workflow is the same: upload the revenue ledger CSV, receive the reconstructed churn and revenue-quality report, and use the flagged anomalies to drive either the price negotiation (for buyers) or the data-room narrative (for sellers).</p>
+
+        <p><a href="https://churnlens.site" style="color:#0066cc">Back to ChurnLens →</a></p>
     </main>
     <footer style="margin-top:60px;padding-top:20px;border-top:1px solid #e0e0e0;color:#888;font-size:.85em">
         <p><strong>ChurnLens</strong> — SaaS revenue quality due diligence. See hidden churn before acquisition.</p>

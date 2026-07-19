@@ -32,7 +32,40 @@
 <p style="font-size:1.1em;color:#555;margin-bottom:2em">Marketplace SaaS businesses face unique churn dynamics: two-sided churn (supply side and demand side), take-rate compression, and network effects that amplify or hide retention problems.</p>
 <h2>Marketplace churn metrics</h2><ul><li><strong>Supply-side churn:</strong> Sellers leaving — the silent killer of marketplace liquidity</li><li><strong>Demand-side churn:</strong> Buyer retention hidden behind acquisition numbers</li><li><strong>Take-rate retention:</strong> Is your take rate holding, compressing, or expanding?</li></ul>
 <p style="margin-top:2em"><a href="https://churnlens.site" style="color:#0066cc;font-weight:600">Start now →</a></p>
-</main>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">Marketplace SaaS churn benchmarks</h2>
+        <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em">
+            <thead><tr style="background:#f8f9fa">
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">Metric</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">Marketplace SaaS benchmark</th>
+                <th style="border:1px solid #e0e0e0;padding:10px 14px;text-align:left">What it means for a buyer</th>
+            </tr></thead>
+            <tbody>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Gross revenue churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>3.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Revenue lost to cancellations and downgrades each month, before expansion.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Logo churn (monthly)</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>5.0%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of customer accounts that leave each month. Higher than revenue churn indicates smaller customers churning.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">Annual-plan share</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>45%</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">Share of MRR locked in annual contracts. High share defers churn into a single renewal window.</td></tr>
+                <tr><td style="border:1px solid #e0e0e0;padding:10px 14px">MRR volatility</td><td style="border:1px solid #e0e0e0;padding:10px 14px"><strong>very high</strong></td><td style="border:1px solid #e0e0e0;padding:10px 14px">How predictable month-over-month MRR is. Higher volatility means historical churn is a less reliable predictor.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:.9em;color:#666;margin-bottom:1.5em">Benchmarks reflect ChurnLens analysis of marketplace SaaS revenue ledgers. The target's actual numbers may differ — the point of due diligence is to find out by how much and why.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What hidden churn looks like in Marketplace SaaS</h2>
+        <p style="margin-bottom:1em">Marketplace SaaS churn is structurally different from single-sided SaaS because supply and demand churn are correlated. When the top 10% of supply-side accounts reduce activity, demand-side accounts lose liquidity and churn in the same quarter — producing a compounding effect that a standard logo-churn curve will not capture. The diligence question is not 'what is monthly churn' but 'what is the half-life of GMV contribution from each supply cohort.' Marketplaces that report 2% monthly logo churn routinely show 40%+ annual GMV-weighted churn once you re-weight by contribution. The second risk is take-rate compression: supply accounts that stay on the platform often renegotiate down, so revenue retention runs 5-10 points below logo retention. ChurnLens surfaces both by decomposing the ledger by cohort and by revenue tier, not by raw account count.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">What ChurnLens surfaces in a marketplace SaaS acquisition</h2>
+        <p style="margin-bottom:.5em">When you upload a marketplace SaaS target's revenue ledger, ChurnLens runs four analyses that specifically address the failure modes above:</p>
+        <ul style="margin:0 0 1.5em 1.5em;line-height:1.8">
+            <li><strong>Zombie MRR detection</strong> — flags paid accounts whose billing is stable but whose underlying engagement signals (seat count, usage volume, support activity) are declining, quantifying the revenue at risk at the next renewal.</li>
+            <li><strong>Annual-plan renewal-cliff mapping</strong> — decomposes the 45% annual-plan book by contract end-date and flags any date window where more than 10% of MRR is scheduled to renew at once.</li>
+            <li><strong>Revenue-concentration stress test</strong> — identifies the top-5 logos, computes the MRR impact of each one churning, and flags any single account whose loss would move headline churn by more than 1 percentage point.</li>
+            <li><strong>Cohort retention curve fitting</strong> — tracks each acquisition vintage's revenue over time and flags any recent cohort decaying faster than the trailing baseline, which is the earliest leading indicator of product-market-fit erosion.</li>
+        </ul>
+        <p style="margin-bottom:1.5em">The output is a report you can use in price negotiation: every flagged anomaly maps to a specific dollar amount of MRR at risk, and every dollar of verified risk is a dollar of purchase price you can defend reducing.</p>
+
+        <h2 style="font-size:1.4em;font-weight:700;margin:2em 0 .5em">Who this analysis is for</h2>
+        <p style="margin-bottom:1.5em">Marketplace SaaS acquisitions are typically evaluated by PE firms and search funds focused on vertical software, strategic acquirers already operating in the marketplace stack, and founders preparing to sell a marketplace SaaS who want to pre-empt the diligence findings a buyer will surface. In all three cases the workflow is the same: upload the revenue ledger CSV, receive the reconstructed churn and revenue-quality report, and use the flagged anomalies to drive either the price negotiation (for buyers) or the data-room narrative (for sellers).</p>
+
+    </main>
 <footer style="margin-top:60px;padding-top:20px;border-top:1px solid #e0e0e0;color:#888;font-size:.85em">
 <p><strong>ChurnLens</strong> — SaaS revenue quality due diligence</p>
 </footer>
