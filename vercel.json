@@ -462,6 +462,22 @@
     {
       "source": "/scenarios/:slug",
       "destination": "/scenarios/:slug/index.html"
+    },
+    {
+      "source": "/dream-100",
+      "destination": "/dream-100.html"
+    },
+    {
+      "source": "/affiliate",
+      "destination": "/affiliate.html"
+    },
+    {
+      "source": "/saas-valuation-calculator",
+      "destination": "/saas-valuation-calculator.html"
+    },
+    {
+      "source": "/saas-m-and-a-due-diligence-framework",
+      "destination": "/saas-m-and-a-due-diligence-framework.html"
     }
   ],
   "headers": [
@@ -506,7 +522,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://eu.i.posthog.com https://churnlens.vercel.app https://connect.facebook.net https://business.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://eu.i.posthog.com https://connect.facebook.net https://www.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://churnlens.vercel.app https://connect.facebook.net https://business.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://connect.facebook.net https://www.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
         }
       ]
     },

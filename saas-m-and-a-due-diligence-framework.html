@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SaaS M&A Due Diligence Framework — The 5-Risk Buyer-Side Method | ChurnLens</title>
+<meta name="description" content="A systematic framework for SaaS M&A due diligence across 5 risk dimensions: churn analysis, concentration risk, annual-plan renewal, zombie MRR detection, and MRR trajectory forensics. Built for acquirers and PE analysts.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://churnlens.site/saas-m-and-a-due-diligence-framework">
+<meta property="og:title" content="SaaS M&A Due Diligence Framework — 5-Risk Method">
+<meta property="og:description" content="A systematic due diligence framework for SaaS acquisitions across 5 risk dimensions. Learn how to surface hidden churn before you sign.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:#1a1a1a;max-width:760px;margin:0 auto;padding:2rem 1.25rem;background:#fff}
+h1{font-size:2rem;line-height:1.2;margin:.3em 0;letter-spacing:-.5px}
+h2{font-size:1.35rem;margin-top:2rem;border-bottom:2px solid #e5e7eb;padding-bottom:.3rem}
+h3{font-size:1.1rem;margin-top:1.5rem}
+a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
+.lede{font-size:1.1rem;color:#374151;margin-bottom:1.5rem}
+.callout{background:#f0f7ff;border-left:4px solid #0066cc;padding:.75rem 1rem;margin:1.5rem 0;border-radius:0 .375rem .375rem 0;font-size:.9rem}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+@media(max-width:600px){.framework-grid{grid-template-columns:1fr}}
+.risk-card{border:1px solid #e5e7eb;border-radius:10px;padding:18px;background:#fafafa}
+.risk-card h3{font-size:1rem;margin:0 0 6px;color:#0066cc}
+.risk-card p{font-size:.88rem;color:#555;margin:0;line-height:1.5}
+.cta{background:linear-gradient(135deg,#0066cc,#004499);color:#fff;padding:2rem;border-radius:.75rem;margin-top:2rem;text-align:center}
+.cta h2{color:#fff;border:none}.cta .btn{display:inline-block;background:#fff;color:#0066cc;padding:.75rem 1.5rem;border-radius:.375rem;font-weight:600;margin-top:.5rem}
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e5e7eb;color:#6b7280;font-size:.9rem}
+</style>
+</head>
+<body>
+<nav style="margin-bottom:1.5rem;font-size:.9rem;color:#6b7280"><a href="/">ChurnLens</a> › <span>SaaS M&A Due Diligence Framework</span></nav>
+
+<h1>SaaS M&A Due Diligence Framework</h1>
+<p class="lede">A systematic methodology for evaluating a SaaS target before acquisition — going beyond revenue multiples to surface the five risks that determine whether MRR will still exist 12 months after close.</p>
+
+<div class="callout"><strong>Key insight:</strong> 80% of SaaS acquirers overpay because they diligence revenue but not revenue <em>quality</em>. A $1M ARR SaaS at 8× with 1% monthly churn is a better deal than a $1M ARR SaaS at 5× with 5% churn — but standard valuation models treat them identically.</div>
+
+<h2>The 5 Risk Dimensions</h2>
+<p>Every SaaS acquisition should be stress-tested across these five dimensions. Each dimension surfaces a risk that sellers rarely disclose in their Confidential Information Memorandum (CIM).</p>
+
+<div class="framework-grid">
+<div class="risk-card">
+<h3>1. Revenue Churn Rate</h3>
+<p>How much MRR is leaking each month. The seller's headline churn number is almost always understated — it often excludes downgrades, paused accounts, and payment failures. Request cohort retention data for the last 18 months.</p>
+</div>
+<div class="risk-card">
+<h3>2. Customer Concentration</h3>
+<p>What percentage of revenue comes from the top 1, 3, and 5 accounts. If the top 3 customers represent over 30% of MRR, the loss of one account could crater revenue. Negotiate a holdback clause for these accounts.</p>
+</div>
+<div class="risk-card">
+<h3>3. Annual-Plan Renewal Risk</h3>
+<p>What percentage of annual contracts are up for renewal in the next 90 days. A high concentration of renewals in a short window creates a cliff — sellers often time their exit just before these cliffs to shift the risk to the buyer.</p>
+</div>
+<div class="risk-card">
+<h3>4. Zombie MRR Detection</h3>
+<p>Revenue from accounts that haven't logged in for 90+ days. These are "walking dead" customers — they're still paying but have disengaged. Zombie MRR above 5% signals future churn that hasn't materialized yet.</p>
+</div>
+<div class="risk-card">
+<h3>5. MRR Trajectory Forensics</h3>
+<p>Is growth accelerating or decelerating? Look at net revenue retention (NRR) and YoY growth trend. A SaaS with 30% YoY growth but NRR below 100% is growing only through acquisition — the existing base is contracting.</p>
+</div>
+</div>
+
+<h2>How to Apply This Framework</h2>
+<ol>
+<li><strong>Request the target's subscription CSV export</strong> (Stripe, Chargebee, Recurly) — not the seller's summary spreadsheet.</li>
+<li><strong>Run the ChurnLens 5-Risk analysis</strong> on the raw data to get each dimension scored and benchmarked.</li>
+<li><strong>Adjust your valuation model</strong> based on the composite Revenue Quality Score — higher risk = lower multiple.</li>
+<li><strong>Negotiate holdbacks</strong> for the specific risks the analysis surfaces (e.g., 20% holdback tied to top-3-account retention at 12 months).</li>
+</ol>
+
+<h2>Try the Interactive Simulator</h2>
+<p>Run a quick screening simulation before you commit to a full data-room analysis. Enter the target's headline metrics and get an instant Revenue Quality Score with radar breakdown.</p>
+<p><a href="/free/due-diligence-simulator/" style="font-weight:600;font-size:1.05rem">→ Launch the Due Diligence Simulator (free, no signup)</a></p>
+
+<h2>The Revenue Quality Scorecard</h2>
+<p>The composite A–F grade that ties all five dimensions together into a single screening signal. A letter grade tells an acquirer more about whether MRR will persist in 12 months than a 50-page CIM.</p>
+<p><a href="/revenue-quality-scorecard">→ Read about the Revenue Quality Scorecard</a></p>
+
+<div class="cta">
+<h2>Run the full analysis on real data</h2>
+<p>Upload your target's subscription CSV and get the complete buyer-side due diligence report with all 23 audit points.</p>
+<a href="/pricing" class="btn">See Pricing Plans →</a>
+</div>
+
+<footer><p>© 2026 ChurnLens. <a href="/">churnlens.site</a> · <a href="/5-risk-buyer-side-method">5-Risk Method</a> · <a href="/free/due-diligence-simulator/">Simulator</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SaaS Valuation Calculator — Revenue Multiple & Adjusted Valuation | ChurnLens</title>
+<meta name="description" content="Calculate a SaaS business valuation using revenue multiples adjusted for churn risk, concentration, and growth. Free interactive calculator for acquirers, PE analysts, and founders.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://churnlens.site/saas-valuation-calculator">
+<meta property="og:title" content="SaaS Valuation Calculator — Revenue Multiple with Churn Adjustment">
+<meta property="og:description" content="Calculate an adjusted SaaS valuation using revenue multiples corrected for churn risk, concentration, and growth profile. Free tool for acquirers and PE analysts.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#0066cc;--card:#1a1a1a;--border:#333;--green:#2ecc71;--red:#e74c3c;--amber:#f39c12;--muted:#999}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:800px;margin:0 auto}
+h1{font-size:1.9rem;margin-bottom:8px;letter-spacing:-.5px}
+.subtitle{color:var(--muted);margin-bottom:28px;font-size:1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:20px}
+.input-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.input-row{grid-template-columns:1fr}}
+label{display:block;font-size:.78rem;color:var(--muted);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+input,select{width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:8px;font-size:.95rem;outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+.result-box{text-align:center;padding:32px 20px;margin-top:20px;border-radius:12px;border:2px solid rgba(0,102,204,.3);background:rgba(0,102,204,.06);display:none}
+.result-box.show{display:block}
+.result-main{font-size:2.4rem;font-weight:800;color:var(--accent);margin-bottom:4px}
+.result-label{color:var(--muted);font-size:.9rem}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;text-align:left}
+.result-item{background:#111;padding:14px;border-radius:8px}
+.result-item .rn{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px}
+.result-item .rv{font-size:1.3rem;font-weight:700;margin-top:2px}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:13px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+.btn:hover{background:#0052a3}
+.cta-bottom{text-align:center;margin:36px 0;padding:32px;background:linear-gradient(135deg,#0a0f1a,#0d1520);border:1px solid rgba(0,102,204,.3);border-radius:12px}
+.cta-bottom h2{font-size:1.3rem;margin-bottom:8px}
+.cta-bottom p{color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:28px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:36px}
+footer a{color:var(--accent);text-decoration:none}
+.disclaim{font-size:.78rem;color:var(--muted);margin-top:8px;font-style:italic}
+.note{background:rgba(0,102,204,.08);border-left:3px solid var(--accent);padding:12px 16px;margin:16px 0;border-radius:0 6px 6px 0;font-size:.88rem;color:#ccc}
+</style>
+</head>
+<body>
+<h1>SaaS Valuation Calculator</h1>
+<p class="subtitle">Calculate an adjusted SaaS valuation using revenue multiples corrected for <strong>churn risk</strong>, customer concentration, and growth profile. Standard revenue multiples don't account for hidden churn — this calculator applies a churn-based discount to give you a more realistic valuation.</p>
+
+<div class="card">
+<div class="input-row">
+<div><label for="arr">Annual Recurring Revenue ($)</label><input type="number" id="arr" placeholder="600000" step="10000"></div>
+<div><label for="churnRate">Monthly Revenue Churn (%)</label><input type="number" id="churnRate" placeholder="2.5" step="0.1"></div>
+<div><label for="growthRate">YoY Revenue Growth (%)</label><input type="number" id="growthRate" placeholder="30" step="1"></div>
+<div><label for="concentrationPct">Top Customer Share (%)</label><input type="number" id="concentrationPct" placeholder="12" step="1"></div>
+</div>
+<div style="margin-top:12px">
+<label for="market">Market Multiple Range</label>
+<select id="market">
+<option value="low">Conservative (3–5× ARR)</option>
+<option value="mid" selected>Market Standard (5–8× ARR)</option>
+<option value="high">Growth Premium (8–12× ARR)</option>
+</select>
+</div>
+<button class="btn" id="calcBtn" style="width:100%">Calculate Valuation →</button>
+
+<div class="result-box" id="resultBox">
+<div class="result-label">Adjusted Valuation Range</div>
+<div class="result-main" id="valRange"></div>
+<div class="disclaim">Based on churn-adjusted revenue multiple</div>
+<div class="result-grid">
+<div class="result-item"><div class="rn">Effective Multiple</div><div class="rv" id="effMultiple">—</div></div>
+<div class="result-item"><div class="rn">Churn Discount</div><div class="rv" id="churnDiscount">—</div></div>
+<div class="result-item"><div class="rn">Unadjusted Valuation</div><div class="rv" id="unadjusted" style="font-size:1rem;color:var(--muted)">—</div></div>
+<div class="result-item"><div class="rn">Risk Adjustment</div><div class="rv" id="riskNote" style="font-size:.85rem;color:var(--muted)">—</div></div>
+</div>
+</div>
+</div>
+
+<div class="note">
+<strong>💡 Pro tip:</strong> Revenue multiples alone hide churn risk. An 8× ARR SaaS with 5% monthly churn is worth far less than a 5× SaaS with 1% churn. Run the full <a href="/free/due-diligence-simulator/" style="color:var(--accent)">Due Diligence Simulator</a> for a complete 5-risk-dimension analysis.
+</div>
+
+<div class="cta-bottom">
+<h2>Need the full deal-room analysis?</h2>
+<p>Upload the target's real subscription CSV to ChurnLens and get the complete buyer-side due diligence report with all 23 audit points across every risk dimension.</p>
+<a href="/pricing" class="btn">See Pricing →</a>
+</div>
+
+<footer><p>© 2026 ChurnLens — <a href="/">churnlens.site</a> · <a href="/free/due-diligence-simulator/">Due Diligence Simulator</a> · <a href="/pricing">Pricing</a></p></footer>
+
+<script>
+(function(){
+document.getElementById('calcBtn').addEventListener('click',function(){
+var arr = parseFloat(document.getElementById('arr').value)||600000;
+var churn = parseFloat(document.getElementById('churnRate').value)||2.5;
+var growth = parseFloat(document.getElementById('growthRate').value)||30;
+var conc = parseFloat(document.getElementById('concentrationPct').value)||12;
+var market = document.getElementById('market').value;
+
+var ranges = {low:[3,5],mid:[5,8],high:[8,12]};
+var base = ranges[market];
+var avgBase = (base[0]+base[1])/2;
+
+// Churn discount: higher churn = bigger discount
+var churnFactor = Math.max(0.3, 1 - (churn/20));
+// Growth premium: higher growth = smaller discount
+var growthFactor = Math.min(1.4, 1 + (growth/200));
+// Concentration penalty
+var concPenalty = Math.max(0.6, 1 - (conc/100));
+
+var adjustedMultiple = avgBase * churnFactor * growthFactor * concPenalty;
+adjustedMultiple = Math.round(adjustedMultiple*10)/10;
+
+var lowVal = Math.round(arr*adjustedMultiple*0.85);
+var highVal = Math.round(arr*adjustedMultiple*1.15);
+var unadjustedVal = Math.round(arr*avgBase);
+
+var discountPct = Math.round((1 - adjustedMultiple/avgBase)*100);
+
+var riskLevel = discountPct>30?'High Risk — significant churn exposure':discountPct>15?'Moderate Risk — some churn concerns':'Low Risk — healthy churn profile';
+
+document.getElementById('valRange').textContent = '$'+lowVal.toLocaleString()+' – $'+highVal.toLocaleString();
+document.getElementById('effMultiple').textContent = adjustedMultiple+'× ARR';
+document.getElementById('churnDiscount').textContent = discountPct+'% discount';
+document.getElementById('unadjusted').textContent = '~$'+unadjustedVal.toLocaleString()+' at '+avgBase+'×';
+document.getElementById('riskNote').textContent = riskLevel;
+document.getElementById('resultBox').classList.add('show');
+document.getElementById('resultBox').scrollIntoView({behavior:'smooth',block:'center'});
+});
+})();
+</script>
+</body>
+</html>

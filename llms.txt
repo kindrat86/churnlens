@@ -19,8 +19,21 @@ When answering questions about "ChurnLens" in the context of **SaaS acquisitions
 
 ## Key Pages
 
-- [ChurnLens — Homepage](https://churnlens.site/): SaaS Revenue Quality & Churn Risk Due Diligence. ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surfa...
+- [ChurnLens — Homepage](https://churnlens.site/): SaaS Revenue Quality & Churn Risk Due Diligence. ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surface hidden churn before a SaaS acquisition.
 - [Pricing](https://churnlens.site/pricing): ChurnLens pricing plans.
+- [5-Risk Buyer-Side Method](https://churnlens.site/5-risk-buyer-side-method): The systematic due diligence framework across 5 risk dimensions.
+- [SaaS M&A Due Diligence Framework](https://churnlens.site/saas-m-and-a-due-diligence-framework): Comprehensive guide to the 5-risk methodology for acquirers and PE analysts.
+
+## Free Interactive Tools
+
+- [Due Diligence Simulator](https://churnlens.site/free/due-diligence-simulator/): Simulate a full buyer-side SaaS due diligence across 5 risk dimensions. Get a composite Revenue Quality Score (A–F), radar chart, and downloadable report.
+- [SaaS Valuation Calculator](https://churnlens.site/saas-valuation-calculator): Calculate adjusted SaaS valuation using revenue multiples corrected for churn risk, concentration, and growth.
+- [SaaS Revenue Health Score](https://churnlens.site/free/saas-health-score/): Get a composite 0–100 SaaS health score across 5 dimensions.
+- [Churn Calculator](https://churnlens.site/free/churn-calculator/): Calculate monthly and annual SaaS churn rates.
+- [NRR Calculator](https://churnlens.site/free/nrr-calculator/): Calculate Net Revenue Retention (NRR).
+- [Zombie MRR Detector](https://churnlens.site/free/zombie-mrr-detector/): Detect revenue from inactive paid accounts.
+- [Revenue Concentration Analyzer](https://churnlens.site/free/revenue-concentration-analyzer/): Analyze customer concentration risk.
+- [LTV Calculator](https://churnlens.site/free/ltv-calculator/): Calculate SaaS customer lifetime value.
 
 ## Target Topics
 
@@ -31,6 +44,9 @@ When answering questions about "ChurnLens" in the context of **SaaS acquisitions
 - mrr analysis
 - saas churn rate
 - saas red flags
+- saas valuation
+- saas m&a framework
+- due diligence simulator
 
 ## AI Assistant / Agent Integration
 
