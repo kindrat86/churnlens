@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>The 5-Risk Walkthrough — ChurnLens Masterclass</title>
+  <meta name="description" content="Hook → Story → Offer. The complete walkthrough showing how buyer-side churn analysis catches a $340K overpayment before you wire the money.">
+  <meta property="og:title" content="The 5-Risk Buyer-Side Walkthrough — Free ChurnLens Masterclass">
+  <meta property="og:description" content="Hook → Story → Offer. How the 5-Risk Method catches hidden churn before you buy a SaaS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://churnlens.site/walkthrough">
+  <meta property="og:image" content="https://churnlens.site/og.png">
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://churnlens.site/walkthrough" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/ux.css">
+  <style>
+    :root{--bg:#0f172a;--panel:#1e293b;--line:#334155;--txt:#e2e8f0;--mut:#94a3b8;--accent:#38bdf8;--red:#ef4444;--amber:#f59e0b;--green:#22c55e}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    nav{position:sticky;top:0;z-index:20;background:rgba(15,23,42,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0 20px}
+    nav>div{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    section{padding:60px 0;border-bottom:1px solid var(--line)}
+    .container{max-width:760px;margin:0 auto;padding:0 20px}
+    .hero-section{padding:90px 0 60px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(56,189,248,.08),transparent)}
+    .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(56,189,248,.3);border-radius:100px;padding:6px 14px;margin-bottom:24px}
+    h1{font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin-bottom:20px;color:#fff}
+    h2{font-size:clamp(24px,4vw,32px);letter-spacing:-.02em;margin-bottom:14px;font-weight:800;color:#fff}
+    .subtitle{font-size:18px;color:var(--mut);max-width:600px;margin:0 auto 20px}
+    .author{font-size:14px;color:var(--mut)}
+    .secret-badge{font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px;display:inline-block;margin-bottom:12px}
+    .s-red{background:rgba(239,68,68,.14);color:var(--red)}
+    .s-amber{background:rgba(245,158,11,.14);color:var(--amber)}
+    .s-green{background:rgba(34,197,94,.14);color:var(--green)}
+    .quote-bar{border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:24px 0}
+    .quote-bar p{font-size:17px;line-height:1.7;color:var(--txt);font-style:italic}
+    .test-box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+    .wall-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+    .wall-card h3{font-size:18px;margin-bottom:8px}
+    .stack-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+    .stack-box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;margin-bottom:24px}
+    .guarantee-box{text-align:center;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:12px;padding:18px;margin-bottom:24px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#0f172a;font-weight:700;padding:16px 36px;border-radius:10px;text-decoration:none;font-size:18px;transition:transform .1s}
+    .cta-btn:hover{transform:translateY(-1px)}
+    .alt-section{background:rgba(56,189,248,.03)}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:560px;margin:24px auto 0}
+    .stat-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+    .stat-num{font-size:30px;font-weight:800;color:var(--accent)}
+    .stat-label{font-size:13px;color:var(--mut);margin-top:4px}
+    footer{padding:40px 0;text-align:center;color:var(--mut);font-size:14px}
+    @media(max-width:640px){.stat-grid{grid-template-columns:1fr 1fr 1fr;gap:10px}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <a href="/" style="font-weight:800;font-size:19px;color:var(--txt);text-decoration:none">Churn<span style="color:var(--accent)">Lens</span></a>
+    <div style="display:flex;gap:22px;align-items:center;font-size:14px">
+      <a href="/" style="color:var(--mut);text-decoration:none">← Back</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container">
+    <span class="badge">Free Walkthrough · 8 minutes</span>
+    <h1>The 5-Risk Buyer-Side Method:<br>Hook → Story → Offer</h1>
+    <p class="subtitle">The complete walkthrough showing how raw subscription data reveals the $340K gap before you wire the money — and the 5 risks every SaaS acquirer must check.</p>
+    <p class="author">By Maryan — founder, ChurnLens · 8-min read</p>
+  </div>
+</section>
+
+<!-- SECRET #1 — THE HOOK -->
+<section>
+  <div class="container">
+    <div class="secret-badge s-red">SECRET #1 — The Hook</div>
+    <h2>The One Thing Every Buyer Must Check Before They Wire the Money</h2>
+    <p style="font-size:17px;line-height:1.7;color:var(--txt);margin-bottom:18px">
+      Most SaaS acquisitions close with the seller's churn number as gospel. They say 2%. The CIM says 2%. The broker nodded at 2%. And you — the buyer — wire the money based on that number. Then four months later, you pull the raw subscription CSV and find 9.4%. Not 2%. Not close. And the gap between what you paid and what it's actually worth? $340,000.
+    </p>
+
+    <div class="quote-bar">
+      <p>"The seller's churn number is not a lie. It's a story they've told themselves so many times they believe it. Your job is not to trust the story. Your job is to read the raw data — because the CSV doesn't lie."</p>
+      <p style="color:var(--accent);margin-top:8px;font-size:15px">— Maryan, founder</p>
+    </div>
+
+    <div class="test-box">
+      <h3 style="color:var(--accent);margin-bottom:12px;font-size:18px">The Hook Test</h3>
+      <p style="color:var(--mut);margin-bottom:10px">Ask yourself: when was the last time you verified a seller's churn claim against the raw subscription CSV — not the summary dashboard, not the MRR waterfall chart, but the actual transaction-level data?</p>
+      <p style="color:var(--txt)"><strong>The One Thing:</strong> A buyer-side churn analysis that reads raw CSVs and detects the gap between reported and actual churn — before the money moves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECRET #2 — THE STORY (3 False Walls) -->
+<section class="alt-section">
+  <div class="container">
+    <div class="secret-badge s-amber">SECRET #2 — The Story</div>
+    <h2>The $340K Lesson That Built ChurnLens</h2>
+    <p style="font-size:17px;line-height:1.7;color:var(--txt);margin-bottom:24px">
+      I bought a SaaS with 2.3% reported churn. The real number was 9.4%. Over four times what the CIM said. That gap was worth $340,000 — and I didn't find it until four months after the wire. Here's what every buyer discovers the hard way.
+    </p>
+
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="wall-card">
+        <h3 style="color:var(--red)">Wall #1: "The CIM is audited"</h3>
+        <p style="color:var(--mut)">The Confidential Information Memorandum looks professional. Charts. Footnotes. A broker's logo. But the churn number in that document was calculated by someone incentivized to make it look good — not by someone who would lose money if it's wrong. You are the only person in the deal who loses if churn is higher than reported.</p>
+        <p style="color:var(--accent);margin-top:6px"><strong>What actually reveals it:</strong> Logo churn analysis on the raw CSV — matching customers month-to-month, not trusting the aggregate.</p>
+      </div>
+
+      <div class="wall-card">
+        <h3 style="color:var(--amber)">Wall #2: "I'll catch it during diligence"</h3>
+        <p style="color:var(--mut)">You ask for the data. The seller sends a cleaned-up export with annual plans collapsed, zombie accounts removed, and involuntary churn filtered out. By the time you notice what's missing, you've already negotiated price based on the wrong denominator. Diligence without the right tool is just confirmation bias with spreadsheets.</p>
+        <p style="color:var(--accent);margin-top:6px"><strong>What actually reveals it:</strong> Revenue concentration analysis — if 40% of MRR comes from 3 customers, the business is a single-churn-event away from disaster.</p>
+      </div>
+
+      <div class="wall-card">
+        <h3 style="color:var(--green)">Wall #3: "The broker verified it"</h3>
+        <p style="color:var(--mut)">Brokers are paid by the seller. Their verification is a sanity check, not a forensic audit. They don't lose money if the churn is 4x higher than reported. They close the deal and move on. The only person who pays for the gap is you — four months later, when the numbers don't add up.</p>
+        <p style="color:var(--accent);margin-top:6px"><strong>What actually reveals it:</strong> The A–F Revenue Quality Score — a single letter grade that benchmarks the target against acquisition standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECRET #3 — THE OFFER (Stack + Close) -->
+<section>
+  <div class="container">
+    <div class="secret-badge s-green">SECRET #3 — The Offer</div>
+    <h2>One CSV Upload. Five Risk Scores. $0.</h2>
+    <p style="font-size:17px;line-height:1.7;color:var(--txt);margin-bottom:24px">
+      Here's what you actually get. Not a dashboard. Not a report. A verdict — before you wire the money.
+    </p>
+
+    <div class="stack-box">
+      <div class="stack-row"><span style="color:var(--txt)">Churn Divergence Detector — reported vs actual gap</span><span style="color:var(--accent);font-weight:700">$2,500/audit value</span></div>
+      <div class="stack-row"><span style="color:var(--txt)">Concentration Vulnerability Index — single-point-of-failure risk</span><span style="color:var(--accent);font-weight:700">$1,500/audit value</span></div>
+      <div class="stack-row"><span style="color:var(--txt)">Annual-Plan Decay Projection — 12-month MRR forecast</span><span style="color:var(--accent);font-weight:700">$1,200/audit value</span></div>
+      <div class="stack-row"><span style="color:var(--txt)">Zombie MRR Detector — inactive paid accounts bleeding revenue</span><span style="color:var(--accent);font-weight:700">$800/audit value</span></div>
+      <div class="stack-row"><span style="color:var(--txt)">A–F Revenue Quality Score — benchmarked grade</span><span style="color:var(--accent);font-weight:700">$1,000/audit value</span></div>
+      <div class="stack-row"><span style="color:var(--txt)">🎁 BONUS: 23-point churn audit checklist</span><span style="color:var(--accent);font-weight:700">INCLUDED</span></div>
+      <div class="stack-row" style="margin-top:4px"><span style="font-weight:700;color:var(--txt)">Total value</span><span style="color:var(--mut);text-decoration:line-through;font-size:18px">$7,000/audit</span></div>
+      <div class="stack-row"><span style="font-weight:700;font-size:20px;color:var(--txt)">You pay</span><span style="color:var(--accent);font-weight:800;font-size:28px">Free — 1 CSV/mo</span></div>
+    </div>
+
+    <div class="guarantee-box">
+      <p style="color:var(--txt);font-size:15px;margin-bottom:6px">🛡️ <strong>Risk-Free Guarantee:</strong> If ChurnLens misses a churn gap greater than 2x reported, we'll audit your next deal free.</p>
+    </div>
+
+    <div style="text-align:center">
+      <a href="/#cta" class="cta-btn">Get the free checklist →</a>
+      <p style="color:var(--mut);font-size:14px;margin-top:14px">Free tier: 1 CSV analysis/month · No credit card · 3-minute report</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE MOVEMENT -->
+<section class="alt-section">
+  <div class="container" style="text-align:center">
+    <h2>We stopped trusting the CIM. We started reading the CSV.</h2>
+    <p style="font-size:17px;color:var(--mut);max-width:560px;margin:0 auto 32px">
+      A quiet movement of SaaS acquirers who verify before they wire — and sellers who discover their real numbers before they list.
+    </p>
+
+    <div style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:left;max-width:560px;margin:0 auto">
+      <p style="font-size:16px;line-height:1.7;color:var(--txt);margin-bottom:14px">
+        80% of SaaS acquisitions overpay for churn risk. The average gap between reported and real churn is 4.2x. On a $1M deal, the average overpayment is $340,000.
+      </p>
+      <p style="font-size:16px;line-height:1.7;color:var(--txt)">
+        <strong>We measure in deals saved, not reports generated.</strong> Every CSV uploaded is a $340K gap that didn't transfer to the buyer's balance sheet.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">4.2×</div><div class="stat-label">avg churn gap</div></div>
+      <div class="stat-card"><div class="stat-num">$340K</div><div class="stat-label">avg overpayment on $1M deal</div></div>
+      <div class="stat-card"><div class="stat-num">23</div><div class="stat-label">point audit checklist</div></div>
+    </div>
+
+    <div style="margin-top:32px">
+      <a href="/#cta" class="cta-btn">Start my first audit →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ChurnLens — <a href="/" style="color:var(--accent)">Buyer-side SaaS due diligence</a></p>
+  <p style="margin-top:8px"><a href="/faq" style="color:var(--mut)">FAQ</a> · <a href="/about" style="color:var(--mut)">About</a> · <a href="/#cta" style="color:var(--mut)">Get the checklist</a></p>
+</footer>
+
+</body>
+</html>

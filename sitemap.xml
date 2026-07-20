@@ -225,4 +225,5 @@
   <url><loc>https://churnlens.site/widgets/related-tools</loc><lastmod>2026-07-19</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://churnlens.site/zombie-mrr-detector</loc><lastmod>2026-07-19</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://churnlens.site/stats/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-</urlset>
+  <url><loc>https://churnlens.site/what-is-good-mrr</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  </urlset>

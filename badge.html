@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SaaS Churn Cost Badge — Embed on your site</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.6;padding:40px 20px;max-width:720px;margin:0 auto}
+h1{font-size:1.8em;margin-bottom:8px;color:#fff}
+h1 span{color:#f43f5e}
+.subtitle{color:#999;margin-bottom:32px;font-size:1.05em}
+pre{background:#111;border:1px solid #222;border-radius:12px;padding:18px;overflow-x:auto;margin:12px 0;color:#cfcfcf;font-size:.9em}
+code{background:#1a1a1a;padding:2px 6px;border-radius:4px;color:#f43f5e;font-size:.9em}
+.badge-preview{border:1px solid #1a1a1a;border-radius:16px;padding:24px;margin:24px 0;text-align:center;background:#111}
+.badge-preview iframe{border:none;margin:0 auto}
+.step{margin:24px 0;padding:20px;background:#111;border:1px solid #1a1a1a;border-radius:12px}
+.step h3{color:#f43f5e;margin-bottom:8px}
+.step p{color:#999;margin:8px 0}
+.footer{text-align:center;margin-top:40px;color:#555;font-size:.85em}
+.footer a{color:#f43f5e}
+</style>
+</head>
+<body>
+
+<h1><span>📉</span> Churn Cost Badge</h1>
+<p class="subtitle">Show the real cost of churn on your SaaS landing page. Dynamic — updates with your numbers.</p>
+
+<div class="badge-preview">
+  <p style="color:#666;margin-bottom:12px;font-size:.9em">Live preview:</p>
+  <iframe src="https://churnlens.site/badge/churn-cost?mrr=10000&churn=5&cac=500" width="300" height="80" style="border:none" title="Churn Cost Calculator"></iframe>
+</div>
+
+<div class="step">
+  <h3>Step 1: Customize your numbers</h3>
+  <p>Replace <code>mrr</code>, <code>churn</code>, and <code>cac</code> with your SaaS metrics:</p>
+  <pre>https://churnlens.site/badge/churn-cost?mrr=YOUR_MRR&churn=YOUR_CHURN_RATE&cac=YOUR_CAC</pre>
+  <p style="color:#888;font-size:.85em"><code>mrr</code> = Monthly Recurring Revenue in USD<br><code>churn</code> = Monthly churn rate % (e.g. 5 for 5%)<br><code>cac</code> = Customer Acquisition Cost in USD</p>
+</div>
+
+<div class="step">
+  <h3>Step 2: Embed anywhere</h3>
+  <p>Paste this in your landing page, pricing page, or investor deck:</p>
+  <pre>&lt;iframe src="https://churnlens.site/badge/churn-cost?mrr=10000&amp;churn=5&amp;cac=500" 
+        width="300" height="80" 
+        style="border:none" 
+        title="Monthly Churn Cost"&gt;&lt;/iframe&gt;</pre>
+</div>
+
+<div class="step">
+  <h3>Step 3: Link back (optional, appreciated)</h3>
+  <pre>&lt;p style="font-size:12px;color:#888"&gt;
+  Churn metrics by &lt;a href="https://churnlens.site"&gt;ChurnLens&lt;/a&gt;
+&lt;/p&gt;</pre>
+</div>
+
+<div class="footer">
+  <p>Powered by <a href="https://churnlens.site">ChurnLens</a> — Churn analytics for SaaS. Track, predict, and reduce customer churn.</p>
+</div>
+
+</body>
+</html>

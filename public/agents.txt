@@ -1,0 +1,5 @@
+# ChurnLens — Agent Reference
+# SaaS revenue-quality & churn-risk due diligence for SaaS acquirers.
+# Upload a subscription CSV, get a risk report in minutes.
+# Contact: hello@churnlens.site
+# Site: https://churnlens.site

@@ -1,12 +1,13 @@
 /* ═════════════════════════════════════════════════════════
    WORLD-CLASS UX ENHANCEMENT — Mobile-First, Accessible, Premium
-   Deployed across all 10 portfolio domains: R16
+   Deployed across all 10 portfolio domains: R17
    Adds: CSS vars theming, gradient orbs, glassmorphism,
    animated cards, gradient CTAs, reading progress, back-to-top,
    safe-area insets, staggered animation, skeleton loading,
    mobile bottom nav, sticky CTA bar, bottom sheets, toasts,
    touch-active feedback, container queries, scroll-driven
-   animations, view transitions, text-wrap balance/pretty.
+   animations, view transitions, text-wrap balance/pretty,
+   touch ripple effect, autofill override, dark-mode transition.
    ═════════════════════════════════════════════════════════ */
 
 /* ── 0. CSS CUSTOM PROPERTIES (DESIGN TOKENS) ───────── */
@@ -142,6 +143,36 @@ button:active:not(:disabled), .btn:active:not(:disabled),
   transform: scale(0.97);
 }
 
+/* R17: Touch ripple effect — radial gradient expands on tap */
+.ux-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ux-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, currentColor 10%, transparent 10%) center;
+  background-size: 0 0;
+  opacity: 0.12;
+  pointer-events: none;
+  transition: background-size 0.5s var(--ux-ease-out), opacity 0.3s ease;
+}
+.ux-ripple:active::after {
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: background-size 0s, opacity 0.15s linear;
+}
+/* Auto-apply ripple to all buttons that aren't glass/ghost */
+button.ux-ripple,
+.btn.ux-ripple,
+a.btn.ux-ripple,
+a.cta.ux-ripple { /* explicit opt-in with class */ }
+/* Make the existing scale + ripple combo seamless */
+.ux-ripple:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
 /* ── 5. FOCUS STATES ───────────────────────────────── */
 :focus-visible {
   outline: 3px solid var(--ux-primary);
@@ -186,6 +217,17 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 label { display: block; margin-bottom: 0.375rem; font-weight: 600; font-size: 0.9375rem; }
+
+/* R17: Kill Chrome/Safari autofill yellow — transparent overlay */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--ux-surface) inset !important;
+  -webkit-text-fill-color: var(--ux-text) !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--ux-text);
+}
 
 /* R16: Auto-growing textareas (progressive) */
 @supports (field-sizing: content) {
@@ -807,6 +849,18 @@ body.ux-sheet-open {
    ════════════════════════════════════════════════════════ */
 
 /* ── 34. DARK MODE ──────────────────────────────────── */
+/* R17: Smooth transition on theme switch (respects reduced-motion) */
+:root {
+  --ux-theme-transition-duration: 0.3s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  body, .glass-card, input, textarea, select, a, button, .btn,
+  .ux-mobile-nav, .ux-sticky-cta, .card-hover {
+    transition: background-color var(--ux-theme-transition-duration) ease,
+                color var(--ux-theme-transition-duration) ease,
+                border-color var(--ux-theme-transition-duration) ease;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --ux-bg: #0d1117;

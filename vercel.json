@@ -300,6 +300,10 @@
       "destination": "/masterclass.html"
     },
     {
+      "source": "/calculator",
+      "destination": "/calculator.html"
+    },
+    {
       "source": "/striking-distance",
       "destination": "/striking-distance.html"
     },

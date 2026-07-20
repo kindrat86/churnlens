@@ -4,7 +4,7 @@
   "home_page_url": "https://churnlens.site/network/",
   "feed_url": "https://churnlens.site/network/feed.json",
   "description": "Cross-portfolio content feed for ChurnLens \u2014 AI-readable discovery feed of related platforms.",
-  "date_modified": "2026-07-18T17:31:50.874346+00:00",
+  "date_modified": "2026-07-19T16:23:06.384644+00:00",
   "authors": [
     {
       "name": "ChurnLens"
@@ -24,8 +24,8 @@
         "venture capital",
         "angel investing"
       ],
-      "totalPages": 254,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 113,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:sipiteno",
@@ -40,8 +40,8 @@
         "ai agents",
         "productivity"
       ],
-      "totalPages": 703,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 718,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:signals",
@@ -57,7 +57,7 @@
         "analytics"
       ],
       "totalPages": 2529,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:invisibleexit",
@@ -72,8 +72,8 @@
         "business strategy",
         "valuation"
       ],
-      "totalPages": 837,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 838,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:unlocksaas",
@@ -88,8 +88,8 @@
         "startup",
         "marketing"
       ],
-      "totalPages": 786,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 787,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:voicelogpro",
@@ -105,7 +105,7 @@
         "analysis"
       ],
       "totalPages": 165,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:carshake",
@@ -120,8 +120,8 @@
         "rental",
         "car-sharing"
       ],
-      "totalPages": 112,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 159,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:sanctionsai",
@@ -136,8 +136,8 @@
         "fintech",
         "risk"
       ],
-      "totalPages": 222,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "totalPages": 224,
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     },
     {
       "id": "pin:sipi_bot",
@@ -153,7 +153,7 @@
         "api"
       ],
       "totalPages": 186,
-      "dateModified": "2026-07-18T17:31:50.874346+00:00"
+      "dateModified": "2026-07-19T16:23:06.384644+00:00"
     }
   ]
 }

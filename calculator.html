@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Funnel Math Calculator — ChurnLens</title>
+<meta name="description" content="Interactive funnel math calculator with Russell Brunson's benchmark rates. See your projected revenue at every funnel stage.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://churnlens.site/calculator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+:root{--bg:#0b1120;--card:#1e293b;--border:#334155;--txt:#e2e8f0;--mut:#94a3b8;--dim:#64748b;--pri:#6366f1;--acc:#4ade80;--amber:#f59e0b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+nav{padding:16px 20px;border-bottom:1px solid var(--border)}
+nav .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--txt);text-decoration:none}
+nav .brand span{color:var(--pri)}
+.hero{padding:50px 0 30px;text-align:center}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,5vw,34px);font-weight:700;color:#f8fafc;margin-bottom:12px}
+.hero p{color:var(--mut);font-size:1rem;max-width:520px;margin:0 auto 20px}
+
+.slider-group{margin:24px 0;padding:20px;background:var(--card);border-radius:12px;border:1px solid var(--border)}
+.slider-group h3{font-size:1rem;color:#f8fafc;margin-bottom:4px}
+.slider-group .desc{font-size:0.8rem;color:var(--dim);margin-bottom:12px}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row input[type=range]{flex:1;accent-color:var(--pri)}
+.slider-row .val{min-width:60px;text-align:right;font-weight:700;font-size:1.1rem;color:var(--pri);font-variant-numeric:tabular-nums}
+
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center}
+.result-card .num{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;color:var(--acc);margin-bottom:4px}
+.result-card .label{font-size:0.78rem;color:var(--dim)}
+.result-card.highlight{border:2px solid var(--pri);background:rgba(99,102,241,0.1)}
+
+.benchmarks{margin:24px 0;padding:20px;background:var(--card);border-radius:12px;border:1px solid var(--border)}
+.benchmarks h3{font-size:0.9rem;color:var(--amber);margin-bottom:12px}
+.benchmarks table{width:100%;border-collapse:collapse}
+.benchmarks td{padding:6px 8px;font-size:0.82rem;border-bottom:1px solid var(--border)}
+.benchmarks td:first-child{color:var(--mut)}.benchmarks td:last-child{text-align:right;color:var(--acc);font-weight:600}
+
+.cta-section{text-align:center;padding:30px 0}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--pri),#4f46e5);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none}
+
+footer{padding:30px 20px;border-top:1px solid var(--border);text-align:center;color:var(--dim);font-size:0.8rem}
+footer a{color:var(--pri);text-decoration:none}
+</style>
+</head>
+<body>
+<nav><a href="/" class="brand">Churn<span>Lens</span></a></nav>
+<div class="wrap">
+<div class="hero">
+<h1>Interactive Funnel Math Calculator</h1>
+<p>Drag the sliders to see your projected revenue at every funnel stage. Uses Russell Brunson's benchmark conversion rates. Know your numbers.</p>
+</div>
+
+<div class="slider-group">
+<h3>Monthly Website Visitors</h3>
+<p class="desc">How many people land on your site each month?</p>
+<div class="slider-row">
+<input type="range" id="traffic" min="100" max="50000" step="100" value="1000">
+<span class="val" id="traffic-val">1,000</span>
+</div>
+</div>
+
+<div class="slider-group">
+<h3>Opt-In Rate</h3>
+<p class="desc">What % of visitors give you their email? Brunson benchmark: 30-50% for a good squeeze page.</p>
+<div class="slider-row">
+<input type="range" id="optin" min="5" max="60" step="1" value="30">
+<span class="val" id="optin-val">30%</span>
+</div>
+</div>
+
+<div class="slider-group">
+<h3>Tripwire Conversion</h3>
+<p class="desc">What % of subscribers buy your $7-$27 tripwire? Brunson benchmark: 10-30%.</p>
+<div class="slider-row">
+<input type="range" id="tripwire" min="1" max="50" step="1" value="15">
+<span class="val" id="tripwire-val">15%</span>
+</div>
+</div>
+
+<div class="slider-group">
+<h3>Core Offer Conversion</h3>
+<p class="desc">What % of buyers upgrade to your monthly subscription? Brunson benchmark: 5-15%.</p>
+<div class="slider-row">
+<input type="range" id="core" min="1" max="30" step="1" value="8">
+<span class="val" id="core-val">8%</span>
+</div>
+</div>
+
+<div class="slider-group">
+<h3>OTO / Upsell Attach Rate</h3>
+<p class="desc">What % of core buyers take the upsell? Brunson benchmark: 20-40%.</p>
+<div class="slider-row">
+<input type="range" id="otoRate" min="5" max="60" step="1" value="25">
+<span class="val" id="otoRate-val">25%</span>
+</div>
+</div>
+
+<div class="results" id="results"></div>
+
+<div class="benchmarks">
+<h3>📊 Russell Brunson's Funnel Math Benchmarks</h3>
+<table>
+<tr><td>Squeeze Page Opt-In</td><td>30–50%</td></tr>
+<tr><td>Tripwire Conversion</td><td>10–30%</td></tr>
+<tr><td>Core Offer Conversion</td><td>5–15%</td></tr>
+<tr><td>Order Bump Attach Rate</td><td>20–40%</td></tr>
+<tr><td>OTO Attach Rate</td><td>10–25%</td></tr>
+<tr><td>Email Open Rate</td><td>40–60%</td></tr>
+</table>
+</div>
+
+<div class="cta-section">
+<a href="/get-the-checklist" class="cta-btn">Get the 23-Point Checklist →</a>
+</div>
+</div>
+
+<script>
+(function(){
+var sliders={traffic:{el:document.getElementById('traffic'),v:document.getElementById('traffic-val'),fmt:function(v){return v.toLocaleString()}},optin:{el:document.getElementById('optin'),v:document.getElementById('optin-val'),fmt:function(v){return v+'%'}},tripwire:{el:document.getElementById('tripwire'),v:document.getElementById('tripwire-val'),fmt:function(v){return v+'%'}},core:{el:document.getElementById('core'),v:document.getElementById('core-val'),fmt:function(v){return v+'%'}},otoRate:{el:document.getElementById('otoRate'),v:document.getElementById('otoRate-val'),fmt:function(v){return v+'%'}}};
+
+function calc(){
+var t=parseInt(sliders.traffic.el.value);
+var o=parseInt(sliders.optin.el.value)/100;
+var tw=parseInt(sliders.tripwire.el.value)/100;
+var cr=parseInt(sliders.core.el.value)/100;
+var ot=parseInt(sliders.otoRate.el.value)/100;
+
+var emails=Math.round(t*o);
+var tripwireBuyers=Math.round(emails*tw);
+var tripwireRev=tripwireBuyers*9; // $9 tripwire
+var coreBuyers=Math.round(tripwireBuyers*cr);
+var coreRev=coreBuyers*49; // $49/mo Pro
+var otoBuyers=Math.round(coreBuyers*ot);
+var otoRev=otoBuyers*199; // $199 Dealmaker
+var totalRev=tripwireRev+coreRev+otoRev;
+var monthsToFreedom=totalRev>0?Math.ceil(4000/totalRev):999;
+
+document.getElementById('results').innerHTML=
+'<div class="result-card"><div class="num">'+emails.toLocaleString()+'</div><div class="label">Email Subscribers/mo</div></div>'+
+'<div class="result-card"><div class="num">'+tripwireBuyers.toLocaleString()+'</div><div class="label">Tripwire Buyers ($9)</div></div>'+
+'<div class="result-card"><div class="num">'+coreBuyers.toLocaleString()+'</div><div class="label">Pro Members ($49/mo)</div></div>'+
+'<div class="result-card"><div class="num">'+otoBuyers.toLocaleString()+'</div><div class="label">Dealmaker Clients ($199)</div></div>'+
+'<div class="result-card highlight"><div class="num">$'+totalRev.toLocaleString()+'</div><div class="label">Monthly Revenue</div></div>'+
+'<div class="result-card"><div class="num">'+monthsToFreedom+'</div><div class="label">Months to $4K MRR</div></div>';
+}
+
+Object.keys(sliders).forEach(function(k){
+sliders[k].el.addEventListener('input',function(){
+sliders[k].v.textContent=sliders[k].fmt(parseInt(sliders[k].el.value));
+calc();
+});
+sliders[k].v.textContent=sliders[k].fmt(parseInt(sliders[k].el.value));
+});
+calc();
+})();
+</script>
+</body>
+</html>

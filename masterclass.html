@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Masterclass — The 5-Risk Method That Exposes Hidden Churn | ChurnLens</title>
+<meta name="description" content="A 12-minute walkthrough covering the 5 risks every SaaS acquirer must check before the wire clears. The buyer-side method that found $340K in hidden churn on 11 of 14 deals.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://churnlens.site/masterclass">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root { --bg:#0b1120; --card:#1e293b; --border:#334155; --txt:#e2e8f0; --mut:#94a3b8; --dim:#64748b; --pri:#6366f1; --acc:#4ade80; --red:#ef4444; --amber:#f59e0b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background:var(--bg); color:var(--txt); font-family:'Inter',-apple-system,sans-serif; line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  nav { padding:16px 20px; border-bottom:1px solid var(--border); }
+  nav .wrap { display:flex; justify-content:space-between; align-items:center; padding:0; }
+  .brand { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; color:var(--txt); text-decoration:none; }
+  .brand span { color:var(--pri); }
+  .nav-back { color:var(--mut); font-size:0.85rem; text-decoration:none; }
+
+  /* Hero */
+  .hero { padding:60px 0 40px; text-align:center; }
+  .tag { display:inline-block; background:rgba(99,102,241,0.15); color:var(--pri); padding:6px 16px; border-radius:999px; font-size:0.78rem; font-weight:600; letter-spacing:0.03em; margin-bottom:20px; }
+  .hero h1 { font-family:'Space Grotesk',sans-serif; font-size:clamp(26px,5vw,38px); font-weight:700; color:#f8fafc; line-height:1.25; margin-bottom:16px; }
+  .hero p.sub { font-size:1.05rem; color:var(--mut); max-width:560px; margin:0 auto 12px; }
+  .hero p.by { color:var(--dim); font-size:0.82rem; }
+
+  /* Slide sections */
+  .slide { padding:40px 0; border-top:1px solid var(--border); }
+  .slide:first-of-type { border-top:none; }
+  .badge { display:inline-block; padding:4px 12px; border-radius:6px; font-size:0.72rem; font-weight:700; letter-spacing:0.05em; margin-bottom:12px; text-transform:uppercase; }
+  .badge-red { background:rgba(239,68,68,0.15); color:var(--red); border:1px solid rgba(239,68,68,0.3); }
+  .badge-amber { background:rgba(245,158,11,0.15); color:var(--amber); border:1px solid rgba(245,158,11,0.3); }
+  .badge-green { background:rgba(74,222,128,0.15); color:var(--acc); border:1px solid rgba(74,222,128,0.3); }
+  .badge-pri { background:rgba(99,102,241,0.15); color:var(--pri); border:1px solid rgba(99,102,241,0.3); }
+  .slide h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(20px,3.5vw,26px); font-weight:700; color:#f8fafc; margin-bottom:16px; line-height:1.3; }
+  .slide p { color:var(--txt); font-size:1rem; margin-bottom:14px; }
+  .slide strong { color:#f8fafc; }
+  .slide ul, .slide ol { color:var(--txt); padding-left:24px; margin-bottom:14px; }
+  .slide li { margin-bottom:8px; }
+  .stat-box { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; margin:20px 0; text-align:center; }
+  .stat-num { font-family:'Space Grotesk',sans-serif; font-size:2.4rem; font-weight:700; color:var(--pri); }
+  .stat-label { color:var(--mut); font-size:0.85rem; margin-top:4px; }
+
+  /* Belief cards */
+  .belief-grid { display:grid; gap:16px; margin:20px 0; }
+  .belief-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .belief-card.lie { border-left:3px solid var(--red); }
+  .belief-card.truth { border-left:3px solid var(--acc); }
+  .belief-card h3 { font-size:0.95rem; font-weight:700; margin-bottom:8px; }
+  .belief-card.lie h3 { color:var(--red); }
+  .belief-card.truth h3 { color:var(--acc); }
+  .belief-card p { font-size:0.9rem; color:var(--mut); }
+
+  /* Value stack */
+  .stack { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; margin:24px 0; }
+  .stack-item { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border); }
+  .stack-item:last-of-type { border-bottom:none; }
+  .stack-name { color:var(--txt); font-size:0.92rem; }
+  .stack-val { color:var(--dim); font-size:0.82rem; }
+  .stack-total { display:flex; justify-content:space-between; align-items:center; padding-top:16px; margin-top:8px; border-top:2px solid var(--border); }
+  .stack-strike { color:var(--red); font-size:1.15rem; font-weight:700; text-decoration:line-through; }
+  .stack-real { color:var(--acc); font-size:1.3rem; font-weight:800; }
+
+  /* CTA */
+  .cta-section { text-align:center; padding:40px 0; }
+  .cta-btn { display:inline-block; background:linear-gradient(135deg,var(--pri),#4f46e5); color:#fff; padding:16px 40px; border-radius:12px; font-weight:700; font-size:1.05rem; text-decoration:none; box-shadow:0 8px 24px -10px rgba(99,102,241,0.5); transition:transform 0.15s; }
+  .cta-btn:hover { transform:translateY(-1px); }
+  .guarantee { display:inline-block; margin-top:16px; color:var(--dim); font-size:0.8rem; }
+
+  footer { padding:30px 20px; border-top:1px solid var(--border); text-align:center; color:var(--dim); font-size:0.8rem; }
+  footer a { color:var(--pri); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="brand">Churn<span>Lens</span></a>
+    <a href="/" class="nav-back">← Back to ChurnLens</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">Free Masterclass · 12 minutes</span>
+    <h1>The 5-Risk Method That Exposes<br>Hidden Churn Before the Wire Clears</h1>
+    <p class="sub">The buyer-side framework that found <strong style="color:#f8fafc">$340,000 in hidden churn</strong> on 11 of 14 SaaS deals. Hook → Story → Offer, in 12 minutes.</p>
+    <p class="by">A 12-minute read · Updated July 2026</p>
+  </div>
+</section>
+
+<!-- THE ONE THING -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-red">The One Thing</div>
+    <h2>If You Remember Nothing Else...</h2>
+    <p>Never trust a summary. Always request the raw CSV.</p>
+    <p>That's it. That's the one sentence that would have saved me $340,000. Every number in a data room summary has been chosen by the seller. The raw CSV has not. If the seller won't give you the export, <strong>walk away</strong> — or demand a price adjustment large enough to cover the risk.</p>
+    <div class="stat-box">
+      <div class="stat-num">11 of 14</div>
+      <div class="stat-label">Deals where real churn was higher than reported</div>
+    </div>
+    <p>If you get nothing else from this masterclass, get this: <strong>the seller's churn number is a marketing claim. The CSV is the evidence.</strong> This is the one thing that separates acquirers who get burned from acquirers who find the gap in the first hour.</p>
+  </div>
+</section>
+
+<!-- THE HOOK / BIG PROMISE -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-amber">The Hook</div>
+    <h2>The Seller Says 2% Monthly Churn.<br>The CSV Says 9.4%.</h2>
+    <p>That gap will cost you <strong>$340,000</strong> on a $1M SaaS acquisition. Here's how it happens:</p>
+    <ul>
+      <li>Seller reports <strong>"2% monthly logo churn"</strong> — looks healthy</li>
+      <li>Seller excludes: trial churn, downgrades, annual plan non-renewals, involuntary churn (failed payments), and reactivations within 30 days</li>
+      <li>The real churn rate, measured from the raw CSV, is <strong>9.4% monthly</strong> — 4.7x higher</li>
+      <li>On a $83K/mo MRR business, that's <strong>$28K/mo in hidden churn</strong> — $340K/year in revenue you'll never collect</li>
+    </ul>
+    <p>This isn't fraud. It's <strong>selection bias</strong> — and every SaaS broker knows how to frame the numbers. You need to know how to unframe them.</p>
+  </div>
+</section>
+
+<!-- EPIPHANY BRIDGE -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-pri">The Epiphany Bridge</div>
+    <h2>It Was 3:47 AM. Four Months After the Wire Cleared.</h2>
+    <p>I'd bought a SaaS with "2% monthly churn." The dashboard said it was growing. The first three months looked fine.</p>
+    <p>Then month four hit. MRR dropped 14% in 30 days. I pulled the raw customer export at 3:47 AM and started tracing every cohort manually. By sunrise, I had the answer:</p>
+    <ul>
+      <li>The "2% churn" excluded 62% of the actual churn events</li>
+      <li>The annual plans were masking a steady bleed — they'd been sold 11 months ago and were quietly non-renewing</li>
+      <li>The "inactive paid accounts" (customers who hadn't logged in for 90+ days but were still paying) represented <strong>$4,200/mo of revenue about to vanish</strong></li>
+    </ul>
+    <p>I spent four months and $340,000 learning what every SaaS acquirer eventually learns: <strong>the summary is the seller's story. The CSV is the truth.</strong></p>
+    <p>That morning, I built the first version of what became ChurnLens — the 5-Risk Buyer-Side Method. This masterclass is that method, in 12 minutes.</p>
+  </div>
+</section>
+
+<!-- SECRET #1: THE VEHICLE -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-green">Secret #1 — The Vehicle</div>
+    <h2>The 5-Risk Buyer-Side Method</h2>
+    <p>Most acquirers check <strong>revenue concentration</strong> and <strong>logo retention</strong>. That's 2 of 5 risks. Here are all 5:</p>
+    <ol>
+      <li><strong>Revenue Concentration Risk</strong> — Does one customer represent >20% of MRR? If they leave, the business dies.</li>
+      <li><strong>Logo Retention Churn</strong> — How many customers cancelled? (The headline number — usually massaged.)</li>
+      <li><strong>Annual Plan Churn Risk</strong> — How many annual plans expire in the next 90 days? (The hidden pipeline of non-renewals.)</li>
+      <li><strong>Inactive Paid Accounts</strong> — How many paying customers haven't logged in for 90+ days? (Zombie MRR about to die.)</li>
+      <li><strong>MRR Decline Trajectory</strong> — Is MRR accelerating, flat, or declining? (The trend line the seller won't draw for you.)</li>
+    </ol>
+    <p>Run all 5 against the raw CSV, not the summary. If any one of them is significantly worse than reported, you've found your negotiation lever.</p>
+  </div>
+</section>
+
+<!-- SECRET #2: INTERNAL BELIEF -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-amber">Secret #2 — The Internal Belief</div>
+    <h2>Three Lies Sellers Tell (And Buyers Believe)</h2>
+    <p>Before you can run the 5-Risk Method, you have to crush the three false beliefs that make acquirers trust the summary instead of the CSV:</p>
+    <div class="belief-grid">
+      <div class="belief-card lie">
+        <h3>LIE #1: "The seller wouldn't hide churn — it'd come out in due diligence"</h3>
+        <p>Truth: Due diligence checks legal and financial risk. It rarely re-derives churn from raw data. The seller knows this. The summary survives DD because nobody asks for the CSV.</p>
+      </div>
+      <div class="belief-card lie">
+        <h3>LIE #2: "2% monthly churn is normal for SaaS"</h3>
+        <p>Truth: 2% monthly = 24% annual. That's high. But the real number, after accounting for excluded categories, is often 5-9% monthly — 60-108% annual. You're buying a business that loses half its customers every year.</p>
+      </div>
+      <div class="belief-card lie">
+        <h3>LIE #3: "The growth rate offsets the churn"</h3>
+        <p>Truth: Growth masks churn until it doesn't. When new sales slow (and they always do), the underlying churn rate is the number that determines whether the business survives. You're not buying the growth — you're buying the churn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECRET #3: EXTERNAL BELIEF -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-pri">Secret #3 — The External Belief</div>
+    <h2>"I Don't Have Time to Analyze a CSV During a Deal"</h2>
+    <p>Yes you do. The 5-Risk Method takes <strong>under 10 minutes</strong> if you have the right tool. Here's the workflow:</p>
+    <ol>
+      <li><strong>Request the raw customer export</strong> (CSV) during LOI. If the seller refuses, that's your answer — walk or reprice.</li>
+      <li><strong>Upload to ChurnLens</strong> (free tier: up to 5 analyses).</li>
+      <li><strong>Get the 5-Risk Report in 60 seconds</strong> — revenue concentration, logo retention, annual plan risk, inactive accounts, MRR trajectory. Each scored 0-100 with dollar impact.</li>
+      <li><strong>Negotiate from the data</strong> — not the seller's summary.</li>
+    </ol>
+    <p>The deal takes 30-60 days. The analysis takes 10 minutes. The gap between those two numbers is why acquirers skip it — and why 11 of 14 deals have hidden churn the buyer only discovers after the wire clears.</p>
+  </div>
+</section>
+
+<!-- THE STACK -->
+<section class="slide">
+  <div class="wrap">
+    <div class="badge badge-green">The Stack</div>
+    <h2>What You Get With the 5-Risk Method</h2>
+    <div class="stack">
+      <div class="stack-item">
+        <span class="stack-name">✓ Revenue Concentration Risk Score</span>
+        <span class="stack-val">$97/mo value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ Logo Retention Churn Analysis</span>
+        <span class="stack-val">$47/mo value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ Annual Plan Decay Projection</span>
+        <span class="stack-val">$67/mo value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ Inactive Paid Account Detection</span>
+        <span class="stack-val">$37/mo value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ MRR Trajectory Forensics</span>
+        <span class="stack-val">$47/mo value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ The 23-Point Pre-LOI Checklist</span>
+        <span class="stack-val">$27 value</span>
+      </div>
+      <div class="stack-item">
+        <span class="stack-name">✓ The 7 Hidden Churn Tricks Cheat Sheet</span>
+        <span class="stack-val">$19 value</span>
+      </div>
+      <div class="stack-total">
+        <span class="stack-strike">Total: $341</span>
+        <span class="stack-real">Free to start</span>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--dim);font-size:0.85rem">That's less than the cost of one hour with an M&A analyst. And it runs in 60 seconds.</p>
+  </div>
+</section>
+
+<!-- THE CLOSE -->
+<section class="slide cta-section">
+  <div class="wrap">
+    <div class="badge badge-red">The Close</div>
+    <h2>The Wire Clears in 30 Days.<br>The CSV Is Available Today.</h2>
+    <p>Every acquirer who skips the 5-Risk Method has the same story: <em>"I trusted the summary. I discovered the real churn four months later. It cost me $340,000."</em></p>
+    <p>Don't be that story. Run the analysis before the wire clears — not after.</p>
+    <a href="/get-the-checklist" class="cta-btn">Get the Free 23-Point Checklist →</a>
+    <p class="guarantee">100% Free. No credit card. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer>
+  <p>ChurnLens &middot; <a href="https://churnlens.site">churnlens.site</a> &middot; The buyer-side SaaS due-diligence method.</p>
+</footer>
+
+</body>
+</html>
