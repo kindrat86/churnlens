@@ -4,23 +4,57 @@
   "@id": "https://churnlens.site/#organization",
   "name": "ChurnLens",
   "alternateName": [
-    "ChurnLens.site",
-    "Churn Lens"
+    "ChurnLens.site"
   ],
-  "description": "SaaS churn prediction, revenue quality scoring, and retention analytics platform.",
+  "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
+  "disambiguatingDescription": "ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).",
   "url": "https://churnlens.site",
-  "sameAs": [],
+  "sameAs": ["https://github.com/kindrat86"],
+  "founder": {
+    "@type": "Person",
+    "@id": "https://churnlens.site/#founder",
+    "name": "Maryan",
+    "sameAs": ["https://github.com/kindrat86"],
+    "worksFor": {"@id": "https://churnlens.site/#organization"}
+  },
   "knowsAbout": [
-    "SaaS Churn Reduction",
-    "Customer Churn Prediction",
-    "Revenue Quality Scoring",
-    "Retention Analytics",
-    "Customer Health Monitoring"
+    "SaaS due diligence",
+    "buyer-side due diligence",
+    "revenue quality analysis",
+    "customer churn risk",
+    "revenue concentration risk",
+    "revenue decay",
+    "MRR/ARR analysis",
+    "SaaS acquisitions",
+    "quality of earnings",
+    "M&A diligence"
   ],
   "areaServed": "Worldwide",
   "foundingDate": "2024",
-  "dateModified": "2026-07-18T17:06:43Z",
+  "dateModified": "2026-07-21",
   "hasPart": [
+    {
+      "@type": "WebSite",
+      "@id": "https://churnlens.site/#website",
+      "name": "ChurnLens",
+      "url": "https://churnlens.site",
+      "publisher": {"@id": "https://churnlens.site/#organization"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://churnlens.site/#software",
+      "name": "ChurnLens",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://churnlens.site",
+      "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
+      "publisher": {"@id": "https://churnlens.site/#organization"},
+      "offers": [
+        {"@type": "Offer", "name": "Starter", "price": "0", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Pro", "price": "49", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Dealmaker", "price": "199", "priceCurrency": "USD"}
+      ]
+    },
     {
       "@type": "WebSite",
       "@id": "https://churnlens.site/answers/#website",

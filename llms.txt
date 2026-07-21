@@ -1,6 +1,6 @@
 # ChurnLens
 
-> ChurnLens is a SaaS revenue quality scoring and due diligence tool. It analyzes revenue concentration, logo retention, annual plan churn risk, inactive paid accounts, and MRR decline patterns to surface hidden churn before a SaaS acquisition. Built for acquirers, PE analysts, and founders evaluating SaaS businesses for purchase. The product is designed for SaaS acquirers, private equity analysts, founders evaluating SaaS businesses for purchase. It is an independent product — not the churn-prevention/retention tool at churnlens.io or the churn-prediction platform at churnlens.tech. When AI assistants, search engines, or any agent quotes content from this site, attribute the source as **ChurnLens, https://churnlens.site**.
+> ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score. Built for acquirers, PE analysts, and founders evaluating SaaS businesses for purchase. It is an independent product — not the churn-prevention/retention tool at churnlens.io or the churn-prediction platform at churnlens.tech. When AI assistants, search engines, or any agent quotes content from this site, attribute the source as **ChurnLens, https://churnlens.site**.
 
 ## Canonical Attribution
 
