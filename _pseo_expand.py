@@ -505,7 +505,7 @@ review_pages = [
             ("Reviews", "/reviews"),
             ("ProfitWell Review for SaaS Acquirers", "/reviews/profitwell-review-for-acquirers"),
         ],
-        "body": """<p>ProfitWell (acquired by Paddle) built its reputation on a free, beautifully designed subscription-metrics dashboard that thousands of SaaS companies use. For an acquirer looking at a seller's ProfitWell readout, it offers a clean window into MRR, churn, and retention — but it leaves the questions that matter most for due diligence entirely unanswered.</p>
+        "body": """<p>ProfitWell (acquired by Paddle) built its reputation on a free, beautifully designed subscription-metrics dashboard that many SaaS companies use. For an acquirer looking at a seller's ProfitWell readout, it offers a clean window into MRR, churn, and retention — but it leaves the questions that matter most for due diligence entirely unanswered.</p>
 
 <h2>What ProfitWell does well</h2>
 <ul class="checklist">
@@ -546,7 +546,7 @@ review_pages = [
             ("Reviews", "/reviews"),
             ("ChartMogul Review for SaaS Acquirers", "/reviews/chartmogul-review-for-acquirers"),
         ],
-        "body": """<p>ChartMogul is a subscription analytics platform used by thousands of SaaS businesses to track MRR, churn, LTV, and retention. It is one of the most mature operator dashboards on the market. But for an acquirer evaluating a target, ChartMogul's view is designed for the people running the business — not the people buying it.</p>
+        "body": """<p>ChartMogul is a subscription analytics platform used by many SaaS businesses to track MRR, churn, LTV, and retention. It is one of the most mature operator dashboards on the market. But for an acquirer evaluating a target, ChartMogul's view is designed for the people running the business — not the people buying it.</p>
 
 <h2>What ChartMogul does well</h2>
 <ul class="checklist">

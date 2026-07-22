@@ -6,7 +6,7 @@
   "alternateName": [
     "ChurnLens.site"
   ],
-  "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
+  "description": "ChurnLens is a buyer-side SaaS due-diligence tool: upload subscription CSVs and get a report on hidden churn, revenue concentration, and decay risk before acquiring a SaaS business.",
   "disambiguatingDescription": "ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).",
   "url": "https://churnlens.site",
   "sameAs": ["https://github.com/kindrat86"],
@@ -31,7 +31,7 @@
   ],
   "areaServed": "Worldwide",
   "foundingDate": "2024",
-  "dateModified": "2026-07-21",
+  "dateModified": "2026-07-23",
   "hasPart": [
     {
       "@type": "WebSite",
@@ -47,7 +47,7 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "url": "https://churnlens.site",
-      "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
+      "description": "ChurnLens is a buyer-side SaaS due-diligence tool: upload subscription CSVs and get a report on hidden churn, revenue concentration, and decay risk before acquiring a SaaS business.",
       "publisher": {"@id": "https://churnlens.site/#organization"},
       "offers": [
         {"@type": "Offer", "name": "Starter", "price": "0", "priceCurrency": "USD"},
