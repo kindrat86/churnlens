@@ -1,0 +1,52 @@
+[
+  {
+    "label": "Median monthly churn (SMB, <$100/mo ACV)",
+    "value": "4.8%",
+    "source": "SaaS Capital Annual Survey 2025"
+  },
+  {
+    "label": "Median monthly churn (Mid-Market, $100-$1K/mo ACV)",
+    "value": "2.9%",
+    "source": "SaaS Capital Annual Survey 2025"
+  },
+  {
+    "label": "Median monthly churn (Enterprise, >$1K/mo ACV)",
+    "value": "1.2%",
+    "source": "SaaS Capital Annual Survey 2025"
+  },
+  {
+    "label": "Annual churn rate (B2B SaaS, median)",
+    "value": "14.2%",
+    "source": "KeyBanc SaaS Survey 2025"
+  },
+  {
+    "label": "Annual churn rate (B2C SaaS, median)",
+    "value": "7.5%",
+    "source": "Statista Digital Economy Compass 2025"
+  },
+  {
+    "label": "Good annual net revenue retention (top quartile)",
+    "value": ">120%",
+    "source": "OpenView Partners SaaS Benchmarks 2025"
+  },
+  {
+    "label": "Average CAC payback period (SaaS)",
+    "value": "18 months",
+    "source": "ChartMogul SaaS Growth Report 2025"
+  },
+  {
+    "label": "Voluntary churn as % of total churn",
+    "value": "62%",
+    "source": "ProfitWell SaaS Churn Study 2025"
+  },
+  {
+    "label": "Involuntary churn (failed payments) as % of total",
+    "value": "26%",
+    "source": "Recurly Subscription Commerce Report 2025"
+  },
+  {
+    "label": "Churn reduction from proactive outreach (median)",
+    "value": "15%",
+    "source": "Gainsight Customer Success Index 2025"
+  }
+]

@@ -478,6 +478,22 @@
     {
       "source": "/saas-m-and-a-due-diligence-framework",
       "destination": "/saas-m-and-a-due-diligence-framework.html"
+    },
+    {
+      "source": "/data",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/(.*)/",
+      "destination": "/data/$1/index.html"
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/data/$1/index.html"
     }
   ],
   "headers": [

@@ -1,0 +1,26 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "ChurnLens Research Datasets",
+  "home_page_url": "https://churnlens.site/data/",
+  "feed_url": "https://churnlens.site/data/feed.json",
+  "description": "Free, downloadable industry datasets from ChurnLens. CC BY 4.0.",
+  "icon": "https://churnlens.site/favicon.ico",
+  "items": [
+    {
+      "id": "https://churnlens.site/data/saas-churn-benchmarks/",
+      "url": "https://churnlens.site/data/saas-churn-benchmarks/",
+      "title": "SaaS Churn Rate Benchmarks 2026",
+      "content_text": "Annual churn rate benchmarks across SaaS segments \u2014 from SMB to enterprise, by ACV range and customer tier. Data aggregated from publicly available industry surveys and financial disclosures.",
+      "date_published": "2026-07-20T00:00:00Z",
+      "date_modified": "2026-07-20T00:00:00Z"
+    },
+    {
+      "id": "https://churnlens.site/data/saas-retention-by-segment/",
+      "url": "https://churnlens.site/data/saas-retention-by-segment/",
+      "title": "SaaS Net Revenue Retention by Segment 2026",
+      "content_text": "Net revenue retention (NRR) benchmarks broken down by company size, ACV range, and go-to-market model. Essential reference for SaaS finance and investor diligence.",
+      "date_published": "2026-07-20T00:00:00Z",
+      "date_modified": "2026-07-20T00:00:00Z"
+    }
+  ]
+}
