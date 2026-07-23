@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>The Buyer-Side Manifesto — Stop Trusting Seller Churn | ChurnLens</title>
+    <meta name="description" content="The SaaS acquisition market runs on seller-computed metrics. We're changing that. The manifesto for buyer-side due diligence: raw data, your methodology, no trust required." />
+    <meta name="author" content="ChurnLens" />
+    <link rel="canonical" href="https://churnlens.site/manifesto" />
+    <link rel="alternate" hreflang="en" href="https://churnlens.site/manifesto" />
+    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/manifesto" />
+    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/manifesto" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://churnlens.site/manifesto" />
+    <meta property="og:title" content="The Buyer-Side Manifesto — Stop Trusting Seller Churn" />
+    <meta property="og:description" content="The SaaS acquisition market runs on seller-computed metrics. We're changing that." />
+    <meta property="og:image" content="https://churnlens.site/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Buyer-Side Manifesto" />
+    <meta name="twitter:description" content="Stop trusting seller churn. Compute your own." />
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "The Buyer-Side Manifesto", "item": "https://churnlens.site/manifesto"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Buyer-Side Manifesto: Stop Trusting Seller Churn",
+      "description": "The SaaS acquisition market runs on seller-computed metrics. We're changing that.",
+      "author": {"@type": "Organization", "name": "ChurnLens"},
+      "publisher": {"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "ChurnLens", "url": "https://churnlens.site/"},
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/manifesto"}
+    }
+    </script>
+
+    <style>
+      :root {
+        --cl-navy: #0f172a;
+        --cl-navy-2: #1e293b;
+        --cl-blue: #2563eb;
+        --cl-blue-light: #3b82f6;
+        --cl-border: #334155;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--cl-navy);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+      .m-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem; max-width: 800px; margin: 0 auto;
+      }
+      .m-nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+      .m-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .m-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+      .m-nav .nav-links a:hover { color: #fff; }
+
+      .m-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+      .m-eyebrow {
+        text-align: center; font-size: 0.8rem; font-weight: 700;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--cl-blue-light);
+        margin-bottom: 1.25rem;
+      }
+
+      .m-wrap h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.85rem, 5.5vw, 3rem); font-weight: 700;
+        line-height: 1.12; letter-spacing: -0.025em;
+        color: #fff; margin: 0 0 1.5rem; text-align: center;
+      }
+      .m-wrap h1 .hl { color: var(--cl-blue-light); }
+
+      .m-sub {
+        text-align: center; color: #94a3b8; font-size: 1.1rem;
+        line-height: 1.6; max-width: 580px; margin: 0 auto 3.5rem;
+      }
+
+      .m-wrap h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem; color: #fff; margin: 3rem 0 1rem; font-weight: 700;
+      }
+
+      .m-wrap p { font-size: 1.05rem; line-height: 1.75; color: #cbd5e1; margin-bottom: 1.5rem; }
+      .m-wrap p strong { color: #f1f5f9; }
+
+      .principle {
+        background: var(--cl-navy-2); border: 1px solid #334155;
+        border-radius: 0.75rem; padding: 1.5rem; margin: 1.5rem 0;
+      }
+      .principle .num {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 28px; height: 28px; border-radius: 50%;
+        background: var(--cl-blue); color: #fff; font-weight: 800; font-size: 0.85rem;
+        margin-right: 0.75rem;
+      }
+      .principle h3 { display: inline; font-size: 1.1rem; color: #fff; font-weight: 700; }
+      .principle p { margin: 0.75rem 0 0; font-size: 0.95rem; color: #94a3b8; }
+
+      .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+      @media (max-width: 600px) { .vs-grid { grid-template-columns: 1fr; } }
+      .vs-col { background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem; padding: 1.25rem; }
+      .vs-col h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.75rem; font-weight: 700; }
+      .vs-col.old h4 { color: #fca5a5; }
+      .vs-col.new h4 { color: #4ade80; }
+      .vs-col p { font-size: 0.9rem; line-height: 1.55; color: #94a3b8; margin: 0; }
+
+      .rally {
+        text-align: center; margin: 3.5rem 0; padding: 2.5rem 1.5rem;
+        background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(59,130,246,0.05));
+        border-radius: 1rem; border: 1px solid rgba(37,99,235,0.2);
+      }
+      .rally p {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem; font-weight: 700; line-height: 1.4; color: #fff;
+        margin: 0 0 1.5rem;
+      }
+
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: var(--cl-blue); color: #fff; padding: 1rem 2rem;
+        border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;
+      }
+      .btn-primary:hover { background: var(--cl-blue-light); }
+
+      .m-footer {
+        text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #475569;
+        border-top: 1px solid #1e293b;
+      }
+      .m-footer a { color: #64748b; text-decoration: none; }
+    </style>
+    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+<!-- eeat-static-injected -->
+<meta name="author" content="ChurnLens" />
+<meta property="article:published_time" content="2026-01-15T00:00:00Z" />
+<meta property="article:modified_time" content="2026-07-08T00:00:00Z" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site"}, "publisher": {"@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site"}, "datePublished": "2026-01-15", "dateModified": "2026-07-08", "headline": "Every SaaS acquisition runs on the seller's math.It's time to run your own.", "description": "The SaaS acquisition market runs on seller-computed metrics. We", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://churnlens.site/manifesto"}}</script>
+<!-- Traffic-Readiness JSON-LD org+website schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://churnlens.site/#organization",
+      "name": "ChurnLens",
+      "url": "https://churnlens.site",
+      "description": "SaaS Revenue Quality & Churn Risk Due Diligence. Analyze concentration, retention, and churn before acquisition.",
+      "sameAs": ["https://github.com/kindrat86"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://churnlens.site/#website",
+      "url": "https://churnlens.site",
+      "name": "ChurnLens",
+      "publisher": {"@id": "https://churnlens.site/#organization"}
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": ["Home", "FAQ", "About"],
+      "url": ["https://churnlens.site/", "https://churnlens.site/faq", "https://churnlens.site/about"]
+    }
+  ]
+}
+</script>
+<!-- Traffic-Readiness JSON-LD org+website schema -->
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
+<link rel="stylesheet" href="/ux.css">
+    <script src="/ux.js" defer></script>
+  <!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+</head>
+  <body id="main-content">
+
+
+    <nav class="m-nav">
+      <a href="/" class="logo">ChurnLens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/why">Founder Story</a>
+        <a href="/get-the-checklist" style="color: var(--cl-blue-light);">Get the Checklist &rarr;</a>
+      </div>
+    </nav>
+  <!-- CL Mobile Nav Elements -->
+<button class="cl-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+<nav class="cl-nav-drawer" role="navigation" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/why">Founder Story</a>
+  <a href="/manifesto">Manifesto</a>
+  <a href="/partners">Partners</a>
+  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+</nav>
+<div class="cl-nav-overlay"></div>
+<!-- CL Progress bar -->
+<div class="cl-progress"></div>
+<!-- CL Back to top -->
+<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
+<!-- CL Mobile CTA bar -->
+<div class="cl-mobile-cta">
+  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+</div>
+
+    <div class="m-wrap">
+      <div class="m-eyebrow">The Manifesto</div>
+      <h1>Every SaaS acquisition runs on <span class="hl">the seller's math.</span><br>It's time to run your own.</h1>
+      <p class="m-sub">
+        SaaS M&amp;A has an information asymmetry problem. The seller knows the data, computes the metrics,
+        and presents the summary. The buyer trusts. This manifesto is the line in the sand.
+      </p>
+
+      <h2>The Problem Nobody Talks About</h2>
+
+      <p>
+        When you buy a SaaS business, the seller hands you a CIM with a churn number. That number
+        is computed using methodology choices the seller made. Every choice &mdash; whether to include
+        downgrades, how to handle involuntary cancellations, which cohort to report &mdash; is legally
+        defensible. Every choice happens to make the number smaller.
+      </p>
+
+      <p>
+        <strong>80% of SaaS acquisitions overpay because of this gap.</strong> The average real churn
+        is 4.2x the reported number. On a $1M deal, that's $340K of evaporated value. The buyer never
+        sees it coming because the methodology choices are invisible in a summary metric.
+      </p>
+
+      <h2>The Old Opportunity vs. The New Opportunity</h2>
+
+      <div class="vs-grid">
+        <div class="vs-col old">
+          <h4>The Old Way</h4>
+          <p>Trust the seller's churn number. Use a 40-point DD checklist that covers legal, financial, and operational risk but not revenue durability methodology. Negotiate price based on the CIM. Discover the real churn 4 months post-close.</p>
+        </div>
+        <div class="vs-col new">
+          <h4>The Buyer-Side Way</h4>
+          <p>Demand the raw subscription CSV. Compute churn five ways yourself. Flag concentration risk, annual-plan exposure, and zombie MRR before you close. Negotiate from data the seller can't manipulate. Know what you're buying.</p>
+        </div>
+      </div>
+
+      <p>
+        This isn't an improvement on the old way. It's a <strong>completely different approach</strong>.
+        The old way asks "what does the seller report?" The new way asks "what does the raw data actually
+        show?" Those are fundamentally different questions with fundamentally different answers.
+      </p>
+
+      <h2>The Three Principles of Buyer-Side Due Diligence</h2>
+
+      <div class="principle">
+        <span class="num">1</span><h3>Raw Data Over Summaries</h3>
+        <p>A summary metric computed by the party selling you the business is not due diligence. It's marketing. The only churn number that matters is the one you compute from the raw subscription export &mdash; customer ID, MRR, plan, status, dates. No aggregations. No filters. The raw CSV.</p>
+      </div>
+
+      <div class="principle">
+        <span class="num">2</span><h3>Five Metrics Over One</h3>
+        <p>Logo churn alone is meaningless. Revenue churn alone is meaningless. You need both &mdash; plus net churn, gross churn, and cohort-adjusted churn &mdash; to see the full picture. When logo churn and revenue churn diverge, downgrades are hiding in the gap. One number can't show you that.</p>
+      </div>
+
+      <div class="principle">
+        <span class="num">3</span><h3>Detective Work Over Checklists</h3>
+        <p>A 40-point checklist that says "ask the seller for the churn rate" is not protection &mdash; it's theater. Real due diligence is forensic: you're looking for the methodology choices that flatter the number, not trusting the number itself. ChurnLens automates that forensic analysis so every buyer can do it in minutes.</p>
+      </div>
+
+      <div class="rally">
+        <p>"Demand the raw CSV. Compute your own churn.<br>Stop trusting seller math."</p>
+        <a href="/get-the-checklist" class="btn-primary">Join the buyer-side movement &rarr;</a>
+      </div>
+
+      <h2>What We're Building Toward</h2>
+
+      <p>
+        The long-term vision: a SaaS acquisition market where buyer-side churn analysis is the default,
+        not the exception. Where no buyer trusts a summary churn number. Where sellers know that any
+        methodology tricks will be caught in minutes by automated analysis. When that happens, the
+        information asymmetry closes. Deals get priced honestly. Buyers stop overpaying.
+      </p>
+
+      <p>
+        ChurnLens is the tool. The checklist is the entry point. The raw-data methodology is the principle.
+        And the movement is every acquirer who reads this and demands the CSV on their next deal.
+      </p>
+
+      <p style="text-align:center; margin-top: 3rem;">
+        <a href="/why" style="color: var(--cl-blue-light);">Read the $340K story that started this &rarr;</a>
+      </p>
+    </div>
+
+    <footer class="m-footer">
+      <p>&copy; 2026 ChurnLens &middot; <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/why">Founder Story</a> &middot; <a href="/get-the-checklist">Free Checklist</a></p>
+    <!-- Dream-100 congregation footer -->
+<div style="margin-top:16px;font-size:13px"><strong>Find us where SaaS acquirers are:</strong> <a href="https://github.com/kindrat86" rel="me noopener" style="color:inherit">GitHub</a></div>
+<!-- Dream-100 congregation footer -->
+</footer>
+
+    <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+    <script type="module" src="/assets/cl-enhance.js" defer></script>
+
+<!-- aeo-faq-injected -->
+<section class="aeo-faq" aria-label="Frequently asked questions">
+<h2>Frequently Asked Questions</h2>
+<h3>What is hidden churn in a SaaS acquisition?</h3>
+<p>Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.</p>
+<h3>How does ChurnLens score revenue quality?</h3>
+<p>ChurnLens analyzes five dimensions: revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline patterns. Each is weighted into a single 0-100 revenue-quality score benchmarked against comparable SaaS businesses. The score tells an acquirer whether reported MRR is durable or propped up by customers who are one renewal away from leaving, all before the deal closes.</p>
+<h3>Why do SaaS acquirers need due diligence on churn?</h3>
+<p>Purchase price is usually a multiple of recurring revenue, so overstated retention directly inflates what you pay. A business with 20% hidden annual-plan churn is worth far less than its MRR implies. Buyers who skip churn diligence discover the decay only after closing, when it is too late to renegotiate. ChurnLens gives that visibility during the evaluation window instead.</p>
+<h3>What red flags should I check before buying a SaaS business?</h3>
+<p>Watch for revenue concentrated in a handful of accounts, a widening gap between signups and active users, annual contracts that never renew, and MRR that grows only through discounting. Each pattern signals fragile revenue. ChurnLens automatically flags these red flags from uploaded revenue data and ranks them by how much they threaten the durability of the recurring revenue base.</p>
+<table class="aeo-facts"><caption>Key facts</caption><tbody>
+<tr><th scope="row">Risk dimensions scored</th><td>5</td></tr>
+<tr><th scope="row">Revenue-quality score range</th><td>0-100</td></tr>
+<tr><th scope="row">Built for</th><td>Acquirers, PE, founders</td></tr>
+</tbody></table>
+<p class="aeo-updated"><time datetime="2026-07-08">Last reviewed 2026-07-08</time></p>
+</section>
+
+
+
+
+
+<!-- AEO Definition Block -->
+<section style="max-width:760px;margin:32px auto;padding:0 16px"><h2>Key terms, defined</h2><dl><dt style="font-weight:700;margin-top:14px">Revenue concentration</dt><dd style="margin:4px 0 0;color:#555">The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk.</dd><dt style="font-weight:700;margin-top:14px">Logo retention</dt><dd style="margin:4px 0 0;color:#555">The percentage of customers (logos) retained over a period, independent of expansion revenue.</dd><dt style="font-weight:700;margin-top:14px">Net revenue retention (NRR)</dt><dd style="margin:4px 0 0;color:#555">Revenue retained from existing customers including expansion and contraction, expressed as a percentage.</dd></dl></section>
+<!-- /AEO Definition Block -->
+<!-- AEO HowTo Schema -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to run a SaaS churn-risk due-diligence check with ChurnLens", "step": [{"@type": "HowToStep", "position": 1, "name": "Connect or upload revenue data", "text": "Import MRR, plan, and logo-level revenue history for the SaaS you are evaluating."}, {"@type": "HowToStep", "position": 2, "name": "Run the churn-risk analysis", "text": "ChurnLens scores revenue concentration, logo retention, and annual-plan churn risk."}, {"@type": "HowToStep", "position": 3, "name": "Review the red-flag report", "text": "Read the ranked list of hidden churn signals before you close the acquisition."}]}</script>
+<!-- /AEO HowTo Schema -->
+
+<!-- Brunson Trust Bar — Dotcom Secrets Chapter 7 -->
+<section style="background:linear-gradient(135deg,#f0f9ff,#e8f5e9);border-radius:16px;padding:32px 24px;margin:40px 0;border:2px solid #0066cc30;text-align:center">
+  <h2 style="font-size:1.5rem;margin-bottom:16px;color:#1a1a1a">See Hidden Churn Before You Buy a SaaS</h2>
+  
+  <div style="background:#fef3c7;border-radius:8px;padding:12px;margin:12px 0;text-align:center"><strong>🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay</strong></div>
+  <div style="background:white;border-radius:12px;padding:20px;max-width:500px;margin:0 auto 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
+    <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">📥 Free SaaS Due Diligence Checklist</p>
+    <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</p>
+    <a href="https://churnlens.site/saas-due-diligence-checklist" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Download Free Checklist →</a>
+    <p style="font-size:0.75rem;color:#888;margin-top:8px">No spam. Unsubscribe anytime.</p>
+  </div>
+  <p style="color:#cc3300;font-weight:600;margin-top:12px">⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase</p>
+</section>
+
+
+<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
+<section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">80%</span><br><span style="font-size:.82rem;color:#94a3b8">Overpay for Churn</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">4.2×</span><br><span style="font-size:.82rem;color:#94a3b8">Real vs Reported</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$340K</span><br><span style="font-size:.82rem;color:#94a3b8">Avg Overpayment</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
+    </div>
+    <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.</p>
+    <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
+    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+  </div>
+</section>
+<!-- /BRUNSON TRUST BAR -->
+
+<p class="author-byline eeat" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"><span class="author" rel="author">By The Data Nerd, ChurnLens Research</span> · <time datetime="2026-07-08">Updated 2026-07-08</time> · Published 2026-01-15</p>
+</body>
+</html>

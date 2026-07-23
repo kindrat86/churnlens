@@ -1121,7 +1121,7 @@ function closeSurvey() {
     <!-- Lead Magnet CTA -->
     <div style="margin-bottom: 1rem;">
       <p style="color: #e2e8f0; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">📥 Free 47-Point SaaS Due Diligence Checklist — 5-minute read</p>
-      <form id="trust-sub" action="/api/subscribe" method="POST" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; max-width: 450px; margin: 0 auto;">
+      <form id="trust-sub" action="/api/subscribe" method="POST" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; max-width: 450px; margin: 0 auto;" onsubmit="if(window.posthog){posthog.capture('home_subscribed',{source:'trust-bar-footer'})}">
         <input type="email" name="email" placeholder="Your email" required style="flex: 1; min-width: 200px; padding: 0.7rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: #f8fafc; font-size: 0.9rem;">
         <button type="submit" style="padding: 0.7rem 1.5rem; border-radius: 8px; background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer; white-space: nowrap;">Download Free Checklist →</button>
       </form>
