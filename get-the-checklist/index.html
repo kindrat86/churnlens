@@ -661,6 +661,7 @@
         form.style.display = 'none';
         oto.classList.add('show');
         if (window.posthog) { posthog.capture('lead_optin', { source: 'squeeze-page' }); }
+        if (window.posthog) { posthog.capture('checklist_subscribed', { source: 'squeeze-page' }); }
         if (window.posthog) { posthog.capture('order_bump_state', { bump_selected: document.getElementById('order-bump-check').checked, offer: '5-risk-quick-reference-card' }); }
         if (window.posthog) { posthog.capture('oto_shown'); }
       });
