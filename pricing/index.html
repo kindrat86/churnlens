@@ -343,15 +343,20 @@
           </ul>
         </div>
 
+        <!-- 2026-07-24: was badged "MOST POPULAR" and "Founding rate — locks
+        in forever. Going to $99/mo after first 100 members." — Stripe shows
+        zero Pro subscriptions ever sold, so both were fabricated. See
+        conversion-audit-scored-2026-07-24. Twin of pricing.html (daa8f03),
+        applied here separately since Vercel resolves /pricing to this
+        directory index, not the flat file. -->
         <!-- Tier 2: Featured — Pro ($49/mo) -->
         <div class="tier-card featured cl-reveal" data-delay="2">
-          <div class="badge">MOST POPULAR</div>
+          <div class="badge">RECOMMENDED</div>
           <div class="tier-name">Pro</div>
           <div class="tier-desc">For serious acquirers doing 1-3 deals. All the data.</div>
           <div class="tier-price">
             <span class="amount">$49</span>
             <span class="period">/month</span>
-            <span class="hint">Founding rate — locks in forever. Going to $99/mo after first 100 members.</span>
           </div>
           <a href="mailto:hello@churnlens.site?subject=ChurnLens%20Pro%20inquiry&body=Hi%2C%20I'm%20interested%20in%20ChurnLens%20Pro%20(%2449%2Fmo).%20Here's%20my%20dataset%20size%20and%20timeline%3A%0A%0A%E2%80%A2%20Number%20of%20CSVs%20to%20analyze%3A%20__%0A%E2%80%A2%20Target%20revenue%20range%3A%20__%0A%E2%80%A2%20Deal%20timeline%3A%20__%0A%E2%80%A2%20Questions%3A%20__%0A" class="tier-cta primary" onclick="if(window.posthog){posthog.capture('pro_contact_clicked',{tier:'pro',price:49})}">Talk to us — we reply within 24h</a>
           <ul class="tier-features">
@@ -488,7 +493,8 @@
     <a href="https://churnlens.site/saas-due-diligence-checklist" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Download Free Checklist →</a>
     <p style="font-size:0.75rem;color:#888;margin-top:8px">No spam. Unsubscribe anytime.</p>
   </div>
-  <p style="color:#cc3300;font-weight:600;margin-top:12px">⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase</p>
+  <!-- 2026-07-24: removed the duplicate "Limited Beta Pricing... Before Price
+  Increase" fake-urgency line — see the Pro-tier fix above in this same file. -->
 </section>
 
 
