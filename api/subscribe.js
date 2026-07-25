@@ -1,3 +1,5 @@
+import { createHmac } from 'node:crypto';
+
 // Vercel serverless function — email capture for the ChurnLens funnel
 // Captures lead, stores to KV if configured, adds the contact to the ChurnLens
 // Resend audience (the daily drip engine reads that audience — without this step
@@ -8,7 +10,23 @@
 // created_at, so simply creating the contact here is what starts the sequence.
 const CHURNLENS_AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID || '54ff48b1-45bf-4d7e-8ecf-e0df909176d5';
 
-const CHECKLIST_HTML = `<!doctype html>
+const SITE = 'https://churnlens.site';
+
+/** Matches api/unsubscribe.js, so the emailed link can be true one-click. */
+function unsubUrl(email) {
+  const q = new URLSearchParams({ email });
+  const secret = process.env.UNSUB_SECRET;
+  if (secret) {
+    q.set('t', createHmac('sha256', secret)
+      .update(email.trim().toLowerCase()).digest('base64url').slice(0, 32));
+  }
+  return `${SITE}/api/unsubscribe?${q.toString()}`;
+}
+
+// Takes the unsubscribe URL because it is per-recipient. This email previously
+// shipped with no unsubscribe path of any kind — no link and no List-Unsubscribe
+// header — to cold captures, from an EU-based sender.
+const checklistHtml = (unsub) => `<!doctype html>
 <html><body style="font-family:Inter,Arial,sans-serif;background:#0f172a;color:#f8fafc;padding:2rem;">
 <div style="max-width:560px;margin:0 auto;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:2rem;">
 <h1 style="font-family:'Space Grotesk',sans-serif;color:#3b82f6;">&#10003; Your Churn Audit Checklist</h1>
@@ -32,6 +50,7 @@ const CHECKLIST_HTML = `<!doctype html>
 <hr style="border-color:#334155;margin:1.5rem 0;">
 <p style="color:#64748b;font-size:0.85rem;">Over the next five days you'll get one email a day from me: the $340K deal that started ChurnLens, the three claims that make buyers trust a seller's churn number, how each of the five risks is actually computed, and what to do when a seller refuses to hand over the export. One a day, then I get out of your inbox.</p>
 <p style="color:#64748b;font-size:0.8rem;margin-top:1.5rem;">— Maryan, founder, ChurnLens &middot; <a href="https://churnlens.site" style="color:#3b82f6;">churnlens.site</a></p>
+<p style="color:#64748b;font-size:0.75rem;margin-top:0.75rem;">You are receiving this because you requested the churn audit checklist on churnlens.site. <a href="${unsub}" style="color:#64748b;text-decoration:underline;">Unsubscribe</a>.</p>
 </div>
 </body></html>`;
 
@@ -74,6 +93,16 @@ async function kvRateLimited(ip) {
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
+  }
+
+  // This endpoint sends ChurnLens-branded mail to whatever address it is given,
+  // so it is a spam relay if left fully open — and the bounces land on OUR
+  // sending domain's reputation. Reject browser-originated cross-site posts.
+  // `Origin` is absent on same-origin form posts and on server-to-server calls,
+  // so only an explicitly foreign origin is refused.
+  const origin = (req.headers.origin || '').toString();
+  if (origin && !/^https:\/\/(www\.)?churnlens\.site$/.test(origin)) {
+    return res.status(403).json({ ok: false, error: 'Forbidden' });
   }
 
   const ip = (req.headers['x-forwarded-for'] || '').toString().split(',')[0].trim() || 'unknown';
@@ -162,7 +191,14 @@ export default async function handler(req, res) {
           from: 'Maryan at ChurnLens <checklist@churnlens.site>',
           to: email,
           subject: '✓ Your 23-point churn audit checklist + sample report',
-          html: CHECKLIST_HTML
+          html: checklistHtml(unsubUrl(email)),
+          // RFC 8058 one-click unsubscribe. Gmail and Yahoo require this on bulk
+          // mail; without it recipients reach for "report spam" instead, which is
+          // what actually damages a sending domain.
+          headers: {
+            'List-Unsubscribe': `<${unsubUrl(email)}>`,
+            'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click'
+          }
         })
       });
       if (resp.ok) {

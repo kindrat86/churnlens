@@ -10,5 +10,24 @@ pseo-churnlens-site.txt
 striking-distance.html
 scripts/
 
+# Internal working docs — these were being served 200 and were crawlable. Among
+# them QA-SECURITY-SPEED-AUDIT-2026-07-19.md, which enumerates this site's own
+# security weaknesses, plus CLAUDE.md (internal ops rules) and the HERMES task /
+# report files (unpublished go-to-market strategy). `*.py` and `scripts/` were
+# already excluded; `*.md` never was.
+#
+# NOTE: agents.md and .well-known/agents.md are DELIBERATELY public (AI-agent
+# discovery, same role as llms.txt), so this excludes by name rather than *.md.
+#
+# Globs (not `!` negation) so the families this repo keeps generating are caught
+# as they appear, without betting on negation semantics that could silently drop
+# agents.md. scripts/check_public_docs.py enforces that nothing new slips past.
+CLAUDE.md
+HERMES_*.md
+REPORT_*.md
+OWNER_*.md
+*AUDIT*.md
+*SCORECARD*.md
+
 # build artifact — 78 duplicate pages, canonicalized to the real URLs, unknown to Google
 dist/

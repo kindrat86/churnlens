@@ -493,6 +493,9 @@ export default function handler(req, res) {
 
   // GET: return server manifest (MCP discovery + agent card)
   if (req.method === "GET") {
+    // The manifest is a constant, so let the edge serve discovery crawls rather
+    // than waking a function for each one.
+    res.setHeader("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
     return res.json({
       jsonrpc: "2.0",
       serverInfo: SERVER_INFO,
