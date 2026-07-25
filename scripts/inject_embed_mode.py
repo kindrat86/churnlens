@@ -13,7 +13,11 @@ import pathlib
 import re
 import sys
 
-MARKER = "<!-- cl-embed-v1 -->"
+MARKER = "<!-- cl-embed-v2 -->"
+# v1 forced a white background onto pages that are natively dark (#0f172a) with
+# near-white headings, rendering the H1 at ~1.06:1 contrast. v2 keeps the page's
+# own theme and hides the trailing prose that has no place in a widget.
+LEGACY_MARKERS = ("<!-- cl-embed-v1 -->",)
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FREE = ROOT / "free"
 
@@ -24,7 +28,8 @@ BLOCK = """%s
 <style>
 /* Embed mode: the page is rendered inside somebody else's site, so drop the
    cross-sell, the methodology essay and the link farm — keep the tool. */
-html[data-embed] body { padding: 1rem 1rem 4.5rem; background: #fff; }
+/* Keep the page's own palette — these pages are dark by design. */
+html[data-embed] body { padding: 1rem 1rem 4.5rem; }
 html[data-embed] .cta,
 html[data-embed] .related,
 html[data-embed] .related-links,
@@ -55,6 +60,23 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 
     document.addEventListener('DOMContentLoaded', function () {
       if (document.querySelector('.cl-embed-bar')) return;
+
+      /* Everything after the calculator is page furniture — methodology essays,
+         cross-sell, link blocks. None of it belongs in somebody else's iframe,
+         and most of it carries no class to target from CSS. */
+      var cards = document.querySelectorAll('.tool-card');
+      if (cards.length) {
+        var last = cards[cards.length - 1];
+        while (last && last.parentNode !== document.body) last = last.parentNode;
+        if (last) {
+          var node = last.nextElementSibling;
+          while (node) {
+            node.style.display = 'none';
+            node = node.nextElementSibling;
+          }
+        }
+      }
+
       var slug = (window.location.pathname.split('/').filter(Boolean).pop() || 'widget');
       var href = 'https://churnlens.site/free?utm_source=embed&utm_medium=widget&utm_campaign=' +
         encodeURIComponent(slug);
@@ -118,6 +140,17 @@ def inject(path: pathlib.Path, slug: str) -> str:
         return "SKIP (no </head>)"
 
     added = []
+
+    # Strip any superseded block first, so an upgrade replaces rather than stacks.
+    for legacy in LEGACY_MARKERS:
+        if legacy in html:
+            pattern = re.compile(
+                re.escape(legacy) + r".*?</script>\s*", re.S
+            )
+            html, n = pattern.subn("", html, count=1)
+            if n:
+                added.append("removed " + legacy.strip("<!- >"))
+
     if MARKER not in html:
         html = html.replace("</head>", BLOCK + "</head>", 1)
         added.append("embed-mode")
