@@ -2,7 +2,7 @@
   "schemaVersion": "0.1",
   "name": "churnlens",
   "displayName": "ChurnLens",
-  "description": "SaaS revenue quality scoring and due diligence tool.",
+  "description": "Buyer-side SaaS due-diligence tools. Compute net and gross revenue retention, revenue concentration risk (HHI), zombie MRR, LTV:CAC and a composite five-dimension health score from raw subscription figures. No auth, no signup, no data retained.",
   "homepageUrl": "https://churnlens.site/mcp",
   "contactEmail": "support@churnlens.site",
   "publisher": {
@@ -23,15 +23,30 @@
   "tools": [
     {
       "name": "calculate_churn_rate",
-      "summary": "Calculate churn rate, GRR, and NRR from MRR data."
-    },
-    {
-      "name": "get_saas_benchmark",
-      "summary": "Get SaaS benchmark data for churn rates and NRR."
+      "summary": "NRR, GRR, revenue churn and the NRR-GRR spread that reveals churn masked by expansion."
     },
     {
       "name": "analyze_revenue_concentration",
-      "summary": "Assess revenue concentration risk using HHI."
+      "summary": "Customer concentration risk via Herfindahl-Hirschman Index, top-N share and whale detection."
+    },
+    {
+      "name": "detect_zombie_mrr",
+      "summary": "Find dormant-but-paying accounts and the ARR at risk behind them."
+    },
+    {
+      "name": "score_saas_health",
+      "summary": "Composite 0-100 score across retention, growth, concentration, efficiency and durability."
+    },
+    {
+      "name": "calculate_ltv",
+      "summary": "Gross-margin-adjusted lifetime value, LTV:CAC ratio and CAC payback in months."
+    },
+    {
+      "name": "get_scoring_bands",
+      "summary": "The scoring thresholds ChurnLens applies, with their provenance."
     }
-  ]
+  ],
+  "version": "2.0.0",
+  "license": "MIT",
+  "sourceUrl": "https://github.com/kindrat86/saas-metrics"
 }

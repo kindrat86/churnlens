@@ -20,6 +20,11 @@ org = {
     "image": E["image"],
     "contactPoint": {"@type": "ContactPoint", "email": E["contactEmail"], "contactType": "customer support"},
 }
+# PostalAddress (741bf6c). Kept optional so the injector never invents a location,
+# but emitted whenever entity.json carries one — it was being silently dropped on
+# every run, reverting the committed address across the whole site.
+if E.get("address"):
+    org["address"] = E["address"]
 software = {
     "@type": "SoftwareApplication", "@id": E["url"] + "/#software",
     "name": E["brand"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web",

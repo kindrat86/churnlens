@@ -770,6 +770,10 @@
       "destination": "/use-cases/:slug/index.html"
     },
     {
+      "source": "/free",
+      "destination": "/free/index.html"
+    },
+    {
       "source": "/free/:slug",
       "destination": "/free/:slug/index.html"
     },
@@ -1052,6 +1056,14 @@
     {
       "source": "/7-revenue-churn-red-flags",
       "destination": "/7-revenue-churn-red-flags.html"
+    },
+    {
+      "source": "/open-source",
+      "destination": "/open-source/index.html"
+    },
+    {
+      "source": "/mcp",
+      "destination": "/mcp/index.html"
     }
   ],
   "headers": [
@@ -1150,6 +1162,23 @@
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'none'; style-src 'unsafe-inline'; frame-ancestors *; base-uri 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/free/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://churnlens.vercel.app https://connect.facebook.net https://business.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com https://connect.facebook.net https://www.facebook.com https://snap.licdn.com https://www.linkedin.com https://www.reddit.com; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; frame-ancestors *"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     },
