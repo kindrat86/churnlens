@@ -111,6 +111,25 @@
          re-adding a pixel here will fail loudly instead of silently tracking.
          If a paid campaign is ever actually funded, ship a consent gate FIRST. -->
 
+    <!-- Clears the first-party identifiers the removed Meta/Reddit pixels dropped
+         into visitors' browsers (_rdt_uuid, _fbp, _fbc). They are already inert —
+         nothing reads them and the CSP now blocks any request that could send them
+         — but they were set without consent, so we delete rather than wait out the
+         expiry. Safe to remove once returning visitors have cycled through. -->
+    <script>
+      (function () {
+        var stale = ['_rdt_uuid', '_fbp', '_fbc'];
+        var host = location.hostname;
+        var domains = ['', '; domain=' + host, '; domain=.' + host.replace(/^www\./, '')];
+        for (var i = 0; i < stale.length; i++) {
+          if (document.cookie.indexOf(stale[i] + '=') === -1) continue;
+          for (var d = 0; d < domains.length; d++) {
+            document.cookie = stale[i] + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT' + domains[d];
+          }
+        }
+      })();
+    </script>
+
 <link rel="stylesheet" href="/ux.css">
 <script src="/ux.js" defer></script>
    <style>
