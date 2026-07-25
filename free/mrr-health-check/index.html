@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" style="--cl-page-bg:rgb(255, 255, 255);--cl-page-fg:rgb(26, 26, 26)" data-cl-theme="light">
 <head>
+<!-- cl-embed-guard-v1 -->
+<script>
+(function () {
+  try {
+    if (window.self === window.top && !/[?&]embed=1(&|$)/.test(window.location.search)) return;
+    var noop = function () {};
+    window.posthog = {
+      __loaded: true, __cl_embed_stub: true,
+      init: noop, capture: noop, identify: noop, register: noop, reset: noop,
+      opt_out_capturing: noop, opt_in_capturing: noop,
+      onFeatureFlags: noop, isFeatureEnabled: function () { return false; }
+    };
+  } catch (e) { /* never break the calculator */ }
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MRR Health Check | ChurnLens</title>
@@ -79,6 +95,118 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
 <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
   <script src="/assets/cl-enhance.52579359.js" defer></script>
   <!-- cl-r19 -->
+<!-- cl-embed-v4 -->
+<style>
+/* Embed mode: the page is rendered inside somebody else's site, so drop the
+   cross-sell, the methodology essay and the link farm — keep the tool. */
+/* Keep the page's own palette — these pages are dark by design. */
+html[data-embed] body { padding: 1rem 1rem 4.5rem; }
+html[data-embed] .cta,
+html[data-embed] .related,
+html[data-embed] .related-links,
+html[data-embed] .breadcrumbs,
+html[data-embed] footer,
+html[data-embed] [data-embed-hide] { display: none !important; }
+html[data-embed] h1 { font-size: 1.3rem; margin-bottom: .35rem; }
+html[data-embed] p.subtitle { font-size: .9rem; margin-bottom: 1.1rem; }
+html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
+.cl-embed-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000;
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
+  padding: .55rem .75rem; font: 500 .78rem/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a; color: #cbd5e1; text-align: center;
+}
+.cl-embed-bar a { color: #a5b4fc; text-decoration: none; font-weight: 700; }
+.cl-embed-bar a:hover { text-decoration: underline; }
+.cl-embed-bar span { opacity: .8; }
+@media (max-width: 420px) { .cl-embed-bar { font-size: .72rem; } }
+</style>
+<script>
+(function () {
+  try {
+    var framed = window.self !== window.top;
+    var asked = /[?&]embed=1(&|$)/.test(window.location.search);
+    if (!asked && !framed) return;
+    document.documentElement.setAttribute('data-embed', '1');
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.querySelector('.cl-embed-bar')) return;
+
+      /* Everything after the calculator is page furniture — methodology essays,
+         cross-sell, link blocks. None of it belongs in somebody else's iframe,
+         and most of it carries no class to target from CSS. */
+      var cards = document.querySelectorAll('.tool-card');
+      /* Not every tool uses .tool-card — the due-diligence simulator uses .card,
+         and a page with neither would otherwise keep its whole prose tail. */
+      if (!cards.length) cards = document.querySelectorAll('.card');
+      if (!cards.length) {
+        var form = document.querySelector('input, textarea, select');
+        if (form) cards = [form];
+      }
+      if (cards.length) {
+        var last = cards[cards.length - 1];
+        while (last && last.parentNode !== document.body) last = last.parentNode;
+        if (last) {
+          var node = last.nextElementSibling;
+          while (node) {
+            node.style.display = 'none';
+            node = node.nextElementSibling;
+          }
+        }
+      }
+
+      var slug = (window.location.pathname.split('/').filter(Boolean).pop() || 'widget');
+      var href = 'https://churnlens.site/free?utm_source=embed&utm_medium=widget&utm_campaign=' +
+        encodeURIComponent(slug);
+      var bar = document.createElement('div');
+      bar.className = 'cl-embed-bar';
+      var link = document.createElement('a');
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'ChurnLens';
+      var lead = document.createElement('span');
+      lead.textContent = 'Free SaaS metrics calculator by ';
+      var tail = document.createElement('span');
+      tail.textContent = ' — buyer-side due diligence';
+      bar.appendChild(lead);
+      bar.appendChild(link);
+      bar.appendChild(tail);
+      document.body.appendChild(bar);
+
+      /* Tell the host page how tall we are so it can size the iframe.
+         At DOMContentLoaded inside a fresh iframe the document has often not
+         been laid out yet and every height reads 0. Posting that is worse than
+         posting nothing: a host that trusts it collapses the widget to
+         invisible. So never emit a non-positive height, and re-post once
+         layout has actually happened. */
+      var lastPosted = 0;
+      function postHeight() {
+        try {
+          var h = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.scrollHeight
+          );
+          if (!(h > 0) || h === lastPosted) return;
+          lastPosted = h;
+          window.parent.postMessage({ type: 'churnlens:height', height: h }, '*');
+        } catch (e) { /* cross-origin parent: nothing to do */ }
+      }
+      postHeight();
+      window.addEventListener('load', postHeight);
+      window.addEventListener('resize', postHeight);
+      setTimeout(postHeight, 300);
+      setTimeout(postHeight, 1200);
+      if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
+    });
+  } catch (e) { /* never break the calculator */ }
+})();
+</script>
+<!-- cl-oembed-v1 -->
+<link rel="alternate" type="application/json+oembed"
+      href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fmrr-health-check&format=json"
+      title="MRR Health Check by ChurnLens">
 </head>
 <body>
 <nav><a href="https://churnlens.site/">ChurnLens</a><a href="https://churnlens.site/about">About</a><a href="https://churnlens.site/learn">Learn</a><a href="https://churnlens.site/faq">FAQ</a></nav>
@@ -86,6 +214,128 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
 <p style="font-size:1.1rem;color:#555">Audit your Monthly Recurring Revenue quality. Spot revenue concentration, annual plan risk, and decline patterns.</p>
 <h2>Free MRR Health Check</h2>
 <p>Audit your Monthly Recurring Revenue quality. Spot revenue concentration, annual plan risk, and decline patterns.</p>
+<!-- cl-calc-v1 -->
+<style>
+/* Self-contained: explicit colours, nothing inherited from the page theme. */
+.cl-calc{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:22px;margin:22px 0;
+  color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.cl-calc .cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+@media(max-width:600px){.cl-calc .cl-grid{grid-template-columns:1fr}}
+.cl-calc label{display:block;font-size:.74rem;color:#475569;margin-bottom:5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px}
+.cl-calc label .hint{text-transform:none;letter-spacing:0;font-weight:500;color:#64748b}
+.cl-calc input{width:100%;background:#fff;border:1px solid #cbd5e1;color:#0f172a;padding:10px 12px;
+  border-radius:8px;font-size:1rem;outline:none;box-sizing:border-box}
+.cl-calc input:focus{border-color:#4f46e5}
+.cl-calc .cl-hero{text-align:center;padding:24px 16px;border-radius:10px;border:2px solid #cbd5e1;
+  background:#fff;margin-bottom:16px}
+.cl-calc .cl-hero.good{border-color:#15803d;background:#f0fdf4}
+.cl-calc .cl-hero.avg{border-color:#a16207;background:#fefce8}
+.cl-calc .cl-hero.poor{border-color:#b91c1c;background:#fef2f2}
+.cl-calc .cl-hero .cl-lab{font-size:.75rem;color:#475569;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.cl-calc .cl-hero .cl-val{font-size:2.6rem;font-weight:800;margin:6px 0;color:#0f172a}
+.cl-calc .cl-hero.good .cl-val{color:#15803d}
+.cl-calc .cl-hero.avg .cl-val{color:#a16207}
+.cl-calc .cl-hero.poor .cl-val{color:#b91c1c}
+.cl-calc .cl-hero .cl-sub{font-size:.92rem;font-weight:600;color:#334155}
+.cl-calc .cl-rows{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.cl-calc .cl-rows{grid-template-columns:1fr}}
+.cl-calc .cl-row{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px}
+.cl-calc .cl-row .k{font-size:.72rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.cl-calc .cl-row .v{font-size:1.25rem;font-weight:700;color:#0f172a;margin-top:3px}
+.cl-calc .cl-row .n{font-size:.78rem;color:#475569;margin-top:3px}
+.cl-calc .cl-note{margin-top:14px;font-size:.82rem;color:#475569;line-height:1.55}
+.cl-calc .cl-note a{color:#4338ca}
+.cl-calc .cl-formula{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;
+  font:.78rem/1.5 'SF Mono','Fira Code',Consolas,monospace;color:#334155;margin-bottom:16px;overflow-x:auto}
+</style>
+<div class="cl-calc" id="clMrr">
+  <div class="cl-formula">NRR = (start + expansion &minus; contraction &minus; churned) &divide; start &nbsp;&bull;&nbsp; GRR excludes expansion</div>
+  <div class="cl-grid">
+    <div><label for="mrrStart">Starting MRR ($)</label>
+      <input id="mrrStart" type="number" min="0" step="any" value="100000"></div>
+    <div><label for="mrrExp">Expansion MRR ($) <span class="hint">upgrades, existing customers</span></label>
+      <input id="mrrExp" type="number" min="0" step="any" value="12000"></div>
+    <div><label for="mrrCon">Contraction MRR ($) <span class="hint">downgrades</span></label>
+      <input id="mrrCon" type="number" min="0" step="any" value="4000"></div>
+    <div><label for="mrrChurn">Churned MRR ($) <span class="hint">cancellations</span></label>
+      <input id="mrrChurn" type="number" min="0" step="any" value="9000"></div>
+    <div><label for="mrrTop">Largest customer share (%)</label>
+      <input id="mrrTop" type="number" min="0" max="100" step="any" value="12"></div>
+    <div><label for="mrrAnnual">Revenue on annual plans (%)</label>
+      <input id="mrrAnnual" type="number" min="0" max="100" step="any" value="40"></div>
+  </div>
+  <div class="cl-hero" id="mrrHero">
+    <div class="cl-lab">MRR quality score</div>
+    <div class="cl-val" id="mrrScore">&mdash;</div>
+    <div class="cl-sub" id="mrrVerdict">Enter your numbers above.</div>
+  </div>
+  <div class="cl-rows">
+    <div class="cl-row"><div class="k">Net revenue retention</div><div class="v" id="mrrNrr">&mdash;</div>
+      <div class="n">expansion counted</div></div>
+    <div class="cl-row"><div class="k">Gross revenue retention</div><div class="v" id="mrrGrr">&mdash;</div>
+      <div class="n">expansion excluded</div></div>
+    <div class="cl-row"><div class="k">Masked by expansion</div><div class="v" id="mrrSpread">&mdash;</div>
+      <div class="n">NRR &minus; GRR, in points</div></div>
+    <div class="cl-row"><div class="k">Concentration</div><div class="v" id="mrrConc">&mdash;</div>
+      <div class="n">largest single account</div></div>
+  </div>
+  <p class="cl-note" id="mrrNote"></p>
+</div>
+<script>
+(function(){
+  var ids=['mrrStart','mrrExp','mrrCon','mrrChurn','mrrTop','mrrAnnual'];
+  function num(id){return parseFloat(document.getElementById(id).value);}
+  function clamp(v,a,b){return Math.max(a,Math.min(v,b));}
+  function calc(){
+    var start=num('mrrStart'),exp=num('mrrExp'),con=num('mrrCon'),ch=num('mrrChurn');
+    var top=num('mrrTop'),annual=num('mrrAnnual');
+    var hero=document.getElementById('mrrHero');
+    hero.classList.remove('good','avg','poor');
+    if(!(start>0)){
+      document.getElementById('mrrScore').innerHTML='&mdash;';
+      document.getElementById('mrrVerdict').textContent='Enter a starting MRR above 0.';
+      ['mrrNrr','mrrGrr','mrrSpread','mrrConc'].forEach(function(i){document.getElementById(i).innerHTML='&mdash;';});
+      document.getElementById('mrrNote').textContent='';
+      return;
+    }
+    exp=exp>0?exp:0;con=con>0?con:0;ch=ch>0?ch:0;
+    top=isNaN(top)?0:clamp(top,0,100);annual=isNaN(annual)?0:clamp(annual,0,100);
+    var nrr=((start+exp-con-ch)/start)*100;
+    var grr=((start-con-ch)/start)*100;
+    var spread=nrr-grr;
+    var revChurn=100-grr;
+    document.getElementById('mrrNrr').textContent=nrr.toFixed(1)+'%';
+    document.getElementById('mrrGrr').textContent=grr.toFixed(1)+'%';
+    document.getElementById('mrrSpread').textContent=spread.toFixed(1)+' pts';
+    document.getElementById('mrrConc').textContent=top.toFixed(1)+'%';
+    /* Three dimensions of MRR quality, each 0-100, averaged unweighted —
+       the same mapping the ChurnLens health score uses. */
+    var retention=Math.round(100-clamp(revChurn,0,10)*10);
+    var growth=nrr>=130?100:nrr>=90?Math.round(40+(nrr-90)*1.5):Math.round(Math.max(0,nrr*0.5));
+    growth=clamp(growth,0,100);
+    var conc=Math.round(100-clamp(top,0,50)*2);
+    var dur=Math.round(40+annual*0.6);
+    var score=Math.round((retention+growth+conc+dur)/4);
+    document.getElementById('mrrScore').textContent=score+' / 100';
+    hero.classList.add(score>=70?'good':score>=50?'avg':'poor');
+    document.getElementById('mrrVerdict').textContent=
+      score>=70?'Strong — recurring revenue looks durable.':
+      score>=50?'Adequate — one or two dimensions need work.':
+      score>=30?'Weak — material revenue-quality risk.':'Critical — revenue quality is the headline problem.';
+    var weak=[['retention',retention],['growth',growth],['concentration',conc],['durability',dur]]
+      .sort(function(a,b){return a[1]-b[1];})[0];
+    var note='Weakest dimension: <strong>'+weak[0]+'</strong> at '+weak[1]+'/100. ';
+    if(spread>=15)note+='A '+spread.toFixed(0)+'-point gap between NRR and GRR means expansion revenue is masking substantial churn underneath — look at the retained base separately from upsell. ';
+    if(top>25)note+='One customer holds '+top.toFixed(0)+'% of revenue; losing them removes that much overnight. ';
+    note+='Same maths, open source, at <a href="/open-source">saas-metrics</a>.';
+    document.getElementById('mrrNote').innerHTML=note;
+  }
+  ids.forEach(function(i){var el=document.getElementById(i);if(el)el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
 <h2>How It Works</h2>
 <ul>
 <li>Enter your details below — no signup required</li>
