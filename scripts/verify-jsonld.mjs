@@ -45,15 +45,25 @@ if (dirs.length === 0) dirs.push('dist');
 // Directories that never contain shippable HTML. `assets` holds hashed bundles
 // and is the bulk of a vite dist, so skipping it keeps this fast on large sites.
 //
-// dist/ public/ i18n/ i18n_out/ are in this repo but are NOT served: dist/ and
-// i18n* are .vercelignored, and /public/:path* is a permanent redirect to the
-// real URL (see vercel.json). They are stale duplicate copies of the site, so
-// linting them reports failures on pages no crawler can reach. This mirrors
-// SKIP_DIRS in scripts/dedupe_entity_graph.py — keep the two lists in step.
+// dist/ i18n/ i18n_out/ are in this repo but are NOT served — all three are
+// .vercelignored, so nothing under them can be requested. They are stale
+// duplicate copies of the site; linting them reports failures on pages no
+// crawler can reach. This mirrors SKIP_DIRS in
+// scripts/dedupe_entity_graph.py — keep the two lists in step.
+//
+// public/ is deliberately NOT skipped. It was, briefly, on the grounds that
+// `/public/:path*` redirects it away — but Vercel compiles route sources with
+// path-to-regexp `strict: true`, so that source does not match a trailing
+// slash. `/public/vs/` was served straight from disk, HTTP 200, with
+// `robots: index, follow`, while `/public/vs` correctly 308'd. 77 files and
+// 148 duplicate-entity errors sat behind that gap, unlinted and crawlable.
+// vercel.json now carries a companion `/public/:path*/` source, and this
+// directory stays linted so the gate does not depend on a routing rule being
+// exactly right.
 const SKIP = new Set([
   'node_modules', '.git', '.next', '.vercel', 'assets',
   '__pycache__', '.venv', 'venv', 'coverage',
-  'dist', 'public', 'i18n', 'i18n_out',
+  'dist', 'i18n', 'i18n_out',
 ]);
 
 const BLOCK_RE =
