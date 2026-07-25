@@ -17,34 +17,41 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "QAPage",
-  "mainEntity": {
-    "@type": "Question",
-    "name": "What are the most effective customer churn prediction methods?",
-    "answerCount": 1,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The most effective churn prediction combines behavioral signal analysis (usage patterns, support sentiment, payment behavior) with machine learning models trained on your historical churn data — achieving 85%+ accuracy at 30-60 days before cancellation.",
-      "dateModified": "2026-07-18T17:06:43Z",
-      "author": {
-        "@type": "Organization",
-        "name": "ChurnLens",
-        "url": "https://churnlens.site"
-      }
-    }
-  },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "xpath": ["/html/head/title", "/html/body/div[contains(@class,'bluf')]//text()"]
-  },
+  "@type": "FAQPage",
+  "@id": "https://churnlens.site/answers/churn-prediction-methods/#faq",
+  "url": "https://churnlens.site/answers/churn-prediction-methods/",
+  "name": "What are the most effective customer churn prediction methods",
+  "dateModified": "2026-07-18T17:06:43Z",
   "author": {
     "@type": "Organization",
     "name": "ChurnLens",
     "url": "https://churnlens.site"
   },
-  "dateModified": "2026-07-18T17:06:43Z","mainEntity":[{"@type":"Question","name":"How much historical data do I need?","acceptedAnswer":{"@type":"Answer","text":"Minimum 6 months of churn data with 50+ churned customers to train a meaningful model. The more data, the better — models trained on 500+ churned customers achieve significantly higher accuracy."}}]
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChurnLens",
+    "url": "https://churnlens.site"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "xpath": [
+      "/html/head/title",
+      "/html/body/div[contains(@class,'bluf')]//text()"
+    ]
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much historical data do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minimum 6 months of churn data with 50+ churned customers to train a meaningful model. The more data, the better — models trained on 500+ churned customers achieve significantly higher accuracy.",
+        "url": "https://churnlens.site/answers/churn-prediction-methods/"
+      }
+    }
+  ]
 }
-    </script>
+</script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {

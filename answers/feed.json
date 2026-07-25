@@ -31,7 +31,7 @@
       "title": "How do you reduce SaaS customer churn?",
       "summary": "Reducing SaaS churn requires three layers: predict which customers are at risk (churn scoring), intervene with targeted outreach before they cancel (playbooks), and fix the root causes in your product and onboarding (prevention).",
       "date_modified": "2026-07-18T17:06:43Z",
-      "content_type": "QAPage",
+      "content_type": "FAQPage",
       "authors": [
         {
           "name": "ChurnLens",
@@ -49,7 +49,7 @@
       "title": "What are the most effective customer churn prediction methods?",
       "summary": "The most effective churn prediction combines behavioral signal analysis (usage patterns, support sentiment, payment behavior) with machine learning models trained on your historical churn data — achieving 85%+ accuracy at 30-60 days before cancellation.",
       "date_modified": "2026-07-18T17:06:43Z",
-      "content_type": "QAPage",
+      "content_type": "FAQPage",
       "authors": [
         {
           "name": "ChurnLens",
