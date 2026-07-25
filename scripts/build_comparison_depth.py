@@ -274,25 +274,30 @@ TOOLS = {
     },
 }
 
-# Which pages to build: (directory, slug, kind)
+# Which pages this script still OWNS: (directory, slug, kind)
 #
-# CONSOLIDATION NOTE: /vs/<tool> and /alternatives-to/<tool> for the SAME tool
-# were 0.86-0.87 Jaccard-identical -- two URLs competing for one intent. GSC shows
-# the /alternatives-to/* URLs are the ones earning impressions ("baremetrics
-# alternative", "profitwell alternatives") while the /vs/* twins earn zero. So the
-# four overlapping tools live at /alternatives-to/ only, and /vs/<tool> 301s there
-# (see vercel.json). /vs/ keeps only the two tools with no alternatives-to twin.
+# ⚠️ ARCHITECTURE NOTE — read before adding anything back here.
+#
+# /vs/<tool> and /alternatives-to/<tool> were 0.86-0.87 Jaccard-identical: two URLs
+# competing for one intent. That was resolved on 2026-07-25 by consolidating onto
+# /vs/<tool>, with /alternatives-to/<tool> 301'd to a fragment on the /vs/ page
+# (see vercel.json). The surviving /vs/ pages for baremetrics, chartmogul,
+# profitwell and churnzero are 1,800-2,600 words -- DEEPER than this generator
+# produces -- because they absorbed both sources' content.
+#
+# So this script must NOT target those four, and must NOT write anything under
+# /alternatives-to/ ever again: doing either would flatten a better page or
+# resurrect a URL that is now a 301 source, breaking the consolidation.
+#
+# Only /vs/saasoptics is still generated from here. Verify with:
+#     python3 scripts/guard_comparison_depth.py
 PAGES = [
-    ("alternatives-to", "baremetrics", "alt"),
-    ("alternatives-to", "chartmogul", "alt"),
-    ("alternatives-to", "profitwell", "alt"),
-    ("alternatives-to", "churnzero", "alt"),
     ("vs", "saasoptics", "vs"),
-    ("vs", "capterra", "vs"),
 ]
 
-# /vs/<slug> -> /alternatives-to/<slug>; redirects live in vercel.json
-CONSOLIDATED = ["baremetrics", "chartmogul", "profitwell", "churnzero"]
+# Owned by the consolidation, not by this script. Listed so the intent is explicit
+# and so a future edit does not silently re-add them to PAGES.
+DO_NOT_GENERATE = ["baremetrics", "chartmogul", "profitwell", "churnzero", "capterra"]
 
 CL_DOES = [
     "Recomputes churn from the target's raw subscription rows instead of trusting the reported figure.",

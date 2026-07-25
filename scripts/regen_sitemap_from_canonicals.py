@@ -14,8 +14,10 @@ Safe to re-run; output is deterministic and sorted.
 """
 from __future__ import annotations
 
+import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -43,6 +45,87 @@ PRIORITY = [
 ]
 
 
+def vercelignored() -> set[str]:
+    """Files .vercelignore'd are never uploaded, so their URLs always 404.
+
+    Pre-fix, /striking-distance was emitted into the sitemap on every run purely
+    because the file carried a canonical — it is .vercelignore'd and 404s live.
+    """
+    out: set[str] = set()
+    vi = REPO / ".vercelignore"
+    if not vi.exists():
+        return out
+    for raw in vi.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        out.add(line.rstrip("/"))
+    return out
+
+
+def _vercel_cfg() -> dict:
+    p = REPO / "vercel.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def redirect_sources(cfg: dict) -> set[str]:
+    """A URL that 301s must never be advertised in the sitemap."""
+    return {r["source"] for r in cfg.get("redirects", []) if "source" in r}
+
+
+def rewrite_matchers(cfg: dict) -> list[re.Pattern]:
+    """vercel.json rewrites are what make an extensionless path resolvable.
+
+    This site sets neither cleanUrls nor trailingSlash, so `/foo` does NOT fall
+    back to `foo.html`; it resolves only via a dir twin or an explicit rewrite.
+    That is why /badge and /7-revenue-churn-red-flags 404 while /vs/chartmogul
+    (covered by the `/vs/:slug` rewrite) serves fine.
+    """
+    pats = []
+    for r in cfg.get("rewrites", []):
+        src = r.get("source")
+        if not src:
+            continue
+        rx = re.escape(src)
+        rx = rx.replace(r"/:path\*", "(?:/.*)?").replace(r"\:path\*", ".*")
+        rx = re.sub(r"\\:[A-Za-z_]+\\\*", ".*", rx)
+        rx = re.sub(r"\\:[A-Za-z_]+", "[^/]+", rx)
+        try:
+            pats.append(re.compile(rf"^{rx}$"))
+        except re.error:
+            continue
+    return pats
+
+
+def is_routable(url: str, path: Path, rewrites: list[re.Pattern]) -> bool:
+    """True when Vercel can actually serve this URL."""
+    slug = url[len(BASE):] or "/"
+    if slug == "/":
+        return True
+    if (REPO / slug.lstrip("/") / "index.html").exists():
+        return True          # directory twin resolves natively
+    return any(p.match(slug) for p in rewrites)
+
+
+def normalize_declared_canonical(path: Path, url: str) -> bool:
+    """Make the page's own canonical agree with what the sitemap will list.
+
+    Previously this script only rstrip()'d the slash for its own output, leaving
+    the page still declaring the trailing-slash variant — the exact sitemap-vs-
+    canonical split the script exists to prevent. Rewriting the tag closes it.
+    """
+    html = path.read_text(encoding="utf-8", errors="ignore")
+    new = re.sub(
+        r'(<link rel="canonical" href=")([^"]+)(")',
+        lambda m: m.group(1) + url + m.group(3),
+        html, count=1,
+    )
+    if new != html:
+        path.write_text(new, encoding="utf-8")
+        return True
+    return False
+
+
 def git_lastmod(path: Path) -> str:
     try:
         out = subprocess.run(
@@ -67,12 +150,22 @@ def classify(url: str) -> tuple[str, str]:
 def main() -> None:
     found: dict[str, Path] = {}
     skipped_noindex = skipped_nocanon = 0
+    skipped_ignored = skipped_redirect = skipped_unroutable = 0
+    fixed_canonicals: list[str] = []
+
+    cfg = _vercel_cfg()
+    ignored = vercelignored()
+    redirects = redirect_sources(cfg)
+    rewrites = rewrite_matchers(cfg)
 
     for p in sorted(REPO.rglob("*.html")):
         rel = p.relative_to(REPO)
         if set(rel.parts[:-1]) & SKIP_DIRS or rel.parts[0] in SKIP_DIRS:
             continue
         if rel.name in SKIP_FILES:
+            continue
+        if str(rel) in ignored or rel.parts[0] in ignored:
+            skipped_ignored += 1
             continue
         html = p.read_text(encoding="utf-8", errors="ignore")
         if re.search(r'name="robots"[^>]*noindex', html, re.I) or "<meta name=\"robots\" content=\"noindex" in html:
@@ -87,6 +180,15 @@ def main() -> None:
             url = BASE + "/"
         if url in SKIP_URLS:
             continue
+        if url[len(BASE):] in redirects:
+            skipped_redirect += 1          # 301s must not be advertised
+            continue
+        if not is_routable(url, p, rewrites):
+            skipped_unroutable += 1        # no dir twin and no rewrite -> 404
+            continue
+        # Keep the page's declared canonical identical to the sitemap entry.
+        if normalize_declared_canonical(p, url):
+            fixed_canonicals.append(str(rel))
         # first writer wins, but prefer the flat file over the dir twin for lastmod
         if url not in found or rel.name != "index.html":
             found[url] = p
@@ -109,6 +211,12 @@ def main() -> None:
     print(f"sitemap.xml: {len(found)} URLs")
     print(f"  skipped noindex:        {skipped_noindex}")
     print(f"  skipped (no canonical): {skipped_nocanon}")
+    print(f"  skipped .vercelignore'd:{skipped_ignored}")
+    print(f"  skipped (has 301):      {skipped_redirect}")
+    print(f"  skipped (unroutable):   {skipped_unroutable}")
+    print(f"  canonicals normalized:  {len(fixed_canonicals)}")
+    for f in fixed_canonicals:
+        print(f"      fixed canonical: {f}")
 
 
 if __name__ == "__main__":

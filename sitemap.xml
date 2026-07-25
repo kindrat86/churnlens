@@ -13,12 +13,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/7-revenue-churn-red-flags</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://churnlens.site/about</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -182,12 +176,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/faq/what-is-revenue-churn-vs-logo-churn</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/faq/what-is-revenue-quality-score</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -566,7 +554,7 @@
   </url>
   <url>
     <loc>https://churnlens.site/sample-churn-risk-report</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -584,12 +572,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/stats</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/striking-distance</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -692,7 +674,7 @@
   </url>
   <url>
     <loc>https://churnlens.site/what-is-good-mrr</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
