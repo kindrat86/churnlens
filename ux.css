@@ -905,13 +905,27 @@ a[aria-label] > svg:only-child {
 :where(.container,
        body > main, body > article, body > header, body > footer,
        body > nav, body > section, body > aside, body > div,
-       body > .related-links, body > .aeo-faq, body > .merged-section) {
+       body > .related-links, body > .aeo-faq, body > .merged-section,
+       /* Content wrapped in the <main> landmark is no longer a child of body,
+          so it would lose the column rules above. Scoped to .cl-main on purpose:
+          the homepage's plain <main> holds .related-links and .aeo-faq that
+          deliberately do NOT take the column width, and must stay that way. */
+       .cl-main > article, .cl-main > section, .cl-main > div,
+       .cl-main > .related-links, .cl-main > .aeo-faq, .cl-main > .merged-section,
+       .cl-header > nav) {
   max-width: var(--cl-column);
 }
 :where(.container,
        body > main, body > article, body > header, body > footer,
        body > nav, body > section, body > aside, body > div,
-       body > .related-links, body > .aeo-faq, body > .merged-section) {
+       body > .related-links, body > .aeo-faq, body > .merged-section,
+       /* Content wrapped in the <main> landmark is no longer a child of body,
+          so it would lose the column rules above. Scoped to .cl-main on purpose:
+          the homepage's plain <main> holds .related-links and .aeo-faq that
+          deliberately do NOT take the column width, and must stay that way. */
+       .cl-main > article, .cl-main > section, .cl-main > div,
+       .cl-main > .related-links, .cl-main > .aeo-faq, .cl-main > .merged-section,
+       .cl-header > nav) {
   margin-inline: auto !important;
 }
 
@@ -922,7 +936,7 @@ a[aria-label] > svg:only-child {
 :where(body > .cl-skip-link, body > .cl-progress, body > .cl-nav-toggle,
        body > .cl-nav-drawer, body > .cl-nav-overlay, body > .cl-mobile-cta,
        body > .cl-back-top, body > .exit-overlay, body > .ux-offline-bar,
-       body > .author-byline) {
+       body > .author-byline, .cl-main > .author-byline) {
   max-width: none;
   margin-inline: 0 !important;
 }
