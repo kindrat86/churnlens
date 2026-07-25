@@ -4,7 +4,10 @@
     "kg": "http://g.co/kg"
   },
   "@id": "kg:/m/churnlens_site",
-  "@type": ["Organization", "SoftwareApplication"],
+  "@type": [
+    "Organization",
+    "SoftwareApplication"
+  ],
   "name": "ChurnLens",
   "alternateName": "ChurnLens (churnlens.site)",
   "url": "https://churnlens.site",
@@ -13,6 +16,11 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Larnaca",
+    "addressCountry": "CY"
+  },
   "logo": "https://churnlens.site/og.png",
   "image": "https://churnlens.site/og.png",
   "contactPoint": {
