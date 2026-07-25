@@ -60,3 +60,14 @@ jobs:
       # *.py but never *.md.
       - name: No internal docs exposed
         run: python3 scripts/check_public_docs.py
+      # Three separate waves of "these benchmarks come from our own customers"
+      # reached production (2,400+ SaaS companies; aggregated anonymized user
+      # data; ChurnLens analysis of buyer-side CSV uploads 2024-2026, including
+      # in a CC BY 4.0 dataset other people are invited to cite). There is no
+      # first-party corpus and there cannot be one: api/ has no upload endpoint
+      # and the free analyzer never transmits the file. The rule existed in
+      # CLAUDE.md as a two-literal grep that nobody ran, and wave 3 walked
+      # straight past it by saying "uploads" instead of "SaaS". Same fix as the
+      # three blockers above: stop trusting prose, run it.
+      - name: No unbacked first-party-data claims
+        run: python3 scripts/check_provenance_claims.py
