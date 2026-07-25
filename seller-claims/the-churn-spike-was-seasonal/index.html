@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
+<title>Seller Says the Churn Spike Was Seasonal — How to Verify It | ChurnLens</title>
+<meta name="description" content="Seasonality is a testable claim: it requires the same spike in the same month across multiple years. Here is how to test it, and what the four alternative explanations look like in the data.">
+<link rel="canonical" href="https://churnlens.site/seller-claims/the-churn-spike-was-seasonal">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/seller-claims/the-churn-spike-was-seasonal">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/seller-claims/the-churn-spike-was-seasonal">
+<meta name="robots" content="index,follow">
+<meta name="author" content="ChurnLens">
+<meta property="article:published_time" content="2026-07-25">
+<meta property="article:modified_time" content="2026-07-25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seller Says the Churn Spike Was Seasonal — How to Verify It | ChurnLens">
+<meta property="og:description" content="Seasonality is a testable claim: it requires the same spike in the same month across multiple years. Here is how to test it, and what the four alternative explanations look like in the data.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChurnLens">
+<meta property="og:url" content="https://churnlens.site/seller-claims/the-churn-spike-was-seasonal">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"That churn spike was seasonal","url":"https://churnlens.site/seller-claims/the-churn-spike-was-seasonal","description":"Seasonality is a testable claim: it requires the same spike in the same month across multiple years. Here is how to test it, and what the four alternative explanations look like in the data.","isPartOf":{"@id":"https://churnlens.site/#website"},"publisher":{"@id":"https://churnlens.site/#organization"},"about":{"@id":"https://churnlens.site/#software"},"inLanguage":"en","datePublished":"2026-07-25","dateModified":"2026-07-25","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","p:first-of-type"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site"},{"@type":"ListItem","position":2,"name":"Seller Claims","item":"https://churnlens.site/seller-claims"},{"@type":"ListItem","position":3,"name":"That churn spike was seasonal","item":"https://churnlens.site/seller-claims/the-churn-spike-was-seasonal"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can I tell if a SaaS churn spike is seasonal or structural?","acceptedAnswer":{"@type":"Answer","text":"Compare the same calendar month across multiple years. Seasonality repeats; a one-off spike does not. With fewer than eighteen months of history the question cannot be answered either way, which is a reason to ask for more data rather than to accept the explanation."}},{"@type":"Question","name":"What usually causes a one-off churn spike in a small SaaS?","acceptedAnswer":{"@type":"Answer","text":"In our experience the four most common causes are a price increase landing two or three renewal cycles earlier, a single sign-up cohort reaching the end of its natural life together, a product or support incident, and an external change such as a marketplace ranking or an integration partner shipping the same feature natively. Segmenting the spike by plan, tenure and acquisition source usually distinguishes them."}},{"@type":"Question","name":"Why does the lag between a price increase and churn matter?","acceptedAnswer":{"@type":"Answer","text":"Because subscribers mostly cannot act on a price change until their next renewal. Churn therefore appears one to three cycles later, which is long enough that the connection is easy to miss and the spike gets attributed to whatever was happening in the month it appeared."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:var(--ux-text,#1a1a2e);max-width:820px;margin:0 auto;padding:20px}
+h1{font-size:2rem;margin:16px 0 8px;line-height:1.3;color:var(--ux-text,#1a1a2e)}
+h2{font-size:1.4rem;margin:36px 0 12px;color:var(--ux-text,#1a1a2e)}
+h3{font-size:1.08rem;margin:26px 0 8px;color:var(--ux-text,#1a1a2e)}
+p{margin-bottom:16px;color:var(--ux-text,#1a1a2e)}
+ul,ol{margin:0 0 16px 22px}li{margin-bottom:8px;color:var(--ux-text,#1a1a2e)}
+nav{padding:12px 0;border-bottom:2px solid var(--ux-border,#f0f0f0);margin-bottom:20px}
+nav a{margin-right:16px;color:var(--ux-accent,#667eea);text-decoration:none;font-weight:500;font-size:.9rem}
+a{color:var(--ux-accent,#667eea)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--ux-border,#eee);color:var(--ux-text-secondary,#555);font-size:.85rem}
+.lead{font-size:1.15rem;color:var(--ux-text-secondary,#555);margin-bottom:24px}
+.pseo-scroll{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{border:1px solid var(--ux-border,#e0e0e0);padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;color:var(--ux-text,#1a1a2e)}
+th{background:var(--ux-surface-raised,#f8f9fa);font-weight:600}
+details{border:1px solid var(--ux-border,#e0e0e0);border-radius:8px;padding:12px 16px;margin-bottom:8px;background:var(--ux-surface-raised,#fafafa)}
+summary{cursor:pointer;font-size:1rem;color:var(--ux-text,#1a1a2e)}
+details p{margin-bottom:0}
+code{background:var(--ux-surface-raised,#f1f5f9);border:1px solid var(--ux-border,#e2e8f0);padding:1px 5px;border-radius:4px;font-size:.88em}
+blockquote{border-left:3px solid var(--ux-accent,#667eea);padding-left:16px;margin:16px 0;color:var(--ux-text-secondary,#444);font-style:italic}
+.pseo-note{font-size:.85rem;color:var(--ux-text-secondary,#555);border-left:3px solid var(--ux-border,#eee);padding-left:14px;margin:24px 0}
+.pseo-crumb{font-size:.85rem;color:var(--ux-text-secondary,#555);margin-bottom:4px}
+</style>
+<!-- canonical-disambiguation -->
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","foundingDate":"2026-01-15","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"image":"https://churnlens.site/og.png","contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"},"address":{"@type":"PostalAddress","addressLocality":"Larnaca","addressCountry":"CY"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"author":{"@id":"https://churnlens.site/#organization"},"featureList":["Churn Divergence Detector","Concentration Vulnerability Index","Annual-Plan Decay Projection","Zombie MRR Detector","Revenue Quality Scorecard","MRR Trajectory Forensics"],"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","description":"Buyer-side SaaS churn due-diligence for acquirers","inLanguage":"en","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+</head><body>
+<nav><a href="https://churnlens.site/" style="font-weight:700;color:var(--ux-text,#1a1a2e)">ChurnLens</a> <a href="https://churnlens.site/best/saas-due-diligence-tools">Best</a> <a href="https://churnlens.site/guides">How To</a> <a href="https://churnlens.site/use-cases">Use Cases</a> <a href="https://churnlens.site/learn">Learn</a> <a href="https://churnlens.site/compare">Alternatives To</a></nav>
+<p class="pseo-crumb"><a href="https://churnlens.site/">Home</a> &rsaquo; <a href="https://churnlens.site/seller-claims">Seller Claims</a></p>
+<h1>The seller says: &ldquo;that churn spike was seasonal&rdquo;</h1>
+<p class="lead">Seasonality is one of the few diligence claims that is fully falsifiable from data you already have. A seasonal pattern repeats in the same month across years. If the spike appears once, it is an event, and the only question is which event.</p>
+<p><strong>TL;DR:</strong> Seasonality is a testable claim: it requires the same spike in the same month across multiple years. Here is how to test it, and what the four alternative explanations look like in the data.</p>
+<h2>What the claim usually means</h2>
+<p>When a chart shows an ugly month, seasonality is the most available explanation and it is often offered in complete good faith — small businesses do have quiet quarters, and a founder who has lived through two Januaries can reasonably believe January is just like that. The problem is that a single observation cannot distinguish a season from a price increase, a churned cohort, an outage or a competitor launch, and the four have very different implications for a buyer.</p>
+<h2>What it can hide</h2>
+<p>Four mechanisms account for most of the gap between this claim and what the raw rows show. They are not mutually exclusive and they compound.</p>
+<h3>1. A price increase two renewal cycles earlier</h3><p>Price rises show up as elevated churn at the next renewal, not immediately. Line the churn series up against the pricing-change history with a two-to-three cycle lag before accepting any other explanation.</p>
+<h3>2. A single cohort reaching the end of its natural life</h3><p>A promotion or launch cohort that all signed up together will all reach their decision point together. That looks exactly like seasonality once, and never again.</p>
+<h3>3. An outage, a migration or a support collapse</h3><p>Product and service incidents produce churn with a lag of one to two billing cycles. Ask for the incident history and the support-ticket volume by month, and overlay them.</p>
+<h3>4. A competitor launch or a platform change</h3><p>If a marketplace changed its ranking, or an integration partner shipped the same feature natively, churn concentrates among the accounts that arrived through that channel. Segment the spike by acquisition source and it usually resolves immediately.</p>
+<h2>How to verify it from the raw subscription export</h2>
+<p>Every step below runs on a subscription-level export in a spreadsheet. None of it needs access to the seller's live billing account, which matters, because as a buyer you will not get one.</p>
+<ol><li>Build monthly churn as a percentage of opening MRR for at least twenty-four months, ideally thirty-six. Seasonality needs more than one cycle to be visible at all.</li><li>Compare the same calendar month across years. A genuine seasonal effect gives you an elevated January in every January, not one bad January.</li><li>Compute each month's deviation from its own trailing twelve-month average. One month more than two standard deviations out, with no repeat, is an event.</li><li>Segment the spike itself: by plan, by tenure, by acquisition source, by geography if available. Events concentrate in a segment; seasons do not.</li><li>Overlay the pricing-change history with a two-to-three renewal-cycle lag.</li><li>Overlay incidents, migrations and any support disruption.</li><li>Check what happened in the three months after the spike. A season reverts to trend; an event often leaves the base permanently lower.</li></ol>
+<h2>Reading the result</h2>
+<p>These are the thresholds we use in our own reports. They are working thresholds rather than industry standards, and the right line for a given deal depends on contract length, tenure and how transferable the customer relationships are.</p>
+<div class="pseo-scroll"><table><thead><tr><th>What you find</th><th>Verdict</th><th>What to do about it</th></tr></thead><tbody><tr><td>The same month is elevated in two or more years</td><td>Green</td><td>Genuine seasonality. Model it and move on; it is a working-capital consideration, not a valuation one.</td></tr><tr><td>One elevated month, 24+ months of data, no repeat</td><td>Investigate</td><td>This is an event. Identify it before you accept any explanation, because the explanation determines whether it recurs.</td></tr><tr><td>The spike concentrates in one plan, cohort or channel</td><td>Price it in</td><td>A segment-specific event. Establish whether the cause is still present, because if it is, the rest of that segment is next.</td></tr><tr><td>The base did not recover to trend within three months</td><td>Price it in</td><td>Permanent impairment, not a season. Rebase your model on the post-spike level.</td></tr><tr><td>Fewer than 18 months of history available</td><td>Investigate</td><td>Seasonality is untestable with this much data. Treat the claim as unevidenced, not as false.</td></tr></tbody></table></div>
+<h2>What to ask for in the data room</h2>
+<p>Ask for these before the LOI. After the LOI you are renegotiating rather than negotiating, and a seller who will not produce subscription-level rows has told you something useful either way.</p>
+<ul><li>At least twenty-four and preferably thirty-six months of subscription-level history.</li><li>The complete pricing-change history with effective dates.</li><li>An incident, outage and migration log for the same period.</li><li>Support ticket volume by month, and any change of support staffing or tooling.</li></ul>
+<h2>A worked example</h2>
+<p>Illustrative. Churn runs at 3% and spikes to 11% in a single February. Seasonal, says the memo. Three years of history shows February at 3.1% and 2.8% in the other two years, so the season hypothesis dies immediately. Segmenting the spike shows 80% of it in accounts acquired through one integration marketplace, and the marketplace changed its default listing that January. The cause is external, ongoing, and the remaining accounts from that channel are the next cohort at risk. That is a completely different finding from seasonality, and it took two groupings to reach.</p>
+<h2>Why it matters to the price</h2>
+<p>Whether a spike is a season or an event determines whether you model reversion or impairment, which is usually the difference between two valuations. It also determines whether the cause is still operating, which is the part that matters most: an event with a live cause is a forecast, not a historical note. Ask for thirty-six months up front; the most common reason this analysis fails is simply not having enough history to run it.</p>
+<p>The relevant tool on this site is the <a href="https://churnlens.site/churn-divergence-detector">churn divergence detector</a>, which runs the arithmetic above on a file you paste in. The full method is documented in the <a href="https://churnlens.site/5-risk-buyer-side-method">5-risk buyer-side method</a> and the <a href="https://churnlens.site/saas-due-diligence-checklist">due-diligence checklist</a>.</p>
+<h2>Other claims worth testing</h2>
+<ul><li><a href="https://churnlens.site/seller-claims/mrr-has-grown-every-month">&ldquo;MRR has grown every month for two years.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/we-intentionally-churned-bad-customers">&ldquo;We intentionally churned our bad customers.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/2-percent-monthly-churn">&ldquo;Churn is about 2% a month.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/logo-churn-is-low">&ldquo;Logo churn is low.&rdquo;</a></li></ul>
+<p><a href="https://churnlens.site/seller-claims"><strong>All twelve seller claims &rarr;</strong></a></p>
+<h2>Verify it against the raw rows</h2><p>Every check on this page can be run by hand in a spreadsheet, and if you have the time you should. If you would rather not: send us the target's subscription export and we run the full human-reviewed analysis — logo churn, revenue churn, customer concentration, annual-plan decay, zombie MRR and an A&ndash;F revenue-quality grade. The free <a href="https://churnlens.site/pricing">Starter tier</a> covers one CSV per month, which is enough to check a single deal.</p><p><a href="https://churnlens.site/sample-churn-risk-report"><strong>See a sample report &rarr;</strong></a> &nbsp;·&nbsp; <a href="https://churnlens.site/get-the-checklist">Get the free 23-point checklist &rarr;</a></p>
+<h2>Frequently asked questions</h2>
+<details><summary><strong>How can I tell if a SaaS churn spike is seasonal or structural?</strong></summary><p style="margin-top:10px">Compare the same calendar month across multiple years. Seasonality repeats; a one-off spike does not. With fewer than eighteen months of history the question cannot be answered either way, which is a reason to ask for more data rather than to accept the explanation.</p></details>
+<details><summary><strong>What usually causes a one-off churn spike in a small SaaS?</strong></summary><p style="margin-top:10px">In our experience the four most common causes are a price increase landing two or three renewal cycles earlier, a single sign-up cohort reaching the end of its natural life together, a product or support incident, and an external change such as a marketplace ranking or an integration partner shipping the same feature natively. Segmenting the spike by plan, tenure and acquisition source usually distinguishes them.</p></details>
+<details><summary><strong>Why does the lag between a price increase and churn matter?</strong></summary><p style="margin-top:10px">Because subscribers mostly cannot act on a price change until their next renewal. Churn therefore appears one to three cycles later, which is long enough that the connection is easy to miss and the spike gets attributed to whatever was happening in the month it appeared.</p></details>
+<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/seller-claims">What SaaS Sellers Say, and How to Verify It</a> — Twelve things SaaS sellers say about churn, retention and revenue quality…</li>
+<li><a href="/seller-claims/2-percent-monthly-churn">Seller Says Churn Is 2% a Month — How to Verify It</a> — A 2% monthly churn claim is the most common number in a SaaS sale and the…</li>
+<li><a href="/seller-claims/mrr-has-grown-every-month">Seller Says MRR Has Grown Every Month — How to Verify It</a> — Monotonic MRR growth is compatible with deteriorating retention, because…</li>
+<li><a href="/seller-claims/ltv-is-3000">Seller Says LTV Is $3,000 — How to Verify It</a> — LTV computed as ARPA divided by churn is arithmetically valid and…</li>
+<li><a href="/seller-claims/the-business-runs-itself">Seller Says the Business Runs Itself — How to Verify It</a> — The five-hours-a-week claim is testable against the subscription data</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+<footer>&copy; 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/sitemap.xml">Sitemap</a></footer>
+<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
+<section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">9%</span><br><span style="font-size:.82rem;color:#94a3b8">Median B2B SaaS revenue churn</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">88%</span><br><span style="font-size:.82rem;color:#94a3b8">Median gross revenue retention</span></div>
+      
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
+    </div>
+    <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
+    <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
+    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+  </div>
+</section>
+<!-- /BRUNSON TRUST BAR -->
+</body></html>

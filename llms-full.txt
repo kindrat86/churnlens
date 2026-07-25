@@ -15,10 +15,14 @@
 
 Source: https://churnlens.site/
 
+- 
 ChurnLens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk 
 2026. -->
 -->
 -->
+above (line ~167). Do NOT re-add:
+ux.js has no double-init guard, so a second copy builds a second
+back-to-top FAB that overlays page content on mobile. -->
 [Skip to content](#main-content)
 [Get the free checklist →](/get-the-checklist)
 WARNING: If You Trust the Seller's Churn Number, This Isn't for You
@@ -26,10 +30,11 @@ WARNING: If You Trust the Seller's Churn Number, This Isn't for You
 The seller says 2% monthly churn. 
 The CSV says 9.4%. 
 That gap will cost you $340,000 .
-TL;DR: ChurnLens is a buyer-side due-diligence tool for SaaS acquisitions: upload the target's raw subscription CSV and get a risk report covering logo and revenue churn, customer concentration, annual-plan decay, zombie MRR, and an A–F revenue-quality grade. The free Starter tier analyzes 1 CSV per month, so you can verify a seller's churn claims before you commit.
+TL;DR: ChurnLens is a buyer-side due-diligence tool for SaaS acquisitions: send us the target's raw subscription CSV and we run the full human-reviewed analysis — covering logo and revenue churn, customer concentration, annual-plan decay, zombie MRR, and an A–F revenue-quality grade. The free Starter tier includes 1 CSV analysis per month, so you can verify a seller's churn claims before you commit. [See a sample report →](/sample-churn-risk-report)
 ChurnLens is the buyer-side due diligence tool that catches hidden churn,
 concentration risk, and revenue decay that sellers don't disclose — before you commit
-to an acquisition. Upload a subscription CSV. Get a risk report in minutes.
+to an acquisition. Send us a subscription CSV. We run the analysis. You get a risk report.
+[See a sample report →](/sample-churn-risk-report)
 ChurnLens is a SaaS due-diligence tool for acquirers and PE/M&A analysts that
 scores a target's revenue quality and hidden churn before purchase — not a
 churn-prediction or customer-retention product, and unaffiliated with other similarly named tools.
@@ -48,14 +53,12 @@ Where SaaS acquirers already gather
 [r/SaaS](https://www.reddit.com/r/SaaS/)
 [Indie Hackers](https://www.indiehackers.com/)
 [Full Dream 100 →](/dream100)
-80% 
-of SaaS acquisitions overpay for churn risk 
-4.2x 
-real churn vs. reported (avg. gap) 
-$340K 
-avg. overpayment on a $1M deal 
+9% 
+median B2B SaaS revenue churn SaaS Capital, 2023 (~1,500 companies) 
+88% 
+median gross revenue retention Benchmarkit/Pavilion, FY2024 
 23 
-points in our churn audit checklist 
+points in our churn audit checklist counted, verifiable on the page 
 ## The $340K lesson behind ChurnLens
 Every product starts with a wound. This one started with a deal gone wrong.
 &ldquo; 
@@ -87,7 +90,7 @@ Logo churn and revenue churn, computed separately and compared. Losing 5% of log
 ### [The Concentration Vulnerability Index](/concentration-vulnerability-index)
 Flags when 3 customers represent 60%+ of MRR. If any of those churn post-close, your "SaaS" becomes a professional services firm overnight. Index scored, not just flagged.
 03 
-### [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+### [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 Identifies customers locked into annual plans who are statistically likely to cancel at renewal. The quietest revenue killer — invisible until renewal season hits post-close.
 04 
 ### [The Zombie MRR Detector](/zombie-mrr-detector)
@@ -108,7 +111,7 @@ The exact questions to demand from the raw CSV. Read in 2 minutes. Value: $0
 2 
 $9 One-Time — Tripwire 
 ### Single Target Analysis — Full Pro Report
-Upload one CSV. Get the complete risk report — logo churn, revenue churn, concentration, zombie MRR, and the A–F grade. Keep the PDF forever. Value: Normally $49 
+Send one CSV. Get the complete risk report — logo churn, revenue churn, concentration, zombie MRR, and the A–F grade. Keep the PDF forever. Value: Normally $49 
 [$9 once →](/pricing)
 3 
 $49/mo — Core Offer 
@@ -126,7 +129,7 @@ Max 10× jump between rungs. Each step earns the right to the next.
 If you're evaluating a SaaS right now, you probably hold at least one of these. Here's why each one is wrong.
 FALSE BELIEF #1 — The Vehicle 
 "The seller's churn methodology is industry-standard, so the number is reliable." 
-Truth: There is no standard. Every seller makes methodology choices that flatter their number. The only reliable number is the one you compute from raw data. (4.2x average gap between reported and real.) 
+Truth: There is no standard. Every seller makes methodology choices that flatter their number. The only reliable number is the one you compute from raw data. (4.2× average gap across the 15 deals I diligenced myself.) 
 FALSE BELIEF #2 — Internal Belief 
 "I'm not technical enough to analyze raw subscription data myself." 
 Truth: You don't need to be. You need the CSV and a tool that computes churn five ways. The analysis takes minutes, not a finance degree. Your "I'm not technical" belief is exactly what sellers count on. 
@@ -163,6 +166,14 @@ closes and deals get priced honestly.
 Get the 23-point churn audit checklist — plus a free 5-day email series walking you through the biggest hidden-churn traps, one per day. Takes 2 minutes to read. Could save you $340,000.
 [Get the free checklist →](/get-the-checklist)
 Day 1: The methodology gap. Day 2: Concentration risk. Day 3: Zombie MRR. Day 4: Annual-plan decay. Day 5: The revenue-quality score.
+## Explore ChurnLens
+Core method: [The 5-Risk Buyer-Side Method](/5-risk-buyer-side-method) · [SaaS M&A Due Diligence Framework](/saas-m-and-a-due-diligence-framework) · [Sample Churn Risk Report](/sample-churn-risk-report) · [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
+Research & data: [SaaS Benchmarks for Acquirers](/benchmarks) · [SaaS Churn & Retention Statistics 2026](/stats) · [SaaS Due-Diligence Glossary](/glossary)
+Free tools: [Free SaaS Due-Diligence Calculators](/calculators) · [Free SaaS Due Diligence Simulator](/free/due-diligence-simulator) · [SaaS Valuation Calculator](/saas-valuation-calculator)
+Compare tools: [Compare SaaS Diligence & Churn-Analytics Tools](/compare) · [Churn-analysis Tool Reviews](/reviews)
+By buyer & sector: [ChurnLens Use Cases](/use-cases) · [SaaS Due Diligence by Sector](/industries)
+Learn: [Learn](/learn) · [SaaS Due-Diligence Guides](/guides) · [FAQ](/faq) · [SaaS Acquisition Red Flags](/redflags) · [Free SaaS Due-Diligence Templates](/templates)
+More from ChurnLens: [What are the most effective customer churn predictio](/answers/churn-prediction-methods)
 WAIT — DO YOU HAVE A DEAL IN DUE DILIGENCE?
 ## Before you go — grab the checklist sellers hope you never see
 23-point churn audit. Free. Takes 2 minutes to read. Could save you $340K.
@@ -186,17 +197,24 @@ Revenue concentration The share of total revenue coming from the largest custome
 👋 How did you hear about ChurnLens?
 Thanks! 🎉
 Your answer helps us improve.
-80% of acquisitions overpay 
-4.2× real vs reported churn 
-$340K avg overpayment 
+9% median B2B SaaS revenue churn 
+88% median gross revenue retention 
+23 points in the audit checklist 
 5 risk dimensions scored 
 🛡️ 100% MONEY-BACK — IF WE MISS A RED FLAG, YOU DON'T PAY 
 📥 Free 47-Point SaaS Due Diligence Checklist — 5-minute read
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
 ### 🚀 Explore Our Network
 [📊 Free Open Datasets (CC BY 4.0)](https://gitdealflow.com/datasets)
 By The Data Nerd — angel investor since 2019, former engineering lead at a B2B SaaS startup, anonymous because sellers blacklist buyers who expose their real churn numbers · Updated 2026-07-08 · Published 2026-01-15
+### Related
+[SaaS Valuation Calculator](/saas-valuation-calculator) — estimate a target's valuation range
+- [SaaS M&A Due Diligence Framework](/saas-m-and-a-due-diligence-framework) — the full buyer-side framework
+- [5-Risk Buyer-Side Method](/5-risk-buyer-side-method) — ChurnLens's core analysis method
+- [Due Diligence Simulator](/free/due-diligence-simulator/) — free interactive risk simulation
+- [Free SaaS Calculators](/calculators) — churn, NRR, LTV, concentration and zombie-MRR tools
+- [Embeddable Widgets](/free/embed-widget) — put any ChurnLens calculator on your own site, free
+- [ChurnLens Alternatives](/compare) — compare with other tools
 
 ---
 
@@ -234,10 +252,10 @@ Public launch ChurnLens ships with a free Starter tier — 1 CSV analysis per mo
 ## What ChurnLens Is — and What It Isn't
 ### ✓ ChurnLens IS
 A buyer-side SaaS due diligence tool for acquirers, PE/M&A analysts, and founders evaluating a purchase
-- A raw-data analysis engine — you upload the seller's subscription CSV, ChurnLens computes churn five ways from the source data
+- A raw-data analysis engine — you send the seller's subscription CSV, ChurnLens computes churn five ways from the source data
 - A risk surface detector that flags concentration risk, annual-plan decay, zombie MRR, and MRR trajectory issues
 - A Revenue Quality Scorecard (A–F) that weights retention, concentration, expansion, and growth trends into one grade
-- Built for the 30-day due diligence window — analysis in minutes, not a week of spreadsheet work
+- Built for the 30-day due diligence window — analysis in 2 business days, not a week of spreadsheet work
 ### ✗ ChurnLens is NOT
 - A churn-prevention or customer-retention tool for SaaS operators (that's [churnlens.io](https://churnlens.io))
 - A customer churn-prediction or machine-learning platform (that's [churnlens.tech](https://churnlens.tech))
@@ -261,11 +279,16 @@ ChurnLens is built around the [5-Risk Buyer-Side Method](/5-risk-buyer-side-meth
 Read the founder's full story — every detail of the deal that built ChurnLens.
 [Read the $340K Founder Story →](/why)
 Or get the [23-point churn audit checklist](/get-the-checklist) — free, takes 2 minutes to read.
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [Why I Built ChurnLens — The $340K Lesson](/why) — The founder&#x27;s story: how a &#x27;clean&#x27; SaaS acquisition with 2% reported churn…
+- [Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk](/) — See hidden churn, concentration risk, and revenue decay before you buy a SaaS
+- [The Buyer-Side Manifesto — Stop Trusting Seller Churn](/manifesto) — The SaaS acquisition market runs on seller-computed metrics
+- [The 5-Risk Buyer-Side Method](/5-risk-buyer-side-method) — The ChurnLens 5-Risk Buyer-Side Method is a structured due-diligence…
+- [Learn — SaaS Churn, Revenue Quality & Due-Diligence Concepts](/learn) — ChurnLens learn hub: 2 buyer-side SaaS due-diligence resources covering…
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 ## Frequently Asked Questions
@@ -290,7 +313,6 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
@@ -302,6 +324,7 @@ Source: https://churnlens.site/5-risk-buyer-side-method
 The 5-Risk Buyer-Side Method — ChurnLens Acquisition Framework 
 - 
 # The ChurnLens 5-Risk Buyer-Side Method
+TL;DR — ChurnLens is a buyer-side SaaS due-diligence tool at [churnlens.site](https://churnlens.site): send a target company's subscription CSVs and get a risk report covering hidden churn, revenue concentration, annual-plan decay, zombie MRR, and MRR trajectory. Independent product, unaffiliated with churnlens.io or churnlens.tech.
 The ChurnLens 5-Risk Buyer-Side Method is a structured due-diligence framework that surfaces every risk a SaaS seller can hide in revenue data before an acquisition. It is not a list of tips; it is a named system of six diagnostic lenses — each targeting a specific way MRR can quietly decay, concentrate, or turn out to be lower quality than the CIM implies. The method is the analytical engine behind every ChurnLens buyer-side report.
 About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. Independent product, unaffiliated with churnlens.io (retention automation) or churnlens.tech (churn prediction). 
 ## What it is
@@ -312,7 +335,7 @@ Operating-side churn tools (ChurnZero, Gainsight, Pendo, Custify) help a company
 The six diagnostic lenses — each one is a named ChurnLens framework component with its own dedicated analysis page: 
 [The Churn Divergence Detector](/churn-divergence-detector) — Computes logo churn and revenue churn separately and compares them. Losing 5% of logos is fine; losing 5% of logos representing 40% of MRR is a dealbreaker. The divergence between the two is itself the signal — and it is the single most common way a seller&#x27;s headline churn understates real revenue erosion.
 - [The Concentration Vulnerability Index](/concentration-vulnerability-index) — Flags when a small number of customers represent a disproportionate share of MRR. If three customers represent 60%+ of MRR and any of them churn post-close, the target stops being a SaaS business overnight. Indexed and scored, not just flagged — the score reflects both concentration depth and customer-level retention risk.
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection) — Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk) — Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
 - [The Zombie MRR Detector](/zombie-mrr-detector) — Detects customers who are still paying but no longer engaging with the product. Zombie MRR looks stable on the P&L but disappears one invoice at a time. Sellers never flag it — it makes their number look good. For a buyer, the gap between paid and active is one of the highest-signal leading indicators of post-close churn.
 - [The Revenue Quality Scorecard](/revenue-quality-scorecard) — A composite A–F grade weighting retention, concentration, expansion revenue, and growth trend. One letter grade tells an acquirer more about whether the MRR will still exist in 12 months than a 50-page CIM. Designed to be read in seconds during deal screening, then decomposed into its components during deep diligence.
 - [The MRR Trajectory Forensics](/mrr-trajectory-forensics) — Shows whether MRR is trending up, flat, or silently decaying — and separates headline MRR from cohort MRR. A flat headline number often hides declining cohorts masked by new sales. The forensics lens decomposes the trajectory so an acquirer sees what is real growth versus what is replacement revenue.
@@ -320,15 +343,26 @@ The six diagnostic lenses — each one is a named ChurnLens framework component 
 Each lens operates on the target's raw subscription CSV — MRR per customer per month, plan type, and (where available) activity signal. The output of each lens is a scored signal, not a yes/no flag. The Revenue Quality Scorecard then composes the six signals into the headline A–F grade that anchors the buyer-side report.
 An acquirer typically runs the method at three points in a deal: at screening (does this target even warrant a deeper look?), during diligence (what exactly is in the revenue?), and at the final investment committee (is the quality of earnings consistent with what was claimed?).
 ## Run the 5-Risk analysis on a SaaS target
-Upload a target's subscription CSV and get the full buyer-side report in minutes.
+Send a target's subscription CSV and get the full buyer-side report in 2 business days.
 [Get started →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [SaaS Due Diligence Checklist: Buyer-Side Guide (2026)](/saas-due-diligence-checklist) — Complete buyer-side SaaS due diligence checklist
+- [Learn — SaaS Churn, Revenue Quality & Due-Diligence Concepts](/learn) — ChurnLens learn hub: 2 buyer-side SaaS due-diligence resources covering…
+- [ChurnLens Use Cases — Who Runs SaaS Revenue Diligence, and Why](/use-cases) — ChurnLens use cases hub: 3 buyer-side SaaS due-diligence resources…
+- [SaaS M&A Due Diligence Framework — The 5-Risk Buyer-Side Method](/saas-m-and-a-due-diligence-framework) — A systematic framework for SaaS M&A due diligence across 5 risk…
+- [Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk](/) — See hidden churn, concentration risk, and revenue decay before you buy a SaaS
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+### Related
+- [SaaS Valuation Calculator](/saas-valuation-calculator) — estimate a target's valuation range
+- [SaaS M&A Due Diligence Framework](/saas-m-and-a-due-diligence-framework) — the full buyer-side framework
+- [5-Risk Buyer-Side Method](/5-risk-buyer-side-method) — ChurnLens's core analysis method
+- [Due Diligence Simulator](/free/due-diligence-simulator/) — free interactive risk simulation
+- [ChurnLens Alternatives](/compare) — compare with other tools
 
 ---
 
@@ -348,18 +382,23 @@ The detector decomposes the target&#x27;s customer base and computes two rates s
 Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
 ## Related diagnostic lenses
 [The Concentration Vulnerability Index](/concentration-vulnerability-index)
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 - [The Zombie MRR Detector](/zombie-mrr-detector)
 - [The Revenue Quality Scorecard](/revenue-quality-scorecard)
 - [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
 ## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+Send a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
 [Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [SaaS Revenue Churn Calculator — Free Online Tool](/saas-revenue-churn-calculator) — Free SaaS revenue churn calculator
+- [SaaS Logo Retention vs. Revenue Churn: What Buyers Miss](/logo-retention-churn) — The difference between logo retention and revenue churn — and why focusing…
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index) — Flags when a small number of customers represent a disproportionate share…
+- [SaaS MRR Decline Analysis — Buyer-Side Revenue Decay Detection](/saas-mrr-decline-analysis) — How to detect MRR decline and revenue decay in SaaS acquisition targets
+- [SaaS Churn & Retention Statistics 2026](/stats) — Curated benchmarks on SaaS churn rates, net revenue retention, logo…
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -381,18 +420,23 @@ The index computes each customer&#x27;s share of total MRR, sorts descending, an
 Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
 ## Related diagnostic lenses
 [The Churn Divergence Detector](/churn-divergence-detector)
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 - [The Zombie MRR Detector](/zombie-mrr-detector)
 - [The Revenue Quality Scorecard](/revenue-quality-scorecard)
 - [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
 ## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+Send a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
 [Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [The Churn Divergence Detector](/churn-divergence-detector) — Computes logo churn and revenue churn separately and compares them
+- [SaaS Revenue Concentration Risk: When Top Customers Hide Churn](/saas-revenue-concentration-risk) — How revenue concentration masks churn risk in SaaS acquisitions
+- [How to Evaluate a SaaS Before Buying: Buyer&#x27;s Framework (2026)](/how-to-evaluate-a-saas-before-buying) — A step-by-step framework for evaluating any SaaS acquisition target:…
+- [SaaS Acquisition Red Flags: 12 Warning Signs for Buyers](/saas-acquisition-red-flags) — 12 specific red flags that signal a SaaS acquisition is overvalued or…
+- [7 Revenue Churn Red Flags to Check Before Buying a SaaS Business (2026)](/7-revenue-churn-red-flags) — Before you buy a SaaS business, check these 7 revenue churn red flags
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -400,36 +444,7 @@ The seller's churn number is almost always wrong. Upload the CSV and find out be
 
 ## Annual-Plan Decay Projection
 
-Source: https://churnlens.site/annual-plan-decay-projection
-
-The Annual-Plan Decay Projection — ChurnLens Buyer-Side Diagnostic Lens 
-- 
-# The Annual-Plan Decay Projection
-Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
-[Part of the ChurnLens 5-Risk Buyer-Side Method →](/5-risk-buyer-side-method)
-## What it is
-Identifies customers locked into annual plans who are statistically likely to cancel at renewal. This is the quietest revenue killer in SaaS M&A — invisible on the P&L until renewal season hits after close, by which point the acquirer owns the problem.
-## What it looks for in the data
-The projection isolates annual-plan customers, measures their remaining contract lifetime, and overlays behavioral signals (usage, support tickets, payment cadence) that historically precede renewal cancellation. The output is a projected renewal-rate curve by cohort.
-Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer because it makes their headline number look worse. In a SaaS acquisition, the gap between what this lens finds and what the CIM discloses is directly negotiation-relevant. 
-## Related diagnostic lenses
-[The Churn Divergence Detector](/churn-divergence-detector)
-- [The Concentration Vulnerability Index](/concentration-vulnerability-index)
-- [The Zombie MRR Detector](/zombie-mrr-detector)
-- [The Revenue Quality Scorecard](/revenue-quality-scorecard)
-- [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
-## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
-[Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
-23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
-[Get the Free Checklist →](https://churnlens.site/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-
----
+*(page not found)*
 
 ## Zombie MRR Detector
 
@@ -448,17 +463,22 @@ Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer becau
 ## Related diagnostic lenses
 [The Churn Divergence Detector](/churn-divergence-detector)
 - [The Concentration Vulnerability Index](/concentration-vulnerability-index)
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 - [The Revenue Quality Scorecard](/revenue-quality-scorecard)
 - [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
 ## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+Send a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
 [Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [Inactive Paid Accounts in SaaS: Ghost Revenue Detection](/inactive-paid-accounts) — Customers paying but not using your product are zombie MRR
+- [Free Zombie MRR Detector](/free/zombie-mrr-detector) — Detect zombie subscriptions: accounts still paying but inactive for 90+ days
+- [The Churn Divergence Detector](/churn-divergence-detector) — Computes logo churn and revenue churn separately and compares them
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index) — Flags when a small number of customers represent a disproportionate share…
+- [Who is ChurnLens For? The SaaS Acquirer&#x27;s Dream Customer Profile](/who) — ChurnLens is built for one specific person: the indie SaaS acquirer…
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -481,17 +501,22 @@ Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer becau
 ## Related diagnostic lenses
 [The Churn Divergence Detector](/churn-divergence-detector)
 - [The Concentration Vulnerability Index](/concentration-vulnerability-index)
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 - [The Zombie MRR Detector](/zombie-mrr-detector)
 - [The MRR Trajectory Forensics](/mrr-trajectory-forensics)
 ## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+Send a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
 [Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [SaaS Revenue Quality Score — Beyond Raw MRR](/saas-revenue-quality-score) — The Revenue Quality Score (RQS): a composite metric that scores SaaS…
+- [MRR vs Revenue Quality: Why Headline MRR Misleads Buyers](/mrr-vs-revenue-quality) — Raw MRR is a vanity metric
+- [How to Evaluate a SaaS Before Buying: Buyer&#x27;s Framework (2026)](/how-to-evaluate-a-saas-before-buying) — A step-by-step framework for evaluating any SaaS acquisition target:…
+- [The Ultimate SaaS Due Diligence Guide (2026)](/ultimate-saas-due-diligence-guide) — The complete buyer-side SaaS due diligence guide
+- [SaaS Due-Diligence Glossary — Churn, Retention & Revenue-Quality Terms](/glossary) — Every metric a buyer needs to read a SaaS target&#x27;s revenue correctly,…
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -514,17 +539,22 @@ Buyer-side signal: this lens surfaces a risk that sellers rarely volunteer becau
 ## Related diagnostic lenses
 [The Churn Divergence Detector](/churn-divergence-detector)
 - [The Concentration Vulnerability Index](/concentration-vulnerability-index)
-- [The Annual-Plan Decay Projection](/annual-plan-decay-projection)
+- [The Annual-Plan Decay Projection](/annual-plan-churn-risk)
 - [The Zombie MRR Detector](/zombie-mrr-detector)
 - [The Revenue Quality Scorecard](/revenue-quality-scorecard)
 ## See this lens in your target's data
-Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
+Send a SaaS target's subscription CSV and get the full 5-Risk buyer-side report.
 [Run the analysis →](/pricing)
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### Related
+- [SaaS M&A Due Diligence Framework — The 5-Risk Buyer-Side Method](/saas-m-and-a-due-diligence-framework) — A systematic framework for SaaS M&A due diligence across 5 risk…
+- [The Concentration Vulnerability Index](/concentration-vulnerability-index) — Flags when a small number of customers represent a disproportionate share…
+- [MRR vs Revenue Quality: Why Headline MRR Misleads Buyers](/mrr-vs-revenue-quality) — Raw MRR is a vanity metric
+- [Get the SaaS Churn Audit Checklist + Sample Report](/get-the-checklist) — The 23-point buyer-side churn audit checklist sellers hope you never ask for
+- [SaaS Revenue Churn Calculator — Free Online Tool](/saas-revenue-churn-calculator) — Free SaaS revenue churn calculator
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -541,7 +571,7 @@ Hidden Churn: What SaaS Sellers Don't Tell Buyers | ChurnLens
 7 tricks SaaS sellers use to make churn look better than it is — and how to catch every single one with raw subscription data.
 Quick Answer: Hidden churn comes in 7 flavors: trial reclassification, cohort cherry-picking, downgrade exclusion, annual plan smoothing, [zombie MRR](/zombie-mrr-detector) inclusion, failed-payment exclusion, and survivorship bias in cohort reporting.
 Last reviewed July 18, 2026 . The methodology itself is evergreen; benchmark references are updated with current market context.
-TL;DR: Sellers hide churn in 7 common ways: trial reclassification, cohort selection bias, downgrade exclusion, annual plan smoothing, zombie MRR inclusion, failed-payment exclusion, and survivorship bias. Every trick is detectable from a raw subscription CSV. ChurnLens catches all seven automatically when you upload your target's data.
+TL;DR: Sellers hide churn in 7 common ways: trial reclassification, cohort selection bias, downgrade exclusion, annual plan smoothing, zombie MRR inclusion, failed-payment exclusion, and survivorship bias. Every trick is detectable from a raw subscription CSV. ChurnLens catches all seven automatically when you send your target's data.
 Every SaaS seller believes their churn is "industry-leading." Every buyer who takes the CIM number at face value gets burned. The gap between reported churn and real churn is filled with methodological choices that happen to flatter the seller. Here are the seven most common ones — and how ChurnLens catches each one automatically.
 ## The 7 Churn Tricks
 ### 1. Trial Churn Reclassification
@@ -566,8 +596,8 @@ How to catch it: Analyze churn at the subscription-ID level, not the customer-ID
 High gross churn masked by even higher new sales. The reported churn rate stays flat or even declines, but only because new customers flood the denominator. When growth stalls (as it inevitably does post-acquisition), the churn that was always there becomes visible.
 How to catch it: Compare gross churn (cancellations / beginning-of-period customers) to net churn (net loss / beginning-of-period). If they diverge significantly, the business is masking churn with growth. ChurnLens computes both and highlights the gap. 
 ### Run the raw data yourself
-Upload the target's subscription CSV. ChurnLens automatically identifies every churn calculation trick listed here and shows you the real numbers.
-[Upload a CSV →](/)
+Send the target's subscription CSV. ChurnLens automatically identifies every churn calculation trick listed here and shows you the real numbers.
+[Send a CSV →](/)
 ## Related Resources
 [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
 - [Complete SaaS Due Diligence Checklist](/saas-due-diligence-checklist)
@@ -579,6 +609,12 @@ Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sa
 ### Ready to automate this?
 Get the 23-point buyer-side churn audit checklist and see exactly what to demand from any seller's subscription data.
 [Want to automate this analysis? Get the 23-point churn audit checklist →](/get-the-checklist)
+### Related
+- [Learn — SaaS Churn, Revenue Quality & Due-Diligence Concepts](/learn) — ChurnLens learn hub: 2 buyer-side SaaS due-diligence resources covering…
+- [ChurnLens Use Cases — Who Runs SaaS Revenue Diligence, and Why](/use-cases) — ChurnLens use cases hub: 3 buyer-side SaaS due-diligence resources…
+- [SaaS Acquisition Red Flags: 12 Warning Signs for Buyers](/saas-acquisition-red-flags) — 12 specific red flags that signal a SaaS acquisition is overvalued or…
+- [SaaS Due-Diligence Glossary — Churn, Retention & Revenue-Quality Terms](/glossary) — Every metric a buyer needs to read a SaaS target&#x27;s revenue correctly,…
+- [Why I Built ChurnLens — The $340K Lesson](/why) — The founder&#x27;s story: how a &#x27;clean&#x27; SaaS acquisition with 2% reported churn…
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -601,12 +637,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
@@ -649,9 +683,9 @@ The fastest path to real concentration numbers is to take the seller's subscript
 - Top 5 MRR share: Sum MRR of top 5 customers / Total MRR. If >30%, flag for deeper review.
 - Top 10 MRR share: Same calculation, top 10. If >50%, the business has structural concentration.
 - HHI: Squares of each customer's share of total MRR, summed, &times; 10,000. >2,500 = high risk.
-ChurnLens does all three automatically when you upload a CSV — plus it overlays each concentration metric with industry benchmarks and churn-adjusted revenue projections.
+ChurnLens does all three automatically when you send a CSV — plus it overlays each concentration metric with industry benchmarks and churn-adjusted revenue projections.
 ### Check concentration on your next deal
-Upload the target's subscription CSV and get HHI, top-N share, and tier concentration computed in seconds. Free, no signup required.
+Send the target's subscription CSV and get HHI, top-N share, and tier concentration computed in seconds. Free, no signup required.
 [Analyze a CSV →](/)
 ## The Acquisition Playbook: Dealing With Concentration
 If you find concentration risk in a target, you have three options:
@@ -666,6 +700,12 @@ If you find concentration risk in a target, you have three options:
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
+### Related
+- [SaaS Buyer-Side Risk Assessment — Free Tool](/saas-buyer-risk-assessment) — Free buyer-side risk assessment for SaaS acquisitions
+- [SaaS Revenue Concentration Risk: When Top Customers Hide Churn](/saas-revenue-concentration-risk) — How revenue concentration masks churn risk in SaaS acquisitions
+- [How to Evaluate a SaaS Before Buying: Buyer&#x27;s Framework (2026)](/how-to-evaluate-a-saas-before-buying) — A step-by-step framework for evaluating any SaaS acquisition target:…
+- [SaaS Revenue Churn Calculator — Free Online Tool](/saas-revenue-churn-calculator) — Free SaaS revenue churn calculator
+- [SaaS Valuation Calculator — Revenue Multiple & Adjusted Valuation](/saas-valuation-calculator) — Calculate a SaaS business valuation using revenue multiples adjusted for…
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -688,12 +728,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
@@ -746,7 +784,7 @@ Company A: $100K MRR, 3% monthly churn, NRR 95%, HHI 800, 30% annual billing, in
 Same MRR, wildly different assets. Company A will grow. Company B will shrink, and its concentration risk means the shrinkage accelerates when a top customer churns. If you're paying a multiple on MRR, you're overpaying for Company B unless you've adjusted for the quality gap.
 ChurnLens computes RQS automatically from your CSV upload — including each sub-score and the rationale behind the composite number. No manual formula work needed.
 ### Compute the RQS for your deal
-Upload the target's subscription CSV and get the Revenue Quality Score, all five sub-scores, and the risk-adjusted MRR projection.
+Send the target's subscription CSV and get the Revenue Quality Score, all five sub-scores, and the risk-adjusted MRR projection.
 [Score a Target →](/)
 ## Related Resources
 - [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
@@ -759,6 +797,12 @@ Upload the target's subscription CSV and get the Revenue Quality Score, all five
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
+### Related
+- [What Is a SaaS Revenue Quality Score?](/faq/what-is-revenue-quality-score) — Revenue Quality Score (RQS) measures SaaS subscription revenue across 5…
+- [MRR vs Revenue Quality: Why Headline MRR Misleads Buyers](/mrr-vs-revenue-quality) — Raw MRR is a vanity metric
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard) — A composite A–F grade weighting retention, concentration, expansion…
+- [SaaS Buyer-Side Risk Assessment — Free Tool](/saas-buyer-risk-assessment) — Free buyer-side risk assessment for SaaS acquisitions
+- [SaaS Due-Diligence Glossary — Churn, Retention & Revenue-Quality Terms](/glossary) — Every metric a buyer needs to read a SaaS target&#x27;s revenue correctly,…
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -781,12 +825,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
@@ -851,19 +893,85 @@ Contractors without signed IP assignments, open-source license violations in the
 ### MEDIUM Vendor / Subprocessor Dependencies
 Every SaaS the business relies on (Stripe, AWS, SendGrid, OpenAI) is a risk if the plan is unsignable. Check change-of-control clauses in vendor contracts.
 ### Turn this checklist into automated findings
-Upload the target's subscription CSV to ChurnLens and get churn rates, concentration dashboards, and revenue decay curves computed automatically. No spreadsheets, no manual calculations.
+Send the target's subscription CSV to ChurnLens and get churn rates, concentration dashboards, and revenue decay curves computed automatically. No spreadsheets, no manual calculations.
 [Run Due Diligence Now →](/)
 ## Related Resources
 [SaaS Churn Rate Benchmarks by Industry](/saas-churn-rate-benchmarks)
 - [Customer Concentration Risk: How to Spot the Trap](/customer-concentration-risk)
 - [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
 - [The Complete Guide to Buying a SaaS Business](/buying-a-saas-business-guide)
-- [What Is a Good Churn Rate? (Learn)](/learn/what-is-a-good-churn-rate)
+- [What Is a Good Churn Rate? (Learn)](/saas-churn-rate-benchmarks)
 - [Net Revenue Retention Explained](/learn/net-revenue-retention)
 - [PE Due Diligence Use Case](/use-cases/pe-due-diligence)
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
+## Pre-LOI SaaS Diligence Checklist
+TL;DR: What to verify before signing a Letter of Intent for a SaaS acquisition.
+### Complete Checklist
+- Request raw billing data export (CSV) for the last 24 months
+- Calculate MRR by month — verify it matches reported figures
+- Segment customers by plan type (monthly vs annual)
+- Calculate logo retention rate by cohort
+- Identify top-10 customers by revenue share
+- Compute HHI revenue concentration score
+- Flag accounts with zero activity in 60+ days
+- Compare reported churn vs. actual churn from raw data
+- Check for reactivated churned accounts counted as 'new' MRR
+- Verify NRR calculation excludes one-time services revenue
+- Document all discrepancies for management discussion
+- Generate ChurnLens revenue quality score
+## Revenue Quality Audit Checklist
+TL;DR: Step-by-step checklist for auditing SaaS revenue quality from raw data.
+### Complete Checklist
+- Request raw billing data export (CSV) for the last 24 months
+- Calculate MRR by month — verify it matches reported figures
+- Segment customers by plan type (monthly vs annual)
+- Calculate logo retention rate by cohort
+- Identify top-10 customers by revenue share
+- Compute HHI revenue concentration score
+- Flag accounts with zero activity in 60+ days
+- Compare reported churn vs. actual churn from raw data
+- Check for reactivated churned accounts counted as 'new' MRR
+- Verify NRR calculation excludes one-time services revenue
+- Document all discrepancies for management discussion
+- Generate ChurnLens revenue quality score
+## Churn Deep-Dive Checklist
+TL;DR: Questions to ask and data to request for a thorough churn investigation.
+### Complete Checklist
+- Request raw billing data export (CSV) for the last 24 months
+- Calculate MRR by month — verify it matches reported figures
+- Segment customers by plan type (monthly vs annual)
+- Calculate logo retention rate by cohort
+- Identify top-10 customers by revenue share
+- Compute HHI revenue concentration score
+- Flag accounts with zero activity in 60+ days
+- Compare reported churn vs. actual churn from raw data
+- Check for reactivated churned accounts counted as 'new' MRR
+- Verify NRR calculation excludes one-time services revenue
+- Document all discrepancies for management discussion
+- Generate ChurnLens revenue quality score
+## Post-Acquisition SaaS Integration Checklist
+TL;DR: Revenue monitoring checklist for the first 90 days after SaaS acquisition.
+### Complete Checklist
+- Request raw billing data export (CSV) for the last 24 months
+- Calculate MRR by month — verify it matches reported figures
+- Segment customers by plan type (monthly vs annual)
+- Calculate logo retention rate by cohort
+- Identify top-10 customers by revenue share
+- Compute HHI revenue concentration score
+- Flag accounts with zero activity in 60+ days
+- Compare reported churn vs. actual churn from raw data
+- Check for reactivated churned accounts counted as 'new' MRR
+- Verify NRR calculation excludes one-time services revenue
+- Document all discrepancies for management discussion
+- Generate ChurnLens revenue quality score
+### Related
+- [The Ultimate SaaS Due Diligence Guide (2026)](/ultimate-saas-due-diligence-guide) — The complete buyer-side SaaS due diligence guide
+- [Learn — SaaS Churn, Revenue Quality & Due-Diligence Concepts](/learn) — ChurnLens learn hub: 2 buyer-side SaaS due-diligence resources covering…
+- [ChurnLens Use Cases — Who Runs SaaS Revenue Diligence, and Why](/use-cases) — ChurnLens use cases hub: 3 buyer-side SaaS due-diligence resources…
+- [The 5-Risk Buyer-Side Method](/5-risk-buyer-side-method) — The ChurnLens 5-Risk Buyer-Side Method is a structured due-diligence…
+- [Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk](/) — See hidden churn, concentration risk, and revenue decay before you buy a SaaS
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -886,12 +994,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
@@ -935,7 +1041,7 @@ Above 120% Exceptional — product naturally expands Premium valuation justified
 80–90% High churn — revenue is melting Significant discount or walk away 
 Below 80% Critical — revenue base is collapsing Do not acquire 
 ### Calculate revenue quality from CSV
-Upload the target's subscription data and ChurnLens automatically computes GRR, NRR, concentration-adjusted retention, engagement-weighted MRR, and a composite Revenue Quality Score. See the true revenue picture in minutes.
+Send the target's subscription data and ChurnLens automatically computes GRR, NRR, concentration-adjusted retention, engagement-weighted MRR, and a composite Revenue Quality Score. See the true revenue picture in 2 business days.
 [Score Revenue Quality →](/)
 ## The Expansion Revenue Trap
 Expansion revenue (upsells, seat additions, plan upgrades) can make NRR look great while masking underlying problems. Watch for:
@@ -963,6 +1069,12 @@ MRR is a level: the recurring revenue a business books this month. NRR is a rate
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
+### Related
+- [SaaS Revenue Quality Score — Beyond Raw MRR](/saas-revenue-quality-score) — The Revenue Quality Score (RQS): a composite metric that scores SaaS…
+- [The Revenue Quality Scorecard](/revenue-quality-scorecard) — A composite A–F grade weighting retention, concentration, expansion…
+- [SaaS Logo Retention vs. Revenue Churn: What Buyers Miss](/logo-retention-churn) — The difference between logo retention and revenue churn — and why focusing…
+- [How to Evaluate a SaaS Before Buying: Buyer&#x27;s Framework (2026)](/how-to-evaluate-a-saas-before-buying) — A step-by-step framework for evaluating any SaaS acquisition target:…
+- [SaaS Churn & Retention Statistics 2026](/stats) — Curated benchmarks on SaaS churn rates, net revenue retention, logo…
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -985,12 +1097,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-17 · Published 2026-01-15
@@ -1035,7 +1145,7 @@ The SaaS charges significantly below market rate — and customers are locked in
 ### 12 Inconsistent Billing or Data Quality Issues
 If the subscription CSV has duplicate records, inconsistent plan naming, missing signup dates, or unexplained MRR fluctuations, the data integrity is questionable. Sellers who can't provide clean data are either disorganized or hiding something. Both are reasons to discount heavily or walk away.
 ### Check all 12 red flags automatically
-Upload the target's subscription CSV and ChurnLens scans for every red flag on this list — plus calculates HHI, zombie MRR, renewal exposure, cohort trends, and NRR. Get a complete risk report in minutes.
+Send the target's subscription CSV and ChurnLens scans for every red flag on this list — plus calculates HHI, zombie MRR, renewal exposure, cohort trends, and NRR. Get a complete risk report in 2 business days.
 [Run Red Flag Scan →](/)
 ## How to Use This Checklist
 These 12 red flags aren't independent — they compound. A business with hidden churn (flag 1) and annual cliffs (flag 4) and declining cohorts (flag 8) is likely to lose 30-50% of its revenue within 12 months of acquisition. The interaction between flags is more dangerous than any single warning sign.
@@ -1048,6 +1158,12 @@ For the complete evaluation framework, use our [6-step buyer-side evaluation](/h
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a real $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
+### Related
+- [7 Revenue Churn Red Flags to Check Before Buying a SaaS Business (2026)](/7-revenue-churn-red-flags) — Before you buy a SaaS business, check these 7 revenue churn red flags
+- [SaaS Acquisition Red Flags — 8 Revenue-Quality Warning Signs](/redflags) — The eight patterns that most often separate a SaaS target&#x27;s reported churn…
+- [Annual Plan Churn Risk in SaaS: The Hidden Renewal Cliff](/annual-plan-churn-risk) — Annual plans artificially suppress monthly churn metrics
+- [SaaS M&A Due Diligence Framework — The 5-Risk Buyer-Side Method](/saas-m-and-a-due-diligence-framework) — A systematic framework for SaaS M&A due diligence across 5 risk…
+- [How to Evaluate a SaaS Before Buying: Buyer&#x27;s Framework (2026)](/how-to-evaluate-a-saas-before-buying) — A step-by-step framework for evaluating any SaaS acquisition target:…
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -1070,12 +1186,10 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](https://churnlens.site/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-⚡ Limited Beta Pricing — Lock in $49/mo Before Price Increase
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
@@ -1086,16 +1200,69 @@ By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-
 
 Source: https://churnlens.site/benchmarks
 
-Benchmarks — SaaS Revenue Quality Data | ChurnLens 
+SaaS Benchmarks for Acquirers — Retention, Concentration & Valuation Multiples 
 - 
 # Benchmarks
 [Average SaaS Churn Rate by Industry](https://churnlens.site/saas-churn-rate-benchmarks) — Current benchmark data on monthly and annual SaaS churn rates across B2B, B2C, SMB, and enterprise segments
-- [SaaS Valuation Multiples by Revenue Quality](https://churnlens.site/benchmarks) — How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples
-- [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks) — Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies
-- [Revenue Concentration Benchmarks for SaaS](https://churnlens.site/benchmarks) — What level of revenue concentration is normal, acceptable, or risky at different SaaS stages
+- [SaaS Valuation Multiples by Revenue Quality](https://churnlens.site/benchmarks#saas-valuation-multiples-by-revenue-quality) — How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples
+- [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks#logo-retention-benchmarks-by-company-stage) — Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies
+- [Revenue Concentration Benchmarks for SaaS](https://churnlens.site/benchmarks#revenue-concentration-benchmarks-for-saas) — What level of revenue concentration is normal, acceptable, or risky at different SaaS stages
+Sourced benchmark data for the numbers that decide a SaaS price. Every figure below cites its primary source — SaaS Capital, Benchmarkit, Recurly, First Page Sage and FE International — so you can verify it before you put it in a model.
+## Logo Retention Benchmarks by Company Stage
+TL;DR: Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies.
+### Industry Benchmarks
+What the benchmarks show 
+Primary benchmarking sources report revenue retention rather than count-based "logo" retention. The clearest published signal is that gross revenue retention rises with ACV, longer contract terms, and company maturity.
+Segment Median gross revenue retention ACV under $25K 90% ACV over $25K ~93% Overall private B2B SaaS ~91% 
+Source: SaaS Capital, [2023 B2B SaaS Retention Benchmarks](https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf).
+Contract terms: companies on month-to-month and annual terms show similar median gross retention (~90%); multi-year contracts retain materially better. Company stage: gross retention is inflated (~92%) at young companies and stabilizes near 90% as cohorts age.
+### Using Benchmarks in Due Diligence
+Compare the target against these benchmarks. Significant deviations aren't automatic deal-breakers — they determine which questions to ask during management calls and how to structure earn-outs and holdbacks.
+### FAQ
+Where does this benchmark data come from? 
+Compiled from named public sources including SaaS Capital, Benchmarkit, Recurly, FE International, and Wall Street Prep — see citations in the section above.
+How should I use these benchmarks? 
+Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.
+## Revenue Concentration Benchmarks for SaaS
+TL;DR: What level of revenue concentration is normal, acceptable, or risky at different SaaS stages.
+### Industry Benchmarks
+What the benchmarks show 
+There is no single "safe" number, but M&A diligence practice converges on thresholds for how much revenue can sit with one customer before it becomes a deal risk.
+Largest customer's share of revenue / ARR How diligence typically treats it Under 10% Healthy — generally not a concentration flag 10–20% Caution — disclose, diligence, and often price in Over 20% High-risk — material dependency; may drive holdbacks or earnouts 
+Risk-zone framing: Website Closers; the 15–20% single-customer "price-it-in" threshold: FE International, [SaaS Due Diligence Checklist](https://www.feinternational.com/blog/saas-due-diligence-checklist-buyers).
+Why 10% is the line: US GAAP (FASB ASC 280) requires public companies to disclose any single customer at ≥ 10% of revenue — the origin of the 10% materiality threshold used in quality-of-earnings reviews. Top 5: the five largest customers exceeding ~25% of revenue is a commonly cited red flag — [Wall Street Prep](https://www.wallstreetprep.com/knowledge/customer-concentration/).
+### Using Benchmarks in Due Diligence
+Compare the target against these benchmarks. Significant deviations aren't automatic deal-breakers — they determine which questions to ask during management calls and how to structure earn-outs and holdbacks.
+### FAQ
+Where does this benchmark data come from? 
+Compiled from named public sources including SaaS Capital, Benchmarkit, Recurly, FE International, and Wall Street Prep — see citations in the section above.
+How should I use these benchmarks? 
+Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.
+## SaaS Valuation Multiples by Revenue Quality
+TL;DR: How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples.
+### Industry Benchmarks
+Revenue quality directly impacts multiples. A SaaS company with Where does this benchmark data come from? 
+Benchmark data is compiled from publicly available SaaS industry reports, operator surveys, and aggregated anonymized data from SaaS analytics platforms.
+How should I use these benchmarks? 
+Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.
+## SaaS Churn Rate Benchmarks
+TL;DR: Median gross revenue retention for private B2B SaaS runs about 91%, and it rises with contract size — roughly 90% under $12K ACV to 93% above $50K. Every figure below links its primary source.
+### Gross revenue retention by contract size
+Annual contract value (ACV) Median gross revenue retention &#8776; Annual gross revenue churn Under $12K 90% ~10% $12K&#8211;$25K 90% ~10% $25K&#8211;$50K 92% ~8% $50K&#8211;$100K 93% ~7% $100K&#8211;$250K 93% ~7% Over $250K 93% ~7% 
+Source: SaaS Capital, [2023 B2B SaaS Retention Benchmarks](https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf) (~1,500 private B2B SaaS companies). Most recent: Benchmarkit&#8217;s 2025 report puts FY2024 median gross retention at 88% and net retention at 101%. The churn column is derived as 100% minus median gross revenue retention.
+### Two traps when reading these numbers
+Growth stage: young companies often post inflated gross retention (~92%) that settles near 90% as customer cohorts mature. Monthly note: Recurly reports ~3.3% average monthly subscriber churn (3.8% for software & business services), but that dataset skews to self-serve/consumer subscriptions and is not comparable to annual B2B logo churn &#8212; [Recurly](https://recurly.com/research/churn-rate-benchmarks/).
+### Using these benchmarks in due diligence
+Compare the target against these figures. A deviation is not an automatic deal-breaker &#8212; it determines which questions to ask on management calls and how to structure earn-outs and holdbacks.
 ## Ready to stress-test a SaaS acquisition?
 Analyze revenue concentration, logo retention, and hidden churn before you buy. Free SaaS due-diligence tool.
 [Try ChurnLens Free →](https://churnlens.site/)
+### Related
+- [SaaS Churn & Retention Statistics 2026](/stats) — Curated benchmarks on SaaS churn rates, net revenue retention, logo…
+- [SaaS Valuation Calculator — Revenue Multiple & Adjusted Valuation](/saas-valuation-calculator) — Calculate a SaaS business valuation using revenue multiples adjusted for…
+- [Free SaaS Due-Diligence Calculators](/calculators) — Eight free interactive tools that turn a target&#x27;s subscription export into…
+- [Customer Concentration Risk in SaaS Acquisitions](/customer-concentration-risk) — How to spot dangerous customer concentration risk when buying a SaaS business
+- [SaaS Revenue Churn Calculator — Free Online Tool](/saas-revenue-churn-calculator) — Free SaaS revenue churn calculator
 
 ---
 
@@ -1115,31 +1282,36 @@ About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence t
 - [How do I due diligence SaaS churn?](/faq/how-to-due-diligence-saas-churn)
 - [How to reduce SaaS churn effectively?](/faq/how-to-reduce-saas-churn)
 - [How to reduce SaaS churn effectively?](/faq/how-to-reduce-saas-churn)
-- [What is a good SaaS churn rate?](/faq/what-is-a-good-saas-churn-rate)
-- [What is a good SaaS churn rate?](/faq/what-is-a-good-saas-churn-rate)
-- [What is annual plan churn risk? — ChurnLens FAQ](/faq/what-is-annual-plan-churn-risk)
-- [What is annual plan churn risk? — ChurnLens FAQ](/faq/what-is-annual-plan-churn-risk)
-- [What is a good SaaS churn rate?](/faq/what-is-good-saas-churn)
-- [What Is a Good SaaS Churn Rate? — ChurnLens](/faq/what-is-good-saas-churn-rate)
-- [What is a good SaaS churn rate?](/faq/what-is-good-saas-churn)
-- [What Is the SaaS Renewal Cliff? — ChurnLens](/faq/what-is-renewal-cliff)
+- [What is a good SaaS churn rate?](/saas-churn-rate-benchmarks)
+- [What is a good SaaS churn rate?](/saas-churn-rate-benchmarks)
+- [What is annual plan churn risk? — ChurnLens FAQ](/annual-plan-churn-risk)
+- [What is annual plan churn risk? — ChurnLens FAQ](/annual-plan-churn-risk)
+- [What is a good SaaS churn rate?](/saas-churn-rate-benchmarks)
+- [What Is a Good SaaS Churn Rate? — ChurnLens](/saas-churn-rate-benchmarks)
+- [What is a good SaaS churn rate?](/saas-churn-rate-benchmarks)
+- [What Is the SaaS Renewal Cliff? — ChurnLens](/annual-plan-churn-risk)
 - [What is the difference between revenue churn and logo churn?](/faq/what-is-revenue-churn-vs-logo-churn)
 - [What is the difference between revenue churn and logo churn?](/faq/what-is-revenue-churn-vs-logo-churn)
-- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/faq/what-is-revenue-concentration-risk)
-- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/faq/what-is-revenue-concentration-risk)
+- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/customer-concentration-risk)
+- [What is revenue concentration risk in SaaS? — ChurnLens FAQ](/customer-concentration-risk)
 - [What Is a SaaS Revenue Quality Score? — ChurnLens](/faq/what-is-revenue-quality-score)
-- [What Is Zombie MRR in SaaS? — ChurnLens](/faq/what-is-zombie-mrr)
+- [What Is Zombie MRR in SaaS? — ChurnLens](/faq/how-to-detect-zombie-mrr)
 ## Run a target's CSV through ChurnLens
 See hidden churn, concentration risk, and revenue decay before you buy a SaaS.
 [Get started →](/)
 ## How to use these FAQ answers in a live deal
 The answers on this page are written for a buyer sitting in a data room with a revenue ledger open in one window and a deadline in the other. Each answer gives you the short version (the benchmark or definition a seller will quote) and the longer version (the definitional choices and failure modes that make the short version unreliable). The goal is to give you the knowledge to interrogate the seller's numbers, not just to accept them.
 The highest-leverage use of this FAQ is to identify which metrics in the seller's data room are most likely to be massaged, then reconstruct each one from the raw revenue ledger under a consistent definition. ChurnLens automates that reconstruction; the FAQ gives you the context to interpret the results and the negotiating language to act on them.
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+### All FAQ pages
+- [How do I detect zombie MRR?](/faq/how-to-detect-zombie-mrr) — Zombie MRR is recurring revenue from customers who have stopped actively…
+- [How do I due diligence SaaS churn?](/faq/how-to-due-diligence-saas-churn) — Pull 24 months of MRR movement, segment by cohort, compute logo retention…
+- [How to reduce SaaS churn effectively?](/faq/how-to-reduce-saas-churn) — How to reduce SaaS churn effectively? - The most effective ways to reduce…
+- [What Is a SaaS Revenue Quality Score?](/faq/what-is-revenue-quality-score) — Revenue Quality Score (RQS) measures SaaS subscription revenue across 5…
+- [What is the difference between revenue churn and logo churn?](/faq/what-is-revenue-churn-vs-logo-churn) — What is the difference between revenue churn and logo churn? - Revenue…
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1184,17 +1356,21 @@ Yes — they are complementary. The seller runs Baremetrics for day-to-day opera
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/reviews/stripe-sigma-review-for-acquirers) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1231,17 +1407,21 @@ ChartMogul is excellent for its intended user (the SaaS operator). For acquirers
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1277,17 +1457,21 @@ ChurnZero is a strong CS platform for operators managing retention. For acquirer
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1324,17 +1508,21 @@ Gainsight is an excellent CS platform, but it is not a due diligence tool. Use a
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1370,17 +1558,21 @@ ProfitWell is a great tool for operators at zero cost. For acquirers, read the s
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
+- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/reviews/stripe-sigma-review-for-acquirers) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 
@@ -1416,17 +1608,21 @@ Stripe Sigma is excellent for data verification and custom analysis if you have 
 - [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
 - [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
-- [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
-- [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
-- [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
+- [Best SaaS Churn Analytics Tools 2026](/best/saas-due-diligence-tools)
+- [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
+### Related
+- [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
-80% Overpay for Churn 
-4.2× Real vs Reported 
-$340K Avg Overpayment 
+9% Median B2B SaaS revenue churn 
+88% Median gross revenue retention 
 23 Audit Checklist Points 
-The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.
+The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](https://churnlens.site/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
 

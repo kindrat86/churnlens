@@ -1052,6 +1052,30 @@
     {
       "source": "/7-revenue-churn-red-flags",
       "destination": "/7-revenue-churn-red-flags.html"
+    },
+    {
+      "source": "/seller-claims",
+      "destination": "/seller-claims/index.html"
+    },
+    {
+      "source": "/seller-claims/:slug",
+      "destination": "/seller-claims/:slug/index.html"
+    },
+    {
+      "source": "/export",
+      "destination": "/export/index.html"
+    },
+    {
+      "source": "/export/:slug",
+      "destination": "/export/:slug/index.html"
+    },
+    {
+      "source": "/marketplaces",
+      "destination": "/marketplaces/index.html"
+    },
+    {
+      "source": "/marketplaces/:slug",
+      "destination": "/marketplaces/:slug/index.html"
     }
   ],
   "headers": [

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
+<title>Seller Says Nobody Has Churned Recently — How to Verify It | ChurnLens</title>
+<meta name="description" content="Zero churn over a period is usually a data artifact rather than a retention achievement. Here are the six mechanisms that produce it, and how to check each from the raw export.">
+<link rel="canonical" href="https://churnlens.site/seller-claims/no-one-has-churned-recently">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/seller-claims/no-one-has-churned-recently">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/seller-claims/no-one-has-churned-recently">
+<meta name="robots" content="index,follow">
+<meta name="author" content="ChurnLens">
+<meta property="article:published_time" content="2026-07-25">
+<meta property="article:modified_time" content="2026-07-25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seller Says Nobody Has Churned Recently — How to Verify It | ChurnLens">
+<meta property="og:description" content="Zero churn over a period is usually a data artifact rather than a retention achievement. Here are the six mechanisms that produce it, and how to check each from the raw export.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChurnLens">
+<meta property="og:url" content="https://churnlens.site/seller-claims/no-one-has-churned-recently">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nobody has churned in the last six months","url":"https://churnlens.site/seller-claims/no-one-has-churned-recently","description":"Zero churn over a period is usually a data artifact rather than a retention achievement. Here are the six mechanisms that produce it, and how to check each from the raw export.","isPartOf":{"@id":"https://churnlens.site/#website"},"publisher":{"@id":"https://churnlens.site/#organization"},"about":{"@id":"https://churnlens.site/#software"},"inLanguage":"en","datePublished":"2026-07-25","dateModified":"2026-07-25","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","p:first-of-type"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site"},{"@type":"ListItem","position":2,"name":"Seller Claims","item":"https://churnlens.site/seller-claims"},{"@type":"ListItem","position":3,"name":"Nobody has churned in the last six months","item":"https://churnlens.site/seller-claims/no-one-has-churned-recently"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is zero churn possible for a SaaS business?","acceptedAnswer":{"@type":"Answer","text":"Over a short window with a small, annual, high-touch customer base, yes. Over six months with a monthly book, it is nearly always a data artifact — most often an export filtered to active subscriptions only, or failed payments sitting in dunning rather than being recorded as cancellations."}},{"@type":"Question","name":"What is zombie MRR?","acceptedAnswer":{"@type":"Answer","text":"Revenue from accounts that are still being billed but no longer use the product. It looks identical to healthy revenue in a billing export, and it disappears at the next price change, card expiry or expense review. Detecting it needs a usage or login signal alongside the billing data, which is why that signal is worth asking for."}},{"@type":"Question","name":"How do I know if a subscription export is filtered?","acceptedAnswer":{"@type":"Answer","text":"Count rows with a cancellation date. A genuine multi-year export from any real business contains many. Zero cancellation dates across two years means the export was generated with an active-only filter, and no analysis you run on it will be meaningful until you have a complete file."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:var(--ux-text,#1a1a2e);max-width:820px;margin:0 auto;padding:20px}
+h1{font-size:2rem;margin:16px 0 8px;line-height:1.3;color:var(--ux-text,#1a1a2e)}
+h2{font-size:1.4rem;margin:36px 0 12px;color:var(--ux-text,#1a1a2e)}
+h3{font-size:1.08rem;margin:26px 0 8px;color:var(--ux-text,#1a1a2e)}
+p{margin-bottom:16px;color:var(--ux-text,#1a1a2e)}
+ul,ol{margin:0 0 16px 22px}li{margin-bottom:8px;color:var(--ux-text,#1a1a2e)}
+nav{padding:12px 0;border-bottom:2px solid var(--ux-border,#f0f0f0);margin-bottom:20px}
+nav a{margin-right:16px;color:var(--ux-accent,#667eea);text-decoration:none;font-weight:500;font-size:.9rem}
+a{color:var(--ux-accent,#667eea)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--ux-border,#eee);color:var(--ux-text-secondary,#555);font-size:.85rem}
+.lead{font-size:1.15rem;color:var(--ux-text-secondary,#555);margin-bottom:24px}
+.pseo-scroll{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{border:1px solid var(--ux-border,#e0e0e0);padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;color:var(--ux-text,#1a1a2e)}
+th{background:var(--ux-surface-raised,#f8f9fa);font-weight:600}
+details{border:1px solid var(--ux-border,#e0e0e0);border-radius:8px;padding:12px 16px;margin-bottom:8px;background:var(--ux-surface-raised,#fafafa)}
+summary{cursor:pointer;font-size:1rem;color:var(--ux-text,#1a1a2e)}
+details p{margin-bottom:0}
+code{background:var(--ux-surface-raised,#f1f5f9);border:1px solid var(--ux-border,#e2e8f0);padding:1px 5px;border-radius:4px;font-size:.88em}
+blockquote{border-left:3px solid var(--ux-accent,#667eea);padding-left:16px;margin:16px 0;color:var(--ux-text-secondary,#444);font-style:italic}
+.pseo-note{font-size:.85rem;color:var(--ux-text-secondary,#555);border-left:3px solid var(--ux-border,#eee);padding-left:14px;margin:24px 0}
+.pseo-crumb{font-size:.85rem;color:var(--ux-text-secondary,#555);margin-bottom:4px}
+</style>
+<!-- canonical-disambiguation -->
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","foundingDate":"2026-01-15","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"image":"https://churnlens.site/og.png","contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"},"address":{"@type":"PostalAddress","addressLocality":"Larnaca","addressCountry":"CY"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"author":{"@id":"https://churnlens.site/#organization"},"featureList":["Churn Divergence Detector","Concentration Vulnerability Index","Annual-Plan Decay Projection","Zombie MRR Detector","Revenue Quality Scorecard","MRR Trajectory Forensics"],"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","description":"Buyer-side SaaS churn due-diligence for acquirers","inLanguage":"en","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+</head><body>
+<nav><a href="https://churnlens.site/" style="font-weight:700;color:var(--ux-text,#1a1a2e)">ChurnLens</a> <a href="https://churnlens.site/best/saas-due-diligence-tools">Best</a> <a href="https://churnlens.site/guides">How To</a> <a href="https://churnlens.site/use-cases">Use Cases</a> <a href="https://churnlens.site/learn">Learn</a> <a href="https://churnlens.site/compare">Alternatives To</a></nav>
+<p class="pseo-crumb"><a href="https://churnlens.site/">Home</a> &rsaquo; <a href="https://churnlens.site/seller-claims">Seller Claims</a></p>
+<h1>The seller says: &ldquo;nobody has churned in the last six months&rdquo;</h1>
+<p class="lead">Absolute zero over a meaningful period is rare enough that the first hypothesis should always be a data artifact rather than an achievement. Six mechanisms produce it, only one of them is good news, and each leaves a distinctive trace in the export.</p>
+<p><strong>TL;DR:</strong> Zero churn over a period is usually a data artifact rather than a retention achievement. Here are the six mechanisms that produce it, and how to check each from the raw export.</p>
+<h2>What the claim usually means</h2>
+<p>This claim is often made in complete sincerity by someone reading a dashboard filter that excludes exactly the rows they need. Cancelled subscriptions are frequently hidden by default; failed payments sit in a dunning state that is neither active nor cancelled; and a book that is mostly annual genuinely has very few cancellation opportunities in any six-month window. The seller is describing what their screen shows.</p>
+<h2>What it can hide</h2>
+<p>Four mechanisms account for most of the gap between this claim and what the raw rows show. They are not mutually exclusive and they compound.</p>
+<h3>1. Cancelled rows excluded from the export</h3><p>The most common cause by far. If the export was generated with an active-only filter, churn is definitionally zero. Check whether any row has a cancellation date at all; if none do across a two-year file, the filter is the finding.</p>
+<h3>2. Failed payments stuck in dunning</h3><p>An account that has not paid for four months but has not been formally cancelled is churn in every economic sense and is not cancelled in any data sense. Count subscriptions whose last successful payment is more than two cycles old.</p>
+<h3>3. Annual terms with no renewal in the window</h3><p>An annual-heavy book has few opportunities to churn in any given six months. Zero churn in a window with no renewals in it is arithmetic, not retention.</p>
+<h3>4. Zombie accounts that pay and do not use</h3><p>Accounts still billing with no meaningful usage are revenue that will disappear at the next review, price change or expense audit. They are indistinguishable from healthy revenue in a billing export and are the reason usage data is worth asking for.</p>
+<h3>5. Comped, internal and test accounts left active</h3><p>Internal accounts, lifetime deals and friends-and-family comps never churn and never generate cash. They inflate the base and suppress every rate computed against it.</p>
+<h3>6. Cancellations recorded as pauses or downgrades</h3><p>Where a product offers a pause or a free tier, departures land as a status change rather than a cancellation. Economically they are gone; in the export they are still there.</p>
+<h2>How to verify it from the raw subscription export</h2>
+<p>Every step below runs on a subscription-level export in a spreadsheet. None of it needs access to the seller's live billing account, which matters, because as a buyer you will not get one.</p>
+<ol><li>First, confirm the export contains cancelled subscriptions at all. Count rows with a non-null cancellation date across the full history. Zero across two years means an active-only filter, and you need a new export before anything else.</li><li>Count active subscriptions whose most recent successful payment is more than two billing cycles old. That is uncollected churn.</li><li>Count subscriptions in a dunning, past-due, unpaid or incomplete state, and their revenue as a share of reported MRR.</li><li>Count how many renewal events actually fell inside the six-month window. If very few did, the claim is about the calendar.</li><li>Identify zero-amount, 100%-discounted, internal-domain and lifetime-deal subscriptions, and exclude them from the base.</li><li>Ask for a paused or free-tier count and its trend. A rising pause count immediately before a sale is worth understanding.</li><li>If any usage or login data exists, count paying accounts with no activity in ninety days. That is the zombie MRR figure and it is often the largest single adjustment on this page.</li></ol>
+<h2>Reading the result</h2>
+<p>These are the thresholds we use in our own reports. They are working thresholds rather than industry standards, and the right line for a given deal depends on contract length, tenure and how transferable the customer relationships are.</p>
+<div class="pseo-scroll"><table><thead><tr><th>What you find</th><th>Verdict</th><th>What to do about it</th></tr></thead><tbody><tr><td>Export contains cancellations, dunning under 2% of MRR, renewals did occur in the window</td><td>Green</td><td>Remarkable and apparently real. Verify with usage data if any exists, then credit it.</td></tr><tr><td>No cancelled rows anywhere in a 24-month export</td><td>Red</td><td>This is a filtered export, not a retention record. Request a complete one before doing any further analysis.</td></tr><tr><td>Dunning and past-due above 5% of reported MRR</td><td>Price it in</td><td>Churn that has happened and not been recorded. Deduct it from MRR before you value anything.</td></tr><tr><td>Fewer than 10% of subscriptions had a renewal in the window</td><td>Investigate</td><td>Zero churn is a property of the calendar. Reassess after the next renewal cohort.</td></tr><tr><td>Paying accounts with no 90-day activity above 10%</td><td>Price it in</td><td>Zombie MRR. It will not survive a price change, a card expiry or the customer's next expense review.</td></tr></tbody></table></div>
+<h2>What to ask for in the data room</h2>
+<p>Ask for these before the LOI. After the LOI you are renegotiating rather than negotiating, and a seller who will not produce subscription-level rows has told you something useful either way.</p>
+<ul><li>A complete subscription export explicitly including cancelled, paused and past-due rows.</li><li>Subscription status and the date of the most recent successful payment, per subscription.</li><li>A count of paused and free-tier accounts by month for twenty-four months.</li><li>Any usage, login or activity signal, even a crude one such as last login date.</li></ul>
+<h2>A worked example</h2>
+<p>Illustrative. The export shows 412 active subscriptions and no cancellations in six months. It also contains no cancellation dates at all across twenty-six months, which resolves the whole question: the file was generated active-only. A complete re-export shows 2.9% monthly churn. Separately, 31 of the 412 subscriptions last paid more than three months ago and sit in dunning, which is 7% of reported MRR that has economically churned and is still being counted. And 44 accounts have not logged in for ninety days. The true starting MRR is roughly 12% below the reported figure before a single churn calculation is run.</p>
+<h2>Why it matters to the price</h2>
+<p>This claim is worth taking seriously precisely because it is usually a filter rather than a fiction, which means it is fixable in one email. What is not fixable by re-export is the second half: dunning revenue and zombie accounts have to be deducted from MRR before you apply any multiple, because they will not be there in ninety days. That deduction is often larger than the entire churn adjustment.</p>
+<p>The relevant tool on this site is the <a href="https://churnlens.site/free/zombie-mrr-detector">free zombie MRR detector</a>, which runs the arithmetic above on a file you paste in. The full method is documented in the <a href="https://churnlens.site/5-risk-buyer-side-method">5-risk buyer-side method</a> and the <a href="https://churnlens.site/saas-due-diligence-checklist">due-diligence checklist</a>.</p>
+<h2>Other claims worth testing</h2>
+<ul><li><a href="https://churnlens.site/seller-claims/2-percent-monthly-churn">&ldquo;Churn is about 2% a month.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/all-customers-are-on-annual-contracts">&ldquo;Most customers are on annual contracts.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/logo-churn-is-low">&ldquo;Logo churn is low.&rdquo;</a></li><li><a href="https://churnlens.site/seller-claims/refunds-are-negligible">&ldquo;Refunds and chargebacks are negligible.&rdquo;</a></li></ul>
+<p><a href="https://churnlens.site/seller-claims"><strong>All twelve seller claims &rarr;</strong></a></p>
+<h2>Verify it against the raw rows</h2><p>Every check on this page can be run by hand in a spreadsheet, and if you have the time you should. If you would rather not: send us the target's subscription export and we run the full human-reviewed analysis — logo churn, revenue churn, customer concentration, annual-plan decay, zombie MRR and an A&ndash;F revenue-quality grade. The free <a href="https://churnlens.site/pricing">Starter tier</a> covers one CSV per month, which is enough to check a single deal.</p><p><a href="https://churnlens.site/sample-churn-risk-report"><strong>See a sample report &rarr;</strong></a> &nbsp;·&nbsp; <a href="https://churnlens.site/get-the-checklist">Get the free 23-point checklist &rarr;</a></p>
+<h2>Frequently asked questions</h2>
+<details><summary><strong>Is zero churn possible for a SaaS business?</strong></summary><p style="margin-top:10px">Over a short window with a small, annual, high-touch customer base, yes. Over six months with a monthly book, it is nearly always a data artifact — most often an export filtered to active subscriptions only, or failed payments sitting in dunning rather than being recorded as cancellations.</p></details>
+<details><summary><strong>What is zombie MRR?</strong></summary><p style="margin-top:10px">Revenue from accounts that are still being billed but no longer use the product. It looks identical to healthy revenue in a billing export, and it disappears at the next price change, card expiry or expense review. Detecting it needs a usage or login signal alongside the billing data, which is why that signal is worth asking for.</p></details>
+<details><summary><strong>How do I know if a subscription export is filtered?</strong></summary><p style="margin-top:10px">Count rows with a cancellation date. A genuine multi-year export from any real business contains many. Zero cancellation dates across two years means the export was generated with an active-only filter, and no analysis you run on it will be meaningful until you have a complete file.</p></details>
+<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/seller-claims">What SaaS Sellers Say, and How to Verify It</a> — Twelve things SaaS sellers say about churn, retention and revenue quality…</li>
+<li><a href="/seller-claims/all-customers-are-on-annual-contracts">Seller Says Customers Are on Annual Contracts — How to Verify It</a> — Annual contracts genuinely improve retention and also defer churn out of…</li>
+<li><a href="/seller-claims/net-negative-churn">Seller Says They Have Net Negative Churn — How to Verify It</a> — Net negative churn is a real and valuable property, and also the claim…</li>
+<li><a href="/seller-claims/we-intentionally-churned-bad-customers">Seller Says They Intentionally Churned Bad Customers — How to Verify It</a> — Deliberate customer pruning is a real strategy with a distinctive data…</li>
+<li><a href="/seller-claims/2-percent-monthly-churn">Seller Says Churn Is 2% a Month — How to Verify It</a> — A 2% monthly churn claim is the most common number in a SaaS sale and the…</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+<footer>&copy; 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/sitemap.xml">Sitemap</a></footer>
+<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
+<section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">9%</span><br><span style="font-size:.82rem;color:#94a3b8">Median B2B SaaS revenue churn</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">88%</span><br><span style="font-size:.82rem;color:#94a3b8">Median gross revenue retention</span></div>
+      
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
+    </div>
+    <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
+    <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
+    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+  </div>
+</section>
+<!-- /BRUNSON TRUST BAR -->
+</body></html>
