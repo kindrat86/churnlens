@@ -119,7 +119,12 @@ def canonical_id_of(node):
     node_type = node.get("@type")
     # @type may legitimately be a list (multi-typed node); those are left alone
     # rather than guessed at.
-    if not isinstance(node_type, str) or node_type not in TYPE_TO_ID or len(node) <= 2:
+    #
+    # No minimum size here on purpose: {"@type":"Organization","name":"ChurnLens"}
+    # sitting in an `author` slot is the *worst* fragment, not a harmless one —
+    # it is an anonymous second ChurnLens with no @id to merge on, and it is what
+    # verify-jsonld.mjs counts as a duplicate definition.
+    if not isinstance(node_type, str) or node_type not in TYPE_TO_ID:
         return None
     if node.get("name") == E["brand"] or (node.get("url") or "").rstrip("/") == BASE.rstrip("/"):
         return TYPE_TO_ID[node_type]
@@ -172,6 +177,12 @@ def is_empty(doc):
 def process(html):
     """Returns (new_html, blocks_changed, blocks_removed)."""
     marker_at = html.find(MARKER)
+    # Nothing to fold into. Without a canonical block every definition on the
+    # file is "the other one", so stripping would delete the only copy — that is
+    # how schema/jsonld-organization.html (a standalone snippet, not a page)
+    # got emptied out.
+    if marker_at < 0:
+        return html, 0, 0
     out = []
     cursor = 0
     changed = removed = 0
