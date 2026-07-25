@@ -136,6 +136,12 @@ PATTERNS = [
     (r"\b(?:hundreds|thousands) of (?:uploads|files|datasets)\b", "claims volume it cannot have"),
     # --- specific literals from prior waves (keep: cheap regression guard) --
     (r"\btrusted by\b", "unearned social proof"),
+    # Sentence-initial "Used by ..." - the implied subject is the page's own
+    # product, so it is a usage claim ("Used by valet operators, rental fleets
+    # and car owners", on a site with 9 subscribers). Deliberately anchored:
+    # mid-sentence "used by" usually describes a THIRD party and is fine
+    # ("Baremetrics ... used by 900+ SaaS companies").
+    (r"(?:^|[.>]\s*|\|\s*)Used by\s+[a-z]", "claims usage it cannot demonstrate"),
     (r"\bupdated quarterly\b", "implies an ongoing measurement cadence"),
     (r"\banonymi[sz]ed user data\b", "claims first-party user data"),
 ]
