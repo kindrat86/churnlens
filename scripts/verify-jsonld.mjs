@@ -44,9 +44,16 @@ if (dirs.length === 0) dirs.push('dist');
 
 // Directories that never contain shippable HTML. `assets` holds hashed bundles
 // and is the bulk of a vite dist, so skipping it keeps this fast on large sites.
+//
+// dist/ public/ i18n/ i18n_out/ are in this repo but are NOT served: dist/ and
+// i18n* are .vercelignored, and /public/:path* is a permanent redirect to the
+// real URL (see vercel.json). They are stale duplicate copies of the site, so
+// linting them reports failures on pages no crawler can reach. This mirrors
+// SKIP_DIRS in scripts/dedupe_entity_graph.py — keep the two lists in step.
 const SKIP = new Set([
   'node_modules', '.git', '.next', '.vercel', 'assets',
   '__pycache__', '.venv', 'venv', 'coverage',
+  'dist', 'public', 'i18n', 'i18n_out',
 ]);
 
 const BLOCK_RE =
