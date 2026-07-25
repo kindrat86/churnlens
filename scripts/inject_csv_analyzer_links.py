@@ -26,9 +26,16 @@ BLOCK = (
     + MARK_CLOSE
 )
 
+# Some pages exist twice: a flat `foo.html` and a `foo/index.html`. Vercel serves the
+# directory index for the extensionless URL, and `/(.*)\.html` carries X-Robots-Tag
+# noindex — so editing only the flat file changes nothing a crawler or visitor sees.
+# Verified live: /5-risk-buyer-side-method returned the dir index byte-for-byte while
+# the injected block sat in the unserved .html twin. Both variants are listed here.
 TARGETS = [
     "index.html",
     "5-risk-buyer-side-method.html",
+    "5-risk-buyer-side-method/index.html",
+    "sample-churn-risk-report/index.html",
     "churn-divergence-detector.html",
     "concentration-vulnerability-index.html",
     "annual-plan-churn-risk.html",
