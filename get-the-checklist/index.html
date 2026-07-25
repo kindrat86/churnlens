@@ -241,10 +241,15 @@
       .sq-oto-disclaimer {
         font-size: 0.78rem; color: #94a3b8; margin: 0.5rem 0 1.25rem;
       }
+      .sq-form-error {
+        color: #f87171; font-size: 0.85rem; margin: 0.5rem 0 0; text-align: center;
+      }
       .sq-oto-decline {
         display: inline-block; font-size: 0.85rem; color: #94a3b8;
         text-decoration: none; cursor: pointer; padding: 0.5rem;
         transition: color 0.2s;
+        /* was an <a> with no href; now a real <button>, so drop the UA chrome */
+        background: none; border: 0; font-family: inherit;
       }
       .sq-oto-decline:hover { color: #94a3b8; text-decoration: underline; }
       .sq-oto-badge {
@@ -399,12 +404,13 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
           </div>
 
           <!-- Form -->
-          <form class="sq-form" id="optin-form">
+          <form class="sq-form" id="optin-form" method="post">
             <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
             <div class="sq-form-inner">
               <label for="email-input" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Email address</label>
-              <input type="email" name="email" id="email-input" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
+              <input type="email" name="email" id="email-input" placeholder="your@email.com" required autocomplete="email" inputmode="email" aria-describedby="optin-error" />
             </div>
+            <p id="optin-error" role="alert" class="sq-form-error" hidden></p>
 
             <!-- NO ORDER BUMP HERE. A default-checked $7 paid add-on used to sit
                  on this form. This form collects no payment and api/subscribe.js
@@ -519,7 +525,7 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
                 Running several deals a month? <a href="/pricing" style="color:#94a3b8;text-decoration:underline">Pro is $49/mo</a>.
               </p>
 
-              <a class="sq-oto-decline" id="oto-decline">No thanks, show me the free checklist &rarr;</a>
+              <button type="button" class="sq-oto-decline" id="oto-decline">No thanks, show me the free checklist &rarr;</button>
             </div>
           </div>
 
@@ -605,6 +611,16 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
           console.error('Subscribe error:', err);
           btn.textContent = 'Get the checklist →';
           btn.disabled = false;
+          // Failure used to be console-only: the button flicked back and nothing
+          // said why. Announce it in the DOM so a screen reader hears it and an
+          // agent can tell a failed submit from a successful one.
+          var errEl = document.getElementById('optin-error');
+          if (errEl) {
+            errEl.textContent = 'Something went wrong. Please try again, or email hello@churnlens.site';
+            errEl.hidden = false;
+          }
+          var emailEl = document.getElementById('email-input');
+          if (emailEl) { emailEl.setAttribute('aria-invalid', 'true'); emailEl.focus(); }
           // Don't hide form — let user retry
           return;
         }

@@ -278,7 +278,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   <div id="drop" tabindex="0" role="button" aria-label="Choose or drop a subscription CSV file">
     <h3>Drop the subscription CSV here</h3>
     <p>…or click to choose a file. CSV, TSV or semicolon-delimited. Never uploaded.</p>
-    <input type="file" id="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" class="hidden">
+    <input type="file" id="file" name="csv" aria-label="Upload a subscription CSV file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" class="hidden">
   </div>
   <div class="btnrow">
     <button type="button" class="ghost" id="btn-sample">Try the synthetic sample ledger</button>
@@ -286,7 +286,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     <button type="button" class="ghost" id="btn-template">Download the CSV template</button>
   </div>
   <div id="paste-wrap" class="hidden" style="margin-top:14px">
-    <textarea id="paste" placeholder="customer_id,month,mrr,plan,last_active&#10;acct_1001,2025-01,240,monthly,2025-01-28&#10;acct_1001,2025-02,240,monthly,2025-02-26"></textarea>
+    <textarea id="paste" name="csv_text" aria-label="Paste subscription CSV data" placeholder="customer_id,month,mrr,plan,last_active&#10;acct_1001,2025-01,240,monthly,2025-01-28&#10;acct_1001,2025-02,240,monthly,2025-02-26"></textarea>
     <div class="btnrow" style="justify-content:flex-start"><button type="button" id="btn-paste-run">Analyze pasted CSV</button></div>
   </div>
 </div>
