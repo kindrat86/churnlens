@@ -67,6 +67,53 @@ const SIGNATURES = [
   },
 ];
 
+// Entity nodes owned by the canonical @graph (scripts/inject_entity_graph.py).
+// Duplicate definitions of these parse fine and validate fine — same-@id nodes
+// merge — which is why this needed its own check: three generators had each
+// injected their own #organization, and the merged result carried two different
+// `offers` sets and three different `foundingDate` values. Contradictory
+// structured data is not a parse error, so JSON.parse can never catch it.
+const CANONICAL_IDS = new Set([
+  'https://churnlens.site/#organization',
+  'https://churnlens.site/#software',
+  'https://churnlens.site/#website',
+  'https://churnlens.site/#founder',
+]);
+
+// Properties the canonical @graph states. A node adding only *other* keys
+// (e.g. {"@id": …/#organization, "isRelatedTo": […]}) is a legitimate merge and
+// is not counted; only restatements can drift apart.
+const CANONICAL_PROPS = new Set([
+  'name', 'alternateName', 'url', 'description', 'disambiguatingDescription',
+  'foundingDate', 'knowsAbout', 'sameAs', 'logo', 'image', 'contactPoint',
+  'publisher', 'author', 'offers', 'featureList', 'applicationCategory',
+  'operatingSystem', 'inLanguage', 'potentialAction',
+]);
+
+const TYPE_TO_ID = {
+  Organization: 'https://churnlens.site/#organization',
+  WebSite: 'https://churnlens.site/#website',
+  SoftwareApplication: 'https://churnlens.site/#software',
+};
+const SITE_ROOT = 'https://churnlens.site';
+
+/** The canonical @id a node defines, or null if it is not our entity. */
+function canonicalIdOf(node) {
+  if (!node || typeof node !== 'object' || Array.isArray(node)) return null;
+  const id = node['@id'];
+  if (typeof id === 'string') return CANONICAL_IDS.has(id) ? id : null;
+  // No @id: ours only if it names the brand or points at the site root exactly.
+  const type = node['@type'];
+  if (typeof type !== 'string' || !(type in TYPE_TO_ID)) return null;
+  const url = typeof node.url === 'string' ? node.url.replace(/\/+$/, '') : '';
+  if (node.name === 'ChurnLens' || url === SITE_ROOT) return TYPE_TO_ID[type];
+  return null;
+}
+
+function restatesCanonical(node) {
+  return Object.keys(node).some((k) => CANONICAL_PROPS.has(k));
+}
+
 const errors = [];
 let files = 0;
 let blocks = 0;
@@ -101,6 +148,22 @@ function check(path) {
   BLOCK_RE.lastIndex = 0;
   let m;
   let i = -1;
+  // Entity definitions accumulate across every block on the page, because the
+  // duplicates live in *separate* <script> tags.
+  const entityCounts = new Map();
+  const countEntities = (node) => {
+    if (Array.isArray(node)) {
+      for (const item of node) countEntities(item);
+      return;
+    }
+    if (!node || typeof node !== 'object') return;
+    const canon = canonicalIdOf(node);
+    if (canon && restatesCanonical(node)) {
+      entityCounts.set(canon, (entityCounts.get(canon) ?? 0) + 1);
+    }
+    for (const value of Object.values(node)) countEntities(value);
+  };
+
   while ((m = BLOCK_RE.exec(html)) !== null) {
     i++;
     const raw = m[1].trim();

@@ -14,17 +14,27 @@ org = {
     "@type": "Organization", "@id": E["url"] + "/#organization",
     "name": E["brand"], "url": E["url"],
     "description": E["description"], "disambiguatingDescription": E["disambiguatingDescription"],
+    "foundingDate": E["foundingDate"],
     "knowsAbout": E["knowsAbout"], "sameAs": E["sameAs"],
     "logo": {"@type": "ImageObject", "url": E["url"] + "/og.png"},
+    "image": E["image"],
     "contactPoint": {"@type": "ContactPoint", "email": E["contactEmail"], "contactType": "customer support"},
 }
 software = {
     "@type": "SoftwareApplication", "@id": E["url"] + "/#software",
     "name": E["brand"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web",
     "url": E["url"], "description": E["description"], "publisher": {"@id": E["url"] + "/#organization"},
+    "author": {"@id": E["url"] + "/#organization"},
+    "featureList": E["featureList"],
     "offers": [{"@type": "Offer", "name": o["name"], "price": o["price"], "priceCurrency": o["priceCurrency"]} for o in E["offers"]],
 }
-website = {"@type": "WebSite", "@id": E["url"] + "/#website", "url": E["url"], "name": E["brand"], "publisher": {"@id": E["url"] + "/#organization"}}
+# NOTE: no WebSite.potentialAction/SearchAction here on purpose. A legacy node
+# declared one targeting /?q={search_term_string}, but this site has no search
+# endpoint — /?q=… returns the homepage byte-for-byte. Declaring a sitelinks
+# searchbox that does not exist is a false claim, so it is dropped, not migrated.
+website = {"@type": "WebSite", "@id": E["url"] + "/#website", "url": E["url"], "name": E["brand"],
+           "description": E["siteDescription"], "inLanguage": E["inLanguage"],
+           "publisher": {"@id": E["url"] + "/#organization"}}
 graph = [org, software, website]
 
 # Founder Person — only if a real name is present (never fabricate)

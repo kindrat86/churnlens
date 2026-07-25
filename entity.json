@@ -6,6 +6,18 @@
   "knowsAbout": ["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],
   "sameAs": ["https://github.com/kindrat86"],
   "sameAs_owner_todo": "Add the live G2 / Capterra / AlternativeTo / TrustRadius profile URLs here once the listings in ~/churnlens-directory-packets/ are submitted. Only add URLs that resolve 200.",
+  "foundingDate": "2026-01-15",
+  "image": "https://churnlens.site/og.png",
+  "inLanguage": "en",
+  "siteDescription": "Buyer-side SaaS churn due-diligence for acquirers",
+  "featureList": [
+    "Churn Divergence Detector",
+    "Concentration Vulnerability Index",
+    "Annual-Plan Decay Projection",
+    "Zombie MRR Detector",
+    "Revenue Quality Scorecard",
+    "MRR Trajectory Forensics"
+  ],
   "founder": { "name": "Maryan", "sameAs": ["https://github.com/kindrat86"] },
   "offers": [
     { "name": "Starter", "price": "0", "priceCurrency": "USD" },

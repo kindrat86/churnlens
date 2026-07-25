@@ -352,7 +352,7 @@
       }
       .sq-footer a { color: #94a3b8; text-decoration: none; }
     </style>
-    <link rel="stylesheet" href="/assets/cl-enhance.css" />
+    <link rel="stylesheet" href="/assets/cl-enhance.455995f7.css" />
 <!-- eeat-static-injected -->
 <meta name="author" content="ChurnLens" />
 <meta property="article:published_time" content="2026-01-15T00:00:00Z" />
@@ -418,7 +418,6 @@
 <!-- CL Progress bar -->
 <div class="cl-progress"></div>
 <!-- CL Back to top -->
-<button class="cl-back-top" aria-label="Back to top">&uarr;</button>
 <!-- CL Mobile CTA bar -->
 <div class="cl-mobile-cta">
   <a href="/get-the-checklist">Get the free checklist &rarr;</a>
@@ -477,20 +476,13 @@
               <input type="email" name="email" id="email-input" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
             </div>
 
-            <!-- ORDER BUMP (Brunson Ch 14) — default-checked add-on offer before submit -->
-            <label for="order-bump-check" style="display:block;cursor:pointer;margin:0.75rem 0 0;padding:1rem 1.1rem;background:#0b1120;border:2px solid #6366f1;border-radius:0.75rem;box-shadow:0 0 0 1px rgba(99,102,241,0.15);transition:border-color 0.2s;">
-              <div style="display:flex;align-items:flex-start;gap:0.75rem;">
-                <input type="checkbox" id="order-bump-check" name="order_bump" value="5-risk-quick-reference-card" checked style="margin-top:0.2rem;width:1.3rem;height:1.3rem;accent-color:#6366f1;flex-shrink:0;cursor:pointer;" />
-                <div style="flex:1;min-width:0;">
-                  <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.35rem;">
-                    <strong style="color:#fff;font-size:0.98rem;font-family:'Space Grotesk',sans-serif;line-height:1.3;">YES! Add the 5-Risk Quick Reference Card</strong>
-                    <span style="background:#6366f1;color:#fff;font-size:0.68rem;font-weight:700;padding:0.18rem 0.5rem;border-radius:0.35rem;letter-spacing:0.03em;text-transform:uppercase;">Save $20</span>
-                  </div>
-                  <p style="margin:0 0 0.4rem;color:#94a3b8;font-size:0.85rem;line-height:1.5;">Normally $27. Add it now for just <strong style="color:#fff;">$7</strong> &mdash; one-time. Laminated PDF reference card with all 5 risk formulas.</p>
-                  <em style="color:#94a3b8;font-size:0.75rem;">&#9745; Checked by default &mdash; uncheck to skip</em>
-                </div>
-              </div>
-            </label>
+            <!-- NO ORDER BUMP HERE. A default-checked $7 paid add-on used to sit
+                 on this form. This form collects no payment and api/subscribe.js
+                 never read the `order_bump` field, so nothing was ever charged and
+                 nothing was ever fulfilled — a pre-ticked charge that silently
+                 does nothing. If the Quick Reference Card is to be sold, it
+                 belongs as an optional line item inside the $9 Stripe Checkout
+                 session, where a card is actually on file. -->
 
             <button type="submit" class="sq-btn" id="submit-btn" style="width:100%;display:block;margin-top:0.75rem;">Get the checklist &rarr;</button>
             <p class="sq-trust">Sent instantly. No spam. Unsubscribe in one click. We never share your data.</p>
@@ -565,7 +557,11 @@
                 </div>
                 <div class="sq-oto-col pro">
                   <div class="sq-oto-col-label">ChurnLens Pro</div>
-                  <div class="sq-oto-col-price">$1 <span class="price-period">/mo</span></div>
+                  <!-- Price MUST match /pricing (currently $49/mo). This card
+                       previously read "$1 /mo" — a 49x contradiction one click
+                       from the pricing page, on a site whose entire premise is
+                       that misstated numbers cost buyers money. -->
+                  <div class="sq-oto-col-price">$49 <span class="price-period">/mo</span></div>
                   <ul>
                     <li>Automated logo &amp; revenue churn</li>
                     <li>Concentration risk analysis</li>
@@ -577,7 +573,7 @@
                 </div>
               </div>
 
-              <a href="mailto:sipi@churnlens.site?subject=I%20want%20Churn%20Lens%20Pro%20%241%2Fmo" class="sq-oto-cta" id="oto-accept">Start Pro for $1 &rarr;</a>
+              <a href="mailto:hello@churnlens.site?subject=ChurnLens%20Pro%20inquiry%20(%2449%2Fmo)&amp;body=Hi%2C%20I'd%20like%20to%20start%20ChurnLens%20Pro%20(%2449%2Fmo).%0A%0A%E2%80%A2%20Number%20of%20CSVs%20to%20analyze%3A%20__%0A%E2%80%A2%20Deal%20timeline%3A%20__%0A" class="sq-oto-cta" id="oto-accept">Start Pro &mdash; $49/mo &rarr;</a>
               <p class="sq-oto-disclaimer">Cancel anytime. No commitment.</p>
 
               <a class="sq-oto-decline" id="oto-decline">No thanks, show me the free checklist &rarr;</a>
@@ -644,7 +640,7 @@
           var resp = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, source: 'squeeze-page', website: document.getElementById('website-field').value, order_bump: document.getElementById('order-bump-check').checked ? '5-risk-quick-reference-card' : null })
+            body: JSON.stringify({ email: email, source: 'squeeze-page', website: document.getElementById('website-field').value })
           });
           var data = await resp.json();
           if (!resp.ok || !data.ok) {
@@ -662,7 +658,6 @@
         oto.classList.add('show');
         if (window.posthog) { posthog.capture('lead_optin', { source: 'squeeze-page' }); }
         if (window.posthog) { posthog.capture('checklist_subscribed', { source: 'squeeze-page' }); }
-        if (window.posthog) { posthog.capture('order_bump_state', { bump_selected: document.getElementById('order-bump-check').checked, offer: '5-risk-quick-reference-card' }); }
         if (window.posthog) { posthog.capture('oto_shown'); }
       });
 
@@ -683,7 +678,7 @@
 
     <!-- PostHog -->
     <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
-    <script type="module" src="/assets/cl-enhance.js" defer></script>
+    <script type="module" src="/assets/cl-enhance.755ce157.js" defer></script>
 
 <!-- aeo-faq-injected -->
 <section class="aeo-faq" aria-label="Frequently asked questions">
