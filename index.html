@@ -546,11 +546,24 @@
         border-color: var(--cl-blue) !important;
       }
 
-      /* Multi-line copy stays left-aligned even inside centred sections. */
-      .hero .tldr p,
-      .hero .disambig,
+      /* Multi-line copy stays left-aligned even inside centred sections,
+         and every hero block shares the same 720px column so the stack
+         reads as one centred spine instead of three different widths. */
+      .hero .tldr {
+        max-width: 720px; margin: 1.5rem auto 0;
+        background: rgba(59, 130, 246, 0.07);
+        border: 1px solid rgba(59, 130, 246, 0.28);
+        border-radius: 0.75rem; padding: 1.25rem 1.5rem;
+      }
+      .hero .tldr p { margin: 0; line-height: 1.65; font-size: 0.92rem; color: #cbd5e1; text-align: left; }
+      .hero .tldr strong { color: #fff; }
+      .hero .disambig {
+        max-width: 720px; margin: 1rem auto 0; text-align: left;
+        font-size: 0.82rem; color: #64748b; line-height: 1.6;
+      }
+      .hero .hero-cta { margin-top: 2rem; }
       .new-op-bar p { text-align: left; }
-      .hero .disambig { margin-left: auto; margin-right: auto; }
+      .aeo-faq .aeo-updated { text-align: center; }
     </style>
     <!-- RETARGETING PIXELS -->
     <!--
@@ -693,9 +706,6 @@
           The CSV says <span class="hl">9.4%.</span><br>
           That gap will cost you <span class="hl">$340,000</span>.
         </h1>
-<div class="tldr" style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.35);border-radius:0.75rem;padding:1.25rem 1.5rem;margin:1.25rem 0;"><p style="margin:0;line-height:1.6;"><strong>TL;DR:</strong> ChurnLens is a buyer-side due-diligence tool for SaaS acquisitions: send us the target's raw subscription CSV and we run the full human-reviewed analysis — covering logo and revenue churn, customer concentration, annual-plan decay, zombie MRR, and an A&ndash;F revenue-quality grade. The free Starter tier includes 1 CSV analysis per month, so you can verify a seller's churn claims before you commit. <a href="/sample-churn-risk-report" style="color:var(--cl-blue-light)">See a sample report &rarr;</a></p></div>
-
-
         <p class="sub">
           <strong>ChurnLens</strong> is the buyer-side due diligence tool that catches hidden churn,
           concentration risk, and revenue decay that sellers don't disclose &mdash; before you commit
@@ -703,7 +713,9 @@
           <a href="/sample-churn-risk-report" style="color:var(--cl-blue-light);font-weight:600;">See a sample report &rarr;</a>
         </p>
 
-        <p class="disambig" style="font-size:0.85rem;color:#94a3b8;margin:0.75rem 0 0;max-width:640px;">
+<div class="tldr"><p><strong>TL;DR:</strong> ChurnLens is a buyer-side due-diligence tool for SaaS acquisitions: send us the target's raw subscription CSV and we run the full human-reviewed analysis — covering logo and revenue churn, customer concentration, annual-plan decay, zombie MRR, and an A&ndash;F revenue-quality grade. The free Starter tier includes 1 CSV analysis per month, so you can verify a seller's churn claims before you commit. <a href="/sample-churn-risk-report" style="color:var(--cl-blue-light)">See a sample report &rarr;</a></p></div>
+
+        <p class="disambig">
           ChurnLens is a <strong>SaaS due-diligence</strong> tool for acquirers and PE/M&amp;A analysts that
           scores a target's revenue quality and hidden churn <em>before purchase</em> &mdash; not a
           churn-prediction or customer-retention product, and unaffiliated with other similarly named tools.

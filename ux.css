@@ -876,6 +876,7 @@ a[aria-label] > svg:only-child {
 }
 
 
+
 /* ── 44. CENTRED PAGE RHYTHM (MK 2026-07-25) ───────────────────────────
    One centred content column across the site. Headings, section leads,
    stats and CTAs are centred; running body copy inside cards, lists,
@@ -883,8 +884,11 @@ a[aria-label] > svg:only-child {
    paragraph gives every line a different starting x-position and the eye
    has to re-find the left edge on every return sweep.
 
-   Written with :where() so every rule here has ZERO specificity — it sets
-   the default rhythm and any page's own stylesheet still wins. */
+   Specificity note: the ANCESTOR goes inside :where() (so these rules stay
+   easy to override per page) but the TARGET element stays outside it.
+   `:where(.aeo-faq) :where(p)` scores 0,0,0 and loses to the plain `p`
+   rule in §2 — max-width:65ch kept winning and the FAQ answers rendered
+   inset. `:where(.aeo-faq) p` scores 0,0,1, ties, and wins on order. */
 
 /* --- 44a. the column itself ------------------------------------------ */
 :where(main, article, header, footer, section, .section, .site-wrap,
@@ -894,47 +898,60 @@ a[aria-label] > svg:only-child {
 
 /* §2 caps paragraphs at 65ch. Without margin-inline that measure hugs the
    left edge of a wide container instead of sitting in the middle. */
-:where(p, dl, blockquote, figure, .ux-section-narrow) { margin-inline: auto; }
+p, dl, blockquote, figure, .ux-section-narrow { margin-inline: auto; }
 
 /* --- 44b. what is centred -------------------------------------------- */
-:where(section, article, header, main, .section, .hero) > :where(h1, h2),
-:where(.hero, .final-cta, .section-head) :where(h1, h2, h3),
-:where(.subtitle, .lead, .section-lead, .eyebrow, .kicker, .aeo-updated) {
+:where(section, article, header, main, .section, .hero) > h1,
+:where(section, article, header, main, .section, .hero) > h2,
+:where(.hero, .final-cta, .section-head) h1,
+:where(.hero, .final-cta, .section-head) h2,
+.subtitle, .lead, .section-lead, .eyebrow, .kicker {
   text-align: center;
   margin-inline: auto;
 }
 
-/* the lead paragraph directly under a section heading reads as a deck */
-:where(section, article, .section) > :where(h1, h2) + :where(p) {
+/* the paragraph directly under a section heading reads as a deck */
+:where(section, article, .section) > h1 + p,
+:where(section, article, .section) > h2 + p {
   text-align: center;
   margin-inline: auto;
   max-width: 62ch;
-}
-
-/* centred blocks keep their inline children optically centred */
-:where(.hero, .final-cta) :where(.btn-primary, .cta, .badge, .stats-row) {
-  margin-inline: auto;
 }
 
 /* --- 44c. what is NOT centred ---------------------------------------- */
 /* Running copy is read, not scanned. Anything inside a card, list, table,
    definition list or callout keeps a hard left edge even when it sits in a
    centred section and would otherwise inherit `text-align: center`. */
-:where(.ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
-       .exit-card, .new-op-bar, .tldr, .epiphany-preview, .related-links,
-       .resource-list, .pseo-footer, .network-card, details, blockquote,
-       li, dd, dt, td, th, figcaption, .aeo-faq) {
+.ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
+.exit-card, .new-op-bar, .tldr, .epiphany-preview, .related-links,
+.resource-list, .pseo-footer, .network-card, .aeo-faq,
+details, blockquote, li, dd, dt, td, th, figcaption,
+table, ul, ol {
   text-align: left;
 }
-:where(.aeo-faq, .cl-defs) :where(h3, p, dd, dt, td, th) { text-align: left; }
-:where(table, ul, ol) { text-align: left; }
+
+/* 44b centres the paragraph directly under a heading as a deck. That is
+   right for a section intro and wrong inside a link block or a card,
+   where the first <p> is a list of links, not a deck. Declared after 44b
+   and at equal-or-higher specificity, so it wins. */
+:where(.related-links, .pseo-footer, .cl-explore, .aeo-faq, .cl-defs,
+       .ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
+       .new-op-bar, .tldr) p {
+  text-align: left;
+  max-width: none;
+}
+:where(.aeo-faq, .cl-defs) h3,
+:where(.aeo-faq, .cl-defs) dd,
+:where(.aeo-faq, .cl-defs) dt,
+:where(.aeo-faq, .cl-defs) td,
+:where(.aeo-faq, .cl-defs) th { text-align: left; }
 
 /* --- 44d. measure + vertical rhythm ---------------------------------- */
-:where(.aeo-faq, .cl-defs, .related-links) { max-width: 68ch; }
-:where(.aeo-faq) > :where(h3) { margin-top: 2rem; }
-:where(.aeo-faq) > :where(p)  { max-width: none; }
-:where(.cl-defs) :where(dd)   { color: var(--ux-text-secondary); margin-bottom: 0.9rem; }
-:where(.cl-defs) :where(dt)   { font-weight: 700; margin-top: 1rem; }
+:where(.aeo-faq) h3 { margin-top: 2rem; }
+:where(.cl-defs) dd { color: var(--ux-text-secondary); margin-bottom: 0.9rem; }
+:where(.cl-defs) dt { font-weight: 700; margin-top: 1rem; }
+/* short trailing metadata lines re-centre under the block they close */
+p.aeo-updated, .aeo-updated { text-align: center; max-width: none; }
 
 /* --- 44e. always-dark surfaces ---------------------------------------
    The injected pSEO footer and portfolio-network blocks ship a light
