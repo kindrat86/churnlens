@@ -87,6 +87,13 @@
 
   /* --- BACK TO TOP --- */
   (function() {
+    // Shared /ux.js already ships a complete back-to-top FAB (#ux-back-to-top:
+    // creates it, toggles .visible past 500px, smooth-scrolls on click) — but it
+    // builds it on DOMContentLoaded, i.e. AFTER this deferred script runs, so we
+    // cannot detect it by element. Detect the script tag instead and stand down;
+    // otherwise both FABs render in the same corner and overlap.
+    if (document.querySelector('script[src*="ux.js"]')) return;
+
     var btn = document.querySelector('.cl-back-top');
     if (!btn) {
       // Create it

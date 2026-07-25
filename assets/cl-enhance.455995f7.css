@@ -359,6 +359,24 @@ body.cl-drawer-open {
 }
 
 /* ============================================================
+   SOLID-CTA LABEL CONTRAST — WCAG AA
+   Shared /ux.css has a generic `a:not([class*="bg-"]):not([role="button"])`
+   rule at (0,2,1) that repaints every classed <a> with --ux-accent. In dark
+   mode that is #60a5fa over these buttons' #2563eb fill = 2.03:1, i.e. the
+   label of the most-clicked element on the site is effectively invisible.
+   Per-page `color:#fff` declarations are (0,1,0) and lose, so force it here.
+   ============================================================ */
+.btn-primary,
+.tier-cta.primary,
+.sq-btn,
+.sq-oto-cta,
+.oto-cta,
+.exit-cta {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* ============================================================
    BUTTON POLISH — Active state + ripple feel
    ============================================================ */
 .btn-primary,
