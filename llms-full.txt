@@ -17,8 +17,6 @@ Source: https://churnlens.site/
 
 - 
 ChurnLens — Buyer-Side SaaS Due Diligence | Hidden Churn & Revenue Risk 
--->
--->
 above (line ~167). Do NOT re-add:
 ux.js has no double-init guard, so a second copy builds a second
 back-to-top FAB that overlays page content on mobile. -->
@@ -1214,7 +1212,7 @@ SaaS Benchmarks for Acquirers — Retention, Concentration & Valuation Multiples
 - [SaaS Valuation Multiples by Revenue Quality](https://churnlens.site/benchmarks#saas-valuation-multiples-by-revenue-quality) — How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples
 - [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks#logo-retention-benchmarks-by-company-stage) — Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies
 - [Revenue Concentration Benchmarks for SaaS](https://churnlens.site/benchmarks#revenue-concentration-benchmarks-for-saas) — What level of revenue concentration is normal, acceptable, or risky at different SaaS stages
-Sourced benchmark data for the numbers that decide a SaaS price. Every figure below cites its primary source — SaaS Capital, Benchmarkit, Recurly, First Page.Sage and FE International — so you can verify it before you put it in a model.
+Sourced benchmark data for the numbers that decide a SaaS price. Every figure below cites its primary source — SaaS Capital, Benchmarkit, Recurly, First Page Sage, Aventis Advisors, FE International and Wall Street Prep — so you can verify it before you put it in a model.
 ## Logo Retention Benchmarks by Company Stage
 TL;DR: Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies.
 ### Industry Benchmarks
@@ -1247,9 +1245,22 @@ How should I use these benchmarks?
 Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.
 ## SaaS Valuation Multiples by Revenue Quality
 TL;DR: How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples.
-### Industry Benchmarks
-Revenue quality directly impacts multiples. A SaaS company with Where does this benchmark data come from? 
-Benchmark data is compiled from publicly available SaaS industry reports, operator surveys, and aggregated anonymized data from SaaS analytics platforms.
+### Published private-SaaS revenue multiples
+Published multiple data is segmented by revenue size and vertical &#8212; not by churn band. These are the ranges across the fifteen verticals First Page Sage tracks:
+Revenue band Revenue multiple across verticals Lowest / highest vertical $1&#8211;5M 4.5x&#8211;6.6x AdTech 4.5x / ERP 6.6x $6&#8211;10M 5.5x&#8211;8.1x FinTech 5.5x / ERP 8.1x $10&#8211;75M 6.9x&#8211;9.6x EdTech 6.9x / ERP 9.6x 
+Source: First Page Sage, [SaaS Valuation Multiples: 2025 Report](https://firstpagesage.com/reports/saas-valuation-multiples/) (published 22 January 2025; meta-analysis of public SaaS dealflow data, Q4 2022&#8211;Q1 2025).
+### How revenue quality enters the multiple
+Retention is a documented input, not a soft factor. SaaS Capital&#8217;s valuation methodology (2026 update) builds the multiple from three drivers &#8212; capital-market appetite for SaaS, ARR growth rate, and revenue quality &#8212; and uses net revenue retention as the revenue-quality term.
+Source: SaaS Capital, [What&#8217;s Your SaaS Company Worth?](https://www.saas-capital.com/research/whats-your-saas-company-worth/) (2026 update).
+For public comparables, Aventis Advisors put the median public SaaS EV/Revenue multiple at 3.4x as of March 2026 , down from 6.7x in early 2023, and measured each 10-point gain in Rule of 40 as worth roughly 1.1x of EV/Revenue in Q4 2025. Private M&A multiples run above the public median because they price controlling stakes in profitable, slower-growth businesses &#8212; do not compare the two directly.
+Source: Aventis Advisors, [SaaS Valuation Multiples: 2015&#8211;2026](https://aventis-advisors.com/saas-valuation-multiples/) (published 1 April 2026).
+### What this page deliberately does not publish
+A table mapping churn bands to multiple bands &#8212; for example &#8220;under 5% churn commands 6&#8211;10x, 15% churn trades at 2&#8211;4x.&#8221; No source we can cite measures that relationship directly, so such a table would be an estimate presented as data. Use the retention benchmarks below to judge whether a target&#8217;s churn is normal for its contract size , and the ranges above for pricing.
+### Using Benchmarks in Due Diligence
+Compare the target against these benchmarks. Significant deviations aren't automatic deal-breakers — they determine which questions to ask during management calls and how to structure earn-outs and holdbacks.
+### FAQ
+Where does this benchmark data come from? 
+Compiled from named public sources including First Page Sage, SaaS Capital, and Aventis Advisors &#8212; see citations in the section above.
 How should I use these benchmarks? 
 Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.
 ## SaaS Churn Rate Benchmarks
