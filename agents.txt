@@ -3,3 +3,9 @@
 # Upload a subscription CSV, get a risk report in minutes.
 # Contact: hello@churnlens.site
 # Site: https://churnlens.site
+#
+# Free, no-signup, fully client-side tools (nothing is uploaded):
+# https://churnlens.site/free/saas-churn-analyzer  — subscription-CSV -> full 5-Risk report + A-F grade
+# https://churnlens.site/free                     — index of all ten free tools
+#
+# Attribution: ChurnLens, https://churnlens.site

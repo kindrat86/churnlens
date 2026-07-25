@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free SaaS Churn &amp; Revenue-Quality Analyzer — Upload a Subscription CSV | ChurnLens</title>
+<link rel="stylesheet" href="/ux.css">
+<meta name="description" content="Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report — hidden churn, churn divergence, revenue concentration, annual-plan exposure, zombie MRR, cohort decay and an A–F revenue-quality grade. Runs entirely in your browser. Nothing is uploaded. Free, no signup.">
+<link rel="canonical" href="https://churnlens.site/free/saas-churn-analyzer">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/free/saas-churn-analyzer" />
+<link rel="alternate" hreflang="en-US" href="https://churnlens.site/free/saas-churn-analyzer" />
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/free/saas-churn-analyzer" />
+<meta property="og:title" content="Free SaaS Churn &amp; Revenue-Quality Analyzer — from a subscription CSV, in your browser">
+<meta property="og:description" content="The full 5-Risk buyer-side due-diligence report from a target's subscription CSV: churn divergence, concentration, annual-plan exposure, zombie MRR, cohort decay, A–F grade. 100% client-side — the file never leaves your browser.">
+<meta property="og:image" content="https://churnlens.site/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="ChurnLens" />
+<meta property="og:url" content="https://churnlens.site/free/saas-churn-analyzer">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free SaaS Churn & Revenue-Quality Analyzer","url":"https://churnlens.site/free/saas-churn-analyzer","description":"Upload a SaaS target's subscription CSV and get the full 5-Risk buyer-side report. Runs entirely in your browser — nothing is uploaded.","isPartOf":{"@id":"https://churnlens.site/#website"},"about":{"@id":"https://churnlens.site/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://churnlens.site"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://churnlens.site/free"},{"@type":"ListItem","position":3,"name":"SaaS Churn & Revenue-Quality Analyzer","item":"https://churnlens.site/free/saas-churn-analyzer"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","@id":"https://churnlens.site/free/saas-churn-analyzer#webapp","name":"SaaS Churn & Revenue-Quality Analyzer — ChurnLens","url":"https://churnlens.site/free/saas-churn-analyzer","applicationCategory":"FinanceApplication","applicationSubCategory":"SaaS due diligence","operatingSystem":"Web","browserRequirements":"Requires JavaScript. Runs fully client-side; no server upload.","isAccessibleForFree":true,"featureList":["Churn Divergence Detector — logo churn vs revenue churn","Concentration Vulnerability Index — top-N share and HHI","Annual-Plan Decay Projection — renewal-cliff exposure","Zombie MRR Detector — paying but inactive accounts","Revenue Quality Scorecard — A–F composite grade","MRR Trajectory Forensics — cohort decay vs replacement revenue","Client-side CSV parsing — no upload, no signup","Downloadable HTML report and Markdown deal-memo summary"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"},"publisher":{"@id":"https://churnlens.site/#organization"},"isPartOf":{"@id":"https://churnlens.site/#website"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to run a 5-Risk buyer-side churn analysis on a SaaS target's subscription CSV","totalTime":"PT3M","tool":[{"@type":"HowToTool","name":"ChurnLens SaaS Churn & Revenue-Quality Analyzer"}],"supply":[{"@type":"HowToSupply","name":"The target's subscription CSV (customer id, month, MRR)"}],"step":[{"@type":"HowToStep","position":1,"name":"Export the target's subscription ledger","text":"Ask the seller for a per-customer, per-month MRR export from Stripe, Chargebee, Paddle or their billing system. One row per customer per month, with a customer identifier, the month, and the MRR for that month. Plan interval and last-activity date make two further lenses available."},{"@type":"HowToStep","position":2,"name":"Load the CSV into the analyzer","text":"Drop the file onto the analyzer. Parsing happens in your browser — the file is never uploaded. Columns are detected automatically and you can correct the mapping before running."},{"@type":"HowToStep","position":3,"name":"Read the six lenses and the A–F grade","text":"Review churn divergence, concentration, annual-plan exposure, zombie MRR, cohort decay and MRR trajectory. Each lens states the figure, the rubric band it falls in, and the question to put to the seller."},{"@type":"HowToStep","position":4,"name":"Export the report for the deal file","text":"Download the self-contained HTML report or copy the Markdown summary into an investment-committee memo."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the subscription CSV uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Parsing and every calculation run in your browser using the File API. No part of the file, and no figure derived from it, is transmitted anywhere. You can verify this by opening your browser's network panel while running an analysis — there are no requests carrying your data. This matters because a target's customer-level revenue ledger is usually covered by an NDA."}},{"@type":"Question","name":"What CSV format does the analyzer need?","acceptedAnswer":{"@type":"Answer","text":"The richest input is long format: one row per customer per month, with a customer identifier, a month, and the MRR for that month. Wide format also works — one row per customer with a column per month. Optional columns unlock further lenses: a plan or billing-interval column enables the Annual-Plan Decay Projection, a last-active or last-login date enables the Zombie MRR Detector, and a renewal or current-period-end date sharpens the renewal-cliff timing. A single-snapshot export still yields concentration and annual-plan exposure, but churn and cohort metrics need at least two months."}},{"@type":"Question","name":"What is churn divergence and why does it matter more than the headline churn rate?","acceptedAnswer":{"@type":"Answer","text":"Churn divergence is revenue churn divided by logo churn. If a target loses 5% of its customers each month and those customers carried 5% of MRR, divergence is 1.0 and the headline number is honest. If the churning customers carried 9% of MRR, divergence is 1.8 — the seller's logo-churn figure understates revenue erosion by nearly two times. Divergence above roughly 1.2 means churn is concentrated in the larger accounts, which is the single most common way a headline churn rate flatters a target."}},{"@type":"Question","name":"How is the A–F revenue-quality grade calculated?","acceptedAnswer":{"@type":"Answer","text":"It is a weighted composite of six components: gross revenue retention (30%), revenue concentration (20%), churn divergence (15%), net revenue retention (15%), MRR trajectory (12%) and zombie MRR (8%). Every band and threshold is published in the scoring-rubric table on the page, so the grade can be reproduced by hand. Components whose input columns are absent are dropped and the remaining weights renormalised, and no grade is issued at all when less than 45% of the rubric weight is computable. The rubric is ChurnLens's own, not an industry standard."}},{"@type":"Question","name":"Can the results be used in an investment-committee memo?","acceptedAnswer":{"@type":"Answer","text":"Yes. Download the self-contained HTML report or copy the Markdown summary. Both carry the period range analysed, the row and customer counts, and the rubric version, so a reviewer can trace every figure. Treat the output as a screening and question-generation instrument rather than a quality-of-earnings opinion — it reads exactly the ledger you give it and cannot detect revenue that was never in the export."}},{"@type":"Question","name":"Is there a limit on file size or customer count?","acceptedAnswer":{"@type":"Answer","text":"There is no imposed limit. Because the work happens in your browser the practical ceiling is your machine's memory; ledgers of a few hundred thousand rows parse in a couple of seconds. Nothing is truncated silently — the analyzer reports the row count, customer count and period range it actually read."}}]}</script>
+
+<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","foundingDate":"2026-01-15","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"image":"https://churnlens.site/og.png","contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"},"address":{"@type":"PostalAddress","addressLocality":"Larnaca","addressCountry":"CY"}},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","description":"Buyer-side SaaS churn due-diligence for acquirers","inLanguage":"en","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+
+<style>
+/* Built on ux.css's --ux-* tokens so the page follows the site into dark mode
+   rather than being light (or dark) unconditionally. ux.css carries a comment
+   about exactly that bug shipping before: #374151 text on #0f172a navy. */
+:root{
+  --ink:var(--ux-text,#12131a);--muted:var(--ux-text-secondary,#5a6070);
+  --line:var(--ux-border,#e3e6ee);--bg:var(--ux-surface,#fff);--soft:var(--ux-surface-raised,#f6f8fc);
+  --accent:var(--ux-accent,#0a58ca);
+  --good:#0f7a4f;--warn:#9a6700;--bad:#b3261e;
+  --grid:rgba(90,96,112,.13);
+  --tint-good:#e4f4ea;--tint-ok:#eef4ff;--tint-warn:#fdf3d8;--tint-bad:#fbe9e7;--tint-na:#eef0f4;
+  --drop:#c3cada;--priv-bg:#f0f7f2;--priv-bd:#cfe6d8;
+  --err-bg:#fbe9e7;--err-bd:#f3c9c4;--wb-bg:#fdf9ec;--wb-bd:#eddfb8
+}
+@media (prefers-color-scheme:dark){:root{
+  --good:#4ade80;--warn:#fbbf24;--bad:#f87171;
+  --grid:rgba(148,163,184,.16);
+  --tint-good:rgba(74,222,128,.14);--tint-ok:rgba(96,165,250,.16);--tint-warn:rgba(251,191,36,.15);
+  --tint-bad:rgba(248,113,113,.15);--tint-na:rgba(148,163,184,.14);
+  --drop:#475569;--priv-bg:rgba(74,222,128,.08);--priv-bd:rgba(74,222,128,.28);
+  --err-bg:rgba(248,113,113,.12);--err-bd:rgba(248,113,113,.35);
+  --wb-bg:rgba(251,191,36,.10);--wb-bd:rgba(251,191,36,.32)
+}}
+*{box-sizing:border-box}
+body{background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;color:var(--ink);max-width:960px;margin:0 auto;padding:20px 20px 60px;-webkit-text-size-adjust:100%}
+h1{font-size:2.05rem;line-height:1.2;margin:0 0 10px}
+h2{font-size:1.42rem;margin:2.2em 0 .5em}
+h3{font-size:1.12rem;margin:1.6em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+.ab-nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin:0 0 22px;padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.ab-nav .logo{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.ab-nav .nav-links{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}
+.ab-nav .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.ab-nav .nav-links a:hover{color:var(--ink)}
+.lede{font-size:1.12rem;color:var(--muted);margin-bottom:20px}
+.privacy{display:flex;gap:10px;align-items:flex-start;background:var(--priv-bg);border:1px solid var(--priv-bd);border-radius:10px;padding:12px 14px;font-size:.92rem;margin:0 0 18px}
+.privacy strong{color:var(--good)}
+.panel{border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px;background:var(--soft)}
+#drop{border:2px dashed var(--drop);border-radius:12px;padding:30px 20px;text-align:center;background:var(--soft);transition:border-color .15s,background .15s;cursor:pointer}
+#drop.hot{border-color:var(--accent);background:var(--tint-ok)}
+#drop h3{margin:0 0 6px;font-size:1.15rem}
+#drop p{margin:0;color:var(--muted);font-size:.93rem}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;justify-content:center}
+button{font:inherit;font-size:.95rem;padding:11px 18px;min-height:44px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+button.ghost:hover{background:var(--tint-ok)}
+button:disabled{opacity:.5;cursor:not-allowed}
+textarea{width:100%;min-height:130px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;margin:0 0 1em}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.map-grid label{display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:4px}
+select{width:100%;font:inherit;font-size:.92rem;padding:9px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.grade{display:flex;flex-wrap:wrap;gap:20px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--soft)}
+.gbox{width:104px;height:104px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:3.1rem;font-weight:700;color:#fff;flex:0 0 auto}
+.gmeta{flex:1 1 260px;min-width:240px}
+.gmeta h2{margin:0 0 4px;font-size:1.3rem}
+.gmeta p{margin:0;color:var(--muted);font-size:.94rem}
+.lenses{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.lens{border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+.lens h3{margin:0 0 2px;font-size:1rem}
+.lens .v{font-size:1.85rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15;margin:6px 0 2px}
+.lens .band{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:20px;margin-bottom:8px}
+.lens p{font-size:.89rem;color:var(--muted);margin:0 0 .6em}
+.lens .ask{font-size:.86rem;border-left:3px solid var(--line);padding-left:10px;color:var(--ink)}
+.b-good{background:var(--tint-good);color:var(--good)}.b-ok{background:var(--tint-ok);color:var(--accent)}.b-warn{background:var(--tint-warn);color:var(--warn)}.b-bad{background:var(--tint-bad);color:var(--bad)}.b-na{background:var(--tint-na);color:var(--muted)}
+.finding{border-left:4px solid var(--line);padding:10px 0 10px 13px;margin:0 0 12px}
+.finding.high{border-color:var(--bad)}.finding.med{border-color:var(--warn)}.finding.low{border-color:var(--accent)}
+.finding b{display:block;font-size:.97rem}
+.finding span{font-size:.89rem;color:var(--muted)}
+.sev{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:4px;margin-right:7px}
+.sev.high{background:var(--tint-bad);color:var(--bad)}.sev.med{background:var(--tint-warn);color:var(--warn)}.sev.low{background:var(--tint-ok);color:var(--accent)}
+.chart{overflow-x:auto;margin:0 0 1.2em}
+.chart svg{display:block;min-width:520px;max-width:100%;height:auto}
+.note{font-size:.85rem;color:var(--muted);margin:-.4em 0 1.2em}
+.err{background:var(--err-bg);border:1px solid var(--err-bd);color:var(--bad);border-radius:8px;padding:12px 14px;font-size:.92rem;margin:0 0 14px}
+.warnbox{background:var(--wb-bg);border:1px solid var(--wb-bd);border-radius:8px;padding:12px 14px;font-size:.9rem;margin:0 0 14px}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px}
+summary{cursor:pointer;font-weight:600}
+details[open] summary{margin-bottom:8px}
+code{background:var(--tint-na);padding:2px 5px;border-radius:4px;font-size:.88em}
+.hidden{display:none!important}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1em}
+.related-links a{display:block;border:1px solid var(--line);border-radius:8px;padding:13px 16px;color:var(--ink);text-decoration:none;font-size:.93rem}
+.related-links a:hover{border-color:var(--accent)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:640px){.related-links{grid-template-columns:1fr}h1{font-size:1.6rem}.gbox{width:84px;height:84px;font-size:2.5rem}}
+@media print{nav,#input-panel,.btnrow,footer .dream,#faq,#howto{display:none}body{max-width:none}}
+</style>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<script src="/ux.js" defer></script>
+</head>
+<body id="main-content">
+<nav class="ab-nav">
+  <a href="/" class="logo">ChurnLens</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/free">Free Tools</a>
+    <a href="/benchmarks">Benchmarks</a>
+    <a href="/5-risk-buyer-side-method">The Method</a>
+    <a href="/pricing">Pricing</a>
+  </div>
+</nav>
+
+<h1>Free SaaS Churn &amp; Revenue-Quality Analyzer</h1>
+<p class="lede">Drop a target's subscription CSV and get the full <a href="https://churnlens.site/5-risk-buyer-side-method">5-Risk Buyer-Side</a> report — churn divergence, revenue concentration, annual-plan exposure, zombie MRR, cohort decay and an A–F revenue-quality grade. It runs entirely in your browser: the file is never uploaded.</p>
+
+<div class="privacy">
+  <span aria-hidden="true">🔒</span>
+  <div><strong>Nothing leaves this page.</strong> The CSV is parsed with the browser's File API and every figure is computed locally. No part of the file, and no number derived from it, is transmitted anywhere — open your network panel and check. A target's customer-level ledger is normally NDA-bound, which is exactly why this tool has no server side.</div>
+</div>
+
+<div class="panel" id="input-panel">
+  <div id="drop" tabindex="0" role="button" aria-label="Choose or drop a subscription CSV file">
+    <h3>Drop the subscription CSV here</h3>
+    <p>…or click to choose a file. CSV, TSV or semicolon-delimited. Never uploaded.</p>
+    <input type="file" id="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" class="hidden">
+  </div>
+  <div class="btnrow">
+    <button type="button" class="ghost" id="btn-sample">Try the synthetic sample ledger</button>
+    <button type="button" class="ghost" id="btn-paste">Paste CSV instead</button>
+    <button type="button" class="ghost" id="btn-template">Download the CSV template</button>
+  </div>
+  <div id="paste-wrap" class="hidden" style="margin-top:14px">
+    <textarea id="paste" placeholder="customer_id,month,mrr,plan,last_active&#10;acct_1001,2025-01,240,monthly,2025-01-28&#10;acct_1001,2025-02,240,monthly,2025-02-26"></textarea>
+    <div class="btnrow" style="justify-content:flex-start"><button type="button" id="btn-paste-run">Analyze pasted CSV</button></div>
+  </div>
+</div>
+
+<div id="messages"></div>
+
+<div class="panel hidden" id="map-panel">
+  <h3 style="margin-top:0">Column mapping</h3>
+  <p class="note" id="map-summary"></p>
+  <div class="map-grid" id="map-grid"></div>
+  <div class="btnrow" style="justify-content:flex-start;margin-top:16px">
+    <button type="button" id="btn-run">Run the 5-Risk analysis</button>
+    <button type="button" class="ghost" id="btn-reset">Start over</button>
+  </div>
+</div>
+
+<div id="results" class="hidden"></div>
+
+<div id="exportrow" class="btnrow hidden" style="justify-content:flex-start">
+  <button type="button" id="btn-export">Download report (HTML)</button>
+  <button type="button" class="ghost" id="btn-md">Copy Markdown summary</button>
+  <button type="button" class="ghost" id="btn-print">Print / save as PDF</button>
+</div>
+
+<h2 id="howto">How to use it</h2>
+<ol>
+  <li><b>Get the ledger, not the summary slide.</b> Ask the seller for a per-customer, per-month MRR export from Stripe, Chargebee, Paddle, Recurly or their own database. One row per customer per month. Reported churn and real churn diverge precisely because summary figures hide the customer-level detail.</li>
+  <li><b>Drop the file in.</b> Columns are detected automatically; correct the mapping if a guess is wrong. Nothing is uploaded.</li>
+  <li><b>Read the six lenses.</b> Each states the figure, the rubric band it lands in, and the question to put to the seller.</li>
+  <li><b>Export it into the deal file.</b> A self-contained HTML report, or a Markdown summary for an IC memo.</li>
+</ol>
+
+<h2>What the CSV needs to contain</h2>
+<p>Two layouts are accepted. <b>Long format</b> is richer and preferred:</p>
+<table>
+<thead><tr><th>Column</th><th>Required</th><th>Example</th><th>What it unlocks</th></tr></thead>
+<tbody>
+<tr><td><code>customer_id</code></td><td>Yes</td><td><code>acct_1001</code></td><td>Everything. Any stable identifier — id, email, company name.</td></tr>
+<tr><td><code>month</code></td><td>Yes*</td><td><code>2025-03</code></td><td>All churn, retention, cohort and trajectory lenses. Accepts <code>2025-03</code>, <code>2025-03-01</code>, <code>03/2025</code>, <code>Mar 2025</code>.</td></tr>
+<tr><td><code>mrr</code></td><td>Yes</td><td><code>240.00</code></td><td>Everything. Currency symbols and thousands separators are tolerated. An <code>arr</code> column is divided by 12.</td></tr>
+<tr><td><code>plan</code> / <code>interval</code></td><td>Optional</td><td><code>annual</code></td><td>Annual-Plan Decay Projection, and observed annual-vs-monthly churn.</td></tr>
+<tr><td><code>last_active</code></td><td>Optional</td><td><code>2025-03-28</code></td><td>Zombie MRR Detector.</td></tr>
+<tr><td><code>renewal_date</code></td><td>Optional</td><td><code>2025-11-01</code></td><td>Renewal-cliff timing — how much MRR is up for renewal in the next 3, 6 and 12 months.</td></tr>
+</tbody>
+</table>
+<p class="note">* <b>Wide format</b> works too: one row per customer, one column per month (<code>customer_id, plan, 2025-01, 2025-02, …</code>). A single snapshot with no month at all still produces concentration and annual-plan exposure; churn, retention and cohort lenses need at least two months.</p>
+
+<h2>The six lenses, and the formula each one uses</h2>
+<details><summary>1. Churn Divergence Detector</summary>
+<p>Logo churn and revenue churn are computed separately for every consecutive month pair, then compared. <code>logo churn = customers lost ÷ customers at start</code>. <code>gross revenue churn = (MRR of lost customers + downgrade MRR) ÷ MRR at start</code>. <b>Divergence = revenue churn ÷ logo churn.</b></p>
+<p>A divergence of 1.0 means churn is spread evenly across the book and the seller's headline logo-churn figure is honest. Above roughly 1.2 the churning accounts are larger than average, so the headline understates revenue erosion — the most common way a churn number flatters a target. Below 1.0 the business loses its smallest accounts, which is materially better news than the logo figure suggests.</p>
+<p>Because gross revenue churn conventionally includes downgrades, a high divergence has two quite different causes, and the report separates them rather than assuming one. The <b>cancellation and downgrade components are reported individually</b>, and a <b>size skew</b> — average MRR of churned accounts ÷ average MRR of retained ones — isolates whether the departing customers were genuinely larger. Divergence driven by size skew is a concentration-of-loss problem; divergence driven by downgrades is a pricing, packaging or discount problem. They lead to different questions on the management call, so the finding text is conditioned on which one the data actually shows.</p></details>
+
+<details><summary>2. Concentration Vulnerability Index</summary>
+<p>Measured on the most recent month: the share of MRR held by the largest 1, 3, 5 and 10 customers, the Herfindahl–Hirschman Index across the customer base (<code>HHI = Σ share² × 10,000</code>), and the number of customers needed to reach half of all MRR. HHI is reported because two books with the same top-5 share can have very different tails.</p></details>
+
+<details><summary>3. Annual-Plan Decay Projection</summary>
+<p>The share of MRR sitting on annual or multi-year terms, which is the MRR that cannot churn this month and therefore cannot appear in a monthly churn rate at all. Where a renewal or period-end date is present, MRR falling due in the next 3, 6 and 12 months is bucketed into a renewal cliff. Where enough history exists, the observed churn rate of annual customers is compared against monthly ones.</p>
+<p>Two conventions, stated because they change the numbers. The renewal date is read from each customer's <em>most recent</em> row, not the earliest — billing exports carry the current period end on every row, so the earliest one is always in the past. And where an annual customer's recorded period-end has already passed, it is advanced in whole years until it falls after the anchor date, because an annual contract that renewed last year renews again this year. Non-annual rows with a past date are treated as unknown and excluded rather than guessed; the count of both adjustments is reported with the result.</p>
+<p>This is reported as <em>exposure</em>, not a prediction. A concentration of renewals shortly after close is a structuring question — holdback, earn-out, escrow — not a forecast.</p></details>
+
+<details><summary>4. Zombie MRR Detector</summary>
+<p>Customers still paying whose last recorded activity predates a threshold — 60 days by default, measured from the latest date in the file rather than today, so historical exports are handled correctly. Reported as a share of current MRR. Requires a last-active, last-login or last-seen column; without one the lens is disabled rather than estimated, and its weight is redistributed across the other components.</p></details>
+
+<details><summary>5. Revenue Quality Scorecard</summary>
+<p>A weighted composite of the other lenses producing an A–F grade. Every band is published in the rubric table below, so the grade can be recomputed by hand from the component figures. Components whose input columns are missing are dropped and the remaining weights renormalised — a grade is never manufactured from absent data.</p></details>
+
+<details><summary>6. MRR Trajectory Forensics</summary>
+<p>Three separate readings. A month-by-month decomposition of MRR movement into new, expansion, contraction, churned and reactivated. A cohort retention triangle, where each cohort is the month a customer first appears and each cell is that cohort's retained MRR as a share of its starting MRR. And the trend of MRR from cohorts at least twelve months old, held against the headline trend.</p>
+<p>The third reading is the one that catches the pattern a headline number cannot show: flat total MRR produced by new sales replacing decaying older cohorts. The <b>quick ratio</b> — <code>(new + expansion) ÷ (churned + contraction)</code> — quantifies how hard the business has to run to stand still.</p></details>
+
+<h2 id="rubric">Scoring rubric (ChurnLens's own, published in full)</h2>
+<p>These bands are ChurnLens's rubric for buyer-side screening, not an industry standard. They are published so the grade is reproducible and arguable rather than a black box.</p>
+<table>
+<thead><tr><th>Component</th><th class="num">Weight</th><th>100</th><th>85</th><th>65</th><th>40</th><th>15</th></tr></thead>
+<tbody>
+<tr><td>Gross revenue retention, annualised</td><td class="num">30%</td><td>≥92%</td><td>88–92%</td><td>82–88%</td><td>75–82%</td><td>&lt;75%</td></tr>
+<tr><td>Top-5 customer share of MRR</td><td class="num">20%</td><td>≤15%</td><td>15–25%</td><td>25–40%</td><td>40–55%</td><td>&gt;55%</td></tr>
+<tr><td>Churn divergence (rev ÷ logo churn)</td><td class="num">15%</td><td>≤0.9</td><td>0.9–1.2</td><td>1.2–1.6</td><td>1.6–2.2</td><td>&gt;2.2</td></tr>
+<tr><td>Net revenue retention, annualised</td><td class="num">15%</td><td>≥110%</td><td>100–110%</td><td>95–100%</td><td>88–95%</td><td>&lt;88%</td></tr>
+<tr><td>MRR trend, last 6 months per month</td><td class="num">12%</td><td>≥+2%</td><td>+0.5–2%</td><td>−0.5–+0.5%</td><td>−2–−0.5%</td><td>&lt;−2%</td></tr>
+<tr><td>Zombie MRR share</td><td class="num">8%</td><td>≤2%</td><td>2–5%</td><td>5–10%</td><td>10–20%</td><td>&gt;20%</td></tr>
+</tbody>
+</table>
+<p class="note">Grade bands: <b>A</b> ≥85, <b>B</b> 75–84, <b>C</b> 65–74, <b>D</b> 55–64, <b>F</b> &lt;55. A further 15-point deduction applies to the trajectory component when cohorts twelve months and older are declining while headline MRR is flat or rising — replacement revenue masking decay. No letter grade is issued at all when less than 45% of the rubric weight is computable from the file — a grade off a fifth of the rubric would read as authoritative and mean very little. Rubric version <code>rq-1.0</code>.</p>
+
+<h2>Benchmark context</h2>
+<p>Where the report cites an outside comparison it uses one sourced figure: median gross revenue retention for private B2B SaaS is around <b>91%</b>, splitting to roughly <b>90%</b> below $25K ACV and <b>93%</b> above it — <a href="https://churnlens.site/benchmarks">SaaS Capital, 2023 B2B SaaS Retention Benchmarks</a>. Every other threshold on this page is ChurnLens's own rubric. Deviating from a benchmark is not a verdict; it decides which questions get asked on the management call and how the deal is structured.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<details><summary>Is the subscription CSV uploaded to a server?</summary><p>No. Parsing and every calculation run in your browser using the File API. No part of the file, and no figure derived from it, is transmitted anywhere. Open your browser's network panel while running an analysis and you will see no request carrying your data. This matters because a target's customer-level revenue ledger is usually NDA-bound.</p></details>
+<details><summary>What CSV format does the analyzer need?</summary><p>Long format is richest: one row per customer per month with a customer identifier, a month and that month's MRR. Wide format — one row per customer, one column per month — works too. Optional columns unlock further lenses: plan or billing interval enables the Annual-Plan Decay Projection, a last-active date enables the Zombie MRR Detector, a renewal date sharpens renewal-cliff timing. A single snapshot still yields concentration and annual-plan exposure.</p></details>
+<details><summary>What is churn divergence and why does it matter more than the headline churn rate?</summary><p>Churn divergence is revenue churn divided by logo churn. Lose 5% of customers carrying 5% of MRR and divergence is 1.0 — the headline is honest. Lose 5% of customers carrying 9% of MRR and divergence is 1.8: the seller's logo-churn figure understates revenue erosion by nearly two times. Above roughly 1.2, churn is concentrated in the larger accounts.</p></details>
+<details><summary>How is the A–F grade calculated?</summary><p>A weighted composite of six components — gross revenue retention 30%, concentration 20%, churn divergence 15%, net revenue retention 15%, MRR trajectory 12%, zombie MRR 8%. Every band is published in the rubric table above, so the grade is reproducible by hand. Missing components are dropped and the remaining weights renormalised, and no grade is issued at all below 45% rubric coverage. The rubric is ChurnLens's own, not an industry standard.</p></details>
+<details><summary>Can I use the results in an investment-committee memo?</summary><p>Yes. The HTML report and the Markdown summary both carry the period range, row and customer counts and the rubric version, so a reviewer can trace every figure. Treat it as a screening and question-generation instrument, not a quality-of-earnings opinion — it reads exactly the ledger you give it and cannot detect revenue that was never in the export.</p></details>
+<details><summary>Is there a file-size limit?</summary><p>None imposed. Because the work is local the practical ceiling is your machine's memory; a few hundred thousand rows parse in seconds. Nothing is truncated silently — the row count, customer count and period range actually read are reported back to you.</p></details>
+<details><summary>How does this differ from the paid ChurnLens report?</summary><p>This tool runs the same six lenses on the ledger you already hold. The <a href="https://churnlens.site/pricing">paid buyer-side report</a> adds the work a tool cannot do: reconciling the ledger against bank and Stripe payouts, chasing the gaps the export leaves out, checking the cohort story against the CIM's claims, and writing the findings up as diligence questions for a specific deal.</p></details>
+
+<h2>Related ChurnLens tools and reading</h2>
+<div class="related-links">
+  <a href="https://churnlens.site/5-risk-buyer-side-method">The 5-Risk Buyer-Side Method — the framework this tool implements</a>
+  <a href="https://churnlens.site/churn-divergence-detector">Churn Divergence Detector — why logo and revenue churn split</a>
+  <a href="https://churnlens.site/concentration-vulnerability-index">Concentration Vulnerability Index</a>
+  <a href="https://churnlens.site/zombie-mrr-detector">Zombie MRR Detector</a>
+  <a href="https://churnlens.site/annual-plan-churn-risk">Annual-Plan Churn Risk</a>
+  <a href="https://churnlens.site/mrr-trajectory-forensics">MRR Trajectory Forensics</a>
+  <a href="https://churnlens.site/revenue-quality-scorecard">Revenue Quality Scorecard</a>
+  <a href="https://churnlens.site/saas-due-diligence-checklist">SaaS Due Diligence Checklist</a>
+  <a href="https://churnlens.site/free">All free ChurnLens tools</a>
+  <a href="https://churnlens.site/benchmarks">SaaS retention &amp; valuation benchmarks</a>
+</div>
+
+<footer>
+<p>&copy; 2026 ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence. <a href="https://churnlens.site/privacy">Privacy</a> · <a href="https://churnlens.site/terms">Terms</a></p>
+<div class="dream" style="margin-top:14px;font-size:13px"><strong>Find us where SaaS acquirers are:</strong> <a href="https://github.com/kindrat86" rel="me noopener" style="color:inherit">GitHub</a></div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var RUBRIC="rq-1.0";
+var $=function(s){return document.querySelector(s)};
+var el=function(t,a,h){var n=document.createElement(t);if(a)for(var k in a)n.setAttribute(k,a[k]);if(h!=null)n.innerHTML=h;return n};
+var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+var pad=function(n){n=String(n);return n.length<2?"0"+n:n};
+var fmtMoney=function(n){if(n==null||!isFinite(n))return"—";var s=Math.abs(n)>=1000?Math.round(n).toLocaleString("en-US"):(Math.round(n*100)/100).toLocaleString("en-US");return (n<0?"−":"")+s};
+var fmtPct=function(n,d){if(n==null||!isFinite(n))return"—";return (n*100).toFixed(d==null?1:d)+"%"};
+var fmtNum=function(n,d){if(n==null||!isFinite(n))return"—";return n.toFixed(d==null?2:d)};
+
+/* ---------- CSV parsing ---------- */
+function sniffDelim(text){
+  var line="",i,inq=false;
+  for(i=0;i<text.length;i++){var c=text[i];if(c==='"')inq=!inq;if(c==="\n"&&!inq)break;line+=c}
+  var best=",",bestN=-1;
+  [",",";","\t","|"].forEach(function(d){
+    var n=0,q=false;
+    for(var j=0;j<line.length;j++){if(line[j]==='"')q=!q;else if(line[j]===d&&!q)n++}
+    if(n>bestN){bestN=n;best=d}
+  });
+  return best;
+}
+function parseCSV(text){
+  text=text.replace(/^﻿/,"");
+  var d=sniffDelim(text),rows=[],row=[],cur="",inq=false,i=0,n=text.length;
+  while(i<n){
+    var c=text[i];
+    if(inq){
+      if(c==='"'){ if(text[i+1]==='"'){cur+='"';i+=2;continue} inq=false;i++;continue }
+      cur+=c;i++;continue;
+    }
+    if(c==='"'){inq=true;i++;continue}
+    if(c===d){row.push(cur);cur="";i++;continue}
+    if(c==="\r"){i++;continue}
+    if(c==="\n"){row.push(cur);rows.push(row);row=[];cur="";i++;continue}
+    cur+=c;i++;
+  }
+  if(cur.length||row.length){row.push(cur);rows.push(row)}
+  return rows.filter(function(r){return r.length>1||(r.length===1&&r[0].trim()!=="")});
+}
+
+/* ---------- value coercion ---------- */
+var MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+function toMonth(v){
+  if(v==null)return null;var s=String(v).trim();if(!s)return null;var m;
+  if((m=s.match(/^(\d{4})[-\/.](\d{1,2})(?:[-\/.](\d{1,2}))?/))){var mo=+m[2];if(mo>=1&&mo<=12)return m[1]+"-"+pad(mo)}
+  if((m=s.match(/^(\d{4})(\d{2})$/))){var mo2=+m[2];if(mo2>=1&&mo2<=12)return m[1]+"-"+pad(mo2)}
+  if((m=s.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})/))){var a=+m[1],b=+m[2];var mm=(a>12&&b<=12)?b:a;if(mm>=1&&mm<=12)return m[3]+"-"+pad(mm)}
+  if((m=s.match(/^(\d{1,2})[-\/](\d{4})$/))){var mo3=+m[1];if(mo3>=1&&mo3<=12)return m[2]+"-"+pad(mo3)}
+  if((m=s.match(/^([A-Za-z]{3,})[\s\-\/.,]+(\d{2,4})$/))){var k=MON[m[1].slice(0,3).toLowerCase()];if(k){var y=m[2].length===2?"20"+m[2]:m[2];return y+"-"+pad(k)}}
+  var dt=new Date(s);if(!isNaN(dt.getTime())&&/\d{4}/.test(s))return dt.getUTCFullYear()+"-"+pad(dt.getUTCMonth()+1);
+  return null;
+}
+function toDate(v){
+  if(v==null)return null;var s=String(v).trim();if(!s)return null;
+  if(/^\d{4}-\d{1,2}$/.test(s))s=s+"-01";
+  var d=new Date(s);
+  if(isNaN(d.getTime())){var m=s.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})/);if(m)d=new Date(Date.UTC(+m[3],+m[1]-1,+m[2]))}
+  return isNaN(d.getTime())?null:d;
+}
+function toNum(v){
+  if(v==null)return null;
+  if(typeof v==="number")return isFinite(v)?v:null;
+  var s=String(v).trim();if(!s)return null;
+  var neg=/^\(.*\)$/.test(s)||/^-/.test(s);
+  s=s.replace(/[()\s]/g,"").replace(/[^\d.,-]/g,"");
+  var lc=s.lastIndexOf(","),ld=s.lastIndexOf(".");
+  if(lc>-1&&ld>-1){ if(lc>ld){s=s.replace(/\./g,"").replace(",",".")} else {s=s.replace(/,/g,"")} }
+  else if(lc>-1){ s=(/,\d{1,2}$/.test(s))?s.replace(",","."):s.replace(/,/g,"") }
+  s=s.replace(/-/g,"");
+  var n=parseFloat(s);if(!isFinite(n))return null;
+  return neg?-n:n;
+}
+function monthAdd(ym,k){var y=+ym.slice(0,4),m=+ym.slice(5,7)-1+k;y+=Math.floor(m/12);m=((m%12)+12)%12;return y+"-"+pad(m+1)}
+function monthDiff(a,b){return (+b.slice(0,4)-+a.slice(0,4))*12+(+b.slice(5,7)-+a.slice(5,7))}
+
+/* ---------- header role detection ---------- */
+var ROLES=[
+ {key:"customer",label:"Customer identifier",req:true,pats:[/^customer(_?id|_?email|_?name|_?code|_?uuid|_?ref|_?key|_?external_?id)?$/,/^cust(omer)?_?(id|key|ref|no|num)$/,/^account(_?id|_?code|_?name|_?email|_?uuid|_?number)?$/,/^(subscriber|client|company|org|organisation|organization)(_?id|_?code|_?name|_?email|_?uuid)?$/,/^(user|member)_?(id|email|name)?$/,/^(sub|subscription)(_?id|_?code|_?uuid)?$/,/^email$/,/^id$/,/^name$/,/email/]},
+ {key:"month",label:"Month / period",req:false,pats:[/^month$/,/^period$/,/^year_?month$/,/^ym$/,/^date$/,/^invoice_?date$/,/^billing_?(month|period|date)$/,/^report(ing)?_?(month|date|period)$/,/^snapshot(_?date|_?month)?$/,/^as_?of(_?date)?$/]},
+ {key:"mrr",label:"MRR for that month",req:true,pats:[/^mrr(_?usd|_?eur|_?gbp|_?amount)?$/,/^monthly_?(recurring_?)?revenue$/,/^recurring_?revenue$/,/^revenue$/,/^amount(_?paid|_?due)?$/,/^subscription_?(value|amount|revenue)$/,/^plan_?(amount|price|value)$/,/^total$/,/^net_?revenue$/,/^arr$/,/^annual_?recurring_?revenue$/,/^price$/,/^value$/]},
+ {key:"plan",label:"Plan / billing interval",req:false,pats:[/^plan_?interval$/,/^interval$/,/^billing_?(interval|period|cycle|frequency)$/,/^plan(_?name|_?id|_?type|_?code|_?frequency)?$/,/^price_?interval$/,/^recurring_?interval$/,/^interval_?(unit|count)?$/,/^billing_?plan$/,/^subscription_?(plan|type|interval|term|frequency)$/,/^term$/,/^contract_?(term|length|type)$/,/^frequency$/,/^cadence$/,/^tier$/,/^product(_?name)?$/,/(interval|period_unit|billing_period|billing_cycle)/]},
+ {key:"active",label:"Last active / last login",req:false,pats:[/^last_?(active|login|logged_?in|seen|used|usage|activity|session)(_?at|_?date)?$/,/^activity_?(date|at)$/,/^last_?event(_?at)?$/,/^most_?recent_?(login|activity)$/]},
+ {key:"renewal",label:"Renewal / period end",req:false,pats:[/^renewal(_?date|_?at)?$/,/^renews_?(on|at)$/,/^current_?period_?end$/,/^period_?end(_?date)?$/,/^next_?(invoice|billing|charge|payment)(_?date|_?at)?$/,/^expires?(_?at|_?on)?$/,/^contract_?end(_?date)?$/,/^end_?date$/]},
+ {key:"status",label:"Subscription status",req:false,pats:[/^status$/,/^(subscription|sub)_?status$/,/^state$/,/^active$/,/^is_?active$/,/^cancelled?$/,/^churned$/]},
+ {key:"created",label:"Signup / start date",req:false,pats:[/^created(_?at|_?date)?$/,/^signup(_?date|_?at)?$/,/^(subscription|contract|start)_?(start|date)?(_?date|_?at)?$/,/^first_?(payment|invoice|seen)(_?date|_?at)?$/,/^joined(_?at)?$/,/^cohort(_?month)?$/]}
+];
+function norm(h){return String(h==null?"":h).trim().toLowerCase().replace(/[\s\-.]+/g,"_").replace(/[^\w]/g,"").replace(/__+/g,"_").replace(/^_|_$/g,"")}
+function detectRoles(headers){
+  var out={},used={};
+  ROLES.forEach(function(r){
+    for(var p=0;p<r.pats.length;p++){
+      for(var i=0;i<headers.length;i++){
+        if(used[i])continue;
+        if(r.pats[p].test(norm(headers[i]))){out[r.key]=i;used[i]=true;return}
+      }
+    }
+  });
+  return out;
+}
+function monthColumns(headers){
+  var out=[];headers.forEach(function(h,i){var m=toMonth(h);if(m&&/\d/.test(String(h)))out.push({i:i,ym:m})});
+  return out;
+}
+/* Header naming is endlessly varied, so when the two required roles go undetected they are
+   filled by inspecting the data instead of failing. Both choices are shown in the mapping
+   UI, so a wrong guess is visible and correctable rather than silent. */
+function fillGaps(rows,map,wide){
+  var headers=rows[0],body=rows.slice(1,Math.min(rows.length,220)),guessed=[];
+  var claimed={};for(var k in map)if(map[k]!=null)claimed[map[k]]=1;
+  if(wide)wide.forEach(function(mc){claimed[mc.i]=1});
+  function stats(i){
+    var num=0,uniq={},nonEmpty=0;
+    body.forEach(function(r){var v=r[i];if(v==null||String(v).trim()==="")return;nonEmpty++;
+      uniq[String(v)]=1;if(toNum(v)!=null&&/\d/.test(String(v)))num++});
+    return {num:num,nonEmpty:nonEmpty,uniq:Object.keys(uniq).length};
+  }
+  if(map.month==null&&!wide){
+    var bestP=-1,bestFrac=0;
+    for(var z=0;z<headers.length;z++){
+      if(claimed[z])continue;
+      var ok=0,tot=0;
+      body.forEach(function(r){var v=r[z];if(v==null||String(v).trim()==="")return;tot++;if(toMonth(v))ok++});
+      if(tot&&ok/tot>0.8&&ok/tot>bestFrac){bestFrac=ok/tot;bestP=z}
+    }
+    if(bestP>-1){map.month=bestP;claimed[bestP]=1;guessed.push("month → “"+String(headers[bestP])+"”")}
+  }
+  if(map.mrr==null){
+    var bestM=-1,bestScore=0;
+    for(var i=0;i<headers.length;i++){
+      if(claimed[i])continue;var s=stats(i);
+      if(!s.nonEmpty)continue;
+      var frac=s.num/s.nonEmpty;
+      if(frac>0.9&&frac*s.uniq>bestScore){bestScore=frac*s.uniq;bestM=i}
+    }
+    if(bestM>-1){map.mrr=bestM;claimed[bestM]=1;guessed.push("revenue → “"+String(headers[bestM])+"”")}
+  }
+  if(map.customer==null){
+    var bestC=-1,bestU=-1;
+    for(var j=0;j<headers.length;j++){
+      if(claimed[j])continue;var t=stats(j);
+      if(!t.nonEmpty)continue;
+      if(t.num/t.nonEmpty>0.9)continue;              // numeric columns are not identifiers
+      if(t.uniq>bestU){bestU=t.uniq;bestC=j}
+    }
+    if(bestC<0){for(var q=0;q<headers.length;q++)if(!claimed[q]){bestC=q;break}}
+    if(bestC>-1){map.customer=bestC;guessed.push("customer identifier → “"+String(headers[bestC])+"”")}
+  }
+  return guessed;
+}
+
+/* ---------- build the ledger ---------- */
+function buildLedger(rows,map,wide,opts){
+  opts=opts||{};
+  var headers=rows[0],body=rows.slice(1),recs=[],warn=[];
+  var idx=function(k){return map[k]==null?-1:map[k]};
+  var isAnnual=function(v){var s=String(v==null?"":v).toLowerCase();return /(annual|yearly|per_?year|\/\s*year|\byear\b|\byr\b|12\s*-?\s*month|12m|multi_?year|biennial|2\s*-?\s*year)/.test(s)};
+  var isMonthlyTerm=function(v){var s=String(v==null?"":v).toLowerCase();return /(month|mo\b|\/\s*mo|30\s*day|mensual)/.test(s)};
+  var arrCol=idx("mrr")>-1&&/^(arr|annual_recurring_revenue)$/.test(norm(headers[idx("mrr")]));
+  var deadStatus=/^(cancel|cancell?ed|churned|inactive|expired|ended|deleted|non_?renewing|unpaid|void)/;
+
+  if(wide&&wide.length){
+    body.forEach(function(r){
+      var cid=idx("customer")>-1?String(r[idx("customer")]||"").trim():"";
+      if(!cid)return;
+      var plan=idx("plan")>-1?r[idx("plan")]:null;
+      var act=idx("active")>-1?toDate(r[idx("active")]):null;
+      var ren=idx("renewal")>-1?toDate(r[idx("renewal")]):null;
+      wide.forEach(function(mc){
+        var v=toNum(r[mc.i]);if(v==null)return;
+        if(arrCol)v=v/12;
+        recs.push({c:cid,m:mc.ym,mrr:v,annual:isAnnual(plan),monthlyTerm:isMonthlyTerm(plan),planRaw:plan,act:act,ren:ren});
+      });
+    });
+  } else {
+    var mi=idx("month");
+    body.forEach(function(r){
+      var cid=idx("customer")>-1?String(r[idx("customer")]||"").trim():"";
+      if(!cid)return;
+      var v=toNum(r[idx("mrr")]);if(v==null)return;
+      if(arrCol)v=v/12;
+      var ym=mi>-1?toMonth(r[mi]):"__snapshot__";
+      if(mi>-1&&!ym)return;
+      var st=idx("status")>-1?String(r[idx("status")]||"").toLowerCase().trim():"";
+      if(st&&deadStatus.test(norm(st))&&mi===-1)v=0;
+      var plan=idx("plan")>-1?r[idx("plan")]:null;
+      recs.push({c:cid,m:ym,mrr:v,annual:isAnnual(plan),monthlyTerm:isMonthlyTerm(plan),planRaw:plan,
+        act:idx("active")>-1?toDate(r[idx("active")]):null,
+        ren:idx("renewal")>-1?toDate(r[idx("renewal")]):null,
+        created:idx("created")>-1?toMonth(r[idx("created")]):null});
+    });
+  }
+  if(!recs.length)throw new Error("No usable rows found. Check that the customer and MRR columns are mapped to the right headers.");
+
+  // Billing exports often carry the *billed* amount, so an annual plan shows a yearly figure.
+  // Treating that as MRR overstates it twelvefold, so it is converted only on explicit instruction.
+  var annualRows=0;
+  recs.forEach(function(r){if(r.annual)annualRows++});
+  if(opts.annualDiv12){
+    if(!annualRows)warn.push("Annual rows were set to be divided by 12, but no annual-term rows were identified — nothing was converted.");
+    else {recs.forEach(function(r){if(r.annual)r.mrr=r.mrr/12});
+      warn.push(annualRows.toLocaleString("en-US")+" annual-term rows were divided by 12 to convert a yearly billed amount into MRR.");}
+  } else if(annualRows&&map.mrr!=null&&/^(amount|amount_paid|amount_due|total|price|value|subscription_value|subscription_amount|plan_amount|plan_price|net_revenue)$/.test(norm(headers[map.mrr]))){
+    warn.push("The revenue column is named “"+String(headers[map.mrr])+"” and "+annualRows.toLocaleString("en-US")+" rows are on annual terms. If that column holds the amount actually billed, the annual rows are yearly figures and every metric here overstates them twelvefold — re-run with the “annual rows are billed yearly” option set. If the export is already normalised to MRR, ignore this.");
+  }
+
+  // collapse duplicate customer+month by summing (multiple subscriptions per customer)
+  var byKey={},dupes=0;
+  recs.forEach(function(r){
+    var k=r.c+" "+r.m;
+    if(byKey[k]){byKey[k].mrr+=r.mrr;dupes++;
+      if(r.annual)byKey[k].annual=true;
+      if(r.act&&(!byKey[k].act||r.act>byKey[k].act))byKey[k].act=r.act;
+      if(r.ren&&(!byKey[k].ren||r.ren>byKey[k].ren))byKey[k].ren=r.ren;
+    } else byKey[k]={c:r.c,m:r.m,mrr:r.mrr,annual:r.annual,monthlyTerm:r.monthlyTerm,act:r.act,ren:r.ren,created:r.created};
+  });
+  if(dupes)warn.push(dupes.toLocaleString("en-US")+" rows shared a customer and month and were summed — normal when a customer holds several subscriptions.");
+
+  var flat=Object.keys(byKey).map(function(k){return byKey[k]});
+  var neg=flat.filter(function(r){return r.mrr<0}).length;
+  if(neg)warn.push(neg+" customer-months carried negative MRR (credits or refunds). They are kept as-is, which lowers those months' revenue.");
+  var months=Object.keys(flat.reduce(function(a,r){a[r.m]=1;return a},{})).filter(function(m){return m!=="__snapshot__"}).sort();
+  return {recs:flat,months:months,warn:warn,snapshotOnly:months.length===0};
+}
+
+/* ---------- analysis ---------- */
+function analyze(L,opts){
+  var recs=L.recs,months=L.months,snap=L.snapshotOnly;
+  var byMonth={},cust={};
+  recs.forEach(function(r){
+    (byMonth[r.m]=byMonth[r.m]||{})[r.c]=r.mrr;
+    var c=cust[r.c]=cust[r.c]||{annual:false,act:null,ren:null,first:null,last:null};
+    if(r.annual)c.annual=true;
+    if(r.act&&(!c.act||r.act>c.act))c.act=r.act;
+    if(r.ren&&(c.renM==null||r.m>=c.renM)){c.ren=r.ren;c.renM=r.m}
+    if(r.m!=="__snapshot__"){ if(!c.first||r.m<c.first)c.first=r.m; if(!c.last||r.m>c.last)c.last=r.m }
+  });
+  var latest=snap?"__snapshot__":months[months.length-1];
+  var latestBook=byMonth[latest]||{};
+  var A={rubric:RUBRIC,months:months,snapshotOnly:snap,latest:latest,
+        rowCount:recs.length,custCount:Object.keys(cust).length,warn:L.warn.slice()};
+
+  /* --- monthly movement --- */
+  var seen={},steps=[];
+  for(var i=0;i<months.length;i++){
+    var m=months[i],prevM=i>0?months[i-1]:null,book=byMonth[m]||{};
+    if(i>0){
+      var pb=byMonth[prevM]||{},startMRR=0,startN=0,churnMRR=0,churnN=0,contr=0,exp=0,neu=0,neuN=0,react=0,reactN=0;
+      for(var c1 in pb){ if(pb[c1]>0){startMRR+=pb[c1];startN++} }
+      for(var c2 in pb){
+        var was=pb[c2],now=book[c2]||0;
+        if(was<=0)continue;
+        if(now<=0){churnMRR+=was;churnN++}
+        else if(now<was)contr+=was-now;
+        else if(now>was)exp+=now-was;
+      }
+      for(var c3 in book){
+        if((pb[c3]||0)>0||book[c3]<=0)continue;
+        if(seen[c3]){react+=book[c3];reactN++} else {neu+=book[c3];neuN++}
+      }
+      var endMRR=0;for(var c4 in book)if(book[c4]>0)endMRR+=book[c4];
+      steps.push({m:m,startMRR:startMRR,endMRR:endMRR,startN:startN,
+        churnMRR:churnMRR,churnN:churnN,contraction:contr,expansion:exp,
+        newMRR:neu,newN:neuN,reactMRR:react,reactN:reactN,
+        logoChurn:startN?churnN/startN:null,
+        revChurn:startMRR>0?(churnMRR+contr)/startMRR:null,
+        nrr:startMRR>0?(startMRR-churnMRR-contr+exp)/startMRR:null});
+    }
+    for(var c5 in book)if(book[c5]>0)seen[c5]=1;
+  }
+  A.steps=steps;
+  A.mrrSeries=months.map(function(m){var s=0,b=byMonth[m]||{};for(var c in b)if(b[c]>0)s+=b[c];return {m:m,mrr:s}});
+
+  /* --- weighted averages over the trailing window --- */
+  var W=Math.min(12,steps.length),win=steps.slice(-W);
+  function wavg(valKey,wKey){var num=0,den=0;win.forEach(function(s){var v=s[valKey],w=s[wKey];if(v!=null&&isFinite(v)&&w>0){num+=v*w;den+=w}});return den?num/den:null}
+  A.window=W;
+  A.logoChurnM=wavg("logoChurn","startN");
+  A.revChurnM=wavg("revChurn","startMRR");
+  A.nrrM=wavg("nrr","startMRR");
+  A.grrM=A.revChurnM==null?null:1-A.revChurnM;
+  A.grrA=A.revChurnM==null?null:Math.pow(1-A.revChurnM,12);
+  A.nrrA=A.nrrM==null?null:Math.pow(A.nrrM,12);
+  A.logoChurnA=A.logoChurnM==null?null:1-Math.pow(1-A.logoChurnM,12);
+  A.divergence=(A.logoChurnM&&A.logoChurnM>0&&A.revChurnM!=null)?A.revChurnM/A.logoChurnM:null;
+  var tc=0,tn=0,rc=0,rn=0,sm=0,sc=0;
+  win.forEach(function(s){tc+=s.churnMRR;tn+=s.churnN;rc+=s.startMRR-s.churnMRR;rn+=s.startN-s.churnN;sm+=s.startMRR;sc+=s.contraction});
+  A.avgChurnedMRR=tn?tc/tn:null;A.avgRetainedMRR=rn?rc/rn:null;
+  // split gross revenue churn into cancellations vs downgrades, so divergence can be attributed correctly
+  A.cancelChurnM=sm>0?tc/sm:null;
+  A.contractionM=sm>0?sc/sm:null;
+  A.contractionShareOfChurn=(A.revChurnM&&A.revChurnM>0&&A.contractionM!=null)?A.contractionM/A.revChurnM:null;
+  A.sizeSkew=(A.avgChurnedMRR!=null&&A.avgRetainedMRR>0)?A.avgChurnedMRR/A.avgRetainedMRR:null;
+  var qn=0,qd=0;win.forEach(function(s){qn+=s.newMRR+s.expansion+s.reactMRR;qd+=s.churnMRR+s.contraction});
+  A.quickRatio=qd>0?qn/qd:null;
+
+  /* --- concentration (latest month) --- */
+  var vals=[];for(var ck in latestBook)if(latestBook[ck]>0)vals.push({c:ck,v:latestBook[ck]});
+  vals.sort(function(a,b){return b.v-a.v});
+  var total=vals.reduce(function(a,x){return a+x.v},0);
+  A.currentMRR=total;A.activeCustomers=vals.length;
+  A.arpa=vals.length?total/vals.length:null;
+  function topShare(n){if(!total||!vals.length)return null;var s=0;for(var i=0;i<Math.min(n,vals.length);i++)s+=vals[i].v;return s/total}
+  A.top1=topShare(1);A.top3=topShare(3);A.top5=topShare(5);A.top10=topShare(10);
+  A.hhi=total?vals.reduce(function(a,x){var s=x.v/total;return a+s*s},0)*10000:null;
+  var run=0,k=0;for(var i2=0;i2<vals.length;i2++){run+=vals[i2].v;k++;if(run>=total/2)break}
+  A.custTo50=vals.length?k:null;
+  A.topCustomers=vals.slice(0,10).map(function(x,i){return{rank:i+1,share:total?x.v/total:null,mrr:x.v}});
+
+  /* --- annual-plan exposure --- */
+  var hasPlan=recs.some(function(r){return r.annual||r.monthlyTerm});
+  if(hasPlan&&total){
+    var annMRR=0,annN=0;
+    vals.forEach(function(x){if(cust[x.c]&&cust[x.c].annual){annMRR+=x.v;annN++}});
+    A.annualShare=annMRR/total;A.annualCount=annN;A.annualMRR=annMRR;
+    if(steps.length>=3){
+      var ac=0,an=0,mc=0,mn=0;
+      win.forEach(function(s,ix){
+        var pm=months[months.length-W-1+ix],cm=s.m,pb=byMonth[pm]||{},cb=byMonth[cm]||{};
+        for(var c in pb){ if(pb[c]<=0)continue;var lost=(cb[c]||0)<=0;
+          if(cust[c]&&cust[c].annual){an++;if(lost)ac++} else {mn++;if(lost)mc++} }
+      });
+      A.annualObservedChurn=an?ac/an:null;A.monthlyObservedChurn=mn?mc/mn:null;
+    }
+  }
+  var refDate=null;
+  recs.forEach(function(r){if(r.act&&(!refDate||r.act>refDate))refDate=r.act});
+  var maxRen=null;recs.forEach(function(r){if(r.ren&&(!maxRen||r.ren>maxRen))maxRen=r.ren});
+  var anchor=refDate;
+  if(!anchor&&months.length)anchor=new Date(Date.UTC(+latest.slice(0,4),+latest.slice(5,7),0));
+  A.anchorDate=anchor;
+  var hasRen=vals.some(function(x){return cust[x.c]&&cust[x.c].ren});
+  if(hasRen&&total&&anchor){
+    var b3=0,b6=0,b12=0,rolled=0,stale=0;
+    vals.forEach(function(x){
+      var cc=cust[x.c],rd=cc&&cc.ren;if(!rd)return;
+      if(rd<anchor){
+        // an annual contract whose recorded period-end has already passed renews again a year later
+        if(cc.annual){var y=new Date(rd.getTime());
+          while(y<anchor)y=new Date(Date.UTC(y.getUTCFullYear()+1,y.getUTCMonth(),y.getUTCDate()));
+          rd=y;rolled++;}
+        else {stale++;return}
+      }
+      var days=(rd-anchor)/86400000;
+      if(days<=92)b3+=x.v; if(days<=183)b6+=x.v; if(days<=366)b12+=x.v;
+    });
+    A.renew3=b3/total;A.renew6=b6/total;A.renew12=b12/total;
+    A.renewRolled=rolled;A.renewStale=stale;
+  }
+
+  /* --- zombie MRR --- */
+  var hasAct=vals.some(function(x){return cust[x.c]&&cust[x.c].act});
+  if(hasAct&&total&&refDate){
+    var thr=opts.zombieDays||60,zm=0,zn=0,unknown=0;
+    vals.forEach(function(x){
+      var ad=cust[x.c]&&cust[x.c].act;
+      if(!ad){unknown+=x.v;return}
+      if((refDate-ad)/86400000>thr){zm+=x.v;zn++}
+    });
+    A.zombieShare=zm/total;A.zombieCount=zn;A.zombieMRR=zm;A.zombieDays=thr;
+    A.zombieUnknownShare=unknown/total;A.zombieRef=refDate;
+  }
+
+  /* --- cohorts --- */
+  if(months.length>=3){
+    var cohorts={};
+    Object.keys(cust).forEach(function(c){var f=cust[c].first;if(f)(cohorts[f]=cohorts[f]||[]).push(c)});
+    var cks=Object.keys(cohorts).sort();
+    A.cohorts=cks.map(function(f){
+      var members=cohorts[f],base=0,b0=byMonth[f]||{};
+      members.forEach(function(c){base+=Math.max(0,b0[c]||0)});
+      var cells=[];
+      for(var k2=0;k2<=monthDiff(f,latest);k2++){
+        var mm=monthAdd(f,k2),bb=byMonth[mm];if(!bb)break;
+        var s=0,n=0;members.forEach(function(c){var v=bb[c]||0;if(v>0){s+=v;n++}});
+        cells.push({k:k2,ret:base>0?s/base:null,logo:members.length?n/members.length:null});
+      }
+      return {cohort:f,size:members.length,baseMRR:base,cells:cells};
+    }).filter(function(x){return x.baseMRR>0});
+
+    // mature cohorts: first seen >= 12 months before latest
+    var matureCut=monthAdd(latest,-12);
+    var mature=Object.keys(cust).filter(function(c){return cust[c].first&&cust[c].first<=matureCut});
+    if(mature.length>=5){
+      A.matureSeries=months.slice(-Math.min(12,months.length)).map(function(m){
+        var b=byMonth[m]||{},s=0;mature.forEach(function(c){var v=b[c]||0;if(v>0)s+=v});return {m:m,mrr:s}});
+      A.matureCount=mature.length;
+      A.matureShare=total?(A.matureSeries[A.matureSeries.length-1].mrr/total):null;
+    }
+  }
+
+  /* --- trends --- */
+  function slopePct(series){
+    if(!series||series.length<3)return null;
+    var n=series.length,sx=0,sy=0,sxx=0,sxy=0;
+    for(var i=0;i<n;i++){var y=series[i].mrr;sx+=i;sy+=y;sxx+=i*i;sxy+=i*y}
+    var den=n*sxx-sx*sx;if(!den)return null;
+    var b=(n*sxy-sx*sy)/den,mean=sy/n;
+    return mean>0?b/mean:null;
+  }
+  A.trend6=slopePct(A.mrrSeries.slice(-6));
+  A.trend12=slopePct(A.mrrSeries.slice(-12));
+  A.matureTrend=A.matureSeries?slopePct(A.matureSeries.slice(-6)):null;
+  A.maskedDecay=(A.matureTrend!=null&&A.trend6!=null&&A.matureTrend<-0.005&&A.trend6>-0.005);
+
+  return A;
+}
+
+/* ---------- scoring ---------- */
+function band(v,cuts,scores,invert){
+  if(v==null||!isFinite(v))return null;
+  for(var i=0;i<cuts.length;i++){ if(invert? v<=cuts[i] : v>=cuts[i]) return scores[i] }
+  return scores[scores.length-1];
+}
+function score(A){
+  var comp=[];
+  comp.push({key:"grr",label:"Gross revenue retention (annualised)",weight:30,
+    value:A.grrA,display:fmtPct(A.grrA),
+    score:band(A.grrA,[0.92,0.88,0.82,0.75],[100,85,65,40,15])});
+  comp.push({key:"conc",label:"Top-5 customer share of MRR",weight:20,
+    value:A.top5,display:fmtPct(A.top5),
+    score:band(A.top5,[0.15,0.25,0.40,0.55],[100,85,65,40,15],true)});
+  comp.push({key:"div",label:"Churn divergence (revenue ÷ logo churn)",weight:15,
+    value:A.divergence,display:A.divergence==null?"—":fmtNum(A.divergence)+"×",
+    score:band(A.divergence,[0.9,1.2,1.6,2.2],[100,85,65,40,15],true)});
+  comp.push({key:"nrr",label:"Net revenue retention (annualised)",weight:15,
+    value:A.nrrA,display:fmtPct(A.nrrA),
+    score:band(A.nrrA,[1.10,1.00,0.95,0.88],[100,85,65,40,15])});
+  var trS=band(A.trend6,[0.02,0.005,-0.005,-0.02],[100,85,65,40,15]);
+  if(trS!=null&&A.maskedDecay)trS=Math.max(0,trS-15);
+  comp.push({key:"traj",label:"MRR trend, last 6 months (per month)"+(A.maskedDecay?" — with masked-decay deduction":""),weight:12,
+    value:A.trend6,display:A.trend6==null?"—":(A.trend6>=0?"+":"−")+fmtPct(Math.abs(A.trend6)),score:trS});
+  comp.push({key:"zomb",label:"Zombie MRR share",weight:8,
+    value:A.zombieShare,display:A.zombieShare==null?"—":fmtPct(A.zombieShare),
+    score:band(A.zombieShare,[0.02,0.05,0.10,0.20],[100,85,65,40,15],true)});
+
+  var avail=comp.filter(function(c){return c.score!=null});
+  var wsum=avail.reduce(function(a,c){return a+c.weight},0);
+  var composite=wsum?avail.reduce(function(a,c){return a+c.score*c.weight},0)/wsum:null;
+  // A letter grade off a fifth of the rubric would look authoritative and mean nothing.
+  var insufficient=(wsum<45);
+  var grade=(composite==null||insufficient)?null:(composite>=85?"A":composite>=75?"B":composite>=65?"C":composite>=55?"D":"F");
+  return {components:comp,available:avail.length,weightCovered:wsum,composite:composite,grade:grade,insufficient:insufficient};
+}
+var GRADE_COLOR={A:"#0f7a4f",B:"#3d8b40",C:"#9a6700",D:"#c1571a",F:"#b3261e"};
+var GRADE_TEXT={
+ A:"Revenue quality is strong across the lenses that were computable. Diligence should shift to what the ledger cannot show — contracts, pricing power, and key-person dependency.",
+ B:"Broadly sound with identifiable soft spots. The findings below are the ones to raise on the management call.",
+ C:"Mixed. At least one structural weakness is material enough to affect price or deal structure.",
+ D:"Weak. Several lenses point the same way; treat the seller's headline retention figures as unverified until reconciled.",
+ F:"Poor on this ledger. Either the revenue is deteriorating or the export is not representative — establish which before spending more on diligence."};
+
+/* ---------- findings ---------- */
+function findings(A,S){
+  var F=[],add=function(sev,t,d){F.push({sev:sev,title:t,detail:d})};
+  if(A.divergence!=null&&A.divergence>=1.2){
+    var sev=A.divergence>=1.6?"high":"med";
+    var bigSkew=A.sizeSkew!=null&&A.sizeSkew>=1.15;
+    var downgradeLed=A.contractionShareOfChurn!=null&&A.contractionShareOfChurn>=0.4;
+    var title=bigSkew?"Churn is concentrated in the larger accounts (divergence "+fmtNum(A.divergence)+"×)"
+      :downgradeLed?"Revenue churn outruns logo churn on downgrades, not cancellations (divergence "+fmtNum(A.divergence)+"×)"
+      :"Revenue churn outruns logo churn (divergence "+fmtNum(A.divergence)+"×)";
+    add(sev,title,
+      "Gross revenue churn runs at "+fmtPct(A.revChurnM)+" a month against logo churn of "+fmtPct(A.logoChurnM)+" — of that, "+fmtPct(A.cancelChurnM)+" is cancellations and "+fmtPct(A.contractionM)+" is downgrades of customers who stayed. The average churned account carried "+fmtMoney(A.avgChurnedMRR)+" of MRR versus "+fmtMoney(A.avgRetainedMRR)+" for retained ones, a size skew of "+fmtNum(A.sizeSkew)+"×. "+
+      (bigSkew?"The accounts leaving are materially larger than average, so a logo-based churn figure understates revenue erosion. Ask which specific accounts left and why, and whether the churn rate in the CIM is logo-based or revenue-based."
+        :downgradeLed?"The gap is driven by downgrades rather than departures — customers are staying but shrinking. Ask what changed in packaging, seat counts or usage-based pricing, and whether discounts were extended to hold accounts in place before sale."
+        :"Ask whether the churn rate in the CIM is logo-based or revenue-based, and request the customer-level detail behind both."));
+  } else if(A.divergence!=null&&A.divergence<0.9){
+    add("low","Churn is concentrated in the smaller accounts (divergence "+fmtNum(A.divergence)+"×)",
+      "Revenue churn ("+fmtPct(A.revChurnM)+") is running below logo churn ("+fmtPct(A.logoChurnM)+"), so the customers leaving are smaller than average. The logo-churn figure overstates revenue risk — a point worth making in negotiation.");
+  }
+  if(A.grrA!=null&&A.grrA<0.88){
+    add(A.grrA<0.80?"high":"med","Annualised gross revenue retention of "+fmtPct(A.grrA)+" sits below the private-B2B-SaaS median",
+      "SaaS Capital's 2023 retention benchmarks put median gross revenue retention for private B2B SaaS near 91%. This ledger implies "+fmtPct(A.grrA)+" annualised, from "+fmtPct(A.revChurnM)+" monthly gross revenue churn over the trailing "+A.window+" months. Establish whether the gap is segment mix, a one-off cohort, or structural.");
+  }
+  if(A.top5!=null&&A.top5>0.25){
+    add(A.top5>0.40?"high":"med","The five largest customers hold "+fmtPct(A.top5)+" of MRR",
+      "The largest single customer is "+fmtPct(A.top1)+" of MRR, and "+A.custTo50+" customer"+(A.custTo50===1?"":"s")+" account for half of it. HHI is "+Math.round(A.hhi)+". Ask for the contract term, notice period and renewal date of each of the top five, and model the post-close MRR if the largest one leaves.");
+  }
+  if(A.annualShare!=null&&A.annualShare>0.25){
+    add(A.annualShare>0.5?"med":"low",fmtPct(A.annualShare)+" of MRR sits on annual or multi-year terms",
+      "That MRR cannot churn in a monthly window, so a monthly churn rate structurally cannot see it — the exposure surfaces at renewal, typically after close. "+
+      (A.renew12!=null?("On the renewal dates in this file, "+fmtPct(A.renew3)+" of MRR falls due within three months, "+fmtPct(A.renew6)+" within six and "+fmtPct(A.renew12)+" within twelve."):"No renewal-date column was present, so the timing of the cliff cannot be placed — request one.")+
+      (A.annualObservedChurn!=null?(" Observed monthly loss rate among annual customers in this ledger is "+fmtPct(A.annualObservedChurn)+" against "+fmtPct(A.monthlyObservedChurn)+" for monthly ones."):""));
+  }
+  if(A.zombieShare!=null&&A.zombieShare>0.05){
+    add(A.zombieShare>0.15?"high":"med",fmtPct(A.zombieShare)+" of MRR comes from accounts with no activity in "+A.zombieDays+"+ days",
+      A.zombieCount+" paying customers show no recorded activity in the "+A.zombieDays+" days before "+A.zombieRef.toISOString().slice(0,10)+", carrying "+fmtMoney(A.zombieMRR)+" of MRR. This looks stable on the P&L and disappears one invoice at a time. It is a leading indicator, not a loss: check whether the activity signal is genuinely complete before pricing it in."+
+      (A.zombieUnknownShare>0.02?(" A further "+fmtPct(A.zombieUnknownShare)+" of MRR has no activity date at all and is excluded from this figure."):""));
+  }
+  if(A.maskedDecay){
+    add("high","Flat headline MRR is masking decay in the older cohorts",
+      "Total MRR is trending "+(A.trend6>=0?"+":"−")+fmtPct(Math.abs(A.trend6))+" a month while MRR from the "+A.matureCount+" customers acquired twelve or more months ago trends "+fmtNum(A.matureTrend*100,2)+"% a month. New sales are replacing lost revenue rather than adding to it. Ask what happens to the trajectory if acquisition slows post-close — this is the pattern that most often turns a flat-looking target into a declining one.");
+  }
+  if(A.quickRatio!=null&&A.quickRatio<1.5){
+    add(A.quickRatio<1?"high":"med","Quick ratio of "+fmtNum(A.quickRatio)+" — growth is barely outrunning churn",
+      "For every currency unit of MRR lost to churn and contraction the business adds "+fmtNum(A.quickRatio)+" in new, expansion and reactivation MRR"+(A.quickRatio<1?", so it is net-shrinking on this ledger":"")+". Establish the acquisition cost behind that replacement revenue before treating current MRR as durable.");
+  }
+  if(A.nrrA!=null&&A.nrrA<0.95){
+    add(A.nrrA<0.88?"med":"low","Annualised net revenue retention of "+fmtPct(A.nrrA)+" — expansion is not offsetting losses",
+      "Expansion revenue is too small to cover churn and contraction, so the installed base shrinks without new sales. Ask whether there is any upsell or seat-expansion motion, or whether all growth has to be bought.");
+  }
+  if(A.trend6!=null&&A.trend6<-0.005){
+    add(A.trend6<-0.02?"high":"med","MRR is declining at "+fmtPct(Math.abs(A.trend6))+" a month over the last six months",
+      "Extrapolated naively that is "+fmtPct(1-Math.pow(1+A.trend6,12))+" of MRR over twelve months. Confirm against the seller's own reporting and identify when the inflection began.");
+  }
+  if(A.snapshotOnly)add("med","This is a single snapshot, not a time series",
+    "No month column was found, so churn, retention, cohort and trajectory lenses could not run — the analysis is limited to concentration and plan-mix. Request a per-customer, per-month MRR export to complete the picture.");
+  else if(A.months.length<6)add("low","Only "+A.months.length+" months of history",
+    "Churn and trajectory readings on a short window are noisy and one unusual month moves them materially. Twelve to twenty-four months is the useful range for buyer-side work.");
+  if(A.zombieShare==null&&!A.snapshotOnly)add("low","Zombie MRR could not be measured",
+    "No last-active, last-login or last-seen column was present, so the gap between paying and using is invisible in this file. It is one of the highest-signal leading indicators of post-close churn — ask the seller to add a per-customer last-activity timestamp to the export.");
+  if(A.annualShare==null)add("low","Plan term could not be identified",
+    "No plan or billing-interval column was found, so annual-term MRR — the revenue a monthly churn rate cannot see — could not be separated. Ask for a plan or interval column.");
+  var rank={high:0,med:1,low:2};
+  F.sort(function(a,b){return rank[a.sev]-rank[b.sev]});
+  if(!F.length)add("low","No rubric threshold was breached","Every computable lens landed inside its acceptable band. The remaining diligence risk is in what a subscription ledger cannot show: contract terms, pricing power, concentration of technical or commercial knowledge in one person, and platform dependency.");
+  return F;
+}
+
+/* ---------- SVG charts ---------- */
+function svgBridge(steps){
+  if(!steps||steps.length<2)return "";
+  var w=Math.max(560,steps.length*74+80),h=250,pad={t:16,r:14,b:44,l:60},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;
+  var keys=[{k:"newMRR",c:"#0f7a4f"},{k:"expansion",c:"#63b98a"},{k:"reactMRR",c:"#8fb8e8"},{k:"contraction",c:"#e8a33d"},{k:"churnMRR",c:"#b3261e"}];
+  var maxV=0;steps.forEach(function(s){maxV=Math.max(maxV,s.newMRR+s.expansion+s.reactMRR,s.contraction+s.churnMRR)});
+  if(!maxV)return "";
+  var bw=Math.min(46,iw/steps.length-8),mid=pad.t+ih/2,half=ih/2-6;
+  var y=function(v){return half*(v/maxV)};
+  var g='<g>';
+  g+='<line x1="'+pad.l+'" y1="'+mid+'" x2="'+(w-pad.r)+'" y2="'+mid+'" stroke="var(--drop)"/>';
+  g+='<text x="'+(pad.l-8)+'" y="'+(mid-half+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+fmtMoney(maxV)+'</text>';
+  g+='<text x="'+(pad.l-8)+'" y="'+(mid+half+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">−'+fmtMoney(maxV)+'</text>';
+  g+='<text x="'+(pad.l-8)+'" y="'+(mid+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">0</text>';
+  steps.forEach(function(s,i){
+    var cx=pad.l+(i+0.5)*(iw/steps.length),x=cx-bw/2,up=0,dn=0;
+    keys.forEach(function(kk){
+      var v=s[kk.k]||0;if(v<=0)return;
+      var hh=y(v);
+      if(kk.k==="contraction"||kk.k==="churnMRR"){g+='<rect x="'+x+'" y="'+(mid+dn)+'" width="'+bw+'" height="'+hh+'" fill="'+kk.c+'"><title>'+esc(s.m)+' '+kk.k+' '+fmtMoney(v)+'</title></rect>';dn+=hh}
+      else {up+=hh;g+='<rect x="'+x+'" y="'+(mid-up)+'" width="'+bw+'" height="'+hh+'" fill="'+kk.c+'"><title>'+esc(s.m)+' '+kk.k+' '+fmtMoney(v)+'</title></rect>'}
+    });
+    if(i%Math.ceil(steps.length/12)===0||steps.length<=12)
+      g+='<text x="'+cx+'" y="'+(h-26)+'" text-anchor="middle" font-size="9.5" fill="var(--muted)" transform="rotate(-40 '+cx+' '+(h-26)+')">'+esc(s.m)+'</text>';
+  });
+  g+='</g>';
+  var leg='';var lx=pad.l;
+  [["New","#0f7a4f"],["Expansion","#63b98a"],["Reactivation","#8fb8e8"],["Contraction","#e8a33d"],["Churned","#b3261e"]].forEach(function(p){
+    leg+='<rect x="'+lx+'" y="'+(h-13)+'" width="9" height="9" fill="'+p[1]+'"/><text x="'+(lx+13)+'" y="'+(h-5)+'" font-size="10" fill="var(--muted)">'+p[0]+'</text>';
+    lx+=p[0].length*6.1+30;
+  });
+  return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Monthly MRR movement decomposed into new, expansion, reactivation, contraction and churned revenue">'+g+leg+'</svg>';
+}
+function svgLines(series,extra){
+  var all=series.concat(extra&&extra.data?extra.data:[]);
+  if(series.length<2)return "";
+  var w=Math.max(560,series.length*52+80),h=220,pad={t:16,r:14,b:42,l:66},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;
+  var maxV=0;all.forEach(function(p){maxV=Math.max(maxV,p.mrr)});if(!maxV)return "";
+  var x=function(i,n){return pad.l+(n<2?iw/2:i*(iw/(n-1)))},y=function(v){return pad.t+ih-(v/maxV)*ih};
+  function path(d){return d.map(function(p,i){return (i?"L":"M")+x(i,d.length).toFixed(1)+" "+y(p.mrr).toFixed(1)}).join(" ")}
+  var g='<g>';
+  [0,0.25,0.5,0.75,1].forEach(function(f){var yy=pad.t+ih-f*ih;
+    g+='<line x1="'+pad.l+'" y1="'+yy+'" x2="'+(w-pad.r)+'" y2="'+yy+'" stroke="var(--grid)"/>'+
+       '<text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+fmtMoney(maxV*f)+'</text>'});
+  g+='<path d="'+path(series)+'" fill="none" stroke="#0a58ca" stroke-width="2.2"/>';
+  series.forEach(function(p,i){g+='<circle cx="'+x(i,series.length).toFixed(1)+'" cy="'+y(p.mrr).toFixed(1)+'" r="2.6" fill="#0a58ca"><title>'+esc(p.m)+' '+fmtMoney(p.mrr)+'</title></circle>'});
+  if(extra&&extra.data&&extra.data.length>1){
+    var off=series.length-extra.data.length;
+    g+='<path d="'+extra.data.map(function(p,i){return (i?"L":"M")+x(i+off,series.length).toFixed(1)+" "+y(p.mrr).toFixed(1)}).join(" ")+'" fill="none" stroke="#b3261e" stroke-width="2.2" stroke-dasharray="5 4"/>';
+  }
+  series.forEach(function(p,i){
+    if(i%Math.ceil(series.length/12)===0||series.length<=12){var xx=x(i,series.length);
+      g+='<text x="'+xx+'" y="'+(h-24)+'" text-anchor="middle" font-size="9.5" fill="var(--muted)" transform="rotate(-40 '+xx+' '+(h-24)+')">'+esc(p.m)+'</text>'}});
+  g+='<rect x="'+pad.l+'" y="'+(h-12)+'" width="9" height="9" fill="#0a58ca"/><text x="'+(pad.l+13)+'" y="'+(h-4)+'" font-size="10" fill="var(--muted)">Total MRR</text>';
+  if(extra&&extra.label)g+='<rect x="'+(pad.l+108)+'" y="'+(h-12)+'" width="9" height="9" fill="#b3261e"/><text x="'+(pad.l+121)+'" y="'+(h-4)+'" font-size="10" fill="var(--muted)">'+esc(extra.label)+'</text>';
+  g+='</g>';
+  return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Total MRR over time'+(extra&&extra.label?" against "+extra.label:"")+'">'+g+'</svg>';
+}
+function svgPareto(top,total){
+  if(!top||!top.length)return "";
+  var w=Math.max(560,top.length*56+80),h=210,pad={t:16,r:14,b:36,l:52},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;
+  var maxS=top[0].share||0;if(!maxS)return "";
+  var bw=Math.min(44,iw/top.length-10),g='<g>',cum=0;
+  top.forEach(function(t,i){
+    var cx=pad.l+(i+0.5)*(iw/top.length),hh=(t.share/maxS)*ih;
+    g+='<rect x="'+(cx-bw/2)+'" y="'+(pad.t+ih-hh)+'" width="'+bw+'" height="'+hh+'" fill="#0a58ca" opacity="'+(0.95-i*0.055)+'"><title>Customer #'+t.rank+' — '+fmtPct(t.share)+' ('+fmtMoney(t.mrr)+')</title></rect>';
+    g+='<text x="'+cx+'" y="'+(pad.t+ih-hh-5)+'" text-anchor="middle" font-size="9.5" fill="var(--ink)">'+fmtPct(t.share,0)+'</text>';
+    g+='<text x="'+cx+'" y="'+(h-18)+'" text-anchor="middle" font-size="10" fill="var(--muted)">#'+t.rank+'</text>';
+    cum+=t.share;
+  });
+  g+='<text x="'+pad.l+'" y="'+(h-4)+'" font-size="10" fill="var(--muted)">Top '+top.length+' customers = '+fmtPct(cum)+' of MRR</text></g>';
+  return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Share of MRR held by the largest customers">'+g+'</svg>';
+}
+function svgCohort(cohorts){
+  if(!cohorts||cohorts.length<2)return "";
+  var rows=cohorts.slice(-12),maxK=0;
+  rows.forEach(function(r){maxK=Math.max(maxK,r.cells.length)});
+  maxK=Math.min(maxK,13);
+  var cw=44,ch=26,pad={t:26,l:88,r:12,b:10};
+  var w=Math.max(560,pad.l+maxK*cw+pad.r),h=pad.t+rows.length*ch+pad.b;
+  var g='<g>';
+  for(var k=0;k<maxK;k++)g+='<text x="'+(pad.l+k*cw+cw/2)+'" y="'+(pad.t-9)+'" text-anchor="middle" font-size="10" fill="var(--muted)">M'+k+'</text>';
+  rows.forEach(function(r,i){
+    g+='<text x="'+(pad.l-8)+'" y="'+(pad.t+i*ch+17)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+esc(r.cohort)+' ('+r.size+')</text>';
+    for(var k2=0;k2<Math.min(r.cells.length,maxK);k2++){
+      var v=r.cells[k2].ret;if(v==null)continue;
+      var t=Math.max(0,Math.min(1.2,v))/1.2;
+      var col=v>=1?"rgba(15,122,79,"+(0.25+Math.min(1,(v-1)*2)*0.55).toFixed(2)+")":"rgba(179,38,30,"+(0.10+(1-t)*0.62).toFixed(2)+")";
+      g+='<rect x="'+(pad.l+k2*cw)+'" y="'+(pad.t+i*ch)+'" width="'+(cw-2)+'" height="'+(ch-2)+'" fill="'+col+'"><title>Cohort '+esc(r.cohort)+', month '+k2+': '+fmtPct(v)+' of starting MRR retained</title></rect>';
+      g+='<text x="'+(pad.l+k2*cw+(cw-2)/2)+'" y="'+(pad.t+i*ch+17)+'" text-anchor="middle" font-size="9.5" fill="var(--ink)">'+Math.round(v*100)+'</text>';
+    }
+  });
+  g+='</g>';
+  return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Cohort retention triangle: retained MRR as a percentage of each cohort\'s starting MRR">'+g+'</svg>';
+}
+
+/* ---------- rendering ---------- */
+var LENS_META={
+ div:{t:"1. Churn Divergence",u:"churn-divergence-detector"},
+ conc:{t:"2. Concentration Vulnerability",u:"concentration-vulnerability-index"},
+ ann:{t:"3. Annual-Plan Decay Exposure",u:"annual-plan-churn-risk"},
+ zomb:{t:"4. Zombie MRR",u:"zombie-mrr-detector"},
+ rq:{t:"5. Revenue Quality",u:"revenue-quality-scorecard"},
+ traj:{t:"6. MRR Trajectory",u:"mrr-trajectory-forensics"}};
+function bandClass(s){return s==null?"b-na":s>=90?"b-good":s>=80?"b-ok":s>=60?"b-warn":"b-bad"}
+function bandName(s){return s==null?"not available":s>=90?"strong":s>=80?"acceptable":s>=60?"watch":"red flag"}
+function lensCard(key,value,scoreVal,body,ask){
+  var m=LENS_META[key];
+  return '<div class="lens"><h3><a href="https://churnlens.site/'+m.u+'" style="text-decoration:none">'+m.t+'</a></h3>'+
+    '<div class="v">'+value+'</div><span class="band '+bandClass(scoreVal)+'">'+bandName(scoreVal)+'</span>'+
+    '<p>'+body+'</p>'+(ask?'<div class="ask"><b>Ask the seller:</b> '+ask+'</div>':'')+'</div>';
+}
+function render(A,S,F){
+  var g=S.grade||"—",col=GRADE_COLOR[g]||"#5a6070";
+  var h="";
+  h+='<h2 style="margin-top:2em">Revenue-quality report</h2>';
+  var headline,blurb;
+  if(S.grade){headline='Composite '+Math.round(S.composite)+' / 100 — grade '+g;blurb=GRADE_TEXT[g]||""}
+  else if(S.insufficient){headline='No grade — '+S.weightCovered+'% of the rubric was computable';
+    blurb='Only '+S.available+' of the six components could be calculated from this file, covering '+S.weightCovered+
+      '% of the rubric weight. A letter grade off that much of the rubric would look authoritative and mean very little, so none is shown. The individual figures below are still valid for what they measure — see the findings for which columns would unlock the rest.'}
+  else {headline='No grade — no positive MRR found';
+    blurb='No customer in the latest period carries positive MRR, so there is nothing to score. Check the MRR column mapping.'}
+  h+='<div class="grade"><div class="gbox" style="background:'+col+'">'+g+'</div><div class="gmeta">'+
+     '<h2>'+headline+'</h2><p>'+blurb+'</p></div></div>';
+  h+='<p class="note" style="margin-top:10px">'+A.custCount.toLocaleString("en-US")+' customers · '+A.rowCount.toLocaleString("en-US")+' customer-months · '+
+     (A.snapshotOnly?'single snapshot (no month column)':(A.months.length+' months, '+A.months[0]+' → '+A.months[A.months.length-1]))+
+     ' · current MRR '+fmtMoney(A.currentMRR)+' across '+A.activeCustomers.toLocaleString("en-US")+' active customers · ARPA '+fmtMoney(A.arpa)+
+     ' · rate metrics averaged over the trailing '+A.window+' month'+(A.window===1?"":"s")+', MRR-weighted · rubric <code>'+A.rubric+'</code> · '+
+     S.available+' of 6 components computable ('+S.weightCovered+'% of rubric weight)</p>';
+  if(A.warn.length)h+='<div class="warnbox"><b>Parsing notes.</b> '+A.warn.map(esc).join(" ")+'</div>';
+
+  /* lens cards */
+  var byKey={};S.components.forEach(function(c){byKey[c.key]=c});
+  h+='<h3>The six lenses</h3><div class="lenses">';
+  h+=lensCard("div",A.divergence==null?"—":fmtNum(A.divergence)+"×",byKey.div.score,
+    A.divergence==null?"Needs at least two months of history and a non-zero logo-churn rate.":
+      "Gross revenue churn "+fmtPct(A.revChurnM)+"/mo ("+fmtPct(A.cancelChurnM)+" cancellations + "+fmtPct(A.contractionM)+" downgrades) against logo churn "+fmtPct(A.logoChurnM)+"/mo. Average churned account "+fmtMoney(A.avgChurnedMRR)+" of MRR versus "+fmtMoney(A.avgRetainedMRR)+" retained — size skew "+fmtNum(A.sizeSkew)+"×. Annualised: GRR "+fmtPct(A.grrA)+", logo retention "+fmtPct(1-A.logoChurnA)+".",
+    A.divergence==null?"":(A.divergence>=1.2?"Is the churn rate in the CIM logo-based or revenue-based, and which named accounts drove the revenue losses?":"Confirm the churn figure in the CIM is computed the same way — a favourable divergence is worth stating explicitly."));
+  h+=lensCard("conc",A.top5==null?"—":fmtPct(A.top5),byKey.conc.score,
+    A.top5==null?"No customers with positive MRR in the latest period.":
+      "Top-5 share "+fmtPct(A.top5)+" · largest single customer "+fmtPct(A.top1)+" · top 10 "+fmtPct(A.top10)+" · HHI "+Math.round(A.hhi)+" · "+A.custTo50+" customer"+(A.custTo50===1?"":"s")+" reach half of MRR.",
+    A.top5==null?"":"For each of the top five: contract term, notice period, renewal date, and how long they have been a customer.");
+  h+=lensCard("ann",A.annualShare==null?"—":fmtPct(A.annualShare),
+    A.annualShare==null?null:(A.annualShare<=0.25?95:A.annualShare<=0.5?75:55),
+    A.annualShare==null?"Needs a plan or billing-interval column to separate annual from monthly terms.":
+      fmtPct(A.annualShare)+" of MRR ("+fmtMoney(A.annualMRR)+" across "+A.annualCount+" customers) sits on annual or multi-year terms and cannot appear in a monthly churn rate. "+
+      (A.renew12!=null?("Renewals due: "+fmtPct(A.renew3)+" within 3 months, "+fmtPct(A.renew6)+" within 6, "+fmtPct(A.renew12)+" within 12, measured from "+A.anchorDate.toISOString().slice(0,10)+"."+
+        (A.renewRolled?(" "+A.renewRolled+" annual contract"+(A.renewRolled===1?"":"s")+" had a past period-end and were advanced to the next anniversary."):"")+
+        (A.renewStale?(" "+A.renewStale+" non-annual row"+(A.renewStale===1?"":"s")+" had a past date and were excluded as unknown."):"")):"No renewal-date column, so cliff timing is unknown.")+
+      (A.annualObservedChurn!=null?(" Observed loss rate: annual "+fmtPct(A.annualObservedChurn)+"/mo vs monthly "+fmtPct(A.monthlyObservedChurn)+"/mo."):""),
+    A.annualShare==null?"":"A renewal schedule by customer for the next four quarters, and the historical renewal rate on annual contracts.");
+  h+=lensCard("zomb",A.zombieShare==null?"—":fmtPct(A.zombieShare),byKey.zomb.score,
+    A.zombieShare==null?"Needs a last-active, last-login or last-seen column. Not estimated in its absence — the weight is redistributed across the other components.":
+      A.zombieCount+" paying customers show no activity in "+A.zombieDays+"+ days before "+A.zombieRef.toISOString().slice(0,10)+", carrying "+fmtMoney(A.zombieMRR)+" ("+fmtPct(A.zombieShare)+" of MRR)."+
+      (A.zombieUnknownShare>0.02?(" "+fmtPct(A.zombieUnknownShare)+" of MRR has no activity date and is excluded."):""),
+    A.zombieShare==null?"":"Is the activity signal complete across all plans and integrations, and what is the historical churn rate of accounts inactive for 60+ days?");
+  h+=lensCard("traj",A.trend6==null?"—":((A.trend6>=0?"+":"−")+fmtPct(Math.abs(A.trend6))+"/mo"),byKey.traj.score,
+    A.trend6==null?"Needs at least three months of history.":
+      "Six-month trend "+(A.trend6>=0?"+":"−")+fmtPct(Math.abs(A.trend6))+"/mo, twelve-month "+
+      (A.trend12==null?"—":((A.trend12>=0?"+":"−")+fmtPct(Math.abs(A.trend12))+"/mo"))+
+      ". Quick ratio "+(A.quickRatio==null?"—":fmtNum(A.quickRatio))+". NRR "+fmtPct(A.nrrA)+" annualised."+
+      (A.matureTrend!=null?(" Cohorts 12+ months old ("+A.matureCount+" customers, "+fmtPct(A.matureShare)+" of MRR) trend "+fmtNum(A.matureTrend*100,2)+"%/mo."):""),
+    A.maskedDecay?"Headline MRR is flat or rising while the older cohorts decline — what is the trajectory if new-customer acquisition pauses after close?":(A.trend6==null?"":"What drove the inflection points visible in the monthly series?"));
+  h+=lensCard("rq",g,S.composite,
+    "Weighted composite of "+S.available+" computable components covering "+S.weightCovered+"% of the rubric weight. Every band is published in the <a href=\"#rubric\">rubric table</a>.",
+    "Which of these figures does the seller's own reporting disagree with, and why?");
+  h+='</div>';
+
+  /* component table */
+  h+='<h3>Component scores</h3><table><thead><tr><th>Component</th><th class="num">Value</th><th class="num">Score</th><th class="num">Weight</th><th>Status</th></tr></thead><tbody>';
+  S.components.forEach(function(c){
+    h+='<tr><td>'+esc(c.label)+'</td><td class="num">'+c.display+'</td><td class="num">'+(c.score==null?"—":c.score)+'</td><td class="num">'+c.weight+'%</td><td>'+(c.score==null?'<span class="band b-na">not computable</span>':'<span class="band '+bandClass(c.score)+'">'+bandName(c.score)+'</span>')+'</td></tr>';
+  });
+  h+='</tbody></table>';
+
+  /* findings */
+  h+='<h3>Findings, ranked by severity</h3>';
+  F.forEach(function(f){h+='<div class="finding '+f.sev+'"><b><span class="sev '+f.sev+'">'+f.sev+'</span>'+esc(f.title)+'</b><span>'+f.detail+'</span></div>'});
+
+  /* charts */
+  var c1=svgLines(A.mrrSeries,A.matureSeries?{data:A.matureSeries,label:"MRR from cohorts 12+ months old"}:null);
+  if(c1){h+='<h3>MRR trajectory</h3><div class="chart">'+c1+'</div>';
+    if(A.matureSeries)h+='<p class="note">The dashed line is MRR from customers acquired twelve or more months before the latest period. When it falls while the solid line holds flat, new sales are replacing decay rather than adding growth.</p>'}
+  var c2=svgBridge(A.steps);
+  if(c2)h+='<h3>Monthly MRR movement</h3><div class="chart">'+c2+'</div><p class="note">Above the axis: new, expansion and reactivation MRR. Below: contraction and churned MRR. The quick ratio is the sum of everything above divided by everything below.</p>';
+  var c3=svgCohort(A.cohorts);
+  if(c3)h+='<h3>Cohort retention (retained MRR as % of each cohort\'s starting MRR)</h3><div class="chart">'+c3+'</div><p class="note">Each row is the month a customer first appears; M0 is that cohort\'s first month. Values above 100 mean expansion has outrun churn within the cohort. Up to the twelve most recent cohorts are shown.</p>';
+  var c4=svgPareto(A.topCustomers,A.currentMRR);
+  if(c4)h+='<h3>Revenue concentration in the latest period</h3><div class="chart">'+c4+'</div>';
+
+  /* monthly table */
+  if(A.steps.length){
+    h+='<h3>Month-by-month detail</h3><div class="chart"><table><thead><tr><th>Month</th><th class="num">MRR</th><th class="num">Customers</th><th class="num">New</th><th class="num">Expansion</th><th class="num">Contraction</th><th class="num">Churned</th><th class="num">Logo churn</th><th class="num">Rev churn</th><th class="num">NRR</th></tr></thead><tbody>';
+    A.steps.forEach(function(s){
+      h+='<tr><td>'+esc(s.m)+'</td><td class="num">'+fmtMoney(s.endMRR)+'</td><td class="num">'+s.startN+'</td><td class="num">'+fmtMoney(s.newMRR)+'</td><td class="num">'+fmtMoney(s.expansion)+'</td><td class="num">'+fmtMoney(s.contraction)+'</td><td class="num">'+fmtMoney(s.churnMRR)+'</td><td class="num">'+fmtPct(s.logoChurn)+'</td><td class="num">'+fmtPct(s.revChurn)+'</td><td class="num">'+fmtPct(s.nrr)+'</td></tr>';
+    });
+    h+='</tbody></table></div>';
+  }
+  h+='<p class="note">Generated locally by the <a href="https://churnlens.site/free/saas-churn-analyzer">ChurnLens SaaS Churn &amp; Revenue-Quality Analyzer</a>, rubric <code>'+A.rubric+'</code>. Screening and question-generation instrument, not a quality-of-earnings opinion: it reads exactly the ledger supplied and cannot see revenue the export omitted.</p>';
+  return h;
+}
+
+/* ---------- markdown summary ---------- */
+function toMarkdown(A,S,F){
+  var L=[];
+  L.push("# SaaS revenue-quality screen — grade "+(S.grade||"—")+" ("+(S.composite==null?"—":Math.round(S.composite))+"/100)");
+  L.push("");
+  L.push("- Ledger: "+A.custCount+" customers, "+A.rowCount+" customer-months, "+(A.snapshotOnly?"single snapshot":A.months[0]+" → "+A.months[A.months.length-1]));
+  L.push("- Current MRR: "+fmtMoney(A.currentMRR)+" across "+A.activeCustomers+" active customers (ARPA "+fmtMoney(A.arpa)+")");
+  L.push("- Rate metrics: MRR-weighted mean over the trailing "+A.window+" month(s)");
+  L.push("");
+  L.push("| Metric | Value |");L.push("|---|---|");
+  L.push("| Gross revenue retention (annualised) | "+fmtPct(A.grrA)+" |");
+  L.push("| Net revenue retention (annualised) | "+fmtPct(A.nrrA)+" |");
+  L.push("| Logo churn (monthly) | "+fmtPct(A.logoChurnM)+" |");
+  L.push("| Revenue churn (monthly) | "+fmtPct(A.revChurnM)+" |");
+  L.push("| Churn divergence | "+(A.divergence==null?"—":fmtNum(A.divergence)+"x")+" |");
+  L.push("| Top-5 customer share of MRR | "+fmtPct(A.top5)+" |");
+  L.push("| Largest single customer | "+fmtPct(A.top1)+" |");
+  L.push("| HHI | "+(A.hhi==null?"—":Math.round(A.hhi))+" |");
+  L.push("| Annual-term share of MRR | "+fmtPct(A.annualShare)+" |");
+  L.push("| Zombie MRR share | "+fmtPct(A.zombieShare)+" |");
+  L.push("| MRR trend (6-month, per month) | "+(A.trend6==null?"—":(A.trend6>=0?"+":"-")+fmtPct(Math.abs(A.trend6)))+" |");
+  L.push("| Quick ratio | "+(A.quickRatio==null?"—":fmtNum(A.quickRatio))+" |");
+  L.push("");
+  L.push("## Findings");
+  F.forEach(function(f){L.push("");L.push("**["+f.sev.toUpperCase()+"] "+f.title+"**");L.push("");L.push(f.detail.replace(/<[^>]+>/g,""))});
+  L.push("");
+  L.push("---");
+  L.push("Computed locally with the ChurnLens 5-Risk Buyer-Side Method, rubric "+A.rubric+" — https://churnlens.site/free/saas-churn-analyzer");
+  return L.join("\n");
+}
+
+/* ---------- synthetic sample ---------- */
+/* Synthetic sample ledger. Deterministic (fixed-seed LCG) so the demo is reproducible.
+   Constructed to exhibit the patterns the six lenses exist to catch — churn weighted
+   toward the larger accounts, real top-5 concentration, a clustered annual renewal
+   cliff, inactive-but-paying accounts, and older cohorts decaying under a headline
+   MRR line that is still rising. It is illustrative fiction, not a benchmark and not
+   any real company's data. */
+function sampleCSV(){
+  var seed=20260725>>>0;
+  var rnd=function(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
+  var MONTHS=24,now=new Date(),END=now.getUTCFullYear()+"-"+pad(now.getUTCMonth()+1);
+  var START=monthAdd(END,-(MONTHS-1)),months=[];
+  for(var i=0;i<MONTHS;i++)months.push(monthAdd(START,i));
+  var rows=[["customer_id","month","mrr","plan","last_active","renewal_date"]];
+  var id=1000,custs=[];
+  // n0 = present at the start of the window, arr = new per month, haz = monthly churn hazard
+  var CLASSES=[
+    {n0:4, arr:0.00, lo:4200,hi:6800, haz:0.000, ann:0.75, zomb:0.00, d0:0.0000, d1:0.005},
+    {n0:7, arr:0.20, lo:1300,hi:2900, haz:0.024, ann:0.55, zomb:0.14, d0:-0.0008,d1:0.005},
+    {n0:20,arr:0.70, lo:340, hi:980,  haz:0.020, ann:0.30, zomb:0.32, d0:-0.0008,d1:0.006},
+    {n0:34,arr:1.10, lo:90,  hi:270,  haz:0.002, ann:0.18, zomb:0.22, d0:-0.0008,d1:0.006},
+    {n0:42,arr:1.50, lo:19,  hi:75,   haz:0.004, ann:0.04, zomb:0.15, d0:-0.0008,d1:0.004}
+  ];
+  var mk=function(cls,startIdx){
+    var base=Math.round(cls.lo+rnd()*(cls.hi-cls.lo));
+    var life=MONTHS*3;
+    if(cls.haz>0){life=1;while(rnd()>cls.haz&&life<MONTHS*3)life++}
+    return {id:"acct_"+(id++),base:base,start:startIdx,life:life,
+      annual:rnd()<cls.ann,zombie:rnd()<cls.zomb,drift:cls.d0+rnd()*(cls.d1-cls.d0)};
+  };
+  CLASSES.forEach(function(cls){
+    for(var j=0;j<cls.n0;j++)custs.push(mk(cls,0));
+    for(var k=1;k<MONTHS;k++){
+      var a=Math.floor(cls.arr);if(rnd()<cls.arr-a)a++;
+      for(var j2=0;j2<a;j2++)custs.push(mk(cls,k));
+    }
+  });
+  custs.forEach(function(c){
+    var end=Math.min(MONTHS,c.start+c.life),zFreeze=c.start+Math.max(1,Math.floor(c.life*0.3));
+    for(var k=c.start;k<end;k++){
+      var m=months[k],age=k-c.start;
+      var v=Math.max(5,Math.round(c.base*(1+c.drift*age)));
+      var actIdx=c.zombie?Math.min(zFreeze,MONTHS-1):k;
+      var last=months[actIdx]+"-"+pad(1+Math.floor(rnd()*27));
+      var ren=c.annual?(monthAdd(months[c.start],12*Math.ceil((age+1)/12))+"-01"):"";
+      rows.push([c.id,m,v,c.annual?"annual":"monthly",last,ren]);
+    }
+  });
+  return rows.map(function(r){return r.join(",")}).join("\n");
+}
+function templateCSV(){
+  return ["customer_id,month,mrr,plan,last_active,renewal_date",
+  "acct_1001,2025-01,240,monthly,2025-01-28,",
+  "acct_1001,2025-02,240,monthly,2025-02-26,",
+  "acct_1001,2025-03,290,monthly,2025-03-30,",
+  "acct_1002,2025-01,1800,annual,2025-01-14,2025-09-01",
+  "acct_1002,2025-02,1800,annual,2025-02-11,2025-09-01",
+  "acct_1002,2025-03,1800,annual,2025-02-11,2025-09-01",
+  "acct_1003,2025-01,95,monthly,2024-11-02,",
+  "acct_1003,2025-02,95,monthly,2024-11-02,",
+  ""].join("\n");
+}
+function download(name,text,mime){
+  var b=new Blob([text],{type:mime||"text/plain;charset=utf-8"}),u=URL.createObjectURL(b);
+  var a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1200);
+}
+
+/* ---------- wiring ---------- */
+var state={rows:null,map:{},wide:null,last:null};
+function msg(html,cls){$("#messages").innerHTML=html?'<div class="'+(cls||"err")+'">'+html+'</div>':""}
+function track(ev,props){try{if(window.posthog&&window.posthog.capture)window.posthog.capture(ev,props||{})}catch(e){}}
+
+function loadText(text,source){
+  try{
+    msg("");
+    var rows=parseCSV(text);
+    if(rows.length<2)throw new Error("The file needs a header row and at least one data row.");
+    state.rows=rows;
+    var headers=rows[0];
+    state.map=detectRoles(headers);
+    var mc=monthColumns(headers);
+    state.wide=(mc.length>=3&&state.map.month==null)?mc:null;
+    if(state.wide)delete state.map.month;
+    state.guessed=fillGaps(state.rows,state.map,state.wide);
+    renderMapper(headers,source);
+    track("csv_analyzer_loaded",{source:source});
+  }catch(e){msg("<b>Could not read that file.</b> "+esc(e.message))}
+}
+function renderMapper(headers,source){
+  var grid=$("#map-grid");grid.innerHTML="";
+  ROLES.forEach(function(r){
+    if(state.wide&&r.key==="month")return;
+    var wrap=el("div"),lab=el("label",null,esc(r.label)+(r.req?' <span style="color:#b3261e">*</span>':""));
+    var sel=el("select",{"data-role":r.key,"aria-label":r.label});
+    sel.appendChild(el("option",{value:""},"— none —"));
+    headers.forEach(function(h,i){
+      var o=el("option",{value:String(i)},esc(String(h||("column "+(i+1)))));
+      if(state.map[r.key]===i)o.setAttribute("selected","selected");
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change",function(){var v=this.value;if(v==="")delete state.map[r.key];else state.map[r.key]=+v});
+    wrap.appendChild(lab);wrap.appendChild(sel);grid.appendChild(wrap);
+  });
+  var zw=el("div"),zl=el("label",null,"Zombie threshold (days without activity)");
+  var zs=el("select",{id:"zdays","aria-label":"Zombie threshold in days"});
+  [30,60,90,120,180].forEach(function(d){var o=el("option",{value:String(d)},d+" days");if(d===60)o.setAttribute("selected","selected");zs.appendChild(o)});
+  zw.appendChild(zl);zw.appendChild(zs);grid.appendChild(zw);
+  var aw=el("div"),al=el("label",null,"Revenue figure on annual-term rows");
+  var as=el("select",{id:"annualmode","aria-label":"How to treat the revenue figure on annual-term rows"});
+  as.appendChild(el("option",{value:"mrr"},"already monthly (MRR)"));
+  as.appendChild(el("option",{value:"div12"},"yearly billed amount — divide by 12"));
+  aw.appendChild(al);aw.appendChild(as);grid.appendChild(aw);
+  $("#map-summary").innerHTML=(state.rows.length-1).toLocaleString("en-US")+" data rows, "+headers.length+" columns detected"+
+    (state.wide?(" · <b>wide layout</b>: "+state.wide.length+" month columns ("+esc(state.wide[0].ym)+" → "+esc(state.wide[state.wide.length-1].ym)+")"):" · long layout")+
+    (source==="sample"?' · <b>synthetic sample ledger</b> — illustrative only, not real company data and not a benchmark':"")+
+    ". Correct any wrong guess before running."+
+    (state.guessed&&state.guessed.length?' <b>No recognised header for '+state.guessed.map(esc).join(" and ")+
+      ' — inferred from the data. Check these two before running.</b>':"");
+  $("#map-panel").classList.remove("hidden");
+  $("#map-panel").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function run(){
+  try{
+    msg("");
+    if(state.map.customer==null||state.map.mrr==null)
+      throw new Error("A customer identifier and an MRR column are both required.");
+    var zd=$("#zdays")?+$("#zdays").value:60;
+    var am=$("#annualmode")?$("#annualmode").value:"mrr";
+    var L=buildLedger(state.rows,state.map,state.wide,{annualDiv12:am==="div12"});
+    var A=analyze(L,{zombieDays:zd});
+    var S=score(A),F=findings(A,S);
+    state.last={A:A,S:S,F:F};
+    $("#results").innerHTML=render(A,S,F);
+    $("#results").classList.remove("hidden");
+    $("#exportrow").classList.remove("hidden");
+    $("#results").scrollIntoView({behavior:"smooth",block:"start"});
+    track("csv_analyzer_run",{});
+  }catch(e){msg("<b>Analysis failed.</b> "+esc(e.message)+" If the mapping looks right, the month or MRR column may not be parsing — check the format examples above.")}
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  var drop=$("#drop"),file=$("#file");
+  drop.addEventListener("click",function(){file.click()});
+  drop.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();file.click()}});
+  ["dragenter","dragover"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add("hot")})});
+  ["dragleave","drop"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove("hot")})});
+  drop.addEventListener("drop",function(e){
+    var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];
+    if(f)readFile(f);
+  });
+  file.addEventListener("change",function(){if(this.files&&this.files[0])readFile(this.files[0])});
+  function readFile(f){
+    if(f.size>120*1024*1024){msg("That file is larger than 120 MB. Because everything runs in your browser, very large files may exhaust memory — try trimming to the columns listed above.");return}
+    var r=new FileReader();
+    r.onerror=function(){msg("The browser could not read that file.")};
+    r.onload=function(){loadText(String(r.result||""),"file")};
+    r.readAsText(f);
+  }
+  $("#btn-sample").addEventListener("click",function(){loadText(sampleCSV(),"sample")});
+  $("#btn-paste").addEventListener("click",function(){$("#paste-wrap").classList.toggle("hidden")});
+  $("#btn-paste-run").addEventListener("click",function(){
+    var t=$("#paste").value.trim();
+    if(!t){msg("Paste some CSV text first.");return}
+    loadText(t,"paste");
+  });
+  $("#btn-template").addEventListener("click",function(){download("churnlens-subscription-template.csv",templateCSV(),"text/csv;charset=utf-8");track("csv_analyzer_template",{})});
+  $("#btn-run").addEventListener("click",run);
+  $("#btn-reset").addEventListener("click",function(){
+    state={rows:null,map:{},wide:null,last:null};
+    $("#map-panel").classList.add("hidden");$("#results").classList.add("hidden");
+    $("#exportrow").classList.add("hidden");$("#results").innerHTML="";msg("");
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+  $("#btn-print").addEventListener("click",function(){window.print()});
+  $("#btn-md").addEventListener("click",function(){
+    if(!state.last)return;
+    var md=toMarkdown(state.last.A,state.last.S,state.last.F),btn=this;
+    var done=function(){btn.textContent="Copied to clipboard";setTimeout(function(){btn.textContent="Copy Markdown summary"},2200)};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(md).then(done,function(){download("churnlens-summary.md",md,"text/markdown")});
+    else download("churnlens-summary.md",md,"text/markdown");
+    track("csv_analyzer_markdown",{});
+  });
+  $("#btn-export").addEventListener("click",function(){
+    if(!state.last)return;
+    var css=document.querySelector("style").textContent;
+    var stamp=(state.last.A.months.length?state.last.A.months[state.last.A.months.length-1]:"snapshot");
+    var doc="<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">"+
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>ChurnLens revenue-quality report — grade "+
+      (state.last.S.grade||"")+" ("+stamp+")</title><meta name=\"robots\" content=\"noindex\"><style>"+css+"</style></head><body>"+
+      "<h1>Revenue-quality report — grade "+(state.last.S.grade||"—")+"</h1>"+
+      "<p class=\"lede\">Produced locally in the analyst's browser with the <a href=\"https://churnlens.site/free/saas-churn-analyzer\">ChurnLens SaaS Churn &amp; Revenue-Quality Analyzer</a>, implementing the <a href=\"https://churnlens.site/5-risk-buyer-side-method\">5-Risk Buyer-Side Method</a>. Rubric "+
+      state.last.A.rubric+". No data was transmitted to produce it.</p>"+
+      $("#results").innerHTML+
+      "<footer><p>ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence · <a href=\"https://churnlens.site\">churnlens.site</a></p></footer></body></html>";
+    download("churnlens-revenue-quality-report-"+stamp+".html",doc,"text/html;charset=utf-8");
+    track("csv_analyzer_export",{});
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration | ChurnLens</title>
-<meta name="description" content="Eight free SaaS calculators: net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. Interactive, no signup, nothing stored. The maths is open source.">
+<title>Free SaaS Metrics Calculators — CSV Churn Analyzer, NRR, LTV, Concentration | ChurnLens</title>
+<meta name="description" content="Nine free SaaS tools, led by a subscription-CSV churn and revenue-quality analyzer that runs the full 5-risk buyer-side report in your browser. Plus net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. No signup, nothing stored.">
 <link rel="canonical" href="https://churnlens.site/free">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free SaaS Metrics Calculators">
-<meta property="og:description" content="Eight free SaaS calculators: net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. Interactive, no signup, nothing stored. The maths is open source.">
+<meta property="og:title" content="Free SaaS Metrics Calculators — including a subscription-CSV churn analyzer">
+<meta property="og:description" content="Nine free SaaS tools, led by a subscription-CSV churn and revenue-quality analyzer that runs the full 5-risk buyer-side report in your browser. Plus net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. No signup, nothing stored.">
 <meta property="og:image" content="https://churnlens.site/og.png">
 <meta property="og:url" content="https://churnlens.site/free">
 <meta name="twitter:card" content="summary">
 <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
 <link rel="stylesheet" href="/ux.css">
 <script src="/ux.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free SaaS Metrics Calculators","url":"https://churnlens.site/free","description":"Eight free, interactive SaaS metric calculators covering retention, churn, lifetime value, revenue concentration and dormant revenue.","isPartOf":{"@id":"https://churnlens.site/#website"},"mainEntity":{"@type":"ItemList","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://churnlens.site/free/due-diligence-simulator","name":"SaaS Due Diligence Simulator"},{"@type":"ListItem","position":2,"url":"https://churnlens.site/free/nrr-calculator","name":"Net Revenue Retention (NRR) Calculator"},{"@type":"ListItem","position":3,"url":"https://churnlens.site/free/churn-calculator","name":"SaaS Churn Cost Calculator"},{"@type":"ListItem","position":4,"url":"https://churnlens.site/free/revenue-concentration-analyzer","name":"Revenue Concentration Risk Analyzer"},{"@type":"ListItem","position":5,"url":"https://churnlens.site/free/zombie-mrr-detector","name":"Zombie MRR Detector"},{"@type":"ListItem","position":6,"url":"https://churnlens.site/free/saas-health-score","name":"SaaS Revenue Health Score"},{"@type":"ListItem","position":7,"url":"https://churnlens.site/free/ltv-calculator","name":"Customer LTV Calculator"},{"@type":"ListItem","position":8,"url":"https://churnlens.site/free/mrr-health-check","name":"MRR Health Check"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free SaaS Metrics Calculators","url":"https://churnlens.site/free","description":"Eight free, interactive SaaS metric calculators covering retention, churn, lifetime value, revenue concentration and dormant revenue.","isPartOf":{"@id":"https://churnlens.site/#website"},"mainEntity":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://churnlens.site/free/saas-churn-analyzer","name":"SaaS Churn & Revenue-Quality Analyzer (subscription CSV)"},{"@type":"ListItem","position":2,"url":"https://churnlens.site/free/due-diligence-simulator","name":"SaaS Due Diligence Simulator"},{"@type":"ListItem","position":3,"url":"https://churnlens.site/free/nrr-calculator","name":"Net Revenue Retention (NRR) Calculator"},{"@type":"ListItem","position":4,"url":"https://churnlens.site/free/churn-calculator","name":"SaaS Churn Cost Calculator"},{"@type":"ListItem","position":5,"url":"https://churnlens.site/free/revenue-concentration-analyzer","name":"Revenue Concentration Risk Analyzer"},{"@type":"ListItem","position":6,"url":"https://churnlens.site/free/zombie-mrr-detector","name":"Zombie MRR Detector"},{"@type":"ListItem","position":7,"url":"https://churnlens.site/free/saas-health-score","name":"SaaS Revenue Health Score"},{"@type":"ListItem","position":8,"url":"https://churnlens.site/free/ltv-calculator","name":"Customer LTV Calculator"},{"@type":"ListItem","position":9,"url":"https://churnlens.site/free/mrr-health-check","name":"MRR Health Check"}]}}</script>
 <style>
 .ab-nav { display: flex; align-items: center; justify-content: space-between;
   padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; }
@@ -64,7 +64,25 @@
 revenue concentration and dormant revenue. No signup, no account, and nothing you type
 leaves your browser.</p>
 
+<div class="cl-note" style="border-left-color:#22c55e">
+<p><strong>New — and the one to start with if you have the data.</strong> The
+<a href="/free/saas-churn-analyzer">SaaS Churn &amp; Revenue-Quality Analyzer</a> takes the target's
+per-customer, per-month subscription CSV and runs all six lenses of the
+<a href="/5-risk-buyer-side-method">5-Risk Buyer-Side Method</a> on the real ledger: churn divergence
+(revenue churn against logo churn, split into cancellations and downgrades), revenue concentration and
+HHI, the annual-plan renewal cliff, zombie MRR, a cohort retention triangle, and an A–F revenue-quality
+grade with ranked findings and the question to put to the seller for each one.</p>
+<p>It parses the file in your browser and uploads nothing — which is the point when a target's
+customer-level revenue ledger is covered by an NDA. Every other tool on this page works from summary
+figures; this one works from the ledger itself.</p>
+</div>
 <ul class="cl-grid">
+<li class="cl-card"><a class="cl-card-link" href="/free/saas-churn-analyzer">
+<h3>SaaS Churn &amp; Revenue-Quality Analyzer</h3>
+<p>Drop the target's subscription CSV and get the full 5-risk report: churn divergence, concentration,
+renewal cliff, zombie MRR, cohort decay and an A–F grade. Nothing is uploaded.</p>
+<span class="cl-go">Open the analyzer →</span></a></li>
+
 <li class="cl-card"><a class="cl-card-link" href="/free/due-diligence-simulator"><h3>SaaS Due Diligence Simulator</h3><p>The full buyer-side screen: five risk dimensions, a composite Revenue Quality Score (A–F) and a radar chart. Start here if you are evaluating a business to buy.</p><span class="cl-go">Open the calculator →</span></a></li>
 <li class="cl-card"><a class="cl-card-link" href="/free/nrr-calculator"><h3>Net Revenue Retention (NRR) Calculator</h3><p>NRR and GRR from your MRR movements, with a waterfall breakdown. The gap between the two is where hidden churn shows up.</p><span class="cl-go">Open the calculator →</span></a></li>
 <li class="cl-card"><a class="cl-card-link" href="/free/churn-calculator"><h3>SaaS Churn Cost Calculator</h3><p>What churn actually costs in currency rather than percent: annual revenue lost, a 12-month MRR projection and the decay curve.</p><span class="cl-go">Open the calculator →</span></a></li>
