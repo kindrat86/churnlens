@@ -1062,3 +1062,31 @@ body:has(.site-nav) .pseo-footer-section a:hover { color: #fff; }
 body:has(.site-nav) .network-card { background: rgba(148, 163, 184, 0.06); }
 body:has(.site-nav) .network-card:hover { background: rgba(148, 163, 184, 0.12); }
 body:has(.site-nav) .network-name { color: #f1f5f9; }
+
+
+/* ── CENTERED TEXT BOX REPAIR (MK UI/UX 2026-07-25) ────────────────
+   Generalises (e) above. That rule named three specific centred
+   components; this one covers any container that declares centring, so
+   a new centred block does not have to be added to a list by hand.
+   Same root cause: `p { max-width: 65ch }` caps the paragraph BOX, and
+   inside a centre-aligned parent that narrow box hugs the LEFT edge.
+
+   Rolled out to the whole portfolio 2026-07-25. Selector notes:
+   · Descendant match, not `> p` — containers wrap copy in unstyled divs.
+   · The `:not(...text-left...)` guard is REQUIRED: centred containers
+     hold `text-left` cards, and without it those left-aligned
+     paragraphs get centred too and go ragged against their headings
+     (measured: 17 on gitdealflow, 4 on invisibleexit).
+   · The two `:not()` chains must NOT be separated by whitespace —
+     whitespace is a descendant combinator and changes the meaning.
+   · `!important` — sibling sites' build CSS resets paragraph margins.
+   Marker: CENTERED TEXT BOX REPAIR */
+:is([class*="text-center"], .center, .brunson-trust-bar,
+    [style*="text-align:center"], [style*="text-align: center"])
+  p:not(:is([class*="text-left"], [class*="text-right"], [class*="text-justify"], [style*="text-align:left"], [style*="text-align: left"]) p):not(:is([class*="text-left"], [class*="text-right"], [class*="text-justify"], [style*="text-align:left"], [style*="text-align: left"])),
+p[class*="text-center"],
+p.center,
+p[style*="text-align:center"],
+p[style*="text-align: center"] {
+  margin-inline: auto !important;
+}
