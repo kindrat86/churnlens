@@ -13,11 +13,609 @@
       "url": "https://churnlens.site"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/api/mcp": {
+      "get": {
+        "summary": "MCP server manifest",
+        "description": "Discovery document: server info, capabilities, protocol version and the tool list (names and descriptions only).",
+        "operationId": "getMcpManifest",
+        "tags": [
+          "agent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Server manifest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "serverInfo": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "capabilities": {
+                      "type": "object"
+                    },
+                    "protocolVersion": {
+                      "type": "string"
+                    },
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "enum": [
+                              "calculate_churn_rate",
+                              "get_saas_benchmark",
+                              "analyze_revenue_concentration"
+                            ]
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "_meta": {
+                      "type": "object",
+                      "description": "Install hints, e.g. `npx mcp-remote https://churnlens.site/api/mcp`."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "MCP JSON-RPC (Streamable HTTP)",
+        "description": "Model Context Protocol over JSON-RPC. Supports `initialize`, `tools/list`, `tools/call` and the `notifications/initialized` notification. Batch requests (a JSON array) are accepted. No auth — tools are read-only.",
+        "operationId": "postMcpRpc",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "JSON-RPC 2.0 request, or an array of them for a batch.",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "const": "2.0"
+                  },
+                  "id": {
+                    "description": "Omit for notifications; the server then replies 202 with no body.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "initialize",
+                      "notifications/initialized",
+                      "tools/list",
+                      "tools/call"
+                    ]
+                  },
+                  "params": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "method"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON-RPC result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "id": {},
+                    "result": {
+                      "type": "object"
+                    },
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Notification accepted (request had no `id`); empty body."
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/a2a": {
+      "get": {
+        "summary": "A2A agent card",
+        "description": "Agent-to-agent discovery card: protocol version, transport, capabilities and the skill list.",
+        "operationId": "getAgentCard",
+        "tags": [
+          "agent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Agent card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "protocolVersion": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "preferredTransport": {
+                      "type": "string"
+                    },
+                    "capabilities": {
+                      "type": "object"
+                    },
+                    "skills": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "enum": [
+                              "analyze_churn_risk",
+                              "calculate_nrr"
+                            ]
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "examples": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "A2A JSON-RPC",
+        "description": "`rpc.discover` and `agent/card` both return the agent card. `faq.search` takes `params.query` and returns case-insensitive substring matches over the FAQ set. Any other method returns the agent summary and skill list.",
+        "operationId": "postAgentRpc",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "JSON-RPC 2.0 request.",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "const": "2.0"
+                  },
+                  "id": {
+                    "description": "Omit for notifications; the server then replies 202 with no body.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "rpc.discover",
+                      "agent/card",
+                      "faq.search"
+                    ]
+                  },
+                  "params": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "method"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON-RPC result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "id": {},
+                    "result": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/nlweb": {
+      "get": {
+        "summary": "NLWeb knowledge-base query",
+        "description": "Returns the knowledge base as a schema.org ItemList. With `query`, returns only entries whose question or answer contains it (case-insensitive substring); without it, returns everything.",
+        "operationId": "getNlwebQuery",
+        "tags": [
+          "agent"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Case-insensitive substring filter. Omit to list all entries."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "schema.org ItemList of matching questions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@context": {
+                      "type": "string",
+                      "const": "https://schema.org"
+                    },
+                    "@type": {
+                      "type": "string",
+                      "const": "ItemList"
+                    },
+                    "name": {
+                      "type": "string",
+                      "const": "Churn Lens Knowledge Base"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "numberOfItems": {
+                      "type": "integer"
+                    },
+                    "itemListElement": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "@type": {
+                            "type": "string",
+                            "const": "Question"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "acceptedAnswer": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "NLWeb knowledge-base query (POST)",
+        "description": "Same as GET, with the term in the JSON body instead of the query string.",
+        "operationId": "postNlwebQuery",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "schema.org ItemList of matching questions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@context": {
+                      "type": "string",
+                      "const": "https://schema.org"
+                    },
+                    "@type": {
+                      "type": "string",
+                      "const": "ItemList"
+                    },
+                    "name": {
+                      "type": "string",
+                      "const": "Churn Lens Knowledge Base"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "numberOfItems": {
+                      "type": "integer"
+                    },
+                    "itemListElement": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "@type": {
+                            "type": "string",
+                            "const": "Question"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "acceptedAnswer": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/subscribe": {
+      "post": {
+        "summary": "Subscribe to the churn audit checklist",
+        "description": "Email capture for the funnel. Rate limited per IP. Includes a honeypot: a non-empty `website` or `company` field returns a success-shaped response without sending anything.",
+        "operationId": "subscribe",
+        "tags": [
+          "funnel"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "email"
+                ],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "maxLength": 254
+                  },
+                  "source": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "Attribution label; defaults to \"unknown\"."
+                  },
+                  "website": {
+                    "type": "string",
+                    "description": "Honeypot — must stay empty."
+                  },
+                  "company": {
+                    "type": "string",
+                    "description": "Honeypot — must stay empty."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Subscribed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "email_sent": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Valid email required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "const": false
+                    },
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "const": false
+                    },
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "tags": [
     {
-      "name": "content",
-      "description": "Site content"
+      "name": "agent",
+      "description": "Agent-facing discovery and query endpoints (MCP, A2A, NLWeb)"
+    },
+    {
+      "name": "funnel",
+      "description": "Lead capture"
     }
   ]
 }
