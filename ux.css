@@ -709,7 +709,9 @@ body.nav-open { overflow: hidden; }
   font-size: 0.875rem;
   font-weight: 600;
   background: #f59e0b;
-  color: #78350f;
+  /* #78350f on #f59e0b is 4.28:1, just under the 4.5 AA floor. amber-950
+     keeps the warning colour and measures ~7.1:1. */
+  color: #451a03;
   z-index: 100001;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
