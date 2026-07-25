@@ -196,13 +196,22 @@
       btn.disabled = true;
 
       try {
-        await fetch('/api/subscribe', {
+        var resp = await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email.value.trim(), source: 'squeeze-page' })
         });
+        var data = await resp.json();
+        if (!resp.ok || !data.ok) {
+          throw new Error(data.error || 'Server error');
+        }
       } catch(err) {
-        console.error('Subscribe error (non-fatal):', err);
+        console.error('Subscribe error:', err);
+        errorEl.textContent = 'Something went wrong. Please try again or email hello@churnlens.site.';
+        errorEl.classList.add('show');
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        return;
       }
 
       btn.classList.remove('loading');

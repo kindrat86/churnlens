@@ -1,0 +1,47 @@
+[
+  {
+    "label": "NRR \u2014 SMB SaaS (<$10M ARR)",
+    "value": "96%",
+    "source": "OpenView Partners SaaS Benchmarks 2025"
+  },
+  {
+    "label": "NRR \u2014 Mid-Market ($10M-$100M ARR)",
+    "value": "108%",
+    "source": "OpenView Partners SaaS Benchmarks 2025"
+  },
+  {
+    "label": "NRR \u2014 Enterprise (>$100M ARR)",
+    "value": "115%",
+    "source": "OpenView Partners SaaS Benchmarks 2025"
+  },
+  {
+    "label": "NRR \u2014 Product-Led Growth companies",
+    "value": "102%",
+    "source": "OpenView Product Benchmarks 2025"
+  },
+  {
+    "label": "NRR \u2014 Sales-led companies",
+    "value": "110%",
+    "source": "OpenView Product Benchmarks 2025"
+  },
+  {
+    "label": "NRR \u2014 Top quartile (public SaaS)",
+    "value": ">120%",
+    "source": "Meritech Capital SaaS Metrics 2025"
+  },
+  {
+    "label": "NRR \u2014 Bottom quartile (public SaaS)",
+    "value": "<95%",
+    "source": "Meritech Capital SaaS Metrics 2025"
+  },
+  {
+    "label": "Expansion revenue as % of ARR growth (median)",
+    "value": "38%",
+    "source": "Gainsight Pulse Survey 2025"
+  },
+  {
+    "label": "Logo churn offset by expansion (top quartile)",
+    "value": "100%+",
+    "source": "Bessemer Cloud 100 Benchmarks 2025"
+  }
+]

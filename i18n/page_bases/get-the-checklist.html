@@ -200,7 +200,7 @@
         border-top: 2px dashed rgba(51,65,85,0.8);
         font-size: 0.9rem; color: #94a3b8;
       }
-      .offer-total .price-strike { text-decoration: line-through; color: #64748b; }
+      .offer-total .price-strike { text-decoration: line-through; color: #94a3b8; }
       .offer-total .price-free { color: #22c55e; font-weight: 700; font-size: 1.1rem; }
 
       /* Form */
@@ -227,7 +227,7 @@
       .sq-btn:hover { background: var(--cl-blue-light); }
       .sq-btn:active { transform: scale(0.98); }
 
-      .sq-trust { font-size: 0.82rem; color: #64748b; margin-top: 1rem; }
+      .sq-trust { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
       .sq-trust a { color: #94a3b8; }
 
       /* Success state */
@@ -277,13 +277,13 @@
         font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
         letter-spacing: 0.04em; margin-bottom: 0.75rem;
       }
-      .sq-oto-col.free .sq-oto-col-label { color: #64748b; }
+      .sq-oto-col.free .sq-oto-col-label { color: #94a3b8; }
       .sq-oto-col.pro .sq-oto-col-label { color: var(--cl-blue-light); }
       .sq-oto-col-price {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;
       }
-      .sq-oto-col-price .price-period { font-size: 0.8rem; font-weight: 400; color: #64748b; }
+      .sq-oto-col-price .price-period { font-size: 0.8rem; font-weight: 400; color: #94a3b8; }
       .sq-oto-col ul {
         list-style: none; padding: 0; margin: 0;
       }
@@ -295,8 +295,8 @@
         content: "✓"; position: absolute; left: 0;
         color: #22c55e; font-weight: 700;
       }
-      .sq-oto-col.free ul li::before { color: #64748b; }
-      .sq-oto-col.free ul li { color: #64748b; }
+      .sq-oto-col.free ul li::before { color: #94a3b8; }
+      .sq-oto-col.free ul li { color: #94a3b8; }
       .sq-oto-cta {
         display: inline-block;
         padding: 1rem 2.5rem; border-radius: 0.75rem; border: none;
@@ -309,10 +309,10 @@
       .sq-oto-cta:hover { background: var(--cl-blue-light); }
       .sq-oto-cta:active { transform: scale(0.98); }
       .sq-oto-disclaimer {
-        font-size: 0.78rem; color: #64748b; margin: 0.5rem 0 1.25rem;
+        font-size: 0.78rem; color: #94a3b8; margin: 0.5rem 0 1.25rem;
       }
       .sq-oto-decline {
-        display: inline-block; font-size: 0.85rem; color: #64748b;
+        display: inline-block; font-size: 0.85rem; color: #94a3b8;
         text-decoration: none; cursor: pointer; padding: 0.5rem;
         transition: color 0.2s;
       }
@@ -328,7 +328,7 @@
       /* Social proof bar */
       .social-proof {
         display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
-        margin: 2.5rem 0; font-size: 0.85rem; color: #64748b;
+        margin: 2.5rem 0; font-size: 0.85rem; color: #94a3b8;
       }
       .social-proof span { display: flex; align-items: center; gap: 0.4rem; }
       .social-proof .stat-num { color: #cbd5e1; font-weight: 700; }
@@ -347,10 +347,10 @@
 
       /* Footer */
       .sq-footer {
-        text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #475569;
+        text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; color: #94a3b8;
         border-top: 1px solid #1e293b;
       }
-      .sq-footer a { color: #64748b; text-decoration: none; }
+      .sq-footer a { color: #94a3b8; text-decoration: none; }
     </style>
     <link rel="stylesheet" href="/assets/cl-enhance.css" />
 <!-- eeat-static-injected -->
@@ -365,7 +365,7 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://churnlens.site/#org",
+      "@id": "https://churnlens.site/#organization",
       "name": "Churn Lens",
       "url": "https://churnlens.site",
       "description": "SaaS Revenue Quality & Churn Risk Due Diligence. Analyze concentration, retention, and churn before acquisition.",
@@ -376,7 +376,7 @@
       "@id": "https://churnlens.site/#website",
       "url": "https://churnlens.site",
       "name": "Churn Lens",
-      "publisher": {"@id": "https://churnlens.site/#org"}
+      "publisher": {"@id": "https://churnlens.site/#organization"}
     },
     {
       "@type": "SiteNavigationElement",
@@ -389,7 +389,8 @@
 <!-- Traffic-Readiness JSON-LD org+website schema -->
 <link rel="stylesheet" href="/ux.css">
     <script src="/ux.js" defer></script>
-  </head>
+  <!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+</head>
   <body id="main-content">
 <p class="author-byline eeat" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"><span class="author" rel="author">By The Data Nerd, Churn Lens Research</span> · <time datetime="2026-07-08">Updated 2026-07-08</time> · Published 2026-01-15</p>
 
@@ -691,7 +692,7 @@
   <div style="background:#fef3c7;border-radius:8px;padding:12px;margin:12px 0;text-align:center"><strong>🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay</strong></div>
   <div style="background:white;border-radius:12px;padding:20px;max-width:500px;margin:0 auto 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
     <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">📥 Free SaaS Due Diligence Checklist</p>
-    <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 47-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</p>
+    <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</p>
     <a href="https://churnlens.site/saas-due-diligence-checklist" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Download Free Checklist →</a>
     <p style="font-size:0.75rem;color:#888;margin-top:8px">No spam. Unsubscribe anytime.</p>
   </div>
@@ -703,9 +704,9 @@
 <section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="max-width:900px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">80%</span><br><span style="font-size:.82rem;color:#94a3b8">Overpay for Churn</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">4.2×</span><br><span style="font-size:.82rem;color:#94a3b8">Real vs Reported</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$340K</span><br><span style="font-size:.82rem;color:#94a3b8">Avg Overpayment</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">9%</span><br><span style="font-size:.82rem;color:#94a3b8">Median B2B SaaS revenue churn</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">88%</span><br><span style="font-size:.82rem;color:#94a3b8">Median gross revenue retention</span></div>
+      
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Upload the CSV and find out before you wire.</p>

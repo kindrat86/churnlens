@@ -19,7 +19,7 @@
     "WebApplication"
   ],
   "content_types": [
-    "QAPage",
+    "FAQPage",
     "FAQPage",
     "Article",
     "DefinedTerm"

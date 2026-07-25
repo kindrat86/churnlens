@@ -1,0 +1,27 @@
+name: JSON-LD Lint
+
+# Blocks on any invalid <script type="application/ld+json"> block (unparsable
+# JSON, missing @context/@type). Added 2026-07-24 as part of a portfolio-wide
+# structured-data sweep (no bugs found here yet, but no guard rail existed).
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-jsonld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON-LD
+        run: python3 scripts/validate_jsonld.py .
+      # Stronger second pass over the same surface: catches the two corruption
+      # signatures seen in production (the `schema.org","` → `***` clobber and a
+      # stray template-literal backtick closing a schema) plus blocks that
+      # JSON.parse accepts but whose @context was corrupted — the Python lint
+      # waves those through. Scans "." because this repo IS the deploy root
+      # (outputDirectory ".", buildCommand null), so committed HTML is shipped
+      # HTML. See ~/.growth-engine/GUARDRAILS.md rule 3.
+      - name: Verify shipped JSON-LD
+        run: node scripts/verify-jsonld.mjs .

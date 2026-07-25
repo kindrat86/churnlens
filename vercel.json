@@ -160,6 +160,10 @@
   ],
   "rewrites": [
     {
+      "source": "/thank-you",
+      "destination": "/thank-you.html"
+    },
+    {
       "source": "/network",
       "destination": "/network.html"
     },
@@ -478,6 +482,22 @@
     {
       "source": "/saas-m-and-a-due-diligence-framework",
       "destination": "/saas-m-and-a-due-diligence-framework.html"
+    },
+    {
+      "source": "/data",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/(.*)/",
+      "destination": "/data/$1/index.html"
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/data/$1/index.html"
     }
   ],
   "headers": [

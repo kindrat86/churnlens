@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 { margin-bottom: 0.5em; }
 p { margin-bottom: 1.25em; max-width: 65ch; }
 
 /* ── 4. LINKS ───────────────────────────────────────────────────── */
-a {
+a:not([class*="bg-"]):not([role="button"]) {
   color: var(--ux-accent);
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.08em;
@@ -83,7 +83,7 @@ a {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-a:hover { color: var(--ux-accent-hover); }
+a:not([class*="bg-"]):not([role="button"]):hover { color: var(--ux-accent-hover); }
 
 /* ── 5. TOUCH-FRIENDLY INTERACTIVE TARGETS ──────────────────────── */
 button, .btn, [role="button"],
@@ -761,7 +761,7 @@ body.nav-open { overflow: hidden; }
   body { font-size: 12pt; line-height: 1.5; }
   #ux-reading-progress, #ux-back-to-top, .ux-sticky-cta, .ux-fab,
   .ux-toast-container, .ux-offline-bar, [data-mobile-nav] { display: none !important; }
-  a { text-decoration: underline; }
+  a:not([class*="bg-"]):not([role="button"]) { text-decoration: underline; }
   a[href^="http"]::after { content: ' (' attr(href) ')'; font-size: 0.8em; }
 }
 
@@ -839,4 +839,38 @@ body.nav-open { overflow: hidden; }
   }
   .ux-stagger > * { opacity: 1; transform: none; animation: none; }
   .ux-stagger > *:nth-child(n) { animation-delay: 0ms; }
+}
+
+/* ── CONVERSION REPAIR 2026-07-22 ──────────────────────────────
+   Tailwind v4 emits utilities inside @layer utilities. Unlayered
+   rules in this file beat ANY layered rule regardless of specificity,
+   which silently overrode button text colours (measured 1.13:1 on
+   signals.gitdealflow.com). Link-buttons paint their own background
+   and must keep their own text colour. Do not reintroduce a bare
+   `a { color: ... }` rule in this file. */
+a[class*="bg-"], a[role="button"], button a { color: revert; }
+
+
+
+/* ── ICON-ONLY BUTTON REPAIR (MK UI/UX 2026-07-24) ─────────────────
+   The touch-target rule applies `padding: .625rem 1.25rem` to every
+   <button>. On an icon-only square button (hamburger, close, etc.) that
+   20px horizontal padding leaves only ~4px of content inside a 44px box,
+   collapsing the glyph to an invisible sliver. Zero the horizontal
+   padding for icon buttons and stop the icon flex-shrinking. Unlayered
+   so it beats Tailwind's layered w-11/p-* utilities. */
+[data-nav-toggle],
+.ux-icon-btn,
+button[aria-label]:has(> svg:only-child),
+a[aria-label]:has(> svg:only-child) {
+  padding-left: 0;
+  padding-right: 0;
+}
+[data-nav-toggle] > svg,
+.ux-icon-btn > svg,
+button[aria-label] > svg:only-child,
+a[aria-label] > svg:only-child {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
 }

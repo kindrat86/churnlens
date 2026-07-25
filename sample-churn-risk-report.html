@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Churn Risk Report — Synthetic Demo Data | ChurnLens</title>
+<meta name="description" content="Sample ChurnLens buyer-side churn risk report. Synthetic data for illustration purposes only.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://churnlens.site/sample-churn-risk-report" />
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; line-height: 1.6; }
+  .report-wrap { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .watermark-banner {
+    background: repeating-linear-gradient(45deg, #fef08a, #fef08a 20px, #fde047 20px, #fde047 40px);
+    color: #422006; text-align: center; padding: 0.75rem; font-weight: 800; font-size: 0.9rem;
+    letter-spacing: 0.05em; border-bottom: 3px solid #ca8a04; position: sticky; top: 0; z-index: 100;
+  }
+  .watermark-banner a { color: #422006; text-decoration: underline; }
+  .report-header { border-bottom: 2px solid #e2e8f0; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+  .report-header h1 { font-size: 1.75rem; margin: 0 0 0.25rem; }
+  .report-header .meta { color: #64748b; font-size: 0.85rem; }
+  .report-section { margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 0.75rem; border: 1px solid #e2e8f0; }
+  .report-section h2 { font-size: 1.15rem; margin: 0 0 1rem; color: #0f172a; display: flex; align-items: center; gap: 0.5rem; }
+  .score-big { font-size: 2.5rem; font-weight: 800; }
+  .score-label { font-size: 0.85rem; color: #64748b; }
+  .grade { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 0.5rem; font-weight: 800; font-size: 1.5rem; }
+  .grade-C { background: #fef3c7; color: #92400e; }
+  .grade-D { background: #fee2e2; color: #991b1b; }
+  .grade-B { background: #dbeafe; color: #1e40af; }
+  .metric-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-label { color: #475569; font-weight: 500; }
+  .metric-value { font-weight: 700; }
+  .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-yellow { background: #fef3c7; color: #92400e; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .flag-item { padding: 0.75rem; margin-bottom: 0.5rem; border-radius: 0.5rem; border: 1px solid #f1f5f9; }
+  .flag-item h3 { font-size: 0.9rem; margin: 0 0 0.25rem; }
+  .flag-item p { font-size: 0.85rem; color: #64748b; margin: 0; }
+  .watermark-footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; border-top: 1px solid #e2e8f0; margin-top: 3rem; }
+  .sample-tag { display: inline-block; background: #fef3c7; color: #92400e; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th { text-align: left; padding: 0.5rem; background: #f8fafc; border-bottom: 2px solid #e2e8f0; font-weight: 600; }
+  td { padding: 0.5rem; border-bottom: 1px solid #f1f5f9; }
+  .return-link { display: inline-block; margin-top: 1rem; color: #2563eb; text-decoration: none; font-weight: 600; }
+  .return-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="watermark-banner">
+  ⚠️ SAMPLE — SYNTHETIC DEMO DATA. This is a mock report for illustration purposes. Real reports analyze actual subscription CSVs. <a href="/pricing">Get your real analysis →</a>
+</div>
+
+<div class="report-wrap">
+
+  <div class="report-header">
+    <h1>ChurnLens Buyer-Side Risk Report <span class="sample-tag">SAMPLE</span></h1>
+    <p class="meta">
+      <strong>Target:</strong> [SampleCo — synthetic demo data] &middot;
+      <strong>Analysis date:</strong> July 23, 2026 &middot;
+      <strong>Report ID:</strong> CL-DEMO-20260723 &middot;
+      <span class="sample-tag">SYNTHETIC DATA</span>
+    </p>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="report-section" style="background: linear-gradient(135deg, #f0f9ff, #eff6ff);">
+    <h2>Executive Summary</h2>
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+      <div style="text-align: center; min-width: 120px;">
+        <div class="grade grade-C">C−</div>
+        <div class="score-label" style="margin-top: 0.25rem;">Revenue Quality</div>
+      </div>
+      <div>
+        <p style="margin: 0 0 0.5rem;"><strong>Assessment:</strong> <span class="badge badge-yellow">Proceed with caution — needs discount</span></p>
+        <p style="color: #475569; font-size: 0.9rem; margin: 0;">Reported churn of 2.1% monthly is misleading. Real logo churn of 4.3% and revenue concentration in the top 3 accounts (47% of MRR) signal fragile revenue worth 8–12% less than the asking multiple implies. <span class="sample-tag">SAMPLE DATA</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK SCORE TABLE -->
+  <div class="report-section">
+    <h2>Five-Risk Scorecard <span class="sample-tag">SYNTHETIC</span></h2>
+    <table>
+      <thead>
+        <tr><th>Risk Dimension</th><th>Score</th><th>Status</th><th>Detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Logo retention</td><td>4.3% monthly churn</td><td><span class="badge badge-red">Red flag</span></td><td>2× the reported rate</td></tr>
+        <tr><td>Revenue concentration</td><td>47% in top 3</td><td><span class="badge badge-red">Red flag</span></td><td>Any single exit costs 15%+ of MRR</td></tr>
+        <tr><td>Annual-plan decay</td><td>22% at risk</td><td><span class="badge badge-yellow">Watch</span></td><td>3 annual accounts showing non-usage</td></tr>
+        <tr><td>Zombie MRR</td><td>$3,400/mo</td><td><span class="badge badge-yellow">Watch</span></td><td>8 paying accounts, 0 activity >60 days</td></tr>
+        <tr><td>MRR trajectory</td><td>Flat (+0.8% QoQ)</td><td><span class="badge badge-green">Stable</span></td><td>But growth masks declining cohorts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- KEY RED FLAGS -->
+  <div class="report-section">
+    <h2>Top Red Flags <span class="sample-tag">SYNTHETIC</span></h2>
+
+    <div class="flag-item" style="border-left: 4px solid #dc2626;">
+      <h3>🔴 Churn divergence: 2.0× gap <span class="badge badge-red">HIGH PRIORITY</span></h3>
+      <p>Seller reports 2.1% monthly logo churn. Raw CSV shows 4.3%. The difference is attributable to the seller excluding downgraded customers and "reactivated" accounts from the churn calculation — both common but misleading methodology choices. <span class="sample-tag">SAMPLE</span></p>
+    </div>
+
+    <div class="flag-item" style="border-left: 4px solid #dc2626;">
+      <h3>🔴 Customer concentration: 3 accounts = 47% of MRR <span class="badge badge-red">HIGH PRIORITY</span></h3>
+      <p>Customer #1 (Enterprise Corp) represents $8,400/mo — 22% of total MRR. Customer #2 ($5,200) and Customer #3 ($4,100) bring the top-3 concentration to 47%. Loss of any one would materially change the business's profile. <span class="sample-tag">SAMPLE</span></p>
+    </div>
+
+    <div class="flag-item" style="border-left: 4px solid #f59e0b;">
+      <h3>🟡 Annual-plan decay: $5,800/mo at renewal risk <span class="badge badge-yellow">MEDIUM</span></h3>
+      <p>3 of 7 annual-plan customers show zero activity in the past 60 days. Combined MRR at risk: $5,800/mo (15% of total). These customers will likely not renew, creating a cliff in months 8–10 post-close. <span class="sample-tag">SAMPLE</span></p>
+    </div>
+
+    <div class="flag-item" style="border-left: 4px solid #f59e0b;">
+      <h3>🟡 Zombie MRR: $3,400/mo from 8 inactive accounts <span class="badge badge-yellow">MEDIUM</span></h3>
+      <p>8 accounts still paying but with no product activity for 60+ days. No login events, no API calls, no support tickets. These are likely auto-pay accounts that the billing system hasn't canceled yet. Historical patterns suggest 60% will churn within 90 days. <span class="sample-tag">SAMPLE</span></p>
+    </div>
+  </div>
+
+  <!-- BENCHMARK COMPARISON (REAL DATA) -->
+  <div class="report-section">
+    <h2>Benchmark Comparison <span style="font-size: 0.75rem; font-weight: 400; color: #64748b;">(real industry benchmarks)</span></h2>
+    <p style="font-size: 0.85rem; color: #64748b;">The target's metrics compared against published SaaS industry benchmarks. Benchmark data sourced from SaaSCapital, KeyBanc, OpenView, and Recurly (2025 surveys).</p>
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Target (SAMPLE)</th><th>Industry Median</th><th>Top Quartile</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly logo churn</td><td>4.3%</td><td>2.9%</td><td>&lt;1.5%</td><td><span class="badge badge-red">Below median</span></td></tr>
+        <tr><td>Revenue churn</td><td>3.1%</td><td>2.1%</td><td>&lt;1.0%</td><td><span class="badge badge-red">Below median</span></td></tr>
+        <tr><td>Annual NRR</td><td>98%</td><td>105%</td><td>&gt;120%</td><td><span class="badge badge-red">Below median</span></td></tr>
+        <tr><td>CAC payback</td><td>21 mo</td><td>18 mo</td><td>&lt;12 mo</td><td><span class="badge badge-yellow">Below median</span></td></tr>
+        <tr><td>Concentration (top 3)</td><td>47%</td><td>25%</td><td>&lt;15%</td><td><span class="badge badge-red">High risk</span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.75rem;">Industry benchmarks sourced from: SaaSCapital Annual Survey 2025 (mid-market ACV), KeyBanc SaaS Survey 2025, OpenView Partners SaaS Benchmarks 2025, Recurly Subscription Commerce Report 2025. <a href="/saas-churn-rate-benchmarks" style="color: #2563eb;">Full benchmark methodology →</a></p>
+  </div>
+
+  <!-- DATA QUALITY NOTES -->
+  <div class="report-section">
+    <h2>Data Quality & Methodology Notes <span class="sample-tag">SAMPLE</span></h2>
+    <ul style="color: #475569; font-size: 0.85rem;">
+      <li>Report generated from a synthetic CSV with 247 customer records spanning 18 months (Feb 2025 – Jul 2026).</li>
+      <li>All red flags above are based on purely synthetic sample data and do not represent any real company.</li>
+      <li>Benchmark comparisons use real published industry data from the sources cited above.</li>
+      <li>Revenue quality grade uses ChurnLens's proprietary 5-factor weighting: retention (30%), concentration (25%), trajectory (20%), annual-plan risk (15%), zombie detection (10%).</li>
+    </ul>
+  </div>
+
+  <!-- PRICING LINK -->
+  <div style="text-align: center; padding: 2rem; background: #eff6ff; border-radius: 0.75rem; border: 1px solid #bfdbfe; margin-top: 2rem;">
+    <h2 style="margin: 0 0 0.75rem; font-size: 1.25rem;">Ready to run a real analysis?</h2>
+    <p style="color: #475569; margin: 0 0 1.25rem; font-size: 0.95rem;">Send us your target's subscription CSV. Human-reviewed report in 2 business days.</p>
+    <a href="https://buy.stripe.com/5kQdR8ax52d20W25rO0x20v" class="oto-cta" style="display: inline-flex; align-items: center; gap: 0.4rem; background: #2563eb; color: #fff; padding: 0.9rem 2rem; border-radius: 0.75rem; font-weight: 700; font-size: 1rem; text-decoration: none;" onclick="if(window.posthog){posthog.capture('analysis_checkout_clicked',{tier:'one-time',price:9,source:'sample-report'})}">Get your analysis — $9</a>
+    <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.75rem;">You'll get an upload link by email within 24h. Report in 2 business days.</p>
+  </div>
+
+  <div class="watermark-footer">
+    <p><strong>⚠️ SAMPLE — SYNTHETIC DEMO DATA.</strong> This document is a mockup for illustration only. All company names, metrics, and red flags are fabricated. Real ChurnLens reports analyze actual subscription data.</p>
+    <p><a href="/" class="return-link">← Back to ChurnLens home</a> · <a href="/pricing" class="return-link">Pricing</a></p>
+  </div>
+
+</div>
+</body>
+</html>
