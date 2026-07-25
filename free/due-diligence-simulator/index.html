@@ -202,11 +202,16 @@ footer a{color:var(--accent);text-decoration:none}
 .related-links a{display:block;background:var(--card,#fff);border:1px solid var(--border,#e2e6ee);border-radius:8px;padding:14px 18px;color:var(--text,#1a1a2e);text-decoration:none;transition:border-color .2s;font-size:.95rem}
 .related-links a:hover{border-color:var(--accent,#00d4aa)}
 </style>
-<!-- cl-embed-v1 -->
+<!-- cl-oembed-v1 -->
+<link rel="alternate" type="application/json+oembed"
+      href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fdue-diligence-simulator&format=json"
+      title="Free SaaS Due Diligence Simulator — 5-Risk Analysis by ChurnLens">
+<!-- cl-embed-v2 -->
 <style>
 /* Embed mode: the page is rendered inside somebody else's site, so drop the
    cross-sell, the methodology essay and the link farm — keep the tool. */
-html[data-embed] body { padding: 1rem 1rem 4.5rem; background: #fff; }
+/* Keep the page's own palette — these pages are dark by design. */
+html[data-embed] body { padding: 1rem 1rem 4.5rem; }
 html[data-embed] .cta,
 html[data-embed] .related,
 html[data-embed] .related-links,
@@ -237,6 +242,23 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 
     document.addEventListener('DOMContentLoaded', function () {
       if (document.querySelector('.cl-embed-bar')) return;
+
+      /* Everything after the calculator is page furniture — methodology essays,
+         cross-sell, link blocks. None of it belongs in somebody else's iframe,
+         and most of it carries no class to target from CSS. */
+      var cards = document.querySelectorAll('.tool-card');
+      if (cards.length) {
+        var last = cards[cards.length - 1];
+        while (last && last.parentNode !== document.body) last = last.parentNode;
+        if (last) {
+          var node = last.nextElementSibling;
+          while (node) {
+            node.style.display = 'none';
+            node = node.nextElementSibling;
+          }
+        }
+      }
+
       var slug = (window.location.pathname.split('/').filter(Boolean).pop() || 'widget');
       var href = 'https://churnlens.site/free?utm_source=embed&utm_medium=widget&utm_campaign=' +
         encodeURIComponent(slug);
@@ -273,10 +295,6 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   } catch (e) { /* never break the calculator */ }
 })();
 </script>
-<!-- cl-oembed-v1 -->
-<link rel="alternate" type="application/json+oembed"
-      href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fdue-diligence-simulator&format=json"
-      title="Free SaaS Due Diligence Simulator — 5-Risk Analysis by ChurnLens">
 </head>
 <body>
 
