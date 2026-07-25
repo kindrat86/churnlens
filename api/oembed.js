@@ -8,11 +8,10 @@
 
 const BASE = "https://churnlens.site";
 
-// Only genuinely interactive tools belong here. /free/ltv-calculator and
-// /free/mrr-health-check are named "calculator" but contain no form control at
-// all — they are prose. Serving them as oEmbed widgets would publish a wall of
-// text on a third party's site labelled "Customer LTV Calculator", which is the
-// worst possible place for a due-diligence brand to be caught overclaiming.
+// Only genuinely interactive tools belong here. ltv-calculator and
+// mrr-health-check were prose pages wearing a tool's clothes — they were
+// dropped from this map, then earned their place back once the calculators
+// they promised were actually built.
 // scripts/inject_embed_mode.py re-derives interactivity on every run; keep this
 // map in step with what it reports.
 const TOOLS = {
@@ -22,7 +21,9 @@ const TOOLS = {
   "churn-calculator": { title: "SaaS Churn Cost Calculator", height: 620 },
   "revenue-concentration-analyzer": { title: "Revenue Concentration Risk Analyzer", height: 700 },
   "zombie-mrr-detector": { title: "Zombie MRR Detector", height: 700 },
-  "saas-health-score": { title: "SaaS Revenue Health Score", height: 760 }
+  "saas-health-score": { title: "SaaS Revenue Health Score", height: 760 },
+  "mrr-health-check": { title: "MRR Health Check", height: 780 },
+  "ltv-calculator": { title: "Customer LTV Calculator", height: 720 }
 };
 
 const MAX_WIDTH = 1200;

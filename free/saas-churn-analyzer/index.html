@@ -145,7 +145,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:v
 <link rel="alternate" type="application/json+oembed"
       href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fsaas-churn-analyzer&format=json"
       title="Free SaaS Churn &amp; Revenue-Quality Analyzer — Upload a Subscription CSV by ChurnLens">
-<!-- cl-embed-v3 -->
+<!-- cl-embed-v4 -->
 <style>
 /* Embed mode: the page is rendered inside somebody else's site, so drop the
    cross-sell, the methodology essay and the link farm — keep the tool. */
@@ -224,18 +224,30 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
       bar.appendChild(tail);
       document.body.appendChild(bar);
 
-      /* Tell the host page how tall we are so it can size the iframe. */
+      /* Tell the host page how tall we are so it can size the iframe.
+         At DOMContentLoaded inside a fresh iframe the document has often not
+         been laid out yet and every height reads 0. Posting that is worse than
+         posting nothing: a host that trusts it collapses the widget to
+         invisible. So never emit a non-positive height, and re-post once
+         layout has actually happened. */
+      var lastPosted = 0;
       function postHeight() {
         try {
           var h = Math.max(
             document.body.scrollHeight,
+            document.body.offsetHeight,
             document.documentElement.scrollHeight
           );
+          if (!(h > 0) || h === lastPosted) return;
+          lastPosted = h;
           window.parent.postMessage({ type: 'churnlens:height', height: h }, '*');
         } catch (e) { /* cross-origin parent: nothing to do */ }
       }
       postHeight();
+      window.addEventListener('load', postHeight);
       window.addEventListener('resize', postHeight);
+      setTimeout(postHeight, 300);
+      setTimeout(postHeight, 1200);
       if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
     });
   } catch (e) { /* never break the calculator */ }
@@ -257,6 +269,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 <h1>Free SaaS Churn &amp; Revenue-Quality Analyzer</h1>
 <p class="lede">Drop a target's subscription CSV and get the full <a href="https://churnlens.site/5-risk-buyer-side-method">5-Risk Buyer-Side</a> report — churn divergence, revenue concentration, annual-plan exposure, zombie MRR, cohort decay and an A–F revenue-quality grade. It runs entirely in your browser: the file is never uploaded.</p>
 
+<main class="cl-main">
 <div class="privacy">
   <span aria-hidden="true">🔒</span>
   <div><strong>Nothing leaves this page.</strong> The CSV is parsed with the browser's File API and every figure is computed locally. No part of the file, and no number derived from it, is transmitted anywhere — open your network panel and check. A target's customer-level ledger is normally NDA-bound, which is exactly why this tool has no server side.</div>
@@ -387,6 +400,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   <a href="https://churnlens.site/benchmarks">SaaS retention &amp; valuation benchmarks</a>
 </div>
 
+</main>
 <footer>
 <p>&copy; 2026 ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence. <a href="https://churnlens.site/privacy">Privacy</a> · <a href="https://churnlens.site/terms">Terms</a></p>
 <div class="dream" style="margin-top:14px;font-size:13px"><strong>Find us where SaaS acquirers are:</strong> <a href="https://github.com/kindrat86" rel="me noopener" style="color:inherit">GitHub</a></div>
