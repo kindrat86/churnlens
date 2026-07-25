@@ -963,3 +963,102 @@ body > footer > div,
 .cta > p {
   margin-inline: auto;
 }
+
+/* Both repairs are kept. The block above fixes the COLUMN (widths and the
+   inline axis, with !important opt-outs for fixed chrome); the block below
+   fixes TEXT ALIGNMENT inside that column. They were written independently
+   against the same `p{max-width:65ch}` symptom and do not overlap: the
+   opt-outs above use !important, so they outrank the zero-specificity
+   margin-inline rules below and the progress bar / nav / overlays keep
+   their own inline axis. */
+
+/* ── 44. CENTRED PAGE RHYTHM (MK 2026-07-25) ───────────────────────────
+   One centred content column across the site. Headings, section leads,
+   stats and CTAs are centred; running body copy inside cards, lists,
+   tables and definition lists stays left-aligned, because a centred
+   paragraph gives every line a different starting x-position and the eye
+   has to re-find the left edge on every return sweep.
+
+   Specificity note: the ANCESTOR goes inside :where() (so these rules stay
+   easy to override per page) but the TARGET element stays outside it.
+   `:where(.aeo-faq) :where(p)` scores 0,0,0 and loses to the plain `p`
+   rule in §2 — max-width:65ch kept winning and the FAQ answers rendered
+   inset. `:where(.aeo-faq) p` scores 0,0,1, ties, and wins on order. */
+
+/* --- 44a. the column itself ------------------------------------------ */
+:where(main, article, header, footer, section, .section, .site-wrap,
+       .container, .wrapper, .aeo-faq, .cl-defs, .cl-explore) {
+  margin-inline: auto;
+}
+
+/* §2 caps paragraphs at 65ch. Without margin-inline that measure hugs the
+   left edge of a wide container instead of sitting in the middle. */
+p, dl, blockquote, figure, .ux-section-narrow { margin-inline: auto; }
+
+/* --- 44b. what is centred -------------------------------------------- */
+:where(section, article, header, main, .section, .hero) > h1,
+:where(section, article, header, main, .section, .hero) > h2,
+:where(.hero, .final-cta, .section-head) h1,
+:where(.hero, .final-cta, .section-head) h2,
+.subtitle, .lead, .section-lead, .eyebrow, .kicker {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* the paragraph directly under a section heading reads as a deck */
+:where(section, article, .section) > h1 + p,
+:where(section, article, .section) > h2 + p {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 62ch;
+}
+
+/* --- 44c. what is NOT centred ---------------------------------------- */
+/* Running copy is read, not scanned. Anything inside a card, list, table,
+   definition list or callout keeps a hard left edge even when it sits in a
+   centred section and would otherwise inherit `text-align: center`. */
+.ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
+.exit-card, .new-op-bar, .tldr, .epiphany-preview, .related-links,
+.resource-list, .pseo-footer, .network-card, .aeo-faq,
+details, blockquote, li, dd, dt, td, th, figcaption,
+table, ul, ol {
+  text-align: left;
+}
+
+/* 44b centres the paragraph directly under a heading as a deck. That is
+   right for a section intro and wrong inside a link block or a card,
+   where the first <p> is a list of links, not a deck. Declared after 44b
+   and at equal-or-higher specificity, so it wins. */
+:where(.related-links, .pseo-footer, .cl-explore, .aeo-faq, .cl-defs,
+       .ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
+       .new-op-bar, .tldr) p {
+  text-align: left;
+  max-width: none;
+}
+:where(.aeo-faq, .cl-defs) h3,
+:where(.aeo-faq, .cl-defs) dd,
+:where(.aeo-faq, .cl-defs) dt,
+:where(.aeo-faq, .cl-defs) td,
+:where(.aeo-faq, .cl-defs) th { text-align: left; }
+
+/* --- 44d. measure + vertical rhythm ---------------------------------- */
+:where(.aeo-faq) h3 { margin-top: 2rem; }
+:where(.cl-defs) dd { color: var(--ux-text-secondary); margin-bottom: 0.9rem; }
+:where(.cl-defs) dt { font-weight: 700; margin-top: 1rem; }
+/* short trailing metadata lines re-centre under the block they close */
+p.aeo-updated, .aeo-updated { text-align: center; max-width: none; }
+
+/* --- 44e. always-dark surfaces ---------------------------------------
+   The injected pSEO footer and portfolio-network blocks ship a light
+   palette that only flips inside `@media (prefers-color-scheme: dark)`.
+   These pages are dark unconditionally, so on a light-preference OS they
+   rendered #374151 text and #f9fafb cards directly on #0f172a navy —
+   1.6:1 and a white slab in the middle of a dark page. Scoped with `body`
+   so it outranks the injected class rules without !important. */
+body:has(.site-nav) .pseo-footer,
+body:has(.site-nav) .portfolio-network { border-top-color: #1e293b; }
+body:has(.site-nav) .pseo-footer-section a { color: #cbd5e1; }
+body:has(.site-nav) .pseo-footer-section a:hover { color: #fff; }
+body:has(.site-nav) .network-card { background: rgba(148, 163, 184, 0.06); }
+body:has(.site-nav) .network-card:hover { background: rgba(148, 163, 184, 0.12); }
+body:has(.site-nav) .network-name { color: #f1f5f9; }
