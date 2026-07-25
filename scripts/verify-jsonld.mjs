@@ -194,6 +194,18 @@ function check(path) {
         errors.push(`${rel} [block ${i}]: missing @type (and no @graph)`);
       }
     }
+
+    countEntities(parsed);
+  }
+
+  for (const [id, n] of entityCounts) {
+    if (n > 1) {
+      errors.push(
+        `${rel}: ${id.split('#')[1]} defined ${n}x on one page — ` +
+          'duplicate entity definitions merge unpredictably (run ' +
+          'python3 scripts/dedupe_entity_graph.py)'
+      );
+    }
   }
 }
 

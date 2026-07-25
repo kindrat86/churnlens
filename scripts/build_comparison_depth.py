@@ -523,7 +523,7 @@ def dimension_table(t: dict) -> str:
 </table>"""
 
 
-def faq_pairs(t: dict, kind: str) -> list[tuple[str, str]]:
+def faq_pairs(t: dict, kind: str, slug: str) -> list[tuple[str, str]]:
     name = t["name"]
     if t["csv_import"]:
         can_use = (
@@ -545,17 +545,12 @@ def faq_pairs(t: dict, kind: str) -> list[tuple[str, str]]:
             f"ChurnLens if {t['verdict_switch']}.",
         ),
         (f"Can I use {name} for SaaS acquisition due diligence?", can_use),
+        ANGLES[slug]["faq_extra"],
         (
-            "Does ChurnLens connect to Stripe?",
-            "No, and that is deliberate. ChurnLens works from the raw subscription CSV a seller exports, so you can "
-            "run diligence on a target without ever holding their live billing credentials — which is the situation "
-            "buyers are actually in.",
-        ),
-        (
-            "What does ChurnLens produce that a metrics dashboard does not?",
-            "A benchmarked A–F revenue-quality grade and a ranked red-flag report tuned to acquisition risk: hidden "
-            "churn, customer-concentration risk, annual-plan decay and zombie MRR — all recomputed from the raw rows "
-            "rather than reported according to the seller's own configuration.",
+            "Does ChurnLens need access to the target's Stripe account?",
+            "No, and that is the point. ChurnLens works from the raw subscription CSV a seller exports, so you can "
+            "run diligence without ever holding their live billing credentials — which is the situation buyers are "
+            "actually in, and the reason most operator-side tools cannot be used pre-close.",
         ),
     ]
 
@@ -587,11 +582,15 @@ def build_body(t: dict, kind: str, dirname: str, slug: str) -> tuple[str, str, s
             f"need one clearly more than the other."
         )
 
+    ang = ANGLES[slug]
+    frame = ang["frame"]
+    objection = ang["objection"]
+    closing_caveat = ang["closing_caveat"]
     does_well = "\n".join(f"<li>{x}</li>" for x in t["does_well"])
     cl_does = "\n".join(f"<li>{x}</li>" for x in CL_DOES)
     cl_not = "\n".join(f"<li>{x}</li>" for x in CL_DOES_NOT)
 
-    pairs = faq_pairs(t, kind)
+    pairs = faq_pairs(t, kind, slug)
     faq_visible = "\n".join(
         f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in pairs
     )
@@ -611,12 +610,8 @@ def build_body(t: dict, kind: str, dirname: str, slug: str) -> tuple[str, str, s
     body = f"""<h1>{h1}</h1>
 <div class="tldr"><p>{tldr}</p></div>
 
-<h2>The distinction that actually matters</h2>
-<p>Nearly every tool in this category is <em>operator-side</em>: you connect your own billing account and watch
-your own revenue. ChurnLens is <em>buyer-side</em>: you upload an export from a company you are considering
-buying, and it tells you whether the story that export tells is the same story the seller told you. That single
-difference — whose business is being measured, and who chose the definitions — decides which tool you want far
-more than any feature list.</p>
+<h2>Why this comparison comes up</h2>
+<p>{frame}</p>
 
 <h2>What {name} is built for</h2>
 <p>{t['who']}</p>
@@ -638,6 +633,8 @@ more than any feature list.</p>
 <h2>Where the two genuinely overlap</h2>
 <p>{t['overlap']}</p>
 
+{objection}
+
 <h2>A worked illustration</h2>
 <div class="callout"><p>{t['example']}</p>
 <p style="margin-bottom:0"><em>Illustrative scenario, not a measured result from a named company.</em></p></div>
@@ -651,8 +648,7 @@ Plenty of people end up using both, at different moments: one before a deal clos
 <ul class="cross">
 {cl_not}
 </ul>
-<p>If any of those four are what you came for, {name} or a tool like it is the better purchase, and we would
-rather say so here than after you have signed up.</p>
+<p>{closing_caveat}</p>
 
 <div class="cta">
 <h2>Test a target's numbers before you commit</h2>
