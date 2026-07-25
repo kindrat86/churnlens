@@ -87,13 +87,6 @@
 
   /* --- BACK TO TOP --- */
   (function() {
-    // Shared /ux.js already ships a complete back-to-top FAB (#ux-back-to-top:
-    // creates it, toggles .visible past 500px, smooth-scrolls on click) — but it
-    // builds it on DOMContentLoaded, i.e. AFTER this deferred script runs, so we
-    // cannot detect it by element. Detect the script tag instead and stand down;
-    // otherwise both FABs render in the same corner and overlap.
-    if (document.querySelector('script[src*="ux.js"]')) return;
-
     var btn = document.querySelector('.cl-back-top');
     if (!btn) {
       // Create it
@@ -103,6 +96,21 @@
       btn.innerHTML = '&#8593;';
       document.body.appendChild(btn);
     }
+
+    // Shared /ux.js appends its own #ux-back-to-top on DOMContentLoaded — i.e.
+    // AFTER this deferred script runs — so it cannot be detected up front. Left
+    // alone, both FABs stack in the same corner and overlap page content.
+    // This one wins ownership because its toggle is a plain scroll listener:
+    // ux.js gates its toggle behind requestAnimationFrame, which never fires in
+    // a backgrounded tab and latches its internal `ticking` flag true forever,
+    // leaving that FAB permanently invisible once the tab is hidden mid-scroll.
+    function dropUxDuplicate() {
+      var dupe = document.getElementById('ux-back-to-top');
+      if (dupe && dupe.parentNode) dupe.parentNode.removeChild(dupe);
+    }
+    document.addEventListener('DOMContentLoaded', dropUxDuplicate);
+    window.addEventListener('load', dropUxDuplicate);
+    dropUxDuplicate();
 
     function checkScroll() {
       if (window.scrollY > 400) {
