@@ -64,11 +64,17 @@ CANONICAL_IDS = {
     BASE + "/#founder",
 }
 
-# Not served (vercelignored, redirected, or dead) — leave them out so the diff
-# stays on shipping pages and we don't collide with the i18n pipeline.
+# Not served (vercelignored or dead) — leave them out so the diff stays on
+# shipping pages and we don't collide with the i18n pipeline.
+#
+# public/ is NOT skipped: `/public/:path*` misses trailing-slash URLs (Vercel
+# matches with path-to-regexp strict:true), so `/public/vs/` was served from
+# disk with a 200 and an indexable robots tag. Keep in step with SKIP in
+# scripts/verify-jsonld.mjs — that gate now lints public/, so this fixer has to
+# be able to reach it.
 SKIP_DIRS = {
     "node_modules", ".git", ".vercel", ".well-known",
-    "i18n", "i18n_out", "dist", "public", "__pycache__",
+    "i18n", "i18n_out", "dist", "__pycache__",
 }
 
 BLOCK_RE = re.compile(
