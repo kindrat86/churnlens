@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://churnlens.site/saas-churn-rate-benchmarks" />
     <link rel="alternate" hreflang="en" href="https://churnlens.site/saas-churn-rate-benchmarks" />
     <link rel="alternate" hreflang="en-US" href="https://churnlens.site/saas-churn-rate-benchmarks" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"SaaS Churn Rate Benchmarks by Industry 2026","description":"Monthly and annual churn rate benchmarks across 14 SaaS industry sectors. CC BY 4.0.","url":"https://churnlens.site/saas-churn-rate-benchmarks","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://churnlens.site/#organization"},"dateModified":"2026-07-19","distribution":[{"@type":"DataDownload","encodingFormat":"CSV","contentUrl":"https://churnlens.site/saas-churn-benchmarks-2026.csv"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"SaaS Churn Rate Benchmarks by Industry 2026","description":"Monthly and annual churn rate benchmarks across 14 SaaS industry sectors. CC BY 4.0.","url":"https://churnlens.site/saas-churn-rate-benchmarks","measurementTechnique":"Editorial estimate compiled from public SaaS benchmarking research; not measured from customer data or uploaded files","citation":[{"@type":"CreativeWork","name":"Recurly - Churn Rate Benchmarks","url":"https://recurly.com/research/churn-rate-benchmarks/"},{"@type":"CreativeWork","name":"SaaS Capital - B2B SaaS Retention Benchmarks","url":"https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf"}],"license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://churnlens.site/#organization"},"dateModified":"2026-07-19","distribution":[{"@type":"DataDownload","encodingFormat":"CSV","contentUrl":"https://churnlens.site/saas-churn-benchmarks-2026.csv"}]}</script>
     <link rel="alternate" hreflang="x-default" href="https://churnlens.site/saas-churn-rate-benchmarks" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 
@@ -142,11 +142,11 @@
         <p class="lead">If you're buying a SaaS business, the first question isn't "how much revenue do they have?" — it's "how much of that revenue will still be here in 12 months?" Industry-relative churn benchmarks are the fastest way to separate a healthy asset from a ticking decay bomb.</p>
 
         <div style="background:hsl(221 83% 53% / 0.08);border:1px solid hsl(221 83% 53% / 0.2);border-radius:0.75rem;padding:1.25rem 1.5rem;margin-bottom:2rem;">
-          <p style="margin:0.5rem 0 0;font-size:0.9375rem;line-height:1.6;color:hsl(var(--muted-foreground));"><strong style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;color:hsl(221 83% 53%);">TL;DR:</strong> Monthly churn varies dramatically by sector: enterprise SaaS averages 1-2%, SMB SaaS runs 5-8%, and consumer apps can exceed 10%. Before evaluating a target, look up its sector median — anything meaningfully above the benchmark warrants deeper investigation. ChurnLens benchmarks every uploaded CSV against 14 industry verticals automatically.</p>
+          <p style="margin:0.5rem 0 0;font-size:0.9375rem;line-height:1.6;color:hsl(var(--muted-foreground));"><strong style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;color:hsl(221 83% 53%);">TL;DR:</strong> Monthly churn varies dramatically by sector: enterprise SaaS averages 1-2%, SMB SaaS runs 5-8%, and consumer apps can exceed 10%. Before evaluating a target, look up its sector median — anything meaningfully above the benchmark warrants deeper investigation. The 14 sector bands on this page are editorial estimates compiled from public research, not measured ChurnLens data.</p>
         </div>
 
         <h2>Monthly Churn Rate Benchmarks</h2>
-        <p>Monthly churn (logo churn) measures the percentage of customers who cancel in a given month. These are the medians we've observed across thousands of buyer-side CSV uploads processed through ChurnLens.</p>
+        <p>Monthly churn (logo churn) measures the percentage of customers who cancel in a given month. The bands below are <strong>ChurnLens editorial estimates</strong> &mdash; indicative sector ranges compiled from public SaaS benchmarking research, <em>not</em> measured from ChurnLens customer data or uploaded CSVs. See <a href="#sources">Sources &amp; methodology</a>.</p>
 
         <table class="benchmark-table">
           <thead>
@@ -217,6 +217,18 @@
       </div>
     </div>
 
+    <!-- Sources & methodology -->
+    <div id="sources" style="max-width:720px;margin:2rem auto;padding:1.25rem 1.5rem;background:#1e293b;border:1px solid #334155;border-radius:0.75rem;font-size:0.9rem;color:#94a3b8;line-height:1.7;">
+      <strong style="color:#e2e8f0;">Sources &amp; methodology</strong>
+      <p style="margin:0.75rem 0 0;">The sector bands on this page and in the downloadable CSV are <strong style="color:#e2e8f0;">ChurnLens editorial estimates</strong>: indicative ranges compiled and rounded from publicly available SaaS benchmarking research, then grouped into the 14 buyer-side segments we use in due diligence. They are <em>not</em> derived from ChurnLens customer data and <em>not</em> from uploaded CSVs &mdash; the <a href="/free/saas-churn-analyzer" style="color:var(--cl-blue-light);">free analyzer</a> runs entirely in your browser and never transmits a file.</p>
+      <p style="margin:0.75rem 0 0.25rem;">Primary public references:</p>
+      <ul style="margin:0 0 0.75rem;padding-left:1.25rem;">
+        <li><a href="https://recurly.com/research/churn-rate-benchmarks/" rel="nofollow noopener" target="_blank" style="color:var(--cl-blue-light);">Recurly &mdash; Churn Rate Benchmarks</a> &mdash; logo vs revenue churn, voluntary vs involuntary split.</li>
+        <li><a href="https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf" rel="nofollow noopener" target="_blank" style="color:var(--cl-blue-light);">SaaS Capital &mdash; B2B SaaS Retention Benchmarks</a> &mdash; retention and revenue churn by ARR band.</li>
+      </ul>
+      <p style="margin:0;">No public source publishes monthly churn for every one of these 14 segments; where direct data was unavailable the band reflects our own judgement and is widened to show that uncertainty. Distinguish <em>logo churn</em> from <em>revenue churn</em>, and <em>monthly</em> from <em>annual</em>, when comparing &mdash; conflating them is the most common benchmark error. Treat any figure here as a starting hypothesis to verify against a primary source, never as a measured value. <em>Last reviewed 25 July 2026.</em></p>
+    </div>
+
     <!-- Cite this data -->
     <div style="max-width:720px;margin:2rem auto;padding:1.25rem 1.5rem;background:#1e293b;border:1px solid #334155;border-radius:0.75rem;font-size:0.875rem;color:#94a3b8;">
       <strong style="color:#e2e8f0;">Cite this data</strong><br>
@@ -267,7 +279,7 @@
 </footer>
 
     <!-- PostHog -->
-    <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+    <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false,respect_dnt:true});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
     <script type="module" src="/assets/cl-enhance.de8b8a10.js" defer></script>
 
 <!-- aeo-faq-injected -->

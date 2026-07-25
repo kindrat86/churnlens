@@ -13,4 +13,5 @@ E-commerce / Shopify Apps,6,10,52,72,Very High
 EdTech B2B,3,5,31,46,Moderate
 Healthcare SaaS,1.5,3,17,31,Low
 Proptech / Real Estate,4,7,39,58,High
-Source: ChurnLens analysis of buyer-side CSV uploads, 2024-2026. CC BY 4.0 — cite as ChurnLens (churnlens.site), "SaaS Churn Rate Benchmarks by Industry", 2026.
+"Source: ChurnLens editorial estimates - indicative sector bands compiled from public SaaS benchmarking research (Recurly, https://recurly.com/research/churn-rate-benchmarks/; SaaS Capital, https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf). NOT measured from ChurnLens customer data or uploaded CSVs. No public source covers all 14 segments; where direct data was unavailable the band is editorial judgement. Verify against a primary source before use. Last reviewed 2026-07-25. Methodology: https://churnlens.site/saas-churn-rate-benchmarks#sources"
+"Licence: CC BY 4.0 - cite as ChurnLens (churnlens.site), ""SaaS Churn Rate Benchmarks by Industry"", 2026."

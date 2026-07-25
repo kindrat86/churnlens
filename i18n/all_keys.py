@@ -1366,7 +1366,7 @@ KEYS = {
     '__TR_saas-churn-rate-benchmarks_16__': '''Updated benchmarks for buyer-side SaaS due diligence. Compare any acquisition target against industry medians for monthly churn, annual churn, and logo retention across 14 SaaS sectors.''',
     '__TR_saas-churn-rate-benchmarks_17__': '''If you\'re buying a SaaS business, the first question isn\'t "how much revenue do they have?" — it\'s "how much of that revenue will still be here in 12 months?" Industry-relative churn benchmarks are the fastest way to separate a healthy asset from a ticking decay bomb.''',
     '__TR_saas-churn-rate-benchmarks_18__': '''Monthly Churn Rate Benchmarks''',
-    '__TR_saas-churn-rate-benchmarks_19__': '''Monthly churn (logo churn) measures the percentage of customers who cancel in a given month. These are the medians we\'ve observed across thousands of buyer-side CSV uploads processed through Churn Lens.''',
+    '__TR_saas-churn-rate-benchmarks_19__': '''Monthly churn (logo churn) measures the percentage of customers who cancel in a given month. The bands below are ChurnLens editorial estimates - indicative sector ranges compiled from public SaaS benchmarking research, not measured from ChurnLens customer data or uploaded CSVs.''',
     '__TR_saas-churn-rate-benchmarks_20__': '''Sector''',
     '__TR_saas-churn-rate-benchmarks_21__': '''Median Monthly Churn''',
     '__TR_saas-churn-rate-benchmarks_22__': '''Median Annual Churn (implied)''',

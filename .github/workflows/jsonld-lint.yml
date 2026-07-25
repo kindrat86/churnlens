@@ -25,11 +25,20 @@ jobs:
       # HTML. See ~/.growth-engine/GUARDRAILS.md rule 3.
       - name: Verify shipped JSON-LD
         run: node scripts/verify-jsonld.mjs .
-      # verify-jsonld.mjs SKIPs public/ on the grounds that it is unreachable.
-      # It was not: /public/<path>/ served those files 200 for a while (fixed in
-      # be5ede5). Scan it explicitly so a green gate cannot be bought by
-      # shrinking the surface — the file counts between the two steps above
-      # already differ by ~77 for exactly this reason.
+      # The step above names "." explicitly and so can never lint the wrong tree.
+      # This one takes no argument on purpose: the default was hardcoded to
+      # `dist` until 2026-07-25, so an argument-less run exited 1 on 78 stale
+      # .vercelignored pages while CI stayed green — a broken invocation nobody's
+      # CI exercised. The default now reads vercel.json's outputDirectory; this
+      # step is what keeps it honest, since it is the invocation people type by
+      # hand and the one a plain `node scripts/verify-jsonld.mjs` gets.
+      - name: Verify JSON-LD via the default target
+        run: node scripts/verify-jsonld.mjs
+      # public/ is deliberately NOT in the script's SKIP set: /public/<path>/
+      # served those 77 files 200, indexable, for a while (fixed in be5ede5), so
+      # they are linted as part of "." above. Naming it again is redundant by
+      # design — it asserts the surface directly, so a green gate cannot be
+      # bought by quietly adding public/ back to SKIP.
       - name: Verify JSON-LD under public/
         run: node scripts/verify-jsonld.mjs public
 
