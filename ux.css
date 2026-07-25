@@ -874,3 +874,79 @@ a[aria-label] > svg:only-child {
   width: 24px;
   height: 24px;
 }
+
+
+/* ── 44. CENTRED PAGE RHYTHM (MK 2026-07-25) ───────────────────────────
+   One centred content column across the site. Headings, section leads,
+   stats and CTAs are centred; running body copy inside cards, lists,
+   tables and definition lists stays left-aligned, because a centred
+   paragraph gives every line a different starting x-position and the eye
+   has to re-find the left edge on every return sweep.
+
+   Written with :where() so every rule here has ZERO specificity — it sets
+   the default rhythm and any page's own stylesheet still wins. */
+
+/* --- 44a. the column itself ------------------------------------------ */
+:where(main, article, header, footer, section, .section, .site-wrap,
+       .container, .wrapper, .aeo-faq, .cl-defs, .cl-explore) {
+  margin-inline: auto;
+}
+
+/* §2 caps paragraphs at 65ch. Without margin-inline that measure hugs the
+   left edge of a wide container instead of sitting in the middle. */
+:where(p, dl, blockquote, figure, .ux-section-narrow) { margin-inline: auto; }
+
+/* --- 44b. what is centred -------------------------------------------- */
+:where(section, article, header, main, .section, .hero) > :where(h1, h2),
+:where(.hero, .final-cta, .section-head) :where(h1, h2, h3),
+:where(.subtitle, .lead, .section-lead, .eyebrow, .kicker, .aeo-updated) {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* the lead paragraph directly under a section heading reads as a deck */
+:where(section, article, .section) > :where(h1, h2) + :where(p) {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 62ch;
+}
+
+/* centred blocks keep their inline children optically centred */
+:where(.hero, .final-cta) :where(.btn-primary, .cta, .badge, .stats-row) {
+  margin-inline: auto;
+}
+
+/* --- 44c. what is NOT centred ---------------------------------------- */
+/* Running copy is read, not scanned. Anything inside a card, list, table,
+   definition list or callout keeps a hard left edge even when it sits in a
+   centred section and would otherwise inherit `text-align: center`. */
+:where(.ux-card, .ux-glass-card, .card, .framework-card, .belief-card,
+       .exit-card, .new-op-bar, .tldr, .epiphany-preview, .related-links,
+       .resource-list, .pseo-footer, .network-card, details, blockquote,
+       li, dd, dt, td, th, figcaption, .aeo-faq) {
+  text-align: left;
+}
+:where(.aeo-faq, .cl-defs) :where(h3, p, dd, dt, td, th) { text-align: left; }
+:where(table, ul, ol) { text-align: left; }
+
+/* --- 44d. measure + vertical rhythm ---------------------------------- */
+:where(.aeo-faq, .cl-defs, .related-links) { max-width: 68ch; }
+:where(.aeo-faq) > :where(h3) { margin-top: 2rem; }
+:where(.aeo-faq) > :where(p)  { max-width: none; }
+:where(.cl-defs) :where(dd)   { color: var(--ux-text-secondary); margin-bottom: 0.9rem; }
+:where(.cl-defs) :where(dt)   { font-weight: 700; margin-top: 1rem; }
+
+/* --- 44e. always-dark surfaces ---------------------------------------
+   The injected pSEO footer and portfolio-network blocks ship a light
+   palette that only flips inside `@media (prefers-color-scheme: dark)`.
+   These pages are dark unconditionally, so on a light-preference OS they
+   rendered #374151 text and #f9fafb cards directly on #0f172a navy —
+   1.6:1 and a white slab in the middle of a dark page. Scoped with `body`
+   so it outranks the injected class rules without !important. */
+body:has(.site-nav) .pseo-footer,
+body:has(.site-nav) .portfolio-network { border-top-color: #1e293b; }
+body:has(.site-nav) .pseo-footer-section a { color: #cbd5e1; }
+body:has(.site-nav) .pseo-footer-section a:hover { color: #fff; }
+body:has(.site-nav) .network-card { background: rgba(148, 163, 184, 0.06); }
+body:has(.site-nav) .network-card:hover { background: rgba(148, 163, 184, 0.12); }
+body:has(.site-nav) .network-name { color: #f1f5f9; }
