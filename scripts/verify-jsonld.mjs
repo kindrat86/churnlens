@@ -44,13 +44,35 @@ if (dirs.length === 0) dirs.push('dist');
 
 // Directories that never contain shippable HTML. `assets` holds hashed bundles
 // and is the bulk of a vite dist, so skipping it keeps this fast on large sites.
+//
+// dist/ i18n/ i18n_out/ are in this repo but are NOT served — all three are
+// .vercelignored, so nothing under them can be requested. They are stale
+// duplicate copies of the site; linting them reports failures on pages no
+// crawler can reach. This mirrors SKIP_DIRS in
+// scripts/dedupe_entity_graph.py — keep the two lists in step.
+//
+// public/ is deliberately NOT skipped. It was, briefly, on the grounds that
+// `/public/:path*` redirects it away — but Vercel matches route sources
+// slash-sensitively, so that source never matched a trailing slash.
+// `/public/vs/` was served straight from disk, HTTP 200, with
+// `robots: index, follow`, while `/public/vs` correctly 308'd. 77 files and
+// 148 duplicate-entity errors sat behind that gap, unlinted and crawlable.
+//
+// Three things had to line up for that to be reachable, and this site had all
+// three: slash-sensitive matching, `trailingSlash` unset (with it `false`,
+// Vercel canonicalises `/x/` to `/x` and the gap closes), and
+// `outputDirectory: "."` plus a real index.html so the URL served 200 instead
+// of 404ing. An 8-site portfolio sweep found churnlens was the only site where
+// all three held — so do NOT assume a sibling site with a bare `:path*`
+// redirect has the same bug.
+//
+// vercel.json now carries a companion `/public/:path*/` source, and this
+// directory stays linted so the gate does not depend on a routing rule being
+// exactly right.
 const SKIP = new Set([
   'node_modules', '.git', '.next', '.vercel', 'assets',
   '__pycache__', '.venv', 'venv', 'coverage',
-  // Not shipped on this site: i18n/ and i18n_out/ are .vercelignore'd,
-  // public/* is 308-redirected to /*, and dist/ 404s. Scanning them would fail
-  // the build over pages no crawler can reach.
-  'i18n', 'i18n_out', 'dist', 'public',
+  'dist', 'i18n', 'i18n_out',
 ]);
 
 const BLOCK_RE =

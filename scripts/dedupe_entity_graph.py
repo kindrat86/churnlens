@@ -64,11 +64,18 @@ CANONICAL_IDS = {
     BASE + "/#founder",
 }
 
-# Not served (vercelignored, redirected, or dead) — leave them out so the diff
-# stays on shipping pages and we don't collide with the i18n pipeline.
+# Not served (vercelignored or dead) — leave them out so the diff stays on
+# shipping pages and we don't collide with the i18n pipeline.
+#
+# public/ is NOT skipped: `/public/:path*` misses trailing-slash URLs (Vercel
+# matches route sources slash-sensitively), so `/public/vs/` was served from
+# disk with a 200 and an indexable robots tag. vercel.json now carries a
+# `/public/:path*/` companion. Keep in step with SKIP in
+# scripts/verify-jsonld.mjs — that gate now lints public/, so this fixer has to
+# be able to reach it.
 SKIP_DIRS = {
     "node_modules", ".git", ".vercel", ".well-known",
-    "i18n", "i18n_out", "dist", "public", "__pycache__",
+    "i18n", "i18n_out", "dist", "__pycache__",
 }
 
 BLOCK_RE = re.compile(
@@ -122,7 +129,8 @@ def canonical_id_of(node):
     #
     # No minimum size here on purpose: {"@type":"Organization","name":"ChurnLens"}
     # sitting in an `author` slot is the *worst* fragment, not a harmless one —
-    # it is an anonymous second ChurnLens with no @id to merge on.
+    # it is an anonymous second ChurnLens with no @id to merge on, and it is what
+    # verify-jsonld.mjs counts as a duplicate definition.
     if not isinstance(node_type, str) or node_type not in TYPE_TO_ID:
         return None
     if node.get("name") == E["brand"] or (node.get("url") or "").rstrip("/") == BASE.rstrip("/"):
@@ -176,6 +184,12 @@ def is_empty(doc):
 def process(html):
     """Returns (new_html, blocks_changed, blocks_removed)."""
     marker_at = html.find(MARKER)
+    # Nothing to fold into. Without a canonical block every definition on the
+    # file is "the other one", so stripping would delete the only copy — that is
+    # how schema/jsonld-organization.html (a standalone snippet, not a page)
+    # got emptied out.
+    if marker_at < 0:
+        return html, 0, 0
     out = []
     cursor = 0
     changed = removed = 0
