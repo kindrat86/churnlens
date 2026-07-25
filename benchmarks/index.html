@@ -83,8 +83,7 @@ td,th{padding:10px;border:1px solid #ddd;text-align:left}
   <li><a href="#logo-retention-benchmarks-by-company-stage">Logo Retention Benchmarks by Company Stage</a></li>
   <li><a href="#revenue-concentration-benchmarks-for-saas">Revenue Concentration Benchmarks for SaaS</a></li>
   <li><a href="#saas-valuation-multiples-by-revenue-quality">SaaS Valuation Multiples by Revenue Quality</a></li>
-  <li><a href="#saas-churn-rate-benchmarks-2026">SaaS Churn Rate Benchmarks 2026</a></li>
-  <li><a href="#saas-net-revenue-retention-by-segment-2026">SaaS Net Revenue Retention by Segment 2026</a></li>
+  <li><a href="#saas-churn-rate-benchmarks-2026">SaaS Churn Rate Benchmarks</a></li>
 </ul>
 </nav>
 <section id="logo-retention-benchmarks-by-company-stage" class="merged-section">
@@ -121,118 +120,17 @@ td,th{padding:10px;border:1px solid #ddd;text-align:left}
 <details><summary>How should I use these benchmarks?</summary><p>Use benchmarks to calibrate expectations during diligence. A target that deviates significantly from benchmarks warrants deeper investigation — not automatic rejection.</p></details>
 </section>
 <section id="saas-churn-rate-benchmarks-2026" class="merged-section">
-<h2>SaaS Churn Rate Benchmarks 2026</h2>
-<div class="container">
-        
-    
-    <p class="lead">Annual churn rate benchmarks across SaaS segments — from SMB to enterprise, by ACV range and customer tier. Data aggregated from publicly available industry surveys and financial disclosures.</p>
-    <span class="badge">CC BY 4.0</span>
-    <span class="badge" style="margin-left:.5rem;background:#dbeafe;color:#2563eb">Updated 2026-07-20</span>
-
-    <div class="nav-links">
-<a href="data.csv" class="btn btn-primary" download>📥 Download CSV</a>
-<a href="data.json" class="btn btn-outline" download>📥 Download JSON</a>
-</div>
-
-    <div class="chart-box">
-<canvas id="datasetChart"></canvas>
-</div>
-
-    <h3>Data Table</h3>
-    <div class="card" style="overflow-x:auto">
-    <table>
-    <thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
-    <tbody><tr><td>Median monthly churn (SMB, &lt;$100/mo ACV)</td><td class="value">4.8%</td><td class="source">SaaS Capital Annual Survey 2025</td></tr>
-<tr><td>Median monthly churn (Mid-Market, $100-$1K/mo ACV)</td><td class="value">2.9%</td><td class="source">SaaS Capital Annual Survey 2025</td></tr>
-<tr><td>Median monthly churn (Enterprise, &gt;$1K/mo ACV)</td><td class="value">1.2%</td><td class="source">SaaS Capital Annual Survey 2025</td></tr>
-<tr><td>Annual churn rate (B2B SaaS, median)</td><td class="value">14.2%</td><td class="source">KeyBanc SaaS Survey 2025</td></tr>
-<tr><td>Annual churn rate (B2C SaaS, median)</td><td class="value">7.5%</td><td class="source">Statista Digital Economy Compass 2025</td></tr>
-<tr><td>Good annual net revenue retention (top quartile)</td><td class="value">&gt;120%</td><td class="source">OpenView Partners SaaS Benchmarks 2025</td></tr>
-<tr><td>Average CAC payback period (SaaS)</td><td class="value">18 months</td><td class="source">ChartMogul SaaS Growth Report 2025</td></tr>
-<tr><td>Voluntary churn as % of total churn</td><td class="value">62%</td><td class="source">ProfitWell SaaS Churn Study 2025</td></tr>
-<tr><td>Involuntary churn (failed payments) as % of total</td><td class="value">26%</td><td class="source">Recurly Subscription Commerce Report 2025</td></tr>
-<tr><td>Churn reduction from proactive outreach (median)</td><td class="value">15%</td><td class="source">Gainsight Customer Success Index 2025</td></tr>
-</tbody>
-    </table>
-    </div>
-
-    <p style="color:var(--muted);font-size:.85rem;margin-top:.5rem">10 data points — all sourced from publicly available industry reports and databases.</p>
-
-        <div class="cite-box">
-    <strong>📚 Cite this dataset</strong>
-    <p style="margin-top:.5rem"><strong>APA:</strong> ChurnLens. (2026-07-20). <i>SaaS Churn Rate Benchmarks 2026</i>. Retrieved from https://churnlens.site/data/saas-churn-benchmarks/</p>
-    <p style="margin-top:.5rem"><strong>MLA:</strong> "SaaS Churn Rate Benchmarks 2026." <em>ChurnLens</em>, 2026-07-20, churnlens.site/data/saas-churn-benchmarks/.</p>
-    <p style="margin-top:.5rem"><strong>BibTeX:</strong></p>
-    <pre>@misc{saas-churn-benchmarks,
-  author       = {ChurnLens},
-  title        = {SaaS Churn Rate Benchmarks 2026},
-  year         = {2026},
-  url          = {https://churnlens.site/data/saas-churn-benchmarks/},
-  note         = {Accessed: 2026-07-20}
-}</pre>
-    <p style="margin-top:.5rem;color:var(--muted);font-size:.8rem">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--accent)">CC BY 4.0</a>. Attribution required.</p>
-    </div>
-
-    
-
-    </div>
+<h2>SaaS Churn Rate Benchmarks</h2>
+<div class="tldr"><p><strong>TL;DR:</strong> Median gross revenue retention for private B2B SaaS runs about 91%, and it rises with contract size — roughly 90% under $12K ACV to 93% above $50K. Every figure below links its primary source.</p></div>
+<h3>Gross revenue retention by contract size</h3>
+<table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em"><thead><tr><th style="text-align:left;padding:6px 8px;border-bottom:2px solid #1a1a1a">Annual contract value (ACV)</th><th style="text-align:left;padding:6px 8px;border-bottom:2px solid #1a1a1a">Median gross revenue retention</th><th style="text-align:left;padding:6px 8px;border-bottom:2px solid #1a1a1a">&#8776; Annual gross revenue churn</th></tr></thead><tbody><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">Under $12K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">90%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~10%</td></tr><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">$12K&#8211;$25K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">90%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~10%</td></tr><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">$25K&#8211;$50K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">92%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~8%</td></tr><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">$50K&#8211;$100K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">93%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~7%</td></tr><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">$100K&#8211;$250K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">93%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~7%</td></tr><tr><td style="padding:6px 8px;border-bottom:1px solid #eee">Over $250K</td><td style="padding:6px 8px;border-bottom:1px solid #eee">93%</td><td style="padding:6px 8px;border-bottom:1px solid #eee">~7%</td></tr></tbody></table>
+<p style="font-size:.82em;color:#888;margin:-.3em 0 1.4em">Source: SaaS Capital, <a style="color:#888" href="https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf">2023 B2B SaaS Retention Benchmarks</a> (~1,500 private B2B SaaS companies). Most recent: Benchmarkit&#8217;s 2025 report puts FY2024 median gross retention at 88% and net retention at 101%. The churn column is derived as 100% minus median gross revenue retention.</p>
+<h3>Two traps when reading these numbers</h3>
+<p><strong>Growth stage:</strong> young companies often post inflated gross retention (~92%) that settles near 90% as customer cohorts mature. <strong>Monthly note:</strong> Recurly reports ~3.3% average <em>monthly</em> subscriber churn (3.8% for software &amp; business services), but that dataset skews to self-serve/consumer subscriptions and is not comparable to annual B2B logo churn &#8212; <a style="color:#888" href="https://recurly.com/research/churn-rate-benchmarks/">Recurly</a>.</p>
+<h3>Using these benchmarks in due diligence</h3>
+<p>Compare the target against these figures. A deviation is not an automatic deal-breaker &#8212; it determines which questions to ask on management calls and how to structure earn-outs and holdbacks.</p>
 </section>
-<section id="saas-net-revenue-retention-by-segment-2026" class="merged-section">
-<h2>SaaS Net Revenue Retention by Segment 2026</h2>
-<div class="container">
-        
-    
-    <p class="lead">Net revenue retention (NRR) benchmarks broken down by company size, ACV range, and go-to-market model. Essential reference for SaaS finance and investor diligence.</p>
-    <span class="badge">CC BY 4.0</span>
-    <span class="badge" style="margin-left:.5rem;background:#dbeafe;color:#2563eb">Updated 2026-07-20</span>
 
-    <div class="nav-links">
-<a href="data.csv" class="btn btn-primary" download>📥 Download CSV</a>
-<a href="data.json" class="btn btn-outline" download>📥 Download JSON</a>
-</div>
-
-    <div class="chart-box">
-<canvas id="datasetChart"></canvas>
-</div>
-
-    <h3>Data Table</h3>
-    <div class="card" style="overflow-x:auto">
-    <table>
-    <thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
-    <tbody><tr><td>NRR — SMB SaaS (&lt;$10M ARR)</td><td class="value">96%</td><td class="source">OpenView Partners SaaS Benchmarks 2025</td></tr>
-<tr><td>NRR — Mid-Market ($10M-$100M ARR)</td><td class="value">108%</td><td class="source">OpenView Partners SaaS Benchmarks 2025</td></tr>
-<tr><td>NRR — Enterprise (&gt;$100M ARR)</td><td class="value">115%</td><td class="source">OpenView Partners SaaS Benchmarks 2025</td></tr>
-<tr><td>NRR — Product-Led Growth companies</td><td class="value">102%</td><td class="source">OpenView Product Benchmarks 2025</td></tr>
-<tr><td>NRR — Sales-led companies</td><td class="value">110%</td><td class="source">OpenView Product Benchmarks 2025</td></tr>
-<tr><td>NRR — Top quartile (public SaaS)</td><td class="value">&gt;120%</td><td class="source">Meritech Capital SaaS Metrics 2025</td></tr>
-<tr><td>NRR — Bottom quartile (public SaaS)</td><td class="value">&lt;95%</td><td class="source">Meritech Capital SaaS Metrics 2025</td></tr>
-<tr><td>Expansion revenue as % of ARR growth (median)</td><td class="value">38%</td><td class="source">Gainsight Pulse Survey 2025</td></tr>
-<tr><td>Logo churn offset by expansion (top quartile)</td><td class="value">100%+</td><td class="source">Bessemer Cloud 100 Benchmarks 2025</td></tr>
-</tbody>
-    </table>
-    </div>
-
-    <p style="color:var(--muted);font-size:.85rem;margin-top:.5rem">9 data points — all sourced from publicly available industry reports and databases.</p>
-
-        <div class="cite-box">
-    <strong>📚 Cite this dataset</strong>
-    <p style="margin-top:.5rem"><strong>APA:</strong> ChurnLens. (2026-07-20). <i>SaaS Net Revenue Retention by Segment 2026</i>. Retrieved from https://churnlens.site/data/saas-retention-by-segment/</p>
-    <p style="margin-top:.5rem"><strong>MLA:</strong> "SaaS Net Revenue Retention by Segment 2026." <em>ChurnLens</em>, 2026-07-20, churnlens.site/data/saas-retention-by-segment/.</p>
-    <p style="margin-top:.5rem"><strong>BibTeX:</strong></p>
-    <pre>@misc{saas-retention-by-segment,
-  author       = {ChurnLens},
-  title        = {SaaS Net Revenue Retention by Segment 2026},
-  year         = {2026},
-  url          = {https://churnlens.site/data/saas-retention-by-segment/},
-  note         = {Accessed: 2026-07-20}
-}</pre>
-    <p style="margin-top:.5rem;color:var(--muted);font-size:.8rem">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--accent)">CC BY 4.0</a>. Attribution required.</p>
-    </div>
-
-    
-
-    </div>
-</section>
 <!-- /consolidated -->
 <div class="cta">
 <h2>Ready to stress-test a SaaS acquisition?</h2>
