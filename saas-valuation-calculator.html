@@ -50,6 +50,14 @@ footer a{color:var(--accent);text-decoration:none}
   <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
   <script src="/assets/cl-enhance.52579359.js" defer></script>
   <!-- cl-r19 -->
+<!-- cl-callout-contrast-v1 -->
+<style>
+/* Light TL;DR callouts inherit the dark theme's near-white text, which is
+   invisible on their own near-white background. Pin readable colours. */
+.callout[style*="#f0f7ff"] { color: #0f172a; }
+.callout[style*="#f0f7ff"] strong { color: #0f172a; }
+.callout[style*="#f0f7ff"] a { color: #0b4ea2; }
+</style>
 </head>
 <body>
 <h1>SaaS Valuation Calculator</h1>
