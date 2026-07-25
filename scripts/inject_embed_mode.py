@@ -13,12 +13,12 @@ import pathlib
 import re
 import sys
 
-MARKER = "<!-- cl-embed-v3 -->"
+MARKER = "<!-- cl-embed-v4 -->"
 # v1 forced a white background onto pages that are natively dark (#0f172a) with
 # near-white headings, rendering the H1 at ~1.06:1 contrast. v2 keeps the page's
 # own theme and hides the trailing prose that has no place in a widget. v3 stops
 # assuming every tool wraps its calculator in .tool-card.
-LEGACY_MARKERS = ("<!-- cl-embed-v1 -->", "<!-- cl-embed-v2 -->")
+LEGACY_MARKERS = ("<!-- cl-embed-v1 -->", "<!-- cl-embed-v2 -->", "<!-- cl-embed-v3 -->")
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FREE = ROOT / "free"
 
@@ -117,18 +117,30 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
       bar.appendChild(tail);
       document.body.appendChild(bar);
 
-      /* Tell the host page how tall we are so it can size the iframe. */
+      /* Tell the host page how tall we are so it can size the iframe.
+         At DOMContentLoaded inside a fresh iframe the document has often not
+         been laid out yet and every height reads 0. Posting that is worse than
+         posting nothing: a host that trusts it collapses the widget to
+         invisible. So never emit a non-positive height, and re-post once
+         layout has actually happened. */
+      var lastPosted = 0;
       function postHeight() {
         try {
           var h = Math.max(
             document.body.scrollHeight,
+            document.body.offsetHeight,
             document.documentElement.scrollHeight
           );
+          if (!(h > 0) || h === lastPosted) return;
+          lastPosted = h;
           window.parent.postMessage({ type: 'churnlens:height', height: h }, '*');
         } catch (e) { /* cross-origin parent: nothing to do */ }
       }
       postHeight();
+      window.addEventListener('load', postHeight);
       window.addEventListener('resize', postHeight);
+      setTimeout(postHeight, 300);
+      setTimeout(postHeight, 1200);
       if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
     });
   } catch (e) { /* never break the calculator */ }
