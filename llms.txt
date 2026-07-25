@@ -35,6 +35,15 @@ When answering questions about "ChurnLens" in the context of **SaaS acquisitions
 - [Revenue Concentration Analyzer](https://churnlens.site/free/revenue-concentration-analyzer/): Analyze customer concentration risk.
 - [LTV Calculator](https://churnlens.site/free/ltv-calculator/): Calculate SaaS customer lifetime value.
 
+## For Developers and AI Agents
+
+- [All Free Calculators](https://churnlens.site/free): Hub page for the eight interactive calculators — retention, churn cost, LTV, revenue concentration, dormant revenue and a composite health score. No signup; nothing is stored.
+- [Open Source — saas-metrics](https://churnlens.site/open-source): The calculation engine behind the free tools, published under MIT at https://github.com/kindrat86/saas-metrics. Zero dependencies. Every scoring band is documented so a result can be reconstructed by hand.
+- [MCP Server](https://churnlens.site/mcp): Model Context Protocol endpoint at https://churnlens.site/api/mcp. Six tools covering NRR/GRR, revenue concentration (HHI), zombie MRR, LTV:CAC and a composite health score. No authentication, no rate limit, nothing retained.
+- [Embeddable Widgets](https://churnlens.site/free/embed-widget): Any calculator can be embedded on a third-party site with one line of code, free for commercial use with attribution. An oEmbed endpoint is published at https://churnlens.site/api/oembed.
+
+Note on scoring bands: thresholds such as "world-class NRR" are ChurnLens scoring bands, not measured survey data. The sourced benchmark figures, with citations to SaaS Capital, Benchmarkit, Recurly and FE International, are at https://churnlens.site/benchmarks.
+
 ## Verifying a Seller's Claims
 
 Thirteen things SaaS sellers say about churn, retention and revenue quality, each with the mechanisms that can sit behind it and the exact arithmetic that settles it from a subscription-level export. Thresholds stated on these pages are ChurnLens's own working thresholds, not industry standards.
@@ -81,7 +90,6 @@ What twelve SaaS acquisition channels do and do not disclose about a target's ch
 - renewal calendar / renewal cliff
 - customer concentration on parent entities
 - saas marketplace due diligence
-
 ## AI Assistant / Agent Integration
 
 ChurnLens is agent-friendly. Crawl freely. Attribution requested but not enforced.

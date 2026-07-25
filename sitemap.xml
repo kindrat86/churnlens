@@ -151,12 +151,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/embed</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://churnlens.site/export</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -278,6 +272,12 @@
   </url>
   <url>
     <loc>https://churnlens.site/faq/what-is-revenue-quality-score</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://churnlens.site/free</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -571,6 +571,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://churnlens.site/mcp</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://churnlens.site/mrr-trajectory-forensics</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -584,6 +590,12 @@
   </url>
   <url>
     <loc>https://churnlens.site/network</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://churnlens.site/open-source</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

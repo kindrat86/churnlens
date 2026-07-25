@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration | ChurnLens</title>
+<meta name="description" content="Eight free SaaS calculators: net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. Interactive, no signup, nothing stored. The maths is open source.">
+<link rel="canonical" href="https://churnlens.site/free">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free SaaS Metrics Calculators">
+<meta property="og:description" content="Eight free SaaS calculators: net revenue retention, churn cost, customer LTV, revenue concentration risk, zombie MRR and a composite health score. Interactive, no signup, nothing stored. The maths is open source.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:url" content="https://churnlens.site/free">
+<meta name="twitter:card" content="summary">
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free SaaS Metrics Calculators","url":"https://churnlens.site/free","description":"Eight free, interactive SaaS metric calculators covering retention, churn, lifetime value, revenue concentration and dormant revenue.","isPartOf":{"@id":"https://churnlens.site/#website"},"mainEntity":{"@type":"ItemList","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://churnlens.site/free/due-diligence-simulator","name":"SaaS Due Diligence Simulator"},{"@type":"ListItem","position":2,"url":"https://churnlens.site/free/nrr-calculator","name":"Net Revenue Retention (NRR) Calculator"},{"@type":"ListItem","position":3,"url":"https://churnlens.site/free/churn-calculator","name":"SaaS Churn Cost Calculator"},{"@type":"ListItem","position":4,"url":"https://churnlens.site/free/revenue-concentration-analyzer","name":"Revenue Concentration Risk Analyzer"},{"@type":"ListItem","position":5,"url":"https://churnlens.site/free/zombie-mrr-detector","name":"Zombie MRR Detector"},{"@type":"ListItem","position":6,"url":"https://churnlens.site/free/saas-health-score","name":"SaaS Revenue Health Score"},{"@type":"ListItem","position":7,"url":"https://churnlens.site/free/ltv-calculator","name":"Customer LTV Calculator"},{"@type":"ListItem","position":8,"url":"https://churnlens.site/free/mrr-health-check","name":"MRR Health Check"}]}}</script>
+<style>
+.ab-nav { display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.ab-nav .logo { font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; }
+.ab-nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.ab-nav .nav-links a { color: #cbd5e1; text-decoration: none; font-size: .9rem; font-weight: 500; }
+.ab-nav .nav-links a:hover { color: #fff; }
+.cl-hub { max-width: 880px; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: #cbd5e1; line-height: 1.7; }
+.cl-hub h1 { font-size: 2rem; line-height: 1.2; margin-bottom: .5rem; color: #f1f5f9; }
+.cl-hub .lede { font-size: 1.08rem; color: #94a3b8; margin-bottom: 2rem; max-width: 62ch; }
+.cl-hub h2 { font-size: 1.3rem; margin: 2.6rem 0 .8rem; color: #f1f5f9; }
+.cl-grid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.cl-card { border: 1px solid #334155; border-radius: 10px; background: #1e293b;
+  transition: border-color .15s, transform .15s; }
+.cl-card:hover { border-color: #6366f1; transform: translateY(-2px); }
+.cl-card-link { display: block; padding: 1.15rem 1.25rem; text-decoration: none; color: inherit; height: 100%; }
+.cl-card h3 { font-size: 1.02rem; margin: 0 0 .4rem; color: #f1f5f9; }
+.cl-card p { font-size: .9rem; color: #94a3b8; margin: 0 0 .7rem; }
+.cl-go { font-size: .84rem; font-weight: 700; color: #a5b4fc; }
+.cl-hub p { margin-bottom: .9rem; }
+.cl-hub strong { color: #e2e8f0; }
+.cl-note { background: #1e293b; border-left: 3px solid #6366f1; padding: .9rem 1.1rem;
+  border-radius: 0 6px 6px 0; margin: 1.6rem 0; }
+.cl-note p:last-child { margin-bottom: 0; }
+.cl-hub a { color: #a5b4fc; }
+.cl-foot { max-width: 880px; margin: 0 auto; padding: 1.6rem 1.25rem 3rem;
+  border-top: 1px solid #1e293b; font-size: .87rem; color: #94a3b8; }
+.cl-foot a { color: #a5b4fc; text-decoration: none; }
+</style>
+<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","foundingDate":"2026-01-15","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86","https://github.com/kindrat86/saas-metrics","https://github.com/kindrat86/churnlens-mcp"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"image":"https://churnlens.site/og.png","contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"address":{"@type":"PostalAddress","addressLocality":"Larnaca","addressCountry":"CY"},"founder":{"@id":"https://churnlens.site/#founder"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"author":{"@id":"https://churnlens.site/#organization"},"featureList":["Churn Divergence Detector","Concentration Vulnerability Index","Annual-Plan Decay Projection","Zombie MRR Detector","Revenue Quality Scorecard","MRR Trajectory Forensics"],"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","description":"Buyer-side SaaS churn due-diligence for acquirers","inLanguage":"en","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+</head>
+<body id="main-content">
+<nav class="ab-nav">
+  <a href="/" class="logo">ChurnLens</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/free">Free Tools</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/why">Founder Story</a>
+  </div>
+</nav>
+<main class="cl-hub">
+<h1>Free SaaS metrics calculators</h1>
+<p class="lede">Eight interactive calculators covering retention, churn, lifetime value,
+revenue concentration and dormant revenue. No signup, no account, and nothing you type
+leaves your browser.</p>
+
+<ul class="cl-grid">
+<li class="cl-card"><a class="cl-card-link" href="/free/due-diligence-simulator"><h3>SaaS Due Diligence Simulator</h3><p>The full buyer-side screen: five risk dimensions, a composite Revenue Quality Score (A–F) and a radar chart. Start here if you are evaluating a business to buy.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/nrr-calculator"><h3>Net Revenue Retention (NRR) Calculator</h3><p>NRR and GRR from your MRR movements, with a waterfall breakdown. The gap between the two is where hidden churn shows up.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/churn-calculator"><h3>SaaS Churn Cost Calculator</h3><p>What churn actually costs in currency rather than percent: annual revenue lost, a 12-month MRR projection and the decay curve.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/revenue-concentration-analyzer"><h3>Revenue Concentration Risk Analyzer</h3><p>Herfindahl-Hirschman Index, top-5 share and whale flags. Answers how much revenue walks out with one logo.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/zombie-mrr-detector"><h3>Zombie MRR Detector</h3><p>Finds accounts still paying but inactive for 90+ days — revenue that counts today and is one renewal notice from cancelling.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/saas-health-score"><h3>SaaS Revenue Health Score</h3><p>A composite 0–100 across retention, growth, concentration, efficiency and durability, with the weakest dimension called out.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/ltv-calculator"><h3>Customer LTV Calculator</h3><p>Churn-adjusted lifetime value. Include your gross margin or the number is lifetime revenue, not lifetime value.</p><span class="cl-go">Open the calculator →</span></a></li>
+<li class="cl-card"><a class="cl-card-link" href="/free/mrr-health-check"><h3>MRR Health Check</h3><p>A quick audit of recurring-revenue quality: concentration, annual-plan exposure and decline patterns.</p><span class="cl-go">Open the calculator →</span></a></li>
+</ul>
+
+<div class="cl-note">
+<p><strong>The maths is open source.</strong> Every formula here is published under MIT at
+<a href="/open-source">saas-metrics</a>, so you can check it, run it yourself, or build on
+it. AI agents can call the same calculations through our <a href="/mcp">MCP server</a>.</p>
+</div>
+
+<h2>Put these on your own site</h2>
+<p>Every calculator is embeddable with one line of code, free for commercial use with
+attribution. Grab a snippet from the <a href="/free/embed-widget">embed gallery</a>, or
+paste a calculator URL into WordPress, Ghost or Discourse and it will expand into the
+widget automatically.</p>
+
+<h2>What these tools can and cannot tell you</h2>
+<p>They compute from summary figures you supply, which makes them a fast first-pass screen.
+What they cannot see is anything that only emerges from customer-level data: cohort decay
+curves, renewal-cliff timing, or concentration in specific logos. That needs the full
+monthly MRR-by-customer ledger, which is what our <a href="/pricing">paid analysis</a>
+reads.</p>
+<p>The scoring bands the tools apply are thresholds, not survey results. The sourced
+benchmark figures, with citations, are on the <a href="/benchmarks">benchmarks page</a>.</p>
+</main>
+<footer class="cl-foot">
+  <p><a href="https://churnlens.site"><strong>ChurnLens</strong></a> — buyer-side SaaS due diligence.
+  Independent of the similarly named churnlens.io and churnlens.tech.</p>
+  <p><a href="/open-source">Open source</a> · <a href="/mcp">MCP server</a> ·
+  <a href="/benchmarks">Benchmarks</a> · <a href="/pricing">Pricing</a> · <a href="/contact">Contact</a></p>
+</footer>
+</body>
+</html>

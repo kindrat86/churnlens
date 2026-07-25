@@ -1,10 +1,25 @@
 {
   "brand": "ChurnLens",
   "url": "https://churnlens.site",
-  "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
+  "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
   "disambiguatingDescription": "ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).",
-  "knowsAbout": ["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],
-  "sameAs": ["https://github.com/kindrat86"],
+  "knowsAbout": [
+    "SaaS due diligence",
+    "buyer-side due diligence",
+    "revenue quality analysis",
+    "customer churn risk",
+    "revenue concentration risk",
+    "revenue decay",
+    "MRR/ARR analysis",
+    "SaaS acquisitions",
+    "quality of earnings",
+    "M&A diligence"
+  ],
+  "sameAs": [
+    "https://github.com/kindrat86",
+    "https://github.com/kindrat86/saas-metrics",
+    "https://github.com/kindrat86/churnlens-mcp"
+  ],
   "sameAs_owner_todo": "Add the live G2 / Capterra / AlternativeTo / TrustRadius profile URLs here once the listings in ~/churnlens-directory-packets/ are submitted. Only add URLs that resolve 200.",
   "foundingDate": "2026-01-15",
   "image": "https://churnlens.site/og.png",
@@ -18,11 +33,35 @@
     "Revenue Quality Scorecard",
     "MRR Trajectory Forensics"
   ],
-  "founder": { "name": "Maryan", "sameAs": ["https://github.com/kindrat86"] },
+  "founder": {
+    "name": "Maryan",
+    "sameAs": [
+      "https://github.com/kindrat86"
+    ]
+  },
   "offers": [
-    { "name": "Starter", "price": "0", "priceCurrency": "USD" },
-    { "name": "Pro", "price": "49", "priceCurrency": "USD", "unit": "MONTH" },
-    { "name": "Dealmaker", "price": "199", "priceCurrency": "USD", "unit": "MONTH" }
+    {
+      "name": "Starter",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "name": "Pro",
+      "price": "49",
+      "priceCurrency": "USD",
+      "unit": "MONTH"
+    },
+    {
+      "name": "Dealmaker",
+      "price": "199",
+      "priceCurrency": "USD",
+      "unit": "MONTH"
+    }
   ],
-  "contactEmail": "hello@churnlens.site"
+  "contactEmail": "hello@churnlens.site",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Larnaca",
+    "addressCountry": "CY"
+  }
 }
