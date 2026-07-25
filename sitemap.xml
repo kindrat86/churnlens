@@ -181,6 +181,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://churnlens.site/faq/what-is-revenue-quality-score</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://churnlens.site/free/churn-calculator</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>

@@ -119,7 +119,11 @@ def canonical_id_of(node):
     node_type = node.get("@type")
     # @type may legitimately be a list (multi-typed node); those are left alone
     # rather than guessed at.
-    if not isinstance(node_type, str) or node_type not in TYPE_TO_ID or len(node) <= 2:
+    #
+    # No minimum size here on purpose: {"@type":"Organization","name":"ChurnLens"}
+    # sitting in an `author` slot is the *worst* fragment, not a harmless one —
+    # it is an anonymous second ChurnLens with no @id to merge on.
+    if not isinstance(node_type, str) or node_type not in TYPE_TO_ID:
         return None
     if node.get("name") == E["brand"] or (node.get("url") or "").rstrip("/") == BASE.rstrip("/"):
         return TYPE_TO_ID[node_type]

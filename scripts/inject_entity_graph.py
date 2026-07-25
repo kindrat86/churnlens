@@ -49,7 +49,14 @@ else:
 block = MARKER + '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, separators=(",", ":")) + "</script>"
 block_re = re.compile(re.escape(MARKER) + r'<script type="application/ld\+json">.*?</script>', re.S)
 
-SKIP = {"node_modules", ".git", ".vercel", ".well-known"}
+# i18n/ and i18n_out/ are .vercelignore'd, public/* is 308-redirected to /*, and
+# dist/ 404s — none of them ship. Keeping this list identical to SKIP_DIRS in
+# dedupe_entity_graph.py matters: the two scripts must cover the same pages, or
+# dedupe leaves behind entity nodes on pages inject never reached.
+SKIP = {
+    "node_modules", ".git", ".vercel", ".well-known",
+    "i18n", "i18n_out", "dist", "public", "__pycache__",
+}
 count = 0
 for dirpath, dirnames, filenames in os.walk(ROOT):
     dirnames[:] = [d for d in dirnames if d not in SKIP]

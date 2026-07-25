@@ -47,6 +47,10 @@ if (dirs.length === 0) dirs.push('dist');
 const SKIP = new Set([
   'node_modules', '.git', '.next', '.vercel', 'assets',
   '__pycache__', '.venv', 'venv', 'coverage',
+  // Not shipped on this site: i18n/ and i18n_out/ are .vercelignore'd,
+  // public/* is 308-redirected to /*, and dist/ 404s. Scanning them would fail
+  // the build over pages no crawler can reach.
+  'i18n', 'i18n_out', 'dist', 'public',
 ]);
 
 const BLOCK_RE =

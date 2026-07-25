@@ -42,54 +42,7 @@
     <!-- PostHog -->
     <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://churnlens.site/#organization",
-          "name": "ChurnLens",
-          "alternateName": "ChurnLens",
-          "url": "https://churnlens.site/",
-          "logo": {"@type": "ImageObject", "url": "https://churnlens.site/og.png", "width": 1200, "height": 630},
-          "image": "https://churnlens.site/og.png",
-          "description": "Buyer-side SaaS due diligence. Upload a target's subscription CSVs and get a risk report in minutes — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.",
-          "disambiguatingDescription": "ChurnLens at churnlens.site is a buyer-side due-diligence tool used by acquirers and PE/M&A analysts to analyze a SaaS target's revenue and churn quality before purchase. It is an independent product, unaffiliated with other similarly named tools such as churnlens.io (retention automation) or churnlens.tech (churn prediction).",
-          "foundingDate": "2026",
-          "sameAs": ["https://github.com/kindrat86"],
-          "knowsAbout": ["SaaS due diligence", "buyer-side due diligence", "revenue quality analysis", "customer churn analysis", "revenue concentration risk", "MRR analysis", "SaaS acquisitions", "quality of earnings"],
-          "contactPoint": {"@type": "ContactPoint", "email": "hello@churnlens.site", "contactType": "customer support"}
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://churnlens.site/#website",
-          "url": "https://churnlens.site/",
-          "name": "ChurnLens",
-          "publisher": {"@id": "https://churnlens.site/#organization"},
-          "potentialAction": {"@type": "SearchAction", "target": "https://churnlens.site/?q={search_term_string}", "query-input": "required name=search_term_string"}
-        },
-        {
-          "@type": "SoftwareApplication",
-          "@id": "https://churnlens.site/#software",
-          "name": "ChurnLens",
-          "url": "https://churnlens.site/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web",
-          "description": "Buyer-side SaaS due-diligence tool: upload a target's subscription CSVs to analyze churn divergence, concentration risk, annual-plan decay, zombie MRR, and revenue quality before a SaaS acquisition.",
-          "featureList": ["Churn Divergence Detector", "Concentration Vulnerability Index", "Annual-Plan Decay Projection", "Zombie MRR Detector", "Revenue Quality Scorecard", "MRR Trajectory Forensics"],
-          "publisher": {"@id": "https://churnlens.site/#organization"},
-          "author": {"@id": "https://churnlens.site/#organization"},
-          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free tier; one-off analysis from $9; paid tiers to $1,999"}
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "name": ["Home", "Pricing", "About", "FAQ", "Contact"],
-          "url": ["https://churnlens.site/", "https://churnlens.site/pricing", "https://churnlens.site/about", "https://churnlens.site/faq", "https://churnlens.site/contact"]
-        }
-      ]
-    }
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SiteNavigationElement","name":["Home","Pricing","About","FAQ","Contact"],"url":["https://churnlens.site/","https://churnlens.site/pricing","https://churnlens.site/about","https://churnlens.site/faq","https://churnlens.site/contact"]}]}</script>
     <!-- Entity TODO (owner): (1) add a founder Person node + an Organization "founder": {"@id": ".../#founder"} ref once you decide whether to name a real person; (2) populate "sameAs": [] with REAL owned profiles — LinkedIn company page + live G2/Capterra/AlternativeTo/Product Hunt listings once directory submissions go live. Do NOT add sameAs URLs that 404. (3) og.png is now the schema logo (1200×630 verified deployed). Favicon remains /favicon.png. -->
     <!-- Removed: personal github.com/kindrat86 + likely-404 linkedin.com/company/churnlens from sameAs; foundingDate corrected 2025 -> 2026. -->
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://churnlens.site/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"}]}</script>
@@ -534,7 +487,7 @@
 <!-- /ux.css + /ux.js are already loaded in <head> above (line ~167). Do NOT re-add:
      ux.js has no double-init guard, so a second copy builds a second
      back-to-top FAB that overlays page content on mobile. -->
-<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
+<!-- entity-graph --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://churnlens.site/#organization","name":"ChurnLens","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","disambiguatingDescription":"ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).","foundingDate":"2026-01-15","knowsAbout":["SaaS due diligence","buyer-side due diligence","revenue quality analysis","customer churn risk","revenue concentration risk","revenue decay","MRR/ARR analysis","SaaS acquisitions","quality of earnings","M&A diligence"],"sameAs":["https://github.com/kindrat86"],"logo":{"@type":"ImageObject","url":"https://churnlens.site/og.png"},"image":"https://churnlens.site/og.png","contactPoint":{"@type":"ContactPoint","email":"hello@churnlens.site","contactType":"customer support"},"founder":{"@id":"https://churnlens.site/#founder"}},{"@type":"SoftwareApplication","@id":"https://churnlens.site/#software","name":"ChurnLens","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://churnlens.site","description":"ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts upload a target company's subscription CSVs and get a revenue-quality and churn-risk report in minutes \u2014 hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.","publisher":{"@id":"https://churnlens.site/#organization"},"author":{"@id":"https://churnlens.site/#organization"},"featureList":["Churn Divergence Detector","Concentration Vulnerability Index","Annual-Plan Decay Projection","Zombie MRR Detector","Revenue Quality Scorecard","MRR Trajectory Forensics"],"offers":[{"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Dealmaker","price":"199","priceCurrency":"USD"}]},{"@type":"WebSite","@id":"https://churnlens.site/#website","url":"https://churnlens.site","name":"ChurnLens","description":"Buyer-side SaaS churn due-diligence for acquirers","inLanguage":"en","publisher":{"@id":"https://churnlens.site/#organization"}},{"@type":"Person","@id":"https://churnlens.site/#founder","name":"Maryan","sameAs":["https://github.com/kindrat86"],"worksFor":{"@id":"https://churnlens.site/#organization"}}]}</script>
 </head>
   <body id="main-content">
     <!-- cl-skip-link (see /assets/cl-enhance.455995f7.css) — NOT Tailwind utilities.
@@ -992,10 +945,10 @@
     <div class="pseo-footer-section">
       <h3>Alternatives</h3>
       <ul>
-              <li><a href="/alternatives-to/baremetrics">Baremetrics</a></li>
-      <li><a href="/alternatives-to/profitwell">ProfitWell</a></li>
-      <li><a href="/alternatives-to/baremetrics">Baremetrics alternatives</a></li>
-      <li><a href="/alternatives-to/chartmogul">ChartMogul alternatives</a></li>
+              <li><a href="/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence">Baremetrics</a></li>
+      <li><a href="/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence">ProfitWell</a></li>
+      <li><a href="/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence">Baremetrics alternatives</a></li>
+      <li><a href="/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence">ChartMogul alternatives</a></li>
         <li><a href="/compare">View all →</a></li>
       </ul>
     </div>

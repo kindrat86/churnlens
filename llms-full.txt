@@ -1181,9 +1181,9 @@ Not as a standalone due-diligence tool, no. If the seller already has it, read t
 ### Can Baremetrics and ChurnLens work together?
 Yes — they are complementary. The seller runs Baremetrics for day-to-day operations. You as the buyer run ChurnLens over the same underlying data during diligence. Each answers a different question.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
@@ -1228,9 +1228,9 @@ Warning for acquirers: ChartMogul's MRR forecast is based on historical trends. 
 ### Verdict
 ChartMogul is excellent for its intended user (the SaaS operator). For acquirers, use the seller's ChartMogul dashboard for operational context and trend insight. Then use ChurnLens to run the same data through a buyer-side lens — scoring concentration, decomposition, cliffs, and [zombie MRR](/zombie-mrr-detector) for your deal memo.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
@@ -1274,9 +1274,9 @@ ChurnZero is a powerful tool for CS teams actively managing retention. If the ta
 ### Verdict
 ChurnZero is a strong CS platform for operators managing retention. For acquirers, use a seller's ChurnZero data for operational context on account health. Use ChurnLens for the independent revenue-quality scoring and risk decomposition needed for a structured deal assessment.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
@@ -1321,9 +1321,9 @@ Due diligence tip: Ask the seller to export their Gainsight health scores for th
 ### Verdict
 Gainsight is an excellent CS platform, but it is not a due diligence tool. Use a seller's Gainsight instance to understand their retention operations. Rely on ChurnLens for the independent revenue-quality assessment you need for your deal memo.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
@@ -1367,9 +1367,9 @@ Key insight: ProfitWell's benchmarks are useful for context — knowing the aver
 ### Verdict
 ProfitWell is a great tool for operators at zero cost. For acquirers, read the seller's ProfitWell dashboard for context, then run ChurnLens for the diligence-grade answers. The benchmarks report is useful for calibration; the per-target analysis is not available in ProfitWell at all.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)
@@ -1413,9 +1413,9 @@ Best practice: Ask the seller for Stripe Sigma read-only access to validate the 
 ### Verdict
 Stripe Sigma is excellent for data verification and custom analysis if you have the SQL skills. For deal-ready revenue quality scoring with benchmarking, concentration analysis, and structured output, ChurnLens provides what Sigma leaves as an exercise for the analyst.
 ### Related resources
-- [ChurnLens vs Baremetrics](/alternatives-to/baremetrics)
-- [ChurnLens vs ProfitWell](/alternatives-to/profitwell)
-- [ChurnLens vs ChartMogul](/alternatives-to/chartmogul)
+- [ChurnLens vs Baremetrics](/vs/baremetrics#baremetrics-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ProfitWell](/vs/profitwell#profitwell-alternatives-for-saas-acquisition-due-diligence)
+- [ChurnLens vs ChartMogul](/vs/chartmogul#chartmogul-alternatives-for-saas-acquisition-due-diligence)
 - [Best SaaS Churn Analytics Tools 2026](/best/best-churn-analytics-tools)
 - [SaaS Churn Rate Benchmarks 2026](/benchmarks/saas-churn-rate-2026)
 - [Hidden Churn Red Flags 2026](/redflags/hidden-churn-redflags)

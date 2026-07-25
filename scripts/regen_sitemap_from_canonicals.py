@@ -86,12 +86,17 @@ def rewrite_matchers(cfg: dict) -> list[re.Pattern]:
         src = r.get("source")
         if not src:
             continue
-        rx = re.escape(src)
-        rx = rx.replace(r"/:path\*", "(?:/.*)?").replace(r"\:path\*", ".*")
-        rx = re.sub(r"\\:[A-Za-z_]+\\\*", ".*", rx)
-        rx = re.sub(r"\\:[A-Za-z_]+", "[^/]+", rx)
+        # Build from the RAW source: re.escape() leaves ':' untouched on modern
+        # Python, so escaping first makes every ':param' pattern unmatchable —
+        # that silently dropped every rewrite-served page (e.g. /faq/:slug).
+        out, i = [], 0
+        for m in re.finditer(r":([A-Za-z_]+)(\*?)", src):
+            out.append(re.escape(src[i:m.start()]))
+            out.append(".*" if m.group(2) else "[^/]+")
+            i = m.end()
+        out.append(re.escape(src[i:]))
         try:
-            pats.append(re.compile(rf"^{rx}$"))
+            pats.append(re.compile(rf"^{''.join(out)}$"))
         except re.error:
             continue
     return pats
