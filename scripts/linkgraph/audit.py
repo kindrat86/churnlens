@@ -52,6 +52,23 @@ for u, fs in pages.items():
         inl[t] += 1
         if t not in exist and t not in redir: broken[t] += 1
 lk = [u for u in pages if u not in EXCLUDE and not re.match(r"/google[0-9a-f]{16}$", u)]
+# This site has NO cleanUrls: an extensionless URL resolves only via an explicit
+# rewrite, or because the page is a dir/index.html. A flat foo.html with neither
+# is UNREACHABLE live even though the file ships.
+rwl = v.get("rewrites", [])
+rwsrc = {r.get("source", "").rstrip("/") for r in rwl}
+unreachable = []
+for u in lk:
+    if u == "/":
+        continue
+    if os.path.exists(u.strip("/") + "/index.html"):
+        continue
+    if u in rwsrc:
+        continue
+    if any(":" in s_ or "(" in s_ for s_ in rwsrc if s_.split("/:")[0] and u.startswith(s_.split("/:")[0] + "/")):
+        continue
+    if os.path.exists(u.strip("/") + ".html"):
+        unreachable.append(u)
 orph = sum(1 for u in lk if inl[u] == 0)
 med = int(statistics.median([inl[u] for u in lk])) if lk else 0
 print(f"indexable pages      {len(lk)}")
@@ -61,6 +78,8 @@ print(f"median inlinks       {med}        (target >=6)")
 print(f"dead internal links  {sum(broken.values())}        (target 0)")
 print(f"redirect loops       {loops}        (target 0 — RELEASE BLOCKER)")
 print(f"HTML parse failures  {pf}        (target 0)")
+print(f"unreachable (no rewrite) {len(unreachable)}    (target 0 — file ships but 404s: no cleanUrls)")
 if orph: print("\norphans:", ", ".join(sorted(u for u in lk if inl[u] == 0))[:600])
 if broken: print("\ndead targets:", ", ".join(f"{t}({c})" for t, c in broken.most_common(10)))
-sys.exit(1 if (orph or sum(broken.values()) or loops or pf) else 0)
+if unreachable: print("\nunreachable:", ", ".join(unreachable))
+sys.exit(1 if (orph or sum(broken.values()) or loops or pf or unreachable) else 0)

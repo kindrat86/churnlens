@@ -1043,6 +1043,10 @@
     {
       "source": "/data/(.*)",
       "destination": "/data/$1/index.html"
+    },
+    {
+      "source": "/7-revenue-churn-red-flags",
+      "destination": "/7-revenue-churn-red-flags.html"
     }
   ],
   "headers": [
