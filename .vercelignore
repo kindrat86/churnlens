@@ -9,3 +9,6 @@ churnlens-site-brand-gap-analysis.csv
 pseo-churnlens-site.txt
 striking-distance.html
 scripts/
+
+# build artifact — 78 duplicate pages, canonicalized to the real URLs, unknown to Google
+dist/
