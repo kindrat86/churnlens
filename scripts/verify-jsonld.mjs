@@ -112,7 +112,10 @@ const SKIP = new Set([
 
 // .vercelignore is the authority on what ships, so honour it rather than letting
 // the hardcoded list above drift away from it. Deliberately narrow: only bare
-// top-level directory names (`dist/`, `scripts/`), never globs or nested paths.
+// top-level directory names (`dist/`, `scripts/`, `/aeo`), never globs or nested
+// paths. A single leading slash is stripped — it is the .vercelignore idiom for
+// "top level only", and carshake's file is written entirely in that style, so
+// rejecting it would silently honour nothing there.
 //
 // This is the one place where the gate is allowed to shrink its own surface, so
 // it is a real hazard — the whole point of the public/ episode below is that a
@@ -132,8 +135,10 @@ function vercelIgnoredDirs() {
   for (const line of text.split('\n')) {
     const entry = line.trim();
     if (!entry || entry.startsWith('#') || entry.startsWith('!')) continue;
-    const name = entry.replace(/\/+$/, '');
-    // Bare names only: a glob or a path needs per-file matching this does not do.
+    // Strip one leading slash ("/scripts" means top-level scripts/) and any
+    // trailing slashes, then require a bare name: a glob, or a nested path like
+    // `.vercel/output`, needs per-file matching this deliberately does not do.
+    const name = entry.replace(/^\//, '').replace(/\/+$/, '');
     if (!name || /[*?[\]/]/.test(name)) continue;
     if (!existsSync(name) || !statSync(name).isDirectory()) continue;
     names.push(name);
