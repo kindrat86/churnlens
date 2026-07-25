@@ -43,8 +43,13 @@ function validToken(email, token, secret) {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'GET' && req.method !== 'POST') {
-    res.setHeader('Allow', 'GET, POST');
+  // HEAD must be allowed wherever GET is, and mail-security scanners routinely
+  // HEAD the links in a message — answering 405 makes them report the
+  // unsubscribe link as broken, which is a deliverability problem. HEAD is
+  // treated as never-mutating, so even a signed token does not act on one.
+  const isHead = req.method === 'HEAD';
+  if (req.method !== 'GET' && req.method !== 'POST' && !isHead) {
+    res.setHeader('Allow', 'GET, HEAD, POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -60,7 +65,7 @@ export default async function handler(req, res) {
 
   // Unsigned GET must not mutate state — offer an explicit confirmation instead.
   const signed = validToken(email, token, process.env.UNSUB_SECRET);
-  if (req.method === 'GET' && !signed) return confirmPage(res, email);
+  if (isHead || (req.method === 'GET' && !signed)) return confirmPage(res, email);
 
   const key = process.env.RESEND_API_KEY;
   if (!key) {
