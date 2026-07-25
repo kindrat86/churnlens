@@ -25,3 +25,29 @@ jobs:
       # HTML. See ~/.growth-engine/GUARDRAILS.md rule 3.
       - name: Verify shipped JSON-LD
         run: node scripts/verify-jsonld.mjs .
+      # verify-jsonld.mjs SKIPs public/ on the grounds that it is unreachable.
+      # It was not: /public/<path>/ served those files 200 for a while (fixed in
+      # be5ede5). Scan it explicitly so a green gate cannot be bought by
+      # shrinking the surface — the file counts between the two steps above
+      # already differ by ~77 for exactly this reason.
+      - name: Verify JSON-LD under public/
+        run: node scripts/verify-jsonld.mjs public
+
+  release-blockers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # These three were release blockers documented only in prose, so they were
+      # enforced by whoever happened to remember them. Each one corresponds to a
+      # defect that actually reached production on this site:
+      #   * redirect loops   — four self-referential vercel.json rules
+      #   * unreachable page — /7-revenue-churn-red-flags 404'd with the file present
+      #                        (no cleanUrls; every clean URL needs a rewrite)
+      #   * dead links/orphans — 56 dead internal links, 23 orphans
+      - name: Link graph and routing audit
+        run: python3 scripts/linkgraph/audit.py .
+      # Eleven internal docs, including a report enumerating this site's own
+      # security weaknesses, were served publicly because .vercelignore covered
+      # *.py but never *.md.
+      - name: No internal docs exposed
+        run: python3 scripts/check_public_docs.py

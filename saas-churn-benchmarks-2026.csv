@@ -1,5 +1,5 @@
 Sector,Monthly Churn Min,Monthly Churn Max,Annual Churn Min,Annual Churn Max,Health
-SMB SaaS (<$10 MRR/customer),5,8,46,63,High
+SMB SaaS (<$100 MRR/customer),5,8,46,63,High
 Mid-Market SaaS ($100-$1K MRR),3,5,31,46,Moderate
 Enterprise SaaS ($1K+ MRR),1,2,11,22,Good
 FinTech / Payments,4,7,39,58,High
