@@ -30,8 +30,19 @@
  * Self-contained by design — no cross-repo import, so it works in Vercel's
  * shallow clone. Keep the copies in the 10 site repos identical.
  *
- * Usage: node scripts/verify-jsonld.mjs [dir ...]      (default: dist)
- *   Exit 1 on any bad block, or if a named directory does not exist.
+ * Usage: node scripts/verify-jsonld.mjs [dir ...]
+ *   Default target: vercel.json's `outputDirectory` — the tree that actually
+ *   ships. Exit 1 on any bad block, or if a named directory does not exist.
+ *
+ * The default was hardcoded to `dist` until 2026-07-25, which was wrong on the
+ * sites that deploy from the repo root. Here `outputDirectory` is "." with
+ * `buildCommand: null`, so `dist/` is a *stale duplicate* of the site —
+ * .vercelignored, never served, unknown to Google. Argument-less runs therefore
+ * exited 1 with ~151 duplicate-entity errors on 78 pages that cannot be
+ * requested, while the 294 pages that do ship went unlinted. A gate that fails
+ * on unshipped files and passes on shipped ones is worse than no gate: it trains
+ * everyone to ignore it. Reading `outputDirectory` keeps the copies in the 10
+ * site repos identical AND correct per-site (this site "." — voicelogpro "dist").
  *
  * See ~/.growth-engine/GUARDRAILS.md rule 3 for the portfolio-wide context and
  * ~/.growth-engine/validate-jsonld-live.py for the post-deploy live check.
@@ -39,8 +50,32 @@
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname, resolve, relative } from 'node:path';
 
+/**
+ * The deploy root, per vercel.json. Falls back to `dist` when it exists (the
+ * old default, so build-based sibling sites are unaffected), else the repo root.
+ */
+function defaultTarget() {
+  try {
+    const cfg = JSON.parse(readFileSync('vercel.json', 'utf8'));
+    if (typeof cfg.outputDirectory === 'string' && cfg.outputDirectory) {
+      return { dir: cfg.outputDirectory, why: 'vercel.json outputDirectory' };
+    }
+  } catch {
+    // No vercel.json, or unreadable — fall through to the heuristic.
+  }
+  if (existsSync('dist') && statSync('dist').isDirectory()) {
+    return { dir: 'dist', why: 'no outputDirectory in vercel.json; dist/ exists' };
+  }
+  return { dir: '.', why: 'no outputDirectory in vercel.json and no dist/' };
+}
+
 const dirs = process.argv.slice(2);
-if (dirs.length === 0) dirs.push('dist');
+let defaultWhy = null;
+if (dirs.length === 0) {
+  const { dir, why } = defaultTarget();
+  dirs.push(dir);
+  defaultWhy = `${dir} (${why})`;
+}
 
 // Directories that never contain shippable HTML. `assets` holds hashed bundles
 // and is the bulk of a vite dist, so skipping it keeps this fast on large sites.
@@ -74,6 +109,40 @@ const SKIP = new Set([
   '__pycache__', '.venv', 'venv', 'coverage',
   'dist', 'i18n', 'i18n_out',
 ]);
+
+// .vercelignore is the authority on what ships, so honour it rather than letting
+// the hardcoded list above drift away from it. Deliberately narrow: only bare
+// top-level directory names (`dist/`, `scripts/`), never globs or nested paths.
+//
+// This is the one place where the gate is allowed to shrink its own surface, so
+// it is a real hazard — the whole point of the public/ episode below is that a
+// green gate bought by narrowing coverage looks identical to a green gate that
+// checked everything. Two things keep it honest: the names come from the same
+// file Vercel obeys (so anything skipped here is genuinely unrequestable), and
+// every skipped name is printed on every run, so the surface is visible in the
+// log instead of implied. An explicitly named directory is still always scanned.
+function vercelIgnoredDirs() {
+  const names = [];
+  let text;
+  try {
+    text = readFileSync('.vercelignore', 'utf8');
+  } catch {
+    return names;
+  }
+  for (const line of text.split('\n')) {
+    const entry = line.trim();
+    if (!entry || entry.startsWith('#') || entry.startsWith('!')) continue;
+    const name = entry.replace(/\/+$/, '');
+    // Bare names only: a glob or a path needs per-file matching this does not do.
+    if (!name || /[*?[\]/]/.test(name)) continue;
+    if (!existsSync(name) || !statSync(name).isDirectory()) continue;
+    names.push(name);
+  }
+  return names;
+}
+
+const ignoredDirs = vercelIgnoredDirs();
+for (const name of ignoredDirs) SKIP.add(name);
 
 const BLOCK_RE =
   /<script[^>]*\btype\s*=\s*["']?application\/ld\+json["']?[^>]*>([\s\S]*?)<\/script>/gi;
@@ -235,11 +304,25 @@ function check(path) {
   }
 }
 
+if (defaultWhy) {
+  console.log(`[verify-jsonld] no target given — defaulting to ${defaultWhy}`);
+}
+if (ignoredDirs.length) {
+  console.log(
+    `[verify-jsonld] skipping .vercelignore'd director${
+      ignoredDirs.length === 1 ? 'y' : 'ies'
+    }: ${ignoredDirs.join(', ')} (not deployed)`
+  );
+}
+
 const scanned = [];
 for (const d of dirs) {
   const root = resolve(process.cwd(), d);
   if (!existsSync(root)) {
-    console.error(`❌ verify-jsonld: ${d} not found — run the build first.`);
+    console.error(
+      `❌ verify-jsonld: ${d} not found` +
+        (d === 'dist' ? ' — run the build first.' : '.')
+    );
     process.exit(1);
   }
   if (!statSync(root).isDirectory()) {
