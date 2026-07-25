@@ -72,6 +72,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
   left: 0;
   background: var(--cl-blue);
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   padding: 0.75rem 1.5rem;
   border-radius: 0 0 0.5rem 0;
   font-weight: 700;
@@ -165,7 +166,10 @@ a:focus-visible, button:focus-visible, input:focus-visible,
 }
 .cl-nav-drawer a.cl-drawer-cta {
   background: var(--cl-blue);
-  color: #fff;
+  /* !important + text-fill required: shared /ux.css's a:not(...) rule is
+     (0,3,1) and repaints this label with --ux-accent → blue-on-blue (2.03:1). */
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   font-weight: 700;
   text-align: center;
   justify-content: center;
@@ -251,7 +255,10 @@ body.cl-drawer-open {
   justify-content: center;
   gap: 0.4rem;
   background: var(--cl-blue);
-  color: #fff;
+  /* !important + text-fill required: shared /ux.css's a:not(...) rule is
+     (0,3,1) and repaints this label with --ux-accent → blue-on-blue (2.03:1). */
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   padding: 0.875rem 1.5rem;
   border-radius: var(--cl-radius);
   font-weight: 700;
@@ -576,6 +583,7 @@ body.cl-drawer-open {
 .cl-content-nav .cl-nav-desktop .nav-cta {
   background: var(--cl-blue);
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   padding: 0.5rem 1.25rem;
   border-radius: 0.6rem;
   font-weight: 700;
@@ -610,7 +618,10 @@ body.cl-drawer-open {
 }
 .cl-content-nav ~ .cl-nav-drawer a.cl-drawer-cta {
   background: var(--cl-blue);
-  color: #fff;
+  /* !important + text-fill required: shared /ux.css's a:not(...) rule is
+     (0,3,1) and repaints this label with --ux-accent → blue-on-blue (2.03:1). */
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 /* ============================================================
