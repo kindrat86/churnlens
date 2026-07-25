@@ -1,5 +1,12 @@
-// Vercel serverless function — email capture for Churn Lens funnel
-// Captures lead, stores to KV if configured, and sends the checklist via Resend.
+// Vercel serverless function — email capture for the ChurnLens funnel
+// Captures lead, stores to KV if configured, adds the contact to the ChurnLens
+// Resend audience (the daily drip engine reads that audience — without this step
+// the promised 5-day sequence never fires), and sends the checklist immediately.
+
+// Resend audience "ChurnLens". The drip engine at ~/.hermes/email-engine/engine.py
+// resolves this audience by NAME and derives each contact's drip day from its
+// created_at, so simply creating the contact here is what starts the sequence.
+const CHURNLENS_AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID || '54ff48b1-45bf-4d7e-8ecf-e0df909176d5';
 
 const CHECKLIST_HTML = `<!doctype html>
 <html><body style="font-family:Inter,Arial,sans-serif;background:#0f172a;color:#f8fafc;padding:2rem;">
@@ -9,7 +16,7 @@ const CHECKLIST_HTML = `<!doctype html>
 <h2 style="color:#fff;font-size:1.1rem;">What's inside:</h2>
 <ul style="color:#94a3b8;line-height:1.8;">
 <li><strong style="color:#e2e8f0;">The 23-Point Checklist</strong> — already shown to you on the thank-you page</li>
-<li><strong style="color:#e2e8f0;">Sample Risk Report</strong> — Churn Lens output on a real $48K MRR SaaS (below)</li>
+<li><strong style="color:#e2e8f0;">Sample Risk Report</strong> — a full ChurnLens output on a synthetic $48K MRR target: <a href="https://churnlens.site/sample-churn-risk-report" style="color:#3b82f6;">read it here</a></li>
 <li><strong style="color:#e2e8f0;">Hidden Churn Cheat Sheet</strong> — the 7 tricks sellers use</li>
 </ul>
 <h2 style="color:#fff;font-size:1.1rem;">The 7 Hidden Churn Tricks (Cheat Sheet)</h2>
@@ -23,8 +30,8 @@ const CHECKLIST_HTML = `<!doctype html>
 <li><strong>"Growing out of churn" illusion</strong> — new sales mask the denominator</li>
 </ol>
 <hr style="border-color:#334155;margin:1.5rem 0;">
-<p style="color:#64748b;font-size:0.85rem;">Tomorrow: "The $48K MRR target where headline churn hid 47% revenue decay" — a full walk-through of the sample report. Look out for it.</p>
-<p style="color:#64748b;font-size:0.8rem;margin-top:1.5rem;">Churn Lens &middot; <a href="https://churnlens.site" style="color:#3b82f6;">churnlens.site</a></p>
+<p style="color:#64748b;font-size:0.85rem;">Over the next five days you'll get one email a day from me: the $340K deal that started ChurnLens, the three claims that make buyers trust a seller's churn number, how each of the five risks is actually computed, and what to do when a seller refuses to hand over the export. One a day, then I get out of your inbox.</p>
+<p style="color:#64748b;font-size:0.8rem;margin-top:1.5rem;">— Maryan, founder, ChurnLens &middot; <a href="https://churnlens.site" style="color:#3b82f6;">churnlens.site</a></p>
 </div>
 </body></html>`;
 
@@ -115,6 +122,32 @@ export default async function handler(req, res) {
     }
   }
 
+  // Add the contact to the ChurnLens Resend audience. This is what enrols the
+  // lead in the 5-day sequence promised on the squeeze page — the drip engine
+  // only ever looks at audience members. Failure here must not fail the opt-in,
+  // so it is logged and swallowed.
+  let audience_added = false;
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const resp = await fetch(`https://api.resend.com/audiences/${CHURNLENS_AUDIENCE_ID}/contacts`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, unsubscribed: false })
+      });
+      if (resp.ok) {
+        audience_added = true;
+      } else {
+        // A duplicate contact is a 4xx and is entirely expected on a re-subscribe.
+        console.error('Resend audience add failed:', resp.status, await resp.text());
+      }
+    } catch (e) {
+      console.error('Resend audience add threw:', e.message);
+    }
+  }
+
   // Send the checklist email via Resend if configured
   let email_sent = false;
   if (process.env.RESEND_API_KEY) {
@@ -126,7 +159,7 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Churn Lens <checklist@churnlens.site>',
+          from: 'Maryan at ChurnLens <checklist@churnlens.site>',
           to: email,
           subject: '✓ Your 23-point churn audit checklist + sample report',
           html: CHECKLIST_HTML
@@ -144,5 +177,5 @@ export default async function handler(req, res) {
     console.log('RESEND_API_KEY not set — skipping email send');
   }
 
-  return res.status(200).json({ ok: true, message: 'Subscribed successfully', email_sent });
+  return res.status(200).json({ ok: true, message: 'Subscribed successfully', email_sent, audience_added });
 }
