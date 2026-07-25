@@ -968,7 +968,7 @@
 
 <!-- pSEO Footer Navigation -->
 <style>
-.pseo-footer { max-width: 1200px; margin: 0 auto; padding: 40px 20px; border-top: 1px solid #e5e7eb; margin-top: 60px; }
+.pseo-footer { max-width: 1200px; margin: 0 auto; padding: 40px 20px; border-top: 1px solid rgba(127, 127, 127, 0.28); margin-top: 60px; }
 .pseo-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
 .pseo-footer-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #9ca3af; }
 .pseo-footer-section ul { list-style: none; padding: 0; margin: 0; }
@@ -1137,14 +1137,15 @@ function closeSurvey() {
     max-width: 1200px;
     margin: 4rem auto 2rem;
     padding: 2rem 1.5rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgba(127, 127, 127, 0.28);
     font-family: system-ui, -apple-system, sans-serif;
 }
 .portfolio-network h3 {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #9ca3af;
+    color: inherit;
+    opacity: 0.85;
     margin: 0 0 1rem;
     text-align: center;
 }
@@ -1161,10 +1162,10 @@ function closeSurvey() {
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.15s;
-    background: #f9fafb;
+    background: rgba(127, 127, 127, 0.12);
 }
 .network-card:hover {
-    background: #f3f4f6;
+    background: rgba(127, 127, 127, 0.20);
 }
 .network-dot {
     width: 8px;
@@ -1175,25 +1176,19 @@ function closeSurvey() {
 .network-name {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #111827;
+    color: inherit;
     white-space: nowrap;
 }
 .network-tagline {
     font-size: 0.6875rem;
-    color: #9ca3af;
+    color: inherit;
+    opacity: 0.85;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .portfolio-network { border-top-color: #374151; }
-    .portfolio-network h3 { color: #9ca3af; }
-    .network-card { background: #1f2937; }
-    .network-card:hover { background: #374151; }
-    .network-name { color: #f9fafb; }
-    .network-tagline { color: #9ca3af; }
-}
+/* prefers-color-scheme override for .portfolio-network removed: the widget now inherits the host colour, and its tagline failed contrast in BOTH themes (#9ca3af on #f9fafb = 2.43:1, #6b7280 on #1f2937 = 3.55:1). */
 </style>
 <section class="portfolio-network">
     <h3>🚀 Explore Our Network</h3>
