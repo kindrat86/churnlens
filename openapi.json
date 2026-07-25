@@ -373,7 +373,7 @@
                     },
                     "name": {
                       "type": "string",
-                      "const": "Churn Lens Knowledge Base"
+                      "const": "ChurnLens Knowledge Base"
                     },
                     "description": {
                       "type": "string"
@@ -450,7 +450,7 @@
                     },
                     "name": {
                       "type": "string",
-                      "const": "Churn Lens Knowledge Base"
+                      "const": "ChurnLens Knowledge Base"
                     },
                     "description": {
                       "type": "string"
