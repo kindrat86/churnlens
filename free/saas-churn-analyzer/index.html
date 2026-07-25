@@ -145,7 +145,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:v
 <link rel="alternate" type="application/json+oembed"
       href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fsaas-churn-analyzer&format=json"
       title="Free SaaS Churn &amp; Revenue-Quality Analyzer — Upload a Subscription CSV by ChurnLens">
-<!-- cl-embed-v3 -->
+<!-- cl-embed-v4 -->
 <style>
 /* Embed mode: the page is rendered inside somebody else's site, so drop the
    cross-sell, the methodology essay and the link farm — keep the tool. */
@@ -224,18 +224,30 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
       bar.appendChild(tail);
       document.body.appendChild(bar);
 
-      /* Tell the host page how tall we are so it can size the iframe. */
+      /* Tell the host page how tall we are so it can size the iframe.
+         At DOMContentLoaded inside a fresh iframe the document has often not
+         been laid out yet and every height reads 0. Posting that is worse than
+         posting nothing: a host that trusts it collapses the widget to
+         invisible. So never emit a non-positive height, and re-post once
+         layout has actually happened. */
+      var lastPosted = 0;
       function postHeight() {
         try {
           var h = Math.max(
             document.body.scrollHeight,
+            document.body.offsetHeight,
             document.documentElement.scrollHeight
           );
+          if (!(h > 0) || h === lastPosted) return;
+          lastPosted = h;
           window.parent.postMessage({ type: 'churnlens:height', height: h }, '*');
         } catch (e) { /* cross-origin parent: nothing to do */ }
       }
       postHeight();
+      window.addEventListener('load', postHeight);
       window.addEventListener('resize', postHeight);
+      setTimeout(postHeight, 300);
+      setTimeout(postHeight, 1200);
       if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
     });
   } catch (e) { /* never break the calculator */ }
@@ -266,7 +278,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   <div id="drop" tabindex="0" role="button" aria-label="Choose or drop a subscription CSV file">
     <h3>Drop the subscription CSV here</h3>
     <p>…or click to choose a file. CSV, TSV or semicolon-delimited. Never uploaded.</p>
-    <input type="file" id="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" class="hidden">
+    <input type="file" id="file" name="csv" aria-label="Upload a subscription CSV file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" class="hidden">
   </div>
   <div class="btnrow">
     <button type="button" class="ghost" id="btn-sample">Try the synthetic sample ledger</button>
@@ -274,7 +286,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     <button type="button" class="ghost" id="btn-template">Download the CSV template</button>
   </div>
   <div id="paste-wrap" class="hidden" style="margin-top:14px">
-    <textarea id="paste" placeholder="customer_id,month,mrr,plan,last_active&#10;acct_1001,2025-01,240,monthly,2025-01-28&#10;acct_1001,2025-02,240,monthly,2025-02-26"></textarea>
+    <textarea id="paste" name="csv_text" aria-label="Paste subscription CSV data" placeholder="customer_id,month,mrr,plan,last_active&#10;acct_1001,2025-01,240,monthly,2025-01-28&#10;acct_1001,2025-02,240,monthly,2025-02-26"></textarea>
     <div class="btnrow" style="justify-content:flex-start"><button type="button" id="btn-paste-run">Analyze pasted CSV</button></div>
   </div>
 </div>
