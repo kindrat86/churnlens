@@ -458,6 +458,15 @@
             <h2>&#10003; Here's your 23-point checklist</h2>
             <p style="margin-bottom: 1.5rem;">No waiting. Read it below right now &mdash; the sample report and cheat sheet are in your inbox for deeper reference.</p>
 
+            <p style="margin-bottom: 1.5rem; color: #94a3b8; font-size: 0.92rem;">
+              Want the reasoning behind the 23 points? The
+              <a href="/masterclass" style="color: var(--cl-blue-light);">12-minute masterclass</a>
+              walks through how the reported-vs-real churn gap opens up and how each of the five risks
+              closes it, and the
+              <a href="/walkthrough" style="color: var(--cl-blue-light);">5-Risk walkthrough</a>
+              shows the method applied end to end.
+            </p>
+
             <div style="text-align: left; background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
               <strong style="color: #fff; display: block; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem;">The 23-Point Buyer-Side Churn Audit Checklist</strong>
               <ol style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.9; padding-left: 1.25rem; margin: 0;">
@@ -504,9 +513,10 @@
               <div class="sq-oto-badge">Limited Time Offer</div>
               <h3>Good call. But let me ask you something&hellip;</h3>
               <p class="sq-oto-body">
-                You just got the 23-point checklist. That&rsquo;s the manual way. The fast way is
-                <strong style="color:#cbd5e1">ChurnLens Pro</strong> &mdash; upload any seller&rsquo;s CSV
-                and get a complete risk report in 2 minutes, not 2 hours.
+                You just got the 23-point checklist. That&rsquo;s the manual way &mdash; two to four hours
+                in a spreadsheet, per target. If you have a deal on your desk right now, the other option is
+                to <strong style="color:#cbd5e1">send us the CSV once for $9</strong> and have all five risks
+                computed and reviewed for you. No subscription.
               </p>
 
               <div class="sq-oto-comparison">
@@ -521,25 +531,28 @@
                   </ul>
                 </div>
                 <div class="sq-oto-col pro">
-                  <div class="sq-oto-col-label">ChurnLens Pro</div>
-                  <!-- Price MUST match /pricing (currently $49/mo). This card
-                       previously read "$1 /mo" — a 49x contradiction one click
-                       from the pricing page, on a site whose entire premise is
-                       that misstated numbers cost buyers money. -->
-                  <div class="sq-oto-col-price">$49 <span class="price-period">/mo</span></div>
+                  <div class="sq-oto-col-label">One analysis, done for you</div>
+                  <!-- Prices MUST match /pricing: $9 one-time, $49/mo Pro. The $9
+                       single analysis is the only self-serve checkout that exists,
+                       so it — not a $49/mo mailto — is what belongs on the highest-
+                       intent step in the funnel. -->
+                  <div class="sq-oto-col-price">$9 <span class="price-period">one-time</span></div>
                   <ul>
-                    <li>Automated logo &amp; revenue churn</li>
+                    <li>Logo &amp; revenue churn</li>
                     <li>Concentration risk analysis</li>
                     <li>Zombie MRR detection</li>
-                    <li>Annual-plan decay tracking</li>
-                    <li>Revenue quality score</li>
-                    <li>Cohort analysis (24-month)</li>
+                    <li>Annual-plan decay projection</li>
+                    <li>A&ndash;F revenue quality score</li>
+                    <li>Human-reviewed, 2 business days</li>
                   </ul>
                 </div>
               </div>
 
-              <a href="mailto:hello@churnlens.site?subject=ChurnLens%20Pro%20inquiry%20(%2449%2Fmo)&amp;body=Hi%2C%20I'd%20like%20to%20start%20ChurnLens%20Pro%20(%2449%2Fmo).%0A%0A%E2%80%A2%20Number%20of%20CSVs%20to%20analyze%3A%20__%0A%E2%80%A2%20Deal%20timeline%3A%20__%0A" class="sq-oto-cta" id="oto-accept">Start Pro &mdash; $49/mo &rarr;</a>
-              <p class="sq-oto-disclaimer">Cancel anytime. No commitment.</p>
+              <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" class="sq-oto-cta" id="oto-accept" onclick="if(window.posthog){posthog.capture('oto_accepted',{offer:'single_analysis',price:9})}">Run one analysis &mdash; $9 &rarr;</a>
+              <p class="sq-oto-disclaimer">
+                One-time payment, no subscription. Upload link by email within 24h.<br>
+                Running several deals a month? <a href="/pricing" style="color:#94a3b8;text-decoration:underline">Pro is $49/mo</a>.
+              </p>
 
               <a class="sq-oto-decline" id="oto-decline">No thanks, show me the free checklist &rarr;</a>
             </div>
