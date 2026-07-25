@@ -54,7 +54,10 @@ SCAN_SUFFIXES = {".html", ".csv", ".json", ".md", ".txt"}
 # CLAUDE.md, task files). They are .vercelignore'd and never served.
 SKIP_NAMES = re.compile(
     r"^(CLAUDE\.md|HERMES_.*\.md|REPORT_.*\.md|OWNER_.*\.md|.*AUDIT.*\.md|"
-    r".*SCORECARD.*\.md|.*\.py)$"
+    # brand/AEO gap analyses describe the ABSENCE of original data ("no
+    # ORIGINAL-DATA study..."), which reads as a claim to a pattern matcher.
+    # They are .vercelignore'd internal working files, never served.
+    r".*SCORECARD.*\.md|.*brand-gap-analysis.*\.csv|.*\.py)$"
 )
 
 # A claim only counts if it is NOT inside a denial. "not measured from X",
@@ -91,7 +94,39 @@ PATTERNS = [
     (r"\baggregated (?:anonymi[sz]ed|data|figures)", "claims aggregated first-party data"),
     (r"\bbased on (?:aggregated|data from|our)\b", "claims a measured basis"),
     (r"\bdrawn from (?:our|thousands|hundreds)\b", "claims a measured basis"),
-    (r"\bdata from (?:over |more than )?[\d,]+\+?\s*(?:SaaS|compan|business|team|customer)", "cites an invented sample size"),
+    # Noun list widened 2026-07-25 after the portfolio sweep: the original
+    # SaaS-only list is blind to the rest of the portfolio's verticals, so
+    # voicelogpro's historical "3,200 contractors" would NOT have been caught,
+    # nor sipi.bot's "~850 production agent deployments".
+    (
+        r"\bdata from (?:over |more than |~)?[\d,]+\+?\s*(?:SaaS|compan|business|team|customer|"
+        r"contractor|dealer|studio|exchange|agent|deployment|founder|professional|creator|user)",
+        "cites an invented sample size",
+    ),
+    (
+        r"\b(?:survey|sample|panel) of\s+(?:over |more than |~)?[\d,]+\+?", "cites an invented survey/sample size",
+    ),
+    (r"\b(?:proprietary|our own|in-house) survey\b", "claims a first-party survey"),
+    (r"\bfounder surveys\b", "claims a first-party survey"),
+    # "anonymized <brand> customer data" / "anonymized transaction|payment data"
+    (
+        r"\banonymi[sz]ed\s+(?:and aggregated\s+)?(?:\w+\s+)?(?:customer|transaction|payment|"
+        r"evaluation|deployment)\s+(?:data|logs|patterns|evaluations)",
+        "claims anonymized first-party records",
+    ),
+    # NOT a bare "Stripe data" - integration and review pages legitimately say
+    # "export your Stripe data". Only fire when it is claimed as an anonymized
+    # research corpus, which is the invisible-exit fabrication.
+    (
+        r"\bStripe (?:payment )?data \(anonymi[sz]ed\)|\bStripe anonymi[sz]ed data\b|"
+        r"\banonymi[sz]ed Stripe\b",
+        "claims payment-processor data as a research corpus",
+    ),
+    (r"\bOriginal (?:data|benchmark data|research)\b", "claims original first-party research"),
+    (
+        r"\bdata (?:collected|compiled) from\s+(?:over |more than |~)?[\d,]+\+?",
+        "cites an invented collection size",
+    ),
     # Deliberately NOT a bare "N+ SaaS": review pages legitimately state a
     # THIRD party's customer count ("Baremetrics ... used by 900+ SaaS
     # companies"). That is a sourcing question, not a first-party-data claim.
