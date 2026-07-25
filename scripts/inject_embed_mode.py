@@ -13,16 +13,30 @@ import pathlib
 import re
 import sys
 
-MARKER = "<!-- cl-embed-v2 -->"
+MARKER = "<!-- cl-embed-v3 -->"
 # v1 forced a white background onto pages that are natively dark (#0f172a) with
 # near-white headings, rendering the H1 at ~1.06:1 contrast. v2 keeps the page's
-# own theme and hides the trailing prose that has no place in a widget.
-LEGACY_MARKERS = ("<!-- cl-embed-v1 -->",)
+# own theme and hides the trailing prose that has no place in a widget. v3 stops
+# assuming every tool wraps its calculator in .tool-card.
+LEGACY_MARKERS = ("<!-- cl-embed-v1 -->", "<!-- cl-embed-v2 -->")
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FREE = ROOT / "free"
 
 # embed-widget is the gallery of snippets, not a widget itself.
 SKIP = {"embed-widget"}
+
+# Embeddability is DETECTED, not listed. Several pages under /free are named
+# "calculator" but contain no form control at all — ltv-calculator and
+# mrr-health-check are prose. Publishing those as widgets would put a wall of
+# text on a third party's site labelled "Customer LTV Calculator", which is the
+# worst place for this brand to be caught overclaiming. The fleet adds and
+# rewrites tools constantly, so a hardcoded allowlist would rot; this re-derives
+# the answer on every run.
+FORM_CONTROL = re.compile(r"<(input|textarea|select)\b", re.I)
+
+
+def is_interactive(html: str) -> bool:
+    return bool(FORM_CONTROL.search(html))
 
 BLOCK = """%s
 <style>
@@ -65,6 +79,13 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
          cross-sell, link blocks. None of it belongs in somebody else's iframe,
          and most of it carries no class to target from CSS. */
       var cards = document.querySelectorAll('.tool-card');
+      /* Not every tool uses .tool-card — the due-diligence simulator uses .card,
+         and a page with neither would otherwise keep its whole prose tail. */
+      if (!cards.length) cards = document.querySelectorAll('.card');
+      if (!cards.length) {
+        var form = document.querySelector('input, textarea, select');
+        if (form) cards = [form];
+      }
       if (cards.length) {
         var last = cards[cards.length - 1];
         while (last && last.parentNode !== document.body) last = last.parentNode;
@@ -116,6 +137,31 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 """ % MARKER
 
 
+GUARD_MARKER = "<!-- cl-embed-guard-v1 -->"
+
+# Must run BEFORE the site's PostHog snippet, which sits partway down <head>.
+# Embedding a third-party tracker into somebody else's page — while the embed
+# gallery promises "no tracking, no cookies, no third-party scripts" — is a
+# claim we should make true rather than reword. The site's own snippet opens
+# with `if (window.posthog && window.posthog.__loaded) return;`, so presenting
+# an already-loaded stub makes it bail out on its own terms.
+GUARD_BLOCK = """%s
+<script>
+(function () {
+  try {
+    if (window.self === window.top && !/[?&]embed=1(&|$)/.test(window.location.search)) return;
+    var noop = function () {};
+    window.posthog = {
+      __loaded: true, __cl_embed_stub: true,
+      init: noop, capture: noop, identify: noop, register: noop, reset: noop,
+      opt_out_capturing: noop, opt_in_capturing: noop,
+      onFeatureFlags: noop, isFeatureEnabled: function () { return false; }
+    };
+  } catch (e) { /* never break the calculator */ }
+})();
+</script>
+""" % GUARD_MARKER
+
 OEMBED_MARKER = "<!-- cl-oembed-v1 -->"
 
 OEMBED_LINK = (
@@ -134,6 +180,19 @@ def title_of(html: str, slug: str) -> str:
     return re.sub(r"\s*[|—-]\s*ChurnLens\s*$", "", match.group(1).strip())
 
 
+def strip_block(html: str, marker: str) -> tuple:
+    pattern = re.compile(re.escape(marker) + r".*?</script>\s*", re.S)
+    return pattern.subn("", html, count=1)
+
+
+def strip_oembed(html: str) -> tuple:
+    pattern = re.compile(
+        re.escape(OEMBED_MARKER) + r'\s*<link rel="alternate" type="application/json\+oembed".*?>\s*',
+        re.S,
+    )
+    return pattern.subn("", html, count=1)
+
+
 def inject(path: pathlib.Path, slug: str) -> str:
     html = path.read_text(encoding="utf-8")
     if "</head>" not in html:
@@ -144,12 +203,34 @@ def inject(path: pathlib.Path, slug: str) -> str:
     # Strip any superseded block first, so an upgrade replaces rather than stacks.
     for legacy in LEGACY_MARKERS:
         if legacy in html:
-            pattern = re.compile(
-                re.escape(legacy) + r".*?</script>\s*", re.S
-            )
-            html, n = pattern.subn("", html, count=1)
+            html, n = strip_block(html, legacy)
             if n:
                 added.append("removed " + legacy.strip("<!- >"))
+
+    # A page with no form control is not a widget. If one was injected before
+    # (or the page lost its interactivity), take the embed surface back off it
+    # rather than advertising prose as a calculator.
+    if not is_interactive(html):
+        removed = []
+        html, n = strip_block(html, MARKER)
+        if n:
+            removed.append("embed-mode")
+        html, n = strip_block(html, GUARD_MARKER)
+        if n:
+            removed.append("tracker-guard")
+        html, n = strip_oembed(html)
+        if n:
+            removed.append("oembed-link")
+        if removed or added:
+            path.write_text(html, encoding="utf-8")
+            return "NOT INTERACTIVE — withdrew " + ", ".join(removed or ["nothing"])
+        return "skip (not interactive, nothing to withdraw)"
+
+    if GUARD_MARKER not in html:
+        # Top of <head>, ahead of the PostHog snippet it needs to pre-empt.
+        html, n = re.subn(r"(<head[^>]*>)", lambda m: m.group(1) + "\n" + GUARD_BLOCK, html, count=1)
+        if n:
+            added.append("tracker-guard")
 
     if MARKER not in html:
         html = html.replace("</head>", BLOCK + "</head>", 1)

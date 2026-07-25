@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" style="--cl-page-bg:rgb(15, 23, 42);--cl-page-fg:rgb(241, 245, 249)" data-cl-theme="dark">
 <head>
+<!-- cl-embed-guard-v1 -->
+<script>
+(function () {
+  try {
+    if (window.self === window.top && !/[?&]embed=1(&|$)/.test(window.location.search)) return;
+    var noop = function () {};
+    window.posthog = {
+      __loaded: true, __cl_embed_stub: true,
+      init: noop, capture: noop, identify: noop, register: noop, reset: noop,
+      opt_out_capturing: noop, opt_in_capturing: noop,
+      onFeatureFlags: noop, isFeatureEnabled: function () { return false; }
+    };
+  } catch (e) { /* never break the calculator */ }
+})();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Free Zombie MRR Detector | ChurnLens</title>
@@ -95,7 +111,10 @@ footer a{color:var(--accent);text-decoration:none}
 <link rel="alternate" type="application/json+oembed"
       href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fzombie-mrr-detector&format=json"
       title="Free Zombie MRR Detector by ChurnLens">
-<!-- cl-embed-v2 -->
+<link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
+  <script src="/assets/cl-enhance.52579359.js" defer></script>
+  <!-- cl-r19 -->
+<!-- cl-embed-v3 -->
 <style>
 /* Embed mode: the page is rendered inside somebody else's site, so drop the
    cross-sell, the methodology essay and the link farm — keep the tool. */
@@ -136,6 +155,13 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
          cross-sell, link blocks. None of it belongs in somebody else's iframe,
          and most of it carries no class to target from CSS. */
       var cards = document.querySelectorAll('.tool-card');
+      /* Not every tool uses .tool-card — the due-diligence simulator uses .card,
+         and a page with neither would otherwise keep its whole prose tail. */
+      if (!cards.length) cards = document.querySelectorAll('.card');
+      if (!cards.length) {
+        var form = document.querySelector('input, textarea, select');
+        if (form) cards = [form];
+      }
       if (cards.length) {
         var last = cards[cards.length - 1];
         while (last && last.parentNode !== document.body) last = last.parentNode;
@@ -184,9 +210,6 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   } catch (e) { /* never break the calculator */ }
 })();
 </script>
-  <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
-  <script src="/assets/cl-enhance.52579359.js" defer></script>
-  <!-- cl-r19 -->
 </head>
 <body>
 
@@ -438,7 +461,7 @@ detect()
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
     <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
-    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+    <p style="margin-top:18px;font-size:.78rem;color:#94a3b8">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
   </div>
 </section>
 <!-- /BRUNSON TRUST BAR -->

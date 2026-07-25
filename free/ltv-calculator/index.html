@@ -76,100 +76,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
 .related-links a{display:block;background:var(--card,#fff);border:1px solid var(--border,#e2e6ee);border-radius:8px;padding:14px 18px;color:var(--text,#1a1a2e);text-decoration:none;transition:border-color .2s;font-size:.95rem}
 .related-links a:hover{border-color:var(--accent,#00d4aa)}
 </style>
-<!-- cl-oembed-v1 -->
-<link rel="alternate" type="application/json+oembed"
-      href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fltv-calculator&format=json"
-      title="Customer LTV Calculator by ChurnLens">
-<!-- cl-embed-v2 -->
-<style>
-/* Embed mode: the page is rendered inside somebody else's site, so drop the
-   cross-sell, the methodology essay and the link farm — keep the tool. */
-/* Keep the page's own palette — these pages are dark by design. */
-html[data-embed] body { padding: 1rem 1rem 4.5rem; }
-html[data-embed] .cta,
-html[data-embed] .related,
-html[data-embed] .related-links,
-html[data-embed] .breadcrumbs,
-html[data-embed] footer,
-html[data-embed] [data-embed-hide] { display: none !important; }
-html[data-embed] h1 { font-size: 1.3rem; margin-bottom: .35rem; }
-html[data-embed] p.subtitle { font-size: .9rem; margin-bottom: 1.1rem; }
-html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
-.cl-embed-bar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000;
-  display: flex; align-items: center; justify-content: center; gap: .4rem;
-  padding: .55rem .75rem; font: 500 .78rem/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f172a; color: #cbd5e1; text-align: center;
-}
-.cl-embed-bar a { color: #a5b4fc; text-decoration: none; font-weight: 700; }
-.cl-embed-bar a:hover { text-decoration: underline; }
-.cl-embed-bar span { opacity: .8; }
-@media (max-width: 420px) { .cl-embed-bar { font-size: .72rem; } }
-</style>
-<script>
-(function () {
-  try {
-    var framed = window.self !== window.top;
-    var asked = /[?&]embed=1(&|$)/.test(window.location.search);
-    if (!asked && !framed) return;
-    document.documentElement.setAttribute('data-embed', '1');
-
-    document.addEventListener('DOMContentLoaded', function () {
-      if (document.querySelector('.cl-embed-bar')) return;
-
-      /* Everything after the calculator is page furniture — methodology essays,
-         cross-sell, link blocks. None of it belongs in somebody else's iframe,
-         and most of it carries no class to target from CSS. */
-      var cards = document.querySelectorAll('.tool-card');
-      if (cards.length) {
-        var last = cards[cards.length - 1];
-        while (last && last.parentNode !== document.body) last = last.parentNode;
-        if (last) {
-          var node = last.nextElementSibling;
-          while (node) {
-            node.style.display = 'none';
-            node = node.nextElementSibling;
-          }
-        }
-      }
-
-      var slug = (window.location.pathname.split('/').filter(Boolean).pop() || 'widget');
-      var href = 'https://churnlens.site/free?utm_source=embed&utm_medium=widget&utm_campaign=' +
-        encodeURIComponent(slug);
-      var bar = document.createElement('div');
-      bar.className = 'cl-embed-bar';
-      var link = document.createElement('a');
-      link.href = href;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.textContent = 'ChurnLens';
-      var lead = document.createElement('span');
-      lead.textContent = 'Free SaaS metrics calculator by ';
-      var tail = document.createElement('span');
-      tail.textContent = ' — buyer-side due diligence';
-      bar.appendChild(lead);
-      bar.appendChild(link);
-      bar.appendChild(tail);
-      document.body.appendChild(bar);
-
-      /* Tell the host page how tall we are so it can size the iframe. */
-      function postHeight() {
-        try {
-          var h = Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight
-          );
-          window.parent.postMessage({ type: 'churnlens:height', height: h }, '*');
-        } catch (e) { /* cross-origin parent: nothing to do */ }
-      }
-      postHeight();
-      window.addEventListener('resize', postHeight);
-      if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
-    });
-  } catch (e) { /* never break the calculator */ }
-})();
-</script>
-  <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
+<link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
   <script src="/assets/cl-enhance.52579359.js" defer></script>
   <!-- cl-r19 -->
 </head>
@@ -221,7 +128,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 
 
 <!-- AEO Definition Block -->
-<section style="max-width:760px;margin:32px auto;padding:0 16px"><h2>Key terms, defined</h2><dl><dt style="font-weight:700;margin-top:14px">Revenue concentration</dt><dd style="margin:4px 0 0;color:#555">The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk.</dd><dt style="font-weight:700;margin-top:14px">Logo retention</dt><dd style="margin:4px 0 0;color:#555">The percentage of customers (logos) retained over a period, independent of expansion revenue.</dd><dt style="font-weight:700;margin-top:14px">Net revenue retention (NRR)</dt><dd style="margin:4px 0 0;color:#555">Revenue retained from existing customers including expansion and contraction, expressed as a percentage.</dd></dl></section>
+<section style="max-width:760px;margin:32px auto;padding:0 16px"><h2>Key terms, defined</h2><dl><dt style="font-weight:700;margin-top:14px">Revenue concentration</dt><dd style="margin:4px 0 0;color:var(--ux-text-secondary,#555)">The share of total revenue coming from the largest customers — high concentration is a churn and valuation risk.</dd><dt style="font-weight:700;margin-top:14px">Logo retention</dt><dd style="margin:4px 0 0;color:var(--ux-text-secondary,#555)">The percentage of customers (logos) retained over a period, independent of expansion revenue.</dd><dt style="font-weight:700;margin-top:14px">Net revenue retention (NRR)</dt><dd style="margin:4px 0 0;color:var(--ux-text-secondary,#555)">Revenue retained from existing customers including expansion and contraction, expressed as a percentage.</dd></dl></section>
 <!-- /AEO Definition Block -->
 <!-- AEO HowTo Schema -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to run a SaaS churn-risk due-diligence check with ChurnLens", "step": [{"@type": "HowToStep", "position": 1, "name": "Connect or upload revenue data", "text": "Import MRR, plan, and logo-level revenue history for the SaaS you are evaluating."}, {"@type": "HowToStep", "position": 2, "name": "Run the churn-risk analysis", "text": "ChurnLens scores revenue concentration, logo retention, and annual-plan churn risk."}, {"@type": "HowToStep", "position": 3, "name": "Review the red-flag report", "text": "Read the ranked list of hidden churn signals before you close the acquisition."}]}</script>
@@ -231,12 +138,12 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 <section style="background:linear-gradient(135deg,#f0f9ff,#e8f5e9);border-radius:16px;padding:32px 24px;margin:40px 0;border:2px solid #0066cc30;text-align:center">
   <h2 style="font-size:1.5rem;margin-bottom:16px;color:#1a1a1a">See Hidden Churn Before You Buy a SaaS</h2>
   
-  <div style="background:#fef3c7;border-radius:8px;padding:12px;margin:12px 0;text-align:center"><strong>🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay</strong></div>
-  <div style="background:white;border-radius:12px;padding:20px;max-width:500px;margin:0 auto 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
+  <div style="background:#fef3c7;color:#0f172a;border-radius:8px;padding:12px;margin:12px 0;text-align:center"><strong>🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay</strong></div>
+  <div style="background:white;color:#0f172a;border-radius:12px;padding:20px;max-width:500px;margin:0 auto 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
     <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">📥 Free SaaS Due Diligence Checklist</p>
     <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</p>
     <a href="https://churnlens.site/saas-due-diligence-checklist" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Download Free Checklist →</a>
-    <p style="font-size:0.75rem;color:#4b5563;margin-top:8px">No spam. Unsubscribe anytime.</p>
+    <p style="font-size:0.75rem;color:#475569;margin-top:8px">No spam. Unsubscribe anytime.</p>
   </div>
   <!-- 2026-07-24: removed the fabricated "Limited Beta Pricing... Before Price
   Increase" fake-urgency line -- Stripe shows zero Pro/Dealmaker subscriptions
@@ -257,7 +164,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
     <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
-    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+    <p style="margin-top:18px;font-size:.78rem;color:#94a3b8">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
   </div>
 </section>
 <!-- /BRUNSON TRUST BAR -->
