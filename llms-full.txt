@@ -1291,7 +1291,7 @@ Source: https://churnlens.site/faq/
 SaaS Churn & Acquisition Due Diligence — Frequently Asked Questions 
 - 
 # SaaS Churn & Due Diligence FAQ
-Answers to the questions SaaS acquirers, PE/M&A analysts, and founders ask about hidden churn, revenue quality, logo vs revenue retention, and how buyer-side.de due diligence differs from operating-side churn analysis.
+Answers to the questions SaaS acquirers, PE/M&A analysts, and founders ask about hidden churn, revenue quality, logo vs revenue retention, and how buyer-side due diligence differs from operating-side churn analysis.
 About ChurnLens: ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with similarly named tools churnlens.io (retention automation) or churnlens.tech (churn prediction). 
 ## 20 frequently asked questions in this section
 [How do I detect zombie MRR?](/faq/how-to-detect-zombie-mrr)
