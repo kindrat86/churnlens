@@ -40,6 +40,7 @@
 
 /* ── 2. MOBILE-FIRST TYPOGRAPHY ─────────────────────────────────── */
 html {
+  overflow-x: clip;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -49,13 +50,24 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-body {
+/* :where() — specificity (0,0,0).
+   As a plain `body` rule this was overriding each page's OWN background and
+   text colour, because ux.css loads after every page's <style>. The free
+   calculators, for one, declare `--bg:#0a0a0a` and a full dark palette
+   (dark cards, white text, grey labels) and never got to render it: they came
+   out white-on-white in light mode and navy in dark mode, neither of which is
+   the design. As :where() these are defaults for pages that declare nothing,
+   and any page rule wins. */
+:where(body) {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ux-text);
   background: var(--ux-surface);
-  overflow-x: hidden;
+  /* overflow-x moved to html as `clip` — `overflow-x:hidden` on <body> makes
+     body a scroll container, which silently breaks `position:sticky` for every
+     direct child (the site header). `clip` contains overflow without creating
+     one. */
   min-height: 100vh;
   min-height: 100dvh;
   /* R18 — theme transition */
@@ -86,8 +98,14 @@ a:not([class*="bg-"]):not([role="button"]) {
 a:not([class*="bg-"]):not([role="button"]):hover { color: var(--ux-accent-hover); }
 
 /* ── 5. TOUCH-FRIENDLY INTERACTIVE TARGETS ──────────────────────── */
+/* `.cta` deliberately omitted from this selector list. On churnlens.site
+   `.cta` is a CONTENT BLOCK — `<div class="cta"><h2>…</h2><p>…</p><a>…</a></div>`
+   on 120 pages — and is never used on a button or link. Styling it as a touch
+   target applied `display:inline-flex; flex-direction:row`, laying the heading,
+   paragraph and button out as three squeezed columns (plus `user-select:none`,
+   which made the copy unselectable). Target the <a> inside instead. */
 button, .btn, [role="button"],
-a.button, a.btn, .cta, input[type="submit"],
+a.button, a.btn, input[type="submit"],
 input[type="button"], select {
   min-height: 44px;
   min-width: 44px;
@@ -295,11 +313,18 @@ button:active, .btn:active, a.btn:active { transform: scale(0.97); }
 
 /* ── 14. SAFE-AREA INSETS (iOS notched + Dynamic Island) ────────── */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
-  body {
-    padding-bottom: calc(env(safe-area-inset-bottom) + var(--ux-bottom-bar-height));
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
+  /* Do NOT set body padding longhands here.
+     ux.css loads AFTER every page's own <style>, so `padding-left/right:
+     env(safe-area-inset-left)` — which resolves to 0px on every non-notched
+     device and in portrait on notched ones — overwrote the horizontal half of
+     each page's `padding: 20px` shorthand. 165 pages rely on body padding for
+     their gutters; they were rendering with text flush against both screen
+     edges. `padding-bottom` had the same problem (--ux-bottom-bar-height is
+     0px, so it zeroed the page's bottom gutter too).
+     Safe-area handling now lives in the `:where(body)` rule after this block,
+     which has ZERO specificity and therefore can never beat a page's own
+     rule; the fixed-position elements that genuinely overlap the inset keep
+     handling it themselves below. */
   #ux-back-to-top {
     bottom: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-bottom));
     right: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-right));
@@ -311,6 +336,18 @@ button:active, .btn:active, a.btn:active { transform: scale(0.97); }
   /* R18 — bottom sheet respects safe area */
   .ux-bottom-sheet {
     padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Safe-area floor for pages that declare no body padding of their own.
+   :where() keeps this at specificity (0,0,0) so ANY page rule — even the
+   single-class or element rules in the page <style> blocks that load before
+   this file — still wins. That is the whole point: it can add a gutter where
+   there is none, and can never take one away. */
+@supports (padding: max(0px)) {
+  :where(body) {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
@@ -804,8 +841,12 @@ body.nav-open { overflow: hidden; }
     --ux-shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.4), 0 8px 40px rgba(0, 0, 0, 0.2);
     --ux-shadow-xl: 0 8px 40px rgba(0, 0, 0, 0.5), 0 16px 64px rgba(0, 0, 0, 0.3);
   }
-  body { background: var(--ux-surface); color: var(--ux-text); }
-  input, textarea, select { background: var(--ux-surface-raised); border-color: var(--ux-border); color: var(--ux-text); }
+  /* :where() for the same reason as the light-mode rule above — this is the
+     line that repainted light-designed content pages navy while their text
+     kept its hardcoded light-theme colours (/compare and /reviews rendered
+     their H1 at 1.11:1). It is a default, not an override. */
+  :where(body) { background: var(--ux-surface); color: var(--ux-text); }
+  :where(input, textarea, select) { background: var(--ux-surface-raised); border-color: var(--ux-border); color: var(--ux-text); }
   input:focus, textarea:focus, select:focus { border-color: var(--ux-accent); box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15); }
   .ux-glass-card {
     background: rgba(30, 41, 59, 0.7);

@@ -23,8 +23,11 @@
   --cl-safe-top: env(safe-area-inset-top, 0px);
 }
 
-/* ---------- Safe areas ---------- */
-body {
+/* ---------- Safe areas ----------
+   :where() keeps this at specificity (0,0,0). As a plain `body` rule it beat
+   every page's `padding: 20px` shorthand and zeroed the top gutter, because
+   --cl-safe-top resolves to 0px on any device without a notch. */
+:where(body) {
   padding-top: var(--cl-safe-top);
 }
 
