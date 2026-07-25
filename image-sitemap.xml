@@ -100,13 +100,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/benchmarks/saas-churn-benchmarks-2026-interactive</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/benchmarks/saas-churn-rate-benchmarks-2026</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -745,13 +738,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/learn/revenue-quality-vs-vanity-metrics</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/saas-churn-benchmarks-2026</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>

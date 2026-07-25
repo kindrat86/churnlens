@@ -214,7 +214,7 @@
     },
     {
       "source": "/data/saas-retention-by-segment",
-      "destination": "/benchmarks#saas-net-revenue-retention-by-segment-2026",
+      "destination": "/benchmarks",
       "permanent": true
     },
     {
@@ -578,26 +578,6 @@
       "permanent": true
     },
     {
-      "source": "/alternatives-to/baremetrics",
-      "destination": "/alternatives-to/baremetrics",
-      "permanent": true
-    },
-    {
-      "source": "/alternatives-to/chartmogul",
-      "destination": "/alternatives-to/chartmogul",
-      "permanent": true
-    },
-    {
-      "source": "/alternatives-to/profitwell",
-      "destination": "/alternatives-to/profitwell",
-      "permanent": true
-    },
-    {
-      "source": "/alternatives-to/churnzero",
-      "destination": "/alternatives-to/churnzero",
-      "permanent": true
-    },
-    {
       "source": "/:slug((?!googlea30bb998b91eb6ac|google57979683042f3b0e).+)\\.html",
       "destination": "/:slug",
       "permanent": true
@@ -710,6 +690,16 @@
     {
       "source": "/gdpr",
       "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/research/saas-churn-benchmarks-2026",
+      "destination": "/benchmarks#saas-churn-rate-benchmarks-2026",
+      "permanent": true
+    },
+    {
+      "source": "/data/feed.json",
+      "destination": "/benchmarks",
       "permanent": true
     }
   ],

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Free Embeddable SaaS Churn Calculator Widget | ChurnLens</title>
-<meta name="description" content="Get a free, embeddable SaaS churn calculator widget for your blog, startup, or SaaS dashboard. One line of code. No signup required.">
+<title>Free Embeddable SaaS Calculator Widgets | ChurnLens</title>
+<meta name="description" content="Eight free, embeddable SaaS calculators — churn cost, NRR, LTV, revenue concentration, zombie MRR and more. One line of code, no signup, free for commercial use with attribution.">
 <link rel="canonical" href="https://churnlens.site/free/embed-widget">
     <link rel="alternate" hreflang="en" href="https://churnlens.site/free/embed-widget" />
     <link rel="alternate" hreflang="en-US" href="https://churnlens.site/free/embed-widget" />
     <link rel="alternate" hreflang="x-default" href="https://churnlens.site/free/embed-widget" />
-<meta property="og:title" content="Free Embeddable SaaS Churn Calculator Widget">
-<meta property="og:description" content="One line of code. Real-time churn cost calculation. No signup, no watermark.">
+<meta property="og:title" content="Free Embeddable SaaS Calculator Widgets">
+<meta property="og:description" content="Eight free SaaS calculators you can embed anywhere. One line of code, no signup, free for commercial use with attribution.">
     <meta property="og:image" content="https://churnlens.site/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -45,49 +45,63 @@ nav a{color:#0066cc;text-decoration:none;margin-right:16px}
 <a href="/pricing">Pricing</a>
 </nav>
 
-<h1>Free Embeddable Churn Calculator Widget</h1>
-<p style="font-size:1.1rem;color:#aaa">Add a real-time SaaS churn cost calculator to your blog, startup site, or dashboard. One line of code. No signup. No watermark.</p>
+<h1>Free Embeddable SaaS Calculator Widgets</h1>
+<p style="font-size:1.1rem;color:#aaa">Add a real-time SaaS churn, retention, or valuation calculator to your blog, startup site, or dashboard. One line of code. No signup. No watermark.</p>
 
 <h2>Why embed this?</h2>
 <ul class="feature-list">
-<li>Increases time-on-page by 3-5 minutes (interactive content)</li>
-<li>Generates backlinks when other SaaS blogs reference your tool</li>
+<li>Interactive content keeps readers on the page instead of bouncing</li>
 <li>Zero maintenance — we host it, you just embed</li>
 <li>Mobile-responsive, dark/light theme auto-detection</li>
 <li>No tracking, no cookies, no third-party scripts</li>
+<li>Free for commercial use, with attribution</li>
 </ul>
+
+<h2>Pick a widget</h2>
+<p>Choose a tool — the preview and the embed code below update to match.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:16px 0">
+  <button class="copy-btn tool-pick" data-slug="churn-calculator" data-title="SaaS Churn Cost Calculator" style="text-align:left">SaaS Churn Cost Calculator</button>
+  <button class="copy-btn tool-pick" data-slug="nrr-calculator" data-title="Net Revenue Retention Calculator" style="text-align:left">Net Revenue Retention Calculator</button>
+  <button class="copy-btn tool-pick" data-slug="revenue-concentration-analyzer" data-title="Revenue Concentration Risk Analyzer" style="text-align:left">Revenue Concentration Risk Analyzer</button>
+  <button class="copy-btn tool-pick" data-slug="zombie-mrr-detector" data-title="Zombie MRR Detector" style="text-align:left">Zombie MRR Detector</button>
+  <button class="copy-btn tool-pick" data-slug="saas-health-score" data-title="SaaS Revenue Health Score" style="text-align:left">SaaS Revenue Health Score</button>
+  <button class="copy-btn tool-pick" data-slug="ltv-calculator" data-title="LTV Calculator" style="text-align:left">LTV Calculator</button>
+  <button class="copy-btn tool-pick" data-slug="mrr-health-check" data-title="MRR Health Check" style="text-align:left">MRR Health Check</button>
+  <button class="copy-btn tool-pick" data-slug="due-diligence-simulator/" data-title="Due Diligence Simulator" style="text-align:left">Due Diligence Simulator</button>
+</div>
 
 <h2>Live Preview</h2>
 <div class="preview-box">
-<iframe src="/free/churn-calculator?embed=1" style="width:100%;height:500px;border:none;border-radius:8px" title="Churn Calculator Preview"></iframe>
+<iframe id="previewFrame" src="/free/churn-calculator?embed=1" style="width:100%;height:500px;border:none;border-radius:8px" title="ChurnLens widget preview"></iframe>
 </div>
 
-<h2>Embed Code — One Line</h2>
-<p>Copy this and paste it anywhere in your HTML:</p>
+<h2>Embed Code</h2>
+<p>Copy this and paste it anywhere in your HTML. The attribution line is included by default — it is what makes the widget free to use.</p>
 <div class="code-block">
-<button class="copy-btn" onclick="copyCode()">Copy</button>
-<code id="embedCode">&lt;iframe src="https://churnlens.site/free/churn-calculator?embed=1" width="100%" height="500" frameborder="0" style="border-radius:8px" title="SaaS Churn Calculator by ChurnLens"&gt;&lt;/iframe&gt;</code>
+<button class="copy-btn" onclick="copyEl('embedCode',this)">Copy</button>
+<code id="embedCode"></code>
 </div>
 
 <h2>WordPress Shortcode</h2>
 <div class="code-block">
-<button class="copy-btn" onclick="copyWP()">Copy</button>
-<code id="wpCode">[iframe src="https://churnlens.site/free/churn-calculator?embed=1" width="100%" height="500"]</code>
+<button class="copy-btn" onclick="copyEl('wpCode',this)">Copy</button>
+<code id="wpCode"></code>
 </div>
 
-<h2>Link Attribution (optional but appreciated)</h2>
-<p>If you embed the widget, a link back to ChurnLens helps us reach more SaaS buyers:</p>
-<div class="code-block">
-<code>&lt;a href="https://churnlens.site"&gt;Powered by ChurnLens — SaaS Due Diligence&lt;/a&gt;</code>
-</div>
+<h2>Licence</h2>
+<p>These widgets are free to embed on any site, including commercial ones, provided the attribution link stays visible. That link is the only thing we ask for in return — please do not strip it or mark it <code>nofollow</code>.</p>
 
-<h2>Other Free Tools</h2>
-<p>Each of these is also embeddable:</p>
+<h2>All embeddable tools</h2>
 <ul>
+<li><a href="/free/churn-calculator" style="color:#0066cc">SaaS Churn Cost Calculator</a></li>
+<li><a href="/free/nrr-calculator" style="color:#0066cc">Net Revenue Retention Calculator</a></li>
 <li><a href="/free/revenue-concentration-analyzer" style="color:#0066cc">Revenue Concentration Risk Analyzer</a></li>
 <li><a href="/free/zombie-mrr-detector" style="color:#0066cc">Zombie MRR Detector</a></li>
-<li><a href="/free/nrr-calculator" style="color:#0066cc">Net Revenue Retention Calculator</a></li>
 <li><a href="/free/saas-health-score" style="color:#0066cc">SaaS Revenue Health Score</a></li>
+<li><a href="/free/ltv-calculator" style="color:#0066cc">LTV Calculator</a></li>
+<li><a href="/free/mrr-health-check" style="color:#0066cc">MRR Health Check</a></li>
+<li><a href="/free/due-diligence-simulator/" style="color:#0066cc">Due Diligence Simulator</a></li>
+<li><a href="/calculators" style="color:#0066cc">All ChurnLens calculators →</a></li>
 </ul>
 
 <a href="/get-the-checklist" class="cta">Get the full due diligence checklist &rarr;</a>
@@ -96,8 +110,26 @@ nav a{color:#0066cc;text-decoration:none;margin-right:16px}
 <p style="color:#666;font-size:0.85rem">Powered by <a href="/" style="color:#0066cc">ChurnLens</a> — Buyer-Side SaaS Due Diligence</p>
 
 <script>
-function copyCode(){const code=document.getElementById("embedCode").textContent;navigator.clipboard.writeText(code)}
-function copyWP(){const code=document.getElementById("wpCode").textContent;navigator.clipboard.writeText(code)}
+(function(){
+  var BASE="https://churnlens.site";
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+  function render(slug,title){
+    var url=BASE+"/free/"+slug;
+    var iframe='<iframe src="'+url+'?embed=1" width="100%" height="500" frameborder="0" style="border-radius:8px" title="'+title+' by ChurnLens"></iframe>';
+    var credit='<p style="font:13px/1.5 system-ui,sans-serif;margin:8px 0 0"><a href="'+url+'">'+title+'</a> by <a href="'+BASE+'">ChurnLens</a> — buyer-side SaaS due diligence</p>';
+    document.getElementById("embedCode").innerHTML=esc(iframe)+"\n"+esc(credit);
+    document.getElementById("wpCode").innerHTML=esc('[iframe src="'+url+'?embed=1" width="100%" height="500"]')+"\n"+esc(credit);
+    document.getElementById("previewFrame").src="/free/"+slug+"?embed=1";
+  }
+  document.querySelectorAll(".tool-pick").forEach(function(b){
+    b.addEventListener("click",function(){render(b.dataset.slug,b.dataset.title)});
+  });
+  render("churn-calculator","SaaS Churn Cost Calculator");
+  window.copyEl=function(id,btn){
+    navigator.clipboard.writeText(document.getElementById(id).textContent);
+    if(btn){var t=btn.textContent;btn.textContent="Copied";setTimeout(function(){btn.textContent=t},1400)}
+  };
+})();
 </script>
 
 <h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Methodology: how this free embeddable churn calculator widget works</h2>

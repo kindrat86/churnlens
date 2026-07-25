@@ -93,6 +93,15 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
   }
 }
 </script>
+<style>
+/* related free-tools block (self-contained; falls back when theme vars are absent) */
+.related{margin:40px auto 0;max-width:820px;padding:0 20px}
+.related h3{font-size:1.1rem;margin-bottom:14px;color:var(--text,#1a1a2e)}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.related-links{grid-template-columns:1fr}}
+.related-links a{display:block;background:var(--card,#fff);border:1px solid var(--border,#e2e6ee);border-radius:8px;padding:14px 18px;color:var(--text,#1a1a2e);text-decoration:none;transition:border-color .2s;font-size:.95rem}
+.related-links a:hover{border-color:var(--accent,#00d4aa)}
+</style>
 </head>
 <body>
 <nav><a href="https://churnlens.site/">ChurnLens</a><a href="https://churnlens.site/about">About</a><a href="https://churnlens.site/learn">Learn</a><a href="https://churnlens.site/faq">FAQ</a></nav>
@@ -183,7 +192,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
     <a href="/free/revenue-concentration-analyzer">Revenue Concentration Risk Analyzer →</a>
     <a href="/free/ltv-calculator">LTV Calculator →</a>
     <a href="/free/embed-widget">Embed these tools on your site →</a>
-    </div>
+  </div>
 </div>
 </body>
 </html>
