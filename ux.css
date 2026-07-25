@@ -874,3 +874,92 @@ a[aria-label] > svg:only-child {
   width: 24px;
   height: 24px;
 }
+
+
+/* ── CENTERED PAGE COLUMN REPAIR (MK UI/UX 2026-07-25) ─────────────
+   Two defects combined to make content sit hard against the left of
+   wide screens instead of in a centred column.
+
+   1. Blocks injected AFTER a page's own wrapper — "Explore ChurnLens"
+      (.related-links.ilg), the AEO FAQ, merged sections, the footer —
+      are direct children of <body>. On the ~100 pages where <body> is
+      not itself the column, and wherever `.container` was used without
+      ever being given a width, those blocks ran the full viewport: a
+      rounded card 1900px wide with its text pinned to the left edge.
+   2. `p { max-width: 65ch }` (section 3) gives every paragraph a narrow
+      BOX. Inside a centre-aligned parent that box hugs the LEFT edge,
+      so a footer with `text-align:center` still rendered off to the
+      left. Centring the text does nothing when the box is not centred.
+
+   Widths are wrapped in :where() so they carry zero specificity — any
+   width a page already sets for itself keeps winning, and this only
+   fills the gap. The inline axis needs `!important`: the injected
+   markup carries an inline `margin: 2.5rem 0`, which would otherwise
+   pin the block left no matter what max-width it had.
+   ------------------------------------------------------------------ */
+:root { --cl-column: 1200px; }
+
+/* (a) Body-level blocks and any .container become the centred column. */
+:where(.container,
+       body > main, body > article, body > header, body > footer,
+       body > nav, body > section, body > aside, body > div,
+       body > .related-links, body > .aeo-faq, body > .merged-section) {
+  max-width: var(--cl-column);
+}
+:where(.container,
+       body > main, body > article, body > header, body > footer,
+       body > nav, body > section, body > aside, body > div,
+       body > .related-links, body > .aeo-faq, body > .merged-section) {
+  margin-inline: auto !important;
+}
+
+/* (b) OPT-OUT, page chrome. Fixed/absolute furniture is not part of the
+       column at all, and it must keep its own inline axis: the reading
+       progress bar is a 0%-width element anchored left that grows to the
+       right, so auto margins would make it grow from the centre out. */
+:where(body > .cl-skip-link, body > .cl-progress, body > .cl-nav-toggle,
+       body > .cl-nav-drawer, body > .cl-nav-overlay, body > .cl-mobile-cta,
+       body > .cl-back-top, body > .exit-overlay, body > .ux-offline-bar,
+       body > .author-byline) {
+  max-width: none;
+  margin-inline: 0 !important;
+}
+
+/* (c) OPT-OUT, full-bleed bands. A band that already supplies its own
+       inner column keeps bleeding: .page-header wraps a .container, and
+       .brunson-trust-bar wraps a `max-width` div. Probing for that inner
+       column with :has() means a new band opts itself out automatically,
+       with no list to maintain.
+
+       `:only-child` is load-bearing. A band delegates its column to a
+       wrapper that holds ALL of its content. Matching a max-width child
+       that is merely one of several let a rounded gradient CTA card
+       bleed to 1900px — its <h2> ran 1850px wide — because a 500px email
+       field further down counted as "has its own column".
+
+       Width only — deliberately NO margin declaration here. Forcing
+       `margin-inline: 0` would beat the inline `margin: 32px auto` that
+       several already-centred blocks rely on and shove them hard left,
+       which is the very bug this section exists to fix. */
+:where(body > *:has(> .container:only-child),
+       body > *:has(> [style*="max-width"]:only-child)) {
+  max-width: none;
+}
+
+/* (d) Footer rows and "Explore" link rows are navigation, not prose, so
+       the 65ch measure cap does not apply to them — and that cap is
+       exactly what pushed them off-centre. Real selectors here, not
+       :where(): these have to outrank the `p` rule in section 3. */
+body > footer p,
+body > footer > div,
+.footer p,
+.related-links > p {
+  max-width: none;
+}
+
+/* (e) Centre-aligned prose keeps its 65ch measure but centres the box. */
+.brunson-trust-bar p,
+.final-cta p,
+.cta > p {
+  margin-inline: auto;
+}
