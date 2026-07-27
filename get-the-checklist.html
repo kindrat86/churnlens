@@ -342,7 +342,7 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
   <a href="/why">Founder Story</a>
   <a href="/manifesto">Manifesto</a>
   <a href="/partners">Partners</a>
-  <a href="/get-the-checklist" class="cl-drawer-cta">Get the checklist &rarr;</a>
+  <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" class="cl-drawer-cta">Get the checklist &rarr;</a>
 </nav>
 <div class="cl-nav-overlay"></div>
 <!-- CL Progress bar -->
@@ -350,7 +350,7 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
 <!-- CL Back to top -->
 <!-- CL Mobile CTA bar -->
 <div class="cl-mobile-cta">
-  <a href="/get-the-checklist">Get the free checklist &rarr;</a>
+  <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w">Get the free checklist &rarr;</a>
 </div>
 
       <!-- Hero + Opt-in -->
@@ -366,7 +366,7 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
             The real number is <span class="hl">9.4%.</span><br>
             That gap will cost you <span class="hl">$340,000</span>.
           </h1>
-<div class="tldr" style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.35);border-radius:0.75rem;padding:1.25rem 1.5rem;margin:1.25rem 0;"><p style="margin:0;line-height:1.6;"><strong>TL;DR:</strong> Enter your email to get the free 23-point buyer-side churn audit checklist, a sample ChurnLens risk report on an anonymized $48K MRR SaaS target, a hidden-churn cheat sheet covering 7 seller tricks, and a revenue-quality scorecard template. The full 23-point checklist is also published further down this page, readable right now without signing up.</p></div>
+<div class="tldr" style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.35);border-radius:0.75rem;padding:1.25rem 1.5rem;margin:1.25rem 0;"><p style="margin:0;line-height:1.6;"><strong>TL;DR:</strong> Get the 23-point buyer-side churn audit checklist, a sample ChurnLens risk report on an anonymized $48K MRR SaaS target, a hidden-churn cheat sheet covering 7 seller tricks, and a revenue-quality scorecard template. One-time payment. Instant access after checkout.</p></div>
 
 
           <p class="sq-sub">
@@ -394,132 +394,33 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
               <span class="offer-text"><strong>Revenue Quality Scorecard</strong> &mdash; template to grade any target's MRR durability A&ndash;F</span>
             </div>
             <div class="offer-total">
-              Yours <span class="price-free">free</span> &nbsp;&middot;&nbsp; No credit card
+              <span class="price-free">$9</span> &nbsp;&middot;&nbsp; One-time payment &middot; Instant access
             </div>
           </div>
 
-          <!-- Form -->
-          <form class="sq-form" id="optin-form">
-            <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
-            <div class="sq-form-inner">
-              <label for="email-input" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Email address</label>
-              <input type="email" name="email" id="email-input" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
-            </div>
+          <!-- Stripe Buy Button -->
+          <div style="max-width: 560px; margin: 0 auto;">
+            <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" class="sq-btn" id="stripe-cta" style="width:100%;display:block;text-align:center;text-decoration:none;font-size:1.1rem;padding:1.1rem 2rem;" onclick="if(window.posthog){posthog.capture('checklist_checkout_clicked',{source:'squeeze-page'})}">Get the Checklist &mdash; $9 &rarr;</a>
+            <p class="sq-trust" style="text-align:center;">Secure checkout via Stripe. One-time payment. No subscription. Instant access after payment.</p>
+          </div>
 
-            <!-- NO ORDER BUMP HERE. A default-checked $7 paid add-on used to sit
-                 on this form. This form collects no payment and api/subscribe.js
-                 never read the `order_bump` field, so nothing was ever charged and
-                 nothing was ever fulfilled — a pre-ticked charge that silently
-                 does nothing. If the Quick Reference Card is to be sold, it
-                 belongs as an optional line item inside the $9 Stripe Checkout
-                 session, where a card is actually on file. -->
-
-            <button type="submit" class="sq-btn" id="submit-btn" style="width:100%;display:block;margin-top:0.75rem;">Get the checklist &rarr;</button>
-            <p class="sq-trust">Sent instantly. No spam. Unsubscribe in one click. We never share your data.</p>
-          </form>
-
-          <!-- Success — INSTANT DELIVERY of the checklist (not email-gated) -->
-          <div class="sq-success" id="success-msg">
-            <h2>&#10003; Here's your 23-point checklist</h2>
-            <p style="margin-bottom: 1.5rem;">No waiting. Read it below right now &mdash; the sample report and cheat sheet are in your inbox for deeper reference.</p>
-
-            <p style="margin-bottom: 1.5rem; color: #94a3b8; font-size: 0.92rem;">
-              Want the reasoning behind the 23 points? The
-              <a href="/masterclass" style="color: var(--cl-blue-text, #60a5fa);">12-minute masterclass</a>
-              walks through how the reported-vs-real churn gap opens up and how each of the five risks
-              closes it, and the
-              <a href="/walkthrough" style="color: var(--cl-blue-text, #60a5fa);">5-Risk walkthrough</a>
-              shows the method applied end to end.
-            </p>
-
-            <div style="text-align: left; background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
-              <strong style="color: #fff; display: block; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem;">The 23-Point Buyer-Side Churn Audit Checklist</strong>
-              <ol style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.9; padding-left: 1.25rem; margin: 0;">
+          <!-- Checklist Preview -->
+          <div style="max-width: 560px; margin: 3rem auto 0; text-align: left;">
+            <div style="background: var(--cl-navy-2); border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;">
+              <strong style="color: #fff; display: block; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem;">Preview: The 23-Point Buyer-Side Churn Audit Checklist</strong>
+              <ol style="color: #94a3b8; font-size: 0.88rem; line-height: 1.9; padding-left: 1.25rem; margin: 0;">
                 <li><strong>Logo churn rate</strong> &mdash; computed from raw data, not the seller's summary</li>
                 <li><strong>Revenue churn rate</strong> &mdash; separately from logo churn</li>
                 <li><strong>Net vs. gross churn</strong> &mdash; if they diverge, growth is masking churn</li>
                 <li><strong>Monthly vs. annual churn</strong> &mdash; always compound it yourself</li>
                 <li><strong>Cohort trend (24 months)</strong> &mdash; not a single "representative" month</li>
-                <li><strong>Downgrade rate</strong> &mdash; plan decreases are hidden revenue churn</li>
-                <li><strong>Involuntary churn split</strong> &mdash; failed payments excluded? Big flag</li>
-                <li><strong>Top 10 customer concentration</strong> &mdash; what % of MRR?</li>
-                <li><strong>Top 3 customer churn impact</strong> &mdash; if they all left, what's MRR?</li>
-                <li><strong>Annual-plan renewal schedule</strong> &mdash; when do they come up?</li>
-                <li><strong>Annual-plan early-cancellation rate</strong></li>
-                <li><strong>Inactive paid accounts</strong> &mdash; paying but not logging in</li>
-                <li><strong>Inactive account trend</strong> &mdash; growing or shrinking?</li>
-                <li><strong>Expansion revenue rate</strong> &mdash; upsells, seat additions</li>
-                <li><strong>Contraction revenue rate</strong> &mdash; downgrades by MRR</li>
-                <li><strong>Trial-to-paid conversion rate</strong> &mdash; trials excluded from churn?</li>
-                <li><strong>Reactivation pattern</strong> &mdash; serial churners counted once?</li>
-                <li><strong>MRR trajectory (6 months)</strong> &mdash; trending up, flat, or decaying?</li>
-                <li><strong>Net new MRR vs. churned MRR</strong> &mdash; is growth hiding decay?</li>
-                <li><strong>Revenue quality grade</strong> &mdash; composite A&ndash;F</li>
-                <li><strong>Voluntary vs. involuntary ratio</strong></li>
-                <li><strong>Customer lifecycle stage distribution</strong></li>
-                <li><strong>Cohort retention curves by signup month</strong></li>
+                <li style="color: #64748b;">... 18 more points unlocked after purchase</li>
               </ol>
             </div>
 
-            <div class="next-steps">
-              <strong>While you read &mdash; got a target in due diligence right now?</strong><br><br>
-              <a href="/pricing" style="color: var(--cl-blue-text, #60a5fa); font-weight: 600;">Send the CSV and get your own risk report in 2 business days &rarr;</a>
-            </div>
-
-            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); border-radius: 0.5rem;">
-              <strong style="color: #cbd5e1; font-size: 0.9rem;">&#9993; Coming to your inbox:</strong>
-              <span style="color: #94a3b8; font-size: 0.85rem;"> The full sample risk report on a synthetic $48K MRR SaaS + the 7-trick Hidden Churn Cheat Sheet + a 5-day email series on the biggest DD blind spots.</span>
-            </div>
-          </div>
-
-          <!-- OTO — One-Time Offer (shown after email submit) -->
-          <div class="sq-oto" id="oto-msg">
-            <div class="sq-oto-card">
-              <div class="sq-oto-badge">Limited Time Offer</div>
-              <h3>Good call. But let me ask you something&hellip;</h3>
-              <p class="sq-oto-body">
-                You just got the 23-point checklist. That&rsquo;s the manual way &mdash; two to four hours
-                in a spreadsheet, per target. If you have a deal on your desk right now, the other option is
-                to <strong style="color:#cbd5e1">send us the CSV once for $9</strong> and have all five risks
-                computed and reviewed for you. No subscription.
-              </p>
-
-              <div class="sq-oto-comparison">
-                <div class="sq-oto-col free">
-                  <div class="sq-oto-col-label">Manual Checklist</div>
-                  <div class="sq-oto-col-price">Free <span class="price-period">&#8734;</span></div>
-                  <ul>
-                    <li>23-point checklist (PDF)</li>
-                    <li>Manual spreadsheet work</li>
-                    <li>2&ndash;4 hours per target</li>
-                    <li>Sample report included</li>
-                  </ul>
-                </div>
-                <div class="sq-oto-col pro">
-                  <div class="sq-oto-col-label">One analysis, done for you</div>
-                  <!-- Prices MUST match /pricing: $9 one-time, $49/mo Pro. The $9
-                       single analysis is the only self-serve checkout that exists,
-                       so it — not a $49/mo mailto — is what belongs on the highest-
-                       intent step in the funnel. -->
-                  <div class="sq-oto-col-price">$9 <span class="price-period">one-time</span></div>
-                  <ul>
-                    <li>Logo &amp; revenue churn</li>
-                    <li>Concentration risk analysis</li>
-                    <li>Zombie MRR detection</li>
-                    <li>Annual-plan decay projection</li>
-                    <li>A&ndash;F revenue quality score</li>
-                    <li>Human-reviewed, 2 business days</li>
-                  </ul>
-                </div>
-              </div>
-
-              <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" class="sq-oto-cta" id="oto-accept" onclick="if(window.posthog){posthog.capture('oto_accepted',{offer:'single_analysis',price:9})}">Run one analysis &mdash; $9 &rarr;</a>
-              <p class="sq-oto-disclaimer">
-                One-time payment, no subscription. Upload link by email within 24h.<br>
-                Running several deals a month? <a href="/pricing" style="color:#94a3b8;text-decoration:underline">Pro is $49/mo</a>.
-              </p>
-
-              <a class="sq-oto-decline" id="oto-decline">No thanks, show me the free checklist &rarr;</a>
+            <div class="next-steps" style="text-align: center;">
+              <strong>Got a target in due diligence right now?</strong><br><br>
+              <a href="/pricing" style="color: var(--cl-blue-text, #60a5fa); font-weight: 600;">Send us the CSV and get your own risk report &rarr;</a>
             </div>
           </div>
 
@@ -533,10 +434,10 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
 
           <!-- Objection crusher -->
           <div class="objections">
-            <h3>Frequently asked before signing up</h3>
+            <h3>Frequently asked before buying</h3>
             <details>
-              <summary>Is this really free?</summary>
-              <p>Yes. The checklist, sample report, and cheat sheet are free. We monetize the ChurnLens tool itself (send your own CSV and get a full risk report). The checklist is our way of earning your trust first.</p>
+              <summary>What do I get for $9?</summary>
+              <p>The 23-point buyer-side churn audit checklist, a sample risk report on a synthetic $48K MRR target, the hidden-churn cheat sheet exposing 7 seller tricks, and a revenue-quality scorecard template. One-time payment, instant access.</p>
             </details>
             <details>
               <summary>I already have a due diligence checklist. Why this one?</summary>
@@ -544,11 +445,11 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
             </details>
             <details>
               <summary>I'm not technical. Can I use this?</summary>
-              <p>The checklist is plain English. You ask the seller for their subscription export (CSV) and run through the 23 points. The sample report shows you exactly what the output looks like. No code required to use the checklist &mdash; that's the point.</p>
+              <p>The checklist is plain English. You ask the seller for their subscription export (CSV) and run through the 23 points. The sample report shows you exactly what the output looks like. No code required.</p>
             </details>
             <details>
-              <summary>Will you spam me?</summary>
-              <p>No. You get the checklist immediately, then a 5-day email series walking through the biggest hidden-churn risks (one per day, each actionable). After that, occasional SaaS M&amp;A insights. Unsubscribe in one click from any email.</p>
+              <summary>Is there a money-back guarantee?</summary>
+              <p>Yes. If the checklist doesn't save you from at least one red flag you would have missed, email us and we'll refund your $9. No questions asked.</p>
             </details>
           </div>
 
@@ -578,56 +479,13 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
 
     <script>
     (function() {
-      var form = document.getElementById('optin-form');
-      var success = document.getElementById('success-msg');
-      var oto = document.getElementById('oto-msg');
-      var btn = document.getElementById('submit-btn');
-
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        var email = document.getElementById('email-input').value.trim();
-        if (!email) return;
-
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        try {
-          var resp = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, source: 'squeeze-page', website: document.getElementById('website-field').value })
-          });
-          var data = await resp.json();
-          if (!resp.ok || !data.ok) {
-            throw new Error(data.error || 'Server error');
-          }
-        } catch(err) {
-          console.error('Subscribe error:', err);
-          btn.textContent = 'Get the checklist →';
-          btn.disabled = false;
-          // Don't hide form — let user retry
-          return;
-        }
-
-        form.style.display = 'none';
-        oto.classList.add('show');
-        if (window.posthog) { posthog.capture('lead_optin', { source: 'squeeze-page' }); }
-        if (window.posthog) { posthog.capture('checklist_subscribed', { source: 'squeeze-page' }); }
-        if (window.posthog) { posthog.capture('oto_shown'); }
-      });
-
-      // OTO — decline: show free checklist
-      document.getElementById('oto-decline').addEventListener('click', function(e) {
-        e.preventDefault();
-        oto.classList.remove('show');
-        success.classList.add('show');
-      });
-
-      // OTO — accept Pro: track and redirect to mailto
-      document.getElementById('oto-accept').addEventListener('click', function() {
-        if (window.posthog) { posthog.capture('oto_accepted'); }
-        // Let the default href redirect happen (mailto)
-      });
+      // Stripe checkout tracking
+      var stripeBtn = document.getElementById('stripe-cta');
+      if (stripeBtn) {
+        stripeBtn.addEventListener('click', function() {
+          if (window.posthog) { posthog.capture('checklist_checkout_clicked', { source: 'squeeze-page' }); }
+        });
+      }
     })();
     </script>
 
@@ -670,10 +528,10 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
   
   <div style="background:#fef3c7;color:#0f172a;border-radius:8px;padding:12px;margin:12px 0;text-align:center"><strong>🛡️ 100% Money-Back — If We Miss a Red Flag, You Don't Pay</strong></div>
   <div style="background:white;color:#0f172a;border-radius:12px;padding:20px;max-width:500px;margin:0 auto 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
-    <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">📥 Free SaaS Due Diligence Checklist</p>
-    <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.</p>
-    <a href="https://churnlens.site/saas-due-diligence-checklist" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Download Free Checklist →</a>
-    <p style="font-size:0.75rem;color:#475569;margin-top:8px">No spam. Unsubscribe anytime.</p>
+    <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">📥 SaaS Due Diligence Checklist</p>
+    <p style="color:#555;margin-bottom:12px;font-size:0.9rem">The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read. $9 one-time.</p>
+    <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" style="display:inline-block;background:#0066cc;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem">Get the Checklist — $9 →</a>
+    <p style="font-size:0.75rem;color:#475569;margin-top:8px">Secure checkout via Stripe. One-time payment. Instant access.</p>
   </div>
   <!-- 2026-07-24: removed the fabricated "Limited Beta Pricing... Before Price
   Increase" fake-urgency line -- Stripe shows zero Pro/Dealmaker subscriptions
@@ -693,8 +551,8 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
-    <a href="https://churnlens.site/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
-    <p style="margin-top:18px;font-size:.78rem;color:#94a3b8">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+    <a href="https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Checklist — $9 →</a>
+    <p style="margin-top:18px;font-size:.78rem;color:#94a3b8">🛡️ 100% money-back guarantee. If you miss a red flag using this checklist, we refund your $9.</p>
   </div>
 </section>
 <!-- /BRUNSON TRUST BAR -->

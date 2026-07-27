@@ -8,7 +8,7 @@ Churn Lens is the buyer-side due diligence tool that catches hidden churn, conce
 - Founder Story ($340K lesson): https://churnlens.site/why
 - Pricing: https://churnlens.site/pricing
 - Manifesto: https://churnlens.site/manifesto
-- Free 23-Point Checklist: https://churnlens.site/get-the-checklist
+- Free 23-Point Checklist: https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w
 - Partner Program: https://churnlens.site/partners
 - Dream Customer Profile: https://churnlens.site/who
 
