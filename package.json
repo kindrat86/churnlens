@@ -1,0 +1,7 @@
+{
+  "name": "churnlens",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build step — static site'"
+  }
+}
