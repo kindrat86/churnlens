@@ -53,8 +53,6 @@ Allow: /
 User-Agent: Bingbot
 Allow: /
 
-Sitemap: https://churnlens.site/sitemap.xml
-
 Sitemap: https://churnlens.site/sitemap-index.xml
 
 # AI crawler signals

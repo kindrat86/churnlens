@@ -1441,6 +1441,1516 @@
       "source": "/data/feed.json/",
       "destination": "/benchmarks",
       "permanent": true
+    },
+    {
+      "source": "/alternatives-to/chart-mogul",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/chart-mogul/",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/churnly",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/churnly/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/gainsight",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/gainsight/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/retina-ai",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/retina-ai/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/stripe-sigma",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/stripe-sigma/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/answers/churn-prediction-methods",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/answers/churn-prediction-methods/",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/expansion-revenue-benchmarks",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/expansion-revenue-benchmarks/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/net-revenue-retention-2026",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/net-revenue-retention-2026/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-cac-payback",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-cac-payback/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-cac-payback-2026",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-cac-payback-2026/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-benchmarks-2026-interactive",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-benchmarks-2026-interactive/",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-rate-2026",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-rate-2026/",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-rate-benchmarks-2026",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-churn-rate-benchmarks-2026/",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-customer-acquisition-cost-benchmarks",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-customer-acquisition-cost-benchmarks/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-expansion-revenue-benchmarks",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-expansion-revenue-benchmarks/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-expansion-revenue-by-stage",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-expansion-revenue-by-stage/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-gross-churn-2026",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-gross-churn-2026/",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-logo-churn",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-logo-churn/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-logo-retention-benchmarks",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-logo-retention-benchmarks/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-net-dollar-retention-benchmarks",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-net-dollar-retention-benchmarks/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-net-revenue-retention",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-net-revenue-retention/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-revenue-concentration-risk",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/benchmarks/saas-revenue-concentration-risk/",
+      "destination": "/benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/churn-audit-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/churn-audit-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/nrr-audit-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/nrr-audit-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre-acquisition-churn-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre-acquisition-churn-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre-loi-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/pre-loi-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/renewal-season-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/renewal-season-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/revenue-quality-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/revenue-quality-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/saas-dd-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/saas-dd-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/zombie-mrr-checklist",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/checklists/zombie-mrr-checklist/",
+      "destination": "/saas-due-diligence-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/compare/churn-analytics-vs-customer-success-platforms",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/churn-analytics-vs-customer-success-platforms/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/saas-annual-plan-cliff-risk-tools",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/saas-annual-plan-cliff-risk-tools/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/saas-revenue-quality-scoring-platforms",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/saas-revenue-quality-scoring-platforms/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/top-revenue-concentration-analysis-tools",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/compare/top-revenue-concentration-analysis-tools/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/for/agencies",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/agencies/",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/agtech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/agtech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/ai-ml",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/ai-ml/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/b2b-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/b2b-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/board-members",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/board-members/",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/climate-tech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/climate-tech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/cybersecurity",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/cybersecurity/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/devtools",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/devtools/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/ecommerce",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/ecommerce/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/edtech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/edtech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/fintech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/fintech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/founders-exiting",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/founders-exiting/",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/fractional-cfos",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/fractional-cfos/",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/gaming",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/gaming/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/healthcare",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/healthcare/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/hospitality",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/hospitality/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/hr-tech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/hr-tech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/insurtech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/insurtech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/investment-bankers",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/investment-bankers/",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/legal-tech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/legal-tech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/logistics",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/logistics/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/marketplace-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/marketplace-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/martech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/martech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/media",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/media/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/micro-pe",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/micro-pe/",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/micro-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/micro-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/private-equity",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/private-equity/",
+      "destination": "/use-cases/pe-due-diligence",
+      "permanent": true
+    },
+    {
+      "source": "/for/proptech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/proptech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/real-estate",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/real-estate/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-brokers",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-brokers/",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-founders",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-founders/",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-founders-selling",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/saas-founders-selling/",
+      "destination": "/use-cases/saas-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for/search-fund-operators",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/for/search-fund-operators/",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/for/search-funds",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/for/search-funds/",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/for/venture-debt",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/for/venture-debt/",
+      "destination": "/use-cases",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/annual-plan-churn-risk",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/annual-plan-churn-risk/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/arr",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/arr/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/churn-rate",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/churn-rate/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/cohort-analysis",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/cohort-analysis/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/contraction-churn",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/contraction-churn/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/expansion-revenue",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/expansion-revenue/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-churn",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-churn/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-revenue-retention",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-revenue-retention/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-vs-net-churn",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/gross-vs-net-churn/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/grr",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/grr/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/logo-churn",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/logo-churn/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/ltv",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/ltv/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/mrr",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/mrr/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/nrr",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/nrr/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/zombie-mrr",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/zombie-mrr/",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/guides/saas-churn-analysis-framework",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
+      "source": "/guides/saas-churn-analysis-framework/",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
+      "source": "/guides/saas-due-diligence-guide",
+      "destination": "/ultimate-saas-due-diligence-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/saas-due-diligence-guide/",
+      "destination": "/ultimate-saas-due-diligence-guide",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/b2b-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/b2b-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/cybersecurity-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/cybersecurity-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/developer-tools",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/developer-tools/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/devtools",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/devtools/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/edtech-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/edtech-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/enterprise-saas-churn",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/enterprise-saas-churn/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fintech-saas-churn",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/fintech-saas-churn/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/marketplace-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/marketplace-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/martech",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/martech/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/plg-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/plg-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/plg-saas-churn",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/plg-saas-churn/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/proptech-saas",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/proptech-saas/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/vertical-saas-churn-patterns",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/vertical-saas-churn-patterns/",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/chartmogul",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/chartmogul/",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/profitwell-api",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/profitwell-api/",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/profitwell",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/profitwell/",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/quickbooks",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/quickbooks/",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/stripe-analytics",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/stripe-analytics/",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/stripe",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/stripe/",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/learn/annual-plan-churn",
+      "destination": "/annual-plan-churn-risk",
+      "permanent": true
+    },
+    {
+      "source": "/learn/annual-plan-churn/",
+      "destination": "/annual-plan-churn-risk",
+      "permanent": true
+    },
+    {
+      "source": "/learn/gross-churn",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/learn/gross-churn/",
+      "destination": "/saas-churn-rate-benchmarks",
+      "permanent": true
+    },
+    {
+      "source": "/learn/how-to-calculate-saas-churn-rate",
+      "destination": "/saas-revenue-churn-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/learn/how-to-calculate-saas-churn-rate/",
+      "destination": "/saas-revenue-churn-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/learn/how-to-spot-fake-churn",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/learn/how-to-spot-fake-churn/",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/learn/net-revenue-retention",
+      "destination": "/learn/net-revenue-retention",
+      "permanent": true
+    },
+    {
+      "source": "/learn/net-revenue-retention/",
+      "destination": "/learn/net-revenue-retention",
+      "permanent": true
+    },
+    {
+      "source": "/learn/post-acquisition-churn-surge",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/learn/post-acquisition-churn-surge/",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/learn/revenue-concentration-risk",
+      "destination": "/customer-concentration-risk",
+      "permanent": true
+    },
+    {
+      "source": "/learn/revenue-concentration-risk/",
+      "destination": "/customer-concentration-risk",
+      "permanent": true
+    },
+    {
+      "source": "/learn/revenue-quality-vs-vanity-metrics",
+      "destination": "/saas-revenue-quality-score",
+      "permanent": true
+    },
+    {
+      "source": "/learn/revenue-quality-vs-vanity-metrics/",
+      "destination": "/saas-revenue-quality-score",
+      "permanent": true
+    },
+    {
+      "source": "/learn/saas-churn-red-flags",
+      "destination": "/saas-acquisition-red-flags",
+      "permanent": true
+    },
+    {
+      "source": "/learn/saas-churn-red-flags/",
+      "destination": "/saas-acquisition-red-flags",
+      "permanent": true
+    },
+    {
+      "source": "/pricing-questions/how-much-does-it-cost",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/pricing-questions/how-much-does-it-cost/",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/pricing-questions/is-it-worth-it",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/pricing-questions/is-it-worth-it/",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/baremetrics-review-for-acquirers",
+      "destination": "/vs/baremetrics",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/baremetrics-review-for-acquirers/",
+      "destination": "/vs/baremetrics",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/chartmogul-review-for-acquirers",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/chartmogul-review-for-acquirers/",
+      "destination": "/vs/chartmogul",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/churnzero-review-for-acquirers",
+      "destination": "/vs/churnzero",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/churnzero-review-for-acquirers/",
+      "destination": "/vs/churnzero",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/gainsight-review-for-acquirers",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/gainsight-review-for-acquirers/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/profitwell-review-for-acquirers",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/profitwell-review-for-acquirers/",
+      "destination": "/vs/profitwell",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/stripe-sigma-review-for-acquirers",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/stripe-sigma-review-for-acquirers/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/scenarios/revenue-concentration-kills-acquisition",
+      "destination": "/customer-concentration-risk",
+      "permanent": true
+    },
+    {
+      "source": "/scenarios/revenue-concentration-kills-acquisition/",
+      "destination": "/customer-concentration-risk",
+      "permanent": true
+    },
+    {
+      "source": "/scenarios/saas-acquisition-hidden-churn",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/scenarios/saas-acquisition-hidden-churn/",
+      "destination": "/hidden-churn-saas-acquisition",
+      "permanent": true
+    },
+    {
+      "source": "/templates/churn-audit-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/churn-audit-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/customer-health-score-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/customer-health-score-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/nrr-improvement-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/nrr-improvement-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/renewal-forecast-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/renewal-forecast-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/revenue-quality-scorecard-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/revenue-quality-scorecard-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/saas-due-diligence-checklist-template",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/templates/saas-due-diligence-checklist-template/",
+      "destination": "/templates",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/investor-reporting",
+      "destination": "/use-cases/investors",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/investor-reporting/",
+      "destination": "/use-cases/investors",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/saas-acquisition",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/saas-acquisition/",
+      "destination": "/use-cases/saas-acquirers",
+      "permanent": true
+    },
+    {
+      "source": "/vs/baremetrics-2",
+      "destination": "/vs/baremetrics",
+      "permanent": true
+    },
+    {
+      "source": "/vs/baremetrics-2/",
+      "destination": "/vs/baremetrics",
+      "permanent": true
+    },
+    {
+      "source": "/vs/churn360",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/churn360/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/churnly",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/churnly/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/custify",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/custify/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/firstbase",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/firstbase/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/g2stack",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/g2stack/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/gainsight",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/gainsight/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/gainsight-cc",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/gainsight-cc/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/geckoboard",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/geckoboard/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/maxio",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/maxio/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/paddle",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/paddle/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/planhat",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/planhat/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/retentioncom",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/retentioncom/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/retina-ai",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/retina-ai/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/saas-optics",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/saas-optics/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/stripe-sigma",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/stripe-sigma/",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/subscript",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/vs/subscript/",
+      "destination": "/compare",
+      "permanent": true
     }
   ],
   "rewrites": [
