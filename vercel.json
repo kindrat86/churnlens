@@ -104,22 +104,22 @@
     },
     {
       "source": "/checklists/pre LOI-checklist",
-      "destination": "/checklists/pre-loi-checklist",
+      "destination": "/saas-due-diligence-checklist",
       "permanent": true
     },
     {
       "source": "/checklists/pre LOI-checklist/",
-      "destination": "/checklists/pre-loi-checklist",
+      "destination": "/saas-due-diligence-checklist",
       "permanent": true
     },
     {
       "source": "/checklists/pre%20LOI-checklist",
-      "destination": "/checklists/pre-loi-checklist",
+      "destination": "/saas-due-diligence-checklist",
       "permanent": true
     },
     {
       "source": "/checklists/pre%20LOI-checklist/",
-      "destination": "/checklists/pre-loi-checklist",
+      "destination": "/saas-due-diligence-checklist",
       "permanent": true
     },
     {
