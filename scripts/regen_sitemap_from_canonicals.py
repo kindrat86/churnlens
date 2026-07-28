@@ -212,8 +212,27 @@ def main() -> None:
         lines.append("  </url>")
     lines.append("</urlset>")
 
+    # Write main sitemap
     (REPO / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"sitemap.xml: {len(found)} URLs")
+
+    # Regenerate image sitemap in sync with main sitemap
+    img_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
+    ]
+    for url in sorted(found):
+        img_lines.append("  <url>")
+        img_lines.append(f"    <loc>{url}</loc>")
+        img_lines.append("      <image:image>")
+        img_lines.append(f"        <image:loc>{BASE}/og.png</image:loc>")
+        img_lines.append("        <image:title>ChurnLens</image:title>")
+        img_lines.append("      </image:image>")
+        img_lines.append("  </url>")
+    img_lines.append("</urlset>")
+    (REPO / "image-sitemap.xml").write_text("\n".join(img_lines) + "\n", encoding="utf-8")
+    print(f"image-sitemap.xml: {len(found)} URLs")
     print(f"  skipped noindex:        {skipped_noindex}")
     print(f"  skipped (no canonical): {skipped_nocanon}")
     print(f"  skipped .vercelignore'd:{skipped_ignored}")
