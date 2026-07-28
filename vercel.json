@@ -2553,16 +2553,6 @@
       "permanent": true
     },
     {
-      "source": "/learn/net-revenue-retention",
-      "destination": "/learn/net-revenue-retention",
-      "permanent": true
-    },
-    {
-      "source": "/learn/net-revenue-retention/",
-      "destination": "/learn/net-revenue-retention",
-      "permanent": true
-    },
-    {
       "source": "/learn/post-acquisition-churn-surge",
       "destination": "/hidden-churn-saas-acquisition",
       "permanent": true
