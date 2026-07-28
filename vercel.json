@@ -2025,5 +2025,6 @@
         }
       ]
     }
-  ]
+  ],
+  "trailingSlash": false
 }
