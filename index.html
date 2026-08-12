@@ -714,7 +714,11 @@
     <!-- home-optin: capture in place. /get-the-checklist took 30 uniques and
          converted 0 in 365 days; this page takes 3x that traffic and had no
          form at all. Same endpoint, same honeypot, same events, one less hop. -->
-    <div class="brunson-reveal brunson-center" style="margin-top:2rem">
+    <!-- Deliberately NOT .brunson-reveal: that class is opacity:0 until an
+         IntersectionObserver adds .visible, and the page has no <noscript> or
+         prefers-reduced-motion fallback. Every other section can afford that;
+         the one element whose entire job is conversion cannot. Renders always. -->
+    <div class="brunson-center" style="margin-top:2rem">
       <form id="home-optin" style="max-width:26rem;margin:0 auto;text-align:left">
         <label for="home-optin-email" style="display:block;font-size:.9rem;color:#cbd5e1;margin-bottom:.5rem">
           Get the 23-point buyer-side checklist &mdash; free, no account.
