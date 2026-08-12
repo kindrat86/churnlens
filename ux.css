@@ -340,8 +340,13 @@ button:active, .btn:active, a.btn:active { transform: scale(0.97); }
 /* ── 17. IMAGES — CLS PREVENTION ────────────────────────────────── */
 img, video, iframe, embed { max-width: 100%; height: auto; display: block; }
 img:not([width]):not([height]) { aspect-ratio: 16/9; }
-img[loading="lazy"] { opacity: 0; transition: opacity 0.3s ease; }
+/* Fade in lazy images with a CSS animation, not a JS-added .loaded class.
+   The old rule parked every lazy image at opacity:0 and relied on ux.js to
+   add .loaded — if ux.js never ran, the image stayed invisible forever.
+   An animation with `both` ends at opacity:1 no matter what JS does. */
+img[loading="lazy"] { animation: ux-img-fade-in 0.3s ease both; }
 img[loading="lazy"].loaded { opacity: 1; }
+@keyframes ux-img-fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 /* ── 18. FORM ELEMENTS ──────────────────────────────────────────── */
 input, textarea, select {
@@ -1091,4 +1096,29 @@ p.center,
 p[style*="text-align:center"],
 p[style*="text-align: center"] {
   margin-inline: auto !important;
+}
+
+/* ── 39. REVEAL FALLBACKS — content must never need JS to be visible ──
+   .brunson-reveal (homepage) and .cl-reveal (pricing twins) both start at
+   opacity:0 and are only revealed by an IntersectionObserver adding a class.
+   If that observer never runs — JS disabled, a script error earlier on the
+   page, or an unsupported browser — the content is permanently invisible.
+   That already cost the homepage opt-in its visibility once.
+
+   Two guards live here, neither depending on JS. This one honours
+   prefers-reduced-motion, which the site did not respect anywhere: those
+   users skip the animation and simply see the content. The second guard is a
+   <noscript> block on each page that uses the classes.
+
+   !important is deliberate: .cl-reveal ships from the content-hashed
+   assets/cl-enhance.*.css, which this repo treats as immutable and must not
+   be hand-edited, so this override cannot rely on source order. */
+@media (prefers-reduced-motion: reduce) {
+  .brunson-reveal,
+  .cl-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  img[loading="lazy"] { animation: none; opacity: 1; }
 }
