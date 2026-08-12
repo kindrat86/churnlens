@@ -87,7 +87,18 @@ def main():
                 counts[f"{key} -> {dest}"] += 1
                 return 'href="%s%s"' % (dest, tail if "#" not in dest else "")
 
+            # Relative first, then absolute self-links. The pSEO templates under
+            # /export, /vs and /compare write internal links as full
+            # https://churnlens.site/... URLs, so a relative-only pass silently
+            # left 122 of them pointing at redirects across 71 files.
             new = re.sub(r'href="(/[^"]*)"', sub, html)
+
+            def sub_abs(m):
+                inner = re.sub(r'href="(/[^"]*)"', sub, 'href="%s"' % m.group(1))
+                return inner.replace('href="', 'href="https://churnlens.site', 1) \
+                    if inner.startswith('href="/') else inner
+
+            new = re.sub(r'href="https://churnlens\.site(/[^"]*)"', sub_abs, new)
             if changed:
                 files.add(path)
                 if apply:
