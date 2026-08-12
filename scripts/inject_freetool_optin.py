@@ -98,7 +98,7 @@ BLOCK = """
   </style>
 
   <div class="cl-ask">
-    <p class="cl-eyebrow">You just ran the numbers</p>
+    <p class="cl-eyebrow">What the number doesn't tell you</p>
     <h2 id="{marker}-h">The number is only half the job. Here's what to ask the seller next.</h2>
     <p>
       This tool tells you what the data says. The <strong>23-point buyer-side churn
