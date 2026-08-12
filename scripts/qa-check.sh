@@ -10,13 +10,27 @@ cd "$(dirname "$0")/.." || exit 1
 python3 "$HOME/.growth-engine/inject-disambiguation.py" churnlens || true
 node scripts/guard-positioning.mjs || exit 1
 
+# Money-path guardrail: a CTA must not promise something different from where it
+# goes, and one offer gets one payment link. Both failures shipped and survived
+# weeks of audits because every link returned HTTP 200 — see the docstring.
+python3 scripts/check_payment_links.py || exit 1
+
+# Fabricated first-party claims. Note this does NOT catch attributed
+# testimonials; three invented ones sat on the homepage while this gate ran green.
+python3 scripts/check_provenance_claims.py || exit 1
+
 python3 - <<'PYEOF'
 import os, re, sys, json
 import xml.etree.ElementTree as ET
 
 ROOT = os.getcwd()
+# Mirrors .vercelignore: nothing in here is deployed, so nothing in here can
+# break production. "dist" was missing, and its 4 stale asset references kept
+# this gate permanently red — a gate that always fails is a gate everyone learns
+# to scroll past, which is how 418 mislabelled money CTAs and three fabricated
+# testimonials survived on the live site.
 SKIP_DIRS = {".git", ".vercel", "i18n", "i18n_out", "public", "api",
-             "scripts", ".well-known", "node_modules"}
+             "scripts", ".well-known", "node_modules", "dist"}
 fails = []
 
 def html_files():
