@@ -233,7 +233,7 @@ The deep dive Analyzed 14 more deals from raw CSV data. Built the five-metric ch
 2025 
 From spreadsheet to product Systematized the analysis into a repeatable tool: the 5-Risk Buyer-Side Method, Revenue Quality Scorecard, and Zombie MRR detection. 
 January 2026 
-Public launch ChurnLens ships with a free Starter tier — 1 CSV analysis per month — so every acquirer can verify a seller's churn claims before they commit. 
+Public launch ChurnLens ships with a free in-browser analyzer — the full five-risk analysis, unlimited, with the CSV never leaving your machine — so every acquirer can verify a seller's churn claims before they commit. 
 ## What ChurnLens Is — and What It Isn't
 ### ✓ ChurnLens IS
 A buyer-side SaaS due diligence tool for acquirers, PE/M&A analysts, and founders evaluating a purchase
@@ -275,7 +275,7 @@ Or get the [23-point churn audit checklist](/get-the-checklist) — free, takes 
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 ## Frequently Asked Questions
 ### What is hidden churn in a SaaS acquisition?
 Hidden churn is revenue decay that headline metrics conceal: customers on annual plans who have already stopped using the product, paid accounts sitting inactive, or revenue concentrated in a few logos about to leave. A SaaS business can show flat MRR while its real retention is collapsing. ChurnLens surfaces these signals before you buy, so you price the deal on true revenue quality.
@@ -341,7 +341,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 ### Related
 - [SaaS Valuation Calculator](/saas-valuation-calculator) — estimate a target's valuation range
 - [SaaS M&A Due Diligence Framework](/saas-m-and-a-due-diligence-framework) — the full buyer-side framework
@@ -386,7 +386,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -425,7 +425,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -468,7 +468,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -507,7 +507,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -546,7 +546,7 @@ Already hold the ledger? Run it yourself, free and instantly, in the [SaaS Churn
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -632,7 +632,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -722,7 +722,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -818,7 +818,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -987,7 +987,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1089,7 +1089,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1177,7 +1177,7 @@ No spam. Unsubscribe anytime.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1311,7 +1311,7 @@ The highest-leverage use of this FAQ is to identify which metrics in the seller'
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1370,7 +1370,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1421,7 +1421,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1471,7 +1471,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1522,7 +1522,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1572,7 +1572,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 
@@ -1622,7 +1622,7 @@ SaaS revenue quality & churn risk due diligence for acquirers.
 23 Audit Checklist Points 
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
-🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
+🛡️ Run the full 5-Risk analysis free in your browser — unlimited, no account, and the CSV never leaves your machine. The $9 report is the same analysis, human-reviewed.
 
 ---
 

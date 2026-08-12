@@ -44,6 +44,8 @@ BANNED = [
     ("Already integrated", "there is no integration with any billing platform"),
     ("author-byline eeat", "hidden 1x1 clipped byline — Google spam policy"),
     ('"name":"Churn Lens"', "the brand is one word: ChurnLens"),
+    ("1 CSV analysis per month", "the free tier had no delivery mechanism and undercut the $9 product"),
+    ("Send 1 CSV per month", "same undeliverable free tier, in the pricing table"),
 ]
 
 
