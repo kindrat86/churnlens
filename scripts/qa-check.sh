@@ -19,6 +19,12 @@ python3 scripts/check_payment_links.py || exit 1
 # testimonials; three invented ones sat on the homepage while this gate ran green.
 python3 scripts/check_provenance_claims.py || exit 1
 
+# Twin divergence + retired claims. This repo serves foo/index.html at /foo and
+# 308s foo.html to it, so editing the .html twin silently changes nothing in
+# production — that shipped a still-indexable /network and a live "funded by
+# subscribers" claim on 2026-08-12, both after the "fix" had been committed.
+python3 scripts/check_twin_divergence.py || exit 1
+
 python3 - <<'PYEOF'
 import os, re, sys, json
 import xml.etree.ElementTree as ET
