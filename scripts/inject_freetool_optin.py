@@ -182,6 +182,9 @@ BLOCK = """
     }}
     root.classList.add('is-done');
     if (window.posthog) {{
+      // identified_only is set on every PostHog init on this site, so without
+      // identify() the lead stays anonymous and can never be joined to a buyer.
+      posthog.identify(email, {{ email: email, first_source: 'free-tool:{slug}' }});
       posthog.capture('lead_optin', {{ source: 'free-tool:{slug}' }});
       posthog.capture('oto_shown', {{ source: 'free-tool:{slug}' }});
     }}

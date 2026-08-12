@@ -617,6 +617,7 @@ body { background: var(--cl-navy, #0f172a); color: #f8fafc; }
         // well below the current scroll position. Without this the visitor sees
         // the form vanish and nothing appear.
         if (oto.scrollIntoView) oto.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (window.posthog) { posthog.identify(email, { email: email, first_source: 'squeeze-page' }); }
         if (window.posthog) { posthog.capture('lead_optin', { source: 'squeeze-page' }); }
         if (window.posthog) { posthog.capture('checklist_subscribed', { source: 'squeeze-page' }); }
         if (window.posthog) { posthog.capture('oto_shown'); }

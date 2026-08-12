@@ -311,95 +311,6 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
   <button type="button" class="ghost" id="btn-print">Print / save as PDF</button>
 </div>
 
-<h2 id="howto">How to use it</h2>
-<ol>
-  <li><b>Get the ledger, not the summary slide.</b> Ask the seller for a per-customer, per-month MRR export from Stripe, Chargebee, Paddle, Recurly or their own database. One row per customer per month. Reported churn and real churn diverge precisely because summary figures hide the customer-level detail.</li>
-  <li><b>Drop the file in.</b> Columns are detected automatically; correct the mapping if a guess is wrong. Nothing is uploaded.</li>
-  <li><b>Read the six lenses.</b> Each states the figure, the rubric band it lands in, and the question to put to the seller.</li>
-  <li><b>Export it into the deal file.</b> A self-contained HTML report, or a Markdown summary for an IC memo.</li>
-</ol>
-
-<h2>What the CSV needs to contain</h2>
-<p>Two layouts are accepted. <b>Long format</b> is richer and preferred:</p>
-<table>
-<thead><tr><th>Column</th><th>Required</th><th>Example</th><th>What it unlocks</th></tr></thead>
-<tbody>
-<tr><td><code>customer_id</code></td><td>Yes</td><td><code>acct_1001</code></td><td>Everything. Any stable identifier — id, email, company name.</td></tr>
-<tr><td><code>month</code></td><td>Yes*</td><td><code>2025-03</code></td><td>All churn, retention, cohort and trajectory lenses. Accepts <code>2025-03</code>, <code>2025-03-01</code>, <code>03/2025</code>, <code>Mar 2025</code>.</td></tr>
-<tr><td><code>mrr</code></td><td>Yes</td><td><code>240.00</code></td><td>Everything. Currency symbols and thousands separators are tolerated. An <code>arr</code> column is divided by 12.</td></tr>
-<tr><td><code>plan</code> / <code>interval</code></td><td>Optional</td><td><code>annual</code></td><td>Annual-Plan Decay Projection, and observed annual-vs-monthly churn.</td></tr>
-<tr><td><code>last_active</code></td><td>Optional</td><td><code>2025-03-28</code></td><td>Zombie MRR Detector.</td></tr>
-<tr><td><code>renewal_date</code></td><td>Optional</td><td><code>2025-11-01</code></td><td>Renewal-cliff timing — how much MRR is up for renewal in the next 3, 6 and 12 months.</td></tr>
-</tbody>
-</table>
-<p class="note">* <b>Wide format</b> works too: one row per customer, one column per month (<code>customer_id, plan, 2025-01, 2025-02, …</code>). A single snapshot with no month at all still produces concentration and annual-plan exposure; churn, retention and cohort lenses need at least two months.</p>
-
-<h2>The six lenses, and the formula each one uses</h2>
-<details><summary>1. Churn Divergence Detector</summary>
-<p>Logo churn and revenue churn are computed separately for every consecutive month pair, then compared. <code>logo churn = customers lost ÷ customers at start</code>. <code>gross revenue churn = (MRR of lost customers + downgrade MRR) ÷ MRR at start</code>. <b>Divergence = revenue churn ÷ logo churn.</b></p>
-<p>A divergence of 1.0 means churn is spread evenly across the book and the seller's headline logo-churn figure is honest. Above roughly 1.2 the churning accounts are larger than average, so the headline understates revenue erosion — the most common way a churn number flatters a target. Below 1.0 the business loses its smallest accounts, which is materially better news than the logo figure suggests.</p>
-<p>Because gross revenue churn conventionally includes downgrades, a high divergence has two quite different causes, and the report separates them rather than assuming one. The <b>cancellation and downgrade components are reported individually</b>, and a <b>size skew</b> — average MRR of churned accounts ÷ average MRR of retained ones — isolates whether the departing customers were genuinely larger. Divergence driven by size skew is a concentration-of-loss problem; divergence driven by downgrades is a pricing, packaging or discount problem. They lead to different questions on the management call, so the finding text is conditioned on which one the data actually shows.</p></details>
-
-<details><summary>2. Concentration Vulnerability Index</summary>
-<p>Measured on the most recent month: the share of MRR held by the largest 1, 3, 5 and 10 customers, the Herfindahl–Hirschman Index across the customer base (<code>HHI = Σ share² × 10,000</code>), and the number of customers needed to reach half of all MRR. HHI is reported because two books with the same top-5 share can have very different tails.</p></details>
-
-<details><summary>3. Annual-Plan Decay Projection</summary>
-<p>The share of MRR sitting on annual or multi-year terms, which is the MRR that cannot churn this month and therefore cannot appear in a monthly churn rate at all. Where a renewal or period-end date is present, MRR falling due in the next 3, 6 and 12 months is bucketed into a renewal cliff. Where enough history exists, the observed churn rate of annual customers is compared against monthly ones.</p>
-<p>Two conventions, stated because they change the numbers. The renewal date is read from each customer's <em>most recent</em> row, not the earliest — billing exports carry the current period end on every row, so the earliest one is always in the past. And where an annual customer's recorded period-end has already passed, it is advanced in whole years until it falls after the anchor date, because an annual contract that renewed last year renews again this year. Non-annual rows with a past date are treated as unknown and excluded rather than guessed; the count of both adjustments is reported with the result.</p>
-<p>This is reported as <em>exposure</em>, not a prediction. A concentration of renewals shortly after close is a structuring question — holdback, earn-out, escrow — not a forecast.</p></details>
-
-<details><summary>4. Zombie MRR Detector</summary>
-<p>Customers still paying whose last recorded activity predates a threshold — 60 days by default, measured from the latest date in the file rather than today, so historical exports are handled correctly. Reported as a share of current MRR. Requires a last-active, last-login or last-seen column; without one the lens is disabled rather than estimated, and its weight is redistributed across the other components.</p></details>
-
-<details><summary>5. Revenue Quality Scorecard</summary>
-<p>A weighted composite of the other lenses producing an A–F grade. Every band is published in the rubric table below, so the grade can be recomputed by hand from the component figures. Components whose input columns are missing are dropped and the remaining weights renormalised — a grade is never manufactured from absent data.</p></details>
-
-<details><summary>6. MRR Trajectory Forensics</summary>
-<p>Three separate readings. A month-by-month decomposition of MRR movement into new, expansion, contraction, churned and reactivated. A cohort retention triangle, where each cohort is the month a customer first appears and each cell is that cohort's retained MRR as a share of its starting MRR. And the trend of MRR from cohorts at least twelve months old, held against the headline trend.</p>
-<p>The third reading is the one that catches the pattern a headline number cannot show: flat total MRR produced by new sales replacing decaying older cohorts. The <b>quick ratio</b> — <code>(new + expansion) ÷ (churned + contraction)</code> — quantifies how hard the business has to run to stand still.</p></details>
-
-<h2 id="rubric">Scoring rubric (ChurnLens's own, published in full)</h2>
-<p>These bands are ChurnLens's rubric for buyer-side screening, not an industry standard. They are published so the grade is reproducible and arguable rather than a black box.</p>
-<table>
-<thead><tr><th>Component</th><th class="num">Weight</th><th>100</th><th>85</th><th>65</th><th>40</th><th>15</th></tr></thead>
-<tbody>
-<tr><td>Gross revenue retention, annualised</td><td class="num">30%</td><td>≥92%</td><td>88–92%</td><td>82–88%</td><td>75–82%</td><td>&lt;75%</td></tr>
-<tr><td>Top-5 customer share of MRR</td><td class="num">20%</td><td>≤15%</td><td>15–25%</td><td>25–40%</td><td>40–55%</td><td>&gt;55%</td></tr>
-<tr><td>Churn divergence (rev ÷ logo churn)</td><td class="num">15%</td><td>≤0.9</td><td>0.9–1.2</td><td>1.2–1.6</td><td>1.6–2.2</td><td>&gt;2.2</td></tr>
-<tr><td>Net revenue retention, annualised</td><td class="num">15%</td><td>≥110%</td><td>100–110%</td><td>95–100%</td><td>88–95%</td><td>&lt;88%</td></tr>
-<tr><td>MRR trend, last 6 months per month</td><td class="num">12%</td><td>≥+2%</td><td>+0.5–2%</td><td>−0.5–+0.5%</td><td>−2–−0.5%</td><td>&lt;−2%</td></tr>
-<tr><td>Zombie MRR share</td><td class="num">8%</td><td>≤2%</td><td>2–5%</td><td>5–10%</td><td>10–20%</td><td>&gt;20%</td></tr>
-</tbody>
-</table>
-<p class="note">Grade bands: <b>A</b> ≥85, <b>B</b> 75–84, <b>C</b> 65–74, <b>D</b> 55–64, <b>F</b> &lt;55. A further 15-point deduction applies to the trajectory component when cohorts twelve months and older are declining while headline MRR is flat or rising — replacement revenue masking decay. No letter grade is issued at all when less than 45% of the rubric weight is computable from the file — a grade off a fifth of the rubric would read as authoritative and mean very little. Rubric version <code>rq-1.0</code>.</p>
-
-<h2>Benchmark context</h2>
-<p>Where the report cites an outside comparison it uses one sourced figure: median gross revenue retention for private B2B SaaS is around <b>91%</b>, splitting to roughly <b>90%</b> below $25K ACV and <b>93%</b> above it — <a href="https://churnlens.site/benchmarks">SaaS Capital, 2023 B2B SaaS Retention Benchmarks</a>. Every other threshold on this page is ChurnLens's own rubric. Deviating from a benchmark is not a verdict; it decides which questions get asked on the management call and how the deal is structured.</p>
-
-<h2 id="faq">Frequently asked questions</h2>
-<details><summary>Is the subscription CSV uploaded to a server?</summary><p>No. Parsing and every calculation run in your browser using the File API. No part of the file, and no figure derived from it, is transmitted anywhere. Open your browser's network panel while running an analysis and you will see no request carrying your data. This matters because a target's customer-level revenue ledger is usually NDA-bound.</p></details>
-<details><summary>What CSV format does the analyzer need?</summary><p>Long format is richest: one row per customer per month with a customer identifier, a month and that month's MRR. Wide format — one row per customer, one column per month — works too. Optional columns unlock further lenses: plan or billing interval enables the Annual-Plan Decay Projection, a last-active date enables the Zombie MRR Detector, a renewal date sharpens renewal-cliff timing. A single snapshot still yields concentration and annual-plan exposure.</p></details>
-<details><summary>What is churn divergence and why does it matter more than the headline churn rate?</summary><p>Churn divergence is revenue churn divided by logo churn. Lose 5% of customers carrying 5% of MRR and divergence is 1.0 — the headline is honest. Lose 5% of customers carrying 9% of MRR and divergence is 1.8: the seller's logo-churn figure understates revenue erosion by nearly two times. Above roughly 1.2, churn is concentrated in the larger accounts.</p></details>
-<details><summary>How is the A–F grade calculated?</summary><p>A weighted composite of six components — gross revenue retention 30%, concentration 20%, churn divergence 15%, net revenue retention 15%, MRR trajectory 12%, zombie MRR 8%. Every band is published in the rubric table above, so the grade is reproducible by hand. Missing components are dropped and the remaining weights renormalised, and no grade is issued at all below 45% rubric coverage. The rubric is ChurnLens's own, not an industry standard.</p></details>
-<details><summary>Can I use the results in an investment-committee memo?</summary><p>Yes. The HTML report and the Markdown summary both carry the period range, row and customer counts and the rubric version, so a reviewer can trace every figure. Treat it as a screening and question-generation instrument, not a quality-of-earnings opinion — it reads exactly the ledger you give it and cannot detect revenue that was never in the export.</p></details>
-<details><summary>Is there a file-size limit?</summary><p>None imposed. Because the work is local the practical ceiling is your machine's memory; a few hundred thousand rows parse in seconds. Nothing is truncated silently — the row count, customer count and period range actually read are reported back to you.</p></details>
-<details><summary>How does this differ from the paid ChurnLens report?</summary><p>This tool runs the same six lenses on the ledger you already hold. The <a href="https://churnlens.site/pricing">paid buyer-side report</a> adds the work a tool cannot do: reconciling the ledger against bank and Stripe payouts, chasing the gaps the export leaves out, checking the cohort story against the CIM's claims, and writing the findings up as diligence questions for a specific deal.</p></details>
-
-<h2>Related ChurnLens tools and reading</h2>
-<div class="related-links">
-  <a href="https://churnlens.site/5-risk-buyer-side-method">The 5-Risk Buyer-Side Method — the framework this tool implements</a>
-  <a href="https://churnlens.site/churn-divergence-detector">Churn Divergence Detector — why logo and revenue churn split</a>
-  <a href="https://churnlens.site/concentration-vulnerability-index">Concentration Vulnerability Index</a>
-  <a href="https://churnlens.site/zombie-mrr-detector">Zombie MRR Detector</a>
-  <a href="https://churnlens.site/annual-plan-churn-risk">Annual-Plan Churn Risk</a>
-  <a href="https://churnlens.site/mrr-trajectory-forensics">MRR Trajectory Forensics</a>
-  <a href="https://churnlens.site/revenue-quality-scorecard">Revenue Quality Scorecard</a>
-  <a href="https://churnlens.site/saas-due-diligence-checklist">SaaS Due Diligence Checklist</a>
-  <a href="https://churnlens.site/free">All free ChurnLens tools</a>
-  <a href="https://churnlens.site/benchmarks">SaaS retention &amp; valuation benchmarks</a>
-</div>
-
-
 <!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
      the checklist that tells them what to do about it. Injected by
      scripts/inject_freetool_optin.py — re-running is idempotent. -->
@@ -541,12 +452,106 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     }
     root.classList.add('is-done');
     if (window.posthog) {
+      // identified_only is set on every init, so without this the lead stays
+      // anonymous and can never be joined to a later purchase.
+      posthog.identify(email, { email: email, first_source: 'free-tool:saas-churn-analyzer' });
       posthog.capture('lead_optin', { source: 'free-tool:saas-churn-analyzer' });
       posthog.capture('oto_shown', { source: 'free-tool:saas-churn-analyzer' });
     }
   });
 })();
 </script>
+
+<h2 id="howto">How to use it</h2>
+<ol>
+  <li><b>Get the ledger, not the summary slide.</b> Ask the seller for a per-customer, per-month MRR export from Stripe, Chargebee, Paddle, Recurly or their own database. One row per customer per month. Reported churn and real churn diverge precisely because summary figures hide the customer-level detail.</li>
+  <li><b>Drop the file in.</b> Columns are detected automatically; correct the mapping if a guess is wrong. Nothing is uploaded.</li>
+  <li><b>Read the six lenses.</b> Each states the figure, the rubric band it lands in, and the question to put to the seller.</li>
+  <li><b>Export it into the deal file.</b> A self-contained HTML report, or a Markdown summary for an IC memo.</li>
+</ol>
+
+<h2>What the CSV needs to contain</h2>
+<p>Two layouts are accepted. <b>Long format</b> is richer and preferred:</p>
+<table>
+<thead><tr><th>Column</th><th>Required</th><th>Example</th><th>What it unlocks</th></tr></thead>
+<tbody>
+<tr><td><code>customer_id</code></td><td>Yes</td><td><code>acct_1001</code></td><td>Everything. Any stable identifier — id, email, company name.</td></tr>
+<tr><td><code>month</code></td><td>Yes*</td><td><code>2025-03</code></td><td>All churn, retention, cohort and trajectory lenses. Accepts <code>2025-03</code>, <code>2025-03-01</code>, <code>03/2025</code>, <code>Mar 2025</code>.</td></tr>
+<tr><td><code>mrr</code></td><td>Yes</td><td><code>240.00</code></td><td>Everything. Currency symbols and thousands separators are tolerated. An <code>arr</code> column is divided by 12.</td></tr>
+<tr><td><code>plan</code> / <code>interval</code></td><td>Optional</td><td><code>annual</code></td><td>Annual-Plan Decay Projection, and observed annual-vs-monthly churn.</td></tr>
+<tr><td><code>last_active</code></td><td>Optional</td><td><code>2025-03-28</code></td><td>Zombie MRR Detector.</td></tr>
+<tr><td><code>renewal_date</code></td><td>Optional</td><td><code>2025-11-01</code></td><td>Renewal-cliff timing — how much MRR is up for renewal in the next 3, 6 and 12 months.</td></tr>
+</tbody>
+</table>
+<p class="note">* <b>Wide format</b> works too: one row per customer, one column per month (<code>customer_id, plan, 2025-01, 2025-02, …</code>). A single snapshot with no month at all still produces concentration and annual-plan exposure; churn, retention and cohort lenses need at least two months.</p>
+
+<h2>The six lenses, and the formula each one uses</h2>
+<details><summary>1. Churn Divergence Detector</summary>
+<p>Logo churn and revenue churn are computed separately for every consecutive month pair, then compared. <code>logo churn = customers lost ÷ customers at start</code>. <code>gross revenue churn = (MRR of lost customers + downgrade MRR) ÷ MRR at start</code>. <b>Divergence = revenue churn ÷ logo churn.</b></p>
+<p>A divergence of 1.0 means churn is spread evenly across the book and the seller's headline logo-churn figure is honest. Above roughly 1.2 the churning accounts are larger than average, so the headline understates revenue erosion — the most common way a churn number flatters a target. Below 1.0 the business loses its smallest accounts, which is materially better news than the logo figure suggests.</p>
+<p>Because gross revenue churn conventionally includes downgrades, a high divergence has two quite different causes, and the report separates them rather than assuming one. The <b>cancellation and downgrade components are reported individually</b>, and a <b>size skew</b> — average MRR of churned accounts ÷ average MRR of retained ones — isolates whether the departing customers were genuinely larger. Divergence driven by size skew is a concentration-of-loss problem; divergence driven by downgrades is a pricing, packaging or discount problem. They lead to different questions on the management call, so the finding text is conditioned on which one the data actually shows.</p></details>
+
+<details><summary>2. Concentration Vulnerability Index</summary>
+<p>Measured on the most recent month: the share of MRR held by the largest 1, 3, 5 and 10 customers, the Herfindahl–Hirschman Index across the customer base (<code>HHI = Σ share² × 10,000</code>), and the number of customers needed to reach half of all MRR. HHI is reported because two books with the same top-5 share can have very different tails.</p></details>
+
+<details><summary>3. Annual-Plan Decay Projection</summary>
+<p>The share of MRR sitting on annual or multi-year terms, which is the MRR that cannot churn this month and therefore cannot appear in a monthly churn rate at all. Where a renewal or period-end date is present, MRR falling due in the next 3, 6 and 12 months is bucketed into a renewal cliff. Where enough history exists, the observed churn rate of annual customers is compared against monthly ones.</p>
+<p>Two conventions, stated because they change the numbers. The renewal date is read from each customer's <em>most recent</em> row, not the earliest — billing exports carry the current period end on every row, so the earliest one is always in the past. And where an annual customer's recorded period-end has already passed, it is advanced in whole years until it falls after the anchor date, because an annual contract that renewed last year renews again this year. Non-annual rows with a past date are treated as unknown and excluded rather than guessed; the count of both adjustments is reported with the result.</p>
+<p>This is reported as <em>exposure</em>, not a prediction. A concentration of renewals shortly after close is a structuring question — holdback, earn-out, escrow — not a forecast.</p></details>
+
+<details><summary>4. Zombie MRR Detector</summary>
+<p>Customers still paying whose last recorded activity predates a threshold — 60 days by default, measured from the latest date in the file rather than today, so historical exports are handled correctly. Reported as a share of current MRR. Requires a last-active, last-login or last-seen column; without one the lens is disabled rather than estimated, and its weight is redistributed across the other components.</p></details>
+
+<details><summary>5. Revenue Quality Scorecard</summary>
+<p>A weighted composite of the other lenses producing an A–F grade. Every band is published in the rubric table below, so the grade can be recomputed by hand from the component figures. Components whose input columns are missing are dropped and the remaining weights renormalised — a grade is never manufactured from absent data.</p></details>
+
+<details><summary>6. MRR Trajectory Forensics</summary>
+<p>Three separate readings. A month-by-month decomposition of MRR movement into new, expansion, contraction, churned and reactivated. A cohort retention triangle, where each cohort is the month a customer first appears and each cell is that cohort's retained MRR as a share of its starting MRR. And the trend of MRR from cohorts at least twelve months old, held against the headline trend.</p>
+<p>The third reading is the one that catches the pattern a headline number cannot show: flat total MRR produced by new sales replacing decaying older cohorts. The <b>quick ratio</b> — <code>(new + expansion) ÷ (churned + contraction)</code> — quantifies how hard the business has to run to stand still.</p></details>
+
+<h2 id="rubric">Scoring rubric (ChurnLens's own, published in full)</h2>
+<p>These bands are ChurnLens's rubric for buyer-side screening, not an industry standard. They are published so the grade is reproducible and arguable rather than a black box.</p>
+<table>
+<thead><tr><th>Component</th><th class="num">Weight</th><th>100</th><th>85</th><th>65</th><th>40</th><th>15</th></tr></thead>
+<tbody>
+<tr><td>Gross revenue retention, annualised</td><td class="num">30%</td><td>≥92%</td><td>88–92%</td><td>82–88%</td><td>75–82%</td><td>&lt;75%</td></tr>
+<tr><td>Top-5 customer share of MRR</td><td class="num">20%</td><td>≤15%</td><td>15–25%</td><td>25–40%</td><td>40–55%</td><td>&gt;55%</td></tr>
+<tr><td>Churn divergence (rev ÷ logo churn)</td><td class="num">15%</td><td>≤0.9</td><td>0.9–1.2</td><td>1.2–1.6</td><td>1.6–2.2</td><td>&gt;2.2</td></tr>
+<tr><td>Net revenue retention, annualised</td><td class="num">15%</td><td>≥110%</td><td>100–110%</td><td>95–100%</td><td>88–95%</td><td>&lt;88%</td></tr>
+<tr><td>MRR trend, last 6 months per month</td><td class="num">12%</td><td>≥+2%</td><td>+0.5–2%</td><td>−0.5–+0.5%</td><td>−2–−0.5%</td><td>&lt;−2%</td></tr>
+<tr><td>Zombie MRR share</td><td class="num">8%</td><td>≤2%</td><td>2–5%</td><td>5–10%</td><td>10–20%</td><td>&gt;20%</td></tr>
+</tbody>
+</table>
+<p class="note">Grade bands: <b>A</b> ≥85, <b>B</b> 75–84, <b>C</b> 65–74, <b>D</b> 55–64, <b>F</b> &lt;55. A further 15-point deduction applies to the trajectory component when cohorts twelve months and older are declining while headline MRR is flat or rising — replacement revenue masking decay. No letter grade is issued at all when less than 45% of the rubric weight is computable from the file — a grade off a fifth of the rubric would read as authoritative and mean very little. Rubric version <code>rq-1.0</code>.</p>
+
+<h2>Benchmark context</h2>
+<p>Where the report cites an outside comparison it uses one sourced figure: median gross revenue retention for private B2B SaaS is around <b>91%</b>, splitting to roughly <b>90%</b> below $25K ACV and <b>93%</b> above it — <a href="https://churnlens.site/benchmarks">SaaS Capital, 2023 B2B SaaS Retention Benchmarks</a>. Every other threshold on this page is ChurnLens's own rubric. Deviating from a benchmark is not a verdict; it decides which questions get asked on the management call and how the deal is structured.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<details><summary>Is the subscription CSV uploaded to a server?</summary><p>No. Parsing and every calculation run in your browser using the File API. No part of the file, and no figure derived from it, is transmitted anywhere. Open your browser's network panel while running an analysis and you will see no request carrying your data. This matters because a target's customer-level revenue ledger is usually NDA-bound.</p></details>
+<details><summary>What CSV format does the analyzer need?</summary><p>Long format is richest: one row per customer per month with a customer identifier, a month and that month's MRR. Wide format — one row per customer, one column per month — works too. Optional columns unlock further lenses: plan or billing interval enables the Annual-Plan Decay Projection, a last-active date enables the Zombie MRR Detector, a renewal date sharpens renewal-cliff timing. A single snapshot still yields concentration and annual-plan exposure.</p></details>
+<details><summary>What is churn divergence and why does it matter more than the headline churn rate?</summary><p>Churn divergence is revenue churn divided by logo churn. Lose 5% of customers carrying 5% of MRR and divergence is 1.0 — the headline is honest. Lose 5% of customers carrying 9% of MRR and divergence is 1.8: the seller's logo-churn figure understates revenue erosion by nearly two times. Above roughly 1.2, churn is concentrated in the larger accounts.</p></details>
+<details><summary>How is the A–F grade calculated?</summary><p>A weighted composite of six components — gross revenue retention 30%, concentration 20%, churn divergence 15%, net revenue retention 15%, MRR trajectory 12%, zombie MRR 8%. Every band is published in the rubric table above, so the grade is reproducible by hand. Missing components are dropped and the remaining weights renormalised, and no grade is issued at all below 45% rubric coverage. The rubric is ChurnLens's own, not an industry standard.</p></details>
+<details><summary>Can I use the results in an investment-committee memo?</summary><p>Yes. The HTML report and the Markdown summary both carry the period range, row and customer counts and the rubric version, so a reviewer can trace every figure. Treat it as a screening and question-generation instrument, not a quality-of-earnings opinion — it reads exactly the ledger you give it and cannot detect revenue that was never in the export.</p></details>
+<details><summary>Is there a file-size limit?</summary><p>None imposed. Because the work is local the practical ceiling is your machine's memory; a few hundred thousand rows parse in seconds. Nothing is truncated silently — the row count, customer count and period range actually read are reported back to you.</p></details>
+<details><summary>How does this differ from the paid ChurnLens report?</summary><p>This tool runs the same six lenses on the ledger you already hold. The <a href="https://churnlens.site/pricing">paid buyer-side report</a> adds the work a tool cannot do: reconciling the ledger against bank and Stripe payouts, chasing the gaps the export leaves out, checking the cohort story against the CIM's claims, and writing the findings up as diligence questions for a specific deal.</p></details>
+
+<h2>Related ChurnLens tools and reading</h2>
+<div class="related-links">
+  <a href="https://churnlens.site/5-risk-buyer-side-method">The 5-Risk Buyer-Side Method — the framework this tool implements</a>
+  <a href="https://churnlens.site/churn-divergence-detector">Churn Divergence Detector — why logo and revenue churn split</a>
+  <a href="https://churnlens.site/concentration-vulnerability-index">Concentration Vulnerability Index</a>
+  <a href="https://churnlens.site/zombie-mrr-detector">Zombie MRR Detector</a>
+  <a href="https://churnlens.site/annual-plan-churn-risk">Annual-Plan Churn Risk</a>
+  <a href="https://churnlens.site/mrr-trajectory-forensics">MRR Trajectory Forensics</a>
+  <a href="https://churnlens.site/revenue-quality-scorecard">Revenue Quality Scorecard</a>
+  <a href="https://churnlens.site/saas-due-diligence-checklist">SaaS Due Diligence Checklist</a>
+  <a href="https://churnlens.site/free">All free ChurnLens tools</a>
+  <a href="https://churnlens.site/benchmarks">SaaS retention &amp; valuation benchmarks</a>
+</div>
+
+
+
 
 <footer>
 <p>&copy; 2026 ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence. <a href="https://churnlens.site/privacy">Privacy</a> · <a href="https://churnlens.site/terms">Terms</a></p>

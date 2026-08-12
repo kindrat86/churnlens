@@ -418,45 +418,6 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
 </div>
 
 <!-- CTA -->
-<div class="cta-bottom">
-<h2>Want the full 23-point audit for a real target?</h2>
-<p>The simulator gives you a preview. Run the real ChurnLens analysis on actual subscription CSV data and get the complete buyer-side due diligence report with all 5 risk lenses.</p>
-<a href="/pricing" class="btn" style="font-size:1rem">See Pricing Plans →</a>
-</div>
-
-<!-- Inline FAQ -->
-<div class="card inline-faq">
-<h2>About the 5-Risk Method</h2>
-<details><summary>What are the 5 risk dimensions?</summary><p>The <a href="/5-risk-buyer-side-method" style="color:var(--accent)">ChurnLens 5-Risk Buyer-Side Method</a> evaluates: <strong>Revenue Churn</strong> (headline churn rate weighted at 30%), <strong>Customer Concentration</strong> (dependency on top accounts, 25%), <strong>Annual-Plan Renewal Risk</strong> (upcoming contract cliffs, 20%), <strong>MRR Trajectory</strong> (growth acceleration or decline, 15%), and <strong>Zombie MRR Share</strong> (revenue from inactive accounts, 10%).</p></details>
-<details><summary>How is the A–F letter grade calculated?</summary><p>The composite Revenue Quality Score weights all five dimensions and maps to letter grades: <strong>A</strong> (85–100) — excellent revenue quality, low acquisition risk; <strong>B</strong> (70–84) — solid with minor concerns; <strong>C</strong> (55–69) — moderate risk, requires deeper diligence; <strong>D</strong> (40–54) — significant red flags; <strong>F</strong> (0–39) — severe risk, likely deal-breaker.</p></details>
-<details><summary>Is this a replacement for full due diligence?</summary><p>No. The simulator is a <strong>screening tool</strong> — it helps you decide whether a target is worth deeper diligence. It uses simplified models that approximate the real ChurnLens analysis. For a full audit on actual subscription data, <a href="/pricing" style="color:var(--accent)">send the target's CSV to ChurnLens</a> and get the complete 5-Risk buyer-side report with all 23 audit checklist points.</p></details>
-</div>
-
-<!-- Related Tools -->
-<div class="related-grid">
-<a href="/free/churn-calculator">📉 SaaS Churn Rate Calculator</a>
-<a href="/free/nrr-calculator">📈 Net Revenue Retention Calculator</a>
-<a href="/free/saas-health-score">🏥 SaaS Revenue Health Score</a>
-<a href="/free/revenue-concentration-analyzer">🎯 Revenue Concentration Analyzer</a>
-<a href="/free/zombie-mrr-detector">🧟 Zombie MRR Detector</a>
-<a href="/free/revenue-concentration-analyzer">📊 Revenue Concentration Calculator</a>
-</div>
-
-<div class="toast" id="toast"></div>
-
-<!-- ilg-v1 -->
-<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
-<h3>Related</h3>
-<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
-<li><a href="/free">Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration</a> — Eight free SaaS calculators: net revenue retention, churn cost, customer…</li>
-<li><a href="/saas-m-and-a-due-diligence-framework">SaaS M&amp;A Due Diligence Framework — The 5-Risk Buyer-Side Method</a> — A systematic framework for SaaS M&amp;A due diligence across 5 risk…</li>
-<li><a href="/free/mrr-health-check">MRR Health Check</a> — Audit your Monthly Recurring Revenue quality</li>
-<li><a href="/free/saas-health-score">Free SaaS Revenue Health Score Calculator</a> — Calculate your SaaS revenue health score across 5 dimensions: retention,…</li>
-<li><a href="/ultimate-saas-due-diligence-guide">The Ultimate SaaS Due Diligence Guide (2026)</a> — The complete buyer-side SaaS due diligence guide</li>
-</ul>
-</div>
-<!-- /ilg-v1 -->
-
 <!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
      the checklist that tells them what to do about it. Injected by
      scripts/inject_freetool_optin.py — re-running is idempotent. -->
@@ -598,12 +559,56 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     }
     root.classList.add('is-done');
     if (window.posthog) {
+      // identified_only is set on every init, so without this the lead stays
+      // anonymous and can never be joined to a later purchase.
+      posthog.identify(email, { email: email, first_source: 'free-tool:due-diligence-simulator' });
       posthog.capture('lead_optin', { source: 'free-tool:due-diligence-simulator' });
       posthog.capture('oto_shown', { source: 'free-tool:due-diligence-simulator' });
     }
   });
 })();
 </script>
+
+<div class="cta-bottom">
+<h2>Want the full 23-point audit for a real target?</h2>
+<p>The simulator gives you a preview. Run the real ChurnLens analysis on actual subscription CSV data and get the complete buyer-side due diligence report with all 5 risk lenses.</p>
+<a href="/pricing" class="btn" style="font-size:1rem">See Pricing Plans →</a>
+</div>
+
+<!-- Inline FAQ -->
+<div class="card inline-faq">
+<h2>About the 5-Risk Method</h2>
+<details><summary>What are the 5 risk dimensions?</summary><p>The <a href="/5-risk-buyer-side-method" style="color:var(--accent)">ChurnLens 5-Risk Buyer-Side Method</a> evaluates: <strong>Revenue Churn</strong> (headline churn rate weighted at 30%), <strong>Customer Concentration</strong> (dependency on top accounts, 25%), <strong>Annual-Plan Renewal Risk</strong> (upcoming contract cliffs, 20%), <strong>MRR Trajectory</strong> (growth acceleration or decline, 15%), and <strong>Zombie MRR Share</strong> (revenue from inactive accounts, 10%).</p></details>
+<details><summary>How is the A–F letter grade calculated?</summary><p>The composite Revenue Quality Score weights all five dimensions and maps to letter grades: <strong>A</strong> (85–100) — excellent revenue quality, low acquisition risk; <strong>B</strong> (70–84) — solid with minor concerns; <strong>C</strong> (55–69) — moderate risk, requires deeper diligence; <strong>D</strong> (40–54) — significant red flags; <strong>F</strong> (0–39) — severe risk, likely deal-breaker.</p></details>
+<details><summary>Is this a replacement for full due diligence?</summary><p>No. The simulator is a <strong>screening tool</strong> — it helps you decide whether a target is worth deeper diligence. It uses simplified models that approximate the real ChurnLens analysis. For a full audit on actual subscription data, <a href="/pricing" style="color:var(--accent)">send the target's CSV to ChurnLens</a> and get the complete 5-Risk buyer-side report with all 23 audit checklist points.</p></details>
+</div>
+
+<!-- Related Tools -->
+<div class="related-grid">
+<a href="/free/churn-calculator">📉 SaaS Churn Rate Calculator</a>
+<a href="/free/nrr-calculator">📈 Net Revenue Retention Calculator</a>
+<a href="/free/saas-health-score">🏥 SaaS Revenue Health Score</a>
+<a href="/free/revenue-concentration-analyzer">🎯 Revenue Concentration Analyzer</a>
+<a href="/free/zombie-mrr-detector">🧟 Zombie MRR Detector</a>
+<a href="/free/revenue-concentration-analyzer">📊 Revenue Concentration Calculator</a>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/free">Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration</a> — Eight free SaaS calculators: net revenue retention, churn cost, customer…</li>
+<li><a href="/saas-m-and-a-due-diligence-framework">SaaS M&amp;A Due Diligence Framework — The 5-Risk Buyer-Side Method</a> — A systematic framework for SaaS M&amp;A due diligence across 5 risk…</li>
+<li><a href="/free/mrr-health-check">MRR Health Check</a> — Audit your Monthly Recurring Revenue quality</li>
+<li><a href="/free/saas-health-score">Free SaaS Revenue Health Score Calculator</a> — Calculate your SaaS revenue health score across 5 dimensions: retention,…</li>
+<li><a href="/ultimate-saas-due-diligence-guide">The Ultimate SaaS Due Diligence Guide (2026)</a> — The complete buyer-side SaaS due diligence guide</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+
+
 
 <footer>
 <p>© 2026 ChurnLens — <a href="/">churnlens.site</a> · <a href="/5-risk-buyer-side-method">5-Risk Method</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a></p>

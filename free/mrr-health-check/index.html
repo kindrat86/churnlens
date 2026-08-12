@@ -269,95 +269,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     <div class="cl-lab">MRR quality score</div>
     <div class="cl-val" id="mrrScore">&mdash;</div>
     <div class="cl-sub" id="mrrVerdict">Enter your numbers above.</div>
-  </div>
-  <div class="cl-rows">
-    <div class="cl-row"><div class="k">Net revenue retention</div><div class="v" id="mrrNrr">&mdash;</div>
-      <div class="n">expansion counted</div></div>
-    <div class="cl-row"><div class="k">Gross revenue retention</div><div class="v" id="mrrGrr">&mdash;</div>
-      <div class="n">expansion excluded</div></div>
-    <div class="cl-row"><div class="k">Masked by expansion</div><div class="v" id="mrrSpread">&mdash;</div>
-      <div class="n">NRR &minus; GRR, in points</div></div>
-    <div class="cl-row"><div class="k">Concentration</div><div class="v" id="mrrConc">&mdash;</div>
-      <div class="n">largest single account</div></div>
-  </div>
-  <p class="cl-note" id="mrrNote"></p>
-</div>
-<script>
-(function(){
-  var ids=['mrrStart','mrrExp','mrrCon','mrrChurn','mrrTop','mrrAnnual'];
-  function num(id){return parseFloat(document.getElementById(id).value);}
-  function clamp(v,a,b){return Math.max(a,Math.min(v,b));}
-  function calc(){
-    var start=num('mrrStart'),exp=num('mrrExp'),con=num('mrrCon'),ch=num('mrrChurn');
-    var top=num('mrrTop'),annual=num('mrrAnnual');
-    var hero=document.getElementById('mrrHero');
-    hero.classList.remove('good','avg','poor');
-    if(!(start>0)){
-      document.getElementById('mrrScore').innerHTML='&mdash;';
-      document.getElementById('mrrVerdict').textContent='Enter a starting MRR above 0.';
-      ['mrrNrr','mrrGrr','mrrSpread','mrrConc'].forEach(function(i){document.getElementById(i).innerHTML='&mdash;';});
-      document.getElementById('mrrNote').textContent='';
-      return;
-    }
-    exp=exp>0?exp:0;con=con>0?con:0;ch=ch>0?ch:0;
-    top=isNaN(top)?0:clamp(top,0,100);annual=isNaN(annual)?0:clamp(annual,0,100);
-    var nrr=((start+exp-con-ch)/start)*100;
-    var grr=((start-con-ch)/start)*100;
-    var spread=nrr-grr;
-    var revChurn=100-grr;
-    document.getElementById('mrrNrr').textContent=nrr.toFixed(1)+'%';
-    document.getElementById('mrrGrr').textContent=grr.toFixed(1)+'%';
-    document.getElementById('mrrSpread').textContent=spread.toFixed(1)+' pts';
-    document.getElementById('mrrConc').textContent=top.toFixed(1)+'%';
-    /* Three dimensions of MRR quality, each 0-100, averaged unweighted —
-       the same mapping the ChurnLens health score uses. */
-    var retention=Math.round(100-clamp(revChurn,0,10)*10);
-    var growth=nrr>=130?100:nrr>=90?Math.round(40+(nrr-90)*1.5):Math.round(Math.max(0,nrr*0.5));
-    growth=clamp(growth,0,100);
-    var conc=Math.round(100-clamp(top,0,50)*2);
-    var dur=Math.round(40+annual*0.6);
-    var score=Math.round((retention+growth+conc+dur)/4);
-    document.getElementById('mrrScore').textContent=score+' / 100';
-    hero.classList.add(score>=70?'good':score>=50?'avg':'poor');
-    document.getElementById('mrrVerdict').textContent=
-      score>=70?'Strong — recurring revenue looks durable.':
-      score>=50?'Adequate — one or two dimensions need work.':
-      score>=30?'Weak — material revenue-quality risk.':'Critical — revenue quality is the headline problem.';
-    var weak=[['retention',retention],['growth',growth],['concentration',conc],['durability',dur]]
-      .sort(function(a,b){return a[1]-b[1];})[0];
-    var note='Weakest dimension: <strong>'+weak[0]+'</strong> at '+weak[1]+'/100. ';
-    if(spread>=15)note+='A '+spread.toFixed(0)+'-point gap between NRR and GRR means expansion revenue is masking substantial churn underneath — look at the retained base separately from upsell. ';
-    if(top>25)note+='One customer holds '+top.toFixed(0)+'% of revenue; losing them removes that much overnight. ';
-    note+='Same maths, open source, at <a href="/open-source">saas-metrics</a>.';
-    document.getElementById('mrrNote').innerHTML=note;
-  }
-  ids.forEach(function(i){var el=document.getElementById(i);if(el)el.addEventListener('input',calc);});
-  calc();
-})();
-</script>
-
-<h2>How It Works</h2>
-<ul>
-<li>Enter your details below — no signup required</li>
-<li>Get instant results calculated in real-time</li>
-<li>Export or share your results</li>
-<li>No email, no credit card, no commitment — just ChurnLens being useful</li>
-</ul>
-<h2>Why This Tool Is Free</h2>
-<p>We built this free tool because saas revenue quality & churn risk due diligence. The more people who understand the value of proper analysis, the more businesses we help. If you find this useful, consider exploring our full platform.</p>
-<div style="background:#f0f9ff;border-radius:12px;padding:24px;margin:24px 0;text-align:center"><h3>Ready for the Full ChurnLens Platform?</h3><p>This free tool is just a preview. The full platform gives you comprehensive analysis, reporting, and monitoring.</p><a href="https://churnlens.site/" style="display:inline-block;background:#0066cc;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:12px">Explore ChurnLens</a></div>
-
-<h2>Frequently Asked Questions</h2>
-<details><summary><strong>Is the MRR Health Check really free?</strong></summary><p>Yes, 100% free. No signup, no credit card, no watermark. We offer this because saas revenue quality & churn risk due diligence.</p></details>
-<details><summary><strong>Do you store my data?</strong></summary><p>No. All calculations happen in your browser. Nothing is sent to our servers or stored.</p></details>
-<details><summary><strong>Can I use this for commercial purposes?</strong></summary><p>Yes. Use the results for your business, reports, or client work. No attribution required.</p></details>
-
-<h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Methodology: how this mrr health check works</h2>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">This free mrr health check tool gives you a quick, no-signup assessment based on the inputs you provide. The methodology behind it is the same one ChurnLens uses in full buyer-side due diligence, just applied to summary inputs rather than a complete revenue ledger. The output is directional — it tells you whether the numbers you have suggest a healthy business or one with structural churn risk — and it is designed to be conservative, erring on the side of flagging potential problems.</p>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">The limitation of any summary-input tool is that it cannot detect the patterns that only emerge from customer-level data: zombie accounts, cohort decay curves, concentration in specific logos, and renewal-cliff timing. Those require the full monthly MRR-by-customer ledger that ChurnLens's paid analysis ingests. Use this free tool as a first-pass screen; if it flags anything concerning, the next step is to send the full ledger for the complete reconstruction.</p>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">The formulas and benchmarks used here are transparent and documented across the ChurnLens learn hub. There is no black box — the goal is to give you the same arithmetic a buyer's diligence team would run, in a format you can use immediately.</p>
-
-<!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
+  </div><!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
      the checklist that tells them what to do about it. Injected by
      scripts/inject_freetool_optin.py — re-running is idempotent. -->
 <section class="cl-tool-optin" id="cl-tool-optin" aria-labelledby="cl-tool-optin-h">
@@ -498,12 +410,105 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     }
     root.classList.add('is-done');
     if (window.posthog) {
+      // identified_only is set on every init, so without this the lead stays
+      // anonymous and can never be joined to a later purchase.
+      posthog.identify(email, { email: email, first_source: 'free-tool:mrr-health-check' });
       posthog.capture('lead_optin', { source: 'free-tool:mrr-health-check' });
       posthog.capture('oto_shown', { source: 'free-tool:mrr-health-check' });
     }
   });
 })();
 </script>
+
+
+  <div class="cl-rows">
+    <div class="cl-row"><div class="k">Net revenue retention</div><div class="v" id="mrrNrr">&mdash;</div>
+      <div class="n">expansion counted</div></div>
+    <div class="cl-row"><div class="k">Gross revenue retention</div><div class="v" id="mrrGrr">&mdash;</div>
+      <div class="n">expansion excluded</div></div>
+    <div class="cl-row"><div class="k">Masked by expansion</div><div class="v" id="mrrSpread">&mdash;</div>
+      <div class="n">NRR &minus; GRR, in points</div></div>
+    <div class="cl-row"><div class="k">Concentration</div><div class="v" id="mrrConc">&mdash;</div>
+      <div class="n">largest single account</div></div>
+  </div>
+  <p class="cl-note" id="mrrNote"></p>
+</div>
+<script>
+(function(){
+  var ids=['mrrStart','mrrExp','mrrCon','mrrChurn','mrrTop','mrrAnnual'];
+  function num(id){return parseFloat(document.getElementById(id).value);}
+  function clamp(v,a,b){return Math.max(a,Math.min(v,b));}
+  function calc(){
+    var start=num('mrrStart'),exp=num('mrrExp'),con=num('mrrCon'),ch=num('mrrChurn');
+    var top=num('mrrTop'),annual=num('mrrAnnual');
+    var hero=document.getElementById('mrrHero');
+    hero.classList.remove('good','avg','poor');
+    if(!(start>0)){
+      document.getElementById('mrrScore').innerHTML='&mdash;';
+      document.getElementById('mrrVerdict').textContent='Enter a starting MRR above 0.';
+      ['mrrNrr','mrrGrr','mrrSpread','mrrConc'].forEach(function(i){document.getElementById(i).innerHTML='&mdash;';});
+      document.getElementById('mrrNote').textContent='';
+      return;
+    }
+    exp=exp>0?exp:0;con=con>0?con:0;ch=ch>0?ch:0;
+    top=isNaN(top)?0:clamp(top,0,100);annual=isNaN(annual)?0:clamp(annual,0,100);
+    var nrr=((start+exp-con-ch)/start)*100;
+    var grr=((start-con-ch)/start)*100;
+    var spread=nrr-grr;
+    var revChurn=100-grr;
+    document.getElementById('mrrNrr').textContent=nrr.toFixed(1)+'%';
+    document.getElementById('mrrGrr').textContent=grr.toFixed(1)+'%';
+    document.getElementById('mrrSpread').textContent=spread.toFixed(1)+' pts';
+    document.getElementById('mrrConc').textContent=top.toFixed(1)+'%';
+    /* Three dimensions of MRR quality, each 0-100, averaged unweighted —
+       the same mapping the ChurnLens health score uses. */
+    var retention=Math.round(100-clamp(revChurn,0,10)*10);
+    var growth=nrr>=130?100:nrr>=90?Math.round(40+(nrr-90)*1.5):Math.round(Math.max(0,nrr*0.5));
+    growth=clamp(growth,0,100);
+    var conc=Math.round(100-clamp(top,0,50)*2);
+    var dur=Math.round(40+annual*0.6);
+    var score=Math.round((retention+growth+conc+dur)/4);
+    document.getElementById('mrrScore').textContent=score+' / 100';
+    hero.classList.add(score>=70?'good':score>=50?'avg':'poor');
+    document.getElementById('mrrVerdict').textContent=
+      score>=70?'Strong — recurring revenue looks durable.':
+      score>=50?'Adequate — one or two dimensions need work.':
+      score>=30?'Weak — material revenue-quality risk.':'Critical — revenue quality is the headline problem.';
+    var weak=[['retention',retention],['growth',growth],['concentration',conc],['durability',dur]]
+      .sort(function(a,b){return a[1]-b[1];})[0];
+    var note='Weakest dimension: <strong>'+weak[0]+'</strong> at '+weak[1]+'/100. ';
+    if(spread>=15)note+='A '+spread.toFixed(0)+'-point gap between NRR and GRR means expansion revenue is masking substantial churn underneath — look at the retained base separately from upsell. ';
+    if(top>25)note+='One customer holds '+top.toFixed(0)+'% of revenue; losing them removes that much overnight. ';
+    note+='Same maths, open source, at <a href="/open-source">saas-metrics</a>.';
+    document.getElementById('mrrNote').innerHTML=note;
+  }
+  ids.forEach(function(i){var el=document.getElementById(i);if(el)el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+<h2>How It Works</h2>
+<ul>
+<li>Enter your details below — no signup required</li>
+<li>Get instant results calculated in real-time</li>
+<li>Export or share your results</li>
+<li>No email, no credit card, no commitment — just ChurnLens being useful</li>
+</ul>
+<h2>Why This Tool Is Free</h2>
+<p>We built this free tool because saas revenue quality & churn risk due diligence. The more people who understand the value of proper analysis, the more businesses we help. If you find this useful, consider exploring our full platform.</p>
+<div style="background:#f0f9ff;border-radius:12px;padding:24px;margin:24px 0;text-align:center"><h3>Ready for the Full ChurnLens Platform?</h3><p>This free tool is just a preview. The full platform gives you comprehensive analysis, reporting, and monitoring.</p><a href="https://churnlens.site/" style="display:inline-block;background:#0066cc;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:12px">Explore ChurnLens</a></div>
+
+<h2>Frequently Asked Questions</h2>
+<details><summary><strong>Is the MRR Health Check really free?</strong></summary><p>Yes, 100% free. No signup, no credit card, no watermark. We offer this because saas revenue quality & churn risk due diligence.</p></details>
+<details><summary><strong>Do you store my data?</strong></summary><p>No. All calculations happen in your browser. Nothing is sent to our servers or stored.</p></details>
+<details><summary><strong>Can I use this for commercial purposes?</strong></summary><p>Yes. Use the results for your business, reports, or client work. No attribution required.</p></details>
+
+<h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Methodology: how this mrr health check works</h2>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">This free mrr health check tool gives you a quick, no-signup assessment based on the inputs you provide. The methodology behind it is the same one ChurnLens uses in full buyer-side due diligence, just applied to summary inputs rather than a complete revenue ledger. The output is directional — it tells you whether the numbers you have suggest a healthy business or one with structural churn risk — and it is designed to be conservative, erring on the side of flagging potential problems.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">The limitation of any summary-input tool is that it cannot detect the patterns that only emerge from customer-level data: zombie accounts, cohort decay curves, concentration in specific logos, and renewal-cliff timing. Those require the full monthly MRR-by-customer ledger that ChurnLens's paid analysis ingests. Use this free tool as a first-pass screen; if it flags anything concerning, the next step is to send the full ledger for the complete reconstruction.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">The formulas and benchmarks used here are transparent and documented across the ChurnLens learn hub. There is no black box — the goal is to give you the same arithmetic a buyer's diligence team would run, in a format you can use immediately.</p>
+
+
 
 <footer><p>&copy; 2026 ChurnLens. SaaS Revenue Quality & Churn Risk Due Diligence.</p><!-- Dream-100 congregation footer -->
 <div style="margin-top:16px;font-size:13px"><strong>Find us where SaaS acquirers are:</strong> <a href="https://github.com/kindrat86" rel="me noopener" style="color:inherit">GitHub</a></div>

@@ -265,102 +265,7 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     <div class="cl-lab">Customer lifetime value</div>
     <div class="cl-val" id="ltvValue">&mdash;</div>
     <div class="cl-sub" id="ltvVerdict">Enter your numbers above.</div>
-  </div>
-  <div class="cl-rows">
-    <div class="cl-row"><div class="k">Expected lifetime</div><div class="v" id="ltvLife">&mdash;</div>
-      <div class="n">1 &divide; monthly churn</div></div>
-    <div class="cl-row"><div class="k">LTV : CAC</div><div class="v" id="ltvRatio">&mdash;</div>
-      <div class="n">3:1 is the common rule of thumb</div></div>
-    <div class="cl-row"><div class="k">CAC payback</div><div class="v" id="ltvPayback">&mdash;</div>
-      <div class="n">months of gross profit</div></div>
-    <div class="cl-row"><div class="k">Lifetime revenue</div><div class="v" id="ltvGross">&mdash;</div>
-      <div class="n">before gross margin</div></div>
-  </div>
-  <p class="cl-note"><strong>A caution on lifetime.</strong> 1 &divide; churn assumes churn stays constant
-  forever. Real cohorts churn hardest early and then flatten, so treat this as a ceiling rather than a
-  forecast. The same maths is open source at <a href="/open-source">saas-metrics</a>.</p>
-</div>
-<script>
-(function(){
-  var ids=['ltvArpa','ltvChurn','ltvMargin','ltvCac'];
-  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
-  function calc(){
-    var arpa=parseFloat(document.getElementById('ltvArpa').value);
-    var churn=parseFloat(document.getElementById('ltvChurn').value);
-    var margin=parseFloat(document.getElementById('ltvMargin').value);
-    var cac=parseFloat(document.getElementById('ltvCac').value);
-    var hero=document.getElementById('ltvHero');
-    hero.classList.remove('good','avg','poor');
-    if(!(arpa>0)||!(churn>0)){
-      document.getElementById('ltvValue').innerHTML='&mdash;';
-      document.getElementById('ltvVerdict').textContent=
-        churn===0?'Zero churn implies an infinite lifetime — enter a real churn rate.':'Enter ARPA and a monthly churn rate above 0.';
-      ['ltvLife','ltvRatio','ltvPayback','ltvGross'].forEach(function(i){document.getElementById(i).innerHTML='&mdash;';});
-      return;
-    }
-    if(!(margin>=0&&margin<=100))margin=100;
-    var life=100/churn;
-    var grossRev=arpa*life;
-    var ltv=grossRev*(margin/100);
-    document.getElementById('ltvValue').textContent=money(ltv);
-    document.getElementById('ltvLife').textContent=life.toFixed(1)+' months';
-    document.getElementById('ltvGross').textContent=money(grossRev);
-    if(cac>0){
-      var ratio=ltv/cac;
-      var payback=cac/(arpa*(margin/100));
-      document.getElementById('ltvRatio').textContent=ratio.toFixed(2)+' : 1';
-      document.getElementById('ltvPayback').textContent=payback.toFixed(1)+' months';
-      hero.classList.add(ratio>=3?'good':ratio>=1?'avg':'poor');
-      document.getElementById('ltvVerdict').textContent=
-        ratio>=3?'At or above the 3:1 rule of thumb.':
-        ratio>=1?'Below 3:1, but still recovering acquisition cost.':
-        'Below 1:1 — every customer acquired loses money.';
-    } else {
-      document.getElementById('ltvRatio').innerHTML='&mdash;';
-      document.getElementById('ltvPayback').innerHTML='&mdash;';
-      document.getElementById('ltvVerdict').textContent=
-        margin===100?'This is lifetime REVENUE — add your gross margin for lifetime value.':'Add a CAC to see the ratio and payback.';
-    }
-  }
-  ids.forEach(function(i){var el=document.getElementById(i);if(el)el.addEventListener('input',calc);});
-  calc();
-})();
-</script>
-
-<h2>How It Works</h2>
-<ul>
-<li>Enter your details below — no signup required</li>
-<li>Get instant results calculated in real-time</li>
-<li>Export or share your results</li>
-<li>No email, no credit card, no commitment — just ChurnLens being useful</li>
-</ul>
-<h2>Why This Tool Is Free</h2>
-<p>We built this free tool because saas revenue quality & churn risk due diligence. The more people who understand the value of proper analysis, the more businesses we help. If you find this useful, consider exploring our full platform.</p>
-<div style="background:#f0f9ff;border-radius:12px;padding:24px;margin:24px 0;text-align:center"><h3>Ready for the Full ChurnLens Platform?</h3><p>This free tool is just a preview. The full platform gives you comprehensive analysis, reporting, and monitoring.</p><a href="https://churnlens.site/" style="display:inline-block;background:#0066cc;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:12px">Explore ChurnLens</a></div>
-
-<h2>Frequently Asked Questions</h2>
-<details><summary><strong>Is the Customer LTV Calculator really free?</strong></summary><p>Yes, 100% free. No signup, no credit card, no watermark. We offer this because saas revenue quality & churn risk due diligence.</p></details>
-<details><summary><strong>Do you store my data?</strong></summary><p>No. All calculations happen in your browser. Nothing is sent to our servers or stored.</p></details>
-<details><summary><strong>Can I use this for commercial purposes?</strong></summary><p>Yes. Use the results for your business, reports, or client work. No attribution required.</p></details>
-
-<h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Methodology: how this customer ltv calculator works</h2>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">This free customer ltv calculator tool gives you a quick, no-signup assessment based on the inputs you provide. The methodology behind it is the same one ChurnLens uses in full buyer-side due diligence, just applied to summary inputs rather than a complete revenue ledger. The output is directional — it tells you whether the numbers you have suggest a healthy business or one with structural churn risk — and it is designed to be conservative, erring on the side of flagging potential problems.</p>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">The limitation of any summary-input tool is that it cannot detect the patterns that only emerge from customer-level data: zombie accounts, cohort decay curves, concentration in specific logos, and renewal-cliff timing. Those require the full monthly MRR-by-customer ledger that ChurnLens's paid analysis ingests. Use this free tool as a first-pass screen; if it flags anything concerning, the next step is to send the full ledger for the complete reconstruction.</p>
-<p style="margin-bottom:1em;line-height:1.7;color:#333">The formulas and benchmarks used here are transparent and documented across the ChurnLens learn hub. There is no black box — the goal is to give you the same arithmetic a buyer's diligence team would run, in a format you can use immediately.</p>
-<!-- ilg-v1 -->
-<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
-<h3>Related</h3>
-<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
-<li><a href="/free">Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration</a> — Eight free SaaS calculators: net revenue retention, churn cost, customer…</li>
-<li><a href="/free/churn-calculator">Free SaaS Churn Cost Calculator</a> — Calculate how much revenue churn is costing your SaaS business</li>
-<li><a href="/free/saas-health-score">Free SaaS Revenue Health Score Calculator</a> — Calculate your SaaS revenue health score across 5 dimensions: retention,…</li>
-<li><a href="/free/nrr-calculator">Free Net Revenue Retention (NRR) Calculator</a> — Calculate your SaaS Net Revenue Retention from starting MRR, expansion,…</li>
-<li><a href="/saas-valuation-calculator">SaaS Valuation Calculator — Revenue Multiple &amp; Adjusted Valuation</a> — Calculate a SaaS business valuation using revenue multiples adjusted for…</li>
-</ul>
-</div>
-<!-- /ilg-v1 -->
-
-<!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
+  </div><!-- cl-tool-optin: lead capture. The tool gives the answer; this asks where to send
      the checklist that tells them what to do about it. Injected by
      scripts/inject_freetool_optin.py — re-running is idempotent. -->
 <section class="cl-tool-optin" id="cl-tool-optin" aria-labelledby="cl-tool-optin-h">
@@ -501,12 +406,112 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
     }
     root.classList.add('is-done');
     if (window.posthog) {
+      // identified_only is set on every init, so without this the lead stays
+      // anonymous and can never be joined to a later purchase.
+      posthog.identify(email, { email: email, first_source: 'free-tool:ltv-calculator' });
       posthog.capture('lead_optin', { source: 'free-tool:ltv-calculator' });
       posthog.capture('oto_shown', { source: 'free-tool:ltv-calculator' });
     }
   });
 })();
 </script>
+
+
+  <div class="cl-rows">
+    <div class="cl-row"><div class="k">Expected lifetime</div><div class="v" id="ltvLife">&mdash;</div>
+      <div class="n">1 &divide; monthly churn</div></div>
+    <div class="cl-row"><div class="k">LTV : CAC</div><div class="v" id="ltvRatio">&mdash;</div>
+      <div class="n">3:1 is the common rule of thumb</div></div>
+    <div class="cl-row"><div class="k">CAC payback</div><div class="v" id="ltvPayback">&mdash;</div>
+      <div class="n">months of gross profit</div></div>
+    <div class="cl-row"><div class="k">Lifetime revenue</div><div class="v" id="ltvGross">&mdash;</div>
+      <div class="n">before gross margin</div></div>
+  </div>
+  <p class="cl-note"><strong>A caution on lifetime.</strong> 1 &divide; churn assumes churn stays constant
+  forever. Real cohorts churn hardest early and then flatten, so treat this as a ceiling rather than a
+  forecast. The same maths is open source at <a href="/open-source">saas-metrics</a>.</p>
+</div>
+<script>
+(function(){
+  var ids=['ltvArpa','ltvChurn','ltvMargin','ltvCac'];
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calc(){
+    var arpa=parseFloat(document.getElementById('ltvArpa').value);
+    var churn=parseFloat(document.getElementById('ltvChurn').value);
+    var margin=parseFloat(document.getElementById('ltvMargin').value);
+    var cac=parseFloat(document.getElementById('ltvCac').value);
+    var hero=document.getElementById('ltvHero');
+    hero.classList.remove('good','avg','poor');
+    if(!(arpa>0)||!(churn>0)){
+      document.getElementById('ltvValue').innerHTML='&mdash;';
+      document.getElementById('ltvVerdict').textContent=
+        churn===0?'Zero churn implies an infinite lifetime — enter a real churn rate.':'Enter ARPA and a monthly churn rate above 0.';
+      ['ltvLife','ltvRatio','ltvPayback','ltvGross'].forEach(function(i){document.getElementById(i).innerHTML='&mdash;';});
+      return;
+    }
+    if(!(margin>=0&&margin<=100))margin=100;
+    var life=100/churn;
+    var grossRev=arpa*life;
+    var ltv=grossRev*(margin/100);
+    document.getElementById('ltvValue').textContent=money(ltv);
+    document.getElementById('ltvLife').textContent=life.toFixed(1)+' months';
+    document.getElementById('ltvGross').textContent=money(grossRev);
+    if(cac>0){
+      var ratio=ltv/cac;
+      var payback=cac/(arpa*(margin/100));
+      document.getElementById('ltvRatio').textContent=ratio.toFixed(2)+' : 1';
+      document.getElementById('ltvPayback').textContent=payback.toFixed(1)+' months';
+      hero.classList.add(ratio>=3?'good':ratio>=1?'avg':'poor');
+      document.getElementById('ltvVerdict').textContent=
+        ratio>=3?'At or above the 3:1 rule of thumb.':
+        ratio>=1?'Below 3:1, but still recovering acquisition cost.':
+        'Below 1:1 — every customer acquired loses money.';
+    } else {
+      document.getElementById('ltvRatio').innerHTML='&mdash;';
+      document.getElementById('ltvPayback').innerHTML='&mdash;';
+      document.getElementById('ltvVerdict').textContent=
+        margin===100?'This is lifetime REVENUE — add your gross margin for lifetime value.':'Add a CAC to see the ratio and payback.';
+    }
+  }
+  ids.forEach(function(i){var el=document.getElementById(i);if(el)el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+<h2>How It Works</h2>
+<ul>
+<li>Enter your details below — no signup required</li>
+<li>Get instant results calculated in real-time</li>
+<li>Export or share your results</li>
+<li>No email, no credit card, no commitment — just ChurnLens being useful</li>
+</ul>
+<h2>Why This Tool Is Free</h2>
+<p>We built this free tool because saas revenue quality & churn risk due diligence. The more people who understand the value of proper analysis, the more businesses we help. If you find this useful, consider exploring our full platform.</p>
+<div style="background:#f0f9ff;border-radius:12px;padding:24px;margin:24px 0;text-align:center"><h3>Ready for the Full ChurnLens Platform?</h3><p>This free tool is just a preview. The full platform gives you comprehensive analysis, reporting, and monitoring.</p><a href="https://churnlens.site/" style="display:inline-block;background:#0066cc;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:12px">Explore ChurnLens</a></div>
+
+<h2>Frequently Asked Questions</h2>
+<details><summary><strong>Is the Customer LTV Calculator really free?</strong></summary><p>Yes, 100% free. No signup, no credit card, no watermark. We offer this because saas revenue quality & churn risk due diligence.</p></details>
+<details><summary><strong>Do you store my data?</strong></summary><p>No. All calculations happen in your browser. Nothing is sent to our servers or stored.</p></details>
+<details><summary><strong>Can I use this for commercial purposes?</strong></summary><p>Yes. Use the results for your business, reports, or client work. No attribution required.</p></details>
+
+<h2 style="font-size:1.35rem;font-weight:700;margin:2em 0 .6em;color:#1a1a2e">Methodology: how this customer ltv calculator works</h2>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">This free customer ltv calculator tool gives you a quick, no-signup assessment based on the inputs you provide. The methodology behind it is the same one ChurnLens uses in full buyer-side due diligence, just applied to summary inputs rather than a complete revenue ledger. The output is directional — it tells you whether the numbers you have suggest a healthy business or one with structural churn risk — and it is designed to be conservative, erring on the side of flagging potential problems.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">The limitation of any summary-input tool is that it cannot detect the patterns that only emerge from customer-level data: zombie accounts, cohort decay curves, concentration in specific logos, and renewal-cliff timing. Those require the full monthly MRR-by-customer ledger that ChurnLens's paid analysis ingests. Use this free tool as a first-pass screen; if it flags anything concerning, the next step is to send the full ledger for the complete reconstruction.</p>
+<p style="margin-bottom:1em;line-height:1.7;color:#333">The formulas and benchmarks used here are transparent and documented across the ChurnLens learn hub. There is no black box — the goal is to give you the same arithmetic a buyer's diligence team would run, in a format you can use immediately.</p>
+<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/free">Free SaaS Metrics Calculators — NRR, Churn, LTV, Concentration</a> — Eight free SaaS calculators: net revenue retention, churn cost, customer…</li>
+<li><a href="/free/churn-calculator">Free SaaS Churn Cost Calculator</a> — Calculate how much revenue churn is costing your SaaS business</li>
+<li><a href="/free/saas-health-score">Free SaaS Revenue Health Score Calculator</a> — Calculate your SaaS revenue health score across 5 dimensions: retention,…</li>
+<li><a href="/free/nrr-calculator">Free Net Revenue Retention (NRR) Calculator</a> — Calculate your SaaS Net Revenue Retention from starting MRR, expansion,…</li>
+<li><a href="/saas-valuation-calculator">SaaS Valuation Calculator — Revenue Multiple &amp; Adjusted Valuation</a> — Calculate a SaaS business valuation using revenue multiples adjusted for…</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+
+
 
 <footer><p>&copy; 2026 ChurnLens. SaaS Revenue Quality & Churn Risk Due Diligence.</p><!-- Dream-100 congregation footer -->
 <div style="margin-top:16px;font-size:13px"><strong>Find us where SaaS acquirers are:</strong> <a href="https://github.com/kindrat86" rel="me noopener" style="color:inherit">GitHub</a></div>
