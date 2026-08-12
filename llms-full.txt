@@ -192,7 +192,7 @@ Never. CSV files are deleted after the report is delivered. We do not retain, re
 Still have questions? [See who ChurnLens is built for](/who) ·
 [Get the free churn audit checklist](/get-the-checklist) ·
 [Download due-diligence templates](/templates) ·
-[Churn prediction methods explained](/answers/churn-prediction-methods)
+[Churn prediction methods explained](/faq)
 ## Don't Buy Blind.
 The difference between a great acquisition and a $340,000 mistake
 is six columns in a CSV file. Send yours. We'll find what the seller didn't tell you.
@@ -252,7 +252,7 @@ We're building toward a SaaS acquisition market where buyer-side churn analysis 
 When that happens, the information asymmetry closes. Deals get priced honestly. Buyers stop overpaying by $340K because they trusted a number someone else computed for them. ChurnLens is the tool. The [23-point churn audit checklist](/get-the-checklist) is the entry point. The raw-data methodology is the principle.
 ## Who Runs ChurnLens
 ChurnLens is built and maintained by an independent SaaS acquirer who learned the $340K lesson the hard way and decided no other buyer should have to. The founder publishes under the pseudonym The Data Nerd, ChurnLens Research — the analysis is the asset, not the identity. Every methodology page, benchmark, and risk framework on this site was built from direct acquisition experience and real subscription data analysis.
-ChurnLens is bootstrapped, independent, and funded by subscribers who use the tool to evaluate real deals. No VC. No exit pressure. Just a relentless focus on one problem: making sure you know what you're buying before you wire the money.
+ChurnLens is bootstrapped, independent, and self-funded. No VC. No exit pressure. Just a relentless focus on one problem: making sure you know what you're buying before you wire the money.
 ## The Core Methodology
 ChurnLens is built around the [5-Risk Buyer-Side Method](/5-risk-buyer-side-method) — a structured framework that scores every SaaS acquisition target across five dimensions of revenue durability:
 - Churn Divergence — logo churn and revenue churn computed separately and compared; the gap IS the signal
@@ -298,7 +298,6 @@ Revenue concentration The share of total revenue coming from the largest custome
 The exact 23-point checklist PE analysts use before acquiring SaaS businesses. 5-minute read.
 [Download Free Checklist →](/saas-due-diligence-checklist)
 No spam. Unsubscribe anytime.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -634,7 +633,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -725,7 +723,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -783,8 +780,8 @@ Send the target's subscription CSV and get the Revenue Quality Score, all five s
 - [Hidden Churn: What Sellers Don't Tell You](/hidden-churn-saas-acquisition)
 - [Customer Concentration Risk: How to Spot the Trap](/customer-concentration-risk)
 - [Net Revenue Retention Explained](/learn/net-revenue-retention)
-- [Revenue Concentration Risk Explained](/learn/revenue-concentration-risk)
-- [SaaS Acquisition Use Case](/use-cases/saas-acquisition)
+- [Revenue Concentration Risk Explained](/customer-concentration-risk)
+- [SaaS Acquisition Use Case](/use-cases/saas-acquirers)
 ### Get the free 23-point churn audit checklist
 Sellers hide churn in 7 ways. Most buyers catch 0. Get the full checklist + a sample report on a synthetic $48K MRR case study.
 [Get the free checklist →](/get-the-checklist)
@@ -822,7 +819,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -992,7 +988,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -1095,7 +1090,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-17 · Published 2026-01-15
 
 ---
 
@@ -1184,7 +1178,6 @@ No spam. Unsubscribe anytime.
 The seller's churn number is almost always wrong. Send the CSV and find out before you wire.
 [Get the Free Checklist →](/get-the-checklist)
 🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.
-By The Data Nerd, ChurnLens Research · Updated 2026-07-08 · Published 2026-01-15
 
 ---
 
@@ -1365,10 +1358,10 @@ Yes — they are complementary. The seller runs Baremetrics for day-to-day opera
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
-- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
-- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/reviews/stripe-sigma-review-for-acquirers) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
-- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/vs/churnzero) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/vs/chartmogul) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/compare) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/vs/profitwell) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
@@ -1416,10 +1409,10 @@ ChartMogul is excellent for its intended user (the SaaS operator). For acquirers
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
-- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
-- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
-- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/vs/churnzero) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/vs/profitwell) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/compare) — An acquirer-focused review of Gainsight
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/vs/baremetrics) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
@@ -1466,10 +1459,10 @@ ChurnZero is a strong CS platform for operators managing retention. For acquirer
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
-- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
-- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
-- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/vs/baremetrics) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/vs/chartmogul) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/vs/profitwell) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/compare) — An acquirer-focused review of Gainsight
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
@@ -1517,10 +1510,10 @@ Gainsight is an excellent CS platform, but it is not a due diligence tool. Use a
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
-- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
-- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
-- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/vs/chartmogul) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/vs/profitwell) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/vs/churnzero) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/vs/baremetrics) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
@@ -1567,10 +1560,10 @@ ProfitWell is a great tool for operators at zero cost. For acquirers, read the s
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
-- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
-- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/reviews/gainsight-review-for-acquirers) — An acquirer-focused review of Gainsight
-- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/reviews/stripe-sigma-review-for-acquirers) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/vs/churnzero) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/vs/chartmogul) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [Gainsight Review for SaaS Acquirers: Customer Success Platform or Due Diligence Tool? [2026]](/compare) — An acquirer-focused review of Gainsight
+- [Stripe Sigma Review for SaaS Acquirers: Raw Payment Data vs. Revenue Quality Analysis [2026]](/compare) — A review of Stripe Sigma from the perspective of a SaaS acquirer — what…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 
@@ -1617,10 +1610,10 @@ Stripe Sigma is excellent for data verification and custom analysis if you have 
 - [Hidden Churn Red Flags 2026](/redflags#hidden-churn-red-flags)
 ### Related
 - [Churn-analysis Tool Reviews — for SaaS Acquirers](/reviews) — Honest reviews of churn-analysis and subscription-analytics tools for SaaS…
-- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/reviews/baremetrics-review-for-acquirers) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
-- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/reviews/chartmogul-review-for-acquirers) — A detailed review of ChartMogul from the buyer&#x27;s perspective
-- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/reviews/profitwell-review-for-acquirers) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
-- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/reviews/churnzero-review-for-acquirers) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
+- [Baremetrics Review for SaaS Acquirers: What It Does and What It Misses [2026]](/vs/baremetrics) — An honest review of Baremetrics from the perspective of a SaaS acquirer…
+- [ChartMogul Review for SaaS Acquirers: Subscription Analytics Meets Due Diligence [2026]](/vs/chartmogul) — A detailed review of ChartMogul from the buyer&#x27;s perspective
+- [ProfitWell Review for SaaS Acquirers: Free Metrics vs. Diligence Reality [2026]](/vs/profitwell) — A buyer-focused review of ProfitWell (now part of Paddle) — what its free…
+- [ChurnZero Review for SaaS Acquirers: Proactive Retention or Due Diligence Gap? [2026]](/vs/churnzero) — An honest review of ChurnZero from the buyer&#x27;s perspective — what its…
 ## Try ChurnLens
 SaaS revenue quality & churn risk due diligence for acquirers.
 [Get started →](https://churnlens.site/) 

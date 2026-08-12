@@ -64,7 +64,7 @@ Thirteen things SaaS sellers say about churn, retention and revenue quality, eac
 
 Every churn calculation needs the same seven fields. What changes between platforms is where those fields live and which status values mislead — Recurly's `canceled` is still serving while `expired` is gone; Chargebee's `non_renewing` is economically churned but counted as active; WooCommerce's `pending-cancel` is a decision already made.
 
-- [Export guides for 14 billing platforms](https://churnlens.site/export): Hub, plus the four sanity checks that catch most unusable exports.
+- [Export guides for 15 billing platforms](https://churnlens.site/export): Hub, plus the four sanity checks that catch most unusable exports.
 - [Paddle](https://churnlens.site/export/paddle) · [Chargebee](https://churnlens.site/export/chargebee) · [Recurly](https://churnlens.site/export/recurly) · [Maxio / Chargify](https://churnlens.site/export/maxio) · [Braintree](https://churnlens.site/export/braintree) · [PayPal](https://churnlens.site/export/paypal) · [Lemon Squeezy](https://churnlens.site/export/lemon-squeezy) · [Gumroad](https://churnlens.site/export/gumroad) · [Freemius](https://churnlens.site/export/freemius) · [RevenueCat](https://churnlens.site/export/revenuecat) · [WooCommerce Subscriptions](https://churnlens.site/export/woocommerce-subscriptions) · [GoCardless](https://churnlens.site/export/gocardless) · [FastSpring](https://churnlens.site/export/fastspring) · [Zuora](https://churnlens.site/export/zuora)
 - Also covered: [ChartMogul](https://churnlens.site/vs/chartmogul) · [ProfitWell](https://churnlens.site/vs/profitwell) · [Billing-platform exports, 14 platforms](https://churnlens.site/export)
 
