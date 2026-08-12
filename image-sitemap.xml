@@ -562,13 +562,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/network</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/open-source</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
