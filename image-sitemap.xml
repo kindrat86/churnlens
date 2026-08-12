@@ -226,6 +226,13 @@
       </image:image>
   </url>
   <url>
+    <loc>https://churnlens.site/export/stripe</loc>
+      <image:image>
+        <image:loc>https://churnlens.site/og.png</image:loc>
+        <image:title>ChurnLens</image:title>
+      </image:image>
+  </url>
+  <url>
     <loc>https://churnlens.site/export/woocommerce-subscriptions</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>

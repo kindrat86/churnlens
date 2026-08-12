@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" style="--cl-page-bg:rgb(15, 23, 42);--cl-page-fg:rgb(241, 245, 249)" data-cl-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
+<title>Export Subscription Data from Stripe for Churn Analysis | ChurnLens</title>
+<meta name="description" content="In Stripe, a subscription set to cancel_at_period_end is still active and still billing. Read it as churned and you book the loss in the wrong month. Here is the status model, the export you need, and how to get MRR right with discounts and multiple items.">
+<link rel="canonical" href="https://churnlens.site/export/stripe">
+<link rel="alternate" hreflang="en" href="https://churnlens.site/export/stripe">
+<link rel="alternate" hreflang="x-default" href="https://churnlens.site/export/stripe">
+<meta name="robots" content="index,follow">
+<meta name="author" content="ChurnLens">
+<meta property="article:published_time" content="2026-07-25">
+<meta property="article:modified_time" content="2026-07-25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export Subscription Data from Stripe for Churn Analysis">
+<meta property="og:description" content="In Stripe, a subscription set to cancel_at_period_end is still active and still billing. Read it as churned and you book the loss in the wrong month. Here is the status model, the export you need, and how to get MRR right with discounts and multiple items.">
+<meta property="og:image" content="https://churnlens.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChurnLens">
+<meta property="og:url" content="https://churnlens.site/export/stripe">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Stripe export", "url": "https://churnlens.site/export/stripe", "description": "In Stripe, canceled does not mean gone — expired does. Getting that backwards inverts a churn rate. Here is the state model, the export you need, and how to handle add-ons and trials.", "isPartOf": {"@id": "https://churnlens.site/#website"}, "publisher": {"@id": "https://churnlens.site/#organization"}, "about": {"@id": "https://churnlens.site/#software"}, "inLanguage": "en", "datePublished": "2026-07-25", "dateModified": "2026-07-25", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "p:first-of-type"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site"}, {"@type": "ListItem", "position": 2, "name": "Billing Exports", "item": "https://churnlens.site/export"}, {"@type": "ListItem", "position": 3, "name": "Stripe export", "item": "https://churnlens.site/export/stripe"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Stripe give you an MRR number you can export?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stripe has no MRR field. MRR is always constructed from subscription items — unit_amount × quantity, normalised by recurring interval — with judgement calls about trials, discounts, taxes and which statuses count. Any MRR figure in a CIM is somebody's arithmetic, so ask which choices were made before comparing it to anything."}}, {"@type": "Question", "name": "Why does a cancelled Stripe subscription still show as active?", "acceptedAnswer": {"@type": "Answer", "text": "Because cancelling at period end sets cancel_at_period_end to true and leaves status as active until the term closes. The customer has already left; the status has not caught up. Count status = active AND cancel_at_period_end = true separately — on an annual book it is often the largest pending-churn number in the file."}}, {"@type": "Question", "name": "Should incomplete_expired subscriptions count as churn?", "acceptedAnswer": {"@type": "Answer", "text": "No. Those customers never completed a first payment, usually because an authentication step failed, so they never started. Counting them as churn inflates the rate and disguises a checkout problem as a retention problem. Exclude them from the churn calculation and report the rate separately."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:var(--ux-text,#1a1a2e);max-width:820px;margin:0 auto;padding:20px}
+h1{font-size:2rem;margin:16px 0 8px;line-height:1.3;color:var(--ux-text,#1a1a2e)}
+h2{font-size:1.4rem;margin:36px 0 12px;color:var(--ux-text,#1a1a2e)}
+h3{font-size:1.08rem;margin:26px 0 8px;color:var(--ux-text,#1a1a2e)}
+p{margin-bottom:16px;color:var(--ux-text,#1a1a2e)}
+ul,ol{margin:0 0 16px 22px}li{margin-bottom:8px;color:var(--ux-text,#1a1a2e)}
+nav{padding:12px 0;border-bottom:2px solid var(--ux-border,#f0f0f0);margin-bottom:20px}
+nav a{margin-right:16px;color:var(--ux-accent,#667eea);text-decoration:none;font-weight:500;font-size:.9rem}
+a{color:var(--ux-accent,#667eea)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--ux-border,#eee);color:var(--ux-text-secondary,#555);font-size:.85rem}
+.lead{font-size:1.15rem;color:var(--ux-text-secondary,#555);margin-bottom:24px}
+.pseo-scroll{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{border:1px solid var(--ux-border,#e0e0e0);padding:10px 14px;text-align:left;font-size:.95rem;vertical-align:top;color:var(--ux-text,#1a1a2e)}
+th{background:var(--ux-surface-raised,#f8f9fa);font-weight:600}
+details{border:1px solid var(--ux-border,#e0e0e0);border-radius:8px;padding:12px 16px;margin-bottom:8px;background:var(--ux-surface-raised,#fafafa)}
+summary{cursor:pointer;font-size:1rem;color:var(--ux-text,#1a1a2e)}
+details p{margin-bottom:0}
+code{background:var(--ux-surface-raised,#f1f5f9);border:1px solid var(--ux-border,#e2e8f0);padding:1px 5px;border-radius:4px;font-size:.88em}
+blockquote{border-left:3px solid var(--ux-accent,#667eea);padding-left:16px;margin:16px 0;color:var(--ux-text-secondary,#444);font-style:italic}
+.pseo-note{font-size:.85rem;color:var(--ux-text-secondary,#555);border-left:3px solid var(--ux-border,#eee);padding-left:14px;margin:24px 0}
+.pseo-crumb{font-size:.85rem;color:var(--ux-text-secondary,#555);margin-bottom:4px}
+</style>
+<!-- canonical-disambiguation -->
+<link rel="stylesheet" href="/ux.css">
+<script src="/ux.js" defer></script>
+<script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false,respect_dnt:true});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+<!-- entity-graph --><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://churnlens.site/#organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.", "disambiguatingDescription": "ChurnLens at churnlens.site is an independent buyer-side due-diligence tool used by acquirers and PE/M&A analysts to assess a SaaS target's revenue and churn quality before purchase. It is unaffiliated with the similarly named churnlens.io (retention automation) or churnlens.tech (churn prediction).", "foundingDate": "2026-01-15", "knowsAbout": ["SaaS due diligence", "buyer-side due diligence", "revenue quality analysis", "customer churn risk", "revenue concentration risk", "revenue decay", "MRR/ARR analysis", "SaaS acquisitions", "quality of earnings", "M&A diligence"], "sameAs": ["https://github.com/kindrat86"], "logo": {"@type": "ImageObject", "url": "https://churnlens.site/og.png"}, "image": "https://churnlens.site/og.png", "contactPoint": {"@type": "ContactPoint", "email": "hello@churnlens.site", "contactType": "customer support"}, "founder": {"@id": "https://churnlens.site/#founder"}, "address": {"@type": "PostalAddress", "addressLocality": "Larnaca", "addressCountry": "CY"}}, {"@type": "SoftwareApplication", "@id": "https://churnlens.site/#software", "name": "ChurnLens", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool. Acquirers, private-equity firms, and M&A analysts send a target company's subscription CSVs and get a revenue-quality and churn-risk report in 2 business days — hidden churn, revenue concentration, revenue decay, and a benchmarked revenue-quality score.", "publisher": {"@id": "https://churnlens.site/#organization"}, "author": {"@id": "https://churnlens.site/#organization"}, "featureList": ["Churn Divergence Detector", "Concentration Vulnerability Index", "Annual-Plan Decay Projection", "Zombie MRR Detector", "Revenue Quality Scorecard", "MRR Trajectory Forensics"], "offers": [{"@type": "Offer", "name": "Starter", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro", "price": "49", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Dealmaker", "price": "199", "priceCurrency": "USD"}]}, {"@type": "WebSite", "@id": "https://churnlens.site/#website", "url": "https://churnlens.site", "name": "ChurnLens", "description": "Buyer-side SaaS churn due-diligence for acquirers", "inLanguage": "en", "publisher": {"@id": "https://churnlens.site/#organization"}}, {"@type": "Person", "@id": "https://churnlens.site/#founder", "name": "Maryan", "sameAs": ["https://github.com/kindrat86"], "worksFor": {"@id": "https://churnlens.site/#organization"}}]}</script>
+  <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
+  <script src="/assets/cl-enhance.52579359.js" defer></script>
+  <!-- cl-r19 -->
+</head><body>
+<nav><a href="https://churnlens.site/" style="font-weight:700;color:var(--ux-text,#1a1a2e)">ChurnLens</a> <a href="https://churnlens.site/best/saas-due-diligence-tools">Best</a> <a href="https://churnlens.site/guides">How To</a> <a href="https://churnlens.site/use-cases">Use Cases</a> <a href="https://churnlens.site/learn">Learn</a> <a href="https://churnlens.site/compare">Alternatives To</a></nav>
+<p class="pseo-crumb"><a href="https://churnlens.site/">Home</a> &rsaquo; <a href="https://churnlens.site/export">Billing Exports</a></p>
+<h1>Exporting subscription data from Stripe for churn analysis</h1>
+<p class="lead">Stripe's trap is not a word, it is a flag. A subscription with <code>cancel_at_period_end</code> set to true has <code>status: "active"</code> and will keep billing until the period closes. It is a customer who has already left, wearing the status of one who has not. Read the status column alone and you will find the churn a month or two late &mdash; which, in a diligence window, is exactly the churn you were trying to find early.</p>
+<p><strong>TL;DR:</strong> In Stripe, <code>status</code> alone does not tell you who has left. You need <code>cancel_at_period_end</code>, <code>canceled_at</code> and <code>ended_at</code> alongside it, and you need to build MRR yourself from subscription items, because Stripe does not store an MRR field.</p>
+<p>Every churn calculation needs the same seven things: a stable <strong>customer identifier</strong>, <strong>subscription status</strong>, <strong>recurring amount and currency</strong>, <strong>billing interval and term</strong>, <strong>start date</strong>, <strong>cancellation or end date</strong>, and ideally the date of the <strong>last successful payment</strong>. (<a href="https://churnlens.site/export">Why each one, and what breaks without it &rarr;</a>) What changes between platforms is where those fields live and which values mislead you.</p>
+
+<h2>How Stripe models this</h2>
+<p>Stripe separates the customer from what they buy. A <code>Customer</code> owns zero or more <code>Subscription</code>s. Each subscription holds one or more <code>SubscriptionItem</code>s, and each item references a <code>Price</code>, which belongs to a <code>Product</code> and carries the <code>recurring.interval</code> and <code>unit_amount</code>. Invoices and charges sit alongside as the payment record.</p>
+<p>That shape matters for two reasons. First, <strong>the money is on the items, not the subscription</strong> &mdash; a subscription with three items has three amounts and three quantities, and the subscription object itself has no total. Second, <strong>a customer with two subscriptions is one logo and two revenue lines</strong>, so logo churn and revenue churn have to be computed from different grains of the same export.</p>
+<p>The subscription <code>status</code> values are <code>trialing</code>, <code>active</code>, <code>past_due</code>, <code>canceled</code>, <code>unpaid</code>, <code>paused</code>, <code>incomplete</code> and <code>incomplete_expired</code>. Only two of those mean what an outsider assumes.</p>
+
+<h2>Field mapping for Stripe</h2>
+<ul>
+<li><strong>Customer identifier</strong> &mdash; <code>customer</code> (the <code>cus_</code> id). Use the id, not the email: emails change and duplicate.</li>
+<li><strong>Subscription status</strong> &mdash; <code>status</code>, but read it together with <code>cancel_at_period_end</code>, <code>canceled_at</code>, <code>ended_at</code> and <code>pause_collection</code>.</li>
+<li><strong>Recurring amount</strong> &mdash; per item: <code>items.data[].price.unit_amount</code> &times; <code>items.data[].quantity</code>, in the currency's minor unit. Divide by 100 for most currencies, but not all &mdash; JPY has no minor unit.</li>
+<li><strong>Currency</strong> &mdash; <code>currency</code> on the subscription. Mixed-currency books must be normalised before anything is summed.</li>
+<li><strong>Billing interval</strong> &mdash; <code>items.data[].price.recurring.interval</code> and <code>interval_count</code>. Annual becomes monthly by dividing by 12; a <code>interval: month, interval_count: 3</code> quarterly plan divides by 3.</li>
+<li><strong>Start date</strong> &mdash; <code>start_date</code> for the subscription, <code>created</code> for the customer. They are not the same and the gap is often informative.</li>
+<li><strong>Cancellation date</strong> &mdash; <code>canceled_at</code> is when cancellation was <em>requested</em>; <code>ended_at</code> is when service actually stopped. Churn month is <code>ended_at</code>.</li>
+<li><strong>Last successful payment</strong> &mdash; from the invoice export: latest <code>Invoice</code> with <code>status: paid</code> and <code>amount_paid &gt; 0</code>.</li>
+<li><strong>Discounts</strong> &mdash; <code>discount</code> on the subscription or customer. Ignoring it overstates MRR by the full coupon value.</li>
+</ul>
+
+<h2>Stripe-specific traps</h2>
+
+<h3>1. cancel_at_period_end hides churn in plain sight</h3>
+<p>A subscription cancelled today with an annual term ending in nine months reports <code>status: "active"</code> for nine more months. Every one of those accounts is a departure already committed and not yet visible. Count them: <code>status = active AND cancel_at_period_end = true</code> is your pending-churn book, and against an annual base it is frequently the largest single number in a diligence file. It is also the number a seller's dashboard is least likely to surface.</p>
+
+<h3>2. incomplete and incomplete_expired are not churn</h3>
+<p>When a first payment needs authentication and never gets it, Stripe leaves the subscription <code>incomplete</code> and moves it to <code>incomplete_expired</code> after 23 hours. These customers never started. Counting them as churn inflates the rate and, worse, makes a payment-friction problem look like a retention problem. Exclude them from both numerator and denominator, then count them separately &mdash; a high <code>incomplete_expired</code> rate is its own finding about checkout, not about the product.</p>
+
+<h3>3. past_due and unpaid are involuntary churn, and they are reversible</h3>
+<p><code>past_due</code> means a payment failed and Stripe is retrying under the dunning settings. <code>unpaid</code> means retries are exhausted. Both are still churn in revenue terms while they last, but a meaningful share recovers. Split voluntary from involuntary before you compare anything to a benchmark, because a book with 3% voluntary and 4% involuntary churn is a very different asset from one with 7% voluntary &mdash; the second is a product problem, the first is largely a card-updater problem.</p>
+
+<h3>4. There is no MRR field, so everyone's MRR is a construction</h3>
+<p>Stripe does not store MRR. Every MRR number you have been shown &mdash; in the CIM, in the seller's dashboard, in a third-party tool &mdash; is somebody's arithmetic over these objects, with their own choices about trials, discounts, taxes, one-off invoice items, annual amortisation and which statuses count. Ask which choices were made. The gap between two defensible constructions on the same Stripe account is routinely double digits.</p>
+
+<h3>5. Trials inflate the customer count and not the revenue</h3>
+<p><code>trialing</code> subscriptions carry a price but bill nothing until <code>trial_end</code>. Include them in the logo base and retention looks worse when they fail to convert; exclude them and you miss that trial-to-paid conversion is falling. Report both, and check <code>trial_end</code> against the export date &mdash; a cohort of trials ending just after diligence closes is worth asking about.</p>
+
+<h3>6. Test-mode data looks identical</h3>
+<p>Stripe keeps test and live data in separate modes with identically-shaped objects and ids that differ only by a <code>_test_</code> segment on keys. An export taken in the wrong mode, or a file that merges the two, is not obviously wrong at a glance. Confirm which mode produced the file before anything else, then confirm the row count against the live dashboard.</p>
+
+<h2>What to ask for, in words you can paste</h2>
+<p>&ldquo;Please send a Stripe export covering all subscriptions, active and cancelled, for the last 24 months. From the Subscriptions export I need: customer id, subscription id, status, cancel_at_period_end, canceled_at, ended_at, start_date, trial_end, currency, and for each subscription item the price id, unit_amount, quantity, recurring interval and interval_count. Please also include any discount or coupon applied. Separately, the Invoices export for the same period with customer id, invoice status, amount_paid and the paid date. Live mode, not test.&rdquo;</p>
+<p>In the Stripe Dashboard this is <strong>Billing &rarr; Subscriptions &rarr; Export</strong> and <strong>Billing &rarr; Invoices &rarr; Export</strong>, with the column set chosen at export time. Accounts on Stripe Sigma can run the equivalent as SQL against the <code>subscriptions</code>, <code>subscription_items</code>, <code>prices</code> and <code>invoices</code> tables, which is the cleaner route when the book is large.</p>
+
+<h2>Before you trust the file</h2>
+<ul>
+<li>Row count matches the dashboard's subscription count for the same filter, in the same mode.</li>
+<li>Every <code>status = canceled</code> row has an <code>ended_at</code>. Rows without one are a broken export, not a data insight.</li>
+<li><code>cancel_at_period_end = true</code> rows are present at all &mdash; an export with none, on a book of any size, usually means the column was dropped.</li>
+<li>Summed item amounts reconcile to recent paid invoices within a few percent. A large gap means discounts, proration or taxes are being handled differently than you assumed.</li>
+<li>Annual and monthly plans are both present and distinguishable by <code>interval</code>.</li>
+</ul>
+
+<h2>What to do with the file</h2>
+<p>The analysis is the same regardless of where the file came from: recompute churn in both logo and revenue terms, build the renewal calendar from <code>current_period_end</code> on annual plans, check concentration on the customer rather than the subscription, and test whatever the seller has claimed. The <a href="https://churnlens.site/seller-claims">seller-claims pages</a> cover the twelve claims worth testing and the arithmetic for each, and the <a href="https://churnlens.site/saas-due-diligence-checklist">23-point checklist</a> is the short version.</p>
+<p>Official Stripe documentation: <a href="https://docs.stripe.com/api/subscriptions" rel="nofollow noopener" target="_blank">https://docs.stripe.com/api/subscriptions</a>. Export layouts change; the data model and the traps above do not.</p>
+
+<h2>Other billing systems</h2>
+<ul><li><a href="https://churnlens.site/export/recurly">Exporting from Recurly</a></li><li><a href="https://churnlens.site/export/chargebee">Exporting from Chargebee</a></li><li><a href="https://churnlens.site/export/paddle">Exporting from Paddle</a></li><li><a href="https://churnlens.site/export/maxio">Exporting from Maxio (Chargify)</a></li></ul>
+<p><a href="https://churnlens.site/export"><strong>All billing platforms &rarr;</strong></a> &nbsp;·&nbsp; No connector needed: the <a href="https://churnlens.site/free/saas-churn-analyzer">free analyzer</a> reads the CSV in your browser and never uploads it.</p>
+<h2>Verify it against the raw rows</h2><p>Every check on this page can be run by hand in a spreadsheet, and if you have the time you should. If you would rather not: send us the target's subscription export and we run the full human-reviewed analysis — logo churn, revenue churn, customer concentration, annual-plan decay, zombie MRR and an A&ndash;F revenue-quality grade. The free <a href="https://churnlens.site/pricing">Starter tier</a> covers one CSV per month, which is enough to check a single deal.</p><p><a href="https://churnlens.site/sample-churn-risk-report"><strong>See a sample report &rarr;</strong></a> &nbsp;·&nbsp; <a href="/get-the-checklist">Get the free 23-point checklist &rarr;</a></p>
+<h2>Frequently asked questions</h2>
+<details><summary><strong>Does Stripe give you an MRR number you can export?</strong></summary><p style="margin-top:10px">No. Stripe has no MRR field. MRR is always constructed from subscription items — unit_amount × quantity, normalised by recurring interval — with judgement calls about trials, discounts, taxes and which statuses count. Any MRR figure in a CIM is somebody's arithmetic, so ask which choices were made before comparing it to anything.</p></details>
+<details><summary><strong>Why does a cancelled Stripe subscription still show as active?</strong></summary><p style="margin-top:10px">Because cancelling at period end sets cancel_at_period_end to true and leaves status as active until the term closes. The customer has already left; the status has not caught up. Count status = active AND cancel_at_period_end = true separately — on an annual book it is often the largest pending-churn number in the file.</p></details>
+<details><summary><strong>Should incomplete_expired subscriptions count as churn?</strong></summary><p style="margin-top:10px">No. Those customers never completed a first payment, usually because an authentication step failed, so they never started. Counting them as churn inflates the rate and disguises a checkout problem as a retention problem. Exclude them from the churn calculation and report the rate separately.</p></details>
+<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/export">Export Subscription Data for Churn Analysis: 14 Billing Platforms</a> — How to get a churn-analysable subscription export out of Paddle,…</li>
+<li><a href="/export/braintree">Export Subscription Data from Braintree for Churn Analysis</a> — Braintree is a gateway, not a subscription analytics platform, so there is…</li>
+<li><a href="/export/woocommerce-subscriptions">Export Subscription Data from WooCommerce Subscriptions for Churn Analysis</a> — WooCommerce keeps subscriptions in the WordPress database with statuses…</li>
+<li><a href="/export/zuora">Export Subscription Data from Zuora for Churn Analysis</a> — Zuora models amendments rather than simple subscription states, so the…</li>
+<li><a href="/export/chargebee">Export Subscription Data from Chargebee for Churn Analysis</a> — Chargebee&#x27;s non_renewing status is the trap: economically churned, still…</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+<footer>&copy; 2026 ChurnLens. All rights reserved. <a href="https://churnlens.site/sitemap.xml">Sitemap</a></footer>
+<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
+<section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">9%</span><br><span style="font-size:.82rem;color:#94a3b8">Median B2B SaaS revenue churn</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">88%</span><br><span style="font-size:.82rem;color:#94a3b8">Median gross revenue retention</span></div>
+      
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">23</span><br><span style="font-size:.82rem;color:#94a3b8">Audit Checklist Points</span></div>
+    </div>
+    <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">The seller's churn number is almost always wrong. Send the CSV and find out before you wire.</p>
+    <a href="/get-the-checklist" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get the Free Checklist →</a>
+    <p style="margin-top:18px;font-size:.78rem;color:#94a3b8">🛡️ Free Starter tier: 1 CSV analysis per month. No credit card. Verify a seller's churn claims before you commit.</p>
+  </div>
+</section>
+<!-- /BRUNSON TRUST BAR -->
+</body></html>
