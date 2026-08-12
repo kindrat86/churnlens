@@ -87,6 +87,24 @@ def html_to_markdown(html: str) -> str:
     return html.strip()
 
 
+def page_url(filename: str) -> str:
+    """Map a repo path to the URL that page is actually served at.
+
+    The old inline expression was `filename.replace('.html','').replace('index','')`,
+    which strips the substring "index" ANYWHERE in the path. That silently produced
+    two broken URLs in llms-full.txt — the file AI crawlers read:
+      concentration-vulnerability-index.html -> /concentration-vulnerability-   (404)
+      faq/index.html                         -> /faq/                           (308)
+    Only a trailing index.html is an index, and the served URLs carry no trailing slash.
+    """
+    path = filename[:-len(".html")] if filename.endswith(".html") else filename
+    if path == "index":
+        return ORIGIN + "/"
+    if path.endswith("/index"):
+        path = path[: -len("/index")]
+    return f"{ORIGIN}/{path.strip('/')}"
+
+
 def build_llms_full():
     lines = []
     lines.append(f"# ChurnLens — Full Site Content for LLM Ingestion")
@@ -115,10 +133,10 @@ def build_llms_full():
         # Truncate very long pages to ~3000 words
         words = md.split()
         if len(words) > 4000:
-            md = ' '.join(words[:3000]) + f'\n\n*(truncated from {len(words)} words — see full page at {ORIGIN}/{filename.replace(".html","").replace("index","")})*'
+            md = ' '.join(words[:3000]) + f'\n\n*(truncated from {len(words)} words — see full page at {page_url(filename)})*'
         
         lines.append(f"## {title}\n")
-        lines.append(f"Source: {ORIGIN}/{filename.replace('.html','').replace('index','').replace('benchmarks/','benchmarks')}")
+        lines.append(f"Source: {page_url(filename)}")
         lines.append(f"")
         lines.append(md)
         lines.append(f"")

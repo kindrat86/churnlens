@@ -44,13 +44,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/answers/churn-prediction-methods</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/benchmarks</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -121,34 +114,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/compare/churn-analytics-vs-customer-success-platforms</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/saas-annual-plan-cliff-risk-tools</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/saas-revenue-quality-scoring-platforms</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/top-revenue-concentration-analysis-tools</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/concentration-vulnerability-index</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -164,13 +129,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/customer-concentration-risk</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/dream100</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>
@@ -450,48 +408,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/integrations/chartmogul</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/profitwell</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/profitwell-api</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/quickbooks</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/stripe</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/stripe-analytics</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/learn</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -499,63 +415,7 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/learn/annual-plan-churn</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/gross-churn</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/how-to-calculate-saas-churn-rate</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/how-to-spot-fake-churn</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/learn/net-revenue-retention</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/post-acquisition-churn-surge</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/revenue-concentration-risk</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/revenue-quality-vs-vanity-metrics</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/saas-churn-red-flags</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>
@@ -723,20 +583,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/pricing-questions/how-much-does-it-cost</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/pricing-questions/is-it-worth-it</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/privacy</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -759,48 +605,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/reviews</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/baremetrics-review-for-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/chartmogul-review-for-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/churnzero-review-for-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/gainsight-review-for-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/profitwell-review-for-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/stripe-sigma-review-for-acquirers</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>
@@ -878,20 +682,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/sample-churn-risk-report</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/scenarios/revenue-concentration-kills-acquisition</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/scenarios/saas-acquisition-hidden-churn</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>
@@ -1031,13 +821,6 @@
       </image:image>
   </url>
   <url>
-    <loc>https://churnlens.site/use-cases/investor-reporting</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>https://churnlens.site/use-cases/investors</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
@@ -1053,13 +836,6 @@
   </url>
   <url>
     <loc>https://churnlens.site/use-cases/saas-acquirers</loc>
-      <image:image>
-        <image:loc>https://churnlens.site/og.png</image:loc>
-        <image:title>ChurnLens</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>https://churnlens.site/use-cases/saas-acquisition</loc>
       <image:image>
         <image:loc>https://churnlens.site/og.png</image:loc>
         <image:title>ChurnLens</image:title>

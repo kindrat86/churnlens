@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://churnlens.site/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://churnlens.site/5-risk-buyer-side-method</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -20,25 +20,19 @@
   </url>
   <url>
     <loc>https://churnlens.site/about</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://churnlens.site/affiliates</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/annual-plan-churn-risk</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/answers/churn-prediction-methods</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -50,301 +44,271 @@
   </url>
   <url>
     <loc>https://churnlens.site/best/saas-due-diligence-tools</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/buying-a-saas-business-guide</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/calculators</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/churn-divergence-detector</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/churn-lens-for-acquirers-explainer</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/citations</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/compare</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/compare/best-churn-analytics-tools-for-saas-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/compare/best-saas-due-diligence-tools-for-pe-analysts</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/churn-analytics-vs-customer-success-platforms</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/saas-annual-plan-cliff-risk-tools</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/saas-revenue-quality-scoring-platforms</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/compare/top-revenue-concentration-analysis-tools</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/concentration-vulnerability-index</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/contact</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://churnlens.site/customer-concentration-risk</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/dream100</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/braintree</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/chargebee</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/fastspring</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/freemius</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/gocardless</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/gumroad</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/lemon-squeezy</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/maxio</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/paddle</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/paypal</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/recurly</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/revenuecat</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/woocommerce-subscriptions</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/export/zuora</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq/how-to-detect-zombie-mrr</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq/how-to-due-diligence-saas-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq/how-to-reduce-saas-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq/what-is-revenue-churn-vs-logo-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/faq/what-is-revenue-quality-score</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/churn-calculator</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/due-diligence-simulator</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/embed-widget</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/ltv-calculator</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/mrr-health-check</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/nrr-calculator</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/revenue-concentration-analyzer</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/saas-churn-analyzer</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/saas-health-score</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/free/zombie-mrr-detector</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/get-the-checklist</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -362,217 +326,133 @@
   </url>
   <url>
     <loc>https://churnlens.site/hidden-churn-saas-acquisition</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/how-to-evaluate-a-saas-before-buying</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/inactive-paid-accounts</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/industries</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/chartmogul</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/profitwell</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/profitwell-api</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/quickbooks</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/stripe</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/integrations/stripe-analytics</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/learn</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/annual-plan-churn</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/gross-churn</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/how-to-calculate-saas-churn-rate</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/how-to-spot-fake-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/learn/net-revenue-retention</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/post-acquisition-churn-surge</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/revenue-concentration-risk</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/revenue-quality-vs-vanity-metrics</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/learn/saas-churn-red-flags</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/logo-retention-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/manifesto</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/acquire-com</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/empire-flippers</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/fe-international</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/flippa</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/investors-club</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/latonas</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/microns</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/off-market</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/quiet-light</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/sideprojectors</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/tiny-acquisitions</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/marketplaces/website-closers</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/masterclass</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -584,13 +464,13 @@
   </url>
   <url>
     <loc>https://churnlens.site/mrr-trajectory-forensics</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/mrr-vs-revenue-quality</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -608,109 +488,61 @@
   </url>
   <url>
     <loc>https://churnlens.site/partners</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/pricing</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/pricing-questions/how-much-does-it-cost</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/pricing-questions/is-it-worth-it</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://churnlens.site/privacy</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/redflags</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/revenue-quality-scorecard</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/reviews</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://churnlens.site/reviews/baremetrics-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/chartmogul-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/churnzero-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/gainsight-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/profitwell-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/reviews/stripe-sigma-review-for-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://churnlens.site/saas-acquisition-red-flags</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-buyer-risk-assessment</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-churn-rate-benchmarks</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-due-diligence-checklist</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -722,25 +554,25 @@
   </url>
   <url>
     <loc>https://churnlens.site/saas-mrr-decline-analysis</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-revenue-churn-calculator</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-revenue-concentration-risk</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/saas-revenue-quality-score</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -752,103 +584,91 @@
   </url>
   <url>
     <loc>https://churnlens.site/sample-churn-risk-report</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/scenarios/revenue-concentration-kills-acquisition</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/scenarios/saas-acquisition-hidden-churn</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/2-percent-monthly-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/all-customers-are-on-annual-contracts</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/logo-churn-is-low</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/ltv-is-3000</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/mrr-has-grown-every-month</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/net-negative-churn</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/no-customer-concentration</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/no-one-has-churned-recently</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/refunds-are-negligible</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/revenue-is-fully-recurring</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/the-business-runs-itself</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/the-churn-spike-was-seasonal</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/seller-claims/we-intentionally-churned-bad-customers</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -866,67 +686,55 @@
   </url>
   <url>
     <loc>https://churnlens.site/terms</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/ultimate-saas-due-diligence-guide</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/use-cases</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/use-cases/investor-reporting</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/use-cases/investors</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/use-cases/pe-due-diligence</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/use-cases/saas-acquirers</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://churnlens.site/use-cases/saas-acquisition</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/use-cases/saas-founders</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/vs/baremetrics</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://churnlens.site/vs/chartmogul</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -938,7 +746,7 @@
   </url>
   <url>
     <loc>https://churnlens.site/vs/profitwell</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -950,31 +758,31 @@
   </url>
   <url>
     <loc>https://churnlens.site/walkthrough</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/what-is-good-mrr</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/who</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/why</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://churnlens.site/zombie-mrr-detector</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

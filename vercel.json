@@ -2484,32 +2484,32 @@
     },
     {
       "source": "/integrations/quickbooks",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
       "source": "/integrations/quickbooks/",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
       "source": "/integrations/stripe-analytics",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
       "source": "/integrations/stripe-analytics/",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
       "source": "/integrations/stripe",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
       "source": "/integrations/stripe/",
-      "destination": "/integrations",
+      "destination": "/export",
       "permanent": true
     },
     {
