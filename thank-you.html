@@ -29,6 +29,14 @@
   .ty-cta:hover { background: var(--cl-blue-light); }
   .ty-footer { text-align: center; padding: 2rem 1.5rem; color: #94a3b8; font-size: 0.85rem; max-width: 1100px; margin: 0 auto; border-top: 1px solid #1e293b; }
   .ty-footer a { color: #94a3b8; }
+
+    .ty-intake{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:24px;margin:28px 0;text-align:left;color:#e2e8f0}
+    .ty-intake h2{color:#f8fafc;font-size:1.2rem;line-height:1.4}
+    .ty-intake a{color:#7dd3fc}
+    .ty-intake p{color:#cbd5e1}
+    .ty-cols{margin:.2rem 0 1rem;padding-left:1.2rem;color:#cbd5e1;font-size:.95rem}
+    .ty-cols li{margin-bottom:.25rem}
+    .ty-fine{font-size:.85rem;color:#94a3b8}
 </style>
 <!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else's revenue before purchase."}</script>
 </head>
@@ -41,7 +49,30 @@
 <div class="ty-wrap">
   <div class="ty-badge">✓</div>
   <h1>Payment confirmed</h1>
-  <p class="ty-sub">Here's everything you purchased. Bookmark this page — you'll want it during due diligence.</p>
+  <p class="ty-sub">One thing left, and it takes a minute: send us the export.</p>
+
+  <div class="ty-intake">
+    <h2 style="margin-top:0">Send your CSV to <a href="mailto:hello@churnlens.site?subject=CSV%20for%20analysis">hello@churnlens.site</a></h2>
+    <p>Attach the subscription export from the target's billing system and reply to
+    the receipt Stripe just emailed you, or start a new message to the address above.
+    Your report comes back <strong>within 2 business days</strong>, human-reviewed.</p>
+    <p style="margin-bottom:.4rem"><strong>The seven columns we need:</strong></p>
+    <ul class="ty-cols">
+      <li>customer id — the stable one, not the email</li>
+      <li>subscription status</li>
+      <li>recurring amount + currency</li>
+      <li>billing interval (monthly / annual)</li>
+      <li>start date</li>
+      <li>cancellation or end date</li>
+      <li>last successful payment date (if you have it)</li>
+    </ul>
+    <p class="ty-fine">Any format — Stripe, Chargebee, Recurly, Paddle, a spreadsheet someone
+    exported by hand. We map the fields. If you are not sure how to pull it,
+    <a href="/export">we document the export for 15 billing platforms</a>.
+    Nothing you send is published or shared.</p>
+  </div>
+
+  <p class="ty-sub" style="margin-top:2.5rem">While you wait &mdash; the checklist below is yours to keep.</p>
 
   <h2>📋 The 23-Point Buyer-Side Churn Audit Checklist</h2>
   <div class="ty-checklist">
@@ -111,7 +142,7 @@
   <div class="ty-next">
     <h3>Got a target in due diligence right now?</h3>
     <p>Send us the raw subscription CSV. We'll run all six risk detectors and deliver a human-reviewed report — logo churn, revenue churn, concentration, zombie MRR, and the A–F grade. One CSV, one report, 2 business days.</p>
-    <a href="/pricing" class="ty-cta">Get Your Risk Report →</a>
+    <a href="mailto:hello@churnlens.site?subject=CSV%20for%20analysis" class="ty-cta">Email us the CSV &rarr;</a>
   </div>
 </div>
 
