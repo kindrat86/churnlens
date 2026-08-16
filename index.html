@@ -756,7 +756,8 @@
           var r=await fetch('/api/subscribe',{
             method:'POST', headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email, source:'homepage-inline',
-                                 website:document.getElementById('home-optin-hp').value})
+                                 website:document.getElementById('home-optin-hp').value,
+                                 tz:Intl.DateTimeFormat().resolvedOptions().timeZone||null})
           });
           var d=await r.json();
           if(!r.ok||!d.ok) throw new Error(d.error||'Server error');

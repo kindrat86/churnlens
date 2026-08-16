@@ -127,6 +127,12 @@ export default async function handler(req, res) {
 
   const email = (req.body?.email || '').toString().trim().toLowerCase();
   const source = (req.body?.source || 'unknown').toString().slice(0, 64);
+  // Browser-reported IANA timezone (e.g. "America/New_York"). Stored on the
+  // Resend contact's last_name so the drip engine sends during this lead's
+  // local business hours. Free-form contact fields are the only slot Resend
+  // persists via API.
+  const tzRaw = (req.body?.tz || req.body?.timezone || '').toString().trim();
+  const tz = (tzRaw && tzRaw.includes('/') && tzRaw.length < 64) ? tzRaw : null;
 
   if (!email || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ ok: false, error: 'Valid email required' });
@@ -164,7 +170,7 @@ export default async function handler(req, res) {
           'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, unsubscribed: false })
+        body: JSON.stringify({ email, unsubscribed: false, ...(tz ? { last_name: `tz:${tz}` } : {}) })
       });
       if (resp.ok) {
         audience_added = true;

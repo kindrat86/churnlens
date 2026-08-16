@@ -223,7 +223,7 @@ footer a{color:var(--accent);text-decoration:none}
       href="https://churnlens.site/api/oembed?url=https%3A%2F%2Fchurnlens.site%2Ffree%2Fdue-diligence-simulator&format=json"
       title="Free SaaS Due Diligence Simulator — 5-Risk Analysis by ChurnLens">
 <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
-  <script src="/assets/cl-enhance.52579359.js" defer></script>
+  <script src="/assets/cl-enhance.e4e7c6bb.js" defer></script>
   <!-- cl-r19 -->
 <!-- cl-embed-v4 -->
 <style>
@@ -544,8 +544,8 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
         body: JSON.stringify({
           email: email,
           source: 'free-tool:due-diligence-simulator',
-          website: root.querySelector('input[name="website"]').value
-        })
+          website: root.querySelector('input[name="website"]').value,
+          tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || null)})
       });
       var data = await resp.json();
       if (!resp.ok || !data.ok) throw new Error(data.error || 'Server error');

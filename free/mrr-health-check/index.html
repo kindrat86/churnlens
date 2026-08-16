@@ -93,7 +93,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #eee;color:#666;fon
 .related-links a:hover{border-color:var(--accent,#00d4aa)}
 </style>
 <link rel="stylesheet" href="/assets/cl-enhance.16d8596b.css">
-  <script src="/assets/cl-enhance.52579359.js" defer></script>
+  <script src="/assets/cl-enhance.e4e7c6bb.js" defer></script>
   <!-- cl-r19 -->
 <!-- cl-embed-v4 -->
 <style>
@@ -395,8 +395,8 @@ html[data-embed] .tool-card { box-shadow: none; margin-bottom: 0; }
         body: JSON.stringify({
           email: email,
           source: 'free-tool:mrr-health-check',
-          website: root.querySelector('input[name="website"]').value
-        })
+          website: root.querySelector('input[name="website"]').value,
+          tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || null)})
       });
       var data = await resp.json();
       if (!resp.ok || !data.ok) throw new Error(data.error || 'Server error');
