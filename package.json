@@ -2,6 +2,6 @@
   "name": "churnlens",
   "private": true,
   "scripts": {
-    "build": "echo 'No build step — static site'"
+    "build": "node scripts/verify-jsonld.mjs . && echo 'static site, JSON-LD gate passed'"
   }
 }

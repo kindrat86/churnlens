@@ -8,7 +8,17 @@ geo-battery.md
 churnlens-site-brand-gap-analysis.csv
 pseo-churnlens-site.txt
 striking-distance.html
-scripts/
+# scripts/ ships nothing — except the ONE verify guard the deploy build runs.
+# 2026-08-16: a manual `vercel deploy` shipped the duplicate standalone
+# Organization JSON-LD that GSC flagged ('Duplicate unique property') because
+# deploys don't run GitHub Actions. The build command now runs the same
+# verify-jsonld.mjs gate CI does, so it must survive .vercelignore (remote
+# fails 'Cannot find module' while local passes — same trap as gitdealflow's
+# .vercelignore whitelist; see prebuild-regression-guards skill). Parent-dir
+# exclusion (scripts/) cannot be re-included from, so exclude contents
+# (scripts/*) and negate the single guard file.
+scripts/*
+!scripts/verify-jsonld.mjs
 
 # Internal working docs — these were being served 200 and were crawlable. Among
 # them QA-SECURITY-SPEED-AUDIT-2026-07-19.md, which enumerates this site's own
