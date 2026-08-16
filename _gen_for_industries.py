@@ -83,13 +83,6 @@ def build_page(ind):
             {"@type": "ListItem", "position": 3, "name": title, "item": url},
         ],
     }
-    org_disambig = {
-        "@context": "https://schema.org", "@type": "Organization",
-        "name": "ChurnLens", "url": BASE,
-        "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target's revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.",
-        "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target's revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with churnlens.io or churnlens.tech.",
-    }
-
     faq_visible = "\n".join(
         f'<details><summary><h3>{q}</h3></summary><p>{a}</p></details>'
         for q, a in faqs
@@ -123,7 +116,6 @@ def build_page(ind):
 <script type="application/ld+json">{json.dumps(article_json)}</script>
 <script type="application/ld+json">{json.dumps(breadcrumb_json)}</script>
 <script type="application/ld+json">{json.dumps(faq_json)}</script>
-<script type="application/ld+json">{json.dumps(org_disambig)}</script>
 <link rel="stylesheet" href="/ux.css">
 <script src="/ux.js" defer></script>
 </head>

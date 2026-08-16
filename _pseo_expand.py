@@ -11,21 +11,6 @@ BASE = pathlib.Path(os.path.dirname(os.path.abspath(__file__)))
 TODAY = "2026-07-18"
 THIS_YEAR = "2026"
 
-# ── Canonical disambiguation snippet (injected on every page) ──
-CANONICAL_DISAMB = (
-    '<script type="application/ld+json">'
-    '{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", '
-    '"url": "https://churnlens.site", '
-    '"description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target\'s revenue concentration, '
-    'logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", '
-    '"disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, '
-    'PE/M&A analysts, and founders selling — it scores a target\'s revenue quality and surfaces hidden churn before an acquisition. '
-    'It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / '
-    'customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help '
-    'operators keep their own customers; ChurnLens helps a buyer stress-test someone else\'s revenue before purchase."}'
-    "</script>"
-)
-
 # ── Base CSS (identical to the gainsight-cc / best-* pages) ──
 CSS = """body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:#0a0a0a;max-width:760px;margin:0 auto;padding:2rem 1.25rem}
 h1{font-size:2.1rem;line-height:1.2;margin:.3em 0}
@@ -107,7 +92,6 @@ def build_index_page_html(slug: str, title: str, desc: str, body_md: str, breadc
 {CSS}
 </style>
 <!-- isenberg-round19 -->
-{CANONICAL_DISAMB}
 </head>
 <body>
 <article>

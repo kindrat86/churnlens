@@ -301,8 +301,6 @@ TRUST_BAR = '''
 </section>
 <!-- /BRUNSON TRUST BAR -->'''
 
-ORG_DISAMBIG = '<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site", "description": "ChurnLens is a buyer-side SaaS due-diligence tool that analyzes a target\'s revenue concentration, logo retention, annual-plan churn risk, inactive paid accounts, and MRR decline to surface hidden churn before a SaaS acquisition.", "disambiguatingDescription": "ChurnLens (churnlens.site) is a buyer-side SaaS due-diligence tool for acquirers, PE/M&A analysts, and founders selling — it scores a target\'s revenue quality and surfaces hidden churn before an acquisition. It is an independent product, unaffiliated with other similarly named tools: churnlens.io (a churn-prevention / customer-retention automation product) and churnlens.tech (a customer churn-prediction platform). Those tools help operators keep their own customers; ChurnLens helps a buyer stress-test someone else\'s revenue before purchase."}</script>'
-
 
 def count_visible_words(html):
     txt = re.sub(r'<script[\s\S]*?</script>', ' ', html, flags=re.I)
@@ -383,7 +381,6 @@ def build_hub_page(rel_path, spec):
 <meta name="twitter:card" content="summary">
 {bc_script}
 {faq_script}
-{ORG_DISAMBIG}
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#1a1a2e;max-width:820px;margin:0 auto;padding:20px}}
