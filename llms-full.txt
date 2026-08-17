@@ -174,7 +174,11 @@ Run it yourself, free
 Nine calculators that never upload your file — the CSV is parsed in your browser and never leaves it. [Open the tools →](/free) 
 The method, in full 
 The 5-Risk Buyer-Side Method and the 23-point pre-LOI checklist, published in the open, no signup required to read them. [Read the method →](/5-risk-buyer-side-method) 
-[Get the 23-point checklist →](/get-the-checklist)
+or
+prefers-reduced-motion fallback. Every other section can afford that;
+the one element whose entire job is conversion cannot. Renders always. -->
+Get the 23-point buyer-side checklist — free, no account.
+Checklist sent. It's in your inbox — check spam if it isn't there in two minutes.
 FAQ 
 ## You Ask. We Answer.
 Is this for sellers or buyers? 
@@ -1187,7 +1191,7 @@ Source: https://churnlens.site/benchmarks
 
 SaaS Benchmarks for Acquirers — Retention, Concentration & Valuation Multiples 
 - 
-# Benchmarks
+# SaaS Benchmarks for Acquirers: Churn, Retention & Valuation Multiples
 [Average SaaS Churn Rate by Industry](https://churnlens.site/saas-churn-rate-benchmarks) — Current benchmark data on monthly and annual SaaS churn rates across B2B, B2C, SMB, and enterprise segments
 - [SaaS Valuation Multiples by Revenue Quality](https://churnlens.site/benchmarks#saas-valuation-multiples-by-revenue-quality) — How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples
 - [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks#logo-retention-benchmarks-by-company-stage) — Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies
