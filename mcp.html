@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MCP Server — SaaS due-diligence tools for AI agents | ChurnLens</title>
-<meta name="description" content="Connect any MCP client to ChurnLens and compute net revenue retention, revenue concentration risk, zombie MRR, LTV:CAC and a composite SaaS health score. No auth, no signup, nothing stored.">
+<title>AI-native SaaS due diligence via MCP | ChurnLens</title>
+<meta name="description" content="Use ChurnLens in your MCP client for a first-pass SaaS due-diligence screen: retention, concentration risk, zombie MRR, LTV:CAC, and health scoring. No account or upload required.">
 <link rel="canonical" href="https://churnlens.site/mcp">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MCP Server — SaaS due-diligence tools for AI agents | ChurnLens">
-<meta property="og:description" content="Connect any MCP client to ChurnLens and compute net revenue retention, revenue concentration risk, zombie MRR, LTV:CAC and a composite SaaS health score. No auth, no signup, nothing stored.">
+<meta property="og:title" content="AI-native SaaS due diligence via MCP | ChurnLens">
+<meta property="og:description" content="Use ChurnLens in your MCP client for a first-pass SaaS due-diligence screen: retention, concentration risk, zombie MRR, LTV:CAC, and health scoring. No account or upload required.">
 <meta property="og:image" content="https://churnlens.site/og.png">
 <meta property="og:url" content="https://churnlens.site/mcp">
 <meta name="twitter:card" content="summary">
@@ -68,10 +68,9 @@
   </div>
 </nav>
 <main class="cl-doc">
-<h1>MCP server</h1>
-<p class="lede">ChurnLens runs a Model Context Protocol server, so an AI agent can compute
-retention, concentration and unit-economics figures directly. No key, no account, no rate
-limit, and nothing you send is stored.</p>
+<h1>AI-native SaaS due diligence</h1>
+<p class="lede">Use ChurnLens from an MCP client to run a first-pass screen on retention,
+concentration and unit economics while you work. No key, account, or CSV upload required.</p>
 
 <h2>Connect</h2>
 <p>Endpoint: <code>https://churnlens.site/api/mcp</code> (streamable HTTP)</p>
@@ -131,6 +130,10 @@ only emerge from customer-level data — cohort decay curves, renewal-cliff timi
 concentration in specific logos. That needs the full monthly MRR-by-customer ledger, which
 is what our <a href="/pricing">paid analysis</a> ingests. Treat the MCP tools as a first-pass
 screen.</p>
+
+<p><strong>Why this exists:</strong> an MCP client is useful for the first questions in a deal,
+not a replacement for diligence. Use it to stress-test the headline numbers before you ask a
+seller for the complete monthly MRR-by-customer ledger.</p>
 
 <p>The same maths is <a href="/open-source">open source under MIT</a>, so an agent's output
 here can be reproduced and checked independently.</p>
