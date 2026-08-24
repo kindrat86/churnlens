@@ -14,6 +14,7 @@ Run from ~/churnlens. Re-run whenever content changes.
 """
 import re
 import os
+import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -27,7 +28,8 @@ PAGES = [
     ("5-Risk Buyer-Side Method", "5-risk-buyer-side-method.html"),
     ("Churn Divergence Detector", "churn-divergence-detector.html"),
     ("Concentration Vulnerability Index", "concentration-vulnerability-index.html"),
-    ("Annual-Plan Decay Projection", "annual-plan-decay-projection.html"),
+    # annual-plan-decay-projection.html consolidated into /annual-plan-churn-risk
+    # (commit 85121c1b); entry moved to the end of the manifest next to its note.
     ("Zombie MRR Detector", "zombie-mrr-detector.html"),
     ("Revenue Quality Scorecard", "revenue-quality-scorecard.html"),
     ("MRR Trajectory Forensics", "mrr-trajectory-forensics.html"),
@@ -39,20 +41,29 @@ PAGES = [
     ("SaaS Acquisition Red Flags", "saas-acquisition-red-flags.html"),
     ("SaaS Benchmarks for Acquirers", "benchmarks/index.html"),
     ("FAQ", "faq/index.html"),
-    ("Baremetrics Review for Acquirers", "reviews/baremetrics-review-for-acquirers.html"),
-    ("ChartMogul Review for Acquirers", "reviews/chartmogul-review-for-acquirers.html"),
-    ("ChurnZero Review for Acquirers", "reviews/churnzero-review-for-acquirers.html"),
-    ("Gainsight Review for Acquirers", "reviews/gainsight-review-for-acquirers.html"),
-    ("ProfitWell Review for Acquirers", "reviews/profitwell-review-for-acquirers.html"),
-    ("Stripe Sigma Review for Acquirers", "reviews/stripe-sigma-review-for-acquirers.html"),
+    # 2026-08-24: the six /reviews/* pages 308-redirect (vercel.json) and were
+    # replaced by the /vs/* comparison pages plus the /compare hub. Never cite
+    # a redirect source in the AI-crawler feed — cite the canonical target.
+    ("ChurnLens vs Baremetrics", "vs/baremetrics.html"),
+    ("ChurnLens vs ChartMogul", "vs/chartmogul.html"),
+    ("ChurnLens vs ChurnZero", "vs/churnzero.html"),
+    ("ChurnLens vs ProfitWell", "vs/profitwell.html"),
+    ("ChurnLens vs SaaSOptics", "vs/saasoptics.html"),
+    ("Compare SaaS Diligence Tools", "compare.html"),
+    # annual-plan-decay-projection.html was consolidated (commit 85121c1b)
+    # into /annual-plan-churn-risk; the manifest still pointed at the dead file.
+    ("Annual Plan Churn Risk", "annual-plan-churn-risk.html"),
 ]
 
 
 def html_to_markdown(html: str) -> str:
     """Strip HTML tags and convert to readable markdown."""
-    # Remove scripts and styles
+    # Remove scripts, styles and HTML comments. Comments leaked internal
+    # build notes into the feed ("prefers-reduced-motion fallback…") — an
+    # HTML comment is not page content and must never reach an LLM corpus.
     html = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL)
     html = re.sub(r'<style[^>]*>.*?</style>', '', html, flags=re.DOTALL)
+    html = re.sub(r'<!--.*?-->', '', html, flags=re.DOTALL)
     html = re.sub(r'<nav[^>]*>.*?</nav>', '', html, flags=re.DOTALL)
     html = re.sub(r'<footer[^>]*>.*?</footer>', '', html, flags=re.DOTALL)
     html = re.sub(r'<button[^>]*>.*?</button>', '', html, flags=re.DOTALL)
@@ -144,7 +155,7 @@ def build_llms_full():
         lines.append(f"")
     
     lines.append(f"")
-    lines.append(f"*End of ChurnLens llms-full.txt. Generated 2026-07-18.*")
+    lines.append(f"*End of ChurnLens llms-full.txt. Generated {datetime.date.today().isoformat()}.*")
     lines.append(f"*Site: {ORIGIN} | llms.txt: {ORIGIN}/llms.txt | sitemap: {ORIGIN}/sitemap.xml*")
     
     output = '\n'.join(lines)
