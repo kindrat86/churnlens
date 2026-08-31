@@ -159,6 +159,23 @@ def main():
     if re.search(r"\b\d{2}/100\b", html):
         fail("numeric acquirer-fit score still present", problems)
 
+    # 5b. Baremetrics entry pricing must state both official billing forms:
+    # the vendor's own pricing FAQ lists $49/mo annual alongside the $75/mo
+    # monthly plan cards; a bare "$75/mo start" figure hides the cheaper
+    # annual entry price the reviewer flagged.
+    bm_cell = re.search(
+        r"<td><strong>Baremetrics</strong></td><td>[^<]*</td><td>[^<]*</td><td>([^<]*)</td>",
+        html,
+    )
+    if not bm_cell:
+        fail("Baremetrics comparison row not found", problems)
+    else:
+        cell = bm_cell.group(1)
+        if not re.search(r"Launch \$75/mo monthly or \$49/mo billed annually", cell):
+            fail("Baremetrics cell lacks qualified monthly/annual Launch pricing "
+                 "(official page lists both $75/mo monthly and $49/mo annual)",
+                 problems)
+
     # 6. sitemap lastmod current
     sm = SITEMAP.read_text(encoding="utf-8")
     m = re.search(
