@@ -1187,17 +1187,19 @@ SaaS Benchmarks for Acquirers — Retention, Concentration & Valuation Multiples
 # SaaS Benchmarks for Acquirers: Churn, Retention & Valuation Multiples
 [Average SaaS Churn Rate by Industry](https://churnlens.site/saas-churn-rate-benchmarks) — Current benchmark data on monthly and annual SaaS churn rates across B2B, B2C, SMB, and enterprise segments
 - [SaaS Valuation Multiples by Revenue Quality](https://churnlens.site/benchmarks#saas-valuation-multiples-by-revenue-quality) — How revenue quality metrics (churn, concentration, retention) affect SaaS valuation multiples
-- [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks#logo-retention-benchmarks-by-company-stage) — Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies
+- [Logo Retention Benchmarks by Company Stage](https://churnlens.site/benchmarks#logo-retention-benchmarks-by-company-stage) — What public retention benchmarks can and cannot tell buyers about customer-count churn
 - [Revenue Concentration Benchmarks for SaaS](https://churnlens.site/benchmarks#revenue-concentration-benchmarks-for-saas) — What level of revenue concentration is normal, acceptable, or risky at different SaaS stages
 Sourced benchmark data for the numbers that decide a SaaS price. Every figure below cites its primary source — SaaS Capital, Benchmarkit, Recurly, First Page Sage, Aventis Advisors, FE International and Wall Street Prep — so you can verify it before you put it in a model.
 ## Logo Retention Benchmarks by Company Stage
-TL;DR: Industry benchmarks for logo retention rates across seed, Series A, growth, and enterprise SaaS companies.
+TL;DR: Public benchmark sources report gross revenue retention, not count-based logo retention. Use ACV-based GRR as a revenue-quality cross-check, then calculate logo retention separately from the target's customer counts.
 ### Industry Benchmarks
 What the benchmarks show 
 Primary benchmarking sources report revenue retention rather than count-based "logo" retention. The clearest published signal is that gross revenue retention rises with ACV, longer contract terms, and company maturity.
 Segment Median gross revenue retention ACV under $25K 90% ACV over $25K ~93% Overall private B2B SaaS ~91% 
 Source: SaaS Capital, [2023 B2B SaaS Retention Benchmarks](https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf).
+2025 cross-check: Benchmarkit's FY2024 data preserves the same direction: gross revenue retention rises with ACV. Its report also measures retained ARR, not logo count, so use it as a revenue-retention benchmark rather than a substitute for logo retention. Source: [Benchmarkit, 2025 B2B SaaS Performance Metrics Benchmarks](https://www.benchmarkit.ai/2025benchmarks).
 Contract terms: companies on month-to-month and annual terms show similar median gross retention (~90%); multi-year contracts retain materially better. Company stage: gross retention is inflated (~92%) at young companies and stabilizes near 90% as cohorts age.
+Logo-retention section reviewed 2026-08-31
 ### Using Benchmarks in Due Diligence
 Compare the target against these benchmarks. Significant deviations aren't automatic deal-breakers — they determine which questions to ask during management calls and how to structure earn-outs and holdbacks.
 ### FAQ
@@ -2166,5 +2168,5 @@ The seller's churn number is almost always wrong. Send the CSV and find out befo
 ---
 
 
-*End of ChurnLens llms-full.txt. Generated 2026-08-24.*
+*End of ChurnLens llms-full.txt. Generated 2026-08-31.*
 *Site: https://churnlens.site | llms.txt: https://churnlens.site/llms.txt | sitemap: https://churnlens.site/sitemap.xml*
