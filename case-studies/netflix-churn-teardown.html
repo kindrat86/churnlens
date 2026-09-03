@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" style="--cl-page-bg:rgb(15, 23, 42);--cl-page-fg:rgb(241, 245, 249)" data-cl-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Churn Teardown: Netflix 2011 &amp; 2022 &mdash; What Public Filings Reveal | ChurnLens</title>
+    <meta name="description" content="An honest, fully-sourced churn teardown of Netflix's two public subscriber crises: the 2011 Qwikster pricing shock (800K lost members) and the 2022 Q1 forecast miss (-200K vs +2.5M guided). Every figure cited. Three diagnosed leaks, three fixes." />
+    <meta name="author" content="ChurnLens" />
+    <link rel="canonical" href="https://churnlens.site/case-studies/netflix-churn-teardown" />
+    <link rel="alternate" hreflang="en" href="https://churnlens.site/case-studies/netflix-churn-teardown" />
+    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/case-studies/netflix-churn-teardown" />
+    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/case-studies/netflix-churn-teardown" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://churnlens.site/case-studies/netflix-churn-teardown" />
+    <meta property="og:title" content="Churn Teardown: Netflix 2011 &amp; 2022" />
+    <meta property="og:description" content="800K members lost in 2011. A 2.7M-subscriber forecast miss in 2022. What Netflix's own filings reveal about churn leaks &mdash; every figure cited." />
+    <meta property="og:image" content="https://churnlens.site/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Churn Teardown: Netflix 2011 &amp; 2022" />
+    <meta name="twitter:description" content="800K members lost in 2011. A 2.7M-subscriber forecast miss in 2022. Fully sourced churn teardown." />
+    <link rel="preconnect" href="https://eu.i.posthog.com" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://churnlens.site/case-studies/netflix-churn-teardown"},
+        {"@type": "ListItem", "position": 3, "name": "Netflix Churn Teardown", "item": "https://churnlens.site/case-studies/netflix-churn-teardown"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Churn Teardown: Netflix 2011 & 2022 — What Public Filings Reveal",
+      "description": "A fully-sourced teardown of Netflix's two public subscriber crises, with three diagnosed churn leaks and three concrete fixes.",
+      "publisher": {"@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site"},
+      "mainEntityOfPage": "https://churnlens.site/case-studies/netflix-churn-teardown",
+      "datePublished": "2026-09-03",
+      "citation": [
+        {"@type": "CreativeWork", "name": "Netflix Q1 2022 Shareholder Letter (SEC 8-K Exhibit 99.1)", "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528022000144/ex991_q122.htm"},
+        {"@type": "CreativeWork", "name": "NBC News: Netflix loses 800,000 subscribers in tough 3Q (2011)", "url": "https://www.nbcnews.com/id/wbna45023556"},
+        {"@type": "CreativeWork", "name": "Variety: Netflix Says 100 Million+ Non-Paying Households Use Shared Accounts", "url": "https://variety.com/2022/digital/news/netflix-sharing-password-100-million-1235236051/"}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/ux.css" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: rgb(15, 23, 42);
+        color: rgb(241, 245, 249);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.65;
+      }
+      .sq-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1rem 1.5rem; border-bottom: 1px solid #1e293b;
+        position: sticky; top: 0; background: rgba(15,23,42,.92); backdrop-filter: blur(8px); z-index: 50;
+      }
+      .sq-nav .logo { font-family: 'Space Grotesk', ui-sans-serif; font-weight: 700; color: #f8fafc; text-decoration: none; font-size: 1.15rem; letter-spacing: .02em; }
+      .sq-nav .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 1.25rem; font-size: .95rem; }
+      .sq-nav .nav-links a:hover { color: #f8fafc; }
+      main { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+      h1 { font-family: 'Space Grotesk', ui-sans-serif; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.2; margin: 0 0 .5rem; }
+      h2 { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.4rem; margin-top: 2.6rem; border-bottom: 1px solid #1e293b; padding-bottom: .5rem; }
+      h3 { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.08rem; margin-bottom: .35rem; }
+      .kicker { color: #38bdf8; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 600; }
+      .lede { font-size: 1.12rem; color: #cbd5e1; }
+      .byline { color: #64748b; font-size: .88rem; margin-bottom: 2rem; }
+      .card { background: #0f172a; border: 1px solid #1e293b; border-radius: .75rem; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+      .card.signal { border-left: 3px solid #38bdf8; }
+      .card.leak { border-left: 3px solid #f87171; }
+      .card.fix { border-left: 3px solid #4ade80; }
+      .card p { margin: .5rem 0; color: #cbd5e1; font-size: .96rem; }
+      .card .label { font-family: 'Space Grotesk', ui-sans-serif; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+      .signal .label { color: #38bdf8; }
+      .leak .label { color: #f87171; }
+      .fix .label { color: #4ade80; }
+      .num { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.6rem; font-weight: 700; color: #f8fafc; }
+      cite, .cite { font-style: normal; font-size: .82rem; color: #7dd3fc; word-break: break-all; }
+      .cite a { color: #7dd3fc; text-decoration: underline; text-underline-offset: 2px; }
+      blockquote { border-left: 3px solid #475569; margin: 1.25rem 0; padding: .35rem 0 .35rem 1.1rem; color: #e2e8f0; font-size: .98rem; }
+      blockquote .who { display: block; color: #64748b; font-size: .82rem; margin-top: .4rem; }
+      table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .92rem; }
+      th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid #1e293b; }
+      th { color: #94a3b8; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+      td { color: #e2e8f0; }
+      .estimate { display: inline-block; background: rgba(250,204,21,.12); color: #facc15; border: 1px solid rgba(250,204,21,.3); border-radius: .35rem; padding: .1rem .5rem; font-size: .74rem; font-weight: 700; letter-spacing: .05em; }
+      .honesty { background: rgba(56,189,248,.06); border: 1px dashed #334155; border-radius: .75rem; padding: 1rem 1.25rem; font-size: .88rem; color: #94a3b8; margin-top: 2.5rem; }
+      .cta { margin-top: 2.75rem; background: linear-gradient(135deg, #0c4a6e, #075985); border: 1px solid #0284c7; border-radius: 1rem; padding: 2rem 1.5rem; text-align: center; }
+      .cta h2 { border: none; margin: 0 0 .5rem; padding: 0; font-size: 1.3rem; }
+      .cta p { color: #bae6fd; font-size: .98rem; max-width: 560px; margin: 0 auto 1.25rem; }
+      .cta-btn { display: inline-block; background: #38bdf8; color: #082f49; font-family: 'Space Grotesk', ui-sans-serif; font-weight: 700; text-decoration: none; border-radius: .5rem; padding: .85rem 1.75rem; font-size: 1.02rem; }
+      .cta-btn:hover { background: #7dd3fc; }
+      .cta .alt { margin-top: .9rem; font-size: .86rem; color: #7dd3fc; }
+      .cta .alt a { color: #bae6fd; }
+      footer { border-top: 1px solid #1e293b; padding: 2rem 1.5rem; text-align: center; color: #64748b; font-size: .85rem; }
+      footer a { color: #94a3b8; }
+    </style>
+  </head>
+  <body id="main-content">
+    <nav class="sq-nav">
+      <a href="/" class="logo">ChurnLens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <p class="kicker">Public-Filings Churn Teardown &middot; No. 1</p>
+      <h1>Netflix, Twice: The Two Most Documented Churn Events in Subscription History</h1>
+      <p class="lede">Netflix is the only major subscription company whose churn crises are fully public &mdash; quantified in SEC filings and shareholder letters, in the company's own words. That makes it the perfect open-book case study for how churn leaks look from the outside, before they appear in the numbers.</p>
+      <p class="byline">By ChurnLens &middot; September 3, 2026 &middot; Every figure below is cited to a public source. Estimates are labeled as estimates.</p>
+
+      <h2>The Observed Signals</h2>
+
+      <div class="card signal">
+        <span class="label">Signal 1 &middot; Q3 2011 &middot; Pricing-shock exodus</span>
+        <p><span class="num">800,000</span> US subscribers lost in one quarter (24.6M &rarr; 23.8M), after a July 2011 price change of up to <span class="num">60%</span> (one $9.99 combined plan &rarr; two separate $7.99 plans), compounded by the Qwikster DVD-split announcement that was reversed in under three weeks.</p>
+        <p>Netflix had itself forecast a ~600,000 loss a month earlier &mdash; actual churn ran <strong>~33% worse than its own prediction</strong> (200K excess members lost vs. forecast).</p>
+        <p class="cite">Sources: <a href="https://www.nbcnews.com/id/wbna45023556">NBC News, Oct 24, 2011</a> &middot; <a href="https://www.siliconvalley.com/2011/10/24/2011-netflix-loses-800000-subscribers-in-three-months-stock-tanks/">Silicon Valley (AP), Oct 24, 2011</a> &middot; <a href="https://www.digitaltrends.com/movies/netflix-lost-800000-subscribers-during-q3-headed-into-the-red-in-q4/">Digital Trends (quoting the Q3'11 shareholder letter), Oct 2011</a></p>
+      </div>
+
+      <div class="card signal">
+        <span class="label">Signal 2 &middot; Q1 2022 &middot; Forecast divergence</span>
+        <p>Guided <span class="num">+2.5M</span> paid net adds for Q1'22; delivered <span class="num">&minus;0.2M</span> &mdash; a <strong>2.7M-subscriber miss against the company's own internal forecast</strong>, its first quarterly decline in over a decade. Russia exit accounted for &minus;0.7M (ex-Russia: +0.5M). Netflix also disclosed that <em>"retention was slightly lower relative to our guidance forecast."</em></p>
+        <p class="cite">Source: <a href="https://www.sec.gov/Archives/edgar/data/1065280/000106528022000144/ex991_q122.htm">Netflix Q1 2022 Shareholder Letter, SEC 8-K Exhibit 99.1, filed April 19, 2022</a> (guidance of +2.5M originally set in the <a href="https://s22.q4cdn.com/959853165/files/doc_financials/2021/q4/FINAL-Q4-21-Shareholder-Letter.pdf">Q4'21 letter, Jan 2022</a>)</p>
+      </div>
+
+      <div class="card signal">
+        <span class="label">Signal 3 &middot; 2022 &middot; Shared-account revenue leak</span>
+        <p><span class="num">100M+</span> additional non-paying households using shared accounts (30M+ in US/Canada) against 222M paying households &mdash; roughly <strong>one unpaid household for every two paying ones</strong>. Netflix called converting them a "big opportunity" &mdash; i.e., by its own admission, a massive monetization leak rather than realized revenue.</p>
+        <p class="cite">Source: <a href="https://variety.com/2022/digital/news/netflix-sharing-password-100-million-1235236051/">Variety, April 19, 2022</a>, reporting the Q1'22 shareholder letter &middot; corroborated by <a href="https://www.pcmag.com/news/netflix-over-100-million-households-are-freeloading-via-password-sharing">PCMag</a> and <a href="https://www.hollywoodreporter.com/business/digital/netflix-password-sharing-crackdown-coming-1235132170/">The Hollywood Reporter</a></p>
+      </div>
+
+      <blockquote>
+        "Our primary issue is many of our long-term members felt shocked by the pricing changes, and more of them have expressed that by canceling Netflix than we expected."
+        <span class="who">&mdash; Reed Hastings &amp; David Wells, Q3 2011 Shareholder Letter (as quoted by Digital Trends / TheWrap, October 24, 2011)</span>
+      </blockquote>
+
+      <h2>Three Diagnosed Churn Leaks</h2>
+
+      <div class="card leak">
+        <span class="label">Leak 1 &middot; Price-shock churn on the most loyal cohort</span>
+        <h3>The 2011 hike hit long-tenure members hardest, and churn exceeded Netflix's own model</h3>
+        <p>The combined plan's price rose as much as 60% overnight with no grandfathering and, in Hastings' own words, a "lack of explanation" that made the company "perceived as greedy." The 800K actual loss vs. the 600K forecast is the key diagnostic: <strong>internal churn models were systematically optimistic during a voluntary price event</strong> &mdash; exactly the failure mode buyer-side diligence must stress-test, because a seller's churn forecast under pricing pressure is unreliable by construction.</p>
+        <p class="cite">Evidence: NBC News and Digital Trends citations above (Signal 1).</p>
+      </div>
+
+      <div class="card leak">
+        <span class="label">Leak 2 &middot; Forecast-vs-actual divergence as an early-warning signal</span>
+        <h3>The 2022 miss was visible as a divergence between guidance and delivery &mdash; one quarter before the stock repriced</h3>
+        <p>Netflix guided +2.5M in January 2022 and delivered &minus;0.2M in April &mdash; a 2.7M divergence, with retention "slightly lower" than forecast on top of soft acquisition. The lesson generalizes: <strong>when a subscription company's own forward forecast diverges from delivered net adds, that divergence is itself a churn signal</strong>, ahead of any public cohort data. This is precisely the signal class ChurnLens is built to detect in MRR terms (forecast vs. actual trajectory divergence) for private SaaS targets.</p>
+        <p class="cite">Evidence: SEC-filed Q1'22 letter vs. Q4'21 letter (Signal 2).</p>
+      </div>
+
+      <div class="card leak">
+        <span class="label">Leak 3 &middot; Concentration of value in unpaid usage (zombie-adjacent MRR)</span>
+        <h3>100M+ non-paying households = monetizable usage the pricing structure was leaking</h3>
+        <p>With 222M paying households and 100M+ shared non-paying ones, nearly half as much consumption sat outside the paid base as inside it. In a B2B SaaS analogue this is <em>zombie MRR in reverse</em>: real product usage, zero revenue capture &mdash; and, worse, no churn data at all on those users, so the true engagement base was invisible to retention analytics. When Netflix later converted shared households via paid sharing, it validated that this had been recoverable revenue all along.</p>
+        <p class="cite">Evidence: Variety / Q1'22 letter (Signal 3).</p>
+      </div>
+
+      <h2>Three Fixes, With Expected Impact</h2>
+
+      <div class="card fix">
+        <span class="label">Fix 1 &middot; For price-shock churn</span>
+        <h3>Grandfather long-tenure cohorts and stage the increase; model churn impact per cohort before launch</h3>
+        <p>Concretely: hold legacy pricing for 12+ months for members past a tenure threshold, roll the increase in tiers, and A/B the price change on a small cohort first, feeding measured churn back into the forecast before full rollout. In 2011 Netflix's gap between forecast (600K) and actual (800K) losses was 200K members.</p>
+        <p><span class="estimate">ESTIMATE</span> A staged, grandfathered migration plausibly recovers 20&ndash;40% of such excess shock churn (here: roughly 40&ndash;80K of the 200K gap). This is an estimate by analogy to standard price-migration practice &mdash; Netflix has never disclosed a counterfactual.</p>
+      </div>
+
+      <div class="card fix">
+        <span class="label">Fix 2 &middot; For divergence blindness</span>
+        <h3>Run a standing forecast-vs-actual divergence alarm on weekly cohort retention, not quarterly summaries</h3>
+        <p>Concretely: reconcile weekly new-cohort retention and reactivated-churn cohorts against the operational forecast, and force an escalation when trailing-4-week divergence crosses a fixed threshold (e.g., a sustained negative gap). Netflix's Q1'22 miss was aggregate and after-the-fact; a weekly cohort-level divergence view surfaces the same signal 4&ndash;10 weeks earlier.</p>
+        <p><span class="estimate">ESTIMATE</span> The 4&ndash;10 week earlier-detection figure is an estimate based on typical weekly-vs-quarterly cadence differences; no public data quantifies what Netflix's internal cadence was.</p>
+      </div>
+
+      <div class="card fix">
+        <span class="label">Fix 3 &middot; For unpaid-usage leakage</span>
+        <h3>Convert non-paying heavy users with a price-differentiated secondary tier before enforcing limits</h3>
+        <p>Concretely: instrument shared-account usage, then offer a cheaper add-a-household tier first and enforce limits only after several grace cycles &mdash; conversion before enforcement. Netflix itself subsequently took this path (paid sharing, then an ads tier), demonstrating the recoverable nature of the leak.</p>
+        <p><span class="estimate">ESTIMATE</span> Converting even 5&ndash;10% of 100M shared households at a low-priced tier would have represented 5&ndash;10M new paying households &mdash; arithmetic on the cited 100M figure; the conversion-rate range itself is an estimate, not a Netflix disclosure.</p>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Event</th><th>Forecast</th><th>Actual</th><th>Divergence</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q3 2011 US net member change</td><td>~&minus;600K</td><td>&minus;800K</td><td>&minus;200K worse</td><td><a href="https://www.nbcnews.com/id/wbna45023556">NBC News</a></td></tr>
+          <tr><td>Q1 2022 global paid net adds</td><td>+2.5M</td><td>&minus;0.2M</td><td>&minus;2.7M miss</td><td><a href="https://www.sec.gov/Archives/edgar/data/1065280/000106528022000144/ex991_q122.htm">SEC 8-K, Q1'22 letter</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="honesty">
+        <strong>Honesty box.</strong> This teardown uses only public sources; ChurnLens has no inside information about Netflix and no relationship with it. Netflix is a consumer streaming business, not a B2B SaaS &mdash; we use it because its churn events are uniquely well-documented publicly, which no private SaaS target's are. The three "leaks" are our diagnostic reading of those public facts, and every expected-impact range above is explicitly labeled as an estimate. Where arithmetic is shown (e.g., 2.7M miss, ~33% forecast gap), it is computed directly from the cited figures.
+      </div>
+
+      <div class="cta">
+        <h2>This Is What ChurnLens Does for a SaaS Target You're Buying</h2>
+        <p>Netflix's leaks took an SEC filing to see. A SaaS acquisition target's take a buyer-side churn audit: MRR divergence detection, churn divergence analysis, concentration vulnerability, zombie-MRR sweep &mdash; before you wire the money.</p>
+        <a class="cta-btn" href="/get-the-checklist" id="teardown-cta-checklist" onclick="if(window.posthog){posthog.capture('teardown_cta_clicked',{source:'netflix-case-study',target:'get-the-checklist'})}">Get the Free 23-Point Churn Audit Checklist &rarr;</a>
+        <p class="alt">Or <a href="/contact" id="teardown-cta-contact" onclick="if(window.posthog){posthog.capture('teardown_cta_clicked',{source:'netflix-case-study',target:'contact'})}">talk to us about a target you're diligencing</a> &middot; <a href="mailto:hello@churnlens.site">hello@churnlens.site</a></p>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>ChurnLens</strong> &mdash; buyer-side churn &amp; revenue-quality due diligence for SaaS acquisitions.</p>
+      <p><a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/about">About</a> &middot; <a href="/contact">Contact</a> &middot; <a href="/citations">Citations</a></p>
+      <p>Independent analysis of public sources. Not affiliated with, or endorsed by, Netflix, Inc.</p>
+    </footer>
+
+    <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{before_send:function(e){try{if(e&&e.properties){if(window.__PHBOT===undefined){window.__PHBOT=(function(){try{var ua=(navigator.userAgent||'').toLowerCase();if(!ua)return true;var B=['bot/','bot;','bot)','-bot','_bot','bot ','crawler','spider','scraper','slurp','archiver','indexer','headless','phantomjs','selenium','puppeteer','playwright','cypress','webdriver','curl/','wget/','python-requests','python-httpx','aiohttp','axios/','go-http-client','java/','okhttp','libwww-perl','guzzlehttp','postmanruntime','node-fetch','undici','googlebot','bingbot','yandex','duckduckbot','baiduspider','sogou','ahrefs','semrush','mj12','dotbot','dataforseo','screaming frog','petalbot','bytespider','applebot','amazonbot','uptimerobot','pingdom','lighthouse','pagespeed','gtmetrix','gptbot','oai-searchbot','chatgpt-user','claudebot','claude-web','anthropic-ai','perplexitybot','youbot','ccbot','google-extended','meta-externalagent','cohere-ai','diffbot','timpibot','omgili','facebookexternalhit','whatsapp','telegrambot','slackbot','discordbot','twitterbot','linkedinbot','redditbot','embedly','quora link preview','skypeuripreview','vkshare','w3c_validator'];for(var i=0;i<B.length;i++){if(ua.indexOf(B[i])>-1)return true;}if(navigator.webdriver===true)return true;if(navigator.languages&&navigator.languages.length===0)return true;return false;}catch(x){return false;}})();}e.properties.is_bot=window.__PHBOT;}}catch(x){}return e;},api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false,capture_pageleave:true,respect_dnt:true});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth})};document.head.appendChild(s);})();</script>
+  </body>
+</html>
