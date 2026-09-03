@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" style="--cl-page-bg:rgb(15, 23, 42);--cl-page-fg:rgb(241, 245, 249)" data-cl-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Churn Teardown: Peloton FY2022 &mdash; Churn Doubled as the Disclosure Shrank | ChurnLens</title>
+    <meta name="description" content="An honest, fully-sourced churn teardown of Peloton's fiscal 2022: churn nearly doubled to 1.41% while subscriber guidance was cut 630K and metric disclosure shrank. Every figure cited to SEC-filed shareholder letters. Three diagnosed leaks, three fixes." />
+    <meta name="author" content="ChurnLens" />
+    <link rel="canonical" href="https://churnlens.site/case-studies/peloton-churn-teardown" />
+    <link rel="alternate" hreflang="en" href="https://churnlens.site/case-studies/peloton-churn-teardown" />
+    <link rel="alternate" hreflang="en-US" href="https://churnlens.site/case-studies/peloton-churn-teardown" />
+    <link rel="alternate" hreflang="x-default" href="https://churnlens.site/case-studies/peloton-churn-teardown" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://churnlens.site/case-studies/peloton-churn-teardown" />
+    <meta property="og:title" content="Churn Teardown: Peloton FY2022" />
+    <meta property="og:description" content="Churn doubled from 0.73% to 1.41% in four quarters. Subscriber guidance was cut 630K. Then the disclosure itself shrank. Every figure cited to SEC filings." />
+    <meta property="og:image" content="https://churnlens.site/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Churn Teardown: Peloton FY2022" />
+    <meta name="twitter:description" content="Churn doubled to 1.41% while the disclosure shrank. Fully sourced churn teardown." />
+    <link rel="preconnect" href="https://eu.i.posthog.com" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://churnlens.site/"},
+        {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://churnlens.site/case-studies/netflix-churn-teardown"},
+        {"@type": "ListItem", "position": 3, "name": "Peloton Churn Teardown", "item": "https://churnlens.site/case-studies/peloton-churn-teardown"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Churn Teardown: Peloton FY2022 — Churn Doubled as the Disclosure Shrank",
+      "description": "A fully-sourced teardown of Peloton's fiscal 2022 churn deterioration, with three diagnosed churn leaks and three concrete fixes.",
+      "publisher": {"@type": "Organization", "name": "ChurnLens", "url": "https://churnlens.site"},
+      "mainEntityOfPage": "https://churnlens.site/case-studies/peloton-churn-teardown",
+      "datePublished": "2026-09-03",
+      "citation": [
+        {"@type": "CreativeWork", "name": "Peloton Q4 FY2021 Shareholder Letter (SEC 8-K exhibit, filed Aug 26, 2021)", "url": "https://www.sec.gov/Archives/edgar/data/1639825/000163982521000254/shareholderletter2021q4.htm"},
+        {"@type": "CreativeWork", "name": "Peloton Q2 FY2022 Shareholder Letter (SEC 8-K exhibit, filed Feb 8, 2022)", "url": "https://www.sec.gov/Archives/edgar/data/1639825/000163982522000007/shareholderletter2022q2.htm"},
+        {"@type": "CreativeWork", "name": "Peloton Q3 FY2022 Shareholder Letter (SEC 8-K exhibit, filed May 10, 2022)", "url": "https://www.sec.gov/Archives/edgar/data/1639825/000163982522000067/a3qfy2022shareholderletter.htm"},
+        {"@type": "CreativeWork", "name": "Peloton Q4 FY2022 Shareholder Letter (SEC 8-K exhibit, filed Aug 25, 2022)", "url": "https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm"}
+      ]
+    }
+    </script>
+    <style>
+      html, body {
+        margin: 0; padding: 0; background: rgb(15, 23, 42);
+        color: rgb(241, 245, 249);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.65;
+      }
+      .sq-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1rem 1.5rem; border-bottom: 1px solid #1e293b;
+        position: sticky; top: 0; background: rgba(15,23,42,.92); backdrop-filter: blur(8px); z-index: 50;
+      }
+      .sq-nav .logo { font-family: 'Space Grotesk', ui-sans-serif; font-weight: 700; color: #f8fafc; text-decoration: none; font-size: 1.15rem; letter-spacing: .02em; }
+      .sq-nav .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 1.25rem; font-size: .95rem; }
+      .sq-nav .nav-links a:hover { color: #f8fafc; }
+      main { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+      h1 { font-family: 'Space Grotesk', ui-sans-serif; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.2; margin: 0 0 .5rem; }
+      h2 { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.4rem; margin-top: 2.6rem; border-bottom: 1px solid #1e293b; padding-bottom: .5rem; }
+      h3 { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.08rem; margin-bottom: .35rem; }
+      .kicker { color: #38bdf8; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 600; }
+      .lede { font-size: 1.12rem; color: #cbd5e1; }
+      .byline { color: #64748b; font-size: .88rem; margin-bottom: 2rem; }
+      .card { background: #0f172a; border: 1px solid #1e293b; border-radius: .75rem; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+      .card.signal { border-left: 3px solid #38bdf8; }
+      .card.leak { border-left: 3px solid #f87171; }
+      .card.fix { border-left: 3px solid #4ade80; }
+      .card p { margin: .5rem 0; color: #cbd5e1; font-size: .96rem; }
+      .card .label { font-family: 'Space Grotesk', ui-sans-serif; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+      .signal .label { color: #38bdf8; }
+      .leak .label { color: #f87171; }
+      .fix .label { color: #4ade80; }
+      .num { font-family: 'Space Grotesk', ui-sans-serif; font-size: 1.6rem; font-weight: 700; color: #f8fafc; }
+      cite, .cite { font-style: normal; font-size: .82rem; color: #7dd3fc; word-break: break-all; }
+      .cite a { color: #7dd3fc; text-decoration: underline; text-underline-offset: 2px; }
+      blockquote { border-left: 3px solid #475569; margin: 1.25rem 0; padding: .35rem 0 .35rem 1.1rem; color: #e2e8f0; font-size: .98rem; }
+      blockquote .who { display: block; color: #64748b; font-size: .82rem; margin-top: .4rem; }
+      table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .92rem; }
+      th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid #1e293b; }
+      th { color: #94a3b8; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+      td { color: #e2e8f0; }
+      .estimate { display: inline-block; background: rgba(250,204,21,.12); color: #facc15; border: 1px solid rgba(250,204,21,.3); border-radius: .35rem; padding: .1rem .5rem; font-size: .74rem; font-weight: 700; letter-spacing: .05em; }
+      .honesty { background: rgba(56,189,248,.06); border: 1px dashed #334155; border-radius: .75rem; padding: 1rem 1.25rem; font-size: .88rem; color: #94a3b8; margin-top: 2.5rem; }
+      .cta { margin-top: 2.75rem; background: linear-gradient(135deg, #0c4a6e, #075985); border: 1px solid #0284c7; border-radius: 1rem; padding: 2rem 1.5rem; text-align: center; }
+      .cta h2 { border: none; margin: 0 0 .5rem; padding: 0; font-size: 1.3rem; }
+      .cta p { color: #bae6fd; font-size: .98rem; max-width: 560px; margin: 0 auto 1.25rem; }
+      .cta-btn { display: inline-block; background: #38bdf8; color: #082f49; font-family: 'Space Grotesk', ui-sans-serif; font-weight: 700; text-decoration: none; border-radius: .5rem; padding: .85rem 1.75rem; font-size: 1.02rem; }
+      .cta-btn:hover { background: #7dd3fc; }
+      .cta .alt { margin-top: .9rem; font-size: .86rem; color: #7dd3fc; }
+      .cta .alt a { color: #bae6fd; }
+      footer { border-top: 1px solid #1e293b; padding: 2rem 1.5rem; text-align: center; color: #64748b; font-size: .85rem; }
+      footer a { color: #94a3b8; }
+    </style>
+  </head>
+  <body id="main-content">
+    <nav class="sq-nav">
+      <a href="/" class="logo">ChurnLens</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <p class="kicker">Public-Filings Churn Teardown &middot; No. 2</p>
+      <h1>Peloton FY2022: Churn Doubled While the Disclosure Shrank</h1>
+      <p class="lede">Peloton's fiscal-2022 collapse is the cleanest public record of what a churn spiral looks like in filings: a 630K subscriber-guidance cut in six months, monthly churn nearly doubling, net additions down 98% &mdash; and, in parallel, the company progressively retiring the very metrics that would have shown it. For a buyer, that last part is the lesson.</p>
+      <p class="byline">By ChurnLens &middot; September 3, 2026 &middot; Every figure below is cited to a public source. Estimates are labeled as estimates.</p>
+
+      <h2>The Observed Signals</h2>
+
+      <div class="card signal">
+        <span class="label">Signal 1 &middot; Aug 2021 &rarr; Feb 2022 &middot; The guidance collapse</span>
+        <p>In August 2021 Peloton guided fiscal 2022 to <span class="num">3.63M</span> ending Connected Fitness subscriptions and $5.4B revenue. Six months later, in the February 2022 letter, full-year guidance was cut to <span class="num">~3.0M</span> subscriptions and $3.7&ndash;3.8B revenue &mdash; a <strong>630K-subscriber guidance reduction in two quarters</strong>. The year actually closed at 2.966M, below even the cut.</p>
+        <p class="cite">Sources: <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982521000254/shareholderletter2021q4.htm">Peloton Q4 FY2021 Shareholder Letter, SEC 8-K exhibit, Aug 26, 2021</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000007/shareholderletter2022q2.htm">Q2 FY2022 Shareholder Letter, SEC 8-K exhibit, Feb 8, 2022</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY2022 Shareholder Letter, SEC 8-K exhibit, Aug 25, 2022</a></p>
+      </div>
+
+      <div class="card signal">
+        <span class="label">Signal 2 &middot; FY2022 &middot; Churn nearly doubled, net adds collapsed 98%</span>
+        <p>Average Net Monthly Connected Fitness Churn went <span class="num">0.73%</span> (Q4 FY21) &rarr; 0.75% (Q3 FY22) &rarr; <span class="num">1.41%</span> (Q4 FY22) &mdash; up 70bps year-over-year and quarter-over-quarter, which the company itself called "slightly ahead of our internal expectation." Net Connected Fitness subscription additions in Q4 FY22 were <span class="num">0.004M</span> vs. 0.250M a year earlier &mdash; <strong>down 98%</strong>. FY2022 closed with a net loss of $2,816.9M on revenue of $3,582.1M (vs. a $189.0M loss on $4,021.8M in FY2021).</p>
+        <p class="cite">Source: <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Peloton Q4 FY2022 Shareholder Letter, SEC 8-K exhibit, Aug 25, 2022</a></p>
+      </div>
+
+      <div class="card signal">
+        <span class="label">Signal 3 &middot; 2021&ndash;2022 &middot; The disclosure itself shrank</span>
+        <p>August 2021: "The company will <strong>no longer provide guidance</strong> on Average Net Monthly Connected Fitness Churn after this quarter." August 2022: "we will <strong>no longer report quarterly engagement metrics</strong>" and formal guidance is "restricted&hellip; to the current quarter for at least the duration of FY23." Across exactly the period when churn doubled, Peloton retired its churn <em>guidance</em> first, then its <em>engagement reporting</em> &mdash; while continuing to report the churn metric itself.</p>
+        <p class="cite">Sources: <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982521000254/shareholderletter2021q4.htm">Q4 FY2021 letter, Aug 26, 2021</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY2022 letter, Aug 25, 2022</a></p>
+      </div>
+
+      <blockquote>
+        "Our users are highly engaged, and our subscriber churn rate is less than 1%, which is the best I've seen."
+        <span class="who">&mdash; Barry McCarthy, CEO, Peloton Q3 FY2022 Shareholder Letter, May 10, 2022 (SEC 8-K exhibit). Three months later, the Q4 letter printed Average Net Monthly Connected Fitness Churn of 1.41%.</span>
+      </blockquote>
+
+      <h2>Three Diagnosed Churn Leaks</h2>
+
+      <div class="card leak">
+        <span class="label">Leak 1 &middot; Engagement decay preceded the churn print</span>
+        <h3>Usage fell for four straight quarters before churn fully repriced &mdash; the leak was visible in workouts, not cancellations</h3>
+        <p>Average Monthly Workouts per Connected Fitness Subscription went 19.9 (Q4 FY21) &rarr; 18.8 (Q3 FY22) &rarr; 14.8 (Q4 FY22), down 26% year-over-year, which the company attributed partly to the roll-off of COVID-era engagement from Q4 FY21 (its own stated explanation in the letter). Churn followed engagement down with a lag: the churn metric only moved from 0.75% to 1.41% in the final quarter. <strong>Engagement is the leading indicator; churn is the lagging one</strong> &mdash; and in a subscription business sold on hardware, a decaying-usage installed base is a churn reservoir.</p>
+        <p class="cite">Evidence: Q4 FY2022 letter operating-metrics table and "Churn &amp; Engagement" section (Signals 1&ndash;2).</p>
+      </div>
+
+      <div class="card leak">
+        <span class="label">Leak 2 &middot; Guidance-vs-actual divergence, twice</span>
+        <h3>The forecast was the early-warning system &mdash; and it diverged by 630K subscriptions before the year even ended</h3>
+        <p>The Aug 2021 guidance of 3.63M implied continued growth; the Feb 2022 revision to ~3.0M was a 17% cut to the guided ending base; the actual 2.966M came in below the revision. The same pattern repeated in-unit: Q4 FY21 guided Q1 FY22 churn of ~0.85% "approximately" &mdash; and within two quarters the company had stopped guiding churn entirely (Signal 3). <strong>Each downward guidance revision lagged reality by a quarter</strong> &mdash; identical in structure to a seller's churn model that is systematically optimistic under stress, which is exactly what buyer-side diligence must stress-test.</p>
+        <p class="cite">Evidence: Q4 FY2021, Q2 FY2022 and Q4 FY2022 letters (Signals 1 and 3).</p>
+      </div>
+
+      <div class="card leak">
+        <span class="label">Leak 3 &middot; Metric retirement &mdash; the disclosure churn</span>
+        <h3>What a company stops reporting is a churn signal in itself</h3>
+        <p>Churn guidance retired: Aug 2021. Engagement metrics retired: Aug 2022. Guidance horizon cut to one quarter: Aug 2022. None of these are concealment &mdash; all are stated plainly in SEC-filed letters &mdash; but the pattern is diagnostic: <strong>the reporting perimeter contracted in lockstep with the deterioration</strong>. The B2B analogue is a SaaS seller whose data room shows cohort charts "through last year" and a churn number "as of the last raise." When the freshest cohort data is the one thing not on the table, that absence is the finding.</p>
+        <p class="cite">Evidence: Q4 FY2021 letter (churn-guidance retirement) and Q4 FY2022 letter (engagement-metric retirement, guidance restriction) &mdash; Signal 3.</p>
+      </div>
+
+      <h2>Three Fixes, With Expected Impact</h2>
+
+      <div class="card fix">
+        <span class="label">Fix 1 &middot; For engagement-decay churn</span>
+        <h3>Track usage cohorts as a churn leading indicator, with an engagement floor that triggers save plays</h3>
+        <p>Concretely: cohort the installed base by monthly-workout decile, alarm when a cohort's trailing-8-week usage falls below a defined floor (e.g., &lt;50% of its own 12-week peak), and trigger a save play &mdash; re-engagement content, paused-membership offer, price-differentiated tier &mdash; before the cancel. Peloton's own data shows the sequence: workouts fell 26% YoY while churn "only" doubled to 1.41% monthly.</p>
+        <p><span class="estimate">ESTIMATE</span> Engagement-decay lead times of one to three quarters are typical for hardware-attached subscriptions based on the observed Peloton sequence (workouts down 26% YoY vs. churn repricing in the final quarter); no public data quantifies how much cancel volume an engagement-floor save play would have prevented. This is an estimate, not a Peloton disclosure.</p>
+      </div>
+
+      <div class="card fix">
+        <span class="label">Fix 2 &middot; For divergence blindness</span>
+        <h3>Run a standing guidance-vs-actual divergence alarm on the ending-subscriber bridge, not the annual summary</h3>
+        <p>Concretely: decompose the guided ending base into gross adds, churn, and pauses, and reconcile monthly. Peloton's 630K full-year cut arrived in February; a monthly bridge (guided adds vs. actual adds, guided churn vs. actual churn) would have surfaced the same deterioration months earlier, per-quarter instead of per-year.</p>
+        <p><span class="estimate">ESTIMATE</span> The months-earlier detection claim is an estimate from the difference between monthly and annual reconciliation cadence; Peloton has not disclosed what internal cadence it used.</p>
+      </div>
+
+      <div class="card fix">
+        <span class="label">Fix 3 &middot; For metric retirement</span>
+        <h3>Buyers: demand the metric history the seller stopped reporting &mdash; and recompute it from raw data</h3>
+        <p>Concretely: in diligence, list every operating metric the target has retired, restated, or narrowed over the trailing 24 months (guidance horizon, engagement metrics, cohort charts, churn definitions), and require the raw subscription export so each can be recomputed independently. A seller's churn number is a choice of definition; the raw CSV is not. This is the core of what a buyer-side churn audit does: logo churn vs. revenue churn divergence, concentration, zombie MRR &mdash; computed from the data, not the deck.</p>
+        <p><span class="estimate">ESTIMATE</span> No impact estimate is offered for this fix &mdash; it is a diligence process, and its value depends on the target.</p>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Event</th><th>Forecast / Prior</th><th>Actual / New</th><th>Divergence</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FY2022 ending Connected Fitness subs</td><td>3.63M (Aug '21 guidance)</td><td>2.966M</td><td>&minus;664K (&minus;18%)</td><td><a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982521000254/shareholderletter2021q4.htm">Q4 FY21 letter</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY22 letter</a></td></tr>
+          <tr><td>FY2022 revenue</td><td>$5.4B (Aug '21)</td><td>$3.582B</td><td>&minus;$1.82B (&minus;34%)</td><td><a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982521000254/shareholderletter2021q4.htm">Q4 FY21 letter</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY22 letter</a></td></tr>
+          <tr><td>Avg Net Monthly CF Churn, Q4 YoY</td><td>0.73% (Q4 FY21)</td><td>1.41% (Q4 FY22)</td><td>+70bps (nearly 2x)</td><td><a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY22 letter</a></td></tr>
+          <tr><td>Q4 net CF subscription adds</td><td>0.250M (Q4 FY21)</td><td>0.004M (Q4 FY22)</td><td>&minus;98%</td><td><a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY22 letter</a></td></tr>
+          <tr><td>FY2022 net loss</td><td>$(189.0)M (FY21 actual)</td><td>$(2,816.9)M</td><td>&minus;$2.63B</td><td><a href="https://www.sec.gov/Archives/edgar/data/1639825/000163982522000100/a4q2022shareholderletter.htm">Q4 FY22 letter</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="honesty">
+        <strong>Honesty box.</strong> This teardown uses only public sources; ChurnLens has no inside information about Peloton and no relationship with it. Peloton is a consumer connected-fitness business, not a B2B SaaS &mdash; we use it because its FY2022 deterioration is unusually well-documented in SEC-filed shareholder letters, which no private SaaS target's is. The three "leaks" are our diagnostic reading of those public facts, and every expected-impact range above is explicitly labeled as an estimate. Where arithmetic is shown (e.g., 630K guidance cut, &minus;664K full-year divergence, 2x churn), it is computed directly from the cited figures. Churn figures are Peloton's reported "Average Net Monthly Connected Fitness Churn"; the Q4 FY22 figure of 1.41% includes the company's proactive move of all Canadian Connected Fitness subscriptions to a churned state pending price-increase consent, which Peloton said reduced ending subs by ~16K &mdash; i.e., part of the Q/Q churn increase is that administrative action, as the letters themselves state.
+      </div>
+
+      <div class="cta">
+        <h2>This Is What ChurnLens Does for a SaaS Target You're Buying</h2>
+        <p>Peloton's leaks took four SEC-filed letters to reconstruct. A SaaS acquisition target's take a buyer-side churn audit: churn divergence analysis, engagement-cohort decay, concentration vulnerability, zombie-MRR sweep &mdash; computed from the raw CSV, before you wire the money.</p>
+        <a class="cta-btn" href="/get-the-checklist" id="teardown-cta-checklist" onclick="if(window.posthog){posthog.capture('teardown_cta_clicked',{source:'peloton-case-study',target:'get-the-checklist'})}">Get the Free 23-Point Churn Audit Checklist &rarr;</a>
+        <p class="alt">Or <a href="/contact" id="teardown-cta-contact" onclick="if(window.posthog){posthog.capture('teardown_cta_clicked',{source:'peloton-case-study',target:'contact'})}">talk to us about a target you're diligencing</a> &middot; <a href="mailto:hello@churnlens.site">hello@churnlens.site</a></p>
+      </div>
+    <!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/case-studies/netflix-churn-teardown">Churn Teardown: Netflix 2011 &amp; 2022 &mdash; What Public Filings Reveal</a> &mdash; The first teardown in this series: two fully-documented Netflix churn events</li>
+<li><a href="/benchmarks">SaaS Benchmarks for Acquirers &mdash; Retention, Concentration &amp; Valuation Multiples</a> &mdash; Sourced benchmark data for the numbers that decide a SaaS price</li>
+<li><a href="/logo-retention-churn">SaaS Logo Retention vs. Revenue Churn: What Buyers Miss</a> &mdash; The difference between logo retention and revenue churn &mdash; and why focusing&hellip;</li>
+<li><a href="/annual-plan-churn-risk">Annual-Plan Churn Risk &mdash; the Cliff Sellers Don't Chart</a> &mdash; Annual plans hide churn until renewal; here's how to see the cliff in the raw data</li>
+<li><a href="/zombie-mrr-detector">Zombie MRR Detector &mdash; Dormant Accounts Inflating Revenue</a> &mdash; Paid but inactive accounts look like retention until they cancel all at once</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+</main>
+
+    <footer>
+      <p><strong>ChurnLens</strong> &mdash; buyer-side churn &amp; revenue-quality due diligence for SaaS acquisitions.</p>
+      <p><a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/about">About</a> &middot; <a href="/contact">Contact</a> &middot; <a href="/citations">Citations</a></p>
+      <p>Independent analysis of public sources. Not affiliated with, or endorsed by, Peloton Interactive, Inc.</p>
+    </footer>
+
+    <script>(function(){if(window.posthog&&window.posthog.__loaded)return;var s=document.createElement("script");s.type="text/javascript";s.crossOrigin="anonymous";s.defer=true;s.src="https://eu.i.posthog.com/static/array.js";s.onload=function(){window.posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{before_send:function(e){try{if(e&&e.properties){if(window.__PHBOT===undefined){window.__PHBOT=(function(){try{var ua=(navigator.userAgent||'').toLowerCase();if(!ua)return true;var B=['bot/','bot;','bot)','-bot','_bot','bot ','crawler','spider','scraper','slurp','archiver','indexer','headless','phantomjs','selenium','puppeteer','playwright','cypress','webdriver','curl/','wget/','python-requests','python-httpx','aiohttp','axios/','go-http-client','java/','okhttp','libwww-perl','guzzlehttp','postmanruntime','node-fetch','undici','googlebot','bingbot','yandex','duckduckbot','baiduspider','sogou','ahrefs','semrush','mj12','dotbot','dataforseo','screaming frog','petalbot','bytespider','applebot','amazonbot','uptimerobot','pingdom','lighthouse','pagespeed','gtmetrix','gptbot','oai-searchbot','chatgpt-user','claudebot','claude-web','anthropic-ai','perplexitybot','youbot','ccbot','google-extended','meta-externalagent','cohere-ai','diffbot','timpibot','omgili','facebookexternalhit','whatsapp','telegrambot','slackbot','discordbot','twitterbot','linkedinbot','redditbot','embedly','quora link preview','skypeuripreview','vkshare','w3c_validator'];for(var i=0;i<B.length;i++){if(ua.indexOf(B[i])>-1)return true;}if(navigator.webdriver===true)return true;if(navigator.languages&&navigator.languages.length===0)return true;return false;}catch(x){return false;}})();}e.properties.is_bot=window.__PHBOT;}}catch(x){}return e;},api_host:"https://eu.i.posthog.com",person_profiles:"identified_only",defaults:"2025-05-24",capture_pageview:false,capture_pageleave:true,respect_dnt:true});window.posthog.capture("$pageview",{$viewport_height:window.innerHeight,$viewport_width:window.innerWidth});};document.body.appendChild(s);})();</script>
+  </body>
+</html>
