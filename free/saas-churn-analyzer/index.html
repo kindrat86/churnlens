@@ -1508,7 +1508,19 @@ document.addEventListener("DOMContentLoaded",function(){
       "<p class=\"lede\">Produced locally in the analyst's browser with the <a href=\"https://churnlens.site/free/saas-churn-analyzer\">ChurnLens SaaS Churn &amp; Revenue-Quality Analyzer</a>, implementing the <a href=\"https://churnlens.site/5-risk-buyer-side-method\">5-Risk Buyer-Side Method</a>. Rubric "+
       state.last.A.rubric+". No data was transmitted to produce it.</p>"+
       $("#results").innerHTML+
-      "<footer><p>ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence · <a href=\"https://churnlens.site\">churnlens.site</a></p></footer></body></html>";
+      "<!-- ilg-v1 -->
+<div class="related-links ilg" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin:2rem 0;">
+<h3>Related</h3>
+<ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
+<li><a href="/free">Free SaaS Metrics Calculators — CSV Churn Analyzer, NRR, LTV, Concentration</a> — Nine free SaaS tools, led by a subscription-CSV churn and revenue-quality…</li>
+<li><a href="/free/due-diligence-simulator">Free SaaS Due Diligence Simulator — 5-Risk Analysis</a> — Run a full buyer-side SaaS due diligence simulation across 5 risk…</li>
+<li><a href="/free/mrr-health-check">MRR Health Check</a> — Audit your Monthly Recurring Revenue quality</li>
+<li><a href="/saas-buyer-risk-assessment">SaaS Buyer-Side Risk Assessment — Free Tool</a> — Free buyer-side risk assessment for SaaS acquisitions</li>
+<li><a href="/free/revenue-concentration-analyzer">Free Revenue Concentration Risk Analyzer</a> — Analyze SaaS revenue concentration risk</li>
+</ul>
+</div>
+<!-- /ilg-v1 -->
+<footer><p>ChurnLens — buyer-side SaaS revenue-quality and churn-risk due diligence · <a href=\"https://churnlens.site\">churnlens.site</a></p></footer></body></html>";
     download("churnlens-revenue-quality-report-"+stamp+".html",doc,"text/html;charset=utf-8");
     track("csv_analyzer_export",{});
   });
