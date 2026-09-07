@@ -69,5 +69,7 @@ jobs:
       # CLAUDE.md as a two-literal grep that nobody ran, and wave 3 walked
       # straight past it by saying "uploads" instead of "SaaS". Same fix as the
       # three blockers above: stop trusting prose, run it.
+      - name: NRR calculator canonical consistency
+        run: python3 tests/test_nrr_canonical.py
       - name: No unbacked first-party-data claims
         run: python3 scripts/check_provenance_claims.py
