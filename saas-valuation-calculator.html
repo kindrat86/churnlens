@@ -97,8 +97,22 @@ footer a{color:var(--accent);text-decoration:none}
 </div>
 
 <div class="note">
-<strong>💡 Pro tip:</strong> Revenue multiples alone hide churn risk. An 8× ARR SaaS with 5% monthly churn is worth far less than a 5× SaaS with 1% churn. Run the full <a href="/free/due-diligence-simulator/" style="color:var(--accent)">Due Diligence Simulator</a> for a complete 5-risk-dimension analysis.
+<strong>💡 Pro tip:</strong> Revenue multiples alone hide churn risk. An 8× ARR SaaS with 5% monthly churn is worth far less than a 5× SaaS with 1% churn. Run the full <a href="/free/due-diligence-simulator" style="color:var(--accent)">Due Diligence Simulator</a> for a complete 5-risk-dimension analysis.
 </div>
+
+<section>
+<h2>How the churn adjustment works</h2>
+<p>The calculator starts from a base revenue-multiple range and then applies three multipliers to the range midpoint:</p>
+<ul>
+<li><strong>Churn factor</strong> = max(0.30, 1 − monthly churn ÷ 20). At 2.5% monthly churn this is 0.875; at 8% it falls to 0.60, and the 0.30 floor caps the discount at 70% of the multiple.</li>
+<li><strong>Growth factor</strong> = min(1.40, 1 + YoY growth ÷ 200). 30% growth gives 1.15.</li>
+<li><strong>Concentration penalty</strong> = max(0.60, 1 − top-customer share ÷ 100). A 12% top-customer share gives 0.88.</li>
+</ul>
+<p><strong>Worked example 1:</strong> $600K ARR, 2.5% monthly churn, 30% growth, 12% top-customer share, Market Standard (5–8×) range. Midpoint 6.5× × 0.875 × 1.15 × 0.88 = <strong>5.8× adjusted multiple</strong>, or <strong>$3.0M–$4.0M</strong> (the ±15% band), versus $3.9M at the unadjusted 6.5× midpoint — an 11% discount. Risk label: Low.</p>
+<p><strong>Worked example 2:</strong> same inputs but 8% monthly churn: 6.5× × 0.60 × 1.15 × 0.88 = <strong>3.9× adjusted multiple</strong>, or <strong>$2.0M–$2.7M</strong>, a 40% discount. Risk label: High.</p>
+<p>These adjustment curves are this tool's own transparent heuristic, not measured from transaction data. They exist to make churn drag on price visible and comparable across targets. For the market side, published private-SaaS revenue-multiple data (First Page Sage, 2025 report, revenue bands $1–5M / $6–10M / $10–75M across fifteen verticals) puts typical ranges at <strong>4.5×–6.6×</strong> for $1–5M ARR businesses and <strong>6.9×–9.6×</strong> for $10–75M ARR businesses. Source: <a href="https://firstpagesage.com/reports/saas-valuation-multiples/" rel="nofollow">First Page Sage, SaaS Valuation Multiples: 2025 Report</a>.</p>
+<p>Where the multiple comes from is itself quality-driven: SaaS Capital's valuation methodology (2026 update) builds the multiple from capital-market appetite, ARR growth, and revenue quality, using net revenue retention as the revenue-quality term. Source: <a href="https://www.saas-capital.com/research/whats-your-saas-company-worth/" rel="nofollow">SaaS Capital, What's Your SaaS Company Worth? (2026 update)</a>.</p>
+</section>
 
 <div class="cta-bottom">
 <h2>Need the full deal-room analysis?</h2>
@@ -165,10 +179,10 @@ document.getElementById('resultBox').scrollIntoView({behavior:'smooth',block:'ce
 <div class="related-links" style="background:rgba(148,163,184,0.14);padding:1rem 1.25rem;border-radius:.5rem;margin-top:2rem;">
 <h3>Related</h3>
 <ul style="margin:0.25rem 0 0;padding-left:1.25rem;">
-<li><a href="/saas-valuation-calculator">SaaS Valuation Calculator</a> — estimate a target's valuation range</li>
+<li><a href="/benchmarks">SaaS Benchmarks for Acquirers</a> — sourced benchmark data for the numbers that decide a SaaS price</li>
 <li><a href="/saas-m-and-a-due-diligence-framework">SaaS M&A Due Diligence Framework</a> — the full buyer-side framework</li>
 <li><a href="/5-risk-buyer-side-method">5-Risk Buyer-Side Method</a> — ChurnLens's core analysis method</li>
-<li><a href="/free/due-diligence-simulator/">Due Diligence Simulator</a> — free interactive risk simulation</li>
+<li><a href="/free/due-diligence-simulator">Due Diligence Simulator</a> — free interactive risk simulation</li>
 <li><a href="/compare">ChurnLens Alternatives</a> — compare with other tools</li>
 </ul>
 </div>
