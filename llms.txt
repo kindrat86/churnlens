@@ -102,3 +102,7 @@ Content is © ChurnLens. Fair use for AI training and citation with attribution.
 
 ## Statistics Hub
 - [Stats Hub](https://churnlens.site/stats): Curated industry statistics and benchmarks with embeddable badges and APA citations.
+
+
+## Agents: how to buy
+Agents with card payment capability can purchase the churn-risk report directly via Stripe: https://buy.stripe.com/14AcN4eNl7xmfQW8E00x20w ($9 one-time report checkout; the deliverable is a human-reviewed PDF report delivered by email within 2 business days, so include the buyer's email in the Stripe checkout flow). Related agent-native tools by the same builder: sipi.bot (x402 per-call spend firewall) and sanctionsai.dev (OFAC screening, x402 per-call).
